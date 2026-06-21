@@ -1,0 +1,62 @@
+{
+  "QCF1": [
+    {
+      "title": "Qiskit Global Summer School 2025",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLOFEBzvs-VvoIfbpOb_geVnwFmbW6ij0m",
+      "note": "IBM Quantum lectures covering quantum algorithms and optimization."
+    }
+  ],
+  "QCF2": [
+    {
+      "title": "Finance Theory I (15.401)",
+      "provider": "MIT OCW",
+      "url": "https://ocw.mit.edu/courses/15-401-finance-theory-i-fall-2008/resources/lecture-videos/",
+      "note": "Andrew Lo video lectures on portfolio theory and markets."
+    }
+  ],
+  "GM1": [
+    {
+      "title": "Introduction to Computer Graphics",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLplnkTzzqsZTfYh4UbhLGpI5kGd5oW_Hh",
+      "note": "Cem Yuksel University of Utah; rasterization and ray tracing."
+    }
+  ],
+  "GM2": [
+    {
+      "title": "Virtual Reality Specialization",
+      "provider": "Coursera",
+      "url": "https://www.coursera.org/specializations/virtual-reality",
+      "note": "University of London five courses; free to audit videos."
+    },
+    {
+      "title": "Extended Reality for Everybody",
+      "provider": "Coursera",
+      "url": "https://www.coursera.org/specializations/extended-reality-for-everybody",
+      "note": "University of Michigan AR VR MR; free audit lectures."
+    }
+  ],
+  "DF1": [
+    {
+      "title": "Signals and Systems (6.003)",
+      "provider": "MIT OCW",
+      "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/video_galleries/lecture-videos/",
+      "note": "25 full video lectures on signals and LTI systems."
+    },
+    {
+      "title": "SLAM Course (Kalman, EKF, sensor fusion)",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_",
+      "note": "Stachniss lectures covering Kalman filtering and state estimation."
+    }
+  ],
+  "DF2": [
+    {
+      "title": "Real-Time Systems (IIT Kharagpur)",
+      "provider": "University",
+      "url": "https://nptel.ac.in/courses/106105036",
+      "note": "NPTEL course, Prof. Rajib Mall, full video lectures."
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "AI1": [
+    {
+      "title": "Stanford CS224N: NLP with Deep Learning (Spring 2024)",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOaMFbaqxPDoLWjDaRAdP9D",
+      "note": "Comprehensive: word vectors to LLMs, Chris Manning"
+    },
+    {
+      "title": "Stanford CS25: Transformers United (V6)",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rNiJRchCzutFw5ItR_Z27CM",
+      "note": "Seminar on transformers, LLMs, latest research"
+    }
+  ],
+  "AI2": [
+    {
+      "title": "DeepMind x UCL: Introduction to Reinforcement Learning (David Silver)",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ",
+      "note": "Classic 10-lecture RL foundations course"
+    },
+    {
+      "title": "Berkeley CS285: Deep Reinforcement Learning (Fall 2023)",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps",
+      "note": "Deep RL and sequential decision making"
+    },
+    {
+      "title": "Time Series Analysis I (MIT 18.S096)",
+      "provider": "MIT OCW",
+      "url": "https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/resources/lecture-8-time-series-analysis-i/",
+      "note": "Time series lecture series with public video"
+    }
+  ],
+  "AI3": [
+    {
+      "title": "Stanford CS231N: Deep Learning for Computer Vision (Spring 2025)",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOmsNzYBMe0gJY2XS8AQg16",
+      "note": "Latest CS231n lectures, CNNs and vision"
+    },
+    {
+      "title": "Deep Learning for Computer Vision, EECS 498-007 (Justin Johnson)",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PL5-TkQAfAZFbzxjBHtzdVCWE0Zbhomg7r",
+      "note": "Michigan course, full CNN and vision lectures"
+    }
+  ],
+  "AI4": [
+    {
+      "title": "Mining Massive Datasets, Stanford CS246 [Full Course]",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLLssT5z_DsK9JDLcT8T62VtzwyW9LNepV",
+      "note": "MapReduce, LSH, PageRank, clustering at scale"
+    },
+    {
+      "title": "Mathematics of Big Data and Machine Learning (MIT RES.LL-005)",
+      "provider": "MIT OCW",
+      "url": "https://ocw.mit.edu/courses/res-ll-005-mathematics-of-big-data-and-machine-learning-january-iap-2020/video_galleries/class-videos/",
+      "note": "Big-data ML and D4M, free streamable videos"
+    }
+  ],
+  "AI5": [
+    {
+      "title": "Stanford CS236: Deep Generative Models (2023)",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8",
+      "note": "Full course: VAEs, GANs, flows, diffusion"
+    },
+    {
+      "title": "Berkeley CS294-158: Deep Unsupervised Learning (Spring 2024)",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLwRJQ4m4UJjPIvv4kgBkvu_uygrV3ut_U",
+      "note": "Abbeel: autoregressive, VAEs, GANs, diffusion"
+    }
+  ],
+  "AI6": [
+    {
+      "title": "Robotic Manipulation (MIT 6.4210/6.4212), Russ Tedrake",
+      "provider": "University",
+      "url": "https://manipulation.csail.mit.edu/",
+      "note": "Free YouTube lectures plus open textbook"
+    },
+    {
+      "title": "Underactuated Robotics (MIT 6.832), Russ Tedrake",
+      "provider": "University",
+      "url": "https://underactuated.csail.mit.edu/index.html",
+      "note": "Free YouTube lectures and online notes"
+    }
+  ]
+}

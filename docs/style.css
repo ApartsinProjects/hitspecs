@@ -61,13 +61,13 @@ main{padding:2.6rem 0 3rem}
 .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
 .ccard{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.4rem;color:var(--ink2);
   border-left:5px solid var(--accent);transition:box-shadow .15s,transform .15s;background:#fff}
-.ccard .chip-label{margin-top:auto;padding-top:.5rem}
+.ccard .chip-label{margin-top:.2rem;padding-top:.5rem}
 .ccard:hover{text-decoration:none;box-shadow:0 12px 30px -12px rgba(15,23,42,.25);transform:translateY(-2px)}
 .ccard-tag{font-family:var(--mono);font-size:.74rem;font-weight:700;color:var(--accent);background:var(--soft);padding:.15rem .5rem;border-radius:5px}
-.ccard h3{font-size:1.3rem;margin:.5rem 0 0}
+.ccard h3{font-size:1.3rem;margin:.5rem 0 0;min-height:3rem}
 .ccard p{margin:.5rem 0 .9rem;color:var(--muted);font-size:.96rem}
-.ccard .ccard-tagline{margin:.5rem 0 .15rem}
-.ccard p.hetx{margin:0 0 .7rem}
+.ccard .ccard-tagline{margin:.5rem 0 .15rem;min-height:3.1rem}
+.ccard p.hetx{margin:0 0 .7rem;min-height:2.3rem}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem}
 .chip{font-size:.74rem;font-weight:600;padding:.22rem .55rem;border-radius:20px}
 .chip-label{font-family:var(--mono);font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:.1rem 0 .4rem}

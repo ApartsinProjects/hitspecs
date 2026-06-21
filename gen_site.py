@@ -341,6 +341,13 @@ if os.path.isfile(_cf):
     with open(_cf, encoding="utf-8") as _fh:
         CAREERS = json.load(_fh)
 
+# Free online video courses that can serve as a self-study basis, per course.
+ONLINE_BASIS = {}
+for _f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                        "onlinebasis", "*.json"))):
+    with open(_f, encoding="utf-8") as _fh:
+        ONLINE_BASIS.update(json.load(_fh))
+
 import re as _re
 def slugify(s):
     return _re.sub(r"-+", "-", _re.sub(r"[^a-z0-9]+", "-", s.lower())).strip("-")
@@ -977,6 +984,25 @@ def build_course(cid):
         <ul class="foundations" style="--accent:#{c['color']}">{fh}</ul>
       </section>"""
 
+    # Free online courses (self-study basis)
+    basis_section = ""
+    basis = ONLINE_BASIS.get(cid, [])
+    if basis:
+        bitems = ""
+        for r in basis:
+            url = r.get("url", "")
+            ttl = e(r.get("title", ""))
+            ttl_html = (f'<a href="{e(url)}" target="_blank" rel="noopener">{ttl}</a>' if url else f"<b>{ttl}</b>")
+            bitems += (f'<li class="ref"><span class="refkind">{e(r.get("provider",""))}</span>'
+                       f'<span class="reftitle">{ttl_html}</span>'
+                       f'<div class="meta">{e(r.get("note",""))}</div></li>')
+        basis_section = f"""
+      <section class="block">
+        <h2>Free online courses</h2>
+        <p class="muted">Existing free, video-based courses this course can build on, for self-study or as a teaching basis.</p>
+        <ul class="refs">{bitems}</ul>
+      </section>"""
+
     # Primary literature (seminal works, linked)
     literature_section = ""
     if literature:
@@ -1160,7 +1186,7 @@ def build_course(cid):
       <section class="block">
         <h2>Key topics</h2>
         <ul class="topics" style="--accent:#{c['color']}">{topic_html}</ul>
-      </section>{foundations_section}{prereq_section}{weeks_section}{project_section}{assessment_section}{tools_section}{literature_section}{refs_section}
+      </section>{foundations_section}{prereq_section}{weeks_section}{project_section}{assessment_section}{tools_section}{basis_section}{literature_section}{refs_section}
       <section class="block">
         <h2>Role in each concentration</h2>
         <table class="roletable">
@@ -1257,13 +1283,13 @@ main{padding:2.6rem 0 3rem}
 .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
 .ccard{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.4rem;color:var(--ink2);
   border-left:5px solid var(--accent);transition:box-shadow .15s,transform .15s;background:#fff}
-.ccard .chip-label{margin-top:auto;padding-top:.5rem}
+.ccard .chip-label{margin-top:.2rem;padding-top:.5rem}
 .ccard:hover{text-decoration:none;box-shadow:0 12px 30px -12px rgba(15,23,42,.25);transform:translateY(-2px)}
 .ccard-tag{font-family:var(--mono);font-size:.74rem;font-weight:700;color:var(--accent);background:var(--soft);padding:.15rem .5rem;border-radius:5px}
-.ccard h3{font-size:1.3rem;margin:.5rem 0 0}
+.ccard h3{font-size:1.3rem;margin:.5rem 0 0;min-height:3rem}
 .ccard p{margin:.5rem 0 .9rem;color:var(--muted);font-size:.96rem}
-.ccard .ccard-tagline{margin:.5rem 0 .15rem}
-.ccard p.hetx{margin:0 0 .7rem}
+.ccard .ccard-tagline{margin:.5rem 0 .15rem;min-height:3.1rem}
+.ccard p.hetx{margin:0 0 .7rem;min-height:2.3rem}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem}
 .chip{font-size:.74rem;font-weight:600;padding:.22rem .55rem;border-radius:20px}
 .chip-label{font-family:var(--mono);font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:.1rem 0 .4rem}

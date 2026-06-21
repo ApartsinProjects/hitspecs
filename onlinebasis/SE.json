@@ -1,0 +1,106 @@
+{
+  "SE1": [
+    {
+      "title": "Docker Containers and Kubernetes Fundamentals (Full Hands-On Course)",
+      "provider": "YouTube",
+      "url": "https://youtu.be/kTp5xUtcalw",
+      "note": "6-hour freeCodeCamp course on Docker and Kubernetes"
+    },
+    {
+      "title": "Docker and Kubernetes - Full Course for Beginners",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/watch?v=Wf2eSG3owoA",
+      "note": "Covers images, containers, registry, pods, services, deployments"
+    }
+  ],
+  "SE2": [
+    {
+      "title": "Learn Jenkins by Building a CI/CD Pipeline (Full Course)",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/watch?v=f4idgaq2VqA",
+      "note": "freeCodeCamp CI/CD pipeline build, core SE2 topic"
+    },
+    {
+      "title": "Secure Coding: SSDLC, OWASP and SonarQube Essentials",
+      "provider": "Coursera",
+      "url": "https://www.coursera.org/learn/secure-coding-ssdlc-owasp--sonarqube-essentials",
+      "note": "Free audit; OWASP, secure coding, CI/CD security"
+    },
+    {
+      "title": "Testing JavaScript with Cypress (Full Course)",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/watch?v=u8vMu7viCm8",
+      "note": "freeCodeCamp end-to-end software testing fundamentals"
+    }
+  ],
+  "SE3": [
+    {
+      "title": "Learn React JS in This Free 7-Hour Course",
+      "provider": "YouTube",
+      "url": "https://youtu.be/nTeuhbP7wdE",
+      "note": "freeCodeCamp React from fundamentals to advanced topics"
+    },
+    {
+      "title": "Frontend Web Development: In-Depth Project Tutorial",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/watch?v=MsnQ5uepIaE",
+      "note": "10-hour HTML, CSS, JavaScript, TypeScript and React"
+    }
+  ],
+  "SE4": [
+    {
+      "title": "Node.js and Express Back End Development (8-Hour Course)",
+      "provider": "YouTube",
+      "url": "https://youtu.be/Oe421EPjeBE",
+      "note": "freeCodeCamp REST APIs, Express, server-side, databases"
+    },
+    {
+      "title": "Full Stack Open: Deep Dive Into Modern Web Development",
+      "provider": "University",
+      "url": "https://fullstackopen.com/en/",
+      "note": "University of Helsinki; Node, REST, GraphQL, databases"
+    }
+  ],
+  "SE5": [
+    {
+      "title": "MLOps Course - Build Machine Learning Production Grade Projects",
+      "provider": "YouTube",
+      "url": "https://youtu.be/-dJPoLm_gtE",
+      "note": "freeCodeCamp DevOps for ML, deployment, production workflows"
+    },
+    {
+      "title": "MLOps Zoomcamp",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PL3MmuxUbc_hIUISrluw_A7wDSmfOhErJK",
+      "note": "DataTalks.Club free MLflow, orchestration, deployment, monitoring"
+    }
+  ],
+  "SE6": [
+    {
+      "title": "Android Development for Beginners - Full Course",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/watch?v=fis26HvvDII",
+      "note": "freeCodeCamp 15-hour build a real Android app"
+    },
+    {
+      "title": "IoT Full Course - Learn IoT In 4 Hours",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/watch?v=h0gWfVCSGQQ",
+      "note": "Edureka IoT and edge fundamentals for beginners"
+    }
+  ],
+  "SE7": [
+    {
+      "title": "MIT 6.824 Distributed Systems (Spring 2020)",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB",
+      "note": "MIT lectures on replication, consistency, data-intensive systems"
+    },
+    {
+      "title": "Distributed Computer Systems Engineering (6.824)",
+      "provider": "MIT OCW",
+      "url": "https://ocw.mit.edu/courses/6-824-distributed-computer-systems-engineering-spring-2006/",
+      "note": "MIT OCW storage, fault tolerance, distributed data systems"
+    }
+  ]
+}

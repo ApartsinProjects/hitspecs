@@ -1,0 +1,54 @@
+{
+  "CY1": [
+    {
+      "title": "Cryptography I",
+      "provider": "Coursera",
+      "url": "https://www.coursera.org/learn/crypto",
+      "note": "Dan Boneh, Stanford; free audit, comprehensive"
+    },
+    {
+      "title": "Introduction to Cryptography",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PL6N5qY2nvvJE8X75VkXglSrVhLv1tVcfy",
+      "note": "Christof Paar, Ruhr University, 24 lectures"
+    }
+  ],
+  "CY2": [
+    {
+      "title": "Cryptography and Network Security",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PL71FE85723FD414D7",
+      "note": "NPTEL, IIT Kharagpur, full course"
+    },
+    {
+      "title": "Network and Cyber Security Full Course",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/watch?v=hVbyDBLE92s",
+      "note": "Iowa Cyber, complete network security course"
+    }
+  ],
+  "CY3": [
+    {
+      "title": "Hardware Security",
+      "provider": "Coursera",
+      "url": "https://www.coursera.org/learn/hardware-security",
+      "note": "University of Maryland; side channels, free audit"
+    }
+  ],
+  "CY4": [
+    {
+      "title": "The GRC Approach to Managing Cybersecurity",
+      "provider": "Coursera",
+      "url": "https://www.coursera.org/learn/grc-approach-to-managing-cybersecurity",
+      "note": "Kennesaw State; governance, risk, compliance, free"
+    }
+  ],
+  "CY5": [
+    {
+      "title": "Bitcoin and Cryptocurrency Technologies",
+      "provider": "Coursera",
+      "url": "https://www.coursera.org/learn/cryptocurrency",
+      "note": "Princeton, Narayanan; fully free, blockchain basics"
+    }
+  ]
+}
