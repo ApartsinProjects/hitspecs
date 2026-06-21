@@ -173,6 +173,8 @@ main{padding:2.6rem 0 3rem}
 .tools li{position:relative;padding-left:.95rem;font-size:.92rem;line-height:1.45}
 .tools li:before{content:'';position:absolute;left:0;top:.55em;width:.4rem;height:.4rem;border-radius:50%;background:var(--accent)}
 .tools b{color:var(--ink)}
+.toollink{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent)}
+.toollink:hover{color:var(--accent);border-bottom-style:solid}
 .formatbox{background:var(--soft);border-radius:10px;padding:.85rem 1.1rem;margin:0 0 1.6rem;font-size:.95rem}
 .csub{font-family:var(--serif);font-style:italic;font-size:1.18rem;color:rgba(255,255,255,.92);margin:.1rem 0 .5rem;max-width:48rem;line-height:1.35}
 /* Hebrew co-text, light grey */

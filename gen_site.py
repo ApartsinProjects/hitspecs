@@ -357,6 +357,13 @@ for _f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__
     with open(_f, encoding="utf-8") as _fh:
         HEBREW_BASIS.update(json.load(_fh))
 
+# Tool / technology / platform name -> homepage or Wikipedia URL (for hyperlinking).
+TOOL_LINKS = {}
+_tlf = os.path.join(os.path.dirname(os.path.abspath(__file__)), "toollinks.json")
+if os.path.isfile(_tlf):
+    with open(_tlf, encoding="utf-8") as _fh:
+        TOOL_LINKS = json.load(_fh)
+
 import re as _re
 def slugify(s):
     return _re.sub(r"-+", "-", _re.sub(r"[^a-z0-9]+", "-", s.lower())).strip("-")
@@ -505,6 +512,24 @@ def designated(track):
 # ----------------------------------------------------------------------------
 def e(s):
     return html.escape(str(s), quote=True)
+
+_TOOL_RE = None
+def _tool_re():
+    """Compile (once) a regex matching any known tool name on word boundaries."""
+    global _TOOL_RE
+    if _TOOL_RE is None and TOOL_LINKS:
+        keys = sorted(TOOL_LINKS, key=len, reverse=True)
+        pat = r'(?<![A-Za-z0-9])(' + '|'.join(_re.escape(e(k)) for k in keys) + r')(?![A-Za-z0-9])'
+        _TOOL_RE = _re.compile(pat)
+    return _TOOL_RE
+
+def tool_html(text):
+    """HTML-escape text and hyperlink any recognized tool/technology name."""
+    esc = e(text)
+    rx = _tool_re()
+    if rx is None:
+        return esc
+    return rx.sub(lambda m: f'<a href="{e(TOOL_LINKS[m.group(0)])}" target="_blank" rel="noopener" class="toollink">{m.group(0)}</a>', esc)
 
 def page(title, body, depth, accent=None):
     p = "" if depth == 0 else "../"
@@ -793,8 +818,9 @@ def build_careers():
             continue
         cards = ""
         for slug, r in roles:
-            def col(title, items):
-                lis = "".join(f"<li>{e(x)}</li>" for x in items)
+            def col(title, items, link=False):
+                fn = tool_html if link else e
+                lis = "".join(f"<li>{fn(x)}</li>" for x in items)
                 return f'<div class="rcol"><h4>{title}</h4><ul>{lis}</ul></div>'
             emp = ""
             if r.get("example_employers"):
@@ -812,7 +838,7 @@ def build_careers():
           {col('Responsibilities', r.get('responsibilities', []))}
           {col('Required knowledge', r.get('knowledge', []))}
           {col('Skills', r.get('skills', []))}
-          {col('Tools &amp; technologies', r.get('tools', []))}
+          {col('Tools &amp; technologies', r.get('tools', []), link=True)}
         </div>
         {emp}
       </article>"""
@@ -1153,8 +1179,8 @@ def build_course(cid):
         items = ""
         for tdef in tools:
             name, sep, purpose = tdef.partition(":")
-            items += (f'<li><b>{e(name.strip())}</b>: {e(purpose.strip())}</li>' if sep
-                      else f'<li><b>{e(tdef.strip())}</b></li>')
+            items += (f'<li><b>{tool_html(name.strip())}</b>: {tool_html(purpose.strip())}</li>' if sep
+                      else f'<li><b>{tool_html(tdef.strip())}</b></li>')
         tools_section = f"""
       <section class="block">
         <h2>Tools &amp; platforms</h2>
@@ -1431,6 +1457,8 @@ main{padding:2.6rem 0 3rem}
 .tools li{position:relative;padding-left:.95rem;font-size:.92rem;line-height:1.45}
 .tools li:before{content:'';position:absolute;left:0;top:.55em;width:.4rem;height:.4rem;border-radius:50%;background:var(--accent)}
 .tools b{color:var(--ink)}
+.toollink{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent)}
+.toollink:hover{color:var(--accent);border-bottom-style:solid}
 .formatbox{background:var(--soft);border-radius:10px;padding:.85rem 1.1rem;margin:0 0 1.6rem;font-size:.95rem}
 .csub{font-family:var(--serif);font-style:italic;font-size:1.18rem;color:rgba(255,255,255,.92);margin:.1rem 0 .5rem;max-width:48rem;line-height:1.35}
 /* Hebrew co-text, light grey */
