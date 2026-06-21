@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#7A3E9D">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI6: Embodied AI: Robotics &amp; Autonomous Systems | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="on" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#7A3E9D;--ink:#5D2F79">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; AI6</p>
+    <h1>Embodied AI: Robotics &amp; Autonomous Systems</h1>
+    <p class="hetx" dir="rtl">AI מגולם: רובוטיקה ומערכות אוטונומיות</p>
+    <p class="csub">the estimation, planning, and control theory of embodied autonomous robots</p>
+    <p class="lead">Perceive, plan, and act with embodied autonomous systems</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Bring AI into the physical world through perception, planning, and control for robots and autonomous systems.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #7A3E9D">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #7A3E9D"><span class="bk" style="color:#7A3E9D">What you will build</span><p>Built a full perceive-plan-act autonomy stack in Python with ROS 2, PyBullet, and PyTorch, fusing sensors with Kalman and particle filters, planning with A-star and RRT, and tracking trajectories with model-predictive and reinforcement-learning controllers under sim-to-real domain randomization.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#7A3E9D"><li>Derive rigid-body kinematics, transforms, and state representations for robots</li><li>Formalize probabilistic state estimation and the Bayes filter</li><li>Derive the Kalman filter and particle filter for sensor fusion</li><li>Implement motion planning with sampling-based and graph-search algorithms</li><li>Derive feedback control including PID and the linear-quadratic regulator</li><li>Apply reinforcement learning to continuous robot control</li><li>Build perception pipelines fusing camera, lidar, and inertial sensors</li><li>Analyze the sim-to-real gap and domain randomization strategies</li><li>Evaluate autonomy with task success, safety, and robustness metrics</li><li>Deploy an embodied agent in simulation with a real-transfer path</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#7A3E9D"><li>Perception &amp; sensor fusion</li><li>Motion planning</li><li>Control &amp; RL for robotics</li><li>Simulation-to-real transfer</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#7A3E9D"><li>rigid-body kinematics, transforms, and robot state representation</li><li>the Bayes filter and the recursive predict-update cycle</li><li>the Kalman filter and the particle filter for sensor fusion</li><li>configuration-space planning with A-star and rapidly-exploring random trees</li><li>PID control and the linear-quadratic regulator</li><li>the discrete-time Riccati equation and model-predictive control</li><li>policy-gradient reinforcement learning for continuous control</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #7A3E9D">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#7A3E9D"><li>Machine Learning and basic reinforcement learning</li><li>Linear algebra</li><li>Calculus and basic physics</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Embodied foundations</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 1</div><div class="wk-body"><b>Robots, frames, and kinematics</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover rigid-body transforms, coordinate frames, forward kinematics, and robot state representation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Set up a robot simulator and command joint and base motion.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Choose the embodied task and simulator for the running project.</div></div></div><div class="wpart">Estimation</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 2</div><div class="wk-body"><b>Probabilistic state estimation</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the Bayes filter, the Markov assumption, and the recursive predict-update cycle.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a discrete Bayes filter for robot localization.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a basic state estimator to the project robot.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 3</div><div class="wk-body"><b>Kalman filtering</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the Kalman filter and its extended form for nonlinear Gaussian estimation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a Kalman filter for fusing noisy position and velocity sensors.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Upgrade estimation with a Kalman filter for sensor fusion.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 4</div><div class="wk-body"><b>Particle filters and SLAM</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the particle filter, importance sampling, and the basics of simultaneous localization and mapping.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a particle filter for global localization in a known map.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add robust localization to the project robot.</div></div></div><div class="wpart">Perception</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 5</div><div class="wk-body"><b>Perception and sensor fusion<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover camera and lidar sensing, point clouds, calibration, and multi-sensor fusion.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: each team defends its task specification and metrics.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Lock the specification and build a perception stage fusing sensors.</div></div></div><div class="wpart">Planning</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 6</div><div class="wk-body"><b>Graph-search motion planning</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive configuration space, A-star, Dijkstra, and the heuristics behind optimal graph search.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement A-star planning on an occupancy grid.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add grid-based path planning to the robot.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 7</div><div class="wk-body"><b>Sampling-based planning</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover RRT, RRT-star, probabilistic roadmaps, and planning in high-dimensional configuration spaces.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement RRT and compare path quality with graph search.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Extend planning to sampling-based methods for complex spaces.</div></div></div><div class="wpart">Control</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 8</div><div class="wk-body"><b>Feedback control<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive PID control, stability, and the linear-quadratic regulator as optimal feedback.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: interim demo of the robot navigating with estimation and planning.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a feedback controller to track planned trajectories.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 9</div><div class="wk-body"><b>Optimal and model-predictive control</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the LQR, the discrete-time Riccati equation, and receding-horizon model-predictive control.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement an MPC controller and compare with PID tracking.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Upgrade control with model-predictive trajectory tracking.</div></div></div><div class="wpart">Learning control</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 10</div><div class="wk-body"><b>Reinforcement learning for control</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We adapt policy-gradient and actor-critic methods to continuous action spaces for robot control.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train an RL policy for a locomotion or manipulation task in simulation.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a learned control policy to the robot.</div></div></div><div class="wpart">Sim-to-real</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 11</div><div class="wk-body"><b>Bridging the reality gap</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We analyze the sim-to-real gap, domain randomization, system identification, and robustness.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Apply domain randomization and test policy robustness across perturbed dynamics.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Make the learned policy robust to a sim-to-real transfer.</div></div></div><div class="wpart">Integration</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 12</div><div class="wk-body"><b>Full autonomy stack</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We integrate perception, estimation, planning, and control into one autonomy pipeline and discuss safety.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Connect all modules into an end-to-end autonomous behavior.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Integrate the full perceive-plan-act stack on the robot.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 13</div><div class="wk-body"><b>Final defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We synthesize estimation, planning, and control theory and survey open problems in embodied AI.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: final demo with task metrics and an oral defense of design choices.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the complete autonomous embodied agent with evaluation results.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams build one autonomous embodied agent in simulation, layering perception, probabilistic estimation, motion planning, and control into a full perceive-plan-act stack. The project advances from classical estimation and planning into learned control and a sim-to-real robustness study, backed by the control and estimation theory taught each week.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#7A3E9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Autonomous mobile robot navigation</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Robotic arm pick-and-place</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Quadruped locomotion controller</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Self-driving car in simulation</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Drone autonomous flight and landing</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Warehouse multi-robot coordination</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Underwater or aerial inspection robot</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Indoor delivery robot with SLAM</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#7A3E9D"><li><b>ROS 2</b>: robotics middleware and tooling</li><li><b>Gazebo</b>: physics-based robot simulation</li><li><b>PyBullet</b>: fast rigid-body simulation</li><li><b>NVIDIA Isaac Sim</b>: high-fidelity robot simulation</li><li><b>MuJoCo</b>: contact-rich physics for control</li><li><b>Gymnasium</b>: reinforcement-learning environments</li><li><b>Stable-Baselines3</b>: RL algorithm implementations</li><li><b>Open3D</b>: point-cloud and 3D processing</li><li><b>OpenCV</b>: camera perception</li><li><b>NumPy</b>: numerical and linear-algebra computation</li><li><b>Matplotlib</b>: trajectory and estimation visualization</li><li><b>PyTorch</b>: learned perception and control policies</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener">Proximal Policy Optimization Algorithms</a></span><div class="meta">Schulman, Wolski, Dhariwal, Radford, Klimov, 2017</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1509.02971" target="_blank" rel="noopener">Continuous control with deep reinforcement learning</a></span><div class="meta">Lillicrap, Hunt, Pritzel, Heess, Erez, Tassa, Silver, Wierstra, 2015</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1602.01783" target="_blank" rel="noopener">Asynchronous Methods for Deep Reinforcement Learning</a></span><div class="meta">Mnih, Badia, Mirza, Graves, Lillicrap, Harley, Silver, Kavukcuoglu, 2016</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1312.5602" target="_blank" rel="noopener">Playing Atari with Deep Reinforcement Learning</a></span><div class="meta">Mnih, Kavukcuoglu, Silver, Graves, Antonoglou, Wierstra, Riedmiller, 2013</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://mitpress.ublish.com/book/probabilistic-robotics" target="_blank" rel="noopener">Probabilistic Robotics</a></span><div class="meta">Thrun, Burgard, Fox, 2005</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="http://lavalle.pl/planning/" target="_blank" rel="noopener">Planning Algorithms</a></span><div class="meta">LaValle, 2006</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="http://incompleteideas.net/book/the-book-2nd.html" target="_blank" rel="noopener">Reinforcement Learning: An Introduction, 2nd edition</a></span><div class="meta">Sutton, Barto, 2018</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener">Proximal Policy Optimization Algorithms</a></span><div class="meta">Schulman, Wolski, Dhariwal, Radford, Klimov, 2017</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://probml.github.io/pml-book/book1.html" target="_blank" rel="noopener">Probabilistic Machine Learning: An Introduction</a></span><div class="meta">Murphy, 2022</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://docs.ros.org/en/jazzy/" target="_blank" rel="noopener">ROS 2 Documentation</a></span><div class="meta">Open Robotics, 2026</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://d2l.ai/" target="_blank" rel="noopener">Dive into Deep Learning</a></span><div class="meta">Zhang, Lipton, Li, Smola, 2023</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge" style="background:#EFE7F6;color:#7A3E9D">Core &middot; Semester 2</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge e">Elective</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="AI5.html">&larr; AI5 &middot; Generative AI: Deep Generative Models</a><a href="QCF1.html">QCF1 &middot; Quantum Optimization &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #7A3E9D">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>AI6</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/AI.html">AI &amp; Robotics</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: AI &amp; Robotics</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>12</dd>
+          <dt>References</dt><dd>7</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#7A3E9D">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

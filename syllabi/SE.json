@@ -1,0 +1,544 @@
+{
+  "SE1": {
+    "tagline": "Build and operate scalable cloud-native systems with confidence",
+    "subtitle": "foundations of distributed systems, declarative orchestration, and the economics of elastic computation",
+    "foundations": [
+      "CAP theorem and the availability, consistency, partition-tolerance trade-off",
+      "Quorum and eventual-consistency models for replicated state",
+      "Reconciliation and the declarative desired-state control loop",
+      "Process isolation through namespaces and cgroups",
+      "Queueing theory and tail-latency analysis under load",
+      "Autoscaling control theory and capacity versus cost models",
+      "Supply-chain provenance and reproducible-build theory"
+    ],
+    "literature": [
+      {"title": "A View of Cloud Computing", "authors": "Michael Armbrust, Armando Fox, Rean Griffith, Anthony D. Joseph, Randy Katz, Andy Konwinski, Gunho Lee, David Patterson, Ariel Rabkin, Ion Stoica, Matei Zaharia", "year": 2010, "url": "https://dl.acm.org/doi/10.1145/1721654.1721672"},
+      {"title": "CAP Twelve Years Later: How the Rules Have Changed", "authors": "Eric Brewer", "year": 2012, "url": "https://ieeexplore.ieee.org/document/6133253"},
+      {"title": "Borg, Omega, and Kubernetes", "authors": "Brendan Burns, Brian Grant, David Oppenheimer, Eric Brewer, John Wilkes", "year": 2016, "url": "https://dl.acm.org/doi/10.1145/2890784"},
+      {"title": "Large-scale Cluster Management at Google with Borg", "authors": "Abhishek Verma, Luis Pedrosa, Madhukar Korupolu, David Oppenheimer, Eric Tune, John Wilkes", "year": 2015, "url": "https://research.google/pubs/large-scale-cluster-management-at-google-with-borg/"},
+      {"title": "Dynamo: Amazon's Highly Available Key-value Store", "authors": "Giuseppe DeCandia, Deniz Hastorun, Madan Jampani, Gunavardhan Kakulapati, Avinash Lakshman, Alex Pilchin, Swaminathan Sivasubramanian, Peter Vosshall, Werner Vogels", "year": 2007, "url": "https://www.amazon.science/publications/dynamo-amazons-highly-available-key-value-store"},
+      {"title": "The Google File System", "authors": "Sanjay Ghemawat, Howard Gobioff, Shun-Tak Leung", "year": 2003, "url": "https://research.google.com/archive/gfs.html"}
+    ],
+    "build": "Engineered a cloud-native multi-service platform deployed to Kubernetes with Helm and Istio, provisioned end to end as Terraform infrastructure code, autoscaled under k6 load tests, and instrumented with Prometheus and Grafana to a defined cost budget.",
+    "objectives": [
+      "Explain cloud service models, regions, and the shared responsibility model",
+      "Analyze distributed-systems foundations of availability, consistency, and partition tolerance",
+      "Containerize applications and design minimal, reproducible images",
+      "Operate workloads on Kubernetes using Deployments, Services, and Ingress",
+      "Decompose systems into microservices and reason about coupling and resilience",
+      "Provision infrastructure declaratively using infrastructure as code",
+      "Configure autoscaling and load balancing to meet latency and availability targets",
+      "Evaluate cloud cost and the economic trade-offs of elasticity and reservation",
+      "Instrument clusters and services for metrics, logs, and traces",
+      "Justify architectural choices against scalability and reliability requirements"
+    ],
+    "prerequisites": [
+      "Programming in a general-purpose language",
+      "Basic Linux command line and networking",
+      "Familiarity with HTTP and web services",
+      "Introductory operating systems concepts"
+    ],
+    "weeks": [
+      {"week": 1, "part": "Foundations", "title": "Cloud Computing Foundations", "lecture": "Survey cloud service models, virtualization, regions, and the CAP theorem framing of distributed trade-offs.", "practice": "Set up cloud accounts and tooling, then provision a first managed service and inspect its topology.", "project": "Project repository, cloud account, and a deployed hello-service baseline are established."},
+      {"week": 2, "part": "Foundations", "title": "Containers and Docker", "lecture": "Examine Linux namespaces and cgroups, image layering, and the theory behind reproducible builds.", "practice": "Write Dockerfiles for the project services and run them locally with volumes and networks.", "project": "Core service is containerized with a clean, layered, reproducible image."},
+      {"week": 3, "part": "Foundations", "title": "Registries and Image Hygiene", "lecture": "Discuss supply-chain provenance, image scanning, and the economics of small immutable artifacts.", "practice": "Tag, scan, and publish project images to a registry and pin reproducible base images.", "project": "Versioned, scanned images are published to a registry for the project."},
+      {"week": 4, "part": "Orchestration", "title": "Kubernetes Architecture", "lecture": "Study the control plane, reconciliation loops, and the declarative desired-state model.", "practice": "Deploy the project to a cluster using Pods, Deployments, and Services.", "project": "Project runs on Kubernetes with declarative manifests under version control."},
+      {"week": 5, "part": "Orchestration", "title": "Specification Milestone", "lecture": "Review configuration, secrets, and persistent storage abstractions for stateful workloads.", "practice": "Student teams present their project specification: scope, target architecture, scaling goals, and cost budget.", "project": "Approved specification document and cluster configuration plan are delivered."},
+      {"week": 6, "part": "Orchestration", "title": "Networking and Ingress", "lecture": "Analyze service discovery, the Kubernetes networking model, and ingress routing theory.", "practice": "Expose project services through Ingress controllers and apply network policies.", "project": "Project is reachable externally through managed ingress with policy controls."},
+      {"week": 7, "part": "Microservices", "title": "Packaging with Helm", "lecture": "Discuss templating, configuration drift, and release management for declarative systems.", "practice": "Package the project as a versioned Helm chart with environment overrides.", "project": "Project ships as a parameterized, versioned Helm release."},
+      {"week": 8, "part": "Microservices", "title": "Interim Demo Milestone", "lecture": "Cover microservice decomposition, bounded contexts, and inter-service resilience patterns.", "practice": "Student teams present an interim demo of the running multi-service deployment and discuss design trade-offs.", "project": "Working multi-service deployment is demonstrated with documented architecture."},
+      {"week": 9, "part": "Microservices", "title": "Service Meshes", "lecture": "Examine sidecar proxies, mutual TLS, retries, and circuit breaking as reliability mechanisms.", "practice": "Add a service mesh to project traffic with observability and mTLS enabled.", "project": "Inter-service traffic is secured and observable through a mesh."},
+      {"week": 10, "part": "Scale and Cost", "title": "Infrastructure as Code", "lecture": "Discuss declarative provisioning, state management, and idempotency in infrastructure tooling.", "practice": "Reprovision the project environment from Terraform code with managed state.", "project": "Entire environment is reproducible from versioned infrastructure code."},
+      {"week": 11, "part": "Scale and Cost", "title": "Autoscaling and Load Balancing", "lecture": "Analyze horizontal and vertical scaling, queueing theory intuition, and load distribution.", "practice": "Configure autoscaling and load testing to meet defined latency targets.", "project": "Project scales automatically under load within latency objectives."},
+      {"week": 12, "part": "Scale and Cost", "title": "Observability and Cost", "lecture": "Cover metrics, tracing, SLOs, and the cost models of elastic versus reserved capacity.", "practice": "Add dashboards and alerts, then produce a cost analysis with optimization actions.", "project": "Observability stack and a cost optimization report are in place."},
+      {"week": 13, "part": "Capstone", "title": "Final Demo and Defense", "lecture": "Synthesize cloud-native architecture principles and review the path from container to scaled service.", "practice": "Student teams present the final demo with an oral defense of architecture, scaling, and cost decisions.", "project": "Final scalable cloud-native system is delivered with documentation and defense."}
+    ],
+    "project": {
+      "summary": "Teams build one cloud-native application and carry it from a single container to a scaled, observable, multi-service deployment on Kubernetes. The system is provisioned entirely as infrastructure code, secured and observed through a service mesh, and tuned for autoscaling within a defined cost budget.",
+      "ideas": [
+        "Image-sharing platform",
+        "URL shortener with analytics",
+        "Real-time chat backend",
+        "Event ticketing service",
+        "IoT telemetry ingestion",
+        "Multiplayer leaderboard API",
+        "Document collaboration service",
+        "Food delivery dispatch system"
+      ]
+    },
+    "tools": [
+      "Docker: build and run application containers",
+      "Kubernetes: orchestrate containerized workloads",
+      "Helm: package and template Kubernetes manifests",
+      "Istio: manage service to service traffic and policy",
+      "Terraform: provision cloud infrastructure as code",
+      "Prometheus: collect cluster and application metrics",
+      "Grafana: visualize metrics and build dashboards",
+      "Amazon Web Services: host managed cloud services",
+      "kubectl: operate clusters from the command line",
+      "Trivy: scan container images for vulnerabilities",
+      "k6: run load and performance tests"
+    ],
+    "references": [
+      {"title": "Designing Distributed Systems, 2nd Edition: Patterns and Paradigms for Scalable, Reliable Services", "authors": "Brendan Burns", "year": 2025, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/designing-distributed-systems/9781098156343/", "note": "Patterns for cloud-native services"},
+      {"title": "Kubernetes: Up and Running, 3rd Edition", "authors": "Brendan Burns, Joe Beda, Kelsey Hightower, Lachlan Evenson", "year": 2022, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/kubernetes-up-and/9781098110192/", "note": ""},
+      {"title": "Building Microservices, 2nd Edition: Designing Fine-Grained Systems", "authors": "Sam Newman", "year": 2021, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/", "note": ""},
+      {"title": "Terraform: Up and Running, 3rd Edition: Writing Infrastructure as Code", "authors": "Yevgeniy Brikman", "year": 2022, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/terraform-up-and/9781098116736/", "note": ""},
+      {"title": "Cloud Native Patterns: Designing Change-Tolerant Software", "authors": "Cornelia Davis", "year": 2019, "kind": "Textbook", "url": "https://www.manning.com/books/cloud-native-patterns", "note": ""},
+      {"title": "Kubernetes Documentation", "authors": "The Kubernetes Authors, CNCF", "year": 2026, "kind": "Documentation", "url": "https://kubernetes.io/docs/home/", "note": "Official, continuously updated"},
+      {"title": "Docker Documentation", "authors": "Docker, Inc.", "year": 2026, "kind": "Documentation", "url": "https://docs.docker.com/", "note": "Official, continuously updated"}
+    ]
+  },
+  "SE2": {
+    "tagline": "Engineer software that is secure, tested, and reliable by design",
+    "subtitle": "principles of secure-by-design engineering, fault-based testing theory, and reliability under formal objectives",
+    "foundations": [
+      "Saltzer and Schroeder protection principles and least privilege",
+      "STRIDE threat modeling over data-flow trust boundaries",
+      "Coverage criteria and fault-based testing theory",
+      "Static data-flow and taint analysis with soundness trade-offs",
+      "Trusting-trust and supply-chain integrity reasoning",
+      "Service level objectives, error budgets, and reliability theory",
+      "High-cardinality telemetry and the three pillars of observability"
+    ],
+    "literature": [
+      {"title": "The Protection of Information in Computer Systems", "authors": "Jerome H. Saltzer, Michael D. Schroeder", "year": 1975, "url": "https://ieeexplore.ieee.org/document/1451869"},
+      {"title": "Reflections on Trusting Trust", "authors": "Ken Thompson", "year": 1984, "url": "https://dl.acm.org/doi/10.1145/358198.358210"},
+      {"title": "Hints on Test Data Selection: Help for the Practicing Programmer", "authors": "Richard A. DeMillo, Richard J. Lipton, Frederick G. Sayward", "year": 1978, "url": "https://dl.acm.org/doi/10.1109/C-M.1978.218136"},
+      {"title": "Why Cryptosystems Fail", "authors": "Ross Anderson", "year": 1993, "url": "https://dl.acm.org/doi/10.1145/168588.168615"},
+      {"title": "OWASP Top 10:2021", "authors": "OWASP Foundation", "year": 2021, "url": "https://owasp.org/Top10/2021/"},
+      {"title": "Secure Software Development Framework (SSDF) Version 1.1, NIST SP 800-218", "authors": "Murugiah Souppaya, Karen Scarfone, Donna Dodson", "year": 2022, "url": "https://csrc.nist.gov/pubs/sp/800/218/final"}
+    ],
+    "build": "Hardened a web application end to end: threat-modeled it with OWASP Threat Dragon, remediated OWASP Top 10 risks, and built a GitHub Actions CI pipeline gating on Semgrep SAST, OWASP ZAP DAST, and dependency scanning, with OpenTelemetry, Prometheus, and Grafana enforcing service level objectives.",
+    "objectives": [
+      "Explain the principles of secure software development across the lifecycle",
+      "Analyze the OWASP Top 10 risks and apply secure coding countermeasures",
+      "Construct threat models using data-flow diagrams and trust boundaries",
+      "Evaluate dependency and supply-chain risks and apply provenance controls",
+      "Apply SAST and DAST tooling and interpret their findings critically",
+      "Design automated test suites grounded in coverage and fault-based theory",
+      "Build continuous integration and delivery pipelines with quality gates",
+      "Conduct effective code reviews focused on correctness and security",
+      "Instrument systems for observability with metrics, logs, and traces",
+      "Reason about reliability using service level objectives and error budgets"
+    ],
+    "prerequisites": [
+      "Programming and object-oriented design",
+      "Basic web and HTTP knowledge",
+      "Version control with Git",
+      "Introductory data structures and algorithms"
+    ],
+    "weeks": [
+      {"week": 1, "part": "Security Foundations", "title": "Secure Development and Threats", "lecture": "Introduce security principles, the CIA triad, attacker models, and the secure development lifecycle.", "practice": "Audit the starter project, enumerate assets, and set up the repository and toolchain.", "project": "Project repository, threat scope, and security baseline are established."},
+      {"week": 2, "part": "Security Foundations", "title": "OWASP Top 10 and Secure Coding", "lecture": "Examine injection, broken access control, and cryptographic failures with their root causes.", "practice": "Find and fix seeded OWASP Top 10 vulnerabilities in the project code.", "project": "Project passes a first pass of OWASP Top 10 remediation."},
+      {"week": 3, "part": "Security Foundations", "title": "Threat Modeling", "lecture": "Teach STRIDE, data-flow diagrams, trust boundaries, and risk prioritization theory.", "practice": "Produce a threat model of the project with prioritized mitigations.", "project": "A documented threat model with a mitigation backlog is delivered."},
+      {"week": 4, "part": "Testing and CI", "title": "Software Testing Foundations", "lecture": "Cover test oracles, coverage criteria, equivalence partitioning, and fault-based testing theory.", "practice": "Write unit and integration tests guided by coverage criteria for the project.", "project": "Project gains a baseline automated test suite with measured coverage."},
+      {"week": 5, "part": "Testing and CI", "title": "Specification Milestone", "lecture": "Review test strategy, security requirements, and how quality attributes shape design.", "practice": "Student teams present their project specification: security requirements, threat model, and test and reliability plan.", "project": "Approved specification with security and quality goals is delivered."},
+      {"week": 6, "part": "Testing and CI", "title": "Continuous Integration and Delivery", "lecture": "Discuss pipeline theory, deployment automation, and the economics of fast feedback.", "practice": "Build a CI pipeline that runs tests and blocks merges on failures.", "project": "Project has a CI pipeline enforcing tests on every change."},
+      {"week": 7, "part": "AppSec in Depth", "title": "SAST and Static Analysis", "lecture": "Explain static analysis theory, data-flow and taint tracking, and false-positive trade-offs.", "practice": "Integrate a SAST scanner into the pipeline and triage its findings.", "project": "Pipeline runs static security analysis as a gated stage."},
+      {"week": 8, "part": "AppSec in Depth", "title": "Interim Demo Milestone", "lecture": "Cover dynamic analysis and fuzzing concepts and how they complement static testing.", "practice": "Student teams present an interim demo of the secured project, its pipeline, and current findings.", "project": "Secured project with working CI and analysis is demonstrated."},
+      {"week": 9, "part": "AppSec in Depth", "title": "DAST and Dependency Security", "lecture": "Examine dynamic scanning, software composition analysis, and supply-chain provenance models.", "practice": "Run DAST against the project and add dependency and SBOM scanning.", "project": "Project enforces dynamic and dependency security checks."},
+      {"week": 10, "part": "AppSec in Depth", "title": "Code Review and Secure Authentication", "lecture": "Discuss review effectiveness research, authentication, session management, and access control design.", "practice": "Conduct structured peer code reviews and harden authentication in the project.", "project": "Project has reviewed code and hardened authentication and access control."},
+      {"week": 11, "part": "Reliability", "title": "Reliability and SRE", "lecture": "Introduce service level objectives, error budgets, and reliability engineering principles.", "practice": "Define SLOs for the project and add resilience to a critical path.", "project": "Project defines SLOs and improves a critical-path failure mode."},
+      {"week": 12, "part": "Reliability", "title": "Observability", "lecture": "Cover the three pillars of observability and the theory of high-cardinality telemetry.", "practice": "Instrument the project with metrics, logs, and traces plus alerting.", "project": "Project emits structured telemetry with dashboards and alerts."},
+      {"week": 13, "part": "Capstone", "title": "Final Demo and Defense", "lecture": "Synthesize secure, tested, and reliable engineering and review the full quality pipeline.", "practice": "Student teams present the final demo with an oral defense of security, testing, and reliability decisions.", "project": "Final secure and reliable system is delivered with documentation and defense."}
+    ],
+    "project": {
+      "summary": "Teams take one web application and engineer it to be secure, tested, and reliable end to end. They threat-model it, remediate OWASP Top 10 risks, build a CI and CD pipeline with SAST, DAST, and dependency scanning, and add observability and service level objectives. Application security is revisited every week as new attack surfaces appear.",
+      "ideas": [
+        "Online banking demo app",
+        "Healthcare records portal",
+        "E-commerce checkout service",
+        "Identity and login provider",
+        "Issue-tracking platform",
+        "File-sharing application",
+        "Survey and forms platform",
+        "Booking and reservations system"
+      ]
+    },
+    "tools": [
+      "JUnit or pytest: write unit and integration tests",
+      "GitHub Actions: run continuous integration pipelines",
+      "OWASP ZAP: perform dynamic application security testing",
+      "Semgrep: run static application security testing",
+      "Snyk: scan dependencies for known vulnerabilities",
+      "OWASP Dependency-Check: detect vulnerable libraries",
+      "Trivy: scan images and generate software bill of materials",
+      "OWASP Threat Dragon: build and document threat models",
+      "OpenTelemetry: instrument services for traces and metrics",
+      "Prometheus: collect reliability metrics and define alerts",
+      "Grafana: visualize service level objectives and telemetry"
+    ],
+    "references": [
+      {"title": "OWASP Top 10 Web Application Security Risks", "authors": "OWASP Foundation", "year": 2025, "kind": "Documentation", "url": "https://owasp.org/www-project-top-ten/", "note": "Core recurring reference"},
+      {"title": "Threat Modeling: Designing for Security", "authors": "Adam Shostack", "year": 2014, "kind": "Textbook", "url": "https://www.wiley.com/en-us/Threat+Modeling%3A+Designing+for+Security-p-9781118809990", "note": ""},
+      {"title": "Web Application Security: Exploitation and Countermeasures for Modern Web Applications, 2nd Edition", "authors": "Andrew Hoffman", "year": 2024, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/web-application-security/9781098143923/", "note": ""},
+      {"title": "Introduction to Software Testing, 2nd Edition", "authors": "Paul Ammann, Jeff Offutt", "year": 2016, "kind": "Textbook", "url": "https://www.cambridge.org/9781107172012", "note": "Coverage and fault-based theory"},
+      {"title": "Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation", "authors": "Jez Humble, David Farley", "year": 2010, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/continuous-delivery-reliable/9780321670250/", "note": ""},
+      {"title": "Site Reliability Engineering: How Google Runs Production Systems", "authors": "Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy", "year": 2016, "kind": "Textbook", "url": "https://sre.google/sre-book/table-of-contents/", "note": "Free full text online"},
+      {"title": "Observability Engineering: Achieving Production Excellence", "authors": "Charity Majors, Liz Fong-Jones, George Miranda", "year": 2022, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/observability-engineering/9781492076438/", "note": ""},
+      {"title": "Secure Software Development Framework (SSDF) Version 1.1, NIST SP 800-218", "authors": "National Institute of Standards and Technology", "year": 2022, "kind": "Documentation", "url": "https://csrc.nist.gov/pubs/sp/800/218/final", "note": "Supply-chain and SDLC controls"}
+    ]
+  },
+  "SE3": {
+    "tagline": "Craft fast, accessible, component-driven web interfaces",
+    "subtitle": "the component model, declarative rendering, reactive state, and the theory of accessible performant interfaces",
+    "foundations": [
+      "The document object model and the browser rendering pipeline",
+      "The component model and unidirectional data flow",
+      "Declarative rendering, reconciliation, and the virtual DOM",
+      "Reactive programming and dependency-tracked state propagation",
+      "WCAG accessibility principles and semantic, inclusive interaction",
+      "The critical rendering path and front-end performance metrics",
+      "Module bundling, tree shaking, and code splitting"
+    ],
+    "literature": [
+      {"title": "Architectural Styles and the Design of Network-based Software Architectures", "authors": "Roy Thomas Fielding", "year": 2000, "url": "https://ics.uci.edu/~fielding/pubs/dissertation/top.htm"},
+      {"title": "A Survey on Reactive Programming", "authors": "Engineer Bainomugisha, Andoni Lombide Carreton, Tom Van Cutsem, Stijn Mostinckx, Wolfgang De Meuter", "year": 2013, "url": "https://dl.acm.org/doi/10.1145/2501654.2501666"},
+      {"title": "Web Content Accessibility Guidelines (WCAG) 2.2, W3C Recommendation", "authors": "W3C Accessibility Guidelines Working Group", "year": 2024, "url": "https://www.w3.org/TR/WCAG22/"},
+      {"title": "HTML Standard (Living Standard)", "authors": "WHATWG", "year": 2026, "url": "https://html.spec.whatwg.org/multipage/"},
+      {"title": "DOM Standard (Living Standard)", "authors": "WHATWG", "year": 2026, "url": "https://dom.spec.whatwg.org/"},
+      {"title": "ECMAScript Language Specification (ECMA-262)", "authors": "Ecma International, TC39", "year": 2025, "url": "https://ecma-international.org/publications-and-standards/standards/ecma-262/"}
+    ],
+    "build": "Shipped an accessible single-page application in React or Vue with TypeScript: a composed component hierarchy, predictable store-managed state, client-side routing, WCAG-audited markup, and a Vite code-split build tuned to performance budgets and covered by Vitest and Playwright tests.",
+    "objectives": [
+      "Explain the component model and unidirectional data flow in modern frameworks",
+      "Analyze the document object model, rendering, and reconciliation foundations",
+      "Build component-based interfaces with React or Vue",
+      "Manage application state with predictable patterns and stores",
+      "Design responsive layouts using modern CSS and design principles",
+      "Apply accessibility standards grounded in the WCAG guidelines",
+      "Configure modern build tooling and module bundling",
+      "Measure and optimize front-end performance and loading behavior",
+      "Test components and user interactions systematically",
+      "Evaluate trade-offs between rendering strategies and architectures"
+    ],
+    "prerequisites": [
+      "JavaScript programming fundamentals",
+      "HTML and CSS basics",
+      "Familiarity with HTTP and APIs",
+      "Version control with Git"
+    ],
+    "weeks": [
+      {"week": 1, "part": "Foundations", "title": "The Web Platform and DOM", "lecture": "Examine the browser rendering pipeline, the DOM, and the event model as core abstractions.", "practice": "Set up the toolchain and build a small DOM-driven page for the project shell.", "project": "Project scaffold and initial static interface are established."},
+      {"week": 2, "part": "Foundations", "title": "Modern JavaScript", "lecture": "Cover modules, asynchronous programming, and the language features behind reactive UIs.", "practice": "Refactor the project shell into modular JavaScript with async data loading.", "project": "Project loads data asynchronously into a modular front end."},
+      {"week": 3, "part": "Components", "title": "Component Model and React or Vue", "lecture": "Introduce the component model, declarative rendering, and unidirectional data flow theory.", "practice": "Rebuild the interface as components in React or Vue.", "project": "Project interface is implemented as reusable components."},
+      {"week": 4, "part": "Components", "title": "Props, Events, and Composition", "lecture": "Discuss component composition, data binding, and the design of clean component APIs.", "practice": "Compose the project from nested components with clear prop and event contracts.", "project": "Project features a composed component hierarchy with clear interfaces."},
+      {"week": 5, "part": "Components", "title": "Specification Milestone", "lecture": "Review state management theory and how component boundaries shape architecture.", "practice": "Student teams present their project specification: feature scope, component map, and accessibility and performance goals.", "project": "Approved specification and component architecture plan are delivered."},
+      {"week": 6, "part": "State", "title": "State Management", "lecture": "Analyze local versus global state, stores, and predictable state-update patterns.", "practice": "Introduce a state store and centralize shared project state.", "project": "Project manages shared state through a predictable store."},
+      {"week": 7, "part": "State", "title": "Routing and Data Fetching", "lecture": "Cover client-side routing, data caching, and synchronization with server state.", "practice": "Add routing and resilient data fetching with loading and error states.", "project": "Project supports multiple routes with robust data fetching."},
+      {"week": 8, "part": "State", "title": "Interim Demo Milestone", "lecture": "Discuss forms, validation, and managing complex interactive state.", "practice": "Student teams present an interim demo of the working component application and discuss design choices.", "project": "Interactive multi-view application is demonstrated."},
+      {"week": 9, "part": "Quality", "title": "Responsive Design", "lecture": "Examine responsive layout theory, fluid grids, and mobile-first design principles.", "practice": "Make the project fully responsive across breakpoints with modern CSS.", "project": "Project adapts cleanly across mobile and desktop layouts."},
+      {"week": 10, "part": "Quality", "title": "Accessibility", "lecture": "Teach WCAG principles, semantic markup, ARIA, and inclusive interaction design.", "practice": "Audit and remediate the project against accessibility standards.", "project": "Project meets core accessibility guidelines with verified fixes."},
+      {"week": 11, "part": "Quality", "title": "Build Tooling and Bundling", "lecture": "Explain module bundling, tree shaking, code splitting, and dev-server theory.", "practice": "Optimize the project build with Vite, code splitting, and asset handling.", "project": "Project has an optimized, code-split production build."},
+      {"week": 12, "part": "Quality", "title": "Performance and Testing", "lecture": "Cover web performance metrics, the critical rendering path, and component testing strategy.", "practice": "Profile and tune the project performance and add component and interaction tests.", "project": "Project meets performance budgets and has an automated test suite."},
+      {"week": 13, "part": "Capstone", "title": "Final Demo and Defense", "lecture": "Synthesize front-end architecture, accessibility, and performance principles.", "practice": "Student teams present the final demo with an oral defense of component design, accessibility, and performance decisions.", "project": "Final front-end application is delivered with documentation and defense."}
+    ],
+    "project": {
+      "summary": "Teams design and build one single-page web application that grows from a static shell into a component-based, state-managed product. The application is made responsive, accessible to WCAG standards, and tuned to performance budgets with an optimized build. Every increment is validated through component and interaction tests.",
+      "ideas": [
+        "Personal finance dashboard",
+        "Recipe and meal planner",
+        "Movie discovery app",
+        "Kanban task board",
+        "Weather and travel planner",
+        "Music playlist manager",
+        "Habit-tracking application",
+        "Event and ticket browser"
+      ]
+    },
+    "tools": [
+      "React: build component-based user interfaces",
+      "Vue: build reactive component interfaces",
+      "TypeScript: add static typing to front-end code",
+      "Vite: bundle and serve the application during development",
+      "Redux Toolkit or Pinia: manage application state",
+      "React Router or Vue Router: handle client-side routing",
+      "Tailwind CSS: compose responsive utility-based styles",
+      "Vitest: run unit and component tests",
+      "Playwright: run end-to-end interaction tests",
+      "axe DevTools: audit accessibility compliance",
+      "Lighthouse: measure performance and best practices"
+    ],
+    "references": [
+      {"title": "React Documentation (Learn React)", "authors": "Meta React Team", "year": 2026, "kind": "Documentation", "url": "https://react.dev/learn", "note": "Official, continuously updated"},
+      {"title": "Vue.js Documentation (Vue 3 Guide)", "authors": "Vue.js Team", "year": 2026, "kind": "Documentation", "url": "https://vuejs.org/guide/introduction.html", "note": "Official, continuously updated"},
+      {"title": "MDN Web Docs", "authors": "Mozilla", "year": 2026, "kind": "Documentation", "url": "https://developer.mozilla.org/en-US/", "note": "Web platform reference"},
+      {"title": "WCAG 2 Overview (Web Content Accessibility Guidelines 2.2)", "authors": "W3C Web Accessibility Initiative", "year": 2024, "kind": "Documentation", "url": "https://www.w3.org/WAI/standards-guidelines/wcag/", "note": ""},
+      {"title": "Eloquent JavaScript, 4th Edition", "authors": "Marijn Haverbeke", "year": 2024, "kind": "Textbook", "url": "https://eloquentjavascript.net/", "note": "Free online"},
+      {"title": "High Performance Browser Networking", "authors": "Ilya Grigorik", "year": 2013, "kind": "Textbook", "url": "https://hpbn.co/", "note": "Free online"},
+      {"title": "Vite Documentation (Getting Started)", "authors": "Vite Team", "year": 2026, "kind": "Documentation", "url": "https://vite.dev/guide/", "note": "Official, continuously updated"}
+    ]
+  },
+  "SE4": {
+    "tagline": "Design robust back-end services, APIs, and data layers",
+    "subtitle": "resource-oriented architecture, the relational model, transactional theory, and consistency under scale",
+    "foundations": [
+      "REST architectural constraints and resource-oriented design",
+      "The relational model and normalization theory",
+      "ACID transactions, isolation levels, and indexing internals",
+      "Token and federated identity flows for authentication",
+      "Cache coherence, invalidation, and consistency trade-offs",
+      "Replication, statelessness, and the CAP trade-off",
+      "Role and attribute-based access control and least privilege"
+    ],
+    "literature": [
+      {"title": "Architectural Styles and the Design of Network-based Software Architectures", "authors": "Roy Thomas Fielding", "year": 2000, "url": "https://ics.uci.edu/~fielding/pubs/dissertation/top.htm"},
+      {"title": "A Relational Model of Data for Large Shared Data Banks", "authors": "Edgar F. Codd", "year": 1970, "url": "https://dl.acm.org/doi/10.1145/362384.362685"},
+      {"title": "RFC 9110: HTTP Semantics", "authors": "Roy Fielding, Mark Nottingham, Julian Reschke", "year": 2022, "url": "https://datatracker.ietf.org/doc/html/rfc9110"},
+      {"title": "RFC 6749: The OAuth 2.0 Authorization Framework", "authors": "Dick Hardt", "year": 2012, "url": "https://datatracker.ietf.org/doc/html/rfc6749"},
+      {"title": "RFC 7519: JSON Web Token (JWT)", "authors": "Michael Jones, John Bradley, Nat Sakimura", "year": 2015, "url": "https://datatracker.ietf.org/doc/html/rfc7519"},
+      {"title": "Dynamo: Amazon's Highly Available Key-value Store", "authors": "Giuseppe DeCandia, Deniz Hastorun, Madan Jampani, Gunavardhan Kakulapati, Avinash Lakshman, Alex Pilchin, Swaminathan Sivasubramanian, Peter Vosshall, Werner Vogels", "year": 2007, "url": "https://dl.acm.org/doi/10.1145/1294261.1294281"}
+    ],
+    "build": "Built a back-end API platform on Node.js or FastAPI exposing both REST and an Apollo GraphQL layer over a normalized, indexed PostgreSQL schema, secured with JWT authentication and role-based access control, accelerated with Redis caching, and load-tested with k6 against scaling targets.",
+    "objectives": [
+      "Explain the architectural constraints of REST and resource-oriented design",
+      "Compare REST and GraphQL and reason about their trade-offs",
+      "Model relational and non-relational data and analyze normalization",
+      "Design and implement APIs with versioning and clear contracts",
+      "Implement authentication, sessions, and authorization securely",
+      "Apply caching strategies and reason about consistency and invalidation",
+      "Analyze database indexing, transactions, and query performance",
+      "Scale back-end services horizontally and handle concurrency",
+      "Validate APIs with automated and contract testing",
+      "Evaluate consistency, availability, and latency trade-offs in data systems"
+    ],
+    "prerequisites": [
+      "Programming in a server-side language",
+      "Basic SQL and relational concepts",
+      "Familiarity with HTTP and web fundamentals",
+      "Version control with Git"
+    ],
+    "weeks": [
+      {"week": 1, "part": "Foundations", "title": "Web Services and HTTP", "lecture": "Examine HTTP semantics, statelessness, and the architectural style behind web services.", "practice": "Scaffold the project service and implement a first set of HTTP endpoints.", "project": "Project service skeleton with basic endpoints is established."},
+      {"week": 2, "part": "Foundations", "title": "REST and Resource Design", "lecture": "Cover REST constraints, resource modeling, hypermedia, and the Richardson maturity model.", "practice": "Design RESTful resources and routes for the project domain.", "project": "Project exposes a coherent RESTful resource model."},
+      {"week": 3, "part": "Data", "title": "Data Modeling and Relational Databases", "lecture": "Teach the relational model, normalization theory, and entity-relationship design.", "practice": "Design the project schema and connect the service to a relational database.", "project": "Project persists data through a normalized relational schema."},
+      {"week": 4, "part": "Data", "title": "Queries, Indexing, and Transactions", "lecture": "Analyze query execution, indexing, and ACID transactions with isolation levels.", "practice": "Add indexes, transactions, and tuned queries to the project data layer.", "project": "Project data access is transactional and performance-tuned."},
+      {"week": 5, "part": "Data", "title": "Specification Milestone", "lecture": "Review API contracts and how data modeling shapes service architecture.", "practice": "Student teams present their project specification: domain model, API contract, and scaling goals.", "project": "Approved specification with data model and API contract is delivered."},
+      {"week": 6, "part": "APIs", "title": "GraphQL", "lecture": "Examine the GraphQL type system, resolvers, and trade-offs against REST.", "practice": "Add a GraphQL layer over the project domain with schema and resolvers.", "project": "Project offers a GraphQL interface alongside its REST API."},
+      {"week": 7, "part": "APIs", "title": "API Design, Versioning, and Validation", "lecture": "Discuss contract design, versioning strategies, pagination, and error modeling.", "practice": "Add validation, pagination, and versioning to the project APIs.", "project": "Project APIs are validated, paginated, and versioned."},
+      {"week": 8, "part": "APIs", "title": "Interim Demo Milestone", "lecture": "Cover authentication models, tokens, and session management foundations.", "practice": "Student teams present an interim demo of the project APIs and data layer.", "project": "Working API and data layer are demonstrated."},
+      {"week": 9, "part": "Security", "title": "Authentication and Sessions", "lecture": "Examine session versus token authentication, OAuth, and OpenID Connect flows.", "practice": "Implement secure authentication and session handling in the project.", "project": "Project enforces authenticated, session-aware access."},
+      {"week": 10, "part": "Security", "title": "Authorization and Access Control", "lecture": "Discuss role and attribute-based access control and least-privilege design.", "practice": "Add fine-grained authorization rules to project endpoints.", "project": "Project enforces role-based access control across resources."},
+      {"week": 11, "part": "Scale", "title": "Caching", "lecture": "Analyze caching layers, invalidation strategies, and consistency trade-offs.", "practice": "Add response and data caching with an invalidation strategy to the project.", "project": "Project serves cached responses with controlled invalidation."},
+      {"week": 12, "part": "Scale", "title": "Scaling and Concurrency", "lecture": "Cover horizontal scaling, statelessness, replication, and the CAP trade-off.", "practice": "Load test the project and add scaling and concurrency safeguards.", "project": "Project sustains load through scaling and concurrency control."},
+      {"week": 13, "part": "Capstone", "title": "Final Demo and Defense", "lecture": "Synthesize API, data, security, and scaling principles for back-end systems.", "practice": "Student teams present the final demo with an oral defense of API, data, and scaling decisions.", "project": "Final back-end system is delivered with documentation and defense."}
+    ],
+    "project": {
+      "summary": "Teams build one back-end service that grows from basic endpoints into a complete API platform with a tuned data layer. The service exposes both REST and GraphQL, enforces secure authentication and authorization, and adds caching and scaling to meet load targets. Each increment is validated with automated and contract tests.",
+      "ideas": [
+        "Blogging and CMS API",
+        "E-commerce catalog and orders",
+        "Social feed backend",
+        "Booking and scheduling service",
+        "Project management API",
+        "Inventory and warehouse system",
+        "Learning platform backend",
+        "Payments ledger service"
+      ]
+    },
+    "tools": [
+      "Node.js or Python: implement back-end services",
+      "Express or FastAPI: build HTTP API frameworks",
+      "PostgreSQL: store relational data",
+      "Prisma or SQLAlchemy: model and query the database",
+      "Apollo Server: serve a GraphQL API",
+      "Redis: cache responses and session data",
+      "JSON Web Tokens: implement token-based authentication",
+      "OpenAPI: document and validate REST contracts",
+      "Postman: explore and test APIs",
+      "Docker: run databases and services locally",
+      "k6: load test back-end endpoints"
+    ],
+    "references": [
+      {"title": "RESTful Web APIs: Services for a Changing World", "authors": "Leonard Richardson, Mike Amundsen, Sam Ruby", "year": 2013, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/restful-web-apis/9781449359713/", "note": ""},
+      {"title": "Learning GraphQL: Declarative Data Fetching for Modern Web Apps", "authors": "Eve Porcello, Alex Banks", "year": 2018, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/learning-graphql/9781492030706/", "note": ""},
+      {"title": "Designing Data-Intensive Applications", "authors": "Martin Kleppmann", "year": 2017, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "note": "Data systems foundations"},
+      {"title": "Database System Concepts, 7th Edition", "authors": "Abraham Silberschatz, Henry F. Korth, S. Sudarshan", "year": 2019, "kind": "Textbook", "url": "https://www.db-book.com/", "note": "Free resources online"},
+      {"title": "OpenID Connect Core 1.0", "authors": "N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore", "year": 2014, "kind": "Documentation", "url": "https://openid.net/specs/openid-connect-core-1_0.html", "note": "Auth specification"},
+      {"title": "GraphQL Documentation (Learn)", "authors": "The GraphQL Foundation", "year": 2026, "kind": "Documentation", "url": "https://graphql.org/learn/", "note": "Official, continuously updated"},
+      {"title": "PostgreSQL Documentation", "authors": "The PostgreSQL Global Development Group", "year": 2026, "kind": "Documentation", "url": "https://www.postgresql.org/docs/", "note": "Official, continuously updated"},
+      {"title": "Redis Documentation", "authors": "Redis Ltd.", "year": 2026, "kind": "Documentation", "url": "https://redis.io/docs/latest/", "note": "Caching reference"}
+    ]
+  },
+  "SE6": {
+    "tagline": "Build software for mobile, IoT, and the edge",
+    "subtitle": "computation across device, edge, and cloud under constraints, intermittency, and eventual consistency",
+    "foundations": [
+      "Ubiquitous and pervasive computing models",
+      "Publish-subscribe messaging and quality-of-service semantics",
+      "Constrained-device RESTful communication and protocol trade-offs",
+      "Edge and fog computing latency and bandwidth economics",
+      "Local-first design and eventual consistency",
+      "Conflict-free replicated data types and merge theory",
+      "Synchronization protocols and conflict detection"
+    ],
+    "literature": [
+      {"title": "The Computer for the 21st Century", "authors": "Mark Weiser", "year": 1991, "url": "https://www.scientificamerican.com/article/the-computer-for-the-21st-century/"},
+      {"title": "The Case for VM-Based Cloudlets in Mobile Computing", "authors": "Mahadev Satyanarayanan, Paramvir Bahl, Ramon Caceres, Nigel Davies", "year": 2009, "url": "https://doi.org/10.1109/MPRV.2009.82"},
+      {"title": "Fog Computing and Its Role in the Internet of Things", "authors": "Flavio Bonomi, Rodolfo Milito, Jiang Zhu, Sateesh Addepalli", "year": 2012, "url": "https://doi.org/10.1145/2342509.2342513"},
+      {"title": "Conflict-free Replicated Data Types", "authors": "Marc Shapiro, Nuno Preguica, Carlos Baquero, Marek Zawirski", "year": 2011, "url": "https://doi.org/10.1007/978-3-642-24550-3_29"},
+      {"title": "Local-first Software: You Own Your Data, in Spite of the Cloud", "authors": "Martin Kleppmann, Adam Wiggins, Peter van Hardenberg, Mark McGranaghan", "year": 2019, "url": "https://doi.org/10.1145/3359591.3359737"},
+      {"title": "RFC 7252: The Constrained Application Protocol (CoAP)", "authors": "Zach Shelby, Klaus Hartke, Carsten Bormann", "year": 2014, "url": "https://datatracker.ietf.org/doc/html/rfc7252"}
+    ],
+    "build": "Delivered a device-to-cloud system pairing a Flutter cross-platform app with IoT sensors over MQTT and CoAP, a Raspberry Pi edge node that filters and aggregates readings, and offline-first local storage that synchronizes with conflict resolution over secured channels.",
+    "objectives": [
+      "Explain the architecture of mobile, IoT, and edge computing systems",
+      "Build cross-platform mobile applications with a modern framework",
+      "Analyze mobile UI, lifecycle, and resource-constrained design",
+      "Apply IoT messaging protocols such as MQTT and CoAP",
+      "Integrate sensors and actuators with constrained devices",
+      "Design edge computing architectures and reason about latency trade-offs",
+      "Implement offline-first applications with local storage",
+      "Apply data synchronization and conflict resolution strategies",
+      "Evaluate security and privacy concerns across device boundaries",
+      "Assess trade-offs between cloud, edge, and device computation"
+    ],
+    "prerequisites": [
+      "Programming in a general-purpose language",
+      "Basic networking and HTTP knowledge",
+      "Familiarity with APIs and JSON",
+      "Version control with Git"
+    ],
+    "weeks": [
+      {"week": 1, "part": "Mobile", "title": "Mobile and Edge Landscape", "lecture": "Survey mobile, IoT, and edge architectures and the constraints of distributed devices.", "practice": "Set up the toolchain and build a first cross-platform mobile app skeleton.", "project": "Project mobile app skeleton runs on a device or emulator."},
+      {"week": 2, "part": "Mobile", "title": "Cross-Platform UI and Lifecycle", "lecture": "Examine widget composition, the app lifecycle, and resource-aware UI design.", "practice": "Build the core project screens and navigation with a cross-platform framework.", "project": "Project app has core navigable screens."},
+      {"week": 3, "part": "Mobile", "title": "State, Storage, and Device APIs", "lecture": "Discuss local persistence, permissions, and access to device sensors and capabilities.", "practice": "Add local storage and device sensor access to the project app.", "project": "Project app stores data locally and reads a device sensor."},
+      {"week": 4, "part": "IoT", "title": "IoT Architecture and Sensors", "lecture": "Cover IoT system layers, constrained devices, and sensing and actuation foundations.", "practice": "Connect a simulated or physical sensor and publish readings from the project.", "project": "Project ingests readings from an IoT sensor source."},
+      {"week": 5, "part": "IoT", "title": "Specification Milestone", "lecture": "Review IoT messaging protocols and how device constraints shape architecture.", "practice": "Student teams present their project specification: device topology, protocols, and offline and sync goals.", "project": "Approved specification with device and protocol plan is delivered."},
+      {"week": 6, "part": "IoT", "title": "MQTT and Publish-Subscribe", "lecture": "Examine the publish-subscribe model, MQTT topics, and quality-of-service levels.", "practice": "Wire the project devices and app through an MQTT broker.", "project": "Project communicates over MQTT publish-subscribe messaging."},
+      {"week": 7, "part": "IoT", "title": "CoAP and Constrained Protocols", "lecture": "Discuss CoAP, RESTful constrained communication, and protocol trade-offs for low-power devices.", "practice": "Add a CoAP interaction and compare it with MQTT in the project.", "project": "Project supports a constrained-protocol communication path."},
+      {"week": 8, "part": "Edge", "title": "Interim Demo Milestone", "lecture": "Introduce edge computing models and the division of work across device, edge, and cloud.", "practice": "Student teams present an interim demo of the mobile and IoT system end to end.", "project": "Connected mobile and IoT system is demonstrated."},
+      {"week": 9, "part": "Edge", "title": "Edge Computing", "lecture": "Analyze edge architectures, latency, bandwidth, and the economics of local computation.", "practice": "Add an edge processing component that filters or aggregates device data.", "project": "Project processes data at the edge before reaching the cloud."},
+      {"week": 10, "part": "Edge", "title": "Offline-First Design", "lecture": "Examine local-first principles, offline state, and the theory of eventual consistency.", "practice": "Make the project app fully functional offline with a local data store.", "project": "Project app works offline and queues changes locally."},
+      {"week": 11, "part": "Sync", "title": "Data Synchronization", "lecture": "Cover synchronization protocols, conflict detection, and reconciliation strategies.", "practice": "Implement sync between offline clients and the backend in the project.", "project": "Project synchronizes local and remote data reliably."},
+      {"week": 12, "part": "Sync", "title": "Conflict Resolution and Security", "lecture": "Discuss conflict-free replicated data types, merge strategies, and device security and privacy.", "practice": "Add conflict resolution and secure the project communication channels.", "project": "Project resolves sync conflicts over secured channels."},
+      {"week": 13, "part": "Capstone", "title": "Final Demo and Defense", "lecture": "Synthesize mobile, IoT, edge, and synchronization principles into a coherent design.", "practice": "Student teams present the final demo with an oral defense of architecture, protocol, and sync decisions.", "project": "Final mobile and IoT edge system is delivered with documentation and defense."}
+    ],
+    "project": {
+      "summary": "Teams build one connected system spanning a cross-platform mobile app, IoT sensors, and an edge processing component. The system communicates over MQTT and CoAP, processes data at the edge, and works offline with reliable synchronization and conflict resolution. Each increment extends the device-to-cloud pipeline.",
+      "ideas": [
+        "Smart home dashboard",
+        "Environmental monitoring network",
+        "Fitness and wearables tracker",
+        "Asset and fleet tracking",
+        "Agricultural sensing system",
+        "Connected parking finder",
+        "Industrial machine monitor",
+        "Field data collection app"
+      ]
+    },
+    "tools": [
+      "Flutter: build cross-platform mobile apps",
+      "Dart: program Flutter applications",
+      "React Native: build native mobile apps from JavaScript",
+      "SQLite: store data locally on devices",
+      "Eclipse Mosquitto: run an MQTT broker",
+      "MQTT.js or paho-mqtt: publish and subscribe over MQTT",
+      "libcoap or aiocoap: communicate over CoAP",
+      "Node-RED: prototype IoT and edge data flows",
+      "Raspberry Pi: host an edge computing node",
+      "PowerSync or CouchDB: synchronize offline data",
+      "Firebase: provide backend messaging and storage"
+    ],
+    "references": [
+      {"title": "Flutter Documentation", "authors": "Flutter Team, Google", "year": 2026, "kind": "Documentation", "url": "https://docs.flutter.dev/", "note": "Official, continuously updated"},
+      {"title": "Designing the Internet of Things", "authors": "Adrian McEwen, Hakim Cassimally", "year": 2013, "kind": "Textbook", "url": "https://www.wiley.com/en-us/Designing+the+Internet+of+Things-p-9781118430620", "note": ""},
+      {"title": "MQTT Specification (OASIS Standard)", "authors": "OASIS MQTT Technical Committee", "year": 2019, "kind": "Documentation", "url": "https://mqtt.org/mqtt-specification/", "note": "MQTT 5 and 3.1.1"},
+      {"title": "RFC 7252: The Constrained Application Protocol (CoAP)", "authors": "Z. Shelby, K. Hartke, C. Bormann", "year": 2014, "kind": "Documentation", "url": "https://datatracker.ietf.org/doc/html/rfc7252", "note": ""},
+      {"title": "Edge Computing: Vision and Challenges", "authors": "Weisong Shi, Jie Cao, Quan Zhang, Youhuizi Li, Lanyu Xu", "year": 2016, "kind": "Paper", "url": "https://ieeexplore.ieee.org/document/7488250", "note": "IEEE Internet of Things Journal"},
+      {"title": "Local-first software: You own your data, in spite of the cloud", "authors": "Martin Kleppmann, Adam Wiggins, Peter van Hardenberg, Mark McGranaghan", "year": 2019, "kind": "Paper", "url": "https://www.inkandswitch.com/essay/local-first/", "note": "Offline-first foundations"},
+      {"title": "Local-first software (ACM Onward! 2019 proceedings)", "authors": "Kleppmann, Wiggins, van Hardenberg, McGranaghan", "year": 2019, "kind": "Paper", "url": "https://dl.acm.org/doi/10.1145/3359591.3359737", "note": "Peer-reviewed version"}
+    ]
+  },
+  "SE7": {
+    "tagline": "Architect data-intensive and AI-driven systems at scale",
+    "subtitle": "data systems theory, distributed consensus, streaming dataflow, and the operational debt of machine learning",
+    "foundations": [
+      "Reliability, scalability, and maintainability as system properties",
+      "Storage-engine internals and data-model trade-offs",
+      "The MapReduce model of large-scale batch computation",
+      "Event-time dataflow, watermarks, and windowing theory",
+      "Replication, partitioning, and the CAP and PACELC trade-offs",
+      "Distributed consensus and exactly-once processing semantics",
+      "Hidden technical debt and operational concerns in ML systems"
+    ],
+    "literature": [
+      {"title": "MapReduce: Simplified Data Processing on Large Clusters", "authors": "Jeffrey Dean, Sanjay Ghemawat", "year": 2004, "url": "https://www.usenix.org/conference/osdi-04/mapreduce-simplified-data-processing-large-clusters"},
+      {"title": "Dynamo: Amazon's Highly Available Key-value Store", "authors": "Giuseppe DeCandia, Deniz Hastorun, Madan Jampani, Gunavardhan Kakulapati, Avinash Lakshman, Alex Pilchin, Swaminathan Sivasubramanian, Peter Vosshall, Werner Vogels", "year": 2007, "url": "https://dl.acm.org/doi/10.1145/1294261.1294281"},
+      {"title": "Spanner: Google's Globally-Distributed Database", "authors": "James C. Corbett, Jeffrey Dean, Michael Epstein, Andrew Fikes, Christopher Frost, J. J. Furman, Sanjay Ghemawat, and others", "year": 2012, "url": "https://www.usenix.org/conference/osdi12/technical-sessions/presentation/corbett"},
+      {"title": "In Search of an Understandable Consensus Algorithm (Raft)", "authors": "Diego Ongaro, John Ousterhout", "year": 2014, "url": "https://www.usenix.org/conference/atc14/technical-sessions/presentation/ongaro"},
+      {"title": "The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-Order Data Processing", "authors": "Tyler Akidau, Robert Bradshaw, Craig Chambers, Slava Chernyak, Rafael J. Fernandez-Moctezuma, Reuven Lax, Sam McVeety, Daniel Mills, Frances Perry, Eric Schmidt, Sam Whittle", "year": 2015, "url": "https://doi.org/10.14778/2824032.2824076"},
+      {"title": "Hidden Technical Debt in Machine Learning Systems", "authors": "D. Sculley, Gary Holt, Daniel Golovin, Eugene Davydov, Todd Phillips, Dietmar Ebner, Vinay Chaudhary, Michael Young, Jean-Francois Crespo, Dan Dennison", "year": 2015, "url": "https://proceedings.neurips.cc/paper_files/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html"}
+    ],
+    "build": "Architected a data-intensive system that ingests events through Apache Kafka, processes them with Spark batch and Flink streaming pipelines into a replicated, partitioned Cassandra store, serves predictions from an MLflow-tracked model, and guards quality with Evidently drift monitoring.",
+    "objectives": [
+      "Explain the foundations of reliability, scalability, and maintainability",
+      "Analyze data models, storage engines, and indexing trade-offs",
+      "Design batch and streaming data pipelines",
+      "Reason about distributed storage, replication, and partitioning",
+      "Apply the theory of consistency, consensus, and the CAP trade-off",
+      "Integrate machine learning models into production systems",
+      "Evaluate architectural trade-offs for AI-based and data-intensive workloads",
+      "Address technical debt and operational concerns in ML systems",
+      "Design for fault tolerance and exactly-once processing semantics",
+      "Assess data quality, lineage, and governance in pipelines"
+    ],
+    "prerequisites": [
+      "Programming and data structures",
+      "Basic databases and SQL",
+      "Familiarity with distributed systems concepts",
+      "Introductory machine learning or statistics"
+    ],
+    "weeks": [
+      {"week": 1, "part": "Foundations", "title": "Data-Intensive System Foundations", "lecture": "Introduce reliability, scalability, and maintainability and the challenges of data at scale.", "practice": "Set up the project environment and define the data domain and pipeline goals.", "project": "Project repository and data-system design baseline are established."},
+      {"week": 2, "part": "Foundations", "title": "Data Models and Storage Engines", "lecture": "Examine relational, document, and graph models and the internals of storage engines.", "practice": "Model the project data and select appropriate storage for its workload.", "project": "Project data model and storage choice are implemented and justified."},
+      {"week": 3, "part": "Foundations", "title": "Encoding and Data Movement", "lecture": "Discuss serialization formats, schema evolution, and the dataflow between systems.", "practice": "Define schemas and ingest raw data into the project storage layer.", "project": "Project ingests and stores data with a versioned schema."},
+      {"week": 4, "part": "Pipelines", "title": "Batch Processing", "lecture": "Cover the batch processing model, MapReduce, and the theory of large-scale computation.", "practice": "Build a batch pipeline that transforms project data into derived datasets.", "project": "Project produces derived datasets through a batch pipeline."},
+      {"week": 5, "part": "Pipelines", "title": "Specification Milestone", "lecture": "Review streaming concepts and how architecture choices shape data systems.", "practice": "Student teams present their project specification: data sources, pipeline architecture, and scaling goals.", "project": "Approved specification with pipeline architecture is delivered."},
+      {"week": 6, "part": "Pipelines", "title": "Stream Processing", "lecture": "Examine streaming systems, event time versus processing time, and windowing theory.", "practice": "Add a streaming pipeline that processes project events in near real time.", "project": "Project processes events through a streaming pipeline."},
+      {"week": 7, "part": "Distributed Storage", "title": "Replication and Partitioning", "lecture": "Analyze replication strategies, partitioning, and rebalancing in distributed stores.", "practice": "Configure replication and partitioning for the project data store.", "project": "Project data store is replicated and partitioned for scale."},
+      {"week": 8, "part": "Distributed Storage", "title": "Interim Demo Milestone", "lecture": "Cover consistency models, consensus, and the CAP and PACELC trade-offs.", "practice": "Student teams present an interim demo of the data pipeline and storage layer.", "project": "Working pipeline and distributed storage are demonstrated."},
+      {"week": 9, "part": "Distributed Storage", "title": "Consistency and Fault Tolerance", "lecture": "Discuss transactions across nodes, exactly-once semantics, and fault-tolerance design.", "practice": "Add fault tolerance and delivery guarantees to the project pipeline.", "project": "Project pipeline tolerates faults with defined delivery guarantees."},
+      {"week": 10, "part": "ML Systems", "title": "ML System Integration", "lecture": "Examine the anatomy of ML systems, feature pipelines, and serving architectures.", "practice": "Integrate a trained model into the project as a serving component.", "project": "Project serves predictions from an integrated ML model."},
+      {"week": 11, "part": "ML Systems", "title": "Feature Stores and Data Quality", "lecture": "Discuss feature engineering pipelines, data lineage, and the cost of poor data quality.", "practice": "Add feature processing and data-quality checks to the project pipeline.", "project": "Project enforces data-quality checks feeding the model."},
+      {"week": 12, "part": "ML Systems", "title": "Technical Debt and Operations", "lecture": "Analyze hidden technical debt in ML systems, monitoring, and drift over time.", "practice": "Add monitoring and drift detection to the project ML pipeline.", "project": "Project monitors model and pipeline health in operation."},
+      {"week": 13, "part": "Capstone", "title": "Final Demo and Defense", "lecture": "Synthesize data-intensive and AI system architecture and review the trade-offs made.", "practice": "Student teams present the final demo with an oral defense of architecture, scaling, and ML integration decisions.", "project": "Final data-intensive AI system is delivered with documentation and defense."}
+    ],
+    "project": {
+      "summary": "Teams build one data-intensive system that ingests data, processes it through batch and streaming pipelines, and stores it in a replicated, partitioned distributed store. They integrate a machine learning model for serving, add data-quality and drift monitoring, and reason explicitly about consistency, fault tolerance, and architectural trade-offs throughout.",
+      "ideas": [
+        "Real-time analytics platform",
+        "Recommendation system pipeline",
+        "Fraud detection stream",
+        "Log analytics and search",
+        "Clickstream insights engine",
+        "Predictive maintenance system",
+        "Social media trend tracker",
+        "Sensor data lakehouse"
+      ]
+    },
+    "tools": [
+      "Apache Kafka: stream and buffer event data",
+      "Apache Spark: run batch and distributed processing",
+      "Apache Flink: process streams with event-time semantics",
+      "PostgreSQL: store relational and derived data",
+      "Apache Cassandra: provide distributed partitioned storage",
+      "Apache Airflow: orchestrate data pipelines",
+      "dbt: transform and model warehouse data",
+      "MLflow: track and serve machine learning models",
+      "Feast: manage a feature store",
+      "Docker: package pipeline and serving components",
+      "Evidently: monitor data and model drift"
+    ],
+    "references": [
+      {"title": "Designing Data-Intensive Applications", "authors": "Martin Kleppmann", "year": 2017, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "note": "Core textbook"},
+      {"title": "Streaming Systems", "authors": "Tyler Akidau, Slava Chernyak, Reuven Lax", "year": 2018, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/streaming-systems/9781491983867/", "note": ""},
+      {"title": "MapReduce: Simplified Data Processing on Large Clusters", "authors": "Jeffrey Dean, Sanjay Ghemawat", "year": 2004, "kind": "Paper", "url": "https://research.google/pubs/pub62/", "note": "OSDI 2004"},
+      {"title": "Dynamo: Amazon's Highly Available Key-value Store", "authors": "Giuseppe DeCandia, Deniz Hastorun, Madan Jampani, et al.", "year": 2007, "kind": "Paper", "url": "https://dl.acm.org/doi/10.1145/1294261.1294281", "note": "SOSP 2007"},
+      {"title": "Hidden Technical Debt in Machine Learning Systems", "authors": "D. Sculley, Gary Holt, Daniel Golovin, et al.", "year": 2015, "kind": "Paper", "url": "https://proceedings.neurips.cc/paper_files/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html", "note": "NeurIPS 2015"},
+      {"title": "Designing Machine Learning Systems", "authors": "Chip Huyen", "year": 2022, "kind": "Textbook", "url": "https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/", "note": ""},
+      {"title": "Apache Kafka Documentation", "authors": "Apache Software Foundation", "year": 2026, "kind": "Documentation", "url": "https://kafka.apache.org/documentation/", "note": "Official, continuously updated"}
+    ]
+  }
+}

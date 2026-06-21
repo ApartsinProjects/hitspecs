@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#3A4B9D">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SE7: Design of AI-based &amp; Data-Intensive Systems | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="on" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#3A4B9D;--ink:#2A3873">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; SE7</p>
+    <h1>Design of AI-based &amp; Data-Intensive Systems</h1>
+    <p class="hetx" dir="rtl">תכן מערכות מבוססות-AI ועתירות-נתונים</p>
+    <p class="csub">data systems theory, distributed consensus, streaming dataflow, and the operational debt of machine learning</p>
+    <p class="lead">Architect data-intensive and AI-driven systems at scale</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Architect large systems whose core is data and machine learning, balancing throughput, latency, consistency, and the demands of AI workloads.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #3A4B9D">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #3A4B9D"><span class="bk" style="color:#3A4B9D">What you will build</span><p>Architected a data-intensive system that ingests events through Apache Kafka, processes them with Spark batch and Flink streaming pipelines into a replicated, partitioned Cassandra store, serves predictions from an MLflow-tracked model, and guards quality with Evidently drift monitoring.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#3A4B9D"><li>Explain the foundations of reliability, scalability, and maintainability</li><li>Analyze data models, storage engines, and indexing trade-offs</li><li>Design batch and streaming data pipelines</li><li>Reason about distributed storage, replication, and partitioning</li><li>Apply the theory of consistency, consensus, and the CAP trade-off</li><li>Integrate machine learning models into production systems</li><li>Evaluate architectural trade-offs for AI-based and data-intensive workloads</li><li>Address technical debt and operational concerns in ML systems</li><li>Design for fault tolerance and exactly-once processing semantics</li><li>Assess data quality, lineage, and governance in pipelines</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#3A4B9D"><li>Data pipelines &amp; streaming</li><li>System architecture &amp; trade-offs</li><li>Distributed storage</li><li>ML system integration</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#3A4B9D"><li>Reliability, scalability, and maintainability as system properties</li><li>Storage-engine internals and data-model trade-offs</li><li>The MapReduce model of large-scale batch computation</li><li>Event-time dataflow, watermarks, and windowing theory</li><li>Replication, partitioning, and the CAP and PACELC trade-offs</li><li>Distributed consensus and exactly-once processing semantics</li><li>Hidden technical debt and operational concerns in ML systems</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #3A4B9D">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#3A4B9D"><li>Databases</li><li>Algorithms and data structures</li><li>Machine Learning</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Foundations</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 1</div><div class="wk-body"><b>Data-Intensive System Foundations</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Introduce reliability, scalability, and maintainability and the challenges of data at scale.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Set up the project environment and define the data domain and pipeline goals.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project repository and data-system design baseline are established.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 2</div><div class="wk-body"><b>Data Models and Storage Engines</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine relational, document, and graph models and the internals of storage engines.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Model the project data and select appropriate storage for its workload.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project data model and storage choice are implemented and justified.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 3</div><div class="wk-body"><b>Encoding and Data Movement</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss serialization formats, schema evolution, and the dataflow between systems.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Define schemas and ingest raw data into the project storage layer.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project ingests and stores data with a versioned schema.</div></div></div><div class="wpart">Pipelines</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 4</div><div class="wk-body"><b>Batch Processing</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover the batch processing model, MapReduce, and the theory of large-scale computation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Build a batch pipeline that transforms project data into derived datasets.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project produces derived datasets through a batch pipeline.</div></div></div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 5</div><div class="wk-body"><b>Specification Milestone<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Review streaming concepts and how architecture choices shape data systems.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present their project specification: data sources, pipeline architecture, and scaling goals.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Approved specification with pipeline architecture is delivered.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 6</div><div class="wk-body"><b>Stream Processing</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine streaming systems, event time versus processing time, and windowing theory.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add a streaming pipeline that processes project events in near real time.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project processes events through a streaming pipeline.</div></div></div><div class="wpart">Distributed Storage</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 7</div><div class="wk-body"><b>Replication and Partitioning</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Analyze replication strategies, partitioning, and rebalancing in distributed stores.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Configure replication and partitioning for the project data store.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project data store is replicated and partitioned for scale.</div></div></div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 8</div><div class="wk-body"><b>Interim Demo Milestone<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover consistency models, consensus, and the CAP and PACELC trade-offs.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present an interim demo of the data pipeline and storage layer.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Working pipeline and distributed storage are demonstrated.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 9</div><div class="wk-body"><b>Consistency and Fault Tolerance</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss transactions across nodes, exactly-once semantics, and fault-tolerance design.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add fault tolerance and delivery guarantees to the project pipeline.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project pipeline tolerates faults with defined delivery guarantees.</div></div></div><div class="wpart">ML Systems</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 10</div><div class="wk-body"><b>ML System Integration</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine the anatomy of ML systems, feature pipelines, and serving architectures.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Integrate a trained model into the project as a serving component.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project serves predictions from an integrated ML model.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 11</div><div class="wk-body"><b>Feature Stores and Data Quality</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss feature engineering pipelines, data lineage, and the cost of poor data quality.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add feature processing and data-quality checks to the project pipeline.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project enforces data-quality checks feeding the model.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 12</div><div class="wk-body"><b>Technical Debt and Operations</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Analyze hidden technical debt in ML systems, monitoring, and drift over time.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add monitoring and drift detection to the project ML pipeline.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project monitors model and pipeline health in operation.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 13</div><div class="wk-body"><b>Final Demo and Defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Synthesize data-intensive and AI system architecture and review the trade-offs made.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present the final demo with an oral defense of architecture, scaling, and ML integration decisions.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Final data-intensive AI system is delivered with documentation and defense.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams build one data-intensive system that ingests data, processes it through batch and streaming pipelines, and stores it in a replicated, partitioned distributed store. They integrate a machine learning model for serving, add data-quality and drift monitoring, and reason explicitly about consistency, fault tolerance, and architectural trade-offs throughout.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#3A4B9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Real-time analytics platform</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Recommendation system pipeline</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Fraud detection stream</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Log analytics and search</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Clickstream insights engine</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Predictive maintenance system</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Social media trend tracker</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Sensor data lakehouse</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#3A4B9D"><li><b>Apache Kafka</b>: stream and buffer event data</li><li><b>Apache Spark</b>: run batch and distributed processing</li><li><b>Apache Flink</b>: process streams with event-time semantics</li><li><b>PostgreSQL</b>: store relational and derived data</li><li><b>Apache Cassandra</b>: provide distributed partitioned storage</li><li><b>Apache Airflow</b>: orchestrate data pipelines</li><li><b>dbt</b>: transform and model warehouse data</li><li><b>MLflow</b>: track and serve machine learning models</li><li><b>Feast</b>: manage a feature store</li><li><b>Docker</b>: package pipeline and serving components</li><li><b>Evidently</b>: monitor data and model drift</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://www.usenix.org/conference/osdi-04/mapreduce-simplified-data-processing-large-clusters" target="_blank" rel="noopener">MapReduce: Simplified Data Processing on Large Clusters</a></span><div class="meta">Jeffrey Dean, Sanjay Ghemawat, 2004</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1145/1294261.1294281" target="_blank" rel="noopener">Dynamo: Amazon&#x27;s Highly Available Key-value Store</a></span><div class="meta">Giuseppe DeCandia, Deniz Hastorun, Madan Jampani, Gunavardhan Kakulapati, Avinash Lakshman, Alex Pilchin, Swaminathan Sivasubramanian, Peter Vosshall, Werner Vogels, 2007</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://www.usenix.org/conference/osdi12/technical-sessions/presentation/corbett" target="_blank" rel="noopener">Spanner: Google&#x27;s Globally-Distributed Database</a></span><div class="meta">James C. Corbett, Jeffrey Dean, Michael Epstein, Andrew Fikes, Christopher Frost, J. J. Furman, Sanjay Ghemawat, and others, 2012</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/ongaro" target="_blank" rel="noopener">In Search of an Understandable Consensus Algorithm (Raft)</a></span><div class="meta">Diego Ongaro, John Ousterhout, 2014</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.14778/2824032.2824076" target="_blank" rel="noopener">The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-Order Data Processing</a></span><div class="meta">Tyler Akidau, Robert Bradshaw, Craig Chambers, Slava Chernyak, Rafael J. Fernandez-Moctezuma, Reuven Lax, Sam McVeety, Daniel Mills, Frances Perry, Eric Schmidt, Sam Whittle, 2015</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://proceedings.neurips.cc/paper_files/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html" target="_blank" rel="noopener">Hidden Technical Debt in Machine Learning Systems</a></span><div class="meta">D. Sculley, Gary Holt, Daniel Golovin, Eugene Davydov, Todd Phillips, Dietmar Ebner, Vinay Chaudhary, Michael Young, Jean-Francois Crespo, Dan Dennison, 2015</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/" target="_blank" rel="noopener">Designing Data-Intensive Applications</a></span><div class="meta">Martin Kleppmann, 2017, Core textbook</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.oreilly.com/library/view/streaming-systems/9781491983867/" target="_blank" rel="noopener">Streaming Systems</a></span><div class="meta">Tyler Akidau, Slava Chernyak, Reuven Lax, 2018</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://research.google/pubs/pub62/" target="_blank" rel="noopener">MapReduce: Simplified Data Processing on Large Clusters</a></span><div class="meta">Jeffrey Dean, Sanjay Ghemawat, 2004, OSDI 2004</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1145/1294261.1294281" target="_blank" rel="noopener">Dynamo: Amazon&#x27;s Highly Available Key-value Store</a></span><div class="meta">Giuseppe DeCandia, Deniz Hastorun, Madan Jampani, et al., 2007, SOSP 2007</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://proceedings.neurips.cc/paper_files/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html" target="_blank" rel="noopener">Hidden Technical Debt in Machine Learning Systems</a></span><div class="meta">D. Sculley, Gary Holt, Daniel Golovin, et al., 2015, NeurIPS 2015</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/" target="_blank" rel="noopener">Designing Machine Learning Systems</a></span><div class="meta">Chip Huyen, 2022</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://kafka.apache.org/documentation/" target="_blank" rel="noopener">Apache Kafka Documentation</a></span><div class="meta">Apache Software Foundation, 2026, Official, continuously updated</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge" style="background:#E7EAF5;color:#3A4B9D">Core &middot; Semester 2</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge" style="background:#EFE7F6;color:#7A3E9D">Core &middot; Semester 2</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge" style="background:#FBEEDE;color:#B5530B">Core &middot; Semester 2</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="SE6.html">&larr; SE6 &middot; Mobile, IoT &amp; Edge Software Development</a><a href="CY1.html">CY1 &middot; Applied Cryptography &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #3A4B9D">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>SE7</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/SE.html">Intelligent Software Systems</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: Intelligent Software Systems, AI &amp; Robotics, Computational Finance, Optimization &amp; Quantum Computing</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>11</dd>
+          <dt>References</dt><dd>7</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#3A4B9D">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

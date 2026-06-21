@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#9C3B2E">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CY3: Hardware &amp; Embedded Systems Security | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="" href="../concentrations/SE.html">Software Systems</a><a class="on" href="../concentrations/CY.html">Cyber Security</a><a class="" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#9C3B2E;--ink:#7A2C22">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; CY3</p>
+    <h1>Hardware &amp; Embedded Systems Security</h1>
+    <p class="hetx" dir="rtl">אבטחת חומרה ומערכות משובצות</p>
+    <p class="csub">physical attacker models, side-channel leakage, and hardware roots of trust</p>
+    <p class="lead">Attacking and defending hardware, firmware, and embedded devices.</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Examine security at the hardware and firmware level, where physical access, side channels, and constrained devices create distinct threats.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #9C3B2E">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #9C3B2E"><span class="bk" style="color:#9C3B2E">What you will build</span><p>Performed a full hardware security assessment of an embedded device, mapping UART and SPI interfaces, dumping and reverse-engineering firmware with binwalk and Ghidra, extracting an AES key by differential power analysis on ChipWhisperer, then adding masking, constant-time fixes, signed updates, and debug-port lockdown.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#9C3B2E"><li>Explain embedded threat models and the expanded attack surface of physical devices.</li><li>Describe the theory of side channels: power, timing, and electromagnetic leakage.</li><li>Mount differential power analysis and reason about its statistical foundations.</li><li>Analyze fault-injection and glitching attacks against secure boot and key handling.</li><li>Explain secure boot, hardware roots of trust, and the TPM 2.0 architecture.</li><li>Extract and reverse engineer firmware to recover secrets and logic.</li><li>Identify hardware interfaces such as UART, JTAG, and SPI and use them for analysis.</li><li>Design countermeasures: masking, constant-time code, and tamper resistance.</li><li>Assess an embedded product against a structured hardware threat model.</li><li>Evaluate the trade-offs between security, cost, and performance in hardware design.</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#9C3B2E"><li>Side-channel attacks</li><li>Secure boot &amp; TPM</li><li>Firmware analysis</li><li>Embedded threat models</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#9C3B2E"><li>the physical attacker model and embedded attack surface</li><li>the leakage model behind power, timing, and electromagnetic side channels</li><li>differential power analysis and its hypothesis-testing statistics</li><li>fault models for voltage, clock, and electromagnetic glitching</li><li>measured and verified boot and rollback protection</li><li>hardware roots of trust and the TPM 2.0 sealed-storage model</li><li>masking, hiding, and constant-time countermeasure theory</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #9C3B2E">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#9C3B2E"><li>Computer organization and architecture</li><li>Operating systems</li><li>C or embedded programming</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Foundations</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 1</div><div class="wk-body"><b>Embedded threat models and attack surface</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Survey embedded system architectures, the physical attacker model, and the spectrum of hardware attacks.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Tear down a target board, identify components and interfaces, and document its attack surface.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Choose the target device and produce its initial hardware threat model.</div></div></div><div class="wpart">Interfaces</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 2</div><div class="wk-body"><b>Debug interfaces and bus sniffing</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Explain UART, JTAG, SWD, SPI, and I2C and how exposed debug ports become entry points.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Locate and connect to a UART console and sniff an SPI bus with a logic analyzer.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Map and access the debug and bus interfaces on the target.</div></div></div><div class="wpart">Firmware</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 3</div><div class="wk-body"><b>Firmware extraction and analysis</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover flash dumping, firmware image formats, and static reverse engineering of embedded binaries.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Dump flash over SPI, unpack the firmware with binwalk, and disassemble it in Ghidra.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Extract the target firmware and begin a reverse-engineering map.</div></div></div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 4</div><div class="wk-body"><b>Finding secrets and logic flaws</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss hardcoded keys, weak update mechanisms, and vulnerability patterns in firmware.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Hunt for hardcoded credentials and an update-verification flaw in the dumped firmware.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Document recovered secrets and a firmware vulnerability in the target.</div></div></div><div class="week pres"><div class="wk-num" style="color:#9C3B2E">Wk 5</div><div class="wk-body"><b>Threat model and analysis specification<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Review how interface, firmware, and physical findings combine into a coherent attack plan.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: each team defends its target, threat model, and planned attack chain.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Freeze the project specification and attack-plan document.</div></div></div><div class="wpart">Side channels</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 6</div><div class="wk-body"><b>Side-channel theory and timing attacks</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Introduce the leakage model, timing attacks on cryptographic implementations, and the underlying statistics.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Reproduce a timing attack to recover key bits from a vulnerable software routine.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a timing-leak analysis of the target&#x27;s crypto operations.</div></div></div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 7</div><div class="wk-body"><b>Power analysis and DPA</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Derive simple and differential power analysis and the hypothesis-testing model behind key recovery.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Capture power traces on ChipWhisperer and run DPA to extract an AES key.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Mount a power-analysis attack against an encryption routine on the target.</div></div></div><div class="week pres"><div class="wk-num" style="color:#9C3B2E">Wk 8</div><div class="wk-body"><b>Fault injection and glitching<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Explain voltage and clock glitching, fault models, and bypassing security checks via faults.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: interim demo of a working side-channel or fault attack on the target.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Demonstrate the interim physical attack against the device.</div></div></div><div class="wpart">Roots of trust</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 9</div><div class="wk-body"><b>Secure boot and chain of trust</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover measured and verified boot, signature verification, and rollback protection in the boot chain.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Analyze a secure-boot implementation and attempt a glitch to bypass signature verification.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Evaluate and attack the target&#x27;s boot integrity mechanism.</div></div></div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 10</div><div class="wk-body"><b>TPM and hardware key storage</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Present the TPM 2.0 architecture, sealed storage, attestation, and hardware-backed key isolation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Use a TPM to seal a secret and reason about which attacks it does and does not stop.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Design a TPM-backed key-protection improvement for the target.</div></div></div><div class="wpart">Defenses</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 11</div><div class="wk-body"><b>Countermeasures and constant-time design</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss masking, hiding, constant-time coding, and tamper-resistant design principles.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add masking and constant-time fixes to a routine and re-run the side-channel attack to measure improvement.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Implement and validate a countermeasure on the target.</div></div></div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 12</div><div class="wk-body"><b>Hardened firmware and secure updates</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover signed updates, anti-rollback, debug-port lockdown, and secure provisioning.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a signed-update verifier and lock down the exposed debug interfaces.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Harden the firmware update path and disable insecure interfaces.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#9C3B2E">Wk 13</div><div class="wk-body"><b>Final assessment and defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Review the full attack chain and the defenses applied across the term.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: final demonstration of attacks and mitigations with oral defense of findings.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the complete hardware security assessment with attacks, fixes, and report.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams perform a full hardware security assessment of a real embedded device, progressing from interface mapping and firmware extraction to side-channel and fault attacks, then to designed countermeasures. Each finding is reproduced and documented. The capstone presents both the demonstrated attacks and the hardened result with an oral defense.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#9C3B2E"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Smart-lock teardown and attack</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">IoT camera firmware audit</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">AES key extraction by DPA</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Secure-boot bypass study</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Router firmware vulnerability hunt</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">TPM-backed key-storage redesign</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Glitch-attack on a microcontroller</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Constant-time hardening project</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#9C3B2E"><li><b>ChipWhisperer</b>: power-analysis and fault-injection platform</li><li><b>Ghidra</b>: firmware disassembly and reverse engineering</li><li><b>binwalk</b>: firmware extraction and analysis</li><li><b>Saleae Logic</b>: logic analyzer for bus sniffing</li><li><b>flashrom</b>: SPI flash dumping and writing</li><li><b>OpenOCD</b>: JTAG and SWD debugging</li><li><b>QEMU</b>: firmware emulation for dynamic analysis</li><li><b>Bus Pirate</b>: low-level bus interfacing</li><li><b>tpm2-tools</b>: TPM 2.0 experimentation and sealing</li><li><b>radare2</b>: binary analysis and patching</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1007/3-540-68697-5_9" target="_blank" rel="noopener">Timing Attacks on Implementations of Diffie-Hellman, RSA, DSS, and Other Systems</a></span><div class="meta">Paul C. Kocher, 1996</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://www.usenix.org/legacy/publications/library/proceedings/ec96/full_papers/kuhn/index.html" target="_blank" rel="noopener">Tamper Resistance: a Cautionary Note</a></span><div class="meta">Ross Anderson, Markus Kuhn, 1996</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1007/3-540-69053-0_4" target="_blank" rel="noopener">On the Importance of Checking Cryptographic Protocols for Faults</a></span><div class="meta">Dan Boneh, Richard DeMillo, Richard Lipton, 1997</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1007/3-540-48405-1_25" target="_blank" rel="noopener">Differential Power Analysis</a></span><div class="meta">Paul Kocher, Joshua Jaffe, Benjamin Jun, 1999</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://trustedcomputinggroup.org/resource/tpm-library-specification/" target="_blank" rel="noopener">TPM 2.0 Library Specification</a></span><div class="meta">Trusted Computing Group, 2024</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://nostarch.com/hardwarehacking" target="_blank" rel="noopener">The Hardware Hacking Handbook</a></span><div class="meta">Jasper van Woudenberg, Colin O&#x27;Flynn, 2021</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://link.springer.com/book/10.1007/978-0-387-38162-6" target="_blank" rel="noopener">Power Analysis Attacks: Revealing the Secrets of Smart Cards</a></span><div class="meta">Stefan Mangard, Elisabeth Oswald, Thomas Popp, 2007</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://nostarch.com/practical-iot-hacking" target="_blank" rel="noopener">Practical IoT Hacking</a></span><div class="meta">Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, Beau Woods, 2021</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://csrc.nist.gov/pubs/sp/800/147/final" target="_blank" rel="noopener">SP 800-147: BIOS Protection Guidelines</a></span><div class="meta">NIST, 2011</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://trustedcomputinggroup.org/resource/tpm-library-specification/" target="_blank" rel="noopener">TPM 2.0 Library Specification</a></span><div class="meta">Trusted Computing Group, 2024</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://chipwhisperer.readthedocs.io/" target="_blank" rel="noopener">ChipWhisperer Documentation</a></span><div class="meta">NewAE Technology, 2025</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://link.springer.com/chapter/10.1007/3-540-68697-5_9" target="_blank" rel="noopener">Timing Attacks on Implementations of Diffie-Hellman, RSA, DSS, and Other Systems</a></span><div class="meta">Paul C. Kocher, 1996</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge" style="background:#F6E7E4;color:#9C3B2E">Core &middot; Semester 2</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge e">Elective</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="CY2.html">&larr; CY2 &middot; Network &amp; Communication Security</a><a href="CY4.html">CY4 &middot; Cyber-Security Governance, Risk &amp; Compliance &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #9C3B2E">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>CY3</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: Networking &amp; Cyber Security</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>10</dd>
+          <dt>References</dt><dd>7</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#9C3B2E">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+node_modules/
+__pycache__/
+*.pyc
+unpacked_existing/
+unpacked/
+# temp screenshots
+qa_*.png
+q_*.png
+v_*.png
+shot*.png
+*.pdf
+package-lock.json

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#B5530B">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QCF1: Quantum Optimization | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="on" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#B5530B;--ink:#8A3F08">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; QCF1</p>
+    <h1>Quantum Optimization</h1>
+    <p class="hetx" dir="rtl">אופטימיזציה קוונטית</p>
+    <p class="csub">quantum states, adiabatic and variational algorithms for combinatorial optimization</p>
+    <p class="lead">Quantum and quantum-inspired methods for hard combinatorial optimization</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Explore quantum and quantum-inspired approaches to hard optimization problems and the algorithms that exploit them.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #B5530B">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #B5530B"><span class="bk" style="color:#B5530B">What you will build</span><p>Built an end-to-end quantum optimization pipeline in Python with Qiskit, PennyLane, and the D-Wave Ocean SDK that maps a real combinatorial problem to QUBO and Ising forms and benchmarks QAOA, quantum annealing, and quantum-inspired solvers head to head.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#B5530B"><li>Explain the postulates of quantum mechanics using qubits, state vectors, and unitary operators</li><li>Derive single and multi-qubit gate algebra from linear algebra over complex Hilbert spaces</li><li>Formulate combinatorial problems as QUBO and Ising Hamiltonians</li><li>Analyze the adiabatic theorem and the theory underlying quantum annealing</li><li>Construct and parameterize QAOA circuits and reason about their cost and mixer Hamiltonians</li><li>Optimize variational parameters using classical optimizers in a hybrid loop</li><li>Implement quantum-inspired heuristics such as simulated and tensor-network annealing on classical hardware</li><li>Benchmark quantum, hybrid, and classical solvers on shared optimization instances</li><li>Evaluate noise, sampling overhead, and embedding limits on near-term devices</li><li>Build an end-to-end pipeline mapping a real problem to a quantum solver and back</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#B5530B"><li>Quantum computing basics</li><li>QAOA &amp; quantum annealing</li><li>Combinatorial optimization</li><li>Quantum-inspired methods</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#B5530B"><li>complex Hilbert spaces, unitary operators, and the postulates of quantum mechanics</li><li>qubits, tensor products, and multi-qubit state spaces</li><li>the adiabatic theorem and time-dependent Hamiltonian evolution</li><li>QUBO and Ising formulations of combinatorial problems</li><li>the variational principle and parameterized quantum circuits</li><li>computational complexity and NP-hard optimization</li><li>statistical mechanics, energy landscapes, and Metropolis sampling</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #B5530B">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#B5530B"><li>Basic Quantum Algorithms</li><li>Linear algebra</li><li>Algorithms and optimization basics</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Foundations</div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 1</div><div class="wk-body"><b>Linear algebra and quantum states</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Review of complex vector spaces, inner products, Dirac notation, and the qubit as a unit vector in a two-dimensional Hilbert space. Tensor products build multi-qubit state spaces.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Set up the Python and Qiskit environment and represent qubit states and amplitudes numerically with NumPy.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Initialize the project repository and encode a small toy problem instance as a state vector.</div></div></div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 2</div><div class="wk-body"><b>Quantum gates, measurement, and circuits</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Unitary operators, the Pauli and Hadamard gates, entanglement, and the Born rule for measurement probabilities. Circuit model semantics and reversibility.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Build and simulate basic circuits in Qiskit, inspecting statevectors and measurement histograms.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Implement a circuit that prepares and measures the equal superposition over candidate solutions.</div></div></div><div class="wpart">Optimization theory</div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 3</div><div class="wk-body"><b>Combinatorial optimization and complexity</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>NP-hard problems, MaxCut, graph coloring, and the QUBO formulation. Reductions and the role of penalty terms in constrained problems.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Translate sample problems into QUBO matrices and verify objective values by brute force on small instances.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Choose the project optimization problem and express it as a QUBO with documented constraints.</div></div></div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 4</div><div class="wk-body"><b>Ising models and energy landscapes</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Mapping QUBO to the Ising Hamiltonian, spin variables, ground states, and the geometry of energy landscapes. Connection between minima and optimal solutions.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Convert the project QUBO to an Ising Hamiltonian and visualize the energy landscape of a reduced instance.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Produce a verified Ising formulation of the project problem with a small validation instance.</div></div></div><div class="wpart">Quantum annealing</div><div class="week pres"><div class="wk-num" style="color:#B5530B">Wk 5</div><div class="wk-body"><b>Adiabatic theorem and quantum annealing<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>The adiabatic theorem, time-dependent Hamiltonians, spectral gaps, and annealing schedules. Theory of how slow evolution tracks the ground state.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation of the project specification: problem, Ising formulation, target solvers, and evaluation plan.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the written and oral project specification milestone.</div></div></div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 6</div><div class="wk-body"><b>D-Wave hardware and minor embedding</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Physical annealers, qubit connectivity, chimera and pegasus topologies, minor embedding, and chain strength. Practical limits of current devices.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Use the D-Wave Ocean SDK to embed and sample the project Ising model on a simulated or cloud sampler.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Obtain first annealing samples for the project problem and record solution quality.</div></div></div><div class="wpart">Gate-based optimization</div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 7</div><div class="wk-body"><b>QAOA theory</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>The variational principle, cost and mixer Hamiltonians, the QAOA ansatz at depth p, and the p to infinity limit recovering adiabatic evolution. Performance bounds on MaxCut.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Construct a depth one QAOA circuit for a small project instance and evaluate the expectation value.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Implement a working QAOA cost function for the project problem.</div></div></div><div class="week pres"><div class="wk-num" style="color:#B5530B">Wk 8</div><div class="wk-body"><b>Variational optimization and parameter training<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Classical optimizers, gradient and gradient-free methods, parameter landscapes, barren plateaus, and warm starting. The hybrid quantum-classical loop.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team interim presentation: progress, annealing versus QAOA results so far, and obstacles.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the interim presentation milestone and a tuned QAOA parameter set.</div></div></div><div class="wpart">Quantum-inspired methods</div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 9</div><div class="wk-body"><b>Simulated annealing and parallel tempering</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Classical Metropolis sampling, temperature schedules, parallel tempering, and why these are strong baselines for quantum methods.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Run simulated annealing and parallel tempering on the project instance and compare against quantum samples.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add classical baselines to the project benchmark suite.</div></div></div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 10</div><div class="wk-body"><b>Tensor networks and digital annealers</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Quantum-inspired tensor-network optimizers, mean-field methods, and commercial digital annealers. Where quantum inspiration helps without quantum hardware.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Apply a tensor-network or specialized quantum-inspired solver to the project instance.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Integrate a quantum-inspired solver and log its results in the benchmark.</div></div></div><div class="wpart">Practical near-term computing</div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 11</div><div class="wk-body"><b>Noise, error, and mitigation</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Decoherence, gate and readout error, sampling overhead, and error mitigation strategies for noisy intermediate-scale devices.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Run QAOA under a noise model and apply a mitigation technique, measuring the effect on solution quality.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Quantify noise impact on the project QAOA results and apply mitigation.</div></div></div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 12</div><div class="wk-body"><b>Benchmarking and scaling</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Fair benchmarking methodology, time to solution, approximation ratios, and scaling behavior across solver families. Reporting pitfalls.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Assemble a unified benchmark comparing all solvers on shared metrics and instance sizes.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Finalize the benchmark table and figures for the project.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#B5530B">Wk 13</div><div class="wk-body"><b>Final project defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Course synthesis: when quantum, hybrid, and quantum-inspired methods are justified, and the outlook for fault-tolerant optimization.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team final presentation with oral defense of methodology, results, and design choices.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the final report, code, and benchmark with oral defense.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams take one real combinatorial optimization problem and carry it through the full quantum optimization pipeline. They formulate it as QUBO and Ising, then solve it with quantum annealing, QAOA, and quantum-inspired baselines, producing a rigorous head-to-head benchmark and a final defended report.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#B5530B"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#FBEEDE;color:#B5530B">Portfolio asset selection</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Vehicle routing</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Job shop scheduling</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Max-cut on social graphs</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Traffic flow optimization</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Protein folding lattice model</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Sensor placement</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Wireless channel assignment</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#B5530B"><li><b>Qiskit</b>: build, simulate, and run gate-based circuits and QAOA</li><li><b>Qiskit Optimization</b>: high-level QUBO and converter workflows</li><li><b>PennyLane</b>: differentiable variational quantum optimization</li><li><b>D-Wave Ocean SDK</b>: QUBO and Ising sampling on annealers</li><li><b>dimod</b>: shared QUBO and Ising data structures and samplers</li><li><b>minorminer</b>: minor embedding onto annealer topologies</li><li><b>NumPy</b>: linear algebra and statevector manipulation</li><li><b>SciPy</b>: classical optimizers for the variational loop</li><li><b>NetworkX</b>: graph problem construction and visualization</li><li><b>Matplotlib</b>: energy landscapes and benchmark plots</li><li><b>IBM Quantum Platform</b>: cloud access to real quantum hardware</li><li><b>Jupyter</b>: interactive notebooks for the running project</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1411.4028" target="_blank" rel="noopener">A Quantum Approximate Optimization Algorithm</a></span><div class="meta">Edward Farhi, Jeffrey Goldstone, and Sam Gutmann, 2014</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/quant-ph/0001106" target="_blank" rel="noopener">Quantum Computation by Adiabatic Evolution</a></span><div class="meta">Edward Farhi, Jeffrey Goldstone, Sam Gutmann, and Michael Sipser, 2000</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1103/PhysRevE.58.5355" target="_blank" rel="noopener">Quantum annealing in the transverse Ising model</a></span><div class="meta">Tadashi Kadowaki and Hidetoshi Nishimori, 1998</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1302.5843" target="_blank" rel="noopener">Ising formulations of many NP problems</a></span><div class="meta">Andrew Lucas, 2014</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1304.3061" target="_blank" rel="noopener">A variational eigenvalue solver on a photonic quantum processor</a></span><div class="meta">Alberto Peruzzo, Jarrod McClean, Peter Shadbolt, Man-Hong Yung, Xiao-Qi Zhou, Peter J. Love, Alan Aspuru-Guzik, and Jeremy L. O&#x27;Brien, 2014</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.cambridge.org/us/universitypress/subjects/physics/quantum-physics-quantum-information-and-quantum-computation/quantum-computation-and-quantum-information-10th-anniversary-edition" target="_blank" rel="noopener">Quantum Computation and Quantum Information</a></span><div class="meta">Michael A. Nielsen and Isaac L. Chuang, 2010, Standard reference for qubits, gates, and quantum theory</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://link.springer.com/book/10.1007/978-3-030-23922-0" target="_blank" rel="noopener">Quantum Computing: An Applied Approach</a></span><div class="meta">Jack D. Hidary, 2021, Hands-on coding with foundations and a math toolkit</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1411.4028" target="_blank" rel="noopener">A Quantum Approximate Optimization Algorithm</a></span><div class="meta">Edward Farhi, Jeffrey Goldstone, and Sam Gutmann, 2014, Seminal QAOA paper</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://docs.quantum.ibm.com/" target="_blank" rel="noopener">Qiskit Documentation</a></span><div class="meta">IBM Quantum, 2026, Official Qiskit and Qiskit Optimization docs</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://docs.ocean.dwavesys.com/" target="_blank" rel="noopener">D-Wave Ocean SDK Documentation</a></span><div class="meta">D-Wave Systems, 2026, Annealing, embedding, and QUBO sampling</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://docs.pennylane.ai/" target="_blank" rel="noopener">PennyLane Documentation</a></span><div class="meta">Xanadu, 2026, Differentiable quantum programming and QAOA demos</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1302.5843" target="_blank" rel="noopener">Ising formulations of many NP problems</a></span><div class="meta">Andrew Lucas, 2014, Catalog of QUBO and Ising encodings</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge" style="background:#FBEEDE;color:#B5530B">Core &middot; Semester 2</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="AI6.html">&larr; AI6 &middot; Embodied AI: Robotics &amp; Autonomous Systems</a><a href="QCF2.html">QCF2 &middot; AI &amp; Optimization for Finance &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #B5530B">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>QCF1</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: Computational Finance, Optimization &amp; Quantum Computing</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>12</dd>
+          <dt>References</dt><dd>7</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#B5530B">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

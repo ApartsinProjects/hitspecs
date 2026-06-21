@@ -1,0 +1,1233 @@
+{
+  "full-stack-software-developer": {
+    "title": "Full-Stack Software Developer",
+    "title_he": "מפתח תוכנה פול-סטאק",
+    "concentration": "SE",
+    "summary": "A Full-Stack Software Developer builds and maintains both the client-facing interfaces and the server-side logic of web and mobile applications. They own features end to end, from database schema and API design through to the user interface, and collaborate closely with designers and product teams.",
+    "responsibilities": [
+      "Design and implement responsive front-end interfaces from UI mockups and design systems",
+      "Build and maintain REST and GraphQL APIs and the server-side business logic behind them",
+      "Model relational and non-relational database schemas and write efficient queries",
+      "Write unit, integration, and end-to-end tests and participate in code reviews",
+      "Debug production issues across the stack and ship fixes through CI/CD pipelines",
+      "Collaborate with product managers and designers in agile sprints to scope and deliver features"
+    ],
+    "knowledge": [
+      "Data structures, algorithms, and computational complexity analysis",
+      "Relational database theory, normalization, and transaction concepts",
+      "HTTP, the client-server model, and web protocol fundamentals",
+      "Object-oriented and functional programming paradigms",
+      "Software design principles such as SOLID, separation of concerns, and design patterns",
+      "Concurrency, asynchronous execution, and the event loop model"
+    ],
+    "skills": [
+      "Translating product requirements into working features across the stack",
+      "Writing clean, maintainable, and well-documented code",
+      "Debugging across browser, network, and server layers",
+      "Designing and consuming APIs and managing application state",
+      "Using version control workflows and resolving merge conflicts",
+      "Optimizing front-end performance and back-end query efficiency"
+    ],
+    "tools": [
+      "TypeScript and JavaScript",
+      "React, Next.js, and Vue",
+      "Node.js, Express, and NestJS",
+      "PostgreSQL and MongoDB",
+      "Git and GitHub",
+      "Docker",
+      "Tailwind CSS",
+      "Vite and webpack",
+      "Jest and Playwright",
+      "Vercel and AWS"
+    ],
+    "example_employers": [
+      "Wix",
+      "Monday.com",
+      "Lightricks",
+      "Google",
+      "Microsoft",
+      "Amazon",
+      "JFrog",
+      "Fiverr"
+    ]
+  },
+  "devops-engineer": {
+    "title": "DevOps Engineer",
+    "title_he": "מהנדס DevOps",
+    "concentration": "SE",
+    "summary": "A DevOps Engineer bridges development and operations by automating the build, test, and deployment pipeline and managing the infrastructure that runs applications. They focus on reliability, scalability, and fast, safe delivery of software to production.",
+    "responsibilities": [
+      "Build and maintain CI/CD pipelines that automate testing and deployment",
+      "Provision and manage cloud infrastructure using infrastructure-as-code",
+      "Configure and operate container orchestration platforms and service deployments",
+      "Set up monitoring, logging, and alerting to ensure system observability",
+      "Automate routine operational tasks with scripts and tooling",
+      "Manage secrets, access control, and environment configuration across stages"
+    ],
+    "knowledge": [
+      "Operating systems, processes, and Linux system administration concepts",
+      "Computer networking, DNS, load balancing, and TCP/IP fundamentals",
+      "Distributed systems concepts including scalability, availability, and fault tolerance",
+      "Continuous integration and continuous delivery principles",
+      "Virtualization and containerization theory",
+      "Site reliability engineering concepts such as SLOs, SLIs, and error budgets"
+    ],
+    "skills": [
+      "Writing automation scripts and infrastructure-as-code definitions",
+      "Diagnosing and resolving production infrastructure incidents",
+      "Designing resilient and scalable deployment architectures",
+      "Configuring observability stacks and interpreting telemetry",
+      "Tuning system and pipeline performance",
+      "Applying security hardening to infrastructure and pipelines"
+    ],
+    "tools": [
+      "Docker and Kubernetes",
+      "Terraform and Ansible",
+      "GitHub Actions, GitLab CI, and Jenkins",
+      "AWS, Azure, and Google Cloud Platform",
+      "Prometheus and Grafana",
+      "Helm and ArgoCD",
+      "Bash and Python",
+      "Datadog",
+      "HashiCorp Vault"
+    ],
+    "example_employers": [
+      "JFrog",
+      "Wix",
+      "Monday.com",
+      "Amazon Web Services",
+      "Microsoft",
+      "Google",
+      "Check Point",
+      "Red Hat"
+    ]
+  },
+  "qa-engineer": {
+    "title": "QA Engineer",
+    "title_he": "מהנדס בדיקות תוכנה (QA)",
+    "concentration": "SE",
+    "summary": "A QA Engineer ensures software quality by designing test strategies, building automated test suites, and validating that products meet functional and non-functional requirements. They work to catch defects early and prevent regressions before software reaches users.",
+    "responsibilities": [
+      "Design test plans and write detailed test cases from requirements and acceptance criteria",
+      "Build and maintain automated test suites for UI, API, and integration layers",
+      "Execute manual exploratory testing for new and complex features",
+      "Integrate automated tests into CI/CD pipelines and triage failures",
+      "Report, track, and verify defects in collaboration with developers",
+      "Perform regression, performance, and cross-browser or cross-device testing"
+    ],
+    "knowledge": [
+      "Software testing theory including unit, integration, system, and acceptance levels",
+      "Test design techniques such as equivalence partitioning and boundary value analysis",
+      "Software development lifecycle and agile methodologies",
+      "Principles of test automation and the testing pyramid",
+      "Fundamentals of HTTP, APIs, and the client-server model",
+      "Quality metrics, coverage analysis, and risk-based testing concepts"
+    ],
+    "skills": [
+      "Writing clear, reproducible defect reports and test documentation",
+      "Building maintainable automated test frameworks",
+      "Analyzing requirements to identify edge cases and risks",
+      "Debugging test failures and isolating root causes",
+      "Collaborating with developers to improve testability",
+      "Designing data-driven and parameterized test scenarios"
+    ],
+    "tools": [
+      "Selenium and Playwright",
+      "Cypress",
+      "Postman and REST Assured",
+      "JUnit, pytest, and TestNG",
+      "JMeter and k6",
+      "Jira and TestRail",
+      "Git and GitHub Actions",
+      "BrowserStack",
+      "Appium"
+    ],
+    "example_employers": [
+      "Wix",
+      "Monday.com",
+      "Playtika",
+      "NICE",
+      "Microsoft",
+      "Amdocs",
+      "Intel",
+      "Fiverr"
+    ]
+  },
+  "network-engineer": {
+    "title": "Network Engineer",
+    "title_he": "מהנדס רשתות",
+    "concentration": "CY",
+    "summary": "A Network Engineer designs, implements, and maintains the data networks that connect an organization's systems and users. They ensure secure, reliable, and high-performance connectivity across on-premises and cloud environments while defending against network-based threats.",
+    "responsibilities": [
+      "Design and configure routers, switches, firewalls, and VPN connectivity",
+      "Monitor network performance and troubleshoot connectivity and latency issues",
+      "Implement network segmentation, access control lists, and firewall rules",
+      "Plan and execute network capacity upgrades and topology changes",
+      "Document network architecture, addressing schemes, and configurations",
+      "Respond to network outages and security incidents to restore service"
+    ],
+    "knowledge": [
+      "The OSI and TCP/IP models and layer-by-layer protocol behavior",
+      "Routing and switching theory including OSPF, BGP, and VLANs",
+      "IP addressing, subnetting, and network address translation",
+      "Network security concepts including firewalls, IDS/IPS, and zero trust",
+      "Cryptography fundamentals as applied to VPNs and secure tunnels",
+      "Quality of service, congestion control, and network performance principles"
+    ],
+    "skills": [
+      "Configuring and troubleshooting enterprise networking hardware",
+      "Analyzing packet captures to diagnose network problems",
+      "Designing resilient and segmented network topologies",
+      "Automating network configuration and validation",
+      "Implementing and auditing network access controls",
+      "Capacity planning and performance tuning"
+    ],
+    "tools": [
+      "Cisco IOS and Cisco Catalyst",
+      "Wireshark",
+      "pfSense and Palo Alto firewalls",
+      "Juniper Junos",
+      "Nmap",
+      "Ansible and Python with Netmiko",
+      "SolarWinds and Nagios",
+      "VMware NSX",
+      "Cisco Meraki"
+    ],
+    "example_employers": [
+      "Check Point",
+      "Cisco",
+      "Palo Alto Networks",
+      "Bank Hapoalim",
+      "Amdocs",
+      "Microsoft",
+      "Intel",
+      "Bezeq"
+    ]
+  },
+  "devsecops-engineer": {
+    "title": "DevSecOps Engineer",
+    "title_he": "מהנדס DevSecOps",
+    "concentration": "CY",
+    "summary": "A DevSecOps Engineer embeds security into every stage of the software delivery pipeline, automating security testing and policy enforcement alongside development and operations. They ensure that applications and infrastructure are secure by design without slowing down delivery.",
+    "responsibilities": [
+      "Integrate static, dynamic, and dependency scanning into CI/CD pipelines",
+      "Automate security policy enforcement and compliance checks as code",
+      "Harden container images, infrastructure-as-code, and cloud configurations",
+      "Manage secrets, certificates, and identity across environments",
+      "Triage and remediate vulnerabilities discovered in code and dependencies",
+      "Build threat models and security gates into the delivery workflow"
+    ],
+    "knowledge": [
+      "Application security principles and the OWASP Top Ten",
+      "Cryptography fundamentals including hashing, encryption, and key management",
+      "Secure software development lifecycle and shift-left security concepts",
+      "Identity, authentication, and authorization models such as OAuth and RBAC",
+      "Cloud security and shared responsibility models",
+      "Threat modeling and risk assessment methodologies"
+    ],
+    "skills": [
+      "Automating security scanning and gating in delivery pipelines",
+      "Interpreting and prioritizing vulnerability scan results",
+      "Hardening containers, clusters, and cloud accounts",
+      "Writing policy-as-code and compliance automation",
+      "Managing secrets and credentials securely at scale",
+      "Collaborating with developers to remediate findings"
+    ],
+    "tools": [
+      "Snyk and Trivy",
+      "SonarQube",
+      "OWASP ZAP",
+      "HashiCorp Vault",
+      "Docker and Kubernetes",
+      "Terraform and Open Policy Agent",
+      "GitHub Actions and GitLab CI",
+      "Aqua Security",
+      "AWS Security Hub"
+    ],
+    "example_employers": [
+      "Check Point",
+      "Palo Alto Networks",
+      "Wiz",
+      "Aqua Security",
+      "JFrog",
+      "Microsoft",
+      "Amazon Web Services",
+      "Cyberark"
+    ]
+  },
+  "security-analyst": {
+    "title": "Security Analyst",
+    "title_he": "אנליסט אבטחת מידע",
+    "concentration": "CY",
+    "summary": "A Security Analyst monitors an organization's systems for threats, investigates security incidents, and works to protect data and infrastructure from attack. They analyze alerts, hunt for intrusions, and recommend defensive improvements to reduce risk.",
+    "responsibilities": [
+      "Monitor security alerts and triage events from SIEM and detection tools",
+      "Investigate and respond to security incidents and contain threats",
+      "Conduct vulnerability assessments and track remediation",
+      "Analyze logs and network traffic to detect malicious activity",
+      "Maintain detection rules, playbooks, and incident documentation",
+      "Perform threat hunting and produce threat intelligence reports"
+    ],
+    "knowledge": [
+      "Network protocols and the TCP/IP stack as they relate to attacks",
+      "Common attack techniques and the MITRE ATT&CK framework",
+      "Cryptography fundamentals and secure communication concepts",
+      "Operating system internals and log sources on Windows and Linux",
+      "Incident response lifecycle and digital forensics principles",
+      "Risk management, threat modeling, and security governance concepts"
+    ],
+    "skills": [
+      "Analyzing logs and alerts to distinguish threats from noise",
+      "Investigating incidents and reconstructing attack timelines",
+      "Writing and tuning detection rules to reduce false positives",
+      "Performing vulnerability scans and interpreting results",
+      "Communicating findings and risk clearly to stakeholders",
+      "Conducting proactive threat hunting across telemetry"
+    ],
+    "tools": [
+      "Splunk and Microsoft Sentinel",
+      "Wireshark",
+      "Nessus and Qualys",
+      "CrowdStrike Falcon",
+      "Suricata and Zeek",
+      "Nmap and Metasploit",
+      "Elastic Security",
+      "Burp Suite",
+      "VirusTotal"
+    ],
+    "example_employers": [
+      "Check Point",
+      "CyberArk",
+      "Palo Alto Networks",
+      "Bank Hapoalim",
+      "Microsoft",
+      "Deloitte",
+      "CrowdStrike",
+      "Cymulate"
+    ]
+  },
+  "ml-ai-engineer": {
+    "title": "ML / AI Engineer",
+    "title_he": "מהנדס למידת מכונה ובינה מלאכותית",
+    "concentration": "AI",
+    "summary": "An ML / AI Engineer designs, trains, and deploys machine learning models that power intelligent features in production systems. They turn data and research models into reliable, scalable services, spanning data preparation, model development, and integration with applications.",
+    "responsibilities": [
+      "Build and train machine learning and deep learning models for production use",
+      "Engineer features and prepare datasets for model training and evaluation",
+      "Evaluate models against business and statistical metrics and iterate",
+      "Deploy models as services and integrate them into application pipelines",
+      "Optimize model inference for latency, cost, and throughput",
+      "Build retrieval-augmented and LLM-based pipelines and prompts"
+    ],
+    "knowledge": [
+      "Linear algebra, probability, statistics, and multivariate calculus",
+      "Machine learning theory including supervised, unsupervised, and reinforcement learning",
+      "Neural network architectures and the backpropagation algorithm",
+      "Transformer architecture and the foundations of large language models",
+      "Model evaluation, bias-variance tradeoff, and generalization theory",
+      "Optimization methods such as gradient descent and regularization"
+    ],
+    "skills": [
+      "Designing and training models for real-world problems",
+      "Feature engineering and data preprocessing at scale",
+      "Diagnosing model underfitting, overfitting, and data quality issues",
+      "Building and tuning LLM prompts and retrieval pipelines",
+      "Optimizing and serving models efficiently in production",
+      "Communicating model behavior and limitations to stakeholders"
+    ],
+    "tools": [
+      "Python",
+      "PyTorch and TensorFlow",
+      "scikit-learn",
+      "Hugging Face Transformers",
+      "LangChain and LlamaIndex",
+      "pandas and NumPy",
+      "CUDA",
+      "Docker",
+      "ONNX and TensorRT",
+      "Weights and Biases"
+    ],
+    "example_employers": [
+      "Nvidia",
+      "Google",
+      "Microsoft",
+      "Intel",
+      "Mobileye",
+      "Lightricks",
+      "Amazon",
+      "AI21 Labs"
+    ]
+  },
+  "mlops-engineer": {
+    "title": "MLOps Engineer",
+    "title_he": "מהנדס MLOps",
+    "concentration": "AI",
+    "summary": "An MLOps Engineer builds and operates the infrastructure and automation that take machine learning models from experimentation to reliable production. They focus on reproducibility, continuous training, deployment, and monitoring of models at scale.",
+    "responsibilities": [
+      "Build automated pipelines for data ingestion, training, and deployment",
+      "Manage model versioning, experiment tracking, and a model registry",
+      "Deploy models as scalable services with CI/CD for machine learning",
+      "Monitor models in production for drift, degradation, and data quality",
+      "Provision and manage GPU and compute infrastructure for training",
+      "Automate retraining and rollback workflows for models"
+    ],
+    "knowledge": [
+      "Machine learning lifecycle and the foundations of model training",
+      "Distributed systems, scalability, and fault tolerance concepts",
+      "Containerization and orchestration theory",
+      "Continuous integration and delivery principles applied to ML",
+      "Data engineering concepts including pipelines and feature stores",
+      "Model monitoring concepts such as drift and observability"
+    ],
+    "skills": [
+      "Designing reproducible and automated ML pipelines",
+      "Containerizing and orchestrating model training and serving",
+      "Implementing model monitoring and drift detection",
+      "Managing compute resources and cost for ML workloads",
+      "Automating deployment, rollback, and retraining",
+      "Collaborating with data scientists to productionize models"
+    ],
+    "tools": [
+      "Python",
+      "Docker and Kubernetes",
+      "MLflow and DVC",
+      "Kubeflow and Airflow",
+      "AWS SageMaker and Vertex AI",
+      "Terraform",
+      "Prometheus and Grafana",
+      "BentoML and KServe",
+      "Ray",
+      "GitHub Actions"
+    ],
+    "example_employers": [
+      "Nvidia",
+      "Google",
+      "Microsoft",
+      "Amazon Web Services",
+      "Intel",
+      "Mobileye",
+      "Lightricks",
+      "JFrog"
+    ]
+  },
+  "applied-scientist": {
+    "title": "Applied Scientist",
+    "title_he": "מדען יישומי",
+    "concentration": "AI",
+    "summary": "An Applied Scientist conducts applied research to develop novel algorithms and models that solve concrete business and product problems. They combine scientific rigor with engineering practicality, designing experiments, prototyping methods, and translating research advances into deployable solutions.",
+    "responsibilities": [
+      "Formulate research problems from product and business needs",
+      "Design and run experiments to test hypotheses and compare methods",
+      "Prototype and validate novel models and algorithms",
+      "Analyze results with rigorous statistical methods and ablations",
+      "Translate research prototypes into production-ready solutions with engineers",
+      "Read, reproduce, and adapt state-of-the-art research from the literature"
+    ],
+    "knowledge": [
+      "Probability theory, statistics, and experimental design",
+      "Linear algebra, optimization, and multivariate calculus",
+      "Machine learning and deep learning theory in depth",
+      "Statistical inference, hypothesis testing, and causal reasoning",
+      "Information theory and the foundations of representation learning",
+      "Research methodology, reproducibility, and the scientific method"
+    ],
+    "skills": [
+      "Designing rigorous experiments and ablation studies",
+      "Reading and reproducing academic research papers",
+      "Prototyping novel algorithms from mathematical formulations",
+      "Performing statistical analysis and interpreting significance",
+      "Communicating findings through papers, reports, and presentations",
+      "Collaborating with engineers to deploy research outcomes"
+    ],
+    "tools": [
+      "Python",
+      "PyTorch and JAX",
+      "NumPy, SciPy, and pandas",
+      "Hugging Face Transformers",
+      "Jupyter and matplotlib",
+      "Weights and Biases",
+      "scikit-learn",
+      "LaTeX",
+      "Ray and Slurm",
+      "CUDA"
+    ],
+    "example_employers": [
+      "Google",
+      "Microsoft",
+      "Nvidia",
+      "Amazon",
+      "Meta",
+      "Mobileye",
+      "AI21 Labs",
+      "Intel"
+    ]
+  },
+  "financial-software-engineer": {
+    "title": "Financial Software Engineer",
+    "title_he": "מהנדס תוכנה פיננסית",
+    "concentration": "QCF",
+    "summary": "A Financial Software Engineer builds and maintains the software systems that power trading, risk, pricing, and settlement in financial institutions. They combine strong software engineering with domain knowledge of financial markets to deliver accurate, performant, and compliant systems.",
+    "responsibilities": [
+      "Design and build trading, pricing, and risk management software systems",
+      "Integrate with market data feeds, exchanges, and clearing systems",
+      "Implement pricing and valuation models in performant production code",
+      "Ensure correctness, low latency, and reliability of financial calculations",
+      "Build reporting, reconciliation, and regulatory compliance features",
+      "Collaborate with quants and traders to translate models into software"
+    ],
+    "knowledge": [
+      "Financial markets, instruments, and the structure of derivatives",
+      "Time value of money, pricing, and valuation fundamentals",
+      "Probability, statistics, and stochastic processes",
+      "Data structures, algorithms, and computational complexity",
+      "Concurrency, low-latency, and high-performance computing concepts",
+      "Numerical methods and floating-point precision considerations"
+    ],
+    "skills": [
+      "Writing high-performance and correct financial software",
+      "Integrating with real-time market data and trading APIs",
+      "Implementing numerical and pricing models in code",
+      "Profiling and optimizing latency-sensitive systems",
+      "Designing systems for auditability and regulatory compliance",
+      "Collaborating with quantitative researchers and traders"
+    ],
+    "tools": [
+      "C++ and Java",
+      "Python",
+      "kdb+ and q",
+      "SQL and PostgreSQL",
+      "FIX protocol",
+      "Kafka",
+      "Linux",
+      "Git",
+      "Docker",
+      "Boost and QuantLib"
+    ],
+    "example_employers": [
+      "Citadel",
+      "Jane Street",
+      "Bank Hapoalim",
+      "Bank Leumi",
+      "Final (Israeli trading firm)",
+      "JPMorgan Chase",
+      "Bloomberg",
+      "IBI Investment House"
+    ]
+  },
+  "algo-trading-developer": {
+    "title": "Algo-Trading Developer",
+    "title_he": "מפתח מסחר אלגוריתמי",
+    "concentration": "QCF",
+    "summary": "An Algo-Trading Developer designs, implements, and operates automated trading strategies and the systems that execute them in financial markets. They focus on signal generation, execution logic, backtesting, and ultra-low-latency performance to trade profitably and safely.",
+    "responsibilities": [
+      "Implement and optimize automated trading strategies and execution algorithms",
+      "Build and maintain backtesting and simulation frameworks",
+      "Integrate with exchange and broker APIs for order placement and management",
+      "Optimize systems for low-latency execution and high throughput",
+      "Implement risk controls, position limits, and kill switches",
+      "Monitor live strategies and analyze execution quality and slippage"
+    ],
+    "knowledge": [
+      "Market microstructure and order book dynamics",
+      "Probability, statistics, and time series analysis",
+      "Stochastic processes and quantitative trading theory",
+      "Data structures, algorithms, and computational complexity",
+      "Low-latency and concurrent systems concepts",
+      "Backtesting methodology and avoidance of look-ahead and overfitting bias"
+    ],
+    "skills": [
+      "Implementing trading strategies from quantitative specifications",
+      "Building rigorous and bias-free backtesting pipelines",
+      "Optimizing code for microsecond-level latency",
+      "Integrating with and handling real-time market data feeds",
+      "Designing robust risk controls and failsafes",
+      "Analyzing execution performance and strategy behavior"
+    ],
+    "tools": [
+      "C++ and Python",
+      "Rust",
+      "pandas and NumPy",
+      "Backtrader and vectorbt",
+      "FIX protocol",
+      "kdb+ and q",
+      "Kafka",
+      "Linux",
+      "Redis",
+      "Git"
+    ],
+    "example_employers": [
+      "Jane Street",
+      "Citadel Securities",
+      "Jump Trading",
+      "Two Sigma",
+      "Final (Israeli trading firm)",
+      "Optiver",
+      "IMC Trading",
+      "Bank Leumi"
+    ]
+  },
+  "quant-analyst": {
+    "title": "Quant Analyst",
+    "title_he": "אנליסט כמותי",
+    "concentration": "QCF",
+    "summary": "A Quant Analyst applies mathematical, statistical, and computational methods to model financial markets, price instruments, and manage risk. They develop and validate quantitative models that inform trading, investment, and risk decisions.",
+    "responsibilities": [
+      "Develop and calibrate pricing and valuation models for financial instruments",
+      "Build statistical and machine learning models for forecasting and signals",
+      "Conduct risk modeling including value-at-risk and stress testing",
+      "Validate models and back-test strategies against historical data",
+      "Analyze large financial datasets to identify patterns and anomalies",
+      "Document model assumptions, methodology, and results for stakeholders"
+    ],
+    "knowledge": [
+      "Stochastic calculus and the theory of derivative pricing",
+      "Probability theory, statistics, and time series analysis",
+      "Linear algebra, optimization, and numerical methods",
+      "Financial economics, portfolio theory, and risk management",
+      "Monte Carlo and partial differential equation pricing methods",
+      "Machine learning theory as applied to financial data"
+    ],
+    "skills": [
+      "Building and calibrating quantitative pricing and risk models",
+      "Performing statistical analysis on noisy financial data",
+      "Implementing numerical methods and simulations in code",
+      "Backtesting and validating models rigorously",
+      "Communicating quantitative results to non-technical stakeholders",
+      "Cleaning and managing large financial datasets"
+    ],
+    "tools": [
+      "Python",
+      "NumPy, SciPy, and pandas",
+      "R",
+      "QuantLib",
+      "scikit-learn and statsmodels",
+      "MATLAB",
+      "SQL",
+      "Jupyter",
+      "Bloomberg Terminal",
+      "C++"
+    ],
+    "example_employers": [
+      "JPMorgan Chase",
+      "Citadel",
+      "Goldman Sachs",
+      "Bank Hapoalim",
+      "Bank Leumi",
+      "Two Sigma",
+      "Bloomberg",
+      "Migdal Insurance"
+    ]
+  },
+  "cloud-platform-engineer": {
+    "title": "Cloud & Platform Engineer",
+    "title_he": "מהנדס ענן ופלטפורמה",
+    "concentration": "SE",
+    "summary": "A Cloud and Platform Engineer builds and operates the cloud foundations and internal developer platforms that other engineering teams build on top of. They design self-service infrastructure, automate provisioning, and ensure that cloud environments are secure, cost-efficient, and scalable.",
+    "responsibilities": [
+      "Design and provision cloud infrastructure across compute, storage, and networking",
+      "Build internal developer platforms and self-service tooling for engineering teams",
+      "Author and maintain infrastructure-as-code modules and reusable templates",
+      "Implement identity, access control, and network policies in the cloud",
+      "Optimize cloud spend and right-size resources for cost and performance",
+      "Operate Kubernetes clusters and platform services with high availability"
+    ],
+    "knowledge": [
+      "Cloud computing models including IaaS, PaaS, and the shared responsibility model",
+      "Distributed systems concepts such as scalability, availability, and consistency",
+      "Computer networking, DNS, load balancing, and TCP/IP fundamentals",
+      "Linux operating system internals and system administration",
+      "Containerization and orchestration theory",
+      "Infrastructure-as-code and declarative configuration principles"
+    ],
+    "skills": [
+      "Designing scalable and resilient cloud architectures",
+      "Writing modular infrastructure-as-code and platform abstractions",
+      "Automating provisioning and configuration workflows",
+      "Diagnosing cloud and platform reliability incidents",
+      "Implementing cloud cost optimization and governance",
+      "Building developer-friendly self-service interfaces"
+    ],
+    "tools": [
+      "AWS, Azure, and Google Cloud Platform",
+      "Terraform and Pulumi",
+      "Kubernetes and Helm",
+      "Docker",
+      "Crossplane and Backstage",
+      "ArgoCD and Flux",
+      "Python and Go",
+      "Prometheus and Grafana",
+      "HashiCorp Vault"
+    ],
+    "example_employers": [
+      "Amazon Web Services",
+      "Microsoft",
+      "Google",
+      "Wix",
+      "Monday.com",
+      "JFrog",
+      "Snyk",
+      "Salesforce"
+    ]
+  },
+  "backend-engineer": {
+    "title": "Backend Engineer",
+    "title_he": "מהנדס צד שרת (Backend)",
+    "concentration": "SE",
+    "summary": "A Backend Engineer designs and builds the server-side systems, APIs, and data stores that power applications behind the scenes. They focus on correctness, scalability, and performance, ensuring that services handle load reliably and integrate cleanly with other systems.",
+    "responsibilities": [
+      "Design and implement REST and GraphQL APIs and microservices",
+      "Model and optimize relational and non-relational data stores",
+      "Build asynchronous processing, queues, and event-driven workflows",
+      "Ensure service reliability, scalability, and fault tolerance under load",
+      "Write automated tests and participate in code reviews",
+      "Profile and optimize service latency, throughput, and resource usage"
+    ],
+    "knowledge": [
+      "Data structures, algorithms, and computational complexity analysis",
+      "Relational database theory, indexing, and transaction isolation",
+      "Distributed systems concepts including consistency, caching, and partitioning",
+      "Concurrency, parallelism, and asynchronous execution models",
+      "API design principles and the client-server model",
+      "Software design principles such as SOLID and design patterns"
+    ],
+    "skills": [
+      "Designing clean and well-documented service APIs",
+      "Modeling data and writing efficient queries",
+      "Building scalable and resilient distributed services",
+      "Diagnosing performance bottlenecks and concurrency bugs",
+      "Implementing caching, queuing, and messaging patterns",
+      "Writing maintainable, testable server-side code"
+    ],
+    "tools": [
+      "Java, Go, and Python",
+      "Node.js and NestJS",
+      "PostgreSQL and MongoDB",
+      "Redis",
+      "Kafka and RabbitMQ",
+      "Docker and Kubernetes",
+      "gRPC and GraphQL",
+      "Elasticsearch",
+      "Git and GitHub Actions"
+    ],
+    "example_employers": [
+      "Wix",
+      "Monday.com",
+      "Fiverr",
+      "Google",
+      "Microsoft",
+      "Amazon",
+      "Riskified",
+      "Taboola"
+    ]
+  },
+  "mobile-developer": {
+    "title": "Mobile Developer",
+    "title_he": "מפתח אפליקציות מובייל",
+    "concentration": "SE",
+    "summary": "A Mobile Developer builds and maintains native or cross-platform applications for iOS and Android devices. They craft responsive, performant user experiences while integrating with backend services, device hardware, and platform features.",
+    "responsibilities": [
+      "Design and implement mobile app features and user interfaces",
+      "Integrate apps with REST and GraphQL backend services",
+      "Optimize app performance, memory use, and battery consumption",
+      "Handle offline storage, caching, and state synchronization",
+      "Publish and maintain apps in the App Store and Google Play",
+      "Write tests and debug platform-specific issues across devices"
+    ],
+    "knowledge": [
+      "Data structures, algorithms, and computational complexity analysis",
+      "Mobile platform lifecycle and UI rendering models",
+      "Object-oriented and reactive programming paradigms",
+      "Concurrency, threading, and asynchronous execution on mobile",
+      "HTTP, the client-server model, and API fundamentals",
+      "Mobile security, permissions, and data storage concepts"
+    ],
+    "skills": [
+      "Building responsive and accessible mobile interfaces",
+      "Integrating device features such as camera, location, and notifications",
+      "Managing app state and local persistence",
+      "Profiling and optimizing mobile performance",
+      "Debugging across device models and OS versions",
+      "Navigating app store submission and release processes"
+    ],
+    "tools": [
+      "Swift and SwiftUI",
+      "Kotlin and Jetpack Compose",
+      "React Native",
+      "Flutter and Dart",
+      "Xcode and Android Studio",
+      "Firebase",
+      "REST and GraphQL clients",
+      "Git and Fastlane",
+      "Charles Proxy"
+    ],
+    "example_employers": [
+      "Lightricks",
+      "Wix",
+      "Gett",
+      "Fiverr",
+      "Google",
+      "Meta",
+      "Playtika",
+      "eToro"
+    ]
+  },
+  "penetration-tester": {
+    "title": "Penetration Tester",
+    "title_he": "בודק חדירוּת",
+    "concentration": "CY",
+    "summary": "A Penetration Tester simulates real-world attacks against applications, networks, and systems to find exploitable weaknesses before adversaries do. They assess security posture through hands-on testing and deliver clear reports with remediation guidance.",
+    "responsibilities": [
+      "Plan and scope penetration tests against web apps, networks, and systems",
+      "Perform reconnaissance, vulnerability discovery, and exploitation",
+      "Test for common weaknesses such as injection, broken access control, and misconfiguration",
+      "Chain vulnerabilities to demonstrate real-world impact safely",
+      "Document findings, severity, and proof-of-concept exploits",
+      "Recommend prioritized remediation and retest fixes"
+    ],
+    "knowledge": [
+      "Network protocols and the TCP/IP stack as they relate to attacks",
+      "Web application security and the OWASP Top Ten",
+      "Common attack techniques and the MITRE ATT&CK framework",
+      "Operating system internals on Windows and Linux",
+      "Cryptography fundamentals and common cryptographic weaknesses",
+      "Authentication, authorization, and access control models"
+    ],
+    "skills": [
+      "Identifying and exploiting vulnerabilities in a controlled manner",
+      "Performing reconnaissance and attack surface mapping",
+      "Writing and adapting exploit scripts and payloads",
+      "Assessing and prioritizing risk by business impact",
+      "Producing clear, actionable penetration test reports",
+      "Communicating findings to technical and non-technical audiences"
+    ],
+    "tools": [
+      "Burp Suite",
+      "Metasploit",
+      "Nmap",
+      "Kali Linux",
+      "Wireshark",
+      "sqlmap and Nikto",
+      "BloodHound",
+      "Python and Bash",
+      "ffuf and Hydra"
+    ],
+    "example_employers": [
+      "Check Point",
+      "CyberArk",
+      "Palo Alto Networks",
+      "Sygnia",
+      "Deloitte",
+      "EY",
+      "Comsec",
+      "Microsoft"
+    ]
+  },
+  "security-engineer": {
+    "title": "Security Engineer",
+    "title_he": "מהנדס אבטחת מידע",
+    "concentration": "CY",
+    "summary": "A Security Engineer designs, builds, and maintains the defenses that protect an organization's applications, infrastructure, and data. They implement security controls, harden systems, and build tooling that detects and prevents attacks across the technology stack.",
+    "responsibilities": [
+      "Design and implement security controls across applications and infrastructure",
+      "Harden cloud accounts, servers, and network configurations",
+      "Build and maintain detection, logging, and security automation tooling",
+      "Review architectures and code for security weaknesses",
+      "Manage identity, authentication, and secrets across systems",
+      "Respond to and help remediate security incidents and vulnerabilities"
+    ],
+    "knowledge": [
+      "Application and network security principles and the OWASP Top Ten",
+      "Cryptography fundamentals including encryption, hashing, and key management",
+      "Identity, authentication, and authorization models such as OAuth and RBAC",
+      "Cloud security and the shared responsibility model",
+      "Operating system and network internals as they relate to defense",
+      "Threat modeling, risk assessment, and secure design principles"
+    ],
+    "skills": [
+      "Designing and implementing layered security defenses",
+      "Hardening systems, cloud accounts, and pipelines",
+      "Building security automation and detection tooling",
+      "Reviewing code and architecture for vulnerabilities",
+      "Managing secrets and identity securely at scale",
+      "Collaborating with engineers to embed security by design"
+    ],
+    "tools": [
+      "AWS, Azure, and GCP security services",
+      "Terraform and Open Policy Agent",
+      "Wiz and Prisma Cloud",
+      "HashiCorp Vault",
+      "Python and Go",
+      "Burp Suite",
+      "Docker and Kubernetes",
+      "SIEM platforms such as Splunk and Sentinel",
+      "Okta"
+    ],
+    "example_employers": [
+      "Wiz",
+      "Check Point",
+      "CyberArk",
+      "Palo Alto Networks",
+      "Microsoft",
+      "Google",
+      "Snyk",
+      "Armis"
+    ]
+  },
+  "soc-analyst": {
+    "title": "SOC Analyst",
+    "title_he": "אנליסט מרכז תפעול אבטחה (SOC)",
+    "concentration": "CY",
+    "summary": "A SOC Analyst works in a Security Operations Center to continuously monitor an organization's systems, detect threats, and respond to security alerts in real time. They are the front line of defense, triaging events and escalating genuine incidents for response.",
+    "responsibilities": [
+      "Monitor security alerts and dashboards from SIEM and detection platforms",
+      "Triage and investigate alerts to separate real threats from false positives",
+      "Escalate confirmed incidents and follow response playbooks",
+      "Analyze logs, endpoint, and network telemetry for indicators of compromise",
+      "Document incidents, actions taken, and lessons learned",
+      "Tune detection rules and contribute to threat hunting efforts"
+    ],
+    "knowledge": [
+      "Network protocols and the TCP/IP stack as they relate to attacks",
+      "Common attack techniques and the MITRE ATT&CK framework",
+      "Operating system internals and log sources on Windows and Linux",
+      "Incident response lifecycle and escalation procedures",
+      "Cryptography and secure communication fundamentals",
+      "Threat intelligence concepts and indicators of compromise"
+    ],
+    "skills": [
+      "Triaging high volumes of alerts efficiently and accurately",
+      "Investigating events across logs and telemetry sources",
+      "Following and improving incident response playbooks",
+      "Recognizing attack patterns and indicators of compromise",
+      "Communicating clearly under time pressure during incidents",
+      "Tuning detections to reduce alert fatigue"
+    ],
+    "tools": [
+      "Splunk and Microsoft Sentinel",
+      "CrowdStrike Falcon",
+      "Elastic Security",
+      "Wireshark",
+      "Suricata and Zeek",
+      "VirusTotal",
+      "TheHive and MISP",
+      "Cortex XSOAR",
+      "Nmap"
+    ],
+    "example_employers": [
+      "Check Point",
+      "CyberArk",
+      "Sygnia",
+      "Bank Hapoalim",
+      "Deloitte",
+      "Microsoft",
+      "Radware",
+      "Cymulate"
+    ]
+  },
+  "data-scientist": {
+    "title": "Data Scientist",
+    "title_he": "מדען נתונים",
+    "concentration": "AI",
+    "summary": "A Data Scientist extracts insight from data using statistical analysis, machine learning, and visualization to inform decisions and build predictive models. They frame business problems quantitatively, analyze data rigorously, and communicate findings to stakeholders.",
+    "responsibilities": [
+      "Frame business questions as data and modeling problems",
+      "Explore, clean, and analyze datasets to uncover patterns and insights",
+      "Build and evaluate statistical and machine learning models",
+      "Design and analyze experiments such as A/B tests",
+      "Create visualizations and dashboards to communicate findings",
+      "Present results and recommendations to business stakeholders"
+    ],
+    "knowledge": [
+      "Probability, statistics, and statistical inference",
+      "Machine learning theory including supervised and unsupervised methods",
+      "Experimental design and hypothesis testing",
+      "Linear algebra and optimization fundamentals",
+      "Data wrangling, feature engineering, and exploratory analysis concepts",
+      "Causal inference and bias-variance tradeoff"
+    ],
+    "skills": [
+      "Translating ambiguous business problems into analyses",
+      "Cleaning and exploring messy real-world datasets",
+      "Building and validating predictive models",
+      "Designing and interpreting controlled experiments",
+      "Communicating insights through visualization and storytelling",
+      "Writing reproducible analysis code"
+    ],
+    "tools": [
+      "Python",
+      "pandas, NumPy, and scikit-learn",
+      "SQL",
+      "Jupyter",
+      "matplotlib, seaborn, and Plotly",
+      "statsmodels",
+      "Tableau and Power BI",
+      "Apache Spark",
+      "Git"
+    ],
+    "example_employers": [
+      "Google",
+      "Microsoft",
+      "Meta",
+      "Wix",
+      "Monday.com",
+      "Taboola",
+      "Riskified",
+      "Playtika"
+    ]
+  },
+  "nlp-engineer": {
+    "title": "NLP Engineer",
+    "title_he": "מהנדס עיבוד שפה טבעית",
+    "concentration": "AI",
+    "summary": "An NLP Engineer builds systems that understand, generate, and process human language using machine learning and large language models. They develop pipelines for tasks such as classification, extraction, search, and conversational AI, and deploy them into production.",
+    "responsibilities": [
+      "Build and fine-tune models for text classification, extraction, and generation",
+      "Develop retrieval-augmented generation and LLM-based pipelines",
+      "Preprocess and tokenize text data and build training datasets",
+      "Evaluate language models against task-specific and human metrics",
+      "Optimize inference for latency, cost, and quality in production",
+      "Design prompts, guardrails, and evaluation harnesses for LLM applications"
+    ],
+    "knowledge": [
+      "Linear algebra, probability, and statistics",
+      "Machine learning and deep learning theory",
+      "Transformer architecture and the foundations of large language models",
+      "Natural language processing concepts such as tokenization and embeddings",
+      "Information retrieval and vector search fundamentals",
+      "Model evaluation, generalization, and bias considerations"
+    ],
+    "skills": [
+      "Building and fine-tuning language models for real tasks",
+      "Designing retrieval and prompting pipelines for LLMs",
+      "Preprocessing and curating text datasets",
+      "Evaluating NLP systems with appropriate metrics",
+      "Optimizing and serving language models efficiently",
+      "Diagnosing model failures and hallucinations"
+    ],
+    "tools": [
+      "Python",
+      "PyTorch",
+      "Hugging Face Transformers and Tokenizers",
+      "spaCy and NLTK",
+      "LangChain and LlamaIndex",
+      "FAISS and Pinecone",
+      "OpenAI and Anthropic APIs",
+      "Weights and Biases",
+      "Docker"
+    ],
+    "example_employers": [
+      "AI21 Labs",
+      "Google",
+      "Microsoft",
+      "Amazon",
+      "Lightricks",
+      "Verbit",
+      "Gong",
+      "Meta"
+    ]
+  },
+  "computer-vision-engineer": {
+    "title": "Computer Vision Engineer",
+    "title_he": "מהנדס ראייה ממוחשבת",
+    "concentration": "AI",
+    "summary": "A Computer Vision Engineer builds systems that interpret images and video using machine learning and deep learning. They develop models for tasks such as detection, segmentation, and recognition, and deploy them into products ranging from mobile apps to autonomous systems.",
+    "responsibilities": [
+      "Build and train models for detection, segmentation, and classification",
+      "Collect, label, and augment image and video datasets",
+      "Evaluate vision models against accuracy and robustness metrics",
+      "Optimize models for real-time inference on devices and the cloud",
+      "Integrate vision models into production pipelines and applications",
+      "Develop image and video preprocessing and post-processing logic"
+    ],
+    "knowledge": [
+      "Linear algebra, probability, statistics, and multivariate calculus",
+      "Machine learning and deep learning theory",
+      "Convolutional neural networks and modern vision architectures",
+      "Image formation, geometry, and signal processing fundamentals",
+      "Model evaluation, generalization, and the bias-variance tradeoff",
+      "Optimization methods such as gradient descent and regularization"
+    ],
+    "skills": [
+      "Designing and training computer vision models",
+      "Building and augmenting image and video datasets",
+      "Evaluating model accuracy and robustness on real data",
+      "Optimizing models for edge and real-time deployment",
+      "Debugging data quality and model performance issues",
+      "Integrating vision models into application pipelines"
+    ],
+    "tools": [
+      "Python",
+      "PyTorch and TensorFlow",
+      "OpenCV",
+      "Ultralytics YOLO and Detectron2",
+      "ONNX and TensorRT",
+      "CUDA",
+      "Hugging Face Transformers",
+      "NumPy and Pillow",
+      "Docker"
+    ],
+    "example_employers": [
+      "Mobileye",
+      "Nvidia",
+      "Lightricks",
+      "Intel",
+      "Google",
+      "Microsoft",
+      "Trigo",
+      "AnyVision"
+    ]
+  },
+  "quantitative-developer": {
+    "title": "Quantitative Developer",
+    "title_he": "מפתח כמותי",
+    "concentration": "QCF",
+    "summary": "A Quantitative Developer sits between quantitative researchers and production systems, turning mathematical models into fast, reliable, well-engineered code. They build the libraries, pricing engines, and research infrastructure that quants and traders depend on.",
+    "responsibilities": [
+      "Implement pricing, risk, and signal models in performant production code",
+      "Build and maintain research and backtesting infrastructure for quants",
+      "Optimize numerical computations for speed and accuracy",
+      "Integrate models with market data, trading, and risk systems",
+      "Write tests and validation harnesses for quantitative libraries",
+      "Collaborate with researchers to productionize and maintain models"
+    ],
+    "knowledge": [
+      "Probability, statistics, and stochastic processes",
+      "Numerical methods, linear algebra, and optimization",
+      "Data structures, algorithms, and computational complexity",
+      "Derivative pricing and quantitative finance fundamentals",
+      "Concurrency, low-latency, and high-performance computing concepts",
+      "Floating-point precision and numerical stability considerations"
+    ],
+    "skills": [
+      "Translating mathematical models into efficient, correct code",
+      "Optimizing numerical and latency-sensitive computations",
+      "Building robust research and backtesting frameworks",
+      "Integrating quantitative libraries with market and trading systems",
+      "Profiling and tuning performance-critical code",
+      "Collaborating effectively with quantitative researchers"
+    ],
+    "tools": [
+      "C++ and Python",
+      "NumPy, SciPy, and pandas",
+      "QuantLib",
+      "kdb+ and q",
+      "Cython and Numba",
+      "SQL",
+      "Linux",
+      "Git",
+      "Docker"
+    ],
+    "example_employers": [
+      "Jane Street",
+      "Citadel",
+      "Two Sigma",
+      "JPMorgan Chase",
+      "Goldman Sachs",
+      "Final (Israeli trading firm)",
+      "Bank Leumi",
+      "Bloomberg"
+    ]
+  },
+  "risk-analyst": {
+    "title": "Risk Analyst",
+    "title_he": "אנליסט סיכונים",
+    "concentration": "QCF",
+    "summary": "A Risk Analyst measures, models, and monitors the financial risks an institution is exposed to, including market, credit, and liquidity risk. They quantify potential losses, run stress scenarios, and provide analysis that informs limits, capital, and decision-making.",
+    "responsibilities": [
+      "Measure and monitor market, credit, and liquidity risk exposures",
+      "Compute risk metrics such as value-at-risk and expected shortfall",
+      "Run stress tests and scenario analyses on portfolios",
+      "Validate risk models and analyze their assumptions and limitations",
+      "Prepare risk reports and dashboards for management and regulators",
+      "Analyze data to detect breaches of limits and emerging risks"
+    ],
+    "knowledge": [
+      "Probability theory, statistics, and time series analysis",
+      "Financial markets, instruments, and derivatives",
+      "Risk management theory including value-at-risk and stress testing",
+      "Portfolio theory and financial economics",
+      "Regulatory frameworks such as Basel and capital requirements",
+      "Linear algebra, optimization, and numerical methods"
+    ],
+    "skills": [
+      "Quantifying and interpreting financial risk metrics",
+      "Building and validating risk models",
+      "Designing and running stress and scenario tests",
+      "Analyzing large financial datasets for risk signals",
+      "Communicating risk findings clearly to stakeholders",
+      "Producing accurate and timely risk reporting"
+    ],
+    "tools": [
+      "Python",
+      "NumPy, SciPy, and pandas",
+      "R",
+      "SQL",
+      "Excel and VBA",
+      "statsmodels and scikit-learn",
+      "Bloomberg Terminal",
+      "Tableau and Power BI",
+      "MATLAB"
+    ],
+    "example_employers": [
+      "Bank Hapoalim",
+      "Bank Leumi",
+      "Migdal Insurance",
+      "Harel Insurance",
+      "JPMorgan Chase",
+      "Goldman Sachs",
+      "Deloitte",
+      "PwC"
+    ]
+  },
+  "data-engineer-finance": {
+    "title": "Data Engineer (Finance)",
+    "title_he": "מהנדס נתונים (פיננסים)",
+    "concentration": "QCF",
+    "summary": "A Data Engineer in finance builds and operates the data pipelines and platforms that deliver clean, timely market and transactional data to quants, analysts, and trading systems. They focus on reliability, accuracy, and scale for data that drives financial decisions.",
+    "responsibilities": [
+      "Design and build pipelines that ingest market, reference, and transactional data",
+      "Model and maintain data warehouses and time series stores",
+      "Ensure data quality, lineage, and timeliness for downstream consumers",
+      "Integrate data from exchanges, vendors, and internal systems",
+      "Optimize storage and query performance for large financial datasets",
+      "Build monitoring and alerting for data pipeline reliability"
+    ],
+    "knowledge": [
+      "Relational and time series database theory and modeling",
+      "Distributed systems concepts including scalability and fault tolerance",
+      "Data engineering concepts such as ETL, pipelines, and orchestration",
+      "Data structures, algorithms, and computational complexity",
+      "Financial market data structures and instruments",
+      "Data quality, governance, and lineage principles"
+    ],
+    "skills": [
+      "Building reliable and scalable data pipelines",
+      "Modeling warehouses and time series data stores",
+      "Ensuring data quality and consistency at scale",
+      "Optimizing storage and query performance",
+      "Integrating heterogeneous financial data sources",
+      "Monitoring and operating production data systems"
+    ],
+    "tools": [
+      "Python and SQL",
+      "Apache Spark and Apache Airflow",
+      "Kafka",
+      "kdb+ and q",
+      "PostgreSQL and Snowflake",
+      "dbt",
+      "AWS and Google Cloud Platform",
+      "Docker",
+      "Git"
+    ],
+    "example_employers": [
+      "Bank Hapoalim",
+      "Bank Leumi",
+      "Two Sigma",
+      "JPMorgan Chase",
+      "Bloomberg",
+      "eToro",
+      "IBI Investment House",
+      "Migdal Insurance"
+    ]
+  }
+}

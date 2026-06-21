@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#B5530B">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QCF2: AI &amp; Optimization for Finance | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="on" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#B5530B;--ink:#8A3F08">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; QCF2</p>
+    <h1>AI &amp; Optimization for Finance</h1>
+    <p class="hetx" dir="rtl">בינה מלאכותית ואופטימיזציה למימון</p>
+    <p class="csub">portfolio theory, stochastic models, and machine learning for quantitative strategies</p>
+    <p class="lead">AI, optimization, and risk for modern quantitative finance</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Apply machine learning and optimization to financial problems such as pricing, portfolio construction, and algorithmic trading.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #B5530B">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #B5530B"><span class="bk" style="color:#B5530B">What you will build</span><p>Built a reproducible quantitative research pipeline in Python with cvxpy, PyPortfolioOpt, scikit-learn, and vectorbt that constructs risk-aware optimized portfolios, adds machine learning signals, and rigorously backtests a cost-aware trading strategy under purged cross-validation.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#B5530B"><li>Derive mean-variance portfolio theory and the efficient frontier from first principles</li><li>Formulate portfolio construction as convex optimization with realistic constraints</li><li>Explain Brownian motion, Ito calculus, and the stochastic processes underlying asset prices</li><li>Build and validate risk models including value at risk and expected shortfall</li><li>Engineer financial features and labels while avoiding leakage and lookahead bias</li><li>Apply machine learning models to return prediction and signal generation</li><li>Design and backtest algorithmic trading strategies with transaction costs</li><li>Apply purged cross-validation and combinatorial backtesting to control overfitting</li><li>Optimize execution and rebalancing under uncertainty and turnover limits</li><li>Deliver a reproducible research pipeline from data to evaluated strategy</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#B5530B"><li>Portfolio optimization</li><li>Algorithmic trading</li><li>Risk modeling</li><li>Machine learning for finance</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#B5530B"><li>mean-variance portfolio theory and the efficient frontier</li><li>convex optimization, quadratic programs, and duality</li><li>Brownian motion, Ito&#x27;s lemma, and stochastic differential equations</li><li>risk-neutral pricing and the Black-Scholes-Merton framework</li><li>coherent risk measures, value at risk, and expected shortfall</li><li>statistical learning theory and time-aware cross-validation</li><li>backtest overfitting and the multiple-testing problem</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #B5530B">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#B5530B"><li>Machine Learning</li><li>Probability and statistics</li><li>Calculus and convex optimization</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Foundations</div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 1</div><div class="wk-body"><b>Markets, data, and returns</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Asset classes, price and return definitions, log returns, stylized facts of financial time series, and stationarity. Data quality and survivorship bias.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Set up the environment and load, clean, and resample market data into return series with pandas.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Initialize the project repository and assemble a clean multi-asset return dataset.</div></div></div><div class="wpart">Probability foundations</div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 2</div><div class="wk-body"><b>Stochastic processes and Brownian motion</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Random walks, Brownian motion, martingales, and the construction of continuous-time price processes. Properties of Wiener processes.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Simulate Brownian motion and geometric Brownian motion price paths and study their statistics.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a Monte Carlo price simulator to the project toolkit.</div></div></div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 3</div><div class="wk-body"><b>Ito calculus and pricing intuition</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Ito&#x27;s lemma, stochastic differential equations, geometric Brownian motion, and the Black-Scholes-Merton framework as risk-neutral pricing.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement Ito-based simulation and a Black-Scholes pricer, comparing to Monte Carlo estimates.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Integrate a stochastic model used later for scenario generation.</div></div></div><div class="wpart">Portfolio theory</div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 4</div><div class="wk-body"><b>Mean-variance optimization</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Expected return and covariance estimation, the mean-variance objective, the efficient frontier, and the tangency portfolio. Assumptions and limitations.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Estimate the covariance matrix and compute the efficient frontier for the project universe.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Produce a baseline mean-variance portfolio for the project assets.</div></div></div><div class="week pres"><div class="wk-num" style="color:#B5530B">Wk 5</div><div class="wk-body"><b>Convex optimization for portfolios<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Convex sets and functions, quadratic programs, duality, and constrained portfolio formulations with budget, long-only, and turnover constraints.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation of the project specification: universe, objective, constraints, and evaluation plan.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the written and oral project specification milestone.</div></div></div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 6</div><div class="wk-body"><b>Robust and advanced allocation</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Estimation error, shrinkage, Black-Litterman views, risk parity, and hierarchical risk parity. Why naive optimization fails out of sample.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement risk parity and a shrinkage-based optimizer with cvxpy and compare allocations.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add robust allocation variants to the project portfolio engine.</div></div></div><div class="wpart">Risk modeling</div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 7</div><div class="wk-body"><b>Value at risk and expected shortfall</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Risk measures, coherence, historical, parametric, and Monte Carlo value at risk, expected shortfall, and backtesting risk estimates.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Compute and backtest value at risk and expected shortfall for the project portfolio.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a risk reporting module to the project.</div></div></div><div class="week pres"><div class="wk-num" style="color:#B5530B">Wk 8</div><div class="wk-body"><b>Volatility, correlation, and stress<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>GARCH volatility, dynamic correlation, tail dependence, and stress and scenario testing for portfolio risk.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team interim presentation: portfolio engine, risk results, and open questions.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the interim presentation milestone with risk-aware portfolios.</div></div></div><div class="wpart">Machine learning for finance</div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 9</div><div class="wk-body"><b>Features, labels, and leakage</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Financial feature engineering, fractional differentiation, the triple-barrier labeling method, sample weighting, and avoiding lookahead bias.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Engineer features and triple-barrier labels for the project assets.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Build the labeled supervised dataset for the project.</div></div></div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 10</div><div class="wk-body"><b>Models and purged cross-validation</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Tree ensembles and regularized models for finance, feature importance, and purged and embargoed cross-validation to respect time structure.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train models with purged cross-validation and evaluate predictive signal quality.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Produce a validated predictive signal for the strategy.</div></div></div><div class="wpart">Algorithmic trading</div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 11</div><div class="wk-body"><b>Strategy design and execution</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Signal to position mapping, bet sizing, transaction costs, slippage, and execution and rebalancing under turnover limits.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Convert the predictive signal into a traded strategy with sizing and cost modeling.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Implement the trading strategy layer on top of the signal.</div></div></div><div class="week"><div class="wk-num" style="color:#B5530B">Wk 12</div><div class="wk-body"><b>Backtesting and overfitting</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Backtest design, walk-forward and combinatorial purged cross-validation, the deflated Sharpe ratio, and the dangers of selection bias.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Run a rigorous backtest with cost and risk controls and compute performance statistics.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Finalize the backtest, metrics, and figures for the project.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#B5530B">Wk 13</div><div class="wk-body"><b>Final strategy defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Course synthesis: integrating optimization, risk, and machine learning into a defensible quantitative strategy and the limits of backtested evidence.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team final presentation with oral defense of methodology, results, and design choices.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the final report, code, and backtest with oral defense.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams build one end-to-end quantitative investment strategy for a chosen asset universe. Starting from clean data they construct optimized, risk-aware portfolios, add machine learning signals, and turn the result into a cost-aware algorithmic strategy that is rigorously backtested and defended.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#B5530B"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#FBEEDE;color:#B5530B">Equity factor portfolio</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Risk parity multi-asset fund</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Momentum trading strategy</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Mean-reversion pairs trading</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Crypto portfolio with risk limits</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Machine learning signal long-short book</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Volatility-targeted allocation</span><span class="chip" style="background:#FBEEDE;color:#B5530B">Tail-risk hedged portfolio</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#B5530B"><li><b>pandas</b>: financial data wrangling and time series</li><li><b>NumPy</b>: numerical computation and returns math</li><li><b>cvxpy</b>: convex portfolio optimization models</li><li><b>PyPortfolioOpt</b>: mean-variance, Black-Litterman, and risk models</li><li><b>scikit-learn</b>: machine learning models and cross-validation</li><li><b>statsmodels</b>: regression, time series, and volatility models</li><li><b>arch</b>: GARCH volatility and risk estimation</li><li><b>vectorbt</b>: vectorized backtesting of strategies</li><li><b>yfinance</b>: market data acquisition for prototyping</li><li><b>Matplotlib</b>: performance and risk visualization</li><li><b>SciPy</b>: optimization and statistical routines</li><li><b>Jupyter</b>: interactive notebooks for the running project</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1111/j.1540-6261.1952.tb01525.x" target="_blank" rel="noopener">Portfolio Selection</a></span><div class="meta">Harry Markowitz, 1952</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1086/260062" target="_blank" rel="noopener">The Pricing of Options and Corporate Liabilities</a></span><div class="meta">Fischer Black and Myron Scholes, 1973</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.2469/faj.v48.n5.28" target="_blank" rel="noopener">Global Portfolio Optimization</a></span><div class="meta">Fischer Black and Robert Litterman, 1992</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2708678" target="_blank" rel="noopener">Building Diversified Portfolios that Outperform Out of Sample</a></span><div class="meta">Marcos Lopez de Prado, 2016</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2308659" target="_blank" rel="noopener">Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance</a></span><div class="meta">David H. Bailey, Jonathan M. Borwein, Marcos Lopez de Prado, and Qiji Jim Zhu, 2014</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.wiley.com/en-us/Advances+in+Financial+Machine+Learning-p-9781119482086" target="_blank" rel="noopener">Advances in Financial Machine Learning</a></span><div class="meta">Marcos Lopez de Prado, 2018, Labeling, purged cross-validation, and backtest pitfalls</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.pearson.com/en-us/subject-catalog/p/options-futures-and-other-derivatives/P200000005938/9780136939917" target="_blank" rel="noopener">Options, Futures, and Other Derivatives</a></span><div class="meta">John C. Hull, 2021, Derivatives, risk-neutral pricing, and value at risk</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://link.springer.com/book/9780387401010" target="_blank" rel="noopener">Stochastic Calculus for Finance II: Continuous-Time Models</a></span><div class="meta">Steven E. Shreve, 2004, Brownian motion, Ito calculus, and risk-neutral pricing</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://stanford.edu/~boyd/cvxbook/" target="_blank" rel="noopener">Convex Optimization</a></span><div class="meta">Stephen Boyd and Lieven Vandenberghe, 2004, Free online; foundation for portfolio optimization</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://www.cvxpy.org/" target="_blank" rel="noopener">cvxpy Documentation</a></span><div class="meta">cvxpy developers, 2026, Convex optimization modeling in Python</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://pyportfolioopt.readthedocs.io/" target="_blank" rel="noopener">PyPortfolioOpt Documentation</a></span><div class="meta">Robert Andrew Martin, 2026, Practical portfolio optimization library</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://scikit-learn.org/stable/user_guide.html" target="_blank" rel="noopener">scikit-learn User Guide</a></span><div class="meta">scikit-learn developers, 2026, Machine learning models and validation</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge" style="background:#FBEEDE;color:#B5530B">Core &middot; Semester 2</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="QCF1.html">&larr; QCF1 &middot; Quantum Optimization</a><span></span></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #B5530B">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>QCF2</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: Computational Finance, Optimization &amp; Quantum Computing</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>12</dd>
+          <dt>References</dt><dd>7</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#B5530B">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

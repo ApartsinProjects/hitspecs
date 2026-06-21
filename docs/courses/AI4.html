@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#7A3E9D">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI4: Scalable AI: Big-Data Algorithms | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="on" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#7A3E9D;--ink:#5D2F79">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; AI4</p>
+    <h1>Scalable AI: Big-Data Algorithms</h1>
+    <p class="hetx" dir="rtl">AI בקנה מידה: אלגוריתמים לנתוני עתק</p>
+    <p class="csub">the algorithmic theory of distributed training, approximate, and streaming computation</p>
+    <p class="lead">Train and serve AI at massive data and compute scale</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Learn algorithms and systems for machine learning at scale, where datasets and models exceed a single machine.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #7A3E9D">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #7A3E9D"><span class="bk" style="color:#7A3E9D">What you will build</span><p>Built a scalable training and serving pipeline in Python with PyTorch Distributed, DeepSpeed, Apache Spark, and Kafka, layering data and pipeline parallelism, ZeRO sharding, sketch-based approximate aggregation, and streaming ingestion measured for throughput and cost.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#7A3E9D"><li>Analyze the complexity and communication costs of distributed algorithms</li><li>Derive data, model, and pipeline parallelism for large-scale training</li><li>Explain synchronous and asynchronous stochastic gradient descent and its convergence</li><li>Build big-data pipelines with MapReduce and dataflow frameworks</li><li>Implement approximate algorithms including sketches, hashing, and sampling</li><li>Design streaming algorithms with bounded memory over unbounded data</li><li>Quantify scaling laws relating model loss to data, parameters, and compute</li><li>Apply mixed precision, sharding, and gradient accumulation for memory efficiency</li><li>Evaluate throughput, latency, and cost trade-offs in distributed systems</li><li>Deploy a scalable training and serving pipeline on a cluster</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#7A3E9D"><li>Distributed training</li><li>Big-data frameworks</li><li>Approximate &amp; streaming algorithms</li><li>Scaling laws</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#7A3E9D"><li>Amdahl&#x27;s law and the memory, compute, and communication walls</li><li>the MapReduce model, dataflow graphs, and fault tolerance</li><li>synchronous stochastic gradient descent and gradient all-reduce</li><li>model, pipeline, and tensor parallelism with ZeRO sharding</li><li>count-min sketch, HyperLogLog, and locality-sensitive hashing</li><li>the streaming model and the Johnson-Lindenstrauss lemma</li><li>neural scaling laws and compute-optimal resource allocation</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #7A3E9D">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#7A3E9D"><li>Machine Learning</li><li>Algorithms and data structures</li><li>Distributed systems or databases basics</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Scaling foundations</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 1</div><div class="wk-body"><b>Why scale and what breaks</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We analyze the limits of single-machine computation, Amdahl&#x27;s law, and the memory, compute, and communication walls.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Profile a single-node training job and identify its bottlenecks.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Choose the scalable pipeline target and establish a single-node baseline.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 2</div><div class="wk-body"><b>Big-data frameworks</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover the MapReduce model, dataflow graphs, partitioning, and fault tolerance.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a MapReduce-style aggregation and run it on a Spark cluster.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Build a distributed data-ingestion stage for the project.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 3</div><div class="wk-body"><b>Distributed storage and data formats</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover columnar formats, sharding, partitioning, and the CAP trade-offs of data-intensive systems.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Convert the dataset to a columnar format and benchmark scan throughput.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Optimize the project data layout for parallel access.</div></div></div><div class="wpart">Distributed training</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 4</div><div class="wk-body"><b>Data-parallel training</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive synchronous SGD, gradient all-reduce, and the convergence effect of large batch sizes.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Run data-parallel training across multiple workers and measure scaling efficiency.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Make the training stage data-parallel.</div></div></div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 5</div><div class="wk-body"><b>Model and pipeline parallelism<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover model sharding, pipeline parallelism, tensor parallelism, and the bubble overhead they incur.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: each team defends its scaling specification and target metrics.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Lock the specification and prototype a sharded model stage.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 6</div><div class="wk-body"><b>Memory and precision efficiency</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover mixed precision, activation checkpointing, ZeRO sharding, and gradient accumulation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Apply mixed precision and sharding to fit a larger model in memory.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Scale the model size with memory-efficient training.</div></div></div><div class="wpart">Approximate algorithms</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 7</div><div class="wk-body"><b>Sketches and hashing</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive count-min sketch, HyperLogLog, and locality-sensitive hashing with their error bounds.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a count-min sketch and HyperLogLog and validate accuracy versus memory.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add approximate aggregation to the data pipeline.</div></div></div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 8</div><div class="wk-body"><b>Sampling and dimensionality reduction<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover reservoir sampling, random projections, and the Johnson-Lindenstrauss lemma.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: interim demo of the scaled pipeline with throughput numbers.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add sampling and random projection to reduce data volume.</div></div></div><div class="wpart">Streaming</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 9</div><div class="wk-body"><b>Streaming algorithms</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We define the streaming model, bounded memory over unbounded input, and windowed computation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Build a streaming aggregation over a simulated event stream.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a streaming ingestion path to the pipeline.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 10</div><div class="wk-body"><b>Online and approximate learning</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover online gradient descent, regret bounds, and incremental model updates.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement online learning that updates the model as data streams in.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Enable continuous online updates in the project.</div></div></div><div class="wpart">Scaling laws</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 11</div><div class="wk-body"><b>Scaling laws and compute budgets</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive empirical scaling laws relating loss to data, parameters, and compute, and compute-optimal allocation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Fit a small scaling-law curve from runs at several model sizes.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Use scaling-law analysis to choose the project compute budget.</div></div></div><div class="wpart">Serving</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 12</div><div class="wk-body"><b>Scalable inference and serving</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover batching, caching, autoscaling, and latency-throughput-cost trade-offs at serving time.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Deploy the model behind a scalable serving layer and load-test it.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Stand up scalable serving for the trained model.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 13</div><div class="wk-body"><b>Final defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We synthesize distributed training, approximate and streaming algorithms, and scaling laws, and survey open problems.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: final demo with scaling benchmarks and an oral defense of design choices.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the complete scalable training-and-serving pipeline with benchmarks.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams build one scalable AI pipeline that ingests, processes, trains on, and serves a large dataset, growing from a single node to a distributed cluster. The project layers in data parallelism, memory-efficient training, approximate and streaming algorithms, and scaling-law analysis, with throughput and cost measured at every stage.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#7A3E9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Distributed image classifier training</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Large-scale recommendation system</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Streaming clickstream analytics</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Approximate near-duplicate detection at web scale</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Distributed embedding indexing service</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Real-time fraud-detection pipeline</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Petabyte log aggregation and alerting</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Compute-optimal language model pretraining study</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#7A3E9D"><li><b>PyTorch</b>: training and distributed primitives</li><li><b>PyTorch Distributed</b>: data and model parallelism</li><li><b>DeepSpeed</b>: ZeRO sharding and large-model training</li><li><b>Apache Spark</b>: distributed data processing</li><li><b>Ray</b>: distributed Python and ML workloads</li><li><b>Dask</b>: parallel dataframes and arrays</li><li><b>Apache Kafka</b>: streaming event ingestion</li><li><b>Apache Flink</b>: stateful stream processing</li><li><b>Apache Parquet</b>: columnar storage format</li><li><b>Hugging Face Accelerate</b>: multi-device training</li><li><b>NVIDIA NCCL</b>: collective communication for GPUs</li><li><b>Weights and Biases</b>: distributed experiment tracking</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/2001.08361" target="_blank" rel="noopener">Scaling Laws for Neural Language Models</a></span><div class="meta">Kaplan, McCandlish, Henighan, Brown, Chess, Child, Gray, Radford, Wu, Amodei, 2020</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1910.02054" target="_blank" rel="noopener">ZeRO: Memory Optimizations Toward Training Trillion Parameter Models</a></span><div class="meta">Rajbhandari, Rasley, Ruwase, He, 2019</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1811.06965" target="_blank" rel="noopener">GPipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism</a></span><div class="meta">Huang, Cheng, Bapna, Firat, Chen, Chen, Lee, Ngiam, Le, Wu, Chen, 2018</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1512.02595" target="_blank" rel="noopener">Deep Speech 2: End-to-End Speech Recognition in English and Mandarin</a></span><div class="meta">Amodei, Anubhai, Battenberg, Case, Casper, Catanzaro, Chen, Chrzanowski, Coates, Diamos, et al., 2015</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="http://www.mmds.org/" target="_blank" rel="noopener">Mining of Massive Datasets, 3rd edition</a></span><div class="meta">Leskovec, Rajaraman, Ullman, 2020</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://dataintensive.net/" target="_blank" rel="noopener">Designing Data-Intensive Applications</a></span><div class="meta">Kleppmann, 2017</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/2001.08361" target="_blank" rel="noopener">Scaling Laws for Neural Language Models</a></span><div class="meta">Kaplan, McCandlish, Henighan, Brown, Chess, Child, Gray, Radford, Wu, Amodei, 2020</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.deeplearningbook.org/" target="_blank" rel="noopener">Deep Learning</a></span><div class="meta">Goodfellow, Bengio, Courville, 2016</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://d2l.ai/" target="_blank" rel="noopener">Dive into Deep Learning</a></span><div class="meta">Zhang, Lipton, Li, Smola, 2023</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://docs.ray.io/" target="_blank" rel="noopener">Ray Documentation</a></span><div class="meta">Anyscale, 2026</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://docs.pytorch.org/docs/stable/" target="_blank" rel="noopener">PyTorch Documentation</a></span><div class="meta">PyTorch Foundation, 2026</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge" style="background:#7A3E9D;color:#fff">Core &middot; Semester 1</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge e">Elective</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="AI3.html">&larr; AI3 &middot; Vision AI: Deep Learning for Computer Vision</a><a href="AI5.html">AI5 &middot; Generative AI: Deep Generative Models &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #7A3E9D">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>AI4</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/AI.html">AI &amp; Robotics</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: AI &amp; Robotics</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>12</dd>
+          <dt>References</dt><dd>7</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#7A3E9D">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

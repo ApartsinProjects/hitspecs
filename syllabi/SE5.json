@@ -1,0 +1,275 @@
+{
+  "SE5": {
+    "tagline": "DevOps, DataOps, MLOps, LLMOps, AgentOps: one running project, end to end.",
+    "objectives": [
+      "Explain why production AI systems fail more often in operations than in modelling, and define SLIs, SLOs, and error budgets.",
+      "Use cloud compute, storage, and networking, and choose a deployment model from IaaS to serverless.",
+      "Design and operate a CI/CD pipeline with tests, containers, infrastructure as code, and a versioned REST API.",
+      "Run services under an orchestrator with health checks, rollout patterns, and observability based on RED dashboards.",
+      "Build trustworthy data pipelines with a medallion lake, quality gates, data contracts, and dataset versioning.",
+      "Operate the model lifecycle: experiment tracking, a model registry, serving, monitoring, and drift detection.",
+      "Build and operate RAG services behind gateways, with evaluation suites, tracing, and guardrails.",
+      "Reason about the LLM token economy and engineer for cost and latency.",
+      "Build, trace, and bound tool-using agents, and apply AI security and governance.",
+      "Carry one running service from specification through to a governed production deployment."
+    ],
+    "prerequisites": [
+      "Introduction to Machine Learning: training vs inference, train/validation/test splits, loss vs metrics, overfitting.",
+      "Operating Systems and networking: shell, processes and ports, HTTP, TCP/IP, DNS, and containers.",
+      "Software Engineering with Python and Git: modules and virtual environments, REST, branching, pull requests, and tests."
+    ],
+    "weeks": [
+      {
+        "week": 1,
+        "part": "Part I: Foundations & the Cloud",
+        "title": "Production Engineering & the Ops Landscape",
+        "lecture": "The prototype-to-production gap and the 90/10 inversion; SLIs, SLOs, SLAs, and error budgets; toil, day-one vs day-two operations, blameless postmortems, and the five operational layers.",
+        "practice": "Set up a team repository from a template with branch protection and containerise a hello-service with pinned versions.",
+        "project": "Create the team repo, containerise the hello-service, and shortlist two use-case domains."
+      },
+      {
+        "week": 2,
+        "part": "Part I: Foundations & the Cloud",
+        "title": "Cloud Computing Fundamentals",
+        "lecture": "Cloud primitives (compute, storage, networking); IaaS, PaaS, SaaS, and serverless; regions and availability zones; the shared-responsibility model; the cost model and blast radius.",
+        "practice": "Provision a cloud footprint on a free tier with a budget alert, deploy the hello-service in two deployment models, and tear it down.",
+        "project": "Create the team cloud space with a budget alert and provision the project storage bucket accessed from code."
+      },
+      {
+        "week": 3,
+        "part": "Part II: DevOps",
+        "title": "CI/CD, Testing & REST Services",
+        "lecture": "DORA metrics and the testing pyramid; trunk-based development; infrastructure as code with Terraform (desired state, idempotency); REST design, API versioning, and health and readiness endpoints.",
+        "practice": "Build a CI pipeline that lints, tests, builds, and publishes an artifact, and design a versioned REST API skeleton.",
+        "project": "Commit to the project use case; REST API skeleton with two endpoints, a health check, validation, and tests; CI gating every merge."
+      },
+      {
+        "week": 4,
+        "part": "Part II: DevOps",
+        "title": "Orchestration, Deployment Patterns & Observability",
+        "lecture": "Kubernetes desired-state and reconciliation; deployment patterns (blue-green, canary) and GitOps; the three pillars of observability, the RED method, and reasoning about tail latency on percentiles.",
+        "practice": "Run the service under an orchestrator with probes and scaling, execute a canary rollout and rollback, and build a RED dashboard.",
+        "project": "Deploy with probes and three replicas, demonstrate canary plus rollback, and record a baseline p95 on a RED dashboard."
+      },
+      {
+        "week": 5,
+        "part": "Part III: DataOps",
+        "title": "Data Lakes, Pipelines & Versioning",
+        "lecture": "Warehouse vs lake vs lakehouse; the medallion architecture (bronze, silver, gold); orchestration and idempotency; data versioning and lineage.",
+        "practice": "Student Presentation 1 (Specification): each team presents the problem statement and success metrics (SLOs), the system and data architecture, DevOps status, and a risk and governance register, then submits a written report and a tagged release.",
+        "project": "An orchestrated pipeline with retries and backfills, and a versioned dataset reproduced from a pinned snapshot."
+      },
+      {
+        "week": 6,
+        "part": "Part III: DataOps",
+        "title": "Data Quality, Contracts, Streaming & Feature Stores",
+        "lecture": "Validation as code; data contracts between producer and consumer; streaming with Kafka (topics, partitions, consumer groups, at-least-once delivery, idempotent consumers); feature stores and train/serve skew.",
+        "practice": "Add validation gates from bronze to silver with a quarantine table, enforce a data contract, and land a live stream into the lake.",
+        "project": "Validation gates with quarantine, an enforced data contract, and gold feature tables built on one shared definition."
+      },
+      {
+        "week": 7,
+        "part": "Part IV: MLOps",
+        "title": "Experiment Tracking, Model Registry & Serving",
+        "lecture": "The reproducibility triple (git SHA, data version, environment); experiment tracking; the model registry and model cards; serving patterns (online, batch, streaming) and safe rollout (shadow, canary, A/B).",
+        "practice": "Instrument training with tracking, register a model with a model card, and serve it behind REST with a safe rollout.",
+        "project": "Tracked training with the reproducibility triple pinned; model v1 registered and served; v2 canaried against v1."
+      },
+      {
+        "week": 8,
+        "part": "Part IV: MLOps",
+        "title": "Monitoring, Model Drift & Governance",
+        "lecture": "Data drift vs concept drift and how to detect each (PSI, KS tests, embedding distance); retraining triggers paired with documented actions; audit trails and governance.",
+        "practice": "Student Presentation 2 (Interim): teams demonstrate live a working pipeline, a tracked and versioned model in the registry, the model served with canary and a live RED dashboard, a change landing through CI/CD during the talk, and a monitoring and drift plan; submit a report and a tagged release.",
+        "project": "Drift detectors each paired with a documented action, and retraining triggers defined."
+      },
+      {
+        "week": 9,
+        "part": "Part V: LLMOps & AgentOps",
+        "title": "LLM Foundations: AI APIs, Tokens & the Token Economy",
+        "lecture": "Next-token prediction and tokenization; API anatomy and structured outputs; the token economy and its cost levers (shorter context, prompt caching, batching); managed AI services.",
+        "practice": "Call an AI API with structured outputs and schema validation, build a token-economy cost model, and add a retry-with-backoff wrapper.",
+        "project": "Wire an LLM feature through the course proxy with structured outputs, a cost-per-request and monthly projection, and a pinned model version."
+      },
+      {
+        "week": 10,
+        "part": "Part V: LLMOps & AgentOps",
+        "title": "RAG & Serving LLMs: Vector Databases & Gateways",
+        "lecture": "Retrieval-augmented generation end to end (embeddings, vector databases, chunking, grounded prompts); prompts as versioned code; hosted vs self-hosted serving with vLLM; the gateway pattern.",
+        "practice": "Build a RAG service over a real corpus and route all LLM traffic through a gateway with fallbacks and a budget cap.",
+        "project": "The project's RAG or extraction pipeline runs behind the gateway with fallback and a budget cap."
+      },
+      {
+        "week": 11,
+        "part": "Part V: LLMOps & AgentOps",
+        "title": "LLM Evaluation, Guardrails & Observability",
+        "lecture": "Evaluation that means something (faithfulness, answer relevance, retrieval recall); LLM-as-judge biases and calibration; LLM tracing and observability; guardrails and prompt injection.",
+        "practice": "Build a representative eval set and run it as a regression suite, add request tracing, and demonstrate a guardrail against injection.",
+        "project": "An eval set of at least fifty items wired into CI, live tracing of prompt version, tokens, cost, and latency, and one guardrail with a measured response cache."
+      },
+      {
+        "week": 12,
+        "part": "Part V: LLMOps & AgentOps",
+        "title": "Agents & AgentOps: Tools, MCP & Managed Agents",
+        "lecture": "The agent loop (plan, act, observe) and function calling; the Model Context Protocol and tool ecosystem; AgentOps (tracing, step-level evaluation, mandatory bounds); managed agent services.",
+        "practice": "Build and trace a tool-using agent, bound it with step, cost, and permission limits, and expose a tool as an MCP server.",
+        "project": "One agentic capability with tracing, bounds, and step caps, and at least one tool exposed via MCP."
+      },
+      {
+        "week": 13,
+        "part": "Part VI: Security & Governance",
+        "title": "Security, Governance & Synthesis",
+        "lecture": "Software, data, and model supply-chain security (secrets, dependency tracking, provenance, SBOM); the OWASP Top 10 for LLM applications; governance (privacy, audit trails, model cards, NIST AI RMF); synthesis of the five layers.",
+        "practice": "Student Presentation 3 (Final, with oral defense): teams deliver an end-to-end production demo (data in, decision out, live), observability with an actionable alert and runbook, evaluation, guardrails, and a cost and latency report, and a security and governance review against the OWASP LLM Top 10.",
+        "project": "A governed production deployment with an audit trail, and the repository tagged v1.0."
+      }
+    ],
+    "project": {
+      "summary": "Teams of three or four carry one running AI service from specification to a governed production deployment, presenting it three times across the term. Grading weights the parts an AI assistant cannot do for the student: operating a system under load, interpreting telemetry, and defending design decisions. Example domains include IoT telemetry, document question-answering, and document processing.",
+      "ideas": [
+        "Predictive-maintenance IoT monitor",
+        "Support-docs Q&A chatbot",
+        "Invoice or form processor",
+        "Menu or receipt nutrition estimator",
+        "Smart-home energy advisor",
+        "Code-review assistant",
+        "Research-paper summariser",
+        "Churn-prediction service"
+      ]
+    },
+    "tools": [
+      "Docker: containerise services with pinned dependencies",
+      "Kubernetes: orchestrate, scale, and self-heal services",
+      "GitHub Actions: run CI/CD pipelines on every merge",
+      "Terraform: provision infrastructure as code",
+      "Prometheus & Grafana: collect metrics and build RED dashboards",
+      "Apache Airflow: orchestrate data pipelines with retries and backfills",
+      "DVC: version datasets and reproduce results",
+      "Great Expectations: validate data quality as code",
+      "Apache Kafka: stream events into the data lake",
+      "MLflow: track experiments and run the model registry",
+      "EvidentlyAI: monitor data and model drift",
+      "LiteLLM: route LLM traffic through one gateway with fallbacks",
+      "FAISS / Qdrant: vector search for retrieval-augmented generation",
+      "Langfuse: trace and observe LLM and agent applications",
+      "Model Context Protocol: expose tools to agents"
+    ],
+    "references": [
+      {
+        "title": "Designing Data-Intensive Applications",
+        "authors": "Martin Kleppmann",
+        "year": "2017",
+        "kind": "Textbook",
+        "url": "https://dataintensive.net/",
+        "note": "Foundations of reliable data systems"
+      },
+      {
+        "title": "Site Reliability Engineering",
+        "authors": "Beyer, Jones, Petoff, Murphy (eds.)",
+        "year": "2016",
+        "kind": "Textbook",
+        "url": "https://sre.google/sre-book/table-of-contents/",
+        "note": "Free online; SLOs and error budgets"
+      },
+      {
+        "title": "The Site Reliability Workbook",
+        "authors": "Beyer, Murphy, Rensin, Kawahara, Thorne (eds.)",
+        "year": "2018",
+        "kind": "Textbook",
+        "url": "https://sre.google/workbook/table-of-contents/",
+        "note": "Practical companion to the SRE book"
+      },
+      {
+        "title": "AWS Well-Architected Framework",
+        "authors": "Amazon Web Services",
+        "year": "current",
+        "kind": "Documentation",
+        "url": "https://aws.amazon.com/architecture/well-architected/",
+        "note": "Cloud architecture pillars"
+      },
+      {
+        "title": "Hidden Technical Debt in Machine Learning Systems",
+        "authors": "Sculley et al.",
+        "year": "2015",
+        "kind": "Paper",
+        "url": "https://papers.nips.cc/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html",
+        "note": "NeurIPS 2015"
+      },
+      {
+        "title": "MLflow Documentation",
+        "authors": "MLflow project",
+        "year": "current",
+        "kind": "Documentation",
+        "url": "https://mlflow.org/docs/latest/index.html",
+        "note": "Tracking and model registry"
+      },
+      {
+        "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+        "authors": "Lewis et al.",
+        "year": "2020",
+        "kind": "Paper",
+        "url": "https://arxiv.org/abs/2005.11401",
+        "note": "The original RAG paper"
+      },
+      {
+        "title": "OWASP Top 10 for LLM Applications",
+        "authors": "OWASP",
+        "year": "2025",
+        "kind": "Documentation",
+        "url": "https://genai.owasp.org/llm-top-10/",
+        "note": "LLM application security risks"
+      },
+      {
+        "title": "Building Effective Agents",
+        "authors": "Anthropic",
+        "year": "2024",
+        "kind": "Documentation",
+        "url": "https://www.anthropic.com/research/building-effective-agents",
+        "note": "Agent design patterns"
+      }
+    ],
+    "subtitle": "the operational disciplines (DevOps, DataOps, MLOps, LLMOps, AgentOps) that carry AI systems to production",
+    "foundations": [
+      "Service-level objectives, error budgets, and reliability theory",
+      "The medallion data architecture, data contracts, and dataset versioning",
+      "The reproducibility triple: code version, data version, and environment",
+      "Data drift versus concept drift and statistical detection (PSI, KS tests)",
+      "Retrieval-augmented generation and grounded prompting",
+      "The agent loop, function calling, and step-level evaluation",
+      "Software, data, and model supply-chain security and the OWASP LLM Top 10"
+    ],
+    "literature": [
+      {
+        "title": "Hidden Technical Debt in Machine Learning Systems",
+        "authors": "Sculley et al.",
+        "year": "2015",
+        "url": "https://papers.nips.cc/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html"
+      },
+      {
+        "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+        "authors": "Lewis et al.",
+        "year": "2020",
+        "url": "https://arxiv.org/abs/2005.11401"
+      },
+      {
+        "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+        "authors": "Yao et al.",
+        "year": "2023",
+        "url": "https://arxiv.org/abs/2210.03629"
+      },
+      {
+        "title": "Building Effective Agents",
+        "authors": "Anthropic",
+        "year": "2024",
+        "url": "https://www.anthropic.com/research/building-effective-agents"
+      },
+      {
+        "title": "Site Reliability Engineering",
+        "authors": "Beyer, Jones, Petoff, Murphy (eds.)",
+        "year": "2016",
+        "url": "https://sre.google/sre-book/table-of-contents/"
+      }
+    ],
+    "build": "Build, deploy, and operate a production AI service end to end: a containerized, CI/CD-gated REST API on Kubernetes, fed by a medallion data pipeline, with an MLflow model registry, a gateway-fronted RAG feature, live drift monitoring, and a security review against the OWASP LLM Top 10."
+  }
+}

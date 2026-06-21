@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#3A4B9D">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SE2: Secure &amp; Reliable Software Development | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="on" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#3A4B9D;--ink:#2A3873">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; SE2</p>
+    <h1>Secure &amp; Reliable Software Development</h1>
+    <p class="hetx" dir="rtl">פיתוח תוכנה מאובטח ואמין</p>
+    <p class="csub">principles of secure-by-design engineering, fault-based testing theory, and reliability under formal objectives</p>
+    <p class="lead">Engineer software that is secure, tested, and reliable by design</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Engineer software that is correct, testable, and secure by design, integrating quality assurance and application-security practices throughout the development lifecycle.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #3A4B9D">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #3A4B9D"><span class="bk" style="color:#3A4B9D">What you will build</span><p>Hardened a web application end to end: threat-modeled it with OWASP Threat Dragon, remediated OWASP Top 10 risks, and built a GitHub Actions CI pipeline gating on Semgrep SAST, OWASP ZAP DAST, and dependency scanning, with OpenTelemetry, Prometheus, and Grafana enforcing service level objectives.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#3A4B9D"><li>Explain the principles of secure software development across the lifecycle</li><li>Analyze the OWASP Top 10 risks and apply secure coding countermeasures</li><li>Construct threat models using data-flow diagrams and trust boundaries</li><li>Evaluate dependency and supply-chain risks and apply provenance controls</li><li>Apply SAST and DAST tooling and interpret their findings critically</li><li>Design automated test suites grounded in coverage and fault-based theory</li><li>Build continuous integration and delivery pipelines with quality gates</li><li>Conduct effective code reviews focused on correctness and security</li><li>Instrument systems for observability with metrics, logs, and traces</li><li>Reason about reliability using service level objectives and error budgets</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#3A4B9D"><li>Automated testing &amp; CI</li><li>Secure coding (OWASP)</li><li>Code review &amp; static analysis</li><li>Reliability &amp; observability</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#3A4B9D"><li>Saltzer and Schroeder protection principles and least privilege</li><li>STRIDE threat modeling over data-flow trust boundaries</li><li>Coverage criteria and fault-based testing theory</li><li>Static data-flow and taint analysis with soundness trade-offs</li><li>Trusting-trust and supply-chain integrity reasoning</li><li>Service level objectives, error budgets, and reliability theory</li><li>High-cardinality telemetry and the three pillars of observability</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #3A4B9D">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#3A4B9D"><li>Software engineering and object-oriented programming</li><li>Basic computer networks and web applications</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Security Foundations</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 1</div><div class="wk-body"><b>Secure Development and Threats</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Introduce security principles, the CIA triad, attacker models, and the secure development lifecycle.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Audit the starter project, enumerate assets, and set up the repository and toolchain.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project repository, threat scope, and security baseline are established.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 2</div><div class="wk-body"><b>OWASP Top 10 and Secure Coding</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine injection, broken access control, and cryptographic failures with their root causes.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Find and fix seeded OWASP Top 10 vulnerabilities in the project code.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project passes a first pass of OWASP Top 10 remediation.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 3</div><div class="wk-body"><b>Threat Modeling</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Teach STRIDE, data-flow diagrams, trust boundaries, and risk prioritization theory.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Produce a threat model of the project with prioritized mitigations.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>A documented threat model with a mitigation backlog is delivered.</div></div></div><div class="wpart">Testing and CI</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 4</div><div class="wk-body"><b>Software Testing Foundations</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover test oracles, coverage criteria, equivalence partitioning, and fault-based testing theory.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Write unit and integration tests guided by coverage criteria for the project.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project gains a baseline automated test suite with measured coverage.</div></div></div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 5</div><div class="wk-body"><b>Specification Milestone<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Review test strategy, security requirements, and how quality attributes shape design.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present their project specification: security requirements, threat model, and test and reliability plan.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Approved specification with security and quality goals is delivered.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 6</div><div class="wk-body"><b>Continuous Integration and Delivery</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss pipeline theory, deployment automation, and the economics of fast feedback.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Build a CI pipeline that runs tests and blocks merges on failures.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project has a CI pipeline enforcing tests on every change.</div></div></div><div class="wpart">AppSec in Depth</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 7</div><div class="wk-body"><b>SAST and Static Analysis</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Explain static analysis theory, data-flow and taint tracking, and false-positive trade-offs.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Integrate a SAST scanner into the pipeline and triage its findings.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Pipeline runs static security analysis as a gated stage.</div></div></div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 8</div><div class="wk-body"><b>Interim Demo Milestone<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover dynamic analysis and fuzzing concepts and how they complement static testing.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present an interim demo of the secured project, its pipeline, and current findings.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Secured project with working CI and analysis is demonstrated.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 9</div><div class="wk-body"><b>DAST and Dependency Security</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine dynamic scanning, software composition analysis, and supply-chain provenance models.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Run DAST against the project and add dependency and SBOM scanning.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project enforces dynamic and dependency security checks.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 10</div><div class="wk-body"><b>Code Review and Secure Authentication</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss review effectiveness research, authentication, session management, and access control design.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Conduct structured peer code reviews and harden authentication in the project.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project has reviewed code and hardened authentication and access control.</div></div></div><div class="wpart">Reliability</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 11</div><div class="wk-body"><b>Reliability and SRE</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Introduce service level objectives, error budgets, and reliability engineering principles.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Define SLOs for the project and add resilience to a critical path.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project defines SLOs and improves a critical-path failure mode.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 12</div><div class="wk-body"><b>Observability</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover the three pillars of observability and the theory of high-cardinality telemetry.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Instrument the project with metrics, logs, and traces plus alerting.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project emits structured telemetry with dashboards and alerts.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 13</div><div class="wk-body"><b>Final Demo and Defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Synthesize secure, tested, and reliable engineering and review the full quality pipeline.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present the final demo with an oral defense of security, testing, and reliability decisions.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Final secure and reliable system is delivered with documentation and defense.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams take one web application and engineer it to be secure, tested, and reliable end to end. They threat-model it, remediate OWASP Top 10 risks, build a CI and CD pipeline with SAST, DAST, and dependency scanning, and add observability and service level objectives. Application security is revisited every week as new attack surfaces appear.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#3A4B9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Online banking demo app</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Healthcare records portal</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">E-commerce checkout service</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Identity and login provider</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Issue-tracking platform</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">File-sharing application</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Survey and forms platform</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Booking and reservations system</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#3A4B9D"><li><b>JUnit or pytest</b>: write unit and integration tests</li><li><b>GitHub Actions</b>: run continuous integration pipelines</li><li><b>OWASP ZAP</b>: perform dynamic application security testing</li><li><b>Semgrep</b>: run static application security testing</li><li><b>Snyk</b>: scan dependencies for known vulnerabilities</li><li><b>OWASP Dependency-Check</b>: detect vulnerable libraries</li><li><b>Trivy</b>: scan images and generate software bill of materials</li><li><b>OWASP Threat Dragon</b>: build and document threat models</li><li><b>OpenTelemetry</b>: instrument services for traces and metrics</li><li><b>Prometheus</b>: collect reliability metrics and define alerts</li><li><b>Grafana</b>: visualize service level objectives and telemetry</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://ieeexplore.ieee.org/document/1451869" target="_blank" rel="noopener">The Protection of Information in Computer Systems</a></span><div class="meta">Jerome H. Saltzer, Michael D. Schroeder, 1975</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1145/358198.358210" target="_blank" rel="noopener">Reflections on Trusting Trust</a></span><div class="meta">Ken Thompson, 1984</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1109/C-M.1978.218136" target="_blank" rel="noopener">Hints on Test Data Selection: Help for the Practicing Programmer</a></span><div class="meta">Richard A. DeMillo, Richard J. Lipton, Frederick G. Sayward, 1978</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1145/168588.168615" target="_blank" rel="noopener">Why Cryptosystems Fail</a></span><div class="meta">Ross Anderson, 1993</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://owasp.org/Top10/2021/" target="_blank" rel="noopener">OWASP Top 10:2021</a></span><div class="meta">OWASP Foundation, 2021</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://csrc.nist.gov/pubs/sp/800/218/final" target="_blank" rel="noopener">Secure Software Development Framework (SSDF) Version 1.1, NIST SP 800-218</a></span><div class="meta">Murugiah Souppaya, Karen Scarfone, Donna Dodson, 2022</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener">OWASP Top 10 Web Application Security Risks</a></span><div class="meta">OWASP Foundation, 2025, Core recurring reference</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.wiley.com/en-us/Threat+Modeling%3A+Designing+for+Security-p-9781118809990" target="_blank" rel="noopener">Threat Modeling: Designing for Security</a></span><div class="meta">Adam Shostack, 2014</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.oreilly.com/library/view/web-application-security/9781098143923/" target="_blank" rel="noopener">Web Application Security: Exploitation and Countermeasures for Modern Web Applications, 2nd Edition</a></span><div class="meta">Andrew Hoffman, 2024</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.cambridge.org/9781107172012" target="_blank" rel="noopener">Introduction to Software Testing, 2nd Edition</a></span><div class="meta">Paul Ammann, Jeff Offutt, 2016, Coverage and fault-based theory</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.oreilly.com/library/view/continuous-delivery-reliable/9780321670250/" target="_blank" rel="noopener">Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation</a></span><div class="meta">Jez Humble, David Farley, 2010</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://sre.google/sre-book/table-of-contents/" target="_blank" rel="noopener">Site Reliability Engineering: How Google Runs Production Systems</a></span><div class="meta">Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy, 2016, Free full text online</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.oreilly.com/library/view/observability-engineering/9781492076438/" target="_blank" rel="noopener">Observability Engineering: Achieving Production Excellence</a></span><div class="meta">Charity Majors, Liz Fong-Jones, George Miranda, 2022</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://csrc.nist.gov/pubs/sp/800/218/final" target="_blank" rel="noopener">Secure Software Development Framework (SSDF) Version 1.1, NIST SP 800-218</a></span><div class="meta">National Institute of Standards and Technology, 2022, Supply-chain and SDLC controls</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge" style="background:#3A4B9D;color:#fff">Core &middot; Semester 1</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge" style="background:#9C3B2E;color:#fff">Core &middot; Semester 1</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge e">Elective</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="SE1.html">&larr; SE1 &middot; Cloud Computing &amp; Cloud-Native Platforms</a><a href="SE3.html">SE3 &middot; Modern Front-End Web Development &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #3A4B9D">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>SE2</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/SE.html">Intelligent Software Systems</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: Intelligent Software Systems, Networking &amp; Cyber Security</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>11</dd>
+          <dt>References</dt><dd>8</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#3A4B9D">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

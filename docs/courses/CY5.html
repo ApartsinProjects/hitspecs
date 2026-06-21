@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#9C3B2E">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CY5: Blockchain &amp; Decentralized Systems | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="" href="../concentrations/SE.html">Software Systems</a><a class="on" href="../concentrations/CY.html">Cyber Security</a><a class="" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#9C3B2E;--ink:#7A2C22">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; CY5</p>
+    <h1>Blockchain &amp; Decentralized Systems</h1>
+    <p class="hetx" dir="rtl">בלוקצ&#x27;יין ומערכות מבוזרות</p>
+    <p class="csub">consensus under adversarial failure, smart-contract security, and decentralized trust</p>
+    <p class="lead">Building and securing blockchains, smart contracts, and DeFi.</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Study distributed ledgers, consensus, and smart contracts, and the security properties and limits of decentralized systems.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #9C3B2E">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #9C3B2E"><span class="bk" style="color:#9C3B2E">What you will build</span><p>Built a minimal but complete decentralized system, layering a simplified PBFT agreement module, Merkle-backed block integrity, proof-of-work mining, deployed Solidity contracts, a hierarchical deterministic multi-signature wallet, and an automated market maker, then audited and hardened it against reentrancy and flash-loan attacks.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#9C3B2E"><li>Explain the distributed-systems foundations: replication, the CAP trade-off, and failure models.</li><li>Analyze Byzantine fault tolerance and the theory behind consensus protocols.</li><li>Describe Nakamoto consensus and proof-of-work and proof-of-stake security arguments.</li><li>Apply the cryptographic foundations of blockchains: hashes, signatures, and Merkle trees.</li><li>Build and deploy smart contracts and reason about their execution model.</li><li>Identify and exploit smart-contract vulnerabilities such as reentrancy and integer flaws.</li><li>Design secure wallet and key-management systems including hierarchical deterministic keys.</li><li>Assess DeFi protocols for economic and technical attack vectors.</li><li>Evaluate the security and decentralization trade-offs of a system design.</li><li>Audit a smart contract and produce a structured findings report.</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#9C3B2E"><li>Consensus mechanisms</li><li>Smart contracts</li><li>Wallets &amp; key management</li><li>DeFi security</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#9C3B2E"><li>replication, the CAP trade-off, and distributed failure models</li><li>the FLP impossibility result for asynchronous consensus</li><li>Byzantine fault tolerance and the Byzantine generals problem</li><li>Nakamoto consensus, proof of work, and the longest-chain rule</li><li>hashes, digital signatures, and Merkle trees as integrity backbone</li><li>the smart-contract execution and gas-metering model</li><li>economic security assumptions and attack vectors of DeFi</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #9C3B2E">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#9C3B2E"><li>Cryptography fundamentals</li><li>Distributed systems and computer networks</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Foundations</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 1</div><div class="wk-body"><b>Distributed systems and consensus theory</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover replication, the CAP trade-off, failure models, and the FLP impossibility result that frames consensus.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Simulate a small replicated log and observe how message loss and ordering break consistency.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Set up the project repo and a baseline distributed-ledger simulation.</div></div></div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 2</div><div class="wk-body"><b>Byzantine fault tolerance</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Present the Byzantine generals problem and the PBFT protocol with its safety and liveness guarantees.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a simplified PBFT round and test it against simulated Byzantine nodes.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a Byzantine-fault-tolerant agreement module to the ledger.</div></div></div><div class="wpart">Cryptographic foundations</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 3</div><div class="wk-body"><b>Hashes, signatures, and Merkle trees</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Review cryptographic hashing, digital signatures, and Merkle trees as the integrity backbone of blockchains.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Build a Merkle tree and signature-verification layer for the ledger&#x27;s blocks.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add cryptographic block integrity and signed transactions to the ledger.</div></div></div><div class="wpart">Consensus</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 4</div><div class="wk-body"><b>Nakamoto consensus and proof of work</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Derive proof-of-work, the longest-chain rule, and the security analysis of the Bitcoin backbone protocol.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a proof-of-work miner and study fork resolution under competing chains.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add proof-of-work mining and longest-chain selection to the ledger.</div></div></div><div class="week pres"><div class="wk-num" style="color:#9C3B2E">Wk 5</div><div class="wk-body"><b>Design specification and threat model<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss proof-of-stake, finality, and the security and decentralization trade-offs across consensus designs.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: each team defends its system specification, consensus choice, and threat model.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Freeze the system specification and threat-model document.</div></div></div><div class="wpart">Smart contracts</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 6</div><div class="wk-body"><b>Smart contracts and the EVM</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Explain account models, the Ethereum Virtual Machine, gas, and the smart-contract execution lifecycle.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Write, test, and deploy a first Solidity contract to a local development chain.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a deployed smart-contract layer to the project.</div></div></div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 7</div><div class="wk-body"><b>Smart-contract vulnerabilities</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Analyze reentrancy, integer issues, access-control flaws, and oracle manipulation with real case studies.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Exploit a vulnerable contract in a sandbox and then patch the reentrancy flaw.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Document and fix vulnerabilities in the project&#x27;s contracts.</div></div></div><div class="week pres"><div class="wk-num" style="color:#9C3B2E">Wk 8</div><div class="wk-body"><b>Secure development and testing<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover secure patterns, invariants, formal-style testing, and the role of audits.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: interim demo of the deployed contracts with a live vulnerability and its fix.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Present the interim contract suite with a security test report.</div></div></div><div class="wpart">Wallets and keys</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 9</div><div class="wk-body"><b>Wallets and key management</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Present elliptic-curve keys, address derivation, hierarchical deterministic wallets, and seed-phrase security.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Build an HD wallet that derives keys and signs transactions for the ledger.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a hierarchical deterministic wallet to the project.</div></div></div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 10</div><div class="wk-body"><b>Custody and multi-signature security</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss hot versus cold storage, multi-signature schemes, threshold signatures, and key-recovery design.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a multi-signature approval flow and test recovery and revocation scenarios.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add multi-signature custody controls to the wallet.</div></div></div><div class="wpart">DeFi</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 11</div><div class="wk-body"><b>DeFi protocols and mechanisms</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Explain automated market makers, lending, liquidity, and the economic assumptions DeFi relies on.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Deploy a simple automated-market-maker contract and trace swaps and liquidity events.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a basic DeFi mechanism to the project&#x27;s contract layer.</div></div></div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 12</div><div class="wk-body"><b>DeFi attacks and auditing</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover flash-loan attacks, oracle manipulation, and economic exploits, plus the audit methodology.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Run a flash-loan-style attack against the AMM, then audit and harden it.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Audit the DeFi layer and apply hardening fixes.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#9C3B2E">Wk 13</div><div class="wk-body"><b>Final system and audit defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Review the full stack from consensus through contracts and wallets and the security arguments at each layer.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: final demonstration with an oral defense of the audit report and design choices.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the complete decentralized system with a security audit report.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams build a minimal but complete decentralized system, layering consensus, cryptographic integrity, smart contracts, wallets, and a DeFi mechanism, then audit and harden it. Each layer is accompanied by a demonstrated attack and a fix. The capstone defends a full security audit report orally.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#9C3B2E"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Mini proof-of-work blockchain</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">PBFT permissioned ledger</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Token with audited contracts</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">HD multi-sig wallet</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Automated market maker with audit</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">NFT marketplace security study</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Lending protocol exploit lab</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Cross-layer audit toolkit</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#9C3B2E"><li><b>Solidity</b>: smart-contract programming language</li><li><b>Foundry</b>: contract development, testing, and fuzzing</li><li><b>Hardhat</b>: Ethereum development and deployment environment</li><li><b>Remix</b>: browser-based contract IDE and debugger</li><li><b>Slither</b>: static analysis for Solidity vulnerabilities</li><li><b>Echidna</b>: property-based smart-contract fuzzing</li><li><b>Ganache</b>: local Ethereum test chain</li><li><b>ethers.js</b>: blockchain interaction and wallet library</li><li><b>MetaMask</b>: wallet and key-management client</li><li><b>Tenderly</b>: transaction simulation and debugging</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://lamport.azurewebsites.net/pubs/byz.pdf" target="_blank" rel="noopener">The Byzantine Generals Problem</a></span><div class="meta">Leslie Lamport, Robert Shostak, Marshall Pease, 1982</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1145/3149.214121" target="_blank" rel="noopener">Impossibility of Distributed Consensus with One Faulty Process</a></span><div class="meta">Michael Fischer, Nancy Lynch, Michael Paterson, 1985</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="http://pmg.csail.mit.edu/papers/osdi99.pdf" target="_blank" rel="noopener">Practical Byzantine Fault Tolerance</a></span><div class="meta">Miguel Castro, Barbara Liskov, 1999</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener">Bitcoin: A Peer-to-Peer Electronic Cash System</a></span><div class="meta">Satoshi Nakamoto, 2008</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://eprint.iacr.org/2014/765" target="_blank" rel="noopener">The Bitcoin Backbone Protocol: Analysis and Applications</a></span><div class="meta">Juan Garay, Aggelos Kiayias, Nikos Leonardos, 2015</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.oreilly.com/library/view/mastering-bitcoin-3rd/9781098150082/" target="_blank" rel="noopener">Mastering Bitcoin, 3rd Edition</a></span><div class="meta">Andreas M. Antonopoulos, David A. Harding, 2023</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://github.com/ethereumbook/ethereumbook" target="_blank" rel="noopener">Mastering Ethereum</a></span><div class="meta">Andreas M. Antonopoulos, Gavin Wood, 2018, Free CC-licensed source on GitHub.</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener">Bitcoin: A Peer-to-Peer Electronic Cash System</a></span><div class="meta">Satoshi Nakamoto, 2008</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://ethereum.org/en/whitepaper/" target="_blank" rel="noopener">Ethereum: A Next-Generation Smart Contract and Decentralized Application Platform</a></span><div class="meta">Vitalik Buterin, 2014</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://eprint.iacr.org/2014/765" target="_blank" rel="noopener">The Bitcoin Backbone Protocol: Analysis and Applications</a></span><div class="meta">Juan Garay, Aggelos Kiayias, Nikos Leonardos, 2014</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="http://pmg.csail.mit.edu/papers/osdi99.pdf" target="_blank" rel="noopener">Practical Byzantine Fault Tolerance</a></span><div class="meta">Miguel Castro, Barbara Liskov, 1999</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://docs.soliditylang.org/" target="_blank" rel="noopener">Solidity Documentation</a></span><div class="meta">Ethereum Foundation, 2025</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://bitcoinbook.cs.princeton.edu/" target="_blank" rel="noopener">Bitcoin and Cryptocurrency Technologies</a></span><div class="meta">Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, Steven Goldfeder, 2016</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge" style="background:#F6E7E4;color:#9C3B2E">Core &middot; Semester 2</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge" style="background:#FBEEDE;color:#B5530B">Core &middot; Semester 2</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="CY4.html">&larr; CY4 &middot; Cyber-Security Governance, Risk &amp; Compliance</a><a href="AI1.html">AI1 &middot; Language AI: LLMs and Agentic Systems &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #9C3B2E">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>CY5</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: Networking &amp; Cyber Security, Computational Finance, Optimization &amp; Quantum Computing</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>10</dd>
+          <dt>References</dt><dd>8</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#9C3B2E">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

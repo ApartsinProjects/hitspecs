@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#3A4B9D">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SE4: Back-End Web Development &amp; APIs | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="on" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#3A4B9D;--ink:#2A3873">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; SE4</p>
+    <h1>Back-End Web Development &amp; APIs</h1>
+    <p class="hetx" dir="rtl">פיתוח צד-שרת ו-APIs</p>
+    <p class="csub">resource-oriented architecture, the relational model, transactional theory, and consistency under scale</p>
+    <p class="lead">Design robust back-end services, APIs, and data layers</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Design server-side applications and well-structured APIs that power web and mobile clients, with attention to data modeling, authentication, and scale.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #3A4B9D">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #3A4B9D"><span class="bk" style="color:#3A4B9D">What you will build</span><p>Built a back-end API platform on Node.js or FastAPI exposing both REST and an Apollo GraphQL layer over a normalized, indexed PostgreSQL schema, secured with JWT authentication and role-based access control, accelerated with Redis caching, and load-tested with k6 against scaling targets.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#3A4B9D"><li>Explain the architectural constraints of REST and resource-oriented design</li><li>Compare REST and GraphQL and reason about their trade-offs</li><li>Model relational and non-relational data and analyze normalization</li><li>Design and implement APIs with versioning and clear contracts</li><li>Implement authentication, sessions, and authorization securely</li><li>Apply caching strategies and reason about consistency and invalidation</li><li>Analyze database indexing, transactions, and query performance</li><li>Scale back-end services horizontally and handle concurrency</li><li>Validate APIs with automated and contract testing</li><li>Evaluate consistency, availability, and latency trade-offs in data systems</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#3A4B9D"><li>REST &amp; GraphQL APIs</li><li>Databases &amp; data modeling</li><li>Authentication &amp; sessions</li><li>Caching &amp; scaling</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#3A4B9D"><li>REST architectural constraints and resource-oriented design</li><li>The relational model and normalization theory</li><li>ACID transactions, isolation levels, and indexing internals</li><li>Token and federated identity flows for authentication</li><li>Cache coherence, invalidation, and consistency trade-offs</li><li>Replication, statelessness, and the CAP trade-off</li><li>Role and attribute-based access control and least privilege</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #3A4B9D">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#3A4B9D"><li>Databases</li><li>Computer networks</li><li>Software engineering and a server-side language</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Foundations</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 1</div><div class="wk-body"><b>Web Services and HTTP</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine HTTP semantics, statelessness, and the architectural style behind web services.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Scaffold the project service and implement a first set of HTTP endpoints.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project service skeleton with basic endpoints is established.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 2</div><div class="wk-body"><b>REST and Resource Design</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover REST constraints, resource modeling, hypermedia, and the Richardson maturity model.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Design RESTful resources and routes for the project domain.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project exposes a coherent RESTful resource model.</div></div></div><div class="wpart">Data</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 3</div><div class="wk-body"><b>Data Modeling and Relational Databases</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Teach the relational model, normalization theory, and entity-relationship design.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Design the project schema and connect the service to a relational database.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project persists data through a normalized relational schema.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 4</div><div class="wk-body"><b>Queries, Indexing, and Transactions</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Analyze query execution, indexing, and ACID transactions with isolation levels.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add indexes, transactions, and tuned queries to the project data layer.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project data access is transactional and performance-tuned.</div></div></div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 5</div><div class="wk-body"><b>Specification Milestone<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Review API contracts and how data modeling shapes service architecture.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present their project specification: domain model, API contract, and scaling goals.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Approved specification with data model and API contract is delivered.</div></div></div><div class="wpart">APIs</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 6</div><div class="wk-body"><b>GraphQL</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine the GraphQL type system, resolvers, and trade-offs against REST.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add a GraphQL layer over the project domain with schema and resolvers.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project offers a GraphQL interface alongside its REST API.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 7</div><div class="wk-body"><b>API Design, Versioning, and Validation</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss contract design, versioning strategies, pagination, and error modeling.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add validation, pagination, and versioning to the project APIs.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project APIs are validated, paginated, and versioned.</div></div></div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 8</div><div class="wk-body"><b>Interim Demo Milestone<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover authentication models, tokens, and session management foundations.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present an interim demo of the project APIs and data layer.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Working API and data layer are demonstrated.</div></div></div><div class="wpart">Security</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 9</div><div class="wk-body"><b>Authentication and Sessions</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine session versus token authentication, OAuth, and OpenID Connect flows.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement secure authentication and session handling in the project.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project enforces authenticated, session-aware access.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 10</div><div class="wk-body"><b>Authorization and Access Control</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss role and attribute-based access control and least-privilege design.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add fine-grained authorization rules to project endpoints.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project enforces role-based access control across resources.</div></div></div><div class="wpart">Scale</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 11</div><div class="wk-body"><b>Caching</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Analyze caching layers, invalidation strategies, and consistency trade-offs.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add response and data caching with an invalidation strategy to the project.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project serves cached responses with controlled invalidation.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 12</div><div class="wk-body"><b>Scaling and Concurrency</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover horizontal scaling, statelessness, replication, and the CAP trade-off.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Load test the project and add scaling and concurrency safeguards.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project sustains load through scaling and concurrency control.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 13</div><div class="wk-body"><b>Final Demo and Defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Synthesize API, data, security, and scaling principles for back-end systems.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present the final demo with an oral defense of API, data, and scaling decisions.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Final back-end system is delivered with documentation and defense.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams build one back-end service that grows from basic endpoints into a complete API platform with a tuned data layer. The service exposes both REST and GraphQL, enforces secure authentication and authorization, and adds caching and scaling to meet load targets. Each increment is validated with automated and contract tests.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#3A4B9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Blogging and CMS API</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">E-commerce catalog and orders</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Social feed backend</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Booking and scheduling service</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Project management API</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Inventory and warehouse system</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Learning platform backend</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Payments ledger service</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#3A4B9D"><li><b>Node.js or Python</b>: implement back-end services</li><li><b>Express or FastAPI</b>: build HTTP API frameworks</li><li><b>PostgreSQL</b>: store relational data</li><li><b>Prisma or SQLAlchemy</b>: model and query the database</li><li><b>Apollo Server</b>: serve a GraphQL API</li><li><b>Redis</b>: cache responses and session data</li><li><b>JSON Web Tokens</b>: implement token-based authentication</li><li><b>OpenAPI</b>: document and validate REST contracts</li><li><b>Postman</b>: explore and test APIs</li><li><b>Docker</b>: run databases and services locally</li><li><b>k6</b>: load test back-end endpoints</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://ics.uci.edu/~fielding/pubs/dissertation/top.htm" target="_blank" rel="noopener">Architectural Styles and the Design of Network-based Software Architectures</a></span><div class="meta">Roy Thomas Fielding, 2000</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1145/362384.362685" target="_blank" rel="noopener">A Relational Model of Data for Large Shared Data Banks</a></span><div class="meta">Edgar F. Codd, 1970</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://datatracker.ietf.org/doc/html/rfc9110" target="_blank" rel="noopener">RFC 9110: HTTP Semantics</a></span><div class="meta">Roy Fielding, Mark Nottingham, Julian Reschke, 2022</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://datatracker.ietf.org/doc/html/rfc6749" target="_blank" rel="noopener">RFC 6749: The OAuth 2.0 Authorization Framework</a></span><div class="meta">Dick Hardt, 2012</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://datatracker.ietf.org/doc/html/rfc7519" target="_blank" rel="noopener">RFC 7519: JSON Web Token (JWT)</a></span><div class="meta">Michael Jones, John Bradley, Nat Sakimura, 2015</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1145/1294261.1294281" target="_blank" rel="noopener">Dynamo: Amazon&#x27;s Highly Available Key-value Store</a></span><div class="meta">Giuseppe DeCandia, Deniz Hastorun, Madan Jampani, Gunavardhan Kakulapati, Avinash Lakshman, Alex Pilchin, Swaminathan Sivasubramanian, Peter Vosshall, Werner Vogels, 2007</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.oreilly.com/library/view/restful-web-apis/9781449359713/" target="_blank" rel="noopener">RESTful Web APIs: Services for a Changing World</a></span><div class="meta">Leonard Richardson, Mike Amundsen, Sam Ruby, 2013</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.oreilly.com/library/view/learning-graphql/9781492030706/" target="_blank" rel="noopener">Learning GraphQL: Declarative Data Fetching for Modern Web Apps</a></span><div class="meta">Eve Porcello, Alex Banks, 2018</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/" target="_blank" rel="noopener">Designing Data-Intensive Applications</a></span><div class="meta">Martin Kleppmann, 2017, Data systems foundations</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.db-book.com/" target="_blank" rel="noopener">Database System Concepts, 7th Edition</a></span><div class="meta">Abraham Silberschatz, Henry F. Korth, S. Sudarshan, 2019, Free resources online</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://openid.net/specs/openid-connect-core-1_0.html" target="_blank" rel="noopener">OpenID Connect Core 1.0</a></span><div class="meta">N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore, 2014, Auth specification</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://graphql.org/learn/" target="_blank" rel="noopener">GraphQL Documentation (Learn)</a></span><div class="meta">The GraphQL Foundation, 2026, Official, continuously updated</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://www.postgresql.org/docs/" target="_blank" rel="noopener">PostgreSQL Documentation</a></span><div class="meta">The PostgreSQL Global Development Group, 2026, Official, continuously updated</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://redis.io/docs/latest/" target="_blank" rel="noopener">Redis Documentation</a></span><div class="meta">Redis Ltd., 2026, Caching reference</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge" style="background:#E7EAF5;color:#3A4B9D">Core &middot; Semester 2</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge e">Elective</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="SE3.html">&larr; SE3 &middot; Modern Front-End Web Development</a><a href="SE5.html">SE5 &middot; Engineering of AI Systems &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #3A4B9D">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>SE4</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/SE.html">Intelligent Software Systems</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: Intelligent Software Systems</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>11</dd>
+          <dt>References</dt><dd>8</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#3A4B9D">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

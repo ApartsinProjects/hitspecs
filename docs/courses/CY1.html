@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#9C3B2E">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CY1: Applied Cryptography | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="" href="../concentrations/SE.html">Software Systems</a><a class="on" href="../concentrations/CY.html">Cyber Security</a><a class="" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#9C3B2E;--ink:#7A2C22">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; CY1</p>
+    <h1>Applied Cryptography</h1>
+    <p class="hetx" dir="rtl">קריפטוגרפיה יישומית</p>
+    <p class="csub">provable security, number-theoretic hardness, and the design of cryptographic protocols</p>
+    <p class="lead">From number theory to provably secure cryptosystems and protocols.</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Understand and correctly apply the cryptographic primitives that underpin secure communication, authentication, and data protection.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #9C3B2E">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #9C3B2E"><span class="bk" style="color:#9C3B2E">What you will build</span><p>Built a rigorous applied-cryptography library in Python from big-integer arithmetic primitives up to authenticated key exchange, with AES-GCM AEAD, RSA-OAEP, ECDH, EdDSA, and a hybrid post-quantum KEM via liboqs, each increment backed by test vectors and a demonstrated attack on a naive variant.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#9C3B2E"><li>Explain the algebraic foundations of cryptography: groups, rings, finite fields, and modular arithmetic.</li><li>State and apply the hardness assumptions underpinning modern crypto: factoring, discrete log, and CDH/DDH.</li><li>Formalize security definitions such as IND-CPA, IND-CCA, and existential unforgeability, and reason with reduction proofs.</li><li>Construct and analyze symmetric primitives: block ciphers, modes of operation, and authenticated encryption.</li><li>Build public-key schemes including RSA, ElGamal, and elliptic-curve cryptography from their mathematical structure.</li><li>Design hash functions, MACs, and digital signatures, and argue their collision and forgery resistance.</li><li>Implement authenticated key exchange and reason about PKI, certificates, and trust models.</li><li>Identify and exploit common protocol pitfalls: nonce reuse, padding oracles, and timing leaks.</li><li>Apply provable-security reasoning to evaluate whether a construction meets its claimed guarantees.</li><li>Evaluate post-quantum candidates and migration paths against classical schemes.</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#9C3B2E"><li>Symmetric &amp; public-key crypto</li><li>Hashing &amp; digital signatures</li><li>Key exchange &amp; PKI</li><li>Protocol design pitfalls</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#9C3B2E"><li>group theory, finite fields, and modular arithmetic</li><li>computational hardness assumptions: factoring, discrete log, CDH and DDH</li><li>one-way functions and trapdoor permutations</li><li>IND-CPA and IND-CCA indistinguishability security games</li><li>reductionist security proofs and the random oracle model</li><li>existential unforgeability under chosen-message attack</li><li>lattice problems and post-quantum hardness</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #9C3B2E">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#9C3B2E"><li>Discrete mathematics and number-theory basics</li><li>Algorithms</li><li>Probability</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Foundations</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 1</div><div class="wk-body"><b>Number theory and algebraic structures</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover modular arithmetic, the Euclidean algorithm, groups, rings, finite fields, and Euler&#x27;s theorem as the language of cryptography.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement modular exponentiation, GCD, and modular inverse, and benchmark them on large integers.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Set up the crypto library skeleton and a tested big-integer modular arithmetic core.</div></div></div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 2</div><div class="wk-body"><b>Hardness assumptions and security definitions</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Introduce one-way functions, the factoring and discrete-log problems, CDH/DDH, and formal indistinguishability-based security definitions.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Build a discrete-log toy solver and measure how runtime scales to motivate the hardness assumption.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a primitives interface and a security-definition test harness to the library.</div></div></div><div class="wpart">Symmetric cryptography</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 3</div><div class="wk-body"><b>Block ciphers and modes of operation</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Analyze pseudorandom permutations, the AES structure, and CBC, CTR, and GCM modes with their security properties.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Wrap a vetted AES implementation, implement CTR and CBC modes, and write known-answer tests.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Integrate AES with multiple modes into the library with passing test vectors.</div></div></div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 4</div><div class="wk-body"><b>Authenticated encryption and MACs</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Define IND-CCA security, present HMAC and GMAC, and explain encrypt-then-MAC and AEAD constructions.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement HMAC and an encrypt-then-MAC AEAD wrapper, then attack a deliberately broken MAC-then-encrypt variant.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add authenticated encryption with associated data and negative-test the broken variant.</div></div></div><div class="week pres"><div class="wk-num" style="color:#9C3B2E">Wk 5</div><div class="wk-body"><b>Hash functions and the random oracle model<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover collision, preimage, and second-preimage resistance, Merkle-Damgard and sponge constructions, and the random oracle heuristic.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: each team defends its project specification, threat model, and chosen security definitions before the class.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Freeze the project specification document approved at the milestone review.</div></div></div><div class="wpart">Public-key cryptography</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 6</div><div class="wk-body"><b>RSA: construction and attacks</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Derive RSA from Euler&#x27;s theorem, prove correctness, and survey attacks: small exponents, common modulus, and padding oracles.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement textbook RSA, then exploit it with a Bleichenbacher-style padding oracle on a vulnerable endpoint.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add OAEP-padded RSA encryption and a regression test that the padding oracle is closed.</div></div></div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 7</div><div class="wk-body"><b>Discrete-log systems and ElGamal</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Present cyclic groups, ElGamal encryption, the DDH assumption, and semantic security reductions.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement ElGamal over a safe prime group and verify the homomorphic property experimentally.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Integrate ElGamal encryption with parameter validation into the library.</div></div></div><div class="week pres"><div class="wk-num" style="color:#9C3B2E">Wk 8</div><div class="wk-body"><b>Elliptic-curve cryptography<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Introduce the group law on elliptic curves, ECDH, and the elliptic-curve discrete-log problem and its efficiency advantages.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: interim demo of the working crypto library with a live encryption and decryption walkthrough.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add an ECDH key-agreement module and present the interim build.</div></div></div><div class="wpart">Signatures and integrity</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 9</div><div class="wk-body"><b>Digital signatures and unforgeability</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Define existential unforgeability under chosen-message attack and analyze RSA-PSS, ECDSA, and EdDSA.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement ECDSA signing and verification and demonstrate the catastrophic nonce-reuse key-recovery attack.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add EdDSA signatures and a deterministic-nonce safeguard to the library.</div></div></div><div class="wpart">Key exchange and PKI</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 10</div><div class="wk-body"><b>Authenticated key exchange and PKI</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover Diffie-Hellman, man-in-the-middle threats, certificates, chains of trust, and forward secrecy.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Build an authenticated Diffie-Hellman handshake and a minimal certificate verifier with chain validation.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a handshake protocol and certificate-chain verification to the library.</div></div></div><div class="wpart">Protocols and pitfalls</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 11</div><div class="wk-body"><b>Protocol design and common pitfalls</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Analyze replay, reflection, downgrade, and timing attacks, and the principles of robust protocol design.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Run a constant-time review, fix a timing leak in the project, and verify with statistical timing measurement.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Harden the protocol layer against replay and timing side channels.</div></div></div><div class="wpart">Advanced topics</div><div class="week"><div class="wk-num" style="color:#9C3B2E">Wk 12</div><div class="wk-body"><b>Provable security and post-quantum cryptography</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Walk through full reduction proofs and survey lattice-based and post-quantum standards and migration strategy.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Integrate a post-quantum KEM via liboqs and design a hybrid classical-plus-PQ key exchange.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a hybrid post-quantum key-exchange option to the library.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#9C3B2E">Wk 13</div><div class="wk-body"><b>Final integration and defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Review the full cryptographic stack, security arguments, and threat coverage across the project.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: final demonstration with oral defense of design choices, security proofs, and known limitations.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the complete, tested cryptographic library with documentation and security rationale.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams build a small but rigorous applied-cryptography library from arithmetic primitives up to authenticated protocols. Each increment is backed by a security argument, test vectors, and at least one demonstrated attack on a naive variant. The capstone is a coherent, documented library defended with provable-security reasoning.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#9C3B2E"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Secure messaging primitive</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Encrypted file vault</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Mini certificate authority</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Password-authenticated key exchange tool</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Hybrid post-quantum channel</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Signature-based update verifier</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Threshold signature demo</span><span class="chip" style="background:#F6E7E4;color:#9C3B2E">Constant-time crypto toolkit</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#9C3B2E"><li><b>Python</b>: implementation language for the teaching library</li><li><b>PyCryptodome</b>: vetted primitives for comparison and wrapping</li><li><b>OpenSSL</b>: reference implementation and certificate tooling</li><li><b>SageMath</b>: number-theory and elliptic-curve experimentation</li><li><b>cryptography (pyca)</b>: modern high-level crypto APIs</li><li><b>liboqs</b>: post-quantum KEM and signature implementations</li><li><b>Hashcat</b>: hash-cracking to motivate strength requirements</li><li><b>dudect</b>: constant-time leakage testing for timing attacks</li><li><b>GMP</b>: high-performance big-integer arithmetic</li><li><b>pytest</b>: test-vector and regression test harness</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://ee.stanford.edu/~hellman/publications/24.pdf" target="_blank" rel="noopener">New Directions in Cryptography</a></span><div class="meta">Whitfield Diffie, Martin Hellman, 1976</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://people.csail.mit.edu/rivest/Rsapaper.pdf" target="_blank" rel="noopener">A Method for Obtaining Digital Signatures and Public-Key Cryptosystems</a></span><div class="meta">Ronald Rivest, Adi Shamir, Leonard Adleman, 1978</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1016/0022-0000(84)90070-9" target="_blank" rel="noopener">Probabilistic Encryption</a></span><div class="meta">Shafi Goldwasser, Silvio Micali, 1984</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://cseweb.ucsd.edu/~mihir/papers/ro.pdf" target="_blank" rel="noopener">Random Oracles Are Practical: A Paradigm for Designing Efficient Protocols</a></span><div class="meta">Mihir Bellare, Phillip Rogaway, 1993</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf" target="_blank" rel="noopener">FIPS 197: Advanced Encryption Standard (AES)</a></span><div class="meta">NIST, 2001</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1007/11745853_14" target="_blank" rel="noopener">Curve25519: New Diffie-Hellman Speed Records</a></span><div class="meta">Daniel J. Bernstein, 2006</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.amazon.com/Introduction-Modern-Cryptography-Chapman-Cryptography/dp/0815354363" target="_blank" rel="noopener">Introduction to Modern Cryptography</a></span><div class="meta">Jonathan Katz, Yehuda Lindell, 2020, Canonical provable-security textbook (3rd edition).</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://toc.cryptobook.us/" target="_blank" rel="noopener">A Graduate Course in Applied Cryptography</a></span><div class="meta">Dan Boneh, Victor Shoup, 2023, Free official online edition.</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://cacr.uwaterloo.ca/hac/" target="_blank" rel="noopener">Handbook of Applied Cryptography</a></span><div class="meta">Alfred Menezes, Paul van Oorschot, Scott Vanstone, 1996, Free official site.</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.schneier.com/books/cryptography-engineering/" target="_blank" rel="noopener">Cryptography Engineering: Design Principles and Practical Applications</a></span><div class="meta">Niels Ferguson, Bruce Schneier, Tadayoshi Kohno, 2010</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://joyofcryptography.com/" target="_blank" rel="noopener">The Joy of Cryptography</a></span><div class="meta">Mike Rosulek, 2021, Free official online text.</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://csrc.nist.gov/pubs/fips/186-5/final" target="_blank" rel="noopener">FIPS 186-5: Digital Signature Standard (DSS)</a></span><div class="meta">NIST, 2023</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://csrc.nist.gov/pubs/sp/800/56/a/r3/final" target="_blank" rel="noopener">SP 800-56A Rev. 3: Pair-Wise Key-Establishment Using Discrete Logarithm Cryptography</a></span><div class="meta">NIST, 2018</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://nostarch.com/serious-cryptography-2nd-edition" target="_blank" rel="noopener">Serious Cryptography, 2nd Edition</a></span><div class="meta">Jean-Philippe Aumasson, 2024</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge" style="background:#9C3B2E;color:#fff">Core &middot; Semester 1</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge e">Elective</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="SE7.html">&larr; SE7 &middot; Design of AI-based &amp; Data-Intensive Systems</a><a href="CY2.html">CY2 &middot; Network &amp; Communication Security &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #9C3B2E">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>CY1</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: Networking &amp; Cyber Security</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>10</dd>
+          <dt>References</dt><dd>8</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#9C3B2E">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

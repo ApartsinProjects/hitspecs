@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#7A3E9D">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI5: Generative AI: Deep Generative Models | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="on" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#7A3E9D;--ink:#5D2F79">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; AI5</p>
+    <h1>Generative AI: Deep Generative Models</h1>
+    <p class="hetx" dir="rtl">AI יוצר: מודלים גנרטיביים עמוקים</p>
+    <p class="csub">the probabilistic theory of variational, adversarial, autoregressive, and diffusion generative models</p>
+    <p class="lead">Model and sample from data with deep generative models</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Study the models that generate images, text, and audio, from diffusion models to GANs and autoregressive generators.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #7A3E9D">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #7A3E9D"><span class="bk" style="color:#7A3E9D">What you will build</span><p>Built a conditional generative pipeline in Python with PyTorch and Hugging Face Diffusers, implementing and benchmarking VAE, GAN, autoregressive, and diffusion generators with classifier-free guidance and FID evaluation on a shared data modality.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#7A3E9D"><li>Formalize generative modeling as learning a data distribution</li><li>Derive the variational lower bound and the VAE objective</li><li>Explain the adversarial minimax game and GAN training dynamics</li><li>Derive the diffusion forward and reverse processes and the denoising objective</li><li>Connect diffusion to score matching and stochastic differential equations</li><li>Build autoregressive generators and analyze their likelihood factorization</li><li>Implement conditional and guided generation including classifier-free guidance</li><li>Evaluate generative models with FID, likelihood, and sample-quality metrics</li><li>Analyze the likelihood, sampling, and mode-coverage trade-offs across model families</li><li>Deploy a conditional generative pipeline end to end</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#7A3E9D"><li>Diffusion models</li><li>GANs &amp; VAEs</li><li>Autoregressive generation</li><li>Evaluating generative output</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#7A3E9D"><li>maximum-likelihood estimation of a data distribution</li><li>the evidence lower bound and variational inference</li><li>the reparameterization trick and the variational autoencoder</li><li>the adversarial minimax game and the optimal discriminator</li><li>the autoregressive likelihood factorization and causal masking</li><li>the diffusion forward and reverse denoising processes</li><li>score matching and stochastic differential equations</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #7A3E9D">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#7A3E9D"><li>Deep Learning</li><li>Probability and linear algebra</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Generative foundations</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 1</div><div class="wk-body"><b>What is a generative model</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We define generative modeling, maximum likelihood, latent variables, and the taxonomy of model families.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train a simple density estimator and sample from it.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Choose the data modality and generative task for the running project.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 2</div><div class="wk-body"><b>Latent variables and the ELBO</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive latent-variable models, the evidence lower bound, and variational inference.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement variational inference on a toy latent-variable model.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Establish a probabilistic baseline generator for the project data.</div></div></div><div class="wpart">Variational models</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 3</div><div class="wk-body"><b>Variational autoencoders</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the VAE, the reparameterization trick, and the reconstruction-versus-KL trade-off.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train a VAE and explore its latent space by interpolation.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Build a VAE generator for the project modality.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 4</div><div class="wk-body"><b>Expressive and discrete latents</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover hierarchical VAEs, vector-quantized latents, and posterior collapse.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train a VQ-VAE and inspect the learned discrete codebook.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Upgrade the generator with a discrete or hierarchical latent space.</div></div></div><div class="wpart">Adversarial models</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 5</div><div class="wk-body"><b>Generative adversarial networks<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the GAN minimax objective, the optimal discriminator, and the Jensen-Shannon connection.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: each team defends its generative specification and metrics.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Lock the specification and prototype a GAN generator.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 6</div><div class="wk-body"><b>Stabilizing GAN training</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover mode collapse, Wasserstein GANs, gradient penalties, and training stability.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train a Wasserstein GAN and compare stability against the vanilla GAN.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Improve the GAN with stabilized training and conditioning.</div></div></div><div class="wpart">Autoregressive models</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 7</div><div class="wk-body"><b>Autoregressive generation</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the autoregressive likelihood factorization and causal masking for sequences and images.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train an autoregressive model and sample token by token.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add an autoregressive generator and compare with the latent models.</div></div></div><div class="wpart">Diffusion models</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 8</div><div class="wk-body"><b>Denoising diffusion<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the forward noising process, the reverse denoising process, and the simplified DDPM training objective.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: interim demo of generated samples across model families.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Prototype a diffusion generator for the project data.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 9</div><div class="wk-body"><b>Score matching and SDEs</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We connect diffusion to score matching and stochastic differential equations and derive the probability-flow ODE.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a score-based sampler and compare sampling schedules.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Refine the diffusion model with score-based sampling.</div></div></div><div class="wpart">Conditional generation</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 10</div><div class="wk-body"><b>Guidance and conditioning</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover conditional diffusion, classifier and classifier-free guidance, and latent diffusion.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add conditioning and classifier-free guidance to control generation.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Make the generator controllable and conditional.</div></div></div><div class="wpart">Evaluation</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 11</div><div class="wk-body"><b>Evaluating generative models</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover likelihood, FID, inception score, precision-recall, and the difficulty of evaluating generation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Compute FID and precision-recall across the team&#x27;s models.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Benchmark all project generators with shared metrics.</div></div></div><div class="wpart">Deployment</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 12</div><div class="wk-body"><b>Efficient generation and serving</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover sampling acceleration, distillation, and the quality-versus-speed trade-off at inference.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Accelerate sampling with distillation or fewer steps and serve the model.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Make the conditional generator fast and deployable.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 13</div><div class="wk-body"><b>Final defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We synthesize VAEs, GANs, autoregressive, and diffusion models and survey open research directions.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: final demo with samples, metrics, and an oral defense of design choices.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the complete conditional generative pipeline with evaluation results.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams build one conditional generative system on a chosen data modality, implementing and comparing VAE, GAN, autoregressive, and diffusion approaches against shared metrics. The project culminates in a controllable, conditional generator backed by the probabilistic theory taught each week.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#7A3E9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Conditional image synthesis</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Text-to-image generation</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Molecular structure generation</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Audio and music generation</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Anomaly detection via generative density</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Data augmentation generator</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Style transfer and image editing</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Tabular synthetic-data generation</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#7A3E9D"><li><b>PyTorch</b>: model implementation and training</li><li><b>Hugging Face Diffusers</b>: diffusion model pipelines</li><li><b>Hugging Face Transformers</b>: autoregressive backbones</li><li><b>torchvision</b>: image datasets and transforms</li><li><b>clean-fid</b>: standardized FID evaluation</li><li><b>Weights and Biases</b>: experiment tracking and sample logging</li><li><b>Accelerate</b>: multi-device training</li><li><b>einops</b>: tensor reshaping for generative models</li><li><b>NumPy</b>: numerical computation</li><li><b>Matplotlib</b>: sample and latent-space visualization</li><li><b>Gradio</b>: interactive generation demos</li><li><b>ONNX Runtime</b>: optimized inference</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/2006.11239" target="_blank" rel="noopener">Denoising Diffusion Probabilistic Models</a></span><div class="meta">Ho, Jain, Abbeel, 2020</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1406.2661" target="_blank" rel="noopener">Generative Adversarial Networks</a></span><div class="meta">Goodfellow, Pouget-Abadie, Mirza, Xu, Warde-Farley, Ozair, Courville, Bengio, 2014</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1312.6114" target="_blank" rel="noopener">Auto-Encoding Variational Bayes</a></span><div class="meta">Kingma, Welling, 2013</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/2011.13456" target="_blank" rel="noopener">Score-Based Generative Modeling through Stochastic Differential Equations</a></span><div class="meta">Song, Sohl-Dickstein, Kingma, Kumar, Ermon, Poole, 2021</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/2112.10752" target="_blank" rel="noopener">High-Resolution Image Synthesis with Latent Diffusion Models</a></span><div class="meta">Rombach, Blattmann, Lorenz, Esser, Ommer, 2022</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/2006.11239" target="_blank" rel="noopener">Denoising Diffusion Probabilistic Models</a></span><div class="meta">Ho, Jain, Abbeel, 2020</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1406.2661" target="_blank" rel="noopener">Generative Adversarial Networks</a></span><div class="meta">Goodfellow, Pouget-Abadie, Mirza, Xu, Warde-Farley, Ozair, Courville, Bengio, 2014</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1312.6114" target="_blank" rel="noopener">Auto-Encoding Variational Bayes</a></span><div class="meta">Kingma, Welling, 2013</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/2011.13456" target="_blank" rel="noopener">Score-Based Generative Modeling through Stochastic Differential Equations</a></span><div class="meta">Song, Sohl-Dickstein, Kingma, Kumar, Ermon, Poole, 2021</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/2112.10752" target="_blank" rel="noopener">High-Resolution Image Synthesis with Latent Diffusion Models</a></span><div class="meta">Rombach, Blattmann, Lorenz, Esser, Ommer, 2022</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://probml.github.io/pml-book/book1.html" target="_blank" rel="noopener">Probabilistic Machine Learning: An Introduction</a></span><div class="meta">Murphy, 2022</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.deeplearningbook.org/" target="_blank" rel="noopener">Deep Learning</a></span><div class="meta">Goodfellow, Bengio, Courville, 2016</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://huggingface.co/docs/diffusers" target="_blank" rel="noopener">Hugging Face Diffusers Documentation</a></span><div class="meta">Hugging Face, 2026</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge" style="background:#EFE7F6;color:#7A3E9D">Core &middot; Semester 2</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge e">Elective</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="AI4.html">&larr; AI4 &middot; Scalable AI: Big-Data Algorithms</a><a href="AI6.html">AI6 &middot; Embodied AI: Robotics &amp; Autonomous Systems &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #7A3E9D">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>AI5</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/AI.html">AI &amp; Robotics</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: AI &amp; Robotics</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>12</dd>
+          <dt>References</dt><dd>8</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#7A3E9D">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

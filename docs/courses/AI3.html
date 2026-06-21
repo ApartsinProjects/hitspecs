@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#7A3E9D">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI3: Vision AI: Deep Learning for Computer Vision | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="on" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#7A3E9D;--ink:#5D2F79">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; AI3</p>
+    <h1>Vision AI: Deep Learning for Computer Vision</h1>
+    <p class="hetx" dir="rtl">בינת ראייה: למידה עמוקה לראייה ממוחשבת</p>
+    <p class="csub">the representation-learning theory of convolutional and transformer models for vision</p>
+    <p class="lead">See the world with deep convolutional and transformer vision</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Apply deep learning to images and video for recognition, detection, and segmentation tasks.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #7A3E9D">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #7A3E9D"><span class="bk" style="color:#7A3E9D">What you will build</span><p>Built an end-to-end computer-vision pipeline in Python with PyTorch, torchvision, and Detectron2, progressing from a residual classifier to an object detector and a Mask R-CNN instance-segmentation system evaluated with mean average precision and intersection over union.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#7A3E9D"><li>Derive the convolution operation, receptive fields, and parameter sharing from first principles</li><li>Explain backpropagation through convolutional and pooling layers</li><li>Build and train CNN architectures including residual networks</li><li>Adapt transformers to images with patch embeddings and self-attention</li><li>Implement object detection with anchors, region proposals, and bounding-box regression</li><li>Implement semantic and instance segmentation with encoder-decoder networks</li><li>Apply transfer learning and fine-tuning from pretrained backbones</li><li>Analyze representation learning, feature hierarchies, and learned invariances</li><li>Evaluate vision models with mean average precision and intersection over union</li><li>Deploy a vision pipeline with augmentation, training, and inference</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#7A3E9D"><li>CNNs &amp; vision transformers</li><li>Object detection</li><li>Image segmentation</li><li>Transfer learning</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#7A3E9D"><li>discrete convolution, receptive fields, and parameter sharing</li><li>backpropagation through convolutional and pooling layers</li><li>residual learning and skip connections in very deep networks</li><li>patch embeddings and self-attention for images</li><li>anchors, bounding-box regression, and non-max suppression</li><li>encoder-decoder networks and per-pixel segmentation loss</li><li>transfer learning and self-supervised pretraining</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #7A3E9D">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#7A3E9D"><li>Deep Learning</li><li>Linear algebra and calculus</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Vision foundations</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 1</div><div class="wk-body"><b>Images, pixels, and learning</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover image formation, color spaces, and the shift from hand-crafted features to learned representations.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Load an image dataset, build a data pipeline, and train a linear classifier baseline.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Choose the vision task, dataset, and metrics for the running project.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 2</div><div class="wk-body"><b>Convolution and feature maps</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive discrete convolution, kernels, stride, padding, receptive fields, and parameter sharing.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement convolution and pooling in NumPy, then verify against PyTorch.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Build a small from-scratch CNN classifier for the project dataset.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 3</div><div class="wk-body"><b>Training deep CNNs</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover backpropagation through convolutions, batch normalization, initialization, and optimization dynamics.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train a deeper CNN with augmentation and learning-rate scheduling.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Improve the baseline classifier with regularization and augmentation.</div></div></div><div class="wpart">Architectures</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 4</div><div class="wk-body"><b>Residual and modern CNNs</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive residual learning, skip connections, and why they ease optimization of very deep networks.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement and train a ResNet and compare with the plain CNN.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Adopt a residual backbone for the project task.</div></div></div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 5</div><div class="wk-body"><b>Vision transformers<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We adapt attention to images via patch embeddings, class tokens, and positional encoding, and contrast inductive biases with CNNs.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: each team defends its task specification and evaluation plan.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Lock the specification and prototype a vision transformer backbone.</div></div></div><div class="wpart">Transfer learning</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 6</div><div class="wk-body"><b>Pretraining and fine-tuning</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover transfer learning, feature reuse, fine-tuning strategies, and self-supervised pretraining.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Fine-tune a pretrained backbone and compare against training from scratch.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Switch the project to a pretrained, fine-tuned backbone.</div></div></div><div class="wpart">Detection</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 7</div><div class="wk-body"><b>Object detection foundations</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover anchors, region proposals, bounding-box regression, non-max suppression, and the detection loss.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train a detector on the project images and inspect predicted boxes.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Extend the project from classification to object detection.</div></div></div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 8</div><div class="wk-body"><b>Two-stage and one-stage detectors<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We contrast Faster R-CNN with single-stage detectors and analyze the speed-accuracy trade-off.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: interim demo of detection results with mAP.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Benchmark a one-stage detector against the two-stage baseline.</div></div></div><div class="wpart">Segmentation</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 9</div><div class="wk-body"><b>Semantic segmentation</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive encoder-decoder networks, the U-Net architecture, skip connections, and per-pixel loss.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train a U-Net for semantic segmentation and score with IoU.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add pixel-level segmentation to the project pipeline.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 10</div><div class="wk-body"><b>Instance segmentation</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover Mask R-CNN, region-of-interest alignment, and joint detection and masking.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train Mask R-CNN and visualize instance masks.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Upgrade segmentation to instance-level masks.</div></div></div><div class="wpart">Representation and robustness</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 11</div><div class="wk-body"><b>Interpretability and invariance</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We study learned feature hierarchies, saliency, class activation maps, and adversarial robustness.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Generate saliency and CAM visualizations and probe adversarial examples.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add interpretability visualizations to the project.</div></div></div><div class="wpart">Deployment</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 12</div><div class="wk-body"><b>Optimization and serving</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover quantization, pruning, knowledge distillation, and inference latency.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Optimize the model with quantization and export it for inference.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Make the vision pipeline fast and deployable.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 13</div><div class="wk-body"><b>Final defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We synthesize convolutional and transformer vision and survey open research directions.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: final demo with metrics and an oral defense of design choices.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the complete detection-and-segmentation pipeline with results.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams build one end-to-end computer-vision pipeline on a chosen image dataset, growing from a classifier into a detector and finally an instance-segmentation system. Each week adds capability backed by the convolution and representation theory taught that week, with continuous evaluation on held-out images.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#7A3E9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Retail product detection and counting</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Medical image segmentation</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Autonomous-driving scene parsing</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Wildlife camera-trap recognition</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Defect detection in manufacturing</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Satellite land-cover mapping</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Sports player tracking</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Document layout analysis</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#7A3E9D"><li><b>PyTorch</b>: model implementation and training</li><li><b>torchvision</b>: datasets, transforms, and pretrained models</li><li><b>timm</b>: state-of-the-art image backbones</li><li><b>Detectron2</b>: detection and segmentation framework</li><li><b>Ultralytics YOLO</b>: real-time one-stage detection</li><li><b>Albumentations</b>: image augmentation</li><li><b>OpenCV</b>: image processing utilities</li><li><b>Hugging Face Transformers</b>: vision transformer models</li><li><b>ONNX Runtime</b>: optimized cross-platform inference</li><li><b>Weights and Biases</b>: experiment tracking</li><li><b>Grad-CAM</b>: visual explanations</li><li><b>Roboflow</b>: dataset management and annotation</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1512.03385" target="_blank" rel="noopener">Deep Residual Learning for Image Recognition</a></span><div class="meta">He, Zhang, Ren, Sun, 2015</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/2010.11929" target="_blank" rel="noopener">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</a></span><div class="meta">Dosovitskiy, Beyer, Kolesnikov, Weissenborn, Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, Houlsby, 2020</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1505.04597" target="_blank" rel="noopener">U-Net: Convolutional Networks for Biomedical Image Segmentation</a></span><div class="meta">Ronneberger, Fischer, Brox, 2015</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1703.06870" target="_blank" rel="noopener">Mask R-CNN</a></span><div class="meta">He, Gkioxari, Dollar, Girshick, 2017</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1506.02640" target="_blank" rel="noopener">You Only Look Once: Unified, Real-Time Object Detection</a></span><div class="meta">Redmon, Divvala, Girshick, Farhadi, 2015</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1512.03385" target="_blank" rel="noopener">Deep Residual Learning for Image Recognition</a></span><div class="meta">He, Zhang, Ren, Sun, 2015</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/2010.11929" target="_blank" rel="noopener">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</a></span><div class="meta">Dosovitskiy, Beyer, Kolesnikov, Weissenborn, Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, Houlsby, 2020</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1505.04597" target="_blank" rel="noopener">U-Net: Convolutional Networks for Biomedical Image Segmentation</a></span><div class="meta">Ronneberger, Fischer, Brox, 2015</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1703.06870" target="_blank" rel="noopener">Mask R-CNN</a></span><div class="meta">He, Gkioxari, Dollar, Girshick, 2017</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://szeliski.org/Book/" target="_blank" rel="noopener">Computer Vision: Algorithms and Applications, 2nd edition</a></span><div class="meta">Szeliski, 2022</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.deeplearningbook.org/" target="_blank" rel="noopener">Deep Learning</a></span><div class="meta">Goodfellow, Bengio, Courville, 2016</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://d2l.ai/" target="_blank" rel="noopener">Dive into Deep Learning</a></span><div class="meta">Zhang, Lipton, Li, Smola, 2023</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://docs.pytorch.org/docs/stable/" target="_blank" rel="noopener">PyTorch Documentation</a></span><div class="meta">PyTorch Foundation, 2026</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge" style="background:#7A3E9D;color:#fff">Core &middot; Semester 1</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge e">Elective</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="AI2.html">&larr; AI2 &middot; Temporal AI: Time Series &amp; Sequential Decision Making</a><a href="AI4.html">AI4 &middot; Scalable AI: Big-Data Algorithms &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #7A3E9D">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>AI3</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/AI.html">AI &amp; Robotics</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: AI &amp; Robotics</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>12</dd>
+          <dt>References</dt><dd>8</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#7A3E9D">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

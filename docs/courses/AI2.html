@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#7A3E9D">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI2: Temporal AI: Time Series &amp; Sequential Decision Making | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="on" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#7A3E9D;--ink:#5D2F79">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; AI2</p>
+    <h1>Temporal AI: Time Series &amp; Sequential Decision Making</h1>
+    <p class="hetx" dir="rtl">AI טמפורלי: סדרות עתיות וקבלת החלטות רציפה</p>
+    <p class="csub">the probabilistic theory of time series forecasting and sequential decision making</p>
+    <p class="lead">Forecast, decide, and act under uncertainty over time</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Model data that unfolds over time and learn to make sequential decisions under uncertainty.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #7A3E9D">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #7A3E9D"><span class="bk" style="color:#7A3E9D">What you will build</span><p>Built an end-to-end forecasting and control agent in Python with PyTorch, statsmodels, and Gymnasium, coupling a neural sequence forecaster to a deep reinforcement-learning controller trained with DQN and PPO inside a simulated environment.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#7A3E9D"><li>Formalize stochastic processes, stationarity, and autocorrelation for temporal data</li><li>Derive classical forecasting models including ARIMA and exponential smoothing</li><li>Build sequence models with RNNs, LSTMs, and temporal transformers</li><li>Define Markov decision processes with states, actions, rewards, and discounting</li><li>Derive the Bellman equations and prove value and policy iteration convergence</li><li>Implement value-based and policy-gradient reinforcement learning algorithms</li><li>Quantify uncertainty with predictive intervals and Bayesian decision theory</li><li>Evaluate forecasts and policies with proper scoring rules and backtesting</li><li>Apply exploration-exploitation strategies including epsilon-greedy and bandits</li><li>Deploy a sequential decision agent in a simulated environment</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#7A3E9D"><li>Time-series forecasting</li><li>Sequence models</li><li>Reinforcement learning</li><li>Decision under uncertainty</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#7A3E9D"><li>stochastic processes, stationarity, and autocorrelation</li><li>ARIMA and exponential smoothing with maximum-likelihood estimation</li><li>recurrent networks and backpropagation through time</li><li>Markov decision processes and the Bellman optimality equations</li><li>temporal-difference learning and the policy-gradient theorem</li><li>multi-armed bandits, regret bounds, and Thompson sampling</li><li>Bayesian decision theory and expected-utility maximization</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #7A3E9D">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#7A3E9D"><li>Machine Learning</li><li>Probability and statistics</li><li>Linear algebra</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Temporal foundations</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 1</div><div class="wk-body"><b>Time series and stochastic processes</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We define stochastic processes, stationarity, autocorrelation, and the decomposition of series into trend, seasonality, and noise.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Load real time-series data, plot ACF and PACF, and test for stationarity.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Frame the running forecasting-and-control problem and load the target dataset.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 2</div><div class="wk-body"><b>Classical forecasting</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive autoregressive, moving-average, ARIMA, and exponential smoothing models and the maximum-likelihood estimation behind them.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Fit ARIMA and exponential smoothing baselines and backtest them.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Establish classical forecasting baselines for the project series.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 3</div><div class="wk-body"><b>Probabilistic forecasting and uncertainty</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover predictive distributions, prediction intervals, proper scoring rules, and calibration.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Produce probabilistic forecasts and score them with pinball and CRPS metrics.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add calibrated uncertainty bands to the baseline forecasts.</div></div></div><div class="wpart">Sequence models</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 4</div><div class="wk-body"><b>Recurrent neural networks</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive RNNs, backpropagation through time, vanishing gradients, and the LSTM and GRU gating that fix them.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train an LSTM forecaster and compare against the classical baselines.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Introduce a neural sequence forecaster to the project.</div></div></div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 5</div><div class="wk-body"><b>Temporal transformers<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We adapt attention to sequences with causal masking and positional encoding for long-horizon forecasting.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: each team defends its problem specification, dataset, and metrics.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Lock the specification and prototype a transformer-based forecaster.</div></div></div><div class="wpart">Decision theory</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 6</div><div class="wk-body"><b>Markov decision processes</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We define MDPs, returns, discounting, value functions, and the Bellman optimality equations.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a gridworld MDP and solve it with value iteration.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Reframe the project as a sequential decision problem with an explicit MDP.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 7</div><div class="wk-body"><b>Dynamic programming and planning</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We prove convergence of policy iteration and value iteration and discuss the contraction-mapping argument.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement policy iteration and compare convergence with value iteration.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Compute an optimal planning policy for the known-model version of the task.</div></div></div><div class="wpart">Reinforcement learning</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 8</div><div class="wk-body"><b>Model-free value methods<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive Monte Carlo and temporal-difference learning, Q-learning, and the exploration-exploitation dilemma.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: interim demo of a learned policy in the simulator.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Train a tabular or function-approximated Q-learning agent.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 9</div><div class="wk-body"><b>Deep reinforcement learning</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover DQN, experience replay, target networks, and the deadly triad of function approximation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a DQN agent and stabilize training with replay and target nets.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Upgrade the agent to deep value-based control on raw features.</div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 10</div><div class="wk-body"><b>Policy gradients</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the policy-gradient theorem, REINFORCE, advantage estimation, actor-critic, and PPO.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement an actor-critic or PPO agent and compare sample efficiency.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a policy-gradient controller and benchmark it against the value agent.</div></div></div><div class="wpart">Uncertainty and bandits</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 11</div><div class="wk-body"><b>Bandits and exploration</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover multi-armed bandits, regret bounds, UCB, and Thompson sampling.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement UCB and Thompson sampling and chart cumulative regret.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add principled exploration to the decision agent.</div></div></div><div class="wpart">Integration</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 12</div><div class="wk-body"><b>Forecast-driven decisions</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We combine forecasting and decision-making through Bayesian decision theory and expected-utility maximization.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Couple the forecaster to the controller so predictions drive actions.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Integrate forecasting and control into one end-to-end agent.</div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 13</div><div class="wk-body"><b>Final defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We synthesize probabilistic forecasting and sequential decision-making and survey open problems.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: final demo with backtests and an oral defense of design choices.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the integrated forecasting-and-control agent with evaluation results.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Teams build one temporal decision agent that first forecasts a real time series and then acts on those forecasts inside a simulated environment. The project grows from classical baselines through neural sequence models into a reinforcement-learning controller, ending with an integrated forecast-driven decision policy.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#7A3E9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Energy demand forecasting and storage control</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Inventory and supply-chain replenishment</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Algorithmic trading agent</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Traffic signal control</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Cloud autoscaling controller</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Ride-hailing fleet dispatch</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Dynamic pricing agent</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Smart-grid load balancing</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#7A3E9D"><li><b>PyTorch</b>: sequence model implementation</li><li><b>statsmodels</b>: ARIMA and classical time-series models</li><li><b>sktime</b>: unified time-series forecasting API</li><li><b>Prophet</b>: decomposable trend and seasonality forecasting</li><li><b>Gymnasium</b>: reinforcement-learning environments</li><li><b>Stable-Baselines3</b>: reference RL algorithm implementations</li><li><b>Ray RLlib</b>: scalable distributed RL</li><li><b>NumPy</b>: numerical computation</li><li><b>pandas</b>: time-series data handling</li><li><b>Matplotlib</b>: forecast and policy visualization</li><li><b>Optuna</b>: hyperparameter optimization</li><li><b>Weights and Biases</b>: experiment tracking</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1312.5602" target="_blank" rel="noopener">Playing Atari with Deep Reinforcement Learning</a></span><div class="meta">Mnih, Kavukcuoglu, Silver, Graves, Antonoglou, Wierstra, Riedmiller, 2013</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener">Proximal Policy Optimization Algorithms</a></span><div class="meta">Schulman, Wolski, Dhariwal, Radford, Klimov, 2017</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1509.02971" target="_blank" rel="noopener">Continuous control with deep reinforcement learning</a></span><div class="meta">Lillicrap, Hunt, Pritzel, Heess, Erez, Tassa, Silver, Wierstra, 2015</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1602.01783" target="_blank" rel="noopener">Asynchronous Methods for Deep Reinforcement Learning</a></span><div class="meta">Mnih, Badia, Mirza, Graves, Lillicrap, Harley, Silver, Kavukcuoglu, 2016</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1912.09363" target="_blank" rel="noopener">Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting</a></span><div class="meta">Lim, Arik, Loeff, Pfister, 2019</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="http://incompleteideas.net/book/the-book-2nd.html" target="_blank" rel="noopener">Reinforcement Learning: An Introduction, 2nd edition</a></span><div class="meta">Sutton, Barto, 2018</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://otexts.com/fpp3/" target="_blank" rel="noopener">Forecasting: Principles and Practice, 3rd edition</a></span><div class="meta">Hyndman, Athanasopoulos, 2021</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://probml.github.io/pml-book/book1.html" target="_blank" rel="noopener">Probabilistic Machine Learning: An Introduction</a></span><div class="meta">Murphy, 2022</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1312.5602" target="_blank" rel="noopener">Playing Atari with Deep Reinforcement Learning</a></span><div class="meta">Mnih, Kavukcuoglu, Silver, Graves, Antonoglou, Wierstra, Riedmiller, 2013</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener">Proximal Policy Optimization Algorithms</a></span><div class="meta">Schulman, Wolski, Dhariwal, Radford, Klimov, 2017</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://d2l.ai/" target="_blank" rel="noopener">Dive into Deep Learning</a></span><div class="meta">Zhang, Lipton, Li, Smola, 2023</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://docs.ray.io/" target="_blank" rel="noopener">Ray Documentation</a></span><div class="meta">Anyscale, 2026</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge" style="background:#7A3E9D;color:#fff">Core &middot; Semester 1</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge" style="background:#B5530B;color:#fff">Core &middot; Semester 1</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="AI1.html">&larr; AI1 &middot; Language AI: LLMs and Agentic Systems</a><a href="AI3.html">AI3 &middot; Vision AI: Deep Learning for Computer Vision &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #7A3E9D">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>AI2</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/AI.html">AI &amp; Robotics</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: AI &amp; Robotics, Computational Finance, Optimization &amp; Quantum Computing</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>12</dd>
+          <dt>References</dt><dd>7</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#7A3E9D">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

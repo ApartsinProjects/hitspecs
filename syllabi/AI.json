@@ -1,0 +1,543 @@
+{
+  "AI1": {
+    "tagline": "Build, ground, and guard production LLM agents",
+    "subtitle": "the mathematical theory of attention, autoregressive language models, and tool-using agents",
+    "foundations": [
+      "the transformer and self-attention",
+      "autoregressive next-token prediction and the chain rule of probability",
+      "cross-entropy loss and backpropagation through the network",
+      "in-context learning and the conditioning of token distributions",
+      "dense embeddings and approximate nearest-neighbor retrieval",
+      "the ReAct reasoning and acting loop for agents",
+      "neural scaling laws relating loss to parameters, data, and compute"
+    ],
+    "literature": [
+      {"title": "Attention Is All You Need", "authors": "Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, Polosukhin", "year": 2017, "url": "https://arxiv.org/abs/1706.03762"},
+      {"title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding", "authors": "Devlin, Chang, Lee, Toutanova", "year": 2018, "url": "https://arxiv.org/abs/1810.04805"},
+      {"title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks", "authors": "Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal, Kuttler, Lewis, Yih, Rocktaschel, Riedel, Kiela", "year": 2020, "url": "https://arxiv.org/abs/2005.11401"},
+      {"title": "ReAct: Synergizing Reasoning and Acting in Language Models", "authors": "Yao, Zhao, Yu, Du, Shafran, Narasimhan, Cao", "year": 2022, "url": "https://arxiv.org/abs/2210.03629"},
+      {"title": "Scaling Laws for Neural Language Models", "authors": "Kaplan, McCandlish, Henighan, Brown, Chess, Child, Gray, Radford, Wu, Amodei", "year": 2020, "url": "https://arxiv.org/abs/2001.08361"}
+    ],
+    "build": "Built a grounded, tool-using LLM agent in Python with PyTorch, Hugging Face Transformers, LangChain, and FAISS, adding retrieval-augmented generation, a ReAct planning loop, safety guardrails, and an LLM-as-judge evaluation suite.",
+    "objectives": [
+      "Derive the transformer architecture from scaled dot-product attention, positional encoding, and residual streams",
+      "Explain self-attention, multi-head attention, and the softmax-based information routing mathematically",
+      "Analyze autoregressive next-token prediction, cross-entropy loss, and the backpropagation that trains it",
+      "Engineer prompts using zero-shot, few-shot, and chain-of-thought reasoning patterns",
+      "Implement retrieval-augmented generation with embeddings, vector search, and grounded context injection",
+      "Construct tool-using agents with the ReAct reasoning and acting loop",
+      "Design evaluation harnesses with task metrics, LLM-as-judge, and regression suites",
+      "Apply guardrails for prompt injection, hallucination, and output safety filtering",
+      "Quantify decoding strategies including temperature, top-k, top-p, and beam search",
+      "Deploy an agent with logging, tracing, and cost-aware orchestration"
+    ],
+    "prerequisites": [
+      "Python programming",
+      "Linear algebra and probability basics",
+      "Introductory machine learning",
+      "Familiarity with PyTorch or NumPy"
+    ],
+    "weeks": [
+      {"week": 1, "part": "Foundations", "title": "From language modeling to transformers", "lecture": "We formalize the language modeling objective, the chain rule of probability over tokens, and tokenization, then motivate why recurrence gives way to attention.", "practice": "Set up the project repo, load a pretrained model from Hugging Face, and run greedy and sampled generation.", "project": "Initialize the team chatbot scaffold with a baseline LLM and a chat loop."},
+      {"week": 2, "part": "Foundations", "title": "Attention and the transformer block", "lecture": "We derive scaled dot-product attention, multi-head attention, positional encodings, and the full encoder-decoder block with residuals and layer norm.", "practice": "Implement a single attention head and a transformer block in PyTorch and verify shapes against a reference.", "project": "Add a from-scratch attention visualization tool to the chatbot for explainability."},
+      {"week": 3, "part": "Foundations", "title": "Training, scaling, and emergent behavior", "lecture": "We cover pretraining, cross-entropy loss, backpropagation through the transformer, and scaling laws relating loss to parameters, data, and compute.", "practice": "Fine-tune a small model with LoRA on a domain corpus and chart the loss curve.", "project": "Specialize the chatbot to a chosen domain via lightweight fine-tuning."},
+      {"week": 4, "part": "Prompting and retrieval", "title": "Prompt engineering and in-context learning", "lecture": "We analyze in-context learning, few-shot demonstrations, chain-of-thought, and the theory of why prompts steer conditional distributions.", "practice": "Build a prompt-template library and run systematic A/B comparisons on a task set.", "project": "Add structured prompting and few-shot exemplars to improve answer quality."},
+      {"week": 5, "part": "Prompting and retrieval", "title": "Embeddings and vector retrieval", "lecture": "We study dense embeddings, cosine similarity, approximate nearest-neighbor indexing, and the bias-variance trade-offs of chunking.", "practice": "Team presentation: each team defends its project specification, target domain, and evaluation plan.", "project": "Lock the project specification and stand up an embedding index over the knowledge base."},
+      {"week": 6, "part": "Prompting and retrieval", "title": "Retrieval-augmented generation", "lecture": "We formalize RAG as marginalizing over retrieved passages, and cover reranking, context-window budgeting, and grounding faithfulness.", "practice": "Wire a retriever to the generator and measure grounded versus ungrounded answer accuracy.", "project": "Convert the chatbot into a grounded RAG assistant over your corpus."},
+      {"week": 7, "part": "Agents and tools", "title": "Tool use and function calling", "lecture": "We cover structured output, JSON schemas, function calling, and how tool results extend a model beyond its parametric knowledge.", "practice": "Expose calculator, search, and code tools and let the model invoke them via function calling.", "project": "Give the assistant tool access so it can act, not just answer."},
+      {"week": 8, "part": "Agents and tools", "title": "Agentic loops and planning", "lecture": "We derive the ReAct loop, reasoning-acting interleaving, planning, memory, and multi-step task decomposition.", "practice": "Team presentation: interim demo of the agent executing a multi-step task end to end.", "project": "Upgrade to a ReAct agent that plans and chains tool calls toward a goal."},
+      {"week": 9, "part": "Agents and tools", "title": "Memory, multi-agent, and orchestration", "lecture": "We study short and long-term memory, agent state, and coordination patterns across multiple specialized agents.", "practice": "Add persistent memory and a second specialized agent that collaborates with the first.", "project": "Introduce memory and a helper agent to handle complex requests."},
+      {"week": 10, "part": "Evaluation and guardrails", "title": "Evaluation of LLM systems", "lecture": "We cover task metrics, reference-based and reference-free evaluation, LLM-as-judge, and the statistics of small-sample comparisons.", "practice": "Build an automated eval suite with a labeled set and an LLM-judge scorer.", "project": "Add a regression test suite that scores every agent change."},
+      {"week": 11, "part": "Evaluation and guardrails", "title": "Safety, alignment, and guardrails", "lecture": "We cover RLHF and preference optimization conceptually, prompt injection, jailbreaks, and content filtering.", "practice": "Red-team the agent for injection and add input and output guardrails.", "project": "Harden the agent with safety filters and injection defenses."},
+      {"week": 12, "part": "Deployment", "title": "Serving, cost, and observability", "lecture": "We cover quantization, KV-cache, batching, latency-throughput trade-offs, tracing, and cost accounting.", "practice": "Add tracing and cost logging, then optimize latency with caching and batching.", "project": "Make the agent observable, cost-aware, and ready to serve."},
+      {"week": 13, "part": "Capstone", "title": "Final defense", "lecture": "We synthesize the full stack from attention theory to deployed agentic systems and survey open research directions.", "practice": "Team presentation: final demo with live evaluation and an oral defense of design choices.", "project": "Deliver the complete grounded, tool-using, guarded agent with evaluation results."}
+    ],
+    "project": {
+      "summary": "Teams build one production-grade LLM agent over the term, growing from a bare chat loop into a grounded, tool-using, guarded, and observable system. Each week adds a capability backed by the theory taught that week, and the agent is continuously evaluated on a held-out task set.",
+      "ideas": [
+        "Research-paper Q and A assistant",
+        "Codebase navigator agent",
+        "Customer-support RAG bot",
+        "Legal or policy document advisor",
+        "Personal data analyst agent",
+        "Travel-planning tool agent",
+        "Medical-literature triage assistant",
+        "Financial-report summarizer"
+      ]
+    },
+    "tools": [
+      "PyTorch: tensors, autograd, and model implementation",
+      "Hugging Face Transformers: pretrained models and tokenizers",
+      "Hugging Face PEFT: LoRA and parameter-efficient fine-tuning",
+      "LangChain: agent orchestration and tool wiring",
+      "LlamaIndex: retrieval and indexing pipelines",
+      "FAISS: approximate nearest-neighbor vector search",
+      "Chroma: lightweight vector database",
+      "Ollama: local model serving for development",
+      "OpenAI API: hosted frontier models and function calling",
+      "Ragas: RAG evaluation metrics",
+      "LangSmith: tracing, logging, and observability",
+      "Pydantic: structured output and schema validation"
+    ],
+    "references": [
+      {"title": "Attention Is All You Need", "authors": "Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, Polosukhin", "year": 2017, "kind": "Paper", "url": "https://arxiv.org/abs/1706.03762"},
+      {"title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding", "authors": "Devlin, Chang, Lee, Toutanova", "year": 2018, "kind": "Paper", "url": "https://arxiv.org/abs/1810.04805"},
+      {"title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks", "authors": "Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal, Kuttler, Lewis, Yih, Rocktaschel, Riedel, Kiela", "year": 2020, "kind": "Paper", "url": "https://arxiv.org/abs/2005.11401"},
+      {"title": "ReAct: Synergizing Reasoning and Acting in Language Models", "authors": "Yao, Zhao, Yu, Du, Shafran, Narasimhan, Cao", "year": 2022, "kind": "Paper", "url": "https://arxiv.org/abs/2210.03629"},
+      {"title": "Scaling Laws for Neural Language Models", "authors": "Kaplan, McCandlish, Henighan, Brown, Chess, Child, Gray, Radford, Wu, Amodei", "year": 2020, "kind": "Paper", "url": "https://arxiv.org/abs/2001.08361"},
+      {"title": "Speech and Language Processing, 3rd edition draft", "authors": "Jurafsky, Martin", "year": 2026, "kind": "Textbook", "url": "https://web.stanford.edu/~jurafsky/slp3/"},
+      {"title": "Dive into Deep Learning", "authors": "Zhang, Lipton, Li, Smola", "year": 2023, "kind": "Textbook", "url": "https://d2l.ai/"},
+      {"title": "Hugging Face Transformers Documentation", "authors": "Hugging Face", "year": 2026, "kind": "Documentation", "url": "https://huggingface.co/docs/transformers"}
+    ]
+  },
+  "AI2": {
+    "tagline": "Forecast, decide, and act under uncertainty over time",
+    "subtitle": "the probabilistic theory of time series forecasting and sequential decision making",
+    "foundations": [
+      "stochastic processes, stationarity, and autocorrelation",
+      "ARIMA and exponential smoothing with maximum-likelihood estimation",
+      "recurrent networks and backpropagation through time",
+      "Markov decision processes and the Bellman optimality equations",
+      "temporal-difference learning and the policy-gradient theorem",
+      "multi-armed bandits, regret bounds, and Thompson sampling",
+      "Bayesian decision theory and expected-utility maximization"
+    ],
+    "literature": [
+      {"title": "Playing Atari with Deep Reinforcement Learning", "authors": "Mnih, Kavukcuoglu, Silver, Graves, Antonoglou, Wierstra, Riedmiller", "year": 2013, "url": "https://arxiv.org/abs/1312.5602"},
+      {"title": "Proximal Policy Optimization Algorithms", "authors": "Schulman, Wolski, Dhariwal, Radford, Klimov", "year": 2017, "url": "https://arxiv.org/abs/1707.06347"},
+      {"title": "Continuous control with deep reinforcement learning", "authors": "Lillicrap, Hunt, Pritzel, Heess, Erez, Tassa, Silver, Wierstra", "year": 2015, "url": "https://arxiv.org/abs/1509.02971"},
+      {"title": "Asynchronous Methods for Deep Reinforcement Learning", "authors": "Mnih, Badia, Mirza, Graves, Lillicrap, Harley, Silver, Kavukcuoglu", "year": 2016, "url": "https://arxiv.org/abs/1602.01783"},
+      {"title": "Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting", "authors": "Lim, Arik, Loeff, Pfister", "year": 2019, "url": "https://arxiv.org/abs/1912.09363"}
+    ],
+    "build": "Built an end-to-end forecasting and control agent in Python with PyTorch, statsmodels, and Gymnasium, coupling a neural sequence forecaster to a deep reinforcement-learning controller trained with DQN and PPO inside a simulated environment.",
+    "objectives": [
+      "Formalize stochastic processes, stationarity, and autocorrelation for temporal data",
+      "Derive classical forecasting models including ARIMA and exponential smoothing",
+      "Build sequence models with RNNs, LSTMs, and temporal transformers",
+      "Define Markov decision processes with states, actions, rewards, and discounting",
+      "Derive the Bellman equations and prove value and policy iteration convergence",
+      "Implement value-based and policy-gradient reinforcement learning algorithms",
+      "Quantify uncertainty with predictive intervals and Bayesian decision theory",
+      "Evaluate forecasts and policies with proper scoring rules and backtesting",
+      "Apply exploration-exploitation strategies including epsilon-greedy and bandits",
+      "Deploy a sequential decision agent in a simulated environment"
+    ],
+    "prerequisites": [
+      "Probability and statistics",
+      "Python and NumPy",
+      "Calculus and linear algebra",
+      "Introductory machine learning"
+    ],
+    "weeks": [
+      {"week": 1, "part": "Temporal foundations", "title": "Time series and stochastic processes", "lecture": "We define stochastic processes, stationarity, autocorrelation, and the decomposition of series into trend, seasonality, and noise.", "practice": "Load real time-series data, plot ACF and PACF, and test for stationarity.", "project": "Frame the running forecasting-and-control problem and load the target dataset."},
+      {"week": 2, "part": "Temporal foundations", "title": "Classical forecasting", "lecture": "We derive autoregressive, moving-average, ARIMA, and exponential smoothing models and the maximum-likelihood estimation behind them.", "practice": "Fit ARIMA and exponential smoothing baselines and backtest them.", "project": "Establish classical forecasting baselines for the project series."},
+      {"week": 3, "part": "Temporal foundations", "title": "Probabilistic forecasting and uncertainty", "lecture": "We cover predictive distributions, prediction intervals, proper scoring rules, and calibration.", "practice": "Produce probabilistic forecasts and score them with pinball and CRPS metrics.", "project": "Add calibrated uncertainty bands to the baseline forecasts."},
+      {"week": 4, "part": "Sequence models", "title": "Recurrent neural networks", "lecture": "We derive RNNs, backpropagation through time, vanishing gradients, and the LSTM and GRU gating that fix them.", "practice": "Train an LSTM forecaster and compare against the classical baselines.", "project": "Introduce a neural sequence forecaster to the project."},
+      {"week": 5, "part": "Sequence models", "title": "Temporal transformers", "lecture": "We adapt attention to sequences with causal masking and positional encoding for long-horizon forecasting.", "practice": "Team presentation: each team defends its problem specification, dataset, and metrics.", "project": "Lock the specification and prototype a transformer-based forecaster."},
+      {"week": 6, "part": "Decision theory", "title": "Markov decision processes", "lecture": "We define MDPs, returns, discounting, value functions, and the Bellman optimality equations.", "practice": "Implement a gridworld MDP and solve it with value iteration.", "project": "Reframe the project as a sequential decision problem with an explicit MDP."},
+      {"week": 7, "part": "Decision theory", "title": "Dynamic programming and planning", "lecture": "We prove convergence of policy iteration and value iteration and discuss the contraction-mapping argument.", "practice": "Implement policy iteration and compare convergence with value iteration.", "project": "Compute an optimal planning policy for the known-model version of the task."},
+      {"week": 8, "part": "Reinforcement learning", "title": "Model-free value methods", "lecture": "We derive Monte Carlo and temporal-difference learning, Q-learning, and the exploration-exploitation dilemma.", "practice": "Team presentation: interim demo of a learned policy in the simulator.", "project": "Train a tabular or function-approximated Q-learning agent."},
+      {"week": 9, "part": "Reinforcement learning", "title": "Deep reinforcement learning", "lecture": "We cover DQN, experience replay, target networks, and the deadly triad of function approximation.", "practice": "Implement a DQN agent and stabilize training with replay and target nets.", "project": "Upgrade the agent to deep value-based control on raw features."},
+      {"week": 10, "part": "Reinforcement learning", "title": "Policy gradients", "lecture": "We derive the policy-gradient theorem, REINFORCE, advantage estimation, actor-critic, and PPO.", "practice": "Implement an actor-critic or PPO agent and compare sample efficiency.", "project": "Add a policy-gradient controller and benchmark it against the value agent."},
+      {"week": 11, "part": "Uncertainty and bandits", "title": "Bandits and exploration", "lecture": "We cover multi-armed bandits, regret bounds, UCB, and Thompson sampling.", "practice": "Implement UCB and Thompson sampling and chart cumulative regret.", "project": "Add principled exploration to the decision agent."},
+      {"week": 12, "part": "Integration", "title": "Forecast-driven decisions", "lecture": "We combine forecasting and decision-making through Bayesian decision theory and expected-utility maximization.", "practice": "Couple the forecaster to the controller so predictions drive actions.", "project": "Integrate forecasting and control into one end-to-end agent."},
+      {"week": 13, "part": "Capstone", "title": "Final defense", "lecture": "We synthesize probabilistic forecasting and sequential decision-making and survey open problems.", "practice": "Team presentation: final demo with backtests and an oral defense of design choices.", "project": "Deliver the integrated forecasting-and-control agent with evaluation results."}
+    ],
+    "project": {
+      "summary": "Teams build one temporal decision agent that first forecasts a real time series and then acts on those forecasts inside a simulated environment. The project grows from classical baselines through neural sequence models into a reinforcement-learning controller, ending with an integrated forecast-driven decision policy.",
+      "ideas": [
+        "Energy demand forecasting and storage control",
+        "Inventory and supply-chain replenishment",
+        "Algorithmic trading agent",
+        "Traffic signal control",
+        "Cloud autoscaling controller",
+        "Ride-hailing fleet dispatch",
+        "Dynamic pricing agent",
+        "Smart-grid load balancing"
+      ]
+    },
+    "tools": [
+      "PyTorch: sequence model implementation",
+      "statsmodels: ARIMA and classical time-series models",
+      "sktime: unified time-series forecasting API",
+      "Prophet: decomposable trend and seasonality forecasting",
+      "Gymnasium: reinforcement-learning environments",
+      "Stable-Baselines3: reference RL algorithm implementations",
+      "Ray RLlib: scalable distributed RL",
+      "NumPy: numerical computation",
+      "pandas: time-series data handling",
+      "Matplotlib: forecast and policy visualization",
+      "Optuna: hyperparameter optimization",
+      "Weights and Biases: experiment tracking"
+    ],
+    "references": [
+      {"title": "Reinforcement Learning: An Introduction, 2nd edition", "authors": "Sutton, Barto", "year": 2018, "kind": "Textbook", "url": "http://incompleteideas.net/book/the-book-2nd.html"},
+      {"title": "Forecasting: Principles and Practice, 3rd edition", "authors": "Hyndman, Athanasopoulos", "year": 2021, "kind": "Textbook", "url": "https://otexts.com/fpp3/"},
+      {"title": "Probabilistic Machine Learning: An Introduction", "authors": "Murphy", "year": 2022, "kind": "Textbook", "url": "https://probml.github.io/pml-book/book1.html"},
+      {"title": "Playing Atari with Deep Reinforcement Learning", "authors": "Mnih, Kavukcuoglu, Silver, Graves, Antonoglou, Wierstra, Riedmiller", "year": 2013, "kind": "Paper", "url": "https://arxiv.org/abs/1312.5602"},
+      {"title": "Proximal Policy Optimization Algorithms", "authors": "Schulman, Wolski, Dhariwal, Radford, Klimov", "year": 2017, "kind": "Paper", "url": "https://arxiv.org/abs/1707.06347"},
+      {"title": "Dive into Deep Learning", "authors": "Zhang, Lipton, Li, Smola", "year": 2023, "kind": "Textbook", "url": "https://d2l.ai/"},
+      {"title": "Ray Documentation", "authors": "Anyscale", "year": 2026, "kind": "Documentation", "url": "https://docs.ray.io/"}
+    ]
+  },
+  "AI3": {
+    "tagline": "See the world with deep convolutional and transformer vision",
+    "subtitle": "the representation-learning theory of convolutional and transformer models for vision",
+    "foundations": [
+      "discrete convolution, receptive fields, and parameter sharing",
+      "backpropagation through convolutional and pooling layers",
+      "residual learning and skip connections in very deep networks",
+      "patch embeddings and self-attention for images",
+      "anchors, bounding-box regression, and non-max suppression",
+      "encoder-decoder networks and per-pixel segmentation loss",
+      "transfer learning and self-supervised pretraining"
+    ],
+    "literature": [
+      {"title": "Deep Residual Learning for Image Recognition", "authors": "He, Zhang, Ren, Sun", "year": 2015, "url": "https://arxiv.org/abs/1512.03385"},
+      {"title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale", "authors": "Dosovitskiy, Beyer, Kolesnikov, Weissenborn, Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, Houlsby", "year": 2020, "url": "https://arxiv.org/abs/2010.11929"},
+      {"title": "U-Net: Convolutional Networks for Biomedical Image Segmentation", "authors": "Ronneberger, Fischer, Brox", "year": 2015, "url": "https://arxiv.org/abs/1505.04597"},
+      {"title": "Mask R-CNN", "authors": "He, Gkioxari, Dollar, Girshick", "year": 2017, "url": "https://arxiv.org/abs/1703.06870"},
+      {"title": "You Only Look Once: Unified, Real-Time Object Detection", "authors": "Redmon, Divvala, Girshick, Farhadi", "year": 2015, "url": "https://arxiv.org/abs/1506.02640"}
+    ],
+    "build": "Built an end-to-end computer-vision pipeline in Python with PyTorch, torchvision, and Detectron2, progressing from a residual classifier to an object detector and a Mask R-CNN instance-segmentation system evaluated with mean average precision and intersection over union.",
+    "objectives": [
+      "Derive the convolution operation, receptive fields, and parameter sharing from first principles",
+      "Explain backpropagation through convolutional and pooling layers",
+      "Build and train CNN architectures including residual networks",
+      "Adapt transformers to images with patch embeddings and self-attention",
+      "Implement object detection with anchors, region proposals, and bounding-box regression",
+      "Implement semantic and instance segmentation with encoder-decoder networks",
+      "Apply transfer learning and fine-tuning from pretrained backbones",
+      "Analyze representation learning, feature hierarchies, and learned invariances",
+      "Evaluate vision models with mean average precision and intersection over union",
+      "Deploy a vision pipeline with augmentation, training, and inference"
+    ],
+    "prerequisites": [
+      "Python and NumPy",
+      "Linear algebra and calculus",
+      "Introductory machine learning",
+      "Basic PyTorch familiarity"
+    ],
+    "weeks": [
+      {"week": 1, "part": "Vision foundations", "title": "Images, pixels, and learning", "lecture": "We cover image formation, color spaces, and the shift from hand-crafted features to learned representations.", "practice": "Load an image dataset, build a data pipeline, and train a linear classifier baseline.", "project": "Choose the vision task, dataset, and metrics for the running project."},
+      {"week": 2, "part": "Vision foundations", "title": "Convolution and feature maps", "lecture": "We derive discrete convolution, kernels, stride, padding, receptive fields, and parameter sharing.", "practice": "Implement convolution and pooling in NumPy, then verify against PyTorch.", "project": "Build a small from-scratch CNN classifier for the project dataset."},
+      {"week": 3, "part": "Vision foundations", "title": "Training deep CNNs", "lecture": "We cover backpropagation through convolutions, batch normalization, initialization, and optimization dynamics.", "practice": "Train a deeper CNN with augmentation and learning-rate scheduling.", "project": "Improve the baseline classifier with regularization and augmentation."},
+      {"week": 4, "part": "Architectures", "title": "Residual and modern CNNs", "lecture": "We derive residual learning, skip connections, and why they ease optimization of very deep networks.", "practice": "Implement and train a ResNet and compare with the plain CNN.", "project": "Adopt a residual backbone for the project task."},
+      {"week": 5, "part": "Architectures", "title": "Vision transformers", "lecture": "We adapt attention to images via patch embeddings, class tokens, and positional encoding, and contrast inductive biases with CNNs.", "practice": "Team presentation: each team defends its task specification and evaluation plan.", "project": "Lock the specification and prototype a vision transformer backbone."},
+      {"week": 6, "part": "Transfer learning", "title": "Pretraining and fine-tuning", "lecture": "We cover transfer learning, feature reuse, fine-tuning strategies, and self-supervised pretraining.", "practice": "Fine-tune a pretrained backbone and compare against training from scratch.", "project": "Switch the project to a pretrained, fine-tuned backbone."},
+      {"week": 7, "part": "Detection", "title": "Object detection foundations", "lecture": "We cover anchors, region proposals, bounding-box regression, non-max suppression, and the detection loss.", "practice": "Train a detector on the project images and inspect predicted boxes.", "project": "Extend the project from classification to object detection."},
+      {"week": 8, "part": "Detection", "title": "Two-stage and one-stage detectors", "lecture": "We contrast Faster R-CNN with single-stage detectors and analyze the speed-accuracy trade-off.", "practice": "Team presentation: interim demo of detection results with mAP.", "project": "Benchmark a one-stage detector against the two-stage baseline."},
+      {"week": 9, "part": "Segmentation", "title": "Semantic segmentation", "lecture": "We derive encoder-decoder networks, the U-Net architecture, skip connections, and per-pixel loss.", "practice": "Train a U-Net for semantic segmentation and score with IoU.", "project": "Add pixel-level segmentation to the project pipeline."},
+      {"week": 10, "part": "Segmentation", "title": "Instance segmentation", "lecture": "We cover Mask R-CNN, region-of-interest alignment, and joint detection and masking.", "practice": "Train Mask R-CNN and visualize instance masks.", "project": "Upgrade segmentation to instance-level masks."},
+      {"week": 11, "part": "Representation and robustness", "title": "Interpretability and invariance", "lecture": "We study learned feature hierarchies, saliency, class activation maps, and adversarial robustness.", "practice": "Generate saliency and CAM visualizations and probe adversarial examples.", "project": "Add interpretability visualizations to the project."},
+      {"week": 12, "part": "Deployment", "title": "Optimization and serving", "lecture": "We cover quantization, pruning, knowledge distillation, and inference latency.", "practice": "Optimize the model with quantization and export it for inference.", "project": "Make the vision pipeline fast and deployable."},
+      {"week": 13, "part": "Capstone", "title": "Final defense", "lecture": "We synthesize convolutional and transformer vision and survey open research directions.", "practice": "Team presentation: final demo with metrics and an oral defense of design choices.", "project": "Deliver the complete detection-and-segmentation pipeline with results."}
+    ],
+    "project": {
+      "summary": "Teams build one end-to-end computer-vision pipeline on a chosen image dataset, growing from a classifier into a detector and finally an instance-segmentation system. Each week adds capability backed by the convolution and representation theory taught that week, with continuous evaluation on held-out images.",
+      "ideas": [
+        "Retail product detection and counting",
+        "Medical image segmentation",
+        "Autonomous-driving scene parsing",
+        "Wildlife camera-trap recognition",
+        "Defect detection in manufacturing",
+        "Satellite land-cover mapping",
+        "Sports player tracking",
+        "Document layout analysis"
+      ]
+    },
+    "tools": [
+      "PyTorch: model implementation and training",
+      "torchvision: datasets, transforms, and pretrained models",
+      "timm: state-of-the-art image backbones",
+      "Detectron2: detection and segmentation framework",
+      "Ultralytics YOLO: real-time one-stage detection",
+      "Albumentations: image augmentation",
+      "OpenCV: image processing utilities",
+      "Hugging Face Transformers: vision transformer models",
+      "ONNX Runtime: optimized cross-platform inference",
+      "Weights and Biases: experiment tracking",
+      "Grad-CAM: visual explanations",
+      "Roboflow: dataset management and annotation"
+    ],
+    "references": [
+      {"title": "Deep Residual Learning for Image Recognition", "authors": "He, Zhang, Ren, Sun", "year": 2015, "kind": "Paper", "url": "https://arxiv.org/abs/1512.03385"},
+      {"title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale", "authors": "Dosovitskiy, Beyer, Kolesnikov, Weissenborn, Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, Houlsby", "year": 2020, "kind": "Paper", "url": "https://arxiv.org/abs/2010.11929"},
+      {"title": "U-Net: Convolutional Networks for Biomedical Image Segmentation", "authors": "Ronneberger, Fischer, Brox", "year": 2015, "kind": "Paper", "url": "https://arxiv.org/abs/1505.04597"},
+      {"title": "Mask R-CNN", "authors": "He, Gkioxari, Dollar, Girshick", "year": 2017, "kind": "Paper", "url": "https://arxiv.org/abs/1703.06870"},
+      {"title": "Computer Vision: Algorithms and Applications, 2nd edition", "authors": "Szeliski", "year": 2022, "kind": "Textbook", "url": "https://szeliski.org/Book/"},
+      {"title": "Deep Learning", "authors": "Goodfellow, Bengio, Courville", "year": 2016, "kind": "Textbook", "url": "https://www.deeplearningbook.org/"},
+      {"title": "Dive into Deep Learning", "authors": "Zhang, Lipton, Li, Smola", "year": 2023, "kind": "Textbook", "url": "https://d2l.ai/"},
+      {"title": "PyTorch Documentation", "authors": "PyTorch Foundation", "year": 2026, "kind": "Documentation", "url": "https://docs.pytorch.org/docs/stable/"}
+    ]
+  },
+  "AI4": {
+    "tagline": "Train and serve AI at massive data and compute scale",
+    "subtitle": "the algorithmic theory of distributed training, approximate, and streaming computation",
+    "foundations": [
+      "Amdahl's law and the memory, compute, and communication walls",
+      "the MapReduce model, dataflow graphs, and fault tolerance",
+      "synchronous stochastic gradient descent and gradient all-reduce",
+      "model, pipeline, and tensor parallelism with ZeRO sharding",
+      "count-min sketch, HyperLogLog, and locality-sensitive hashing",
+      "the streaming model and the Johnson-Lindenstrauss lemma",
+      "neural scaling laws and compute-optimal resource allocation"
+    ],
+    "literature": [
+      {"title": "Scaling Laws for Neural Language Models", "authors": "Kaplan, McCandlish, Henighan, Brown, Chess, Child, Gray, Radford, Wu, Amodei", "year": 2020, "url": "https://arxiv.org/abs/2001.08361"},
+      {"title": "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models", "authors": "Rajbhandari, Rasley, Ruwase, He", "year": 2019, "url": "https://arxiv.org/abs/1910.02054"},
+      {"title": "GPipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism", "authors": "Huang, Cheng, Bapna, Firat, Chen, Chen, Lee, Ngiam, Le, Wu, Chen", "year": 2018, "url": "https://arxiv.org/abs/1811.06965"},
+      {"title": "Deep Speech 2: End-to-End Speech Recognition in English and Mandarin", "authors": "Amodei, Anubhai, Battenberg, Case, Casper, Catanzaro, Chen, Chrzanowski, Coates, Diamos, et al.", "year": 2015, "url": "https://arxiv.org/abs/1512.02595"}
+    ],
+    "build": "Built a scalable training and serving pipeline in Python with PyTorch Distributed, DeepSpeed, Apache Spark, and Kafka, layering data and pipeline parallelism, ZeRO sharding, sketch-based approximate aggregation, and streaming ingestion measured for throughput and cost.",
+    "objectives": [
+      "Analyze the complexity and communication costs of distributed algorithms",
+      "Derive data, model, and pipeline parallelism for large-scale training",
+      "Explain synchronous and asynchronous stochastic gradient descent and its convergence",
+      "Build big-data pipelines with MapReduce and dataflow frameworks",
+      "Implement approximate algorithms including sketches, hashing, and sampling",
+      "Design streaming algorithms with bounded memory over unbounded data",
+      "Quantify scaling laws relating model loss to data, parameters, and compute",
+      "Apply mixed precision, sharding, and gradient accumulation for memory efficiency",
+      "Evaluate throughput, latency, and cost trade-offs in distributed systems",
+      "Deploy a scalable training and serving pipeline on a cluster"
+    ],
+    "prerequisites": [
+      "Python and data structures",
+      "Algorithms and complexity",
+      "Introductory machine learning",
+      "Basic probability and linear algebra"
+    ],
+    "weeks": [
+      {"week": 1, "part": "Scaling foundations", "title": "Why scale and what breaks", "lecture": "We analyze the limits of single-machine computation, Amdahl's law, and the memory, compute, and communication walls.", "practice": "Profile a single-node training job and identify its bottlenecks.", "project": "Choose the scalable pipeline target and establish a single-node baseline."},
+      {"week": 2, "part": "Scaling foundations", "title": "Big-data frameworks", "lecture": "We cover the MapReduce model, dataflow graphs, partitioning, and fault tolerance.", "practice": "Implement a MapReduce-style aggregation and run it on a Spark cluster.", "project": "Build a distributed data-ingestion stage for the project."},
+      {"week": 3, "part": "Scaling foundations", "title": "Distributed storage and data formats", "lecture": "We cover columnar formats, sharding, partitioning, and the CAP trade-offs of data-intensive systems.", "practice": "Convert the dataset to a columnar format and benchmark scan throughput.", "project": "Optimize the project data layout for parallel access."},
+      {"week": 4, "part": "Distributed training", "title": "Data-parallel training", "lecture": "We derive synchronous SGD, gradient all-reduce, and the convergence effect of large batch sizes.", "practice": "Run data-parallel training across multiple workers and measure scaling efficiency.", "project": "Make the training stage data-parallel."},
+      {"week": 5, "part": "Distributed training", "title": "Model and pipeline parallelism", "lecture": "We cover model sharding, pipeline parallelism, tensor parallelism, and the bubble overhead they incur.", "practice": "Team presentation: each team defends its scaling specification and target metrics.", "project": "Lock the specification and prototype a sharded model stage."},
+      {"week": 6, "part": "Distributed training", "title": "Memory and precision efficiency", "lecture": "We cover mixed precision, activation checkpointing, ZeRO sharding, and gradient accumulation.", "practice": "Apply mixed precision and sharding to fit a larger model in memory.", "project": "Scale the model size with memory-efficient training."},
+      {"week": 7, "part": "Approximate algorithms", "title": "Sketches and hashing", "lecture": "We derive count-min sketch, HyperLogLog, and locality-sensitive hashing with their error bounds.", "practice": "Implement a count-min sketch and HyperLogLog and validate accuracy versus memory.", "project": "Add approximate aggregation to the data pipeline."},
+      {"week": 8, "part": "Approximate algorithms", "title": "Sampling and dimensionality reduction", "lecture": "We cover reservoir sampling, random projections, and the Johnson-Lindenstrauss lemma.", "practice": "Team presentation: interim demo of the scaled pipeline with throughput numbers.", "project": "Add sampling and random projection to reduce data volume."},
+      {"week": 9, "part": "Streaming", "title": "Streaming algorithms", "lecture": "We define the streaming model, bounded memory over unbounded input, and windowed computation.", "practice": "Build a streaming aggregation over a simulated event stream.", "project": "Add a streaming ingestion path to the pipeline."},
+      {"week": 10, "part": "Streaming", "title": "Online and approximate learning", "lecture": "We cover online gradient descent, regret bounds, and incremental model updates.", "practice": "Implement online learning that updates the model as data streams in.", "project": "Enable continuous online updates in the project."},
+      {"week": 11, "part": "Scaling laws", "title": "Scaling laws and compute budgets", "lecture": "We derive empirical scaling laws relating loss to data, parameters, and compute, and compute-optimal allocation.", "practice": "Fit a small scaling-law curve from runs at several model sizes.", "project": "Use scaling-law analysis to choose the project compute budget."},
+      {"week": 12, "part": "Serving", "title": "Scalable inference and serving", "lecture": "We cover batching, caching, autoscaling, and latency-throughput-cost trade-offs at serving time.", "practice": "Deploy the model behind a scalable serving layer and load-test it.", "project": "Stand up scalable serving for the trained model."},
+      {"week": 13, "part": "Capstone", "title": "Final defense", "lecture": "We synthesize distributed training, approximate and streaming algorithms, and scaling laws, and survey open problems.", "practice": "Team presentation: final demo with scaling benchmarks and an oral defense of design choices.", "project": "Deliver the complete scalable training-and-serving pipeline with benchmarks."}
+    ],
+    "project": {
+      "summary": "Teams build one scalable AI pipeline that ingests, processes, trains on, and serves a large dataset, growing from a single node to a distributed cluster. The project layers in data parallelism, memory-efficient training, approximate and streaming algorithms, and scaling-law analysis, with throughput and cost measured at every stage.",
+      "ideas": [
+        "Distributed image classifier training",
+        "Large-scale recommendation system",
+        "Streaming clickstream analytics",
+        "Approximate near-duplicate detection at web scale",
+        "Distributed embedding indexing service",
+        "Real-time fraud-detection pipeline",
+        "Petabyte log aggregation and alerting",
+        "Compute-optimal language model pretraining study"
+      ]
+    },
+    "tools": [
+      "PyTorch: training and distributed primitives",
+      "PyTorch Distributed: data and model parallelism",
+      "DeepSpeed: ZeRO sharding and large-model training",
+      "Apache Spark: distributed data processing",
+      "Ray: distributed Python and ML workloads",
+      "Dask: parallel dataframes and arrays",
+      "Apache Kafka: streaming event ingestion",
+      "Apache Flink: stateful stream processing",
+      "Apache Parquet: columnar storage format",
+      "Hugging Face Accelerate: multi-device training",
+      "NVIDIA NCCL: collective communication for GPUs",
+      "Weights and Biases: distributed experiment tracking"
+    ],
+    "references": [
+      {"title": "Mining of Massive Datasets, 3rd edition", "authors": "Leskovec, Rajaraman, Ullman", "year": 2020, "kind": "Textbook", "url": "http://www.mmds.org/"},
+      {"title": "Designing Data-Intensive Applications", "authors": "Kleppmann", "year": 2017, "kind": "Textbook", "url": "https://dataintensive.net/"},
+      {"title": "Scaling Laws for Neural Language Models", "authors": "Kaplan, McCandlish, Henighan, Brown, Chess, Child, Gray, Radford, Wu, Amodei", "year": 2020, "kind": "Paper", "url": "https://arxiv.org/abs/2001.08361"},
+      {"title": "Deep Learning", "authors": "Goodfellow, Bengio, Courville", "year": 2016, "kind": "Textbook", "url": "https://www.deeplearningbook.org/"},
+      {"title": "Dive into Deep Learning", "authors": "Zhang, Lipton, Li, Smola", "year": 2023, "kind": "Textbook", "url": "https://d2l.ai/"},
+      {"title": "Ray Documentation", "authors": "Anyscale", "year": 2026, "kind": "Documentation", "url": "https://docs.ray.io/"},
+      {"title": "PyTorch Documentation", "authors": "PyTorch Foundation", "year": 2026, "kind": "Documentation", "url": "https://docs.pytorch.org/docs/stable/"}
+    ]
+  },
+  "AI5": {
+    "tagline": "Model and sample from data with deep generative models",
+    "subtitle": "the probabilistic theory of variational, adversarial, autoregressive, and diffusion generative models",
+    "foundations": [
+      "maximum-likelihood estimation of a data distribution",
+      "the evidence lower bound and variational inference",
+      "the reparameterization trick and the variational autoencoder",
+      "the adversarial minimax game and the optimal discriminator",
+      "the autoregressive likelihood factorization and causal masking",
+      "the diffusion forward and reverse denoising processes",
+      "score matching and stochastic differential equations"
+    ],
+    "literature": [
+      {"title": "Denoising Diffusion Probabilistic Models", "authors": "Ho, Jain, Abbeel", "year": 2020, "url": "https://arxiv.org/abs/2006.11239"},
+      {"title": "Generative Adversarial Networks", "authors": "Goodfellow, Pouget-Abadie, Mirza, Xu, Warde-Farley, Ozair, Courville, Bengio", "year": 2014, "url": "https://arxiv.org/abs/1406.2661"},
+      {"title": "Auto-Encoding Variational Bayes", "authors": "Kingma, Welling", "year": 2013, "url": "https://arxiv.org/abs/1312.6114"},
+      {"title": "Score-Based Generative Modeling through Stochastic Differential Equations", "authors": "Song, Sohl-Dickstein, Kingma, Kumar, Ermon, Poole", "year": 2021, "url": "https://arxiv.org/abs/2011.13456"},
+      {"title": "High-Resolution Image Synthesis with Latent Diffusion Models", "authors": "Rombach, Blattmann, Lorenz, Esser, Ommer", "year": 2022, "url": "https://arxiv.org/abs/2112.10752"}
+    ],
+    "build": "Built a conditional generative pipeline in Python with PyTorch and Hugging Face Diffusers, implementing and benchmarking VAE, GAN, autoregressive, and diffusion generators with classifier-free guidance and FID evaluation on a shared data modality.",
+    "objectives": [
+      "Formalize generative modeling as learning a data distribution",
+      "Derive the variational lower bound and the VAE objective",
+      "Explain the adversarial minimax game and GAN training dynamics",
+      "Derive the diffusion forward and reverse processes and the denoising objective",
+      "Connect diffusion to score matching and stochastic differential equations",
+      "Build autoregressive generators and analyze their likelihood factorization",
+      "Implement conditional and guided generation including classifier-free guidance",
+      "Evaluate generative models with FID, likelihood, and sample-quality metrics",
+      "Analyze the likelihood, sampling, and mode-coverage trade-offs across model families",
+      "Deploy a conditional generative pipeline end to end"
+    ],
+    "prerequisites": [
+      "Probability and statistics",
+      "Linear algebra and calculus",
+      "Introductory deep learning",
+      "PyTorch familiarity"
+    ],
+    "weeks": [
+      {"week": 1, "part": "Generative foundations", "title": "What is a generative model", "lecture": "We define generative modeling, maximum likelihood, latent variables, and the taxonomy of model families.", "practice": "Train a simple density estimator and sample from it.", "project": "Choose the data modality and generative task for the running project."},
+      {"week": 2, "part": "Generative foundations", "title": "Latent variables and the ELBO", "lecture": "We derive latent-variable models, the evidence lower bound, and variational inference.", "practice": "Implement variational inference on a toy latent-variable model.", "project": "Establish a probabilistic baseline generator for the project data."},
+      {"week": 3, "part": "Variational models", "title": "Variational autoencoders", "lecture": "We derive the VAE, the reparameterization trick, and the reconstruction-versus-KL trade-off.", "practice": "Train a VAE and explore its latent space by interpolation.", "project": "Build a VAE generator for the project modality."},
+      {"week": 4, "part": "Variational models", "title": "Expressive and discrete latents", "lecture": "We cover hierarchical VAEs, vector-quantized latents, and posterior collapse.", "practice": "Train a VQ-VAE and inspect the learned discrete codebook.", "project": "Upgrade the generator with a discrete or hierarchical latent space."},
+      {"week": 5, "part": "Adversarial models", "title": "Generative adversarial networks", "lecture": "We derive the GAN minimax objective, the optimal discriminator, and the Jensen-Shannon connection.", "practice": "Team presentation: each team defends its generative specification and metrics.", "project": "Lock the specification and prototype a GAN generator."},
+      {"week": 6, "part": "Adversarial models", "title": "Stabilizing GAN training", "lecture": "We cover mode collapse, Wasserstein GANs, gradient penalties, and training stability.", "practice": "Train a Wasserstein GAN and compare stability against the vanilla GAN.", "project": "Improve the GAN with stabilized training and conditioning."},
+      {"week": 7, "part": "Autoregressive models", "title": "Autoregressive generation", "lecture": "We derive the autoregressive likelihood factorization and causal masking for sequences and images.", "practice": "Train an autoregressive model and sample token by token.", "project": "Add an autoregressive generator and compare with the latent models."},
+      {"week": 8, "part": "Diffusion models", "title": "Denoising diffusion", "lecture": "We derive the forward noising process, the reverse denoising process, and the simplified DDPM training objective.", "practice": "Team presentation: interim demo of generated samples across model families.", "project": "Prototype a diffusion generator for the project data."},
+      {"week": 9, "part": "Diffusion models", "title": "Score matching and SDEs", "lecture": "We connect diffusion to score matching and stochastic differential equations and derive the probability-flow ODE.", "practice": "Implement a score-based sampler and compare sampling schedules.", "project": "Refine the diffusion model with score-based sampling."},
+      {"week": 10, "part": "Conditional generation", "title": "Guidance and conditioning", "lecture": "We cover conditional diffusion, classifier and classifier-free guidance, and latent diffusion.", "practice": "Add conditioning and classifier-free guidance to control generation.", "project": "Make the generator controllable and conditional."},
+      {"week": 11, "part": "Evaluation", "title": "Evaluating generative models", "lecture": "We cover likelihood, FID, inception score, precision-recall, and the difficulty of evaluating generation.", "practice": "Compute FID and precision-recall across the team's models.", "project": "Benchmark all project generators with shared metrics."},
+      {"week": 12, "part": "Deployment", "title": "Efficient generation and serving", "lecture": "We cover sampling acceleration, distillation, and the quality-versus-speed trade-off at inference.", "practice": "Accelerate sampling with distillation or fewer steps and serve the model.", "project": "Make the conditional generator fast and deployable."},
+      {"week": 13, "part": "Capstone", "title": "Final defense", "lecture": "We synthesize VAEs, GANs, autoregressive, and diffusion models and survey open research directions.", "practice": "Team presentation: final demo with samples, metrics, and an oral defense of design choices.", "project": "Deliver the complete conditional generative pipeline with evaluation results."}
+    ],
+    "project": {
+      "summary": "Teams build one conditional generative system on a chosen data modality, implementing and comparing VAE, GAN, autoregressive, and diffusion approaches against shared metrics. The project culminates in a controllable, conditional generator backed by the probabilistic theory taught each week.",
+      "ideas": [
+        "Conditional image synthesis",
+        "Text-to-image generation",
+        "Molecular structure generation",
+        "Audio and music generation",
+        "Anomaly detection via generative density",
+        "Data augmentation generator",
+        "Style transfer and image editing",
+        "Tabular synthetic-data generation"
+      ]
+    },
+    "tools": [
+      "PyTorch: model implementation and training",
+      "Hugging Face Diffusers: diffusion model pipelines",
+      "Hugging Face Transformers: autoregressive backbones",
+      "torchvision: image datasets and transforms",
+      "clean-fid: standardized FID evaluation",
+      "Weights and Biases: experiment tracking and sample logging",
+      "Accelerate: multi-device training",
+      "einops: tensor reshaping for generative models",
+      "NumPy: numerical computation",
+      "Matplotlib: sample and latent-space visualization",
+      "Gradio: interactive generation demos",
+      "ONNX Runtime: optimized inference"
+    ],
+    "references": [
+      {"title": "Denoising Diffusion Probabilistic Models", "authors": "Ho, Jain, Abbeel", "year": 2020, "kind": "Paper", "url": "https://arxiv.org/abs/2006.11239"},
+      {"title": "Generative Adversarial Networks", "authors": "Goodfellow, Pouget-Abadie, Mirza, Xu, Warde-Farley, Ozair, Courville, Bengio", "year": 2014, "kind": "Paper", "url": "https://arxiv.org/abs/1406.2661"},
+      {"title": "Auto-Encoding Variational Bayes", "authors": "Kingma, Welling", "year": 2013, "kind": "Paper", "url": "https://arxiv.org/abs/1312.6114"},
+      {"title": "Score-Based Generative Modeling through Stochastic Differential Equations", "authors": "Song, Sohl-Dickstein, Kingma, Kumar, Ermon, Poole", "year": 2021, "kind": "Paper", "url": "https://arxiv.org/abs/2011.13456"},
+      {"title": "High-Resolution Image Synthesis with Latent Diffusion Models", "authors": "Rombach, Blattmann, Lorenz, Esser, Ommer", "year": 2022, "kind": "Paper", "url": "https://arxiv.org/abs/2112.10752"},
+      {"title": "Probabilistic Machine Learning: An Introduction", "authors": "Murphy", "year": 2022, "kind": "Textbook", "url": "https://probml.github.io/pml-book/book1.html"},
+      {"title": "Deep Learning", "authors": "Goodfellow, Bengio, Courville", "year": 2016, "kind": "Textbook", "url": "https://www.deeplearningbook.org/"},
+      {"title": "Hugging Face Diffusers Documentation", "authors": "Hugging Face", "year": 2026, "kind": "Documentation", "url": "https://huggingface.co/docs/diffusers"}
+    ]
+  },
+  "AI6": {
+    "tagline": "Perceive, plan, and act with embodied autonomous systems",
+    "subtitle": "the estimation, planning, and control theory of embodied autonomous robots",
+    "foundations": [
+      "rigid-body kinematics, transforms, and robot state representation",
+      "the Bayes filter and the recursive predict-update cycle",
+      "the Kalman filter and the particle filter for sensor fusion",
+      "configuration-space planning with A-star and rapidly-exploring random trees",
+      "PID control and the linear-quadratic regulator",
+      "the discrete-time Riccati equation and model-predictive control",
+      "policy-gradient reinforcement learning for continuous control"
+    ],
+    "literature": [
+      {"title": "Proximal Policy Optimization Algorithms", "authors": "Schulman, Wolski, Dhariwal, Radford, Klimov", "year": 2017, "url": "https://arxiv.org/abs/1707.06347"},
+      {"title": "Continuous control with deep reinforcement learning", "authors": "Lillicrap, Hunt, Pritzel, Heess, Erez, Tassa, Silver, Wierstra", "year": 2015, "url": "https://arxiv.org/abs/1509.02971"},
+      {"title": "Asynchronous Methods for Deep Reinforcement Learning", "authors": "Mnih, Badia, Mirza, Graves, Lillicrap, Harley, Silver, Kavukcuoglu", "year": 2016, "url": "https://arxiv.org/abs/1602.01783"},
+      {"title": "Playing Atari with Deep Reinforcement Learning", "authors": "Mnih, Kavukcuoglu, Silver, Graves, Antonoglou, Wierstra, Riedmiller", "year": 2013, "url": "https://arxiv.org/abs/1312.5602"}
+    ],
+    "build": "Built a full perceive-plan-act autonomy stack in Python with ROS 2, PyBullet, and PyTorch, fusing sensors with Kalman and particle filters, planning with A-star and RRT, and tracking trajectories with model-predictive and reinforcement-learning controllers under sim-to-real domain randomization.",
+    "objectives": [
+      "Derive rigid-body kinematics, transforms, and state representations for robots",
+      "Formalize probabilistic state estimation and the Bayes filter",
+      "Derive the Kalman filter and particle filter for sensor fusion",
+      "Implement motion planning with sampling-based and graph-search algorithms",
+      "Derive feedback control including PID and the linear-quadratic regulator",
+      "Apply reinforcement learning to continuous robot control",
+      "Build perception pipelines fusing camera, lidar, and inertial sensors",
+      "Analyze the sim-to-real gap and domain randomization strategies",
+      "Evaluate autonomy with task success, safety, and robustness metrics",
+      "Deploy an embodied agent in simulation with a real-transfer path"
+    ],
+    "prerequisites": [
+      "Python and NumPy",
+      "Linear algebra and probability",
+      "Calculus and basic differential equations",
+      "Introductory machine learning"
+    ],
+    "weeks": [
+      {"week": 1, "part": "Embodied foundations", "title": "Robots, frames, and kinematics", "lecture": "We cover rigid-body transforms, coordinate frames, forward kinematics, and robot state representation.", "practice": "Set up a robot simulator and command joint and base motion.", "project": "Choose the embodied task and simulator for the running project."},
+      {"week": 2, "part": "Estimation", "title": "Probabilistic state estimation", "lecture": "We derive the Bayes filter, the Markov assumption, and the recursive predict-update cycle.", "practice": "Implement a discrete Bayes filter for robot localization.", "project": "Add a basic state estimator to the project robot."},
+      {"week": 3, "part": "Estimation", "title": "Kalman filtering", "lecture": "We derive the Kalman filter and its extended form for nonlinear Gaussian estimation.", "practice": "Implement a Kalman filter for fusing noisy position and velocity sensors.", "project": "Upgrade estimation with a Kalman filter for sensor fusion."},
+      {"week": 4, "part": "Estimation", "title": "Particle filters and SLAM", "lecture": "We derive the particle filter, importance sampling, and the basics of simultaneous localization and mapping.", "practice": "Implement a particle filter for global localization in a known map.", "project": "Add robust localization to the project robot."},
+      {"week": 5, "part": "Perception", "title": "Perception and sensor fusion", "lecture": "We cover camera and lidar sensing, point clouds, calibration, and multi-sensor fusion.", "practice": "Team presentation: each team defends its task specification and metrics.", "project": "Lock the specification and build a perception stage fusing sensors."},
+      {"week": 6, "part": "Planning", "title": "Graph-search motion planning", "lecture": "We derive configuration space, A-star, Dijkstra, and the heuristics behind optimal graph search.", "practice": "Implement A-star planning on an occupancy grid.", "project": "Add grid-based path planning to the robot."},
+      {"week": 7, "part": "Planning", "title": "Sampling-based planning", "lecture": "We cover RRT, RRT-star, probabilistic roadmaps, and planning in high-dimensional configuration spaces.", "practice": "Implement RRT and compare path quality with graph search.", "project": "Extend planning to sampling-based methods for complex spaces."},
+      {"week": 8, "part": "Control", "title": "Feedback control", "lecture": "We derive PID control, stability, and the linear-quadratic regulator as optimal feedback.", "practice": "Team presentation: interim demo of the robot navigating with estimation and planning.", "project": "Add a feedback controller to track planned trajectories."},
+      {"week": 9, "part": "Control", "title": "Optimal and model-predictive control", "lecture": "We derive the LQR, the discrete-time Riccati equation, and receding-horizon model-predictive control.", "practice": "Implement an MPC controller and compare with PID tracking.", "project": "Upgrade control with model-predictive trajectory tracking."},
+      {"week": 10, "part": "Learning control", "title": "Reinforcement learning for control", "lecture": "We adapt policy-gradient and actor-critic methods to continuous action spaces for robot control.", "practice": "Train an RL policy for a locomotion or manipulation task in simulation.", "project": "Add a learned control policy to the robot."},
+      {"week": 11, "part": "Sim-to-real", "title": "Bridging the reality gap", "lecture": "We analyze the sim-to-real gap, domain randomization, system identification, and robustness.", "practice": "Apply domain randomization and test policy robustness across perturbed dynamics.", "project": "Make the learned policy robust to a sim-to-real transfer."},
+      {"week": 12, "part": "Integration", "title": "Full autonomy stack", "lecture": "We integrate perception, estimation, planning, and control into one autonomy pipeline and discuss safety.", "practice": "Connect all modules into an end-to-end autonomous behavior.", "project": "Integrate the full perceive-plan-act stack on the robot."},
+      {"week": 13, "part": "Capstone", "title": "Final defense", "lecture": "We synthesize estimation, planning, and control theory and survey open problems in embodied AI.", "practice": "Team presentation: final demo with task metrics and an oral defense of design choices.", "project": "Deliver the complete autonomous embodied agent with evaluation results."}
+    ],
+    "project": {
+      "summary": "Teams build one autonomous embodied agent in simulation, layering perception, probabilistic estimation, motion planning, and control into a full perceive-plan-act stack. The project advances from classical estimation and planning into learned control and a sim-to-real robustness study, backed by the control and estimation theory taught each week.",
+      "ideas": [
+        "Autonomous mobile robot navigation",
+        "Robotic arm pick-and-place",
+        "Quadruped locomotion controller",
+        "Self-driving car in simulation",
+        "Drone autonomous flight and landing",
+        "Warehouse multi-robot coordination",
+        "Underwater or aerial inspection robot",
+        "Indoor delivery robot with SLAM"
+      ]
+    },
+    "tools": [
+      "ROS 2: robotics middleware and tooling",
+      "Gazebo: physics-based robot simulation",
+      "PyBullet: fast rigid-body simulation",
+      "NVIDIA Isaac Sim: high-fidelity robot simulation",
+      "MuJoCo: contact-rich physics for control",
+      "Gymnasium: reinforcement-learning environments",
+      "Stable-Baselines3: RL algorithm implementations",
+      "Open3D: point-cloud and 3D processing",
+      "OpenCV: camera perception",
+      "NumPy: numerical and linear-algebra computation",
+      "Matplotlib: trajectory and estimation visualization",
+      "PyTorch: learned perception and control policies"
+    ],
+    "references": [
+      {"title": "Probabilistic Robotics", "authors": "Thrun, Burgard, Fox", "year": 2005, "kind": "Textbook", "url": "https://mitpress.ublish.com/book/probabilistic-robotics"},
+      {"title": "Planning Algorithms", "authors": "LaValle", "year": 2006, "kind": "Textbook", "url": "http://lavalle.pl/planning/"},
+      {"title": "Reinforcement Learning: An Introduction, 2nd edition", "authors": "Sutton, Barto", "year": 2018, "kind": "Textbook", "url": "http://incompleteideas.net/book/the-book-2nd.html"},
+      {"title": "Proximal Policy Optimization Algorithms", "authors": "Schulman, Wolski, Dhariwal, Radford, Klimov", "year": 2017, "kind": "Paper", "url": "https://arxiv.org/abs/1707.06347"},
+      {"title": "Probabilistic Machine Learning: An Introduction", "authors": "Murphy", "year": 2022, "kind": "Textbook", "url": "https://probml.github.io/pml-book/book1.html"},
+      {"title": "ROS 2 Documentation", "authors": "Open Robotics", "year": 2026, "kind": "Documentation", "url": "https://docs.ros.org/en/jazzy/"},
+      {"title": "Dive into Deep Learning", "authors": "Zhang, Lipton, Li, Smola", "year": 2023, "kind": "Textbook", "url": "https://d2l.ai/"}
+    ]
+  }
+}

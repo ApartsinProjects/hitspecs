@@ -1,0 +1,512 @@
+{
+  "QCF1": {
+    "tagline": "Quantum and quantum-inspired methods for hard combinatorial optimization",
+    "subtitle": "quantum states, adiabatic and variational algorithms for combinatorial optimization",
+    "foundations": [
+      "complex Hilbert spaces, unitary operators, and the postulates of quantum mechanics",
+      "qubits, tensor products, and multi-qubit state spaces",
+      "the adiabatic theorem and time-dependent Hamiltonian evolution",
+      "QUBO and Ising formulations of combinatorial problems",
+      "the variational principle and parameterized quantum circuits",
+      "computational complexity and NP-hard optimization",
+      "statistical mechanics, energy landscapes, and Metropolis sampling"
+    ],
+    "literature": [
+      {
+        "title": "A Quantum Approximate Optimization Algorithm",
+        "authors": "Edward Farhi, Jeffrey Goldstone, and Sam Gutmann",
+        "year": 2014,
+        "url": "https://arxiv.org/abs/1411.4028"
+      },
+      {
+        "title": "Quantum Computation by Adiabatic Evolution",
+        "authors": "Edward Farhi, Jeffrey Goldstone, Sam Gutmann, and Michael Sipser",
+        "year": 2000,
+        "url": "https://arxiv.org/abs/quant-ph/0001106"
+      },
+      {
+        "title": "Quantum annealing in the transverse Ising model",
+        "authors": "Tadashi Kadowaki and Hidetoshi Nishimori",
+        "year": 1998,
+        "url": "https://doi.org/10.1103/PhysRevE.58.5355"
+      },
+      {
+        "title": "Ising formulations of many NP problems",
+        "authors": "Andrew Lucas",
+        "year": 2014,
+        "url": "https://arxiv.org/abs/1302.5843"
+      },
+      {
+        "title": "A variational eigenvalue solver on a photonic quantum processor",
+        "authors": "Alberto Peruzzo, Jarrod McClean, Peter Shadbolt, Man-Hong Yung, Xiao-Qi Zhou, Peter J. Love, Alan Aspuru-Guzik, and Jeremy L. O'Brien",
+        "year": 2014,
+        "url": "https://arxiv.org/abs/1304.3061"
+      }
+    ],
+    "build": "Built an end-to-end quantum optimization pipeline in Python with Qiskit, PennyLane, and the D-Wave Ocean SDK that maps a real combinatorial problem to QUBO and Ising forms and benchmarks QAOA, quantum annealing, and quantum-inspired solvers head to head.",
+    "objectives": [
+      "Explain the postulates of quantum mechanics using qubits, state vectors, and unitary operators",
+      "Derive single and multi-qubit gate algebra from linear algebra over complex Hilbert spaces",
+      "Formulate combinatorial problems as QUBO and Ising Hamiltonians",
+      "Analyze the adiabatic theorem and the theory underlying quantum annealing",
+      "Construct and parameterize QAOA circuits and reason about their cost and mixer Hamiltonians",
+      "Optimize variational parameters using classical optimizers in a hybrid loop",
+      "Implement quantum-inspired heuristics such as simulated and tensor-network annealing on classical hardware",
+      "Benchmark quantum, hybrid, and classical solvers on shared optimization instances",
+      "Evaluate noise, sampling overhead, and embedding limits on near-term devices",
+      "Build an end-to-end pipeline mapping a real problem to a quantum solver and back"
+    ],
+    "prerequisites": [
+      "Linear algebra: vectors, matrices, eigenvalues",
+      "Programming in Python",
+      "Basic probability",
+      "Introductory algorithms and complexity"
+    ],
+    "weeks": [
+      {
+        "week": 1,
+        "part": "Foundations",
+        "title": "Linear algebra and quantum states",
+        "lecture": "Review of complex vector spaces, inner products, Dirac notation, and the qubit as a unit vector in a two-dimensional Hilbert space. Tensor products build multi-qubit state spaces.",
+        "practice": "Set up the Python and Qiskit environment and represent qubit states and amplitudes numerically with NumPy.",
+        "project": "Initialize the project repository and encode a small toy problem instance as a state vector."
+      },
+      {
+        "week": 2,
+        "part": "Foundations",
+        "title": "Quantum gates, measurement, and circuits",
+        "lecture": "Unitary operators, the Pauli and Hadamard gates, entanglement, and the Born rule for measurement probabilities. Circuit model semantics and reversibility.",
+        "practice": "Build and simulate basic circuits in Qiskit, inspecting statevectors and measurement histograms.",
+        "project": "Implement a circuit that prepares and measures the equal superposition over candidate solutions."
+      },
+      {
+        "week": 3,
+        "part": "Optimization theory",
+        "title": "Combinatorial optimization and complexity",
+        "lecture": "NP-hard problems, MaxCut, graph coloring, and the QUBO formulation. Reductions and the role of penalty terms in constrained problems.",
+        "practice": "Translate sample problems into QUBO matrices and verify objective values by brute force on small instances.",
+        "project": "Choose the project optimization problem and express it as a QUBO with documented constraints."
+      },
+      {
+        "week": 4,
+        "part": "Optimization theory",
+        "title": "Ising models and energy landscapes",
+        "lecture": "Mapping QUBO to the Ising Hamiltonian, spin variables, ground states, and the geometry of energy landscapes. Connection between minima and optimal solutions.",
+        "practice": "Convert the project QUBO to an Ising Hamiltonian and visualize the energy landscape of a reduced instance.",
+        "project": "Produce a verified Ising formulation of the project problem with a small validation instance."
+      },
+      {
+        "week": 5,
+        "part": "Quantum annealing",
+        "title": "Adiabatic theorem and quantum annealing",
+        "lecture": "The adiabatic theorem, time-dependent Hamiltonians, spectral gaps, and annealing schedules. Theory of how slow evolution tracks the ground state.",
+        "practice": "Team presentation of the project specification: problem, Ising formulation, target solvers, and evaluation plan.",
+        "project": "Deliver the written and oral project specification milestone."
+      },
+      {
+        "week": 6,
+        "part": "Quantum annealing",
+        "title": "D-Wave hardware and minor embedding",
+        "lecture": "Physical annealers, qubit connectivity, chimera and pegasus topologies, minor embedding, and chain strength. Practical limits of current devices.",
+        "practice": "Use the D-Wave Ocean SDK to embed and sample the project Ising model on a simulated or cloud sampler.",
+        "project": "Obtain first annealing samples for the project problem and record solution quality."
+      },
+      {
+        "week": 7,
+        "part": "Gate-based optimization",
+        "title": "QAOA theory",
+        "lecture": "The variational principle, cost and mixer Hamiltonians, the QAOA ansatz at depth p, and the p to infinity limit recovering adiabatic evolution. Performance bounds on MaxCut.",
+        "practice": "Construct a depth one QAOA circuit for a small project instance and evaluate the expectation value.",
+        "project": "Implement a working QAOA cost function for the project problem."
+      },
+      {
+        "week": 8,
+        "part": "Gate-based optimization",
+        "title": "Variational optimization and parameter training",
+        "lecture": "Classical optimizers, gradient and gradient-free methods, parameter landscapes, barren plateaus, and warm starting. The hybrid quantum-classical loop.",
+        "practice": "Team interim presentation: progress, annealing versus QAOA results so far, and obstacles.",
+        "project": "Deliver the interim presentation milestone and a tuned QAOA parameter set."
+      },
+      {
+        "week": 9,
+        "part": "Quantum-inspired methods",
+        "title": "Simulated annealing and parallel tempering",
+        "lecture": "Classical Metropolis sampling, temperature schedules, parallel tempering, and why these are strong baselines for quantum methods.",
+        "practice": "Run simulated annealing and parallel tempering on the project instance and compare against quantum samples.",
+        "project": "Add classical baselines to the project benchmark suite."
+      },
+      {
+        "week": 10,
+        "part": "Quantum-inspired methods",
+        "title": "Tensor networks and digital annealers",
+        "lecture": "Quantum-inspired tensor-network optimizers, mean-field methods, and commercial digital annealers. Where quantum inspiration helps without quantum hardware.",
+        "practice": "Apply a tensor-network or specialized quantum-inspired solver to the project instance.",
+        "project": "Integrate a quantum-inspired solver and log its results in the benchmark."
+      },
+      {
+        "week": 11,
+        "part": "Practical near-term computing",
+        "title": "Noise, error, and mitigation",
+        "lecture": "Decoherence, gate and readout error, sampling overhead, and error mitigation strategies for noisy intermediate-scale devices.",
+        "practice": "Run QAOA under a noise model and apply a mitigation technique, measuring the effect on solution quality.",
+        "project": "Quantify noise impact on the project QAOA results and apply mitigation."
+      },
+      {
+        "week": 12,
+        "part": "Practical near-term computing",
+        "title": "Benchmarking and scaling",
+        "lecture": "Fair benchmarking methodology, time to solution, approximation ratios, and scaling behavior across solver families. Reporting pitfalls.",
+        "practice": "Assemble a unified benchmark comparing all solvers on shared metrics and instance sizes.",
+        "project": "Finalize the benchmark table and figures for the project."
+      },
+      {
+        "week": 13,
+        "part": "Capstone",
+        "title": "Final project defense",
+        "lecture": "Course synthesis: when quantum, hybrid, and quantum-inspired methods are justified, and the outlook for fault-tolerant optimization.",
+        "practice": "Team final presentation with oral defense of methodology, results, and design choices.",
+        "project": "Deliver the final report, code, and benchmark with oral defense."
+      }
+    ],
+    "project": {
+      "summary": "Teams take one real combinatorial optimization problem and carry it through the full quantum optimization pipeline. They formulate it as QUBO and Ising, then solve it with quantum annealing, QAOA, and quantum-inspired baselines, producing a rigorous head-to-head benchmark and a final defended report.",
+      "ideas": [
+        "Portfolio asset selection",
+        "Vehicle routing",
+        "Job shop scheduling",
+        "Max-cut on social graphs",
+        "Traffic flow optimization",
+        "Protein folding lattice model",
+        "Sensor placement",
+        "Wireless channel assignment"
+      ]
+    },
+    "tools": [
+      "Qiskit: build, simulate, and run gate-based circuits and QAOA",
+      "Qiskit Optimization: high-level QUBO and converter workflows",
+      "PennyLane: differentiable variational quantum optimization",
+      "D-Wave Ocean SDK: QUBO and Ising sampling on annealers",
+      "dimod: shared QUBO and Ising data structures and samplers",
+      "minorminer: minor embedding onto annealer topologies",
+      "NumPy: linear algebra and statevector manipulation",
+      "SciPy: classical optimizers for the variational loop",
+      "NetworkX: graph problem construction and visualization",
+      "Matplotlib: energy landscapes and benchmark plots",
+      "IBM Quantum Platform: cloud access to real quantum hardware",
+      "Jupyter: interactive notebooks for the running project"
+    ],
+    "references": [
+      {
+        "title": "Quantum Computation and Quantum Information",
+        "authors": "Michael A. Nielsen and Isaac L. Chuang",
+        "year": 2010,
+        "kind": "Textbook",
+        "url": "https://www.cambridge.org/us/universitypress/subjects/physics/quantum-physics-quantum-information-and-quantum-computation/quantum-computation-and-quantum-information-10th-anniversary-edition",
+        "note": "Standard reference for qubits, gates, and quantum theory"
+      },
+      {
+        "title": "Quantum Computing: An Applied Approach",
+        "authors": "Jack D. Hidary",
+        "year": 2021,
+        "kind": "Textbook",
+        "url": "https://link.springer.com/book/10.1007/978-3-030-23922-0",
+        "note": "Hands-on coding with foundations and a math toolkit"
+      },
+      {
+        "title": "A Quantum Approximate Optimization Algorithm",
+        "authors": "Edward Farhi, Jeffrey Goldstone, and Sam Gutmann",
+        "year": 2014,
+        "kind": "Paper",
+        "url": "https://arxiv.org/abs/1411.4028",
+        "note": "Seminal QAOA paper"
+      },
+      {
+        "title": "Qiskit Documentation",
+        "authors": "IBM Quantum",
+        "year": 2026,
+        "kind": "Documentation",
+        "url": "https://docs.quantum.ibm.com/",
+        "note": "Official Qiskit and Qiskit Optimization docs"
+      },
+      {
+        "title": "D-Wave Ocean SDK Documentation",
+        "authors": "D-Wave Systems",
+        "year": 2026,
+        "kind": "Documentation",
+        "url": "https://docs.ocean.dwavesys.com/",
+        "note": "Annealing, embedding, and QUBO sampling"
+      },
+      {
+        "title": "PennyLane Documentation",
+        "authors": "Xanadu",
+        "year": 2026,
+        "kind": "Documentation",
+        "url": "https://docs.pennylane.ai/",
+        "note": "Differentiable quantum programming and QAOA demos"
+      },
+      {
+        "title": "Ising formulations of many NP problems",
+        "authors": "Andrew Lucas",
+        "year": 2014,
+        "kind": "Paper",
+        "url": "https://arxiv.org/abs/1302.5843",
+        "note": "Catalog of QUBO and Ising encodings"
+      }
+    ]
+  },
+  "QCF2": {
+    "tagline": "AI, optimization, and risk for modern quantitative finance",
+    "subtitle": "portfolio theory, stochastic models, and machine learning for quantitative strategies",
+    "foundations": [
+      "mean-variance portfolio theory and the efficient frontier",
+      "convex optimization, quadratic programs, and duality",
+      "Brownian motion, Ito's lemma, and stochastic differential equations",
+      "risk-neutral pricing and the Black-Scholes-Merton framework",
+      "coherent risk measures, value at risk, and expected shortfall",
+      "statistical learning theory and time-aware cross-validation",
+      "backtest overfitting and the multiple-testing problem"
+    ],
+    "literature": [
+      {
+        "title": "Portfolio Selection",
+        "authors": "Harry Markowitz",
+        "year": 1952,
+        "url": "https://doi.org/10.1111/j.1540-6261.1952.tb01525.x"
+      },
+      {
+        "title": "The Pricing of Options and Corporate Liabilities",
+        "authors": "Fischer Black and Myron Scholes",
+        "year": 1973,
+        "url": "https://doi.org/10.1086/260062"
+      },
+      {
+        "title": "Global Portfolio Optimization",
+        "authors": "Fischer Black and Robert Litterman",
+        "year": 1992,
+        "url": "https://doi.org/10.2469/faj.v48.n5.28"
+      },
+      {
+        "title": "Building Diversified Portfolios that Outperform Out of Sample",
+        "authors": "Marcos Lopez de Prado",
+        "year": 2016,
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2708678"
+      },
+      {
+        "title": "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance",
+        "authors": "David H. Bailey, Jonathan M. Borwein, Marcos Lopez de Prado, and Qiji Jim Zhu",
+        "year": 2014,
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2308659"
+      }
+    ],
+    "build": "Built a reproducible quantitative research pipeline in Python with cvxpy, PyPortfolioOpt, scikit-learn, and vectorbt that constructs risk-aware optimized portfolios, adds machine learning signals, and rigorously backtests a cost-aware trading strategy under purged cross-validation.",
+    "objectives": [
+      "Derive mean-variance portfolio theory and the efficient frontier from first principles",
+      "Formulate portfolio construction as convex optimization with realistic constraints",
+      "Explain Brownian motion, Ito calculus, and the stochastic processes underlying asset prices",
+      "Build and validate risk models including value at risk and expected shortfall",
+      "Engineer financial features and labels while avoiding leakage and lookahead bias",
+      "Apply machine learning models to return prediction and signal generation",
+      "Design and backtest algorithmic trading strategies with transaction costs",
+      "Apply purged cross-validation and combinatorial backtesting to control overfitting",
+      "Optimize execution and rebalancing under uncertainty and turnover limits",
+      "Deliver a reproducible research pipeline from data to evaluated strategy"
+    ],
+    "prerequisites": [
+      "Python programming with pandas and NumPy",
+      "Linear algebra and multivariable calculus",
+      "Probability and statistics",
+      "Introductory finance or markets familiarity"
+    ],
+    "weeks": [
+      {
+        "week": 1,
+        "part": "Foundations",
+        "title": "Markets, data, and returns",
+        "lecture": "Asset classes, price and return definitions, log returns, stylized facts of financial time series, and stationarity. Data quality and survivorship bias.",
+        "practice": "Set up the environment and load, clean, and resample market data into return series with pandas.",
+        "project": "Initialize the project repository and assemble a clean multi-asset return dataset."
+      },
+      {
+        "week": 2,
+        "part": "Probability foundations",
+        "title": "Stochastic processes and Brownian motion",
+        "lecture": "Random walks, Brownian motion, martingales, and the construction of continuous-time price processes. Properties of Wiener processes.",
+        "practice": "Simulate Brownian motion and geometric Brownian motion price paths and study their statistics.",
+        "project": "Add a Monte Carlo price simulator to the project toolkit."
+      },
+      {
+        "week": 3,
+        "part": "Probability foundations",
+        "title": "Ito calculus and pricing intuition",
+        "lecture": "Ito's lemma, stochastic differential equations, geometric Brownian motion, and the Black-Scholes-Merton framework as risk-neutral pricing.",
+        "practice": "Implement Ito-based simulation and a Black-Scholes pricer, comparing to Monte Carlo estimates.",
+        "project": "Integrate a stochastic model used later for scenario generation."
+      },
+      {
+        "week": 4,
+        "part": "Portfolio theory",
+        "title": "Mean-variance optimization",
+        "lecture": "Expected return and covariance estimation, the mean-variance objective, the efficient frontier, and the tangency portfolio. Assumptions and limitations.",
+        "practice": "Estimate the covariance matrix and compute the efficient frontier for the project universe.",
+        "project": "Produce a baseline mean-variance portfolio for the project assets."
+      },
+      {
+        "week": 5,
+        "part": "Portfolio theory",
+        "title": "Convex optimization for portfolios",
+        "lecture": "Convex sets and functions, quadratic programs, duality, and constrained portfolio formulations with budget, long-only, and turnover constraints.",
+        "practice": "Team presentation of the project specification: universe, objective, constraints, and evaluation plan.",
+        "project": "Deliver the written and oral project specification milestone."
+      },
+      {
+        "week": 6,
+        "part": "Portfolio theory",
+        "title": "Robust and advanced allocation",
+        "lecture": "Estimation error, shrinkage, Black-Litterman views, risk parity, and hierarchical risk parity. Why naive optimization fails out of sample.",
+        "practice": "Implement risk parity and a shrinkage-based optimizer with cvxpy and compare allocations.",
+        "project": "Add robust allocation variants to the project portfolio engine."
+      },
+      {
+        "week": 7,
+        "part": "Risk modeling",
+        "title": "Value at risk and expected shortfall",
+        "lecture": "Risk measures, coherence, historical, parametric, and Monte Carlo value at risk, expected shortfall, and backtesting risk estimates.",
+        "practice": "Compute and backtest value at risk and expected shortfall for the project portfolio.",
+        "project": "Add a risk reporting module to the project."
+      },
+      {
+        "week": 8,
+        "part": "Risk modeling",
+        "title": "Volatility, correlation, and stress",
+        "lecture": "GARCH volatility, dynamic correlation, tail dependence, and stress and scenario testing for portfolio risk.",
+        "practice": "Team interim presentation: portfolio engine, risk results, and open questions.",
+        "project": "Deliver the interim presentation milestone with risk-aware portfolios."
+      },
+      {
+        "week": 9,
+        "part": "Machine learning for finance",
+        "title": "Features, labels, and leakage",
+        "lecture": "Financial feature engineering, fractional differentiation, the triple-barrier labeling method, sample weighting, and avoiding lookahead bias.",
+        "practice": "Engineer features and triple-barrier labels for the project assets.",
+        "project": "Build the labeled supervised dataset for the project."
+      },
+      {
+        "week": 10,
+        "part": "Machine learning for finance",
+        "title": "Models and purged cross-validation",
+        "lecture": "Tree ensembles and regularized models for finance, feature importance, and purged and embargoed cross-validation to respect time structure.",
+        "practice": "Train models with purged cross-validation and evaluate predictive signal quality.",
+        "project": "Produce a validated predictive signal for the strategy."
+      },
+      {
+        "week": 11,
+        "part": "Algorithmic trading",
+        "title": "Strategy design and execution",
+        "lecture": "Signal to position mapping, bet sizing, transaction costs, slippage, and execution and rebalancing under turnover limits.",
+        "practice": "Convert the predictive signal into a traded strategy with sizing and cost modeling.",
+        "project": "Implement the trading strategy layer on top of the signal."
+      },
+      {
+        "week": 12,
+        "part": "Algorithmic trading",
+        "title": "Backtesting and overfitting",
+        "lecture": "Backtest design, walk-forward and combinatorial purged cross-validation, the deflated Sharpe ratio, and the dangers of selection bias.",
+        "practice": "Run a rigorous backtest with cost and risk controls and compute performance statistics.",
+        "project": "Finalize the backtest, metrics, and figures for the project."
+      },
+      {
+        "week": 13,
+        "part": "Capstone",
+        "title": "Final strategy defense",
+        "lecture": "Course synthesis: integrating optimization, risk, and machine learning into a defensible quantitative strategy and the limits of backtested evidence.",
+        "practice": "Team final presentation with oral defense of methodology, results, and design choices.",
+        "project": "Deliver the final report, code, and backtest with oral defense."
+      }
+    ],
+    "project": {
+      "summary": "Teams build one end-to-end quantitative investment strategy for a chosen asset universe. Starting from clean data they construct optimized, risk-aware portfolios, add machine learning signals, and turn the result into a cost-aware algorithmic strategy that is rigorously backtested and defended.",
+      "ideas": [
+        "Equity factor portfolio",
+        "Risk parity multi-asset fund",
+        "Momentum trading strategy",
+        "Mean-reversion pairs trading",
+        "Crypto portfolio with risk limits",
+        "Machine learning signal long-short book",
+        "Volatility-targeted allocation",
+        "Tail-risk hedged portfolio"
+      ]
+    },
+    "tools": [
+      "pandas: financial data wrangling and time series",
+      "NumPy: numerical computation and returns math",
+      "cvxpy: convex portfolio optimization models",
+      "PyPortfolioOpt: mean-variance, Black-Litterman, and risk models",
+      "scikit-learn: machine learning models and cross-validation",
+      "statsmodels: regression, time series, and volatility models",
+      "arch: GARCH volatility and risk estimation",
+      "vectorbt: vectorized backtesting of strategies",
+      "yfinance: market data acquisition for prototyping",
+      "Matplotlib: performance and risk visualization",
+      "SciPy: optimization and statistical routines",
+      "Jupyter: interactive notebooks for the running project"
+    ],
+    "references": [
+      {
+        "title": "Advances in Financial Machine Learning",
+        "authors": "Marcos Lopez de Prado",
+        "year": 2018,
+        "kind": "Textbook",
+        "url": "https://www.wiley.com/en-us/Advances+in+Financial+Machine+Learning-p-9781119482086",
+        "note": "Labeling, purged cross-validation, and backtest pitfalls"
+      },
+      {
+        "title": "Options, Futures, and Other Derivatives",
+        "authors": "John C. Hull",
+        "year": 2021,
+        "kind": "Textbook",
+        "url": "https://www.pearson.com/en-us/subject-catalog/p/options-futures-and-other-derivatives/P200000005938/9780136939917",
+        "note": "Derivatives, risk-neutral pricing, and value at risk"
+      },
+      {
+        "title": "Stochastic Calculus for Finance II: Continuous-Time Models",
+        "authors": "Steven E. Shreve",
+        "year": 2004,
+        "kind": "Textbook",
+        "url": "https://link.springer.com/book/9780387401010",
+        "note": "Brownian motion, Ito calculus, and risk-neutral pricing"
+      },
+      {
+        "title": "Convex Optimization",
+        "authors": "Stephen Boyd and Lieven Vandenberghe",
+        "year": 2004,
+        "kind": "Textbook",
+        "url": "https://stanford.edu/~boyd/cvxbook/",
+        "note": "Free online; foundation for portfolio optimization"
+      },
+      {
+        "title": "cvxpy Documentation",
+        "authors": "cvxpy developers",
+        "year": 2026,
+        "kind": "Documentation",
+        "url": "https://www.cvxpy.org/",
+        "note": "Convex optimization modeling in Python"
+      },
+      {
+        "title": "PyPortfolioOpt Documentation",
+        "authors": "Robert Andrew Martin",
+        "year": 2026,
+        "kind": "Documentation",
+        "url": "https://pyportfolioopt.readthedocs.io/",
+        "note": "Practical portfolio optimization library"
+      },
+      {
+        "title": "scikit-learn User Guide",
+        "authors": "scikit-learn developers",
+        "year": 2026,
+        "kind": "Documentation",
+        "url": "https://scikit-learn.org/stable/user_guide.html",
+        "note": "Machine learning models and validation"
+      }
+    ]
+  }
+}
