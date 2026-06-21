@@ -36,9 +36,8 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.15}
 .stat span{font-size:.84rem;color:#94A3B8;display:block;margin-top:.3rem}
 
 /* blocks */
-main{padding:1.1rem 0 3rem}
+main{padding:2.6rem 0 3rem}
 .block{margin:0 0 2.6rem}
-.block h2:first-child,main>.block:first-child h2{margin-top:0}
 .block h2{font-size:1.7rem;margin:0 0 .8rem}
 .block h2 .lbl,.lbl{font-family:var(--mono);font-size:.8rem;color:var(--muted);font-weight:400;letter-spacing:.05em}
 .muted{color:var(--muted)}
@@ -66,6 +65,8 @@ main{padding:1.1rem 0 3rem}
 .ccard-tag{font-family:var(--mono);font-size:.74rem;font-weight:700;color:var(--accent);background:var(--soft);padding:.15rem .5rem;border-radius:5px}
 .ccard h3{font-size:1.3rem;margin:.5rem 0 0}
 .ccard p{margin:.5rem 0 .9rem;color:var(--muted);font-size:.96rem}
+.ccard .ccard-tagline{margin:.5rem 0 .15rem}
+.ccard p.hetx{margin:0 0 .7rem}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem}
 .chip{font-size:.74rem;font-weight:600;padding:.22rem .55rem;border-radius:20px}
 .chip-label{font-family:var(--mono);font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:.1rem 0 .4rem}
@@ -83,6 +84,7 @@ main{padding:1.1rem 0 3rem}
 .matrix th,.matrix td{border:1px solid var(--line);padding:.4rem .5rem}
 .matrix thead th{background:var(--ink);color:#fff;font-family:var(--mono);font-size:.78rem;font-weight:700;text-align:center}
 .matrix th.cttl{text-align:left}
+.matrix .cseq{font-family:var(--mono);font-size:.76rem;color:var(--muted);text-align:center;white-space:nowrap;width:2.2rem}
 .matrix .cnum{font-family:var(--mono);font-size:.76rem;color:var(--muted);text-align:center;white-space:nowrap}
 .matrix .cttl{font-size:.86rem}
 .matrix .cttl a{color:var(--ink2)}
@@ -245,6 +247,7 @@ h2 .hetx{font-size:1rem;font-weight:400}
 .basetbl{border-collapse:collapse;width:100%;font-size:.88rem;min-width:760px}
 .basetbl th,.basetbl td{border:1px solid var(--line);padding:.5rem .6rem;text-align:left;vertical-align:top}
 .basetbl thead th{background:var(--ink);color:#fff;font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+.basetbl .bseq{font-family:var(--mono);font-size:.78rem;color:var(--muted);text-align:center;width:2.2rem}
 .basetbl .bcid{font-family:var(--mono);font-weight:700;white-space:nowrap}
 .basetbl .bcid a{color:var(--ink2)}
 .dot{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;margin-right:.35rem;vertical-align:1px}

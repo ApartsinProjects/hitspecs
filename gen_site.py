@@ -14,6 +14,7 @@ TRACKS = {
         nav="Intelligent Systems",
         color="3A4B9D", soft="E7EAF5", ink="2A3873",
         tag="Build and operate the intelligent software systems the world runs on.",
+        tag_he="בונים ומפעילים את מערכות התוכנה התבוניות שעליהן העולם מתבסס.",
         rationale=(
             "This concentration trains you to design, build, test, and operate "
             "production-grade software systems at scale, increasingly powered by AI "
@@ -30,6 +31,7 @@ TRACKS = {
         nav="Cyber Security",
         color="9C3B2E", soft="F6E7E4", ink="7A2C22",
         tag="Defend networks, data, and infrastructure end to end.",
+        tag_he="מגנים על רשתות, נתונים ותשתיות מקצה לקצה.",
         rationale=(
             "This concentration prepares you to secure systems, networks, and data "
             "against real adversaries. You combine a strong software and cloud "
@@ -45,6 +47,7 @@ TRACKS = {
         nav="AI & Robotics",
         color="7A3E9D", soft="EFE7F6", ink="5D2F79",
         tag="Design intelligent systems that perceive, reason, and act.",
+        tag_he="מתכננים מערכות אינטליגנטיות שתופסות, מסיקות ופועלות.",
         rationale=(
             "The AI track gives you the modeling depth to build systems that "
             "perceive, reason, and act. It covers the major modern paradigms: large "
@@ -61,6 +64,7 @@ TRACKS = {
         nav="Computational Finance",
         color="B5530B", soft="FBEEDE", ink="8A3F08",
         tag="Quantitative modeling, optimization, and quantum algorithms.",
+        tag_he="מידול כמותי, אופטימיזציה ואלגוריתמים קוונטיים.",
         rationale=(
             "This concentration sits at the intersection of quantitative modeling, "
             "optimization, and emerging quantum computing. You build the software "
@@ -77,6 +81,7 @@ TRACKS = {
         nav="Immersive Systems",
         color="0B6B8A", soft="E0EEF2", ink="084E63",
         tag="Build immersive games and extended-reality worlds.",
+        tag_he="בונים משחקים סוחפים ועולמות מציאות מורחבת.",
         rationale=(
             "This concentration trains you to build real-time interactive and "
             "immersive software: game engines, 3D graphics, virtual and augmented "
@@ -94,6 +99,7 @@ TRACKS = {
         nav="Defense Technologies",
         color="1F6F54", soft="E1F0E9", ink="134734",
         tag="Engineer mission-critical defense and autonomous systems.",
+        tag_he="מהנדסים מערכות ביטחוניות ואוטונומיות קריטיות למשימה.",
         rationale=(
             "This concentration prepares you to engineer mission-critical defense and "
             "autonomous systems: sensor fusion and signal processing, safety-critical "
@@ -561,14 +567,15 @@ def flexcell(track, cid):
 
 def build_track_table(table_id, cellfn):
     """Build a sortable course x track table using cellfn(track, cid) for cells."""
-    thead = ('<th class="cnum">#</th><th class="cttl">Course</th>'
+    thead = ('<th class="cseq">#</th><th class="cnum">Code</th><th class="cttl">Course</th>'
              + "".join(f'<th class="mh" style="background:#{TRACKS[t]["color"]}">{t}</th>'
                        for t in TRACK_ORDER))
     rows = ""
-    for cid in CORE_COURSES:
+    for i, cid in enumerate(CORE_COURSES, 1):
         title = COURSES[cid][0]
         cells = "".join(cellfn(t, cid) for t in TRACK_ORDER)
-        rows += (f'<tr><td class="cnum" data-sort="{e(cid)}">{e(cid)}</td>'
+        rows += (f'<tr><td class="cseq" data-sort="{i}">{i}</td>'
+                 f'<td class="cnum" data-sort="{e(cid)}">{e(cid)}</td>'
                  f'<td class="cttl" data-sort="{e(title.lower())}"><a href="courses/{cid}.html">{e(title)}</a>'
                  f'<div class="hetx" dir="rtl">{e(COURSE_HE.get(cid,""))}</div></td>'
                  f'{cells}</tr>')
@@ -591,7 +598,7 @@ def build_base_table():
     """Map the planned core courses to existing HIT courses and flag gaps."""
     n_av = n_pt = n_gap = 0
     rows = ""
-    for cid in CORE_COURSES:
+    for seq, cid in enumerate(CORE_COURSES, 1):
         fam = course_family(cid)
         col = TRACKS[fam]["color"]
         avail = BASE_AVAILABLE.get(cid, [])
@@ -610,7 +617,8 @@ def build_base_table():
                 + '</div>' for a in avail)
         else:
             ac = '<span class="muted">No existing course yet; to be developed.</span>'
-        rows += (f'<tr><td class="bcid"><span class="dot" style="background:#{col}"></span>'
+        rows += (f'<tr><td class="bseq">{seq}</td>'
+                 f'<td class="bcid"><span class="dot" style="background:#{col}"></span>'
                  f'<a href="courses/{cid}.html">{e(cid)}</a></td>'
                  f'<td class="bname"><a href="courses/{cid}.html">{e(COURSES[cid][0])}</a></td>'
                  f'<td>{ac}</td>'
@@ -619,7 +627,7 @@ def build_base_table():
                f'{n_av} available</span><span><i class="sw" style="background:#B5530B"></i> '
                f'{n_pt} partial</span><span><i class="sw" style="background:#9C3B2E"></i> '
                f'{n_gap} to develop</span><span class="muted">of {len(CORE_COURSES)} core courses</span></div>')
-    table = (f'<table class="basetbl"><thead><tr><th>Core course</th><th>Title</th>'
+    table = (f'<table class="basetbl"><thead><tr><th>#</th><th>Core course</th><th>Title</th>'
              f'<th>Currently available at HIT</th><th>Status</th></tr></thead>'
              f'<tbody>{rows}</tbody></table>')
     return summary + '<div class="tablewrap">' + table + '</div>'
@@ -642,7 +650,8 @@ def build_index():
           <h3>{e(c['name'])}</h3>
           <div class="hetx" dir="rtl">{e(c.get('he',''))}</div>
         </div>
-        <p>{e(c['tag'])}</p>
+        <p class="ccard-tagline">{e(c['tag'])}</p>
+        <p class="hetx" dir="rtl">{e(c.get('tag_he',''))}</p>
         <div class="chip-label">Potential job roles</div>
         <div class="chips">{roles}</div>
       </a>"""
@@ -700,7 +709,7 @@ def build_index():
   </section>
 
   <section class="block">
-    <h2>The six concentrations</h2>
+    <h2>The six concentrations <span class="hetx" dir="rtl">שש האשכולות</span></h2>
     <div class="cgrid">{cards}
     </div>
   </section>
@@ -1215,9 +1224,8 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.15}
 .stat span{font-size:.84rem;color:#94A3B8;display:block;margin-top:.3rem}
 
 /* blocks */
-main{padding:1.1rem 0 3rem}
+main{padding:2.6rem 0 3rem}
 .block{margin:0 0 2.6rem}
-.block h2:first-child,main>.block:first-child h2{margin-top:0}
 .block h2{font-size:1.7rem;margin:0 0 .8rem}
 .block h2 .lbl,.lbl{font-family:var(--mono);font-size:.8rem;color:var(--muted);font-weight:400;letter-spacing:.05em}
 .muted{color:var(--muted)}
@@ -1245,6 +1253,8 @@ main{padding:1.1rem 0 3rem}
 .ccard-tag{font-family:var(--mono);font-size:.74rem;font-weight:700;color:var(--accent);background:var(--soft);padding:.15rem .5rem;border-radius:5px}
 .ccard h3{font-size:1.3rem;margin:.5rem 0 0}
 .ccard p{margin:.5rem 0 .9rem;color:var(--muted);font-size:.96rem}
+.ccard .ccard-tagline{margin:.5rem 0 .15rem}
+.ccard p.hetx{margin:0 0 .7rem}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem}
 .chip{font-size:.74rem;font-weight:600;padding:.22rem .55rem;border-radius:20px}
 .chip-label{font-family:var(--mono);font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:.1rem 0 .4rem}
@@ -1262,6 +1272,7 @@ main{padding:1.1rem 0 3rem}
 .matrix th,.matrix td{border:1px solid var(--line);padding:.4rem .5rem}
 .matrix thead th{background:var(--ink);color:#fff;font-family:var(--mono);font-size:.78rem;font-weight:700;text-align:center}
 .matrix th.cttl{text-align:left}
+.matrix .cseq{font-family:var(--mono);font-size:.76rem;color:var(--muted);text-align:center;white-space:nowrap;width:2.2rem}
 .matrix .cnum{font-family:var(--mono);font-size:.76rem;color:var(--muted);text-align:center;white-space:nowrap}
 .matrix .cttl{font-size:.86rem}
 .matrix .cttl a{color:var(--ink2)}
@@ -1424,6 +1435,7 @@ h2 .hetx{font-size:1rem;font-weight:400}
 .basetbl{border-collapse:collapse;width:100%;font-size:.88rem;min-width:760px}
 .basetbl th,.basetbl td{border:1px solid var(--line);padding:.5rem .6rem;text-align:left;vertical-align:top}
 .basetbl thead th{background:var(--ink);color:#fff;font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+.basetbl .bseq{font-family:var(--mono);font-size:.78rem;color:var(--muted);text-align:center;width:2.2rem}
 .basetbl .bcid{font-family:var(--mono);font-weight:700;white-space:nowrap}
 .basetbl .bcid a{color:var(--ink2)}
 .dot{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;margin-right:.35rem;vertical-align:1px}
