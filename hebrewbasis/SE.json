@@ -1,0 +1,82 @@
+{
+  "SE1": [
+    {
+      "title": "Docker ו-Kubernetes - קורס אונליין חינם",
+      "provider": "YouTube",
+      "url": "https://www.practicu.com/קורס-Docker-Kubernetes",
+      "note": "קורס וידאו חינם בעברית על דוקר וקוברנטיס"
+    },
+    {
+      "title": "קורס Kubernetes המלא",
+      "provider": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLSTZztu6D3f9oWdRqM5VGYNJj9TMBuyRE",
+      "note": "פלייליסט וידאו מלא בעברית על קוברנטיס"
+    }
+  ],
+  "SE2": [
+    {
+      "title": "Super QA - בודק תוכנה",
+      "provider": "Campus IL",
+      "url": "https://campus.gov.il/course/digitaltech-gov-sqa-he/",
+      "note": "קורס וידאו חינם בעברית בבדיקות תוכנה"
+    },
+    {
+      "title": "WebSec - אבטחת יישומי ווב",
+      "provider": "Campus IL",
+      "url": "https://campus.gov.il/en/course/cs-gov-cs-websec/",
+      "note": "קורס וידאו חינם בעברית באבטחת יישומים"
+    }
+  ],
+  "SE3": [
+    {
+      "title": "קורס React מלא בחינם",
+      "provider": "YouTube",
+      "url": "https://www.doctorcode.org/courses/react-course",
+      "note": "קורס וידאו חינם בעברית ב-React"
+    },
+    {
+      "title": "קורס React - פיתוח צד לקוח",
+      "provider": "YouTube",
+      "url": "https://www.practicu.com/קורס-ריאקט-React",
+      "note": "קורס וידאו חינם בעברית ב-React"
+    }
+  ],
+  "SE4": [
+    {
+      "title": "Data.SQL - יסודות וכלים לשליפת נתונים",
+      "provider": "Campus IL",
+      "url": "https://campus.gov.il/en/course/course-v1cs-gov-sql-he/",
+      "note": "קורס וידאו חינם בעברית בבסיסי נתונים ו-SQL"
+    }
+  ],
+  "SE5": [
+    {
+      "title": "מבוא לבינה מלאכותית: מתאוריה לפרקטיקה",
+      "provider": "Campus IL",
+      "url": "https://campus.gov.il/en/course/bgu-acd-bgu-ai101/",
+      "note": "קורס וידאו חינם בעברית בלמידת מכונה, אוניברסיטת בן גוריון"
+    },
+    {
+      "title": "מבוא ל-DevOps - קורס אונליין חינם",
+      "provider": "YouTube",
+      "url": "https://www.practicu.com/קורס-DevOps-Ansible/מבוא-ל-DevOps",
+      "note": "קורס וידאו חינם בעברית ב-DevOps"
+    }
+  ],
+  "SE6": [
+    {
+      "title": "פיתוח אפליקציות לאנדרואיד - Android JAVA",
+      "provider": "YouTube",
+      "url": "https://www.practicu.com/קורס-פיתוח-אפליקציות-לאנדרואיד-אונליין-ב-Android-JAVA/מבוא-ל-Android",
+      "note": "קורס וידאו חינם בעברית בפיתוח אנדרואיד"
+    }
+  ],
+  "SE7": [
+    {
+      "title": "מבוא למדעי הנתונים: כלים ושיטות",
+      "provider": "Campus IL",
+      "url": "https://campus.gov.il/en/course/hit-acd-rfp4-datascienceintro-he/",
+      "note": "קורס וידאו חינם בעברית בהנדסת נתונים, מכון טכנולוגי חולון"
+    }
+  ]
+}

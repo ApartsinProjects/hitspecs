@@ -2,6 +2,7 @@
   "GM1": {
     "tagline": "Build a real-time renderer and ship a playable engine demo",
     "subtitle": "rasterization, physically based shading, and interactive real-time rendering pipelines",
+    "ai_usage": "Students use AI coding assistants and vibe-coding to scaffold and refactor engine code, generate and debug GLSL and HLSL shaders, and translate lighting math such as the Cook-Torrance BRDF into working fragment shaders. They drive Unity and Unreal editor tasks and GPU tooling through assistants and MCP servers that expose the engine, RenderDoc captures, and the build system, asking the model to read a frame capture and propose batching or culling fixes. AI also generates test scenes, reference spheres, and synthetic assets, and helps analyze profiler output and frame timings to explain where the frame budget is spent. The emphasis is on reading and validating generated shader and pipeline code, since silent correctness errors in rendering are easy to miss.",
     "objectives": [
       "Derive the rendering equation and explain how rasterization and ray tracing each approximate it",
       "Implement the programmable GPU pipeline stages from vertex transform through fragment shading",
@@ -15,19 +16,185 @@
       "Design and defend a complete interactive real-time graphics application as a team project"
     ],
     "weeks": [
-      {"week": 1, "part": "Foundations", "title": "The rendering pipeline and frame anatomy", "lecture": "Overview of real-time rendering: the rendering equation as the ground truth, and how rasterization and ray tracing approximate it. The graphics pipeline from application stage to framebuffer.", "practice": "Set up the engine toolchain and render a first triangle with a custom vertex and fragment shader, then animate it through a transform.", "project": "Repository, build system, and a window rendering a shaded primitive at a measured frame rate."},
-      {"week": 2, "part": "Foundations", "title": "Transforms, cameras, and the GPU", "lecture": "Homogeneous coordinates, model-view-projection matrices, perspective and the depth buffer. GPU architecture: SIMD lanes, warps, and the cost of state changes.", "practice": "Implement a free-look camera and a transform hierarchy, and load a textured mesh from disk into a vertex buffer.", "project": "Interactive scene with a controllable camera and loaded 3D assets."},
-      {"week": 3, "part": "Shading", "title": "Lighting models and shaders", "lecture": "Local illumination: Lambertian diffuse, Blinn-Phong specular, and the move toward physically based shading. Shader stages, uniforms, and the data flow to the GPU.", "practice": "Author shaders for directional, point, and spot lights with normal mapping on a textured model.", "project": "Multi-light shaded scene with normal-mapped surfaces."},
-      {"week": 4, "part": "Shading", "title": "Physically based rendering", "lecture": "The microfacet model, the Cook-Torrance BRDF, Fresnel, geometry, and normal distribution terms. Metallic-roughness workflow and energy conservation.", "practice": "Implement a PBR material with metallic and roughness inputs and validate it against reference spheres.", "project": "PBR material system integrated into the running scene."},
-      {"week": 5, "part": "Milestone", "title": "Specification presentation", "lecture": "Scoping a real-time graphics project: feature budget, target frame rate, asset pipeline, and technical risks. Rubric for the specification defense.", "practice": "STUDENT PRESENTATION milestone, specification. Teams present their project concept, target platform and engine, the rendering features they will build, an asset and milestone plan, and a frame-rate and quality budget.", "project": "Approved project specification and a vertical slice plan."},
-      {"week": 6, "part": "Visibility", "title": "Scene graphs and spatial structures", "lecture": "Scene graphs, bounding volume hierarchies, frustum and occlusion culling, and level-of-detail selection. Sorting for opaque and transparent draws.", "practice": "Build a scene graph with frustum culling and a BVH, and measure the draw-call reduction.", "project": "Culling and scene-management layer feeding the renderer."},
-      {"week": 7, "part": "Visibility", "title": "Shadows and depth techniques", "lecture": "Shadow mapping from Williams onward: depth bias, peter-panning, percentage-closer filtering, and cascaded shadow maps for large scenes.", "practice": "Add cascaded shadow maps with PCF and tune bias to remove acne and peter-panning.", "project": "Dynamic shadowing across the project scene."},
-      {"week": 8, "part": "Milestone", "title": "Interim demo presentation", "lecture": "Demonstrating a vertical slice: what a credible interim build shows and how to measure progress against the specification.", "practice": "STUDENT PRESENTATION milestone, interim demo. Teams demo a playable vertical slice with lighting, shadows, and assets in engine, report current frame timings, and show their profiler output.", "project": "Playable vertical slice with core rendering features working."},
-      {"week": 9, "part": "Global illumination", "title": "Ambient occlusion and image-based lighting", "lecture": "Approximating indirect light: screen-space ambient occlusion, prefiltered environment maps, irradiance probes, and reflection capture.", "practice": "Add SSAO and image-based lighting from an HDR environment map to the project.", "project": "Indirect-lighting layer raising visual fidelity."},
-      {"week": 10, "part": "Performance", "title": "Profiling and frame-rate optimization", "lecture": "Finding the bottleneck: CPU versus GPU bound, draw-call batching, instancing, overdraw, and bandwidth. GPU profilers and frame capture tools.", "practice": "Profile the project with a GPU frame debugger, then apply batching and instancing to hit the frame-rate budget.", "project": "Optimized build meeting the target frame time."},
-      {"week": 11, "part": "Advanced", "title": "Deferred shading and post-processing", "lecture": "Forward versus deferred rendering, the G-buffer, tiled and clustered shading, HDR, tone mapping, and bloom.", "practice": "Implement a post-processing chain with HDR tone mapping and bloom, and compare forward and deferred costs.", "project": "Post-processing pipeline and rendering-path choice locked in."},
-      {"week": 12, "part": "Advanced", "title": "Animation, particles, and polish", "lecture": "Skeletal animation and skinning, particle systems, and integration of gameplay systems with the render loop. Determinism and the fixed timestep.", "practice": "Add a skinned animated character or a particle system and integrate it with the gameplay loop.", "project": "Feature-complete build ready for the final defense."},
-      {"week": 13, "part": "Milestone", "title": "Final demo and oral defense", "lecture": "Course synthesis: from the rendering equation to a shipped real-time engine demo, and the engineering tradeoffs that defined the project.", "practice": "STUDENT PRESENTATION milestone, final demo with oral defense. Teams present the finished interactive application, walk through their rendering architecture, justify performance and quality tradeoffs, and answer technical questions.", "project": "Final interactive real-time graphics application with documentation."}
+      {
+        "week": 1,
+        "part": "Foundations",
+        "title": "The rendering pipeline and frame anatomy",
+        "lecture": "Overview of real-time rendering: the rendering equation as the ground truth, and how rasterization and ray tracing approximate it. The graphics pipeline from application stage to framebuffer.",
+        "practice": "Set up the engine toolchain and render a first triangle with a custom vertex and fragment shader, then animate it through a transform.",
+        "project": "Repository, build system, and a window rendering a shaded primitive at a measured frame rate.",
+        "links": [
+          {
+            "title": "Cem Yuksel: introduction and the graphics pipeline",
+            "url": "https://www.youtube.com/watch?v=UVCuWQV_-Es"
+          },
+          {
+            "title": "Cem Yuksel: rendering algorithms, rasterization and ray tracing",
+            "url": "https://www.youtube.com/watch?v=owx-R-Ary9I"
+          },
+          {
+            "title": "Cem Yuksel: the rendering equation",
+            "url": "https://www.youtube.com/watch?v=wawf7Am6xy0"
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "part": "Foundations",
+        "title": "Transforms, cameras, and the GPU",
+        "lecture": "Homogeneous coordinates, model-view-projection matrices, perspective and the depth buffer. GPU architecture: SIMD lanes, warps, and the cost of state changes.",
+        "practice": "Implement a free-look camera and a transform hierarchy, and load a textured mesh from disk into a vertex buffer.",
+        "project": "Interactive scene with a controllable camera and loaded 3D assets.",
+        "links": [
+          {
+            "title": "Cem Yuksel: images and transformations",
+            "url": "https://www.youtube.com/watch?v=gQiD2Kd6xoE"
+          }
+        ]
+      },
+      {
+        "week": 3,
+        "part": "Shading",
+        "title": "Lighting models and shaders",
+        "lecture": "Local illumination: Lambertian diffuse, Blinn-Phong specular, and the move toward physically based shading. Shader stages, uniforms, and the data flow to the GPU.",
+        "practice": "Author shaders for directional, point, and spot lights with normal mapping on a textured model.",
+        "project": "Multi-light shaded scene with normal-mapped surfaces.",
+        "links": [
+          {
+            "title": "Cem Yuksel: lighting, shading, and shaders",
+            "url": "https://www.youtube.com/watch?v=C2Gn6oOxSu0"
+          }
+        ]
+      },
+      {
+        "week": 4,
+        "part": "Shading",
+        "title": "Physically based rendering",
+        "lecture": "The microfacet model, the Cook-Torrance BRDF, Fresnel, geometry, and normal distribution terms. Metallic-roughness workflow and energy conservation.",
+        "practice": "Implement a PBR material with metallic and roughness inputs and validate it against reference spheres.",
+        "project": "PBR material system integrated into the running scene.",
+        "links": [
+          {
+            "title": "Cem Yuksel: reflections and reflectance",
+            "url": "https://www.youtube.com/watch?v=h2RTBs1xl6w"
+          },
+          {
+            "title": "Introduction to Computer Graphics: full course (Cem Yuksel, Utah)",
+            "url": "https://www.youtube.com/playlist?list=PLplnkTzzqsZTfYh4UbhLGpI5kGd5oW_Hh"
+          }
+        ]
+      },
+      {
+        "week": 5,
+        "part": "Milestone",
+        "title": "Specification presentation",
+        "lecture": "Scoping a real-time graphics project: feature budget, target frame rate, asset pipeline, and technical risks. Rubric for the specification defense.",
+        "practice": "STUDENT PRESENTATION milestone, specification. Teams present their project concept, target platform and engine, the rendering features they will build, an asset and milestone plan, and a frame-rate and quality budget.",
+        "project": "Approved project specification and a vertical slice plan.",
+        "links": []
+      },
+      {
+        "week": 6,
+        "part": "Visibility",
+        "title": "Scene graphs and spatial structures",
+        "lecture": "Scene graphs, bounding volume hierarchies, frustum and occlusion culling, and level-of-detail selection. Sorting for opaque and transparent draws.",
+        "practice": "Build a scene graph with frustum culling and a BVH, and measure the draw-call reduction.",
+        "project": "Culling and scene-management layer feeding the renderer.",
+        "links": [
+          {
+            "title": "Introduction to Computer Graphics: full course (Cem Yuksel, Utah)",
+            "url": "https://www.youtube.com/playlist?list=PLplnkTzzqsZTfYh4UbhLGpI5kGd5oW_Hh"
+          }
+        ]
+      },
+      {
+        "week": 7,
+        "part": "Visibility",
+        "title": "Shadows and depth techniques",
+        "lecture": "Shadow mapping from Williams onward: depth bias, peter-panning, percentage-closer filtering, and cascaded shadow maps for large scenes.",
+        "practice": "Add cascaded shadow maps with PCF and tune bias to remove acne and peter-panning.",
+        "project": "Dynamic shadowing across the project scene.",
+        "links": [
+          {
+            "title": "Cem Yuksel: lights and shadows, shadow mapping",
+            "url": "https://www.youtube.com/watch?v=C2Gn6oOxSu0"
+          }
+        ]
+      },
+      {
+        "week": 8,
+        "part": "Milestone",
+        "title": "Interim demo presentation",
+        "lecture": "Demonstrating a vertical slice: what a credible interim build shows and how to measure progress against the specification.",
+        "practice": "STUDENT PRESENTATION milestone, interim demo. Teams demo a playable vertical slice with lighting, shadows, and assets in engine, report current frame timings, and show their profiler output.",
+        "project": "Playable vertical slice with core rendering features working.",
+        "links": []
+      },
+      {
+        "week": 9,
+        "part": "Global illumination",
+        "title": "Ambient occlusion and image-based lighting",
+        "lecture": "Approximating indirect light: screen-space ambient occlusion, prefiltered environment maps, irradiance probes, and reflection capture.",
+        "practice": "Add SSAO and image-based lighting from an HDR environment map to the project.",
+        "project": "Indirect-lighting layer raising visual fidelity.",
+        "links": [
+          {
+            "title": "Cem Yuksel: environment mapping and image based lighting",
+            "url": "https://www.youtube.com/watch?v=PeAvKApuAuA"
+          }
+        ]
+      },
+      {
+        "week": 10,
+        "part": "Performance",
+        "title": "Profiling and frame-rate optimization",
+        "lecture": "Finding the bottleneck: CPU versus GPU bound, draw-call batching, instancing, overdraw, and bandwidth. GPU profilers and frame capture tools.",
+        "practice": "Profile the project with a GPU frame debugger, then apply batching and instancing to hit the frame-rate budget.",
+        "project": "Optimized build meeting the target frame time.",
+        "links": [
+          {
+            "title": "Introduction to Computer Graphics: full course (Cem Yuksel, Utah)",
+            "url": "https://www.youtube.com/playlist?list=PLplnkTzzqsZTfYh4UbhLGpI5kGd5oW_Hh"
+          }
+        ]
+      },
+      {
+        "week": 11,
+        "part": "Advanced",
+        "title": "Deferred shading and post-processing",
+        "lecture": "Forward versus deferred rendering, the G-buffer, tiled and clustered shading, HDR, tone mapping, and bloom.",
+        "practice": "Implement a post-processing chain with HDR tone mapping and bloom, and compare forward and deferred costs.",
+        "project": "Post-processing pipeline and rendering-path choice locked in.",
+        "links": [
+          {
+            "title": "Cem Yuksel: global illumination",
+            "url": "https://www.youtube.com/watch?v=zlM4bMwqtCk"
+          }
+        ]
+      },
+      {
+        "week": 12,
+        "part": "Advanced",
+        "title": "Animation, particles, and polish",
+        "lecture": "Skeletal animation and skinning, particle systems, and integration of gameplay systems with the render loop. Determinism and the fixed timestep.",
+        "practice": "Add a skinned animated character or a particle system and integrate it with the gameplay loop.",
+        "project": "Feature-complete build ready for the final defense.",
+        "links": [
+          {
+            "title": "Introduction to Computer Graphics: full course (Cem Yuksel, Utah)",
+            "url": "https://www.youtube.com/playlist?list=PLplnkTzzqsZTfYh4UbhLGpI5kGd5oW_Hh"
+          }
+        ]
+      },
+      {
+        "week": 13,
+        "part": "Milestone",
+        "title": "Final demo and oral defense",
+        "lecture": "Course synthesis: from the rendering equation to a shipped real-time engine demo, and the engineering tradeoffs that defined the project.",
+        "practice": "STUDENT PRESENTATION milestone, final demo with oral defense. Teams present the finished interactive application, walk through their rendering architecture, justify performance and quality tradeoffs, and answer technical questions.",
+        "project": "Final interactive real-time graphics application with documentation.",
+        "links": []
+      }
     ],
     "project": {
       "summary": "Each team builds one interactive real-time 3D application across the term, either a small game or an interactive renderer, in Unity, Unreal, or a custom engine. The project grows weekly from a shaded primitive to a feature-complete build with physically based shading, shadows, indirect lighting, and a met frame-rate budget. The same artifact is presented at the specification, interim, and final milestones.",
@@ -65,26 +232,100 @@
       "the GPU execution model of parallel warps and the cost of state changes"
     ],
     "literature": [
-      {"title": "The Rendering Equation", "authors": "James T. Kajiya", "year": 1986, "url": "https://dl.acm.org/doi/10.1145/15922.15902"},
-      {"title": "Casting Curved Shadows on Curved Surfaces", "authors": "Lance Williams", "year": 1978, "url": "https://dl.acm.org/doi/10.1145/800248.807402"},
-      {"title": "A Reflectance Model for Computer Graphics", "authors": "Robert L. Cook and Kenneth E. Torrance", "year": 1982, "url": "https://dl.acm.org/doi/10.1145/965161.806819"},
-      {"title": "Physically Based Rendering: From Theory to Implementation", "authors": "Matt Pharr, Wenzel Jakob, and Greg Humphreys", "year": 2023, "url": "https://pbr-book.org/"}
+      {
+        "title": "The Rendering Equation",
+        "authors": "James T. Kajiya",
+        "year": 1986,
+        "url": "https://dl.acm.org/doi/10.1145/15922.15902"
+      },
+      {
+        "title": "Casting Curved Shadows on Curved Surfaces",
+        "authors": "Lance Williams",
+        "year": 1978,
+        "url": "https://dl.acm.org/doi/10.1145/800248.807402"
+      },
+      {
+        "title": "A Reflectance Model for Computer Graphics",
+        "authors": "Robert L. Cook and Kenneth E. Torrance",
+        "year": 1982,
+        "url": "https://dl.acm.org/doi/10.1145/965161.806819"
+      },
+      {
+        "title": "Physically Based Rendering: From Theory to Implementation",
+        "authors": "Matt Pharr, Wenzel Jakob, and Greg Humphreys",
+        "year": 2023,
+        "url": "https://pbr-book.org/"
+      }
     ],
     "references": [
-      {"title": "Real-Time Rendering, 4th Edition", "authors": "Tomas Akenine-Moller, Eric Haines, and Naty Hoffman", "year": 2018, "kind": "Textbook", "url": "https://www.realtimerendering.com/", "note": "The standard reference for real-time graphics"},
-      {"title": "Physically Based Rendering: From Theory to Implementation", "authors": "Matt Pharr, Wenzel Jakob, and Greg Humphreys", "year": 2023, "kind": "Textbook", "url": "https://pbr-book.org/", "note": "Full text free online"},
-      {"title": "Unity User Manual", "authors": "Unity Technologies", "year": 2025, "kind": "Documentation", "url": "https://docs.unity3d.com/Manual/index.html"},
-      {"title": "Unreal Engine Documentation", "authors": "Epic Games", "year": 2025, "kind": "Documentation", "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine"},
-      {"title": "GPU Gems", "authors": "Randima Fernando, editor, NVIDIA", "year": 2004, "kind": "Textbook", "url": "https://developer.nvidia.com/gpugems/gpugems/contributors", "note": "Free online lighting and performance chapters"},
-      {"title": "Learn OpenGL", "authors": "Joey de Vries", "year": 2014, "kind": "Course", "url": "https://learnopengl.com/", "note": "Free shader, lighting, and PBR tutorials"},
-      {"title": "Interactive Computer Graphics", "authors": "Cem Yuksel, University of Utah", "year": 2021, "kind": "Course", "url": "https://www.cemyuksel.com/courses/", "note": "Full lecture videos with shader and real-time coverage"},
-      {"title": "Rendering Course Materials", "authors": "TU Wien Research Unit of Computer Graphics", "year": 2024, "kind": "Course", "url": "https://www.cg.tuwien.ac.at/courses/Rendering/VU"}
+      {
+        "title": "Real-Time Rendering, 4th Edition",
+        "authors": "Tomas Akenine-Moller, Eric Haines, and Naty Hoffman",
+        "year": 2018,
+        "kind": "Textbook",
+        "url": "https://www.realtimerendering.com/",
+        "note": "The standard reference for real-time graphics"
+      },
+      {
+        "title": "Physically Based Rendering: From Theory to Implementation",
+        "authors": "Matt Pharr, Wenzel Jakob, and Greg Humphreys",
+        "year": 2023,
+        "kind": "Textbook",
+        "url": "https://pbr-book.org/",
+        "note": "Full text free online"
+      },
+      {
+        "title": "Unity User Manual",
+        "authors": "Unity Technologies",
+        "year": 2025,
+        "kind": "Documentation",
+        "url": "https://docs.unity3d.com/Manual/index.html"
+      },
+      {
+        "title": "Unreal Engine Documentation",
+        "authors": "Epic Games",
+        "year": 2025,
+        "kind": "Documentation",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine"
+      },
+      {
+        "title": "GPU Gems",
+        "authors": "Randima Fernando, editor, NVIDIA",
+        "year": 2004,
+        "kind": "Textbook",
+        "url": "https://developer.nvidia.com/gpugems/gpugems/contributors",
+        "note": "Free online lighting and performance chapters"
+      },
+      {
+        "title": "Learn OpenGL",
+        "authors": "Joey de Vries",
+        "year": 2014,
+        "kind": "Course",
+        "url": "https://learnopengl.com/",
+        "note": "Free shader, lighting, and PBR tutorials"
+      },
+      {
+        "title": "Interactive Computer Graphics",
+        "authors": "Cem Yuksel, University of Utah",
+        "year": 2021,
+        "kind": "Course",
+        "url": "https://www.cemyuksel.com/courses/",
+        "note": "Full lecture videos with shader and real-time coverage"
+      },
+      {
+        "title": "Rendering Course Materials",
+        "authors": "TU Wien Research Unit of Computer Graphics",
+        "year": 2024,
+        "kind": "Course",
+        "url": "https://www.cg.tuwien.ac.at/courses/Rendering/VU"
+      }
     ],
     "build": "Built a real-time 3D rendering application in Unity, Unreal, or a custom OpenGL and Vulkan engine, implementing a physically based shading pipeline with cascaded shadow maps, image-based lighting, and frustum culling, profiled with RenderDoc and Nsight to meet a fixed frame-rate budget."
   },
   "GM2": {
     "tagline": "Build and defend an immersive VR or AR application",
     "subtitle": "spatial computing, pose tracking, and immersive interaction across virtual and augmented reality",
+    "ai_usage": "Students use AI assistants and vibe-coding to write and refactor OpenXR session and input code, generate interaction and locomotion scripts, and wire up Unity XR Interaction Toolkit components from natural-language intent. They interact with engine tooling and device SDKs through MCP servers that surface the headset build, the OpenXR runtime, and on-device profilers, asking the model to wire action sets or place spatial anchors and then explain the tracking behavior. AI generates test scenes, scripted pose sequences, and synthetic IMU and tracking data for repeatable comfort and latency experiments. Students use the model to analyze motion-to-photon measurements and user-test results and to reason about cybersickness mitigations, always validating suggestions against on-device behavior.",
     "objectives": [
       "Explain the optical and perceptual basis of head-mounted displays and stereoscopic rendering",
       "Represent rigid-body pose with SE(3) transforms and apply them to head and hand tracking",
@@ -98,19 +339,181 @@
       "Design and defend a complete spatial computing application as a team project"
     ],
     "weeks": [
-      {"week": 1, "part": "Foundations", "title": "Spatial computing and the XR landscape", "lecture": "From Sutherland's head-mounted display to modern VR and AR. Display optics, field of view, stereoscopy, and the latency and frame-rate requirements for comfort.", "practice": "Set up the XR toolchain and deploy a hello-world scene to a headset or AR-capable device.", "project": "Repository, device target, and a deployed XR scene rendering in stereo."},
-      {"week": 2, "part": "Foundations", "title": "Pose, frames, and SE(3)", "lecture": "Rigid-body transforms, rotation representations with quaternions and matrices, and the SE(3) group. Coordinate frames for world, head, and controllers.", "practice": "Track and visualize head and controller poses, and convert between coordinate frames.", "project": "Pose tracking and frame visualization in the running app."},
-      {"week": 3, "part": "Platform", "title": "OpenXR and the input model", "lecture": "The OpenXR architecture: instances, sessions, swapchains, reference spaces, and the action-based input abstraction across vendors.", "practice": "Wire up OpenXR action sets for buttons, grips, and poses, and run on more than one runtime.", "project": "Cross-runtime input layer driving the application."},
-      {"week": 4, "part": "Interaction", "title": "Hand tracking and interaction primitives", "lecture": "Articulated hand tracking, ray and direct interaction, grab and throw physics, and the design space of 3D selection and manipulation.", "practice": "Implement ray-based and direct-grab interaction with hand or controller tracking.", "project": "Core interaction toolkit integrated into the scene."},
-      {"week": 5, "part": "Milestone", "title": "Specification presentation", "lecture": "Scoping an XR project: device target, interaction model, comfort budget, and technical risks. Rubric for the specification defense.", "practice": "STUDENT PRESENTATION milestone, specification. Teams present their application concept, target device and runtime, interaction and locomotion design, a comfort and latency budget, and a milestone plan.", "project": "Approved project specification and interaction storyboard."},
-      {"week": 6, "part": "Tracking", "title": "SLAM and visual-inertial tracking", "lecture": "Simultaneous localization and mapping from PTAM and ORB-SLAM, feature tracking, and visual-inertial odometry with IMU preintegration for robust pose.", "practice": "Run a SLAM or VIO pipeline and inspect tracked features, the map, and drift behavior.", "project": "Inside-out tracking understood and instrumented in the project."},
-      {"week": 7, "part": "Tracking", "title": "Spatial mapping and anchors", "lecture": "Dense reconstruction from KinectFusion, plane detection, mesh-based spatial mapping, and persistent spatial anchors for world-locked content.", "practice": "Detect planes and place anchored virtual content that stays fixed as the user moves.", "project": "World-anchored content for AR or a mapped play space for VR."},
-      {"week": 8, "part": "Milestone", "title": "Interim demo presentation", "lecture": "Demonstrating an XR vertical slice: what a credible interim build shows for tracking, interaction, and comfort.", "practice": "STUDENT PRESENTATION milestone, interim demo. Teams demo a working slice with tracked interaction and anchored content on the target device, and report measured latency and comfort observations.", "project": "Playable vertical slice running on the target headset or device."},
-      {"week": 9, "part": "Experience", "title": "Immersive UX and locomotion", "lecture": "Locomotion techniques, teleport versus continuous motion, diegetic UI, and spatial audio. Presence and the factors that build or break it.", "practice": "Add a locomotion system and a spatial UI, and evaluate them with a comfort checklist.", "project": "Locomotion and UI layer refining the experience."},
-      {"week": 10, "part": "Experience", "title": "Comfort, latency, and cybersickness", "lecture": "Sensory conflict theory, motion-to-photon latency, foveated and reprojection techniques, and design rules that reduce cybersickness.", "practice": "Measure motion-to-photon latency and apply comfort mitigations, then run a small user test.", "project": "Comfort-tuned build with measured latency."},
-      {"week": 11, "part": "Augmented reality", "title": "AR rendering and occlusion", "lecture": "Optical versus video see-through, registration and the Azuma survey definition of AR, depth occlusion, lighting estimation, and passthrough rendering.", "practice": "Add real-world occlusion and lighting estimation so virtual objects blend with the scene.", "project": "Believable AR compositing or refined VR rendering."},
-      {"week": 12, "part": "Polish", "title": "Performance and multi-user", "lecture": "XR performance budgets, single-pass stereo rendering, and the basics of shared and colocated multi-user spatial sessions.", "practice": "Optimize the render path to the device frame budget and add an optional shared or multi-user feature.", "project": "Feature-complete build ready for the final defense."},
-      {"week": 13, "part": "Milestone", "title": "Final demo and oral defense", "lecture": "Course synthesis: from SE(3) and SLAM to a deployed spatial computing application and the human-factors tradeoffs that shaped it.", "practice": "STUDENT PRESENTATION milestone, final demo with oral defense. Teams present the finished application live on device, walk through their tracking and interaction architecture, justify comfort and performance choices, and answer technical questions.", "project": "Final spatial computing application with documentation."}
+      {
+        "week": 1,
+        "part": "Foundations",
+        "title": "Spatial computing and the XR landscape",
+        "lecture": "From Sutherland's head-mounted display to modern VR and AR. Display optics, field of view, stereoscopy, and the latency and frame-rate requirements for comfort.",
+        "practice": "Set up the XR toolchain and deploy a hello-world scene to a headset or AR-capable device.",
+        "project": "Repository, device target, and a deployed XR scene rendering in stereo.",
+        "links": [
+          {
+            "title": "VR at 50: Ivan Sutherland's 1968 head-mounted display (ACM SIGGRAPH)",
+            "url": "https://www.youtube.com/watch?v=LZCx0yH9gLM"
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "part": "Foundations",
+        "title": "Pose, frames, and SE(3)",
+        "lecture": "Rigid-body transforms, rotation representations with quaternions and matrices, and the SE(3) group. Coordinate frames for world, head, and controllers.",
+        "practice": "Track and visualize head and controller poses, and convert between coordinate frames.",
+        "project": "Pose tracking and frame visualization in the running app.",
+        "links": [
+          {
+            "title": "Rigid body transformations and rotation matrices (UMD)",
+            "url": "https://www.youtube.com/watch?v=Jc5PIahEfU4"
+          }
+        ]
+      },
+      {
+        "week": 3,
+        "part": "Platform",
+        "title": "OpenXR and the input model",
+        "lecture": "The OpenXR architecture: instances, sessions, swapchains, reference spaces, and the action-based input abstraction across vendors.",
+        "practice": "Wire up OpenXR action sets for buttons, grips, and poses, and run on more than one runtime.",
+        "project": "Cross-runtime input layer driving the application.",
+        "links": [
+          {
+            "title": "OpenXR: state of the union, Khronos GDC 2019",
+            "url": "https://www.youtube.com/watch?v=ITl-hAw3HY8"
+          }
+        ]
+      },
+      {
+        "week": 4,
+        "part": "Interaction",
+        "title": "Hand tracking and interaction primitives",
+        "lecture": "Articulated hand tracking, ray and direct interaction, grab and throw physics, and the design space of 3D selection and manipulation.",
+        "practice": "Implement ray-based and direct-grab interaction with hand or controller tracking.",
+        "project": "Core interaction toolkit integrated into the scene.",
+        "links": [
+          {
+            "title": "Unity and Meta SDK: a first hand-tracked interaction",
+            "url": "https://www.youtube.com/watch?v=5walAobfcOw"
+          }
+        ]
+      },
+      {
+        "week": 5,
+        "part": "Milestone",
+        "title": "Specification presentation",
+        "lecture": "Scoping an XR project: device target, interaction model, comfort budget, and technical risks. Rubric for the specification defense.",
+        "practice": "STUDENT PRESENTATION milestone, specification. Teams present their application concept, target device and runtime, interaction and locomotion design, a comfort and latency budget, and a milestone plan.",
+        "project": "Approved project specification and interaction storyboard.",
+        "links": []
+      },
+      {
+        "week": 6,
+        "part": "Tracking",
+        "title": "SLAM and visual-inertial tracking",
+        "lecture": "Simultaneous localization and mapping from PTAM and ORB-SLAM, feature tracking, and visual-inertial odometry with IMU preintegration for robust pose.",
+        "practice": "Run a SLAM or VIO pipeline and inspect tracked features, the map, and drift behavior.",
+        "project": "Inside-out tracking understood and instrumented in the project.",
+        "links": [
+          {
+            "title": "Introduction to SLAM (Cyrill Stachniss)",
+            "url": "https://www.youtube.com/watch?v=0I30M6yTklo"
+          },
+          {
+            "title": "SLAM course playlist (Cyrill Stachniss)",
+            "url": "https://www.youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_"
+          }
+        ]
+      },
+      {
+        "week": 7,
+        "part": "Tracking",
+        "title": "Spatial mapping and anchors",
+        "lecture": "Dense reconstruction from KinectFusion, plane detection, mesh-based spatial mapping, and persistent spatial anchors for world-locked content.",
+        "practice": "Detect planes and place anchored virtual content that stays fixed as the user moves.",
+        "project": "World-anchored content for AR or a mapped play space for VR.",
+        "links": [
+          {
+            "title": "KinectFusion: real-time 3D reconstruction (Microsoft Research)",
+            "url": "https://www.youtube.com/watch?v=KOUSSlKUJ-A"
+          }
+        ]
+      },
+      {
+        "week": 8,
+        "part": "Milestone",
+        "title": "Interim demo presentation",
+        "lecture": "Demonstrating an XR vertical slice: what a credible interim build shows for tracking, interaction, and comfort.",
+        "practice": "STUDENT PRESENTATION milestone, interim demo. Teams demo a working slice with tracked interaction and anchored content on the target device, and report measured latency and comfort observations.",
+        "project": "Playable vertical slice running on the target headset or device.",
+        "links": []
+      },
+      {
+        "week": 9,
+        "part": "Experience",
+        "title": "Immersive UX and locomotion",
+        "lecture": "Locomotion techniques, teleport versus continuous motion, diegetic UI, and spatial audio. Presence and the factors that build or break it.",
+        "practice": "Add a locomotion system and a spatial UI, and evaluate them with a comfort checklist.",
+        "project": "Locomotion and UI layer refining the experience.",
+        "links": [
+          {
+            "title": "Mel Slater: presence and the illusions of virtual reality",
+            "url": "https://www.youtube.com/watch?v=Npb1GXr-ROk"
+          },
+          {
+            "title": "Continuous versus teleport locomotion in VR",
+            "url": "https://www.youtube.com/watch?v=5ivAkk-hCqs"
+          }
+        ]
+      },
+      {
+        "week": 10,
+        "part": "Experience",
+        "title": "Comfort, latency, and cybersickness",
+        "lecture": "Sensory conflict theory, motion-to-photon latency, foveated and reprojection techniques, and design rules that reduce cybersickness.",
+        "practice": "Measure motion-to-photon latency and apply comfort mitigations, then run a small user test.",
+        "project": "Comfort-tuned build with measured latency.",
+        "links": [
+          {
+            "title": "Continuous versus teleport locomotion and comfort in VR",
+            "url": "https://www.youtube.com/watch?v=5ivAkk-hCqs"
+          }
+        ]
+      },
+      {
+        "week": 11,
+        "part": "Augmented reality",
+        "title": "AR rendering and occlusion",
+        "lecture": "Optical versus video see-through, registration and the Azuma survey definition of AR, depth occlusion, lighting estimation, and passthrough rendering.",
+        "practice": "Add real-world occlusion and lighting estimation so virtual objects blend with the scene.",
+        "project": "Believable AR compositing or refined VR rendering.",
+        "links": [
+          {
+            "title": "AR realism with the ARCore Depth API (Google)",
+            "url": "https://www.youtube.com/watch?v=q3Jd98xyBAA"
+          }
+        ]
+      },
+      {
+        "week": 12,
+        "part": "Polish",
+        "title": "Performance and multi-user",
+        "lecture": "XR performance budgets, single-pass stereo rendering, and the basics of shared and colocated multi-user spatial sessions.",
+        "practice": "Optimize the render path to the device frame budget and add an optional shared or multi-user feature.",
+        "project": "Feature-complete build ready for the final defense.",
+        "links": [
+          {
+            "title": "Advanced VR rendering (Alex Vlachos, Valve)",
+            "url": "https://www.youtube.com/watch?v=JO7G38_pxU4"
+          }
+        ]
+      },
+      {
+        "week": 13,
+        "part": "Milestone",
+        "title": "Final demo and oral defense",
+        "lecture": "Course synthesis: from SE(3) and SLAM to a deployed spatial computing application and the human-factors tradeoffs that shaped it.",
+        "practice": "STUDENT PRESENTATION milestone, final demo with oral defense. Teams present the finished application live on device, walk through their tracking and interaction architecture, justify comfort and performance choices, and answer technical questions.",
+        "project": "Final spatial computing application with documentation.",
+        "links": []
+      }
     ],
     "project": {
       "summary": "Each team builds one immersive VR or AR application across the term against OpenXR on a real headset or AR-capable device. The project grows weekly from a tracked stereo scene to a complete experience with hand interaction, spatial mapping, anchored content, locomotion, and a met comfort and latency budget. The same artifact is presented at the specification, interim, and final milestones.",
@@ -148,28 +551,110 @@
       "presence and the perceptual factors that sustain immersion"
     ],
     "literature": [
-      {"title": "A head-mounted three dimensional display", "authors": "Ivan E. Sutherland", "year": 1968, "url": "https://dl.acm.org/doi/10.1145/1476589.1476686"},
-      {"title": "A Survey of Augmented Reality", "authors": "Ronald T. Azuma", "year": 1997, "url": "https://direct.mit.edu/pvar/article/6/4/355/18336"},
-      {"title": "Parallel Tracking and Mapping for Small AR Workspaces", "authors": "Georg Klein and David Murray", "year": 2007, "url": "https://www.robots.ox.ac.uk/~gk/PTAM/"},
-      {"title": "ORB-SLAM: a Versatile and Accurate Monocular SLAM System", "authors": "Raul Mur-Artal, J. M. M. Montiel, and Juan D. Tardos", "year": 2015, "url": "https://arxiv.org/abs/1502.00956"},
-      {"title": "KinectFusion: Real-Time Dense Surface Mapping and Tracking", "authors": "Richard A. Newcombe, Shahram Izadi, and others", "year": 2011, "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ismar2011.pdf"},
-      {"title": "On-Manifold Preintegration for Real-Time Visual-Inertial Odometry", "authors": "Christian Forster, Luca Carlone, Frank Dellaert, and Davide Scaramuzza", "year": 2017, "url": "https://arxiv.org/abs/1512.02363"}
+      {
+        "title": "A head-mounted three dimensional display",
+        "authors": "Ivan E. Sutherland",
+        "year": 1968,
+        "url": "https://dl.acm.org/doi/10.1145/1476589.1476686"
+      },
+      {
+        "title": "A Survey of Augmented Reality",
+        "authors": "Ronald T. Azuma",
+        "year": 1997,
+        "url": "https://direct.mit.edu/pvar/article/6/4/355/18336"
+      },
+      {
+        "title": "Parallel Tracking and Mapping for Small AR Workspaces",
+        "authors": "Georg Klein and David Murray",
+        "year": 2007,
+        "url": "https://www.robots.ox.ac.uk/~gk/PTAM/"
+      },
+      {
+        "title": "ORB-SLAM: a Versatile and Accurate Monocular SLAM System",
+        "authors": "Raul Mur-Artal, J. M. M. Montiel, and Juan D. Tardos",
+        "year": 2015,
+        "url": "https://arxiv.org/abs/1502.00956"
+      },
+      {
+        "title": "KinectFusion: Real-Time Dense Surface Mapping and Tracking",
+        "authors": "Richard A. Newcombe, Shahram Izadi, and others",
+        "year": 2011,
+        "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ismar2011.pdf"
+      },
+      {
+        "title": "On-Manifold Preintegration for Real-Time Visual-Inertial Odometry",
+        "authors": "Christian Forster, Luca Carlone, Frank Dellaert, and Davide Scaramuzza",
+        "year": 2017,
+        "url": "https://arxiv.org/abs/1512.02363"
+      }
     ],
     "references": [
-      {"title": "The OpenXR Specification 1.1", "authors": "Khronos OpenXR Working Group", "year": 2025, "kind": "Documentation", "url": "https://registry.khronos.org/OpenXR/specs/1.1/html/xrspec.html"},
-      {"title": "3D User Interfaces: Theory and Practice, 2nd Edition", "authors": "Joseph LaViola, Ernst Kruijff, Ryan McMahan, Doug Bowman, and Ivan Poupyrev", "year": 2017, "kind": "Textbook", "url": "https://search.worldcat.org/title/935986831", "note": "ISBN 9780134034324"},
-      {"title": "Multiple View Geometry in Computer Vision, 2nd Edition", "authors": "Richard Hartley and Andrew Zisserman", "year": 2004, "kind": "Textbook", "url": "https://www.cambridge.org/core/books/multiple-view-geometry-in-computer-vision/0B6F289C78B2B23F596CAA76D3D43F7A"},
-      {"title": "XR Interaction Toolkit Documentation", "authors": "Unity Technologies", "year": 2024, "kind": "Documentation", "url": "https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@latest/"},
-      {"title": "Mixed Reality Documentation", "authors": "Microsoft", "year": 2025, "kind": "Documentation", "url": "https://learn.microsoft.com/en-us/windows/mixed-reality/", "note": "Includes MRTK3 and HoloLens guidance"},
-      {"title": "ARKit Documentation", "authors": "Apple", "year": 2025, "kind": "Documentation", "url": "https://developer.apple.com/documentation/arkit"},
-      {"title": "Meta Horizon OS Developer Documentation", "authors": "Meta", "year": 2025, "kind": "Documentation", "url": "https://developers.meta.com/horizon/documentation/", "note": "Quest hand tracking, passthrough, and anchors"},
-      {"title": "ARCore Documentation", "authors": "Google", "year": 2025, "kind": "Documentation", "url": "https://developers.google.com/ar"}
+      {
+        "title": "The OpenXR Specification 1.1",
+        "authors": "Khronos OpenXR Working Group",
+        "year": 2025,
+        "kind": "Documentation",
+        "url": "https://registry.khronos.org/OpenXR/specs/1.1/html/xrspec.html"
+      },
+      {
+        "title": "3D User Interfaces: Theory and Practice, 2nd Edition",
+        "authors": "Joseph LaViola, Ernst Kruijff, Ryan McMahan, Doug Bowman, and Ivan Poupyrev",
+        "year": 2017,
+        "kind": "Textbook",
+        "url": "https://search.worldcat.org/title/935986831",
+        "note": "ISBN 9780134034324"
+      },
+      {
+        "title": "Multiple View Geometry in Computer Vision, 2nd Edition",
+        "authors": "Richard Hartley and Andrew Zisserman",
+        "year": 2004,
+        "kind": "Textbook",
+        "url": "https://www.cambridge.org/core/books/multiple-view-geometry-in-computer-vision/0B6F289C78B2B23F596CAA76D3D43F7A"
+      },
+      {
+        "title": "XR Interaction Toolkit Documentation",
+        "authors": "Unity Technologies",
+        "year": 2024,
+        "kind": "Documentation",
+        "url": "https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@latest/"
+      },
+      {
+        "title": "Mixed Reality Documentation",
+        "authors": "Microsoft",
+        "year": 2025,
+        "kind": "Documentation",
+        "url": "https://learn.microsoft.com/en-us/windows/mixed-reality/",
+        "note": "Includes MRTK3 and HoloLens guidance"
+      },
+      {
+        "title": "ARKit Documentation",
+        "authors": "Apple",
+        "year": 2025,
+        "kind": "Documentation",
+        "url": "https://developer.apple.com/documentation/arkit"
+      },
+      {
+        "title": "Meta Horizon OS Developer Documentation",
+        "authors": "Meta",
+        "year": 2025,
+        "kind": "Documentation",
+        "url": "https://developers.meta.com/horizon/documentation/",
+        "note": "Quest hand tracking, passthrough, and anchors"
+      },
+      {
+        "title": "ARCore Documentation",
+        "authors": "Google",
+        "year": 2025,
+        "kind": "Documentation",
+        "url": "https://developers.google.com/ar"
+      }
     ],
     "build": "Built a cross-device spatial computing application on OpenXR with the Unity XR Interaction Toolkit, implementing hand-tracked interaction, SLAM-based inside-out tracking, plane detection and spatial anchors, and a comfort-tuned locomotion system that meets the device motion-to-photon latency budget."
   },
   "DF1": {
     "tagline": "Build a multi-sensor estimation and tracking pipeline",
     "subtitle": "stochastic estimation, recursive Bayesian filtering, and multi-sensor data fusion",
+    "ai_usage": "Students use AI assistants and vibe-coding to implement and refactor estimators in Python, turning filter equations into NumPy and FilterPy code for Kalman, unscented, and particle filters and for data association. They drive notebooks, Stone Soup, and the dataset tooling through assistants and MCP servers, asking the model to set up a tracking scenario, generate synthetic sensor measurements and ground truth, and run batch experiments. AI helps generate unit tests for filter updates and clutter handling and to analyze covariance-consistency results such as the normalized estimation error squared. Students treat the model as a partner for deriving and checking estimator math, while verifying every result against consistency metrics and ground-truth tracks.",
     "objectives": [
       "Analyze discrete-time signals and systems with sampling, the DFT, and digital filtering",
       "Formulate state estimation as recursive Bayesian inference over a state-space model",
@@ -183,19 +668,196 @@
       "Design and defend a complete sensor fusion and tracking system as a team project"
     ],
     "weeks": [
-      {"week": 1, "part": "Signal processing", "title": "Discrete-time signals and sampling", "lecture": "Sampling and the Nyquist criterion, discrete-time signals and systems, convolution, and the discrete and fast Fourier transforms.", "practice": "Sample, transform, and inspect real sensor signals in Python and identify aliasing and spectral content.", "project": "Repository, a sensor dataset, and a signal-inspection notebook."},
-      {"week": 2, "part": "Signal processing", "title": "Digital filtering and spectral estimation", "lecture": "FIR and IIR filter design, the z-transform, frequency response, and power spectral density estimation for noisy measurements.", "practice": "Design and apply digital filters to denoise sensor streams and estimate their spectra.", "project": "Filtering and preprocessing front end for the sensor data."},
-      {"week": 3, "part": "Estimation", "title": "Probability and Bayesian estimation", "lecture": "Random variables, the Gaussian, conditional expectation, and the recursive Bayes filter as the foundation of all state estimation.", "practice": "Implement a recursive Bayes filter on a discretized state space and visualize belief updates.", "project": "Bayesian estimation baseline on a toy tracking problem."},
-      {"week": 4, "part": "Estimation", "title": "The Kalman filter", "lecture": "State-space models, the linear Gaussian assumption, and the derivation of the Kalman filter as the optimal recursive minimum-mean-square-error estimator from Kalman 1960.", "practice": "Implement a Kalman filter for a constant-velocity target and check covariance consistency.", "project": "Kalman tracker estimating state from noisy measurements."},
-      {"week": 5, "part": "Milestone", "title": "Specification presentation", "lecture": "Scoping a fusion project: sensors, state model, motion model, evaluation metrics, and technical risks. Rubric for the specification defense.", "practice": "STUDENT PRESENTATION milestone, specification. Teams present their estimation problem, the sensors and state-space model, the filtering approach, an evaluation plan with metrics, and a milestone plan.", "project": "Approved project specification and an estimation design."},
-      {"week": 6, "part": "Nonlinear estimation", "title": "Extended and unscented Kalman filters", "lecture": "Linearizing nonlinear dynamics with the EKF and its Jacobians, and the sigma-point unscented transform of Julier and Uhlmann for better consistency.", "practice": "Implement an EKF and a UKF for a nonlinear tracking model and compare their accuracy and consistency.", "project": "Nonlinear filter handling the project motion model."},
-      {"week": 7, "part": "Nonlinear estimation", "title": "Particle filters", "lecture": "Sequential Monte Carlo, importance sampling, resampling, and the bootstrap particle filter of Gordon, Salmond, and Smith for non-Gaussian state estimation.", "practice": "Implement a particle filter and apply it to a multimodal or non-Gaussian tracking problem.", "project": "Particle filter alternative evaluated against the Kalman variants."},
-      {"week": 8, "part": "Milestone", "title": "Interim demo presentation", "lecture": "Demonstrating an estimation slice: showing a working single-sensor tracker with quantified accuracy and consistency.", "practice": "STUDENT PRESENTATION milestone, interim demo. Teams demo a working single-sensor filter on real or recorded data, report error and covariance-consistency metrics, and show estimated tracks against ground truth.", "project": "Working single-sensor tracker with quantified performance."},
-      {"week": 9, "part": "Fusion", "title": "Multi-sensor data fusion", "lecture": "Centralized versus decentralized fusion, measurement and track fusion, the information filter, and handling asynchronous and out-of-sequence measurements.", "practice": "Fuse two heterogeneous sensors into one state estimate and measure the accuracy gain.", "project": "Multi-sensor fusion improving the track estimate."},
-      {"week": 10, "part": "Fusion", "title": "Data association and multi-target tracking", "lecture": "The data-association problem, nearest neighbor, probabilistic data association, and multiple hypothesis tracking from Reid for multiple targets in clutter.", "practice": "Add gating and data association to track multiple targets in cluttered measurements.", "project": "Multi-target tracker with association handling clutter."},
-      {"week": 11, "part": "Sensors", "title": "Radar, EO-IR, and RF sensor models", "lecture": "Radar range-Doppler processing and detection, EO-IR imaging geometry, RF angle-of-arrival, and the noise and measurement models each sensor contributes to fusion.", "practice": "Model a radar or EO-IR measurement source and integrate its detections into the fusion pipeline.", "project": "Realistic heterogeneous sensor models feeding the tracker."},
-      {"week": 12, "part": "Integration", "title": "Evaluation and robustness", "lecture": "Estimator consistency with the normalized estimation error squared, the Cramer-Rao bound, track metrics, and robustness to dropout and bias.", "practice": "Run a full evaluation with consistency tests and stress the system with sensor dropout and bias.", "project": "Validated, robust fusion system ready for the final defense."},
-      {"week": 13, "part": "Milestone", "title": "Final demo and oral defense", "lecture": "Course synthesis: from the Bayes filter to a deployed multi-sensor tracking system and the estimation tradeoffs that defined it.", "practice": "STUDENT PRESENTATION milestone, final demo with oral defense. Teams present the finished fusion system, walk through their filtering and association architecture, justify estimator choices with consistency evidence, and answer technical questions.", "project": "Final sensor fusion and tracking system with documentation."}
+      {
+        "week": 1,
+        "part": "Signal processing",
+        "title": "Discrete-time signals and sampling",
+        "lecture": "Sampling and the Nyquist criterion, discrete-time signals and systems, convolution, and the discrete and fast Fourier transforms.",
+        "practice": "Sample, transform, and inspect real sensor signals in Python and identify aliasing and spectral content.",
+        "project": "Repository, a sensor dataset, and a signal-inspection notebook.",
+        "links": [
+          {
+            "title": "MIT 6.003: convolution",
+            "url": "https://www.youtube.com/watch?v=w1Z2FX8rQc0"
+          },
+          {
+            "title": "MIT 6.003: sampling",
+            "url": "https://www.youtube.com/watch?v=1El4znkRH0g"
+          },
+          {
+            "title": "MIT 6.003: sampling and quantization",
+            "url": "https://www.youtube.com/watch?v=bJvv5SckGeA"
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "part": "Signal processing",
+        "title": "Digital filtering and spectral estimation",
+        "lecture": "FIR and IIR filter design, the z-transform, frequency response, and power spectral density estimation for noisy measurements.",
+        "practice": "Design and apply digital filters to denoise sensor streams and estimate their spectra.",
+        "project": "Filtering and preprocessing front end for the sensor data.",
+        "links": [
+          {
+            "title": "MIT: design of FIR digital filters",
+            "url": "https://www.youtube.com/watch?v=oJv4dsUID0Q"
+          },
+          {
+            "title": "MIT: design of IIR digital filters",
+            "url": "https://www.youtube.com/watch?v=U13m6L6R58w"
+          },
+          {
+            "title": "MIT 6.003: the z transform",
+            "url": "https://www.youtube.com/watch?v=iI-ejO9hczw"
+          }
+        ]
+      },
+      {
+        "week": 3,
+        "part": "Estimation",
+        "title": "Probability and Bayesian estimation",
+        "lecture": "Random variables, the Gaussian, conditional expectation, and the recursive Bayes filter as the foundation of all state estimation.",
+        "practice": "Implement a recursive Bayes filter on a discretized state space and visualize belief updates.",
+        "project": "Bayesian estimation baseline on a toy tracking problem.",
+        "links": [
+          {
+            "title": "The Bayes filter (Cyrill Stachniss)",
+            "url": "https://www.youtube.com/watch?v=0lKHFJpaZvE"
+          }
+        ]
+      },
+      {
+        "week": 4,
+        "part": "Estimation",
+        "title": "The Kalman filter",
+        "lecture": "State-space models, the linear Gaussian assumption, and the derivation of the Kalman filter as the optimal recursive minimum-mean-square-error estimator from Kalman 1960.",
+        "practice": "Implement a Kalman filter for a constant-velocity target and check covariance consistency.",
+        "project": "Kalman tracker estimating state from noisy measurements.",
+        "links": [
+          {
+            "title": "Why use Kalman filters (MATLAB Tech Talk)",
+            "url": "https://www.youtube.com/watch?v=mwn8xhgNpFY"
+          },
+          {
+            "title": "Kalman filter and EKF (Cyrill Stachniss)",
+            "url": "https://www.youtube.com/watch?v=E-6paM_Iwfc"
+          }
+        ]
+      },
+      {
+        "week": 5,
+        "part": "Milestone",
+        "title": "Specification presentation",
+        "lecture": "Scoping a fusion project: sensors, state model, motion model, evaluation metrics, and technical risks. Rubric for the specification defense.",
+        "practice": "STUDENT PRESENTATION milestone, specification. Teams present their estimation problem, the sensors and state-space model, the filtering approach, an evaluation plan with metrics, and a milestone plan.",
+        "project": "Approved project specification and an estimation design.",
+        "links": []
+      },
+      {
+        "week": 6,
+        "part": "Nonlinear estimation",
+        "title": "Extended and unscented Kalman filters",
+        "lecture": "Linearizing nonlinear dynamics with the EKF and its Jacobians, and the sigma-point unscented transform of Julier and Uhlmann for better consistency.",
+        "practice": "Implement an EKF and a UKF for a nonlinear tracking model and compare their accuracy and consistency.",
+        "project": "Nonlinear filter handling the project motion model.",
+        "links": [
+          {
+            "title": "Kalman filter and extended Kalman filter (Cyrill Stachniss)",
+            "url": "https://www.youtube.com/watch?v=E-6paM_Iwfc"
+          },
+          {
+            "title": "The unscented Kalman filter (Cyrill Stachniss)",
+            "url": "https://www.youtube.com/watch?v=DWDzmweTKsQ"
+          }
+        ]
+      },
+      {
+        "week": 7,
+        "part": "Nonlinear estimation",
+        "title": "Particle filters",
+        "lecture": "Sequential Monte Carlo, importance sampling, resampling, and the bootstrap particle filter of Gordon, Salmond, and Smith for non-Gaussian state estimation.",
+        "practice": "Implement a particle filter and apply it to a multimodal or non-Gaussian tracking problem.",
+        "project": "Particle filter alternative evaluated against the Kalman variants.",
+        "links": [
+          {
+            "title": "Particle filter and Monte Carlo localization (Cyrill Stachniss)",
+            "url": "https://www.youtube.com/watch?v=MsYlueVDLI0"
+          }
+        ]
+      },
+      {
+        "week": 8,
+        "part": "Milestone",
+        "title": "Interim demo presentation",
+        "lecture": "Demonstrating an estimation slice: showing a working single-sensor tracker with quantified accuracy and consistency.",
+        "practice": "STUDENT PRESENTATION milestone, interim demo. Teams demo a working single-sensor filter on real or recorded data, report error and covariance-consistency metrics, and show estimated tracks against ground truth.",
+        "project": "Working single-sensor tracker with quantified performance.",
+        "links": []
+      },
+      {
+        "week": 9,
+        "part": "Fusion",
+        "title": "Multi-sensor data fusion",
+        "lecture": "Centralized versus decentralized fusion, measurement and track fusion, the information filter, and handling asynchronous and out-of-sequence measurements.",
+        "practice": "Fuse two heterogeneous sensors into one state estimate and measure the accuracy gain.",
+        "project": "Multi-sensor fusion improving the track estimate.",
+        "links": [
+          {
+            "title": "The extended information filter (Cyrill Stachniss)",
+            "url": "https://www.youtube.com/watch?v=wD6BGkGOW4A"
+          }
+        ]
+      },
+      {
+        "week": 10,
+        "part": "Fusion",
+        "title": "Data association and multi-target tracking",
+        "lecture": "The data-association problem, nearest neighbor, probabilistic data association, and multiple hypothesis tracking from Reid for multiple targets in clutter.",
+        "practice": "Add gating and data association to track multiple targets in cluttered measurements.",
+        "project": "Multi-target tracker with association handling clutter.",
+        "links": [
+          {
+            "title": "Tracking multiple objects: sensor fusion and tracking (MATLAB)",
+            "url": "https://www.youtube.com/watch?v=IIt1LHIHYc4"
+          }
+        ]
+      },
+      {
+        "week": 11,
+        "part": "Sensors",
+        "title": "Radar, EO-IR, and RF sensor models",
+        "lecture": "Radar range-Doppler processing and detection, EO-IR imaging geometry, RF angle-of-arrival, and the noise and measurement models each sensor contributes to fusion.",
+        "practice": "Model a radar or EO-IR measurement source and integrate its detections into the fusion pipeline.",
+        "project": "Realistic heterogeneous sensor models feeding the tracker.",
+        "links": [
+          {
+            "title": "MIT introduction to radar systems: introduction",
+            "url": "https://www.youtube.com/watch?v=Hw5IaS6-Fzw"
+          },
+          {
+            "title": "MIT introduction to radar systems: signal processing",
+            "url": "https://www.youtube.com/watch?v=2yEzO4x7jOc"
+          }
+        ]
+      },
+      {
+        "week": 12,
+        "part": "Integration",
+        "title": "Evaluation and robustness",
+        "lecture": "Estimator consistency with the normalized estimation error squared, the Cramer-Rao bound, track metrics, and robustness to dropout and bias.",
+        "practice": "Run a full evaluation with consistency tests and stress the system with sensor dropout and bias.",
+        "project": "Validated, robust fusion system ready for the final defense.",
+        "links": []
+      },
+      {
+        "week": 13,
+        "part": "Milestone",
+        "title": "Final demo and oral defense",
+        "lecture": "Course synthesis: from the Bayes filter to a deployed multi-sensor tracking system and the estimation tradeoffs that defined it.",
+        "practice": "STUDENT PRESENTATION milestone, final demo with oral defense. Teams present the finished fusion system, walk through their filtering and association architecture, justify estimator choices with consistency evidence, and answer technical questions.",
+        "project": "Final sensor fusion and tracking system with documentation.",
+        "links": []
+      }
     ],
     "project": {
       "summary": "Each team builds one multi-sensor estimation and tracking pipeline across the term on real or realistically simulated sensor data. The project grows weekly from signal preprocessing and a single Kalman tracker to a fused multi-target system with data association, heterogeneous sensor models, and validated covariance consistency. The same artifact is presented at the specification, interim, and final milestones.",
@@ -233,26 +895,96 @@
       "estimator consistency, the covariance, and the Cramer-Rao lower bound"
     ],
     "literature": [
-      {"title": "A New Approach to Linear Filtering and Prediction Problems", "authors": "Rudolf E. Kalman", "year": 1960, "url": "https://doi.org/10.1115/1.3662552"},
-      {"title": "Novel approach to nonlinear and non-Gaussian Bayesian state estimation", "authors": "Neil J. Gordon, David J. Salmond, and Adrian F. M. Smith", "year": 1993, "url": "https://doi.org/10.1049/ip-f-2.1993.0015"},
-      {"title": "New extension of the Kalman filter to nonlinear systems", "authors": "Simon J. Julier and Jeffrey K. Uhlmann", "year": 1997, "url": "https://doi.org/10.1117/12.280797"},
-      {"title": "An Algorithm for Tracking Multiple Targets", "authors": "Donald B. Reid", "year": 1979, "url": "https://doi.org/10.1109/TAC.1979.1102177"}
+      {
+        "title": "A New Approach to Linear Filtering and Prediction Problems",
+        "authors": "Rudolf E. Kalman",
+        "year": 1960,
+        "url": "https://doi.org/10.1115/1.3662552"
+      },
+      {
+        "title": "Novel approach to nonlinear and non-Gaussian Bayesian state estimation",
+        "authors": "Neil J. Gordon, David J. Salmond, and Adrian F. M. Smith",
+        "year": 1993,
+        "url": "https://doi.org/10.1049/ip-f-2.1993.0015"
+      },
+      {
+        "title": "New extension of the Kalman filter to nonlinear systems",
+        "authors": "Simon J. Julier and Jeffrey K. Uhlmann",
+        "year": 1997,
+        "url": "https://doi.org/10.1117/12.280797"
+      },
+      {
+        "title": "An Algorithm for Tracking Multiple Targets",
+        "authors": "Donald B. Reid",
+        "year": 1979,
+        "url": "https://doi.org/10.1109/TAC.1979.1102177"
+      }
     ],
     "references": [
-      {"title": "Estimation with Applications to Tracking and Navigation", "authors": "Yaakov Bar-Shalom, X. Rong Li, and Thiagalingam Kirubarajan", "year": 2001, "kind": "Textbook", "url": "https://onlinelibrary.wiley.com/doi/book/10.1002/0471221279"},
-      {"title": "Probabilistic Robotics", "authors": "Sebastian Thrun, Wolfram Burgard, and Dieter Fox", "year": 2005, "kind": "Textbook", "url": "https://mitpress.mit.edu/9780262201629/probabilistic-robotics/"},
-      {"title": "Discrete-Time Signal Processing, 3rd Edition", "authors": "Alan V. Oppenheim and Ronald W. Schafer", "year": 2009, "kind": "Textbook", "url": "https://www.pearson.com/en-us/subject-catalog/p/discrete-time-signal-processing/P200000003226/9780137549771"},
-      {"title": "Fundamentals of Radar Signal Processing, 3rd Edition", "authors": "Mark A. Richards", "year": 2022, "kind": "Textbook", "url": "https://www.mheducation.com/highered/mhp/product/fundamentals-radar-signal-processing-third-edition.html"},
-      {"title": "Kalman and Bayesian Filters in Python", "authors": "Roger R. Labbe", "year": 2020, "kind": "Course", "url": "https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python", "note": "Free interactive book and notebooks"},
-      {"title": "Sensor Fusion and Tracking Toolbox Documentation", "authors": "MathWorks", "year": 2025, "kind": "Documentation", "url": "https://www.mathworks.com/help/fusion/index.html"},
-      {"title": "scipy.signal Reference", "authors": "SciPy developers", "year": 2025, "kind": "Documentation", "url": "https://docs.scipy.org/doc/scipy/reference/signal.html"},
-      {"title": "FilterPy Documentation", "authors": "Roger R. Labbe", "year": 2024, "kind": "Documentation", "url": "https://filterpy.readthedocs.io/en/latest/"}
+      {
+        "title": "Estimation with Applications to Tracking and Navigation",
+        "authors": "Yaakov Bar-Shalom, X. Rong Li, and Thiagalingam Kirubarajan",
+        "year": 2001,
+        "kind": "Textbook",
+        "url": "https://onlinelibrary.wiley.com/doi/book/10.1002/0471221279"
+      },
+      {
+        "title": "Probabilistic Robotics",
+        "authors": "Sebastian Thrun, Wolfram Burgard, and Dieter Fox",
+        "year": 2005,
+        "kind": "Textbook",
+        "url": "https://mitpress.mit.edu/9780262201629/probabilistic-robotics/"
+      },
+      {
+        "title": "Discrete-Time Signal Processing, 3rd Edition",
+        "authors": "Alan V. Oppenheim and Ronald W. Schafer",
+        "year": 2009,
+        "kind": "Textbook",
+        "url": "https://www.pearson.com/en-us/subject-catalog/p/discrete-time-signal-processing/P200000003226/9780137549771"
+      },
+      {
+        "title": "Fundamentals of Radar Signal Processing, 3rd Edition",
+        "authors": "Mark A. Richards",
+        "year": 2022,
+        "kind": "Textbook",
+        "url": "https://www.mheducation.com/highered/mhp/product/fundamentals-radar-signal-processing-third-edition.html"
+      },
+      {
+        "title": "Kalman and Bayesian Filters in Python",
+        "authors": "Roger R. Labbe",
+        "year": 2020,
+        "kind": "Course",
+        "url": "https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python",
+        "note": "Free interactive book and notebooks"
+      },
+      {
+        "title": "Sensor Fusion and Tracking Toolbox Documentation",
+        "authors": "MathWorks",
+        "year": 2025,
+        "kind": "Documentation",
+        "url": "https://www.mathworks.com/help/fusion/index.html"
+      },
+      {
+        "title": "scipy.signal Reference",
+        "authors": "SciPy developers",
+        "year": 2025,
+        "kind": "Documentation",
+        "url": "https://docs.scipy.org/doc/scipy/reference/signal.html"
+      },
+      {
+        "title": "FilterPy Documentation",
+        "authors": "Roger R. Labbe",
+        "year": 2024,
+        "kind": "Documentation",
+        "url": "https://filterpy.readthedocs.io/en/latest/"
+      }
     ],
     "build": "Built a multi-sensor estimation and tracking pipeline in Python with FilterPy and Stone Soup, implementing Kalman, unscented, and particle filters with data association to fuse radar, EO-IR, and inertial measurements into validated multi-target tracks with covariance-consistency checks."
   },
   "DF2": {
     "tagline": "Build a certifiable real-time safety-critical control system",
     "subtitle": "real-time scheduling, dependability, and certification of safety-critical embedded software",
+    "ai_usage": "Students use AI assistants and vibe-coding to write and refactor RTOS task code for FreeRTOS or Zephyr, generate scheduling and synchronization scaffolding, and translate response-time and utilization analysis into checkable code. They interact with toolchains and analyzers through assistants and MCP servers that expose the build, the target board, schedulability tools, and coverage tools, asking the model to set up a task set or instrument timing measurements. AI generates requirements-based tests, fault-injection scenarios, and traceability scaffolding for a DO-178C-style evidence package, and helps analyze structural coverage and timing results. Because the code is safety-critical, students rigorously review and independently verify every AI suggestion against timing budgets, schedulability proofs, and the safety requirements.",
     "objectives": [
       "Model real-time tasks with periods, deadlines, and worst-case execution times",
       "Apply rate-monotonic and earliest-deadline-first scheduling and prove schedulability",
@@ -266,19 +998,197 @@
       "Design and defend a complete mission-critical real-time system as a team project"
     ],
     "weeks": [
-      {"week": 1, "part": "Foundations", "title": "Real-time systems and timing", "lecture": "What makes a system real-time: hard versus soft deadlines, the task model with periods and deadlines, and why timing correctness is a functional requirement.", "practice": "Set up the RTOS toolchain and run periodic tasks, measuring their timing on target hardware.", "project": "Repository, target platform, and periodic tasks with measured timing."},
-      {"week": 2, "part": "Scheduling", "title": "Fixed-priority scheduling", "lecture": "Rate-monotonic scheduling and the Liu and Layland utilization bound, optimality of rate-monotonic priority assignment, and the periodic task model.", "practice": "Assign rate-monotonic priorities to a task set and verify schedulability against the bound.", "project": "Rate-monotonic task set running on the RTOS."},
-      {"week": 3, "part": "Scheduling", "title": "Response-time analysis and EDF", "lecture": "Exact response-time analysis from Audsley and colleagues, earliest-deadline-first dynamic scheduling, and the comparison of fixed and dynamic priority.", "practice": "Compute worst-case response times for the task set and compare a fixed-priority and an EDF schedule.", "project": "Schedulability analysis report for the project task set."},
-      {"week": 4, "part": "Scheduling", "title": "Resource sharing and priority inversion", "lecture": "Priority inversion, the priority inheritance and priority ceiling protocols of Sha, Rajkumar, and Lehoczky, and bounding blocking time.", "practice": "Reproduce a priority inversion, then apply priority inheritance and measure the bounded blocking.", "project": "Synchronization with bounded blocking in the system."},
-      {"week": 5, "part": "Milestone", "title": "Specification presentation", "lecture": "Scoping a safety-critical project: the task model, timing requirements, safety requirements, and certification target. Rubric for the specification defense.", "practice": "STUDENT PRESENTATION milestone, specification. Teams present their system concept, the task and timing model, identified hazards and safety requirements, the target certification objectives, and a milestone plan.", "project": "Approved specification with a requirements and timing model."},
-      {"week": 6, "part": "Timing", "title": "Worst-case execution time", "lecture": "WCET analysis, the challenge of caches and pipelines, static versus measurement-based estimation, and why timing predictability matters for safety.", "practice": "Estimate WCET for critical tasks with measurement and static analysis and bound the timing.", "project": "WCET bounds feeding the schedulability argument."},
-      {"week": 7, "part": "Fault tolerance", "title": "Redundancy and fault tolerance", "lecture": "Fault, error, and failure from the Avizienis dependability taxonomy, redundancy, N-version programming, and triple modular redundancy with voting.", "practice": "Add redundancy and a voter to a critical function and inject faults to test recovery.", "project": "Fault-tolerant critical path in the system."},
-      {"week": 8, "part": "Milestone", "title": "Interim demo presentation", "lecture": "Demonstrating a safety slice: a scheduled, fault-tolerant build meeting deadlines under load.", "practice": "STUDENT PRESENTATION milestone, interim demo. Teams demo the scheduled system meeting its deadlines on target, show timing and overload behavior, and demonstrate fault detection and recovery.", "project": "Scheduled, fault-tolerant build meeting deadlines."},
-      {"week": 9, "part": "Dependability", "title": "Reliability and safety modeling", "lecture": "Reliability, availability, MTBF, fault trees, failure modes and effects analysis, and quantifying safety integrity.", "practice": "Build a fault tree and an FMEA for the system and compute a reliability estimate.", "project": "Reliability and hazard analysis for the design."},
-      {"week": 10, "part": "Distributed", "title": "Distributed fault tolerance and consensus", "lecture": "Byzantine faults and the Byzantine generals problem of Lamport, agreement under failure, and time-triggered communication for deterministic distributed systems.", "practice": "Implement a fault-tolerant agreement or a time-triggered message schedule across nodes.", "project": "Robust distributed coordination in the system."},
-      {"week": 11, "part": "Certification", "title": "Safety standards and DO-178C", "lecture": "The certification landscape, DO-178C software levels and objectives, requirements-based testing, structural coverage, and traceability.", "practice": "Build a requirements-to-test traceability matrix and measure structural coverage on critical code.", "project": "Certification evidence package taking shape."},
-      {"week": 12, "part": "Integration", "title": "Verification and the safety case", "lecture": "Verification strategy, the assurance argument and safety case, configuration management, and tool qualification for certified workflows.", "practice": "Assemble the safety case and complete verification against the requirements and timing budget.", "project": "Verified system with a safety case ready for the final defense."},
-      {"week": 13, "part": "Milestone", "title": "Final demo and oral defense", "lecture": "Course synthesis: from rate-monotonic scheduling to a verified, certifiable safety-critical system and the dependability tradeoffs that defined it.", "practice": "STUDENT PRESENTATION milestone, final demo with oral defense. Teams present the finished system meeting its deadlines on target, walk through scheduling, fault tolerance, and certification evidence, and answer technical questions.", "project": "Final mission-critical real-time system with certification evidence."}
+      {
+        "week": 1,
+        "part": "Foundations",
+        "title": "Real-time systems and timing",
+        "lecture": "What makes a system real-time: hard versus soft deadlines, the task model with periods and deadlines, and why timing correctness is a functional requirement.",
+        "practice": "Set up the RTOS toolchain and run periodic tasks, measuring their timing on target hardware.",
+        "project": "Repository, target platform, and periodic tasks with measured timing.",
+        "links": [
+          {
+            "title": "NPTEL real-time systems, lecture 1: introduction (Rajib Mall)",
+            "url": "https://www.youtube.com/watch?v=9G9vEjrXDvE"
+          },
+          {
+            "title": "NPTEL real-time systems, lecture 2: system characteristics",
+            "url": "https://www.youtube.com/watch?v=vo7LN-zMI2s"
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "part": "Scheduling",
+        "title": "Fixed-priority scheduling",
+        "lecture": "Rate-monotonic scheduling and the Liu and Layland utilization bound, optimality of rate-monotonic priority assignment, and the periodic task model.",
+        "practice": "Assign rate-monotonic priorities to a task set and verify schedulability against the bound.",
+        "project": "Rate-monotonic task set running on the RTOS.",
+        "links": [
+          {
+            "title": "NPTEL real-time systems, lecture 6: task scheduling basics",
+            "url": "https://www.youtube.com/watch?v=a5n8TMNbyrg"
+          },
+          {
+            "title": "NPTEL real-time systems, lecture 9: rate monotonic scheduler",
+            "url": "https://www.youtube.com/watch?v=GVqIN8HxkBI"
+          }
+        ]
+      },
+      {
+        "week": 3,
+        "part": "Scheduling",
+        "title": "Response-time analysis and EDF",
+        "lecture": "Exact response-time analysis from Audsley and colleagues, earliest-deadline-first dynamic scheduling, and the comparison of fixed and dynamic priority.",
+        "practice": "Compute worst-case response times for the task set and compare a fixed-priority and an EDF schedule.",
+        "project": "Schedulability analysis report for the project task set.",
+        "links": [
+          {
+            "title": "NPTEL real-time systems, lecture 8: event-driven scheduling, EDF",
+            "url": "https://www.youtube.com/watch?v=aDJZAs1P1M0"
+          },
+          {
+            "title": "NPTEL real-time systems, lecture 11: deadline monotonic scheduling",
+            "url": "https://www.youtube.com/watch?v=eskFflL7Ny0"
+          }
+        ]
+      },
+      {
+        "week": 4,
+        "part": "Scheduling",
+        "title": "Resource sharing and priority inversion",
+        "lecture": "Priority inversion, the priority inheritance and priority ceiling protocols of Sha, Rajkumar, and Lehoczky, and bounding blocking time.",
+        "practice": "Reproduce a priority inversion, then apply priority inheritance and measure the bounded blocking.",
+        "project": "Synchronization with bounded blocking in the system.",
+        "links": [
+          {
+            "title": "NPTEL real-time systems, lecture 13: resource sharing",
+            "url": "https://www.youtube.com/watch?v=8mu6QLva7v4"
+          },
+          {
+            "title": "NPTEL real-time systems, lecture 14: priority ceiling protocols",
+            "url": "https://www.youtube.com/watch?v=64FQ4OwwVOQ"
+          },
+          {
+            "title": "NPTEL real-time systems, lecture 15: priority ceiling analysis",
+            "url": "https://www.youtube.com/watch?v=zTewlYX_dF4"
+          }
+        ]
+      },
+      {
+        "week": 5,
+        "part": "Milestone",
+        "title": "Specification presentation",
+        "lecture": "Scoping a safety-critical project: the task model, timing requirements, safety requirements, and certification target. Rubric for the specification defense.",
+        "practice": "STUDENT PRESENTATION milestone, specification. Teams present their system concept, the task and timing model, identified hazards and safety requirements, the target certification objectives, and a milestone plan.",
+        "project": "Approved specification with a requirements and timing model.",
+        "links": []
+      },
+      {
+        "week": 6,
+        "part": "Timing",
+        "title": "Worst-case execution time",
+        "lecture": "WCET analysis, the challenge of caches and pipelines, static versus measurement-based estimation, and why timing predictability matters for safety.",
+        "practice": "Estimate WCET for critical tasks with measurement and static analysis and bound the timing.",
+        "project": "WCET bounds feeding the schedulability argument.",
+        "links": [
+          {
+            "title": "Real-time analysis and worst-case execution time",
+            "url": "https://www.youtube.com/watch?v=lTYEkmeWx4k"
+          }
+        ]
+      },
+      {
+        "week": 7,
+        "part": "Fault tolerance",
+        "title": "Redundancy and fault tolerance",
+        "lecture": "Fault, error, and failure from the Avizienis dependability taxonomy, redundancy, N-version programming, and triple modular redundancy with voting.",
+        "practice": "Add redundancy and a voter to a critical function and inject faults to test recovery.",
+        "project": "Fault-tolerant critical path in the system.",
+        "links": [
+          {
+            "title": "Triple modular redundancy and hardware reliability",
+            "url": "https://www.youtube.com/watch?v=FbvUCBA-q9A"
+          }
+        ]
+      },
+      {
+        "week": 8,
+        "part": "Milestone",
+        "title": "Interim demo presentation",
+        "lecture": "Demonstrating a safety slice: a scheduled, fault-tolerant build meeting deadlines under load.",
+        "practice": "STUDENT PRESENTATION milestone, interim demo. Teams demo the scheduled system meeting its deadlines on target, show timing and overload behavior, and demonstrate fault detection and recovery.",
+        "project": "Scheduled, fault-tolerant build meeting deadlines.",
+        "links": []
+      },
+      {
+        "week": 9,
+        "part": "Dependability",
+        "title": "Reliability and safety modeling",
+        "lecture": "Reliability, availability, MTBF, fault trees, failure modes and effects analysis, and quantifying safety integrity.",
+        "practice": "Build a fault tree and an FMEA for the system and compute a reliability estimate.",
+        "project": "Reliability and hazard analysis for the design.",
+        "links": [
+          {
+            "title": "FMEA and fault tree analysis (Swansea University)",
+            "url": "https://www.youtube.com/watch?v=S0Tfjrze3Vg"
+          }
+        ]
+      },
+      {
+        "week": 10,
+        "part": "Distributed",
+        "title": "Distributed fault tolerance and consensus",
+        "lecture": "Byzantine faults and the Byzantine generals problem of Lamport, agreement under failure, and time-triggered communication for deterministic distributed systems.",
+        "practice": "Implement a fault-tolerant agreement or a time-triggered message schedule across nodes.",
+        "project": "Robust distributed coordination in the system.",
+        "links": [
+          {
+            "title": "The Byzantine generals problem (Martin Kleppmann, Cambridge)",
+            "url": "https://www.youtube.com/watch?v=LoGx_ldRBU0"
+          },
+          {
+            "title": "NPTEL real-time systems, lecture 20: clock synchronization with Byzantine clocks",
+            "url": "https://www.youtube.com/watch?v=bnrD2n55dfk"
+          }
+        ]
+      },
+      {
+        "week": 11,
+        "part": "Certification",
+        "title": "Safety standards and DO-178C",
+        "lecture": "The certification landscape, DO-178C software levels and objectives, requirements-based testing, structural coverage, and traceability.",
+        "practice": "Build a requirements-to-test traceability matrix and measure structural coverage on critical code.",
+        "project": "Certification evidence package taking shape.",
+        "links": [
+          {
+            "title": "DO-178C and ED-12C for beginners: the practicalities of compliance",
+            "url": "https://www.youtube.com/watch?v=UjCJKsI35Z0"
+          }
+        ]
+      },
+      {
+        "week": 12,
+        "part": "Integration",
+        "title": "Verification and the safety case",
+        "lecture": "Verification strategy, the assurance argument and safety case, configuration management, and tool qualification for certified workflows.",
+        "practice": "Assemble the safety case and complete verification against the requirements and timing budget.",
+        "project": "Verified system with a safety case ready for the final defense.",
+        "links": [
+          {
+            "title": "Visualizing safety cases: Tim Kelly on goal structuring notation",
+            "url": "https://www.youtube.com/watch?v=bzVQh-V7iAE"
+          }
+        ]
+      },
+      {
+        "week": 13,
+        "part": "Milestone",
+        "title": "Final demo and oral defense",
+        "lecture": "Course synthesis: from rate-monotonic scheduling to a verified, certifiable safety-critical system and the dependability tradeoffs that defined it.",
+        "practice": "STUDENT PRESENTATION milestone, final demo with oral defense. Teams present the finished system meeting its deadlines on target, walk through scheduling, fault tolerance, and certification evidence, and answer technical questions.",
+        "project": "Final mission-critical real-time system with certification evidence.",
+        "links": []
+      }
     ],
     "project": {
       "summary": "Each team builds one mission-critical real-time control or monitoring system across the term on a real-time operating system and target hardware. The project grows weekly from periodic scheduled tasks to a fault-tolerant system with proven schedulability, bounded blocking, reliability analysis, and a DO-178C-style traceability and verification evidence package. The same artifact is presented at the specification, interim, and final milestones.",
@@ -316,20 +1226,90 @@
       "reliability and safety modeling with fault trees and FMEA"
     ],
     "literature": [
-      {"title": "Scheduling Algorithms for Multiprogramming in a Hard-Real-Time Environment", "authors": "C. L. Liu and James W. Layland", "year": 1973, "url": "https://dl.acm.org/doi/10.1145/321738.321743"},
-      {"title": "Priority Inheritance Protocols: An Approach to Real-Time Synchronization", "authors": "Lui Sha, Ragunathan Rajkumar, and John P. Lehoczky", "year": 1990, "url": "https://dl.acm.org/doi/10.1109/12.57058"},
-      {"title": "The Byzantine Generals Problem", "authors": "Leslie Lamport, Robert Shostak, and Marshall Pease", "year": 1982, "url": "https://dl.acm.org/doi/10.1145/357172.357176"},
-      {"title": "Basic Concepts and Taxonomy of Dependable and Secure Computing", "authors": "Algirdas Avizienis, Jean-Claude Laprie, Brian Randell, and Carl Landwehr", "year": 2004, "url": "https://dl.acm.org/doi/10.1109/TDSC.2004.2"},
-      {"title": "Applying New Scheduling Theory to Static Priority Pre-emptive Scheduling", "authors": "Neil Audsley, Alan Burns, Mike Richardson, Ken Tindell, and Andy Wellings", "year": 1993, "url": "https://www.cs.york.ac.uk/rts/publications/Audsley1993.html"}
+      {
+        "title": "Scheduling Algorithms for Multiprogramming in a Hard-Real-Time Environment",
+        "authors": "C. L. Liu and James W. Layland",
+        "year": 1973,
+        "url": "https://dl.acm.org/doi/10.1145/321738.321743"
+      },
+      {
+        "title": "Priority Inheritance Protocols: An Approach to Real-Time Synchronization",
+        "authors": "Lui Sha, Ragunathan Rajkumar, and John P. Lehoczky",
+        "year": 1990,
+        "url": "https://dl.acm.org/doi/10.1109/12.57058"
+      },
+      {
+        "title": "The Byzantine Generals Problem",
+        "authors": "Leslie Lamport, Robert Shostak, and Marshall Pease",
+        "year": 1982,
+        "url": "https://dl.acm.org/doi/10.1145/357172.357176"
+      },
+      {
+        "title": "Basic Concepts and Taxonomy of Dependable and Secure Computing",
+        "authors": "Algirdas Avizienis, Jean-Claude Laprie, Brian Randell, and Carl Landwehr",
+        "year": 2004,
+        "url": "https://dl.acm.org/doi/10.1109/TDSC.2004.2"
+      },
+      {
+        "title": "Applying New Scheduling Theory to Static Priority Pre-emptive Scheduling",
+        "authors": "Neil Audsley, Alan Burns, Mike Richardson, Ken Tindell, and Andy Wellings",
+        "year": 1993,
+        "url": "https://www.cs.york.ac.uk/rts/publications/Audsley1993.html"
+      }
     ],
     "references": [
-      {"title": "Real-Time Systems and Programming Languages, 4th Edition", "authors": "Alan Burns and Andy Wellings", "year": 2009, "kind": "Textbook", "url": "https://www.cs.york.ac.uk/rts/books/RTSBookFourthEdition.html"},
-      {"title": "Hard Real-Time Computing Systems, 3rd Edition", "authors": "Giorgio C. Buttazzo", "year": 2011, "kind": "Textbook", "url": "https://link.springer.com/book/10.1007/978-1-4614-0676-1"},
-      {"title": "DO-178C Software Considerations in Airborne Systems and Equipment Certification", "authors": "RTCA SC-205", "year": 2011, "kind": "Documentation", "url": "https://www.rtca.org/training/do-178c-training/", "note": "Civil avionics software certification standard"},
-      {"title": "FreeRTOS Documentation", "authors": "Amazon Web Services and the FreeRTOS project", "year": 2025, "kind": "Documentation", "url": "https://www.freertos.org/Documentation/00-Overview"},
-      {"title": "ARINC 653 Part 1 Required Services", "authors": "SAE ITC AEEC", "year": 2019, "kind": "Documentation", "url": "https://www.sae.org/standards/content/arinc653p1-5/", "note": "Avionics application software partitioning standard"},
-      {"title": "Safety-Critical Computer Systems", "authors": "Neil Storey", "year": 1996, "kind": "Textbook", "url": "https://users.ece.cmu.edu/~koopman/depend/book/store96.htm", "note": "ISBN 9780201427875"},
-      {"title": "Zephyr Project Documentation", "authors": "Zephyr Project", "year": 2025, "kind": "Documentation", "url": "https://docs.zephyrproject.org/latest/index.html"}
+      {
+        "title": "Real-Time Systems and Programming Languages, 4th Edition",
+        "authors": "Alan Burns and Andy Wellings",
+        "year": 2009,
+        "kind": "Textbook",
+        "url": "https://www.cs.york.ac.uk/rts/books/RTSBookFourthEdition.html"
+      },
+      {
+        "title": "Hard Real-Time Computing Systems, 3rd Edition",
+        "authors": "Giorgio C. Buttazzo",
+        "year": 2011,
+        "kind": "Textbook",
+        "url": "https://link.springer.com/book/10.1007/978-1-4614-0676-1"
+      },
+      {
+        "title": "DO-178C Software Considerations in Airborne Systems and Equipment Certification",
+        "authors": "RTCA SC-205",
+        "year": 2011,
+        "kind": "Documentation",
+        "url": "https://www.rtca.org/training/do-178c-training/",
+        "note": "Civil avionics software certification standard"
+      },
+      {
+        "title": "FreeRTOS Documentation",
+        "authors": "Amazon Web Services and the FreeRTOS project",
+        "year": 2025,
+        "kind": "Documentation",
+        "url": "https://www.freertos.org/Documentation/00-Overview"
+      },
+      {
+        "title": "ARINC 653 Part 1 Required Services",
+        "authors": "SAE ITC AEEC",
+        "year": 2019,
+        "kind": "Documentation",
+        "url": "https://www.sae.org/standards/content/arinc653p1-5/",
+        "note": "Avionics application software partitioning standard"
+      },
+      {
+        "title": "Safety-Critical Computer Systems",
+        "authors": "Neil Storey",
+        "year": 1996,
+        "kind": "Textbook",
+        "url": "https://users.ece.cmu.edu/~koopman/depend/book/store96.htm",
+        "note": "ISBN 9780201427875"
+      },
+      {
+        "title": "Zephyr Project Documentation",
+        "authors": "Zephyr Project",
+        "year": 2025,
+        "kind": "Documentation",
+        "url": "https://docs.zephyrproject.org/latest/index.html"
+      }
     ],
     "build": "Built a mission-critical real-time control system on FreeRTOS and an ARM Cortex-M target, implementing rate-monotonic scheduling with proven schedulability, priority-inheritance synchronization, triple-modular redundancy with voting, and a DO-178C-style requirements traceability and structural-coverage evidence package."
   }

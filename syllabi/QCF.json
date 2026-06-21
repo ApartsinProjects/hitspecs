@@ -69,7 +69,17 @@
         "title": "Linear algebra and quantum states",
         "lecture": "Review of complex vector spaces, inner products, Dirac notation, and the qubit as a unit vector in a two-dimensional Hilbert space. Tensor products build multi-qubit state spaces.",
         "practice": "Set up the Python and Qiskit environment and represent qubit states and amplitudes numerically with NumPy.",
-        "project": "Initialize the project repository and encode a small toy problem instance as a state vector."
+        "project": "Initialize the project repository and encode a small toy problem instance as a state vector.",
+        "links": [
+          {
+            "title": "Qubits and Quantum States, Quantum Circuits, Measurements - Part 1 (Qiskit)",
+            "url": "https://www.youtube.com/watch?v=NZD9APb7ZtY"
+          },
+          {
+            "title": "Qubits and Quantum States, Quantum Circuits, Measurements - Part 3 (Qiskit)",
+            "url": "https://www.youtube.com/watch?v=9MpSQglnqI0"
+          }
+        ]
       },
       {
         "week": 2,
@@ -77,7 +87,13 @@
         "title": "Quantum gates, measurement, and circuits",
         "lecture": "Unitary operators, the Pauli and Hadamard gates, entanglement, and the Born rule for measurement probabilities. Circuit model semantics and reversibility.",
         "practice": "Build and simulate basic circuits in Qiskit, inspecting statevectors and measurement histograms.",
-        "project": "Implement a circuit that prepares and measures the equal superposition over candidate solutions."
+        "project": "Implement a circuit that prepares and measures the equal superposition over candidate solutions.",
+        "links": [
+          {
+            "title": "Qubits and Quantum States, Quantum Circuits, Measurements - Part 1 (Qiskit)",
+            "url": "https://www.youtube.com/watch?v=NZD9APb7ZtY"
+          }
+        ]
       },
       {
         "week": 3,
@@ -85,7 +101,17 @@
         "title": "Combinatorial optimization and complexity",
         "lecture": "NP-hard problems, MaxCut, graph coloring, and the QUBO formulation. Reductions and the role of penalty terms in constrained problems.",
         "practice": "Translate sample problems into QUBO matrices and verify objective values by brute force on small instances.",
-        "project": "Choose the project optimization problem and express it as a QUBO with documented constraints."
+        "project": "Choose the project optimization problem and express it as a QUBO with documented constraints.",
+        "links": [
+          {
+            "title": "Quantum Computing Tutorial Part 1: Quantum annealing, QUBOs and more (D-Wave)",
+            "url": "https://www.youtube.com/watch?v=teraaPiaG8s"
+          },
+          {
+            "title": "Introduction to the Quantum Approximate Optimization Algorithm and Applications (Qiskit)",
+            "url": "https://www.youtube.com/watch?v=YpLzSQPrgSc"
+          }
+        ]
       },
       {
         "week": 4,
@@ -93,7 +119,13 @@
         "title": "Ising models and energy landscapes",
         "lecture": "Mapping QUBO to the Ising Hamiltonian, spin variables, ground states, and the geometry of energy landscapes. Connection between minima and optimal solutions.",
         "practice": "Convert the project QUBO to an Ising Hamiltonian and visualize the energy landscape of a reduced instance.",
-        "project": "Produce a verified Ising formulation of the project problem with a small validation instance."
+        "project": "Produce a verified Ising formulation of the project problem with a small validation instance.",
+        "links": [
+          {
+            "title": "Quantum Computing Tutorials Part 2: QUBOs and Embedding (D-Wave)",
+            "url": "https://www.youtube.com/watch?v=vknIOydOJOo"
+          }
+        ]
       },
       {
         "week": 5,
@@ -101,7 +133,17 @@
         "title": "Adiabatic theorem and quantum annealing",
         "lecture": "The adiabatic theorem, time-dependent Hamiltonians, spectral gaps, and annealing schedules. Theory of how slow evolution tracks the ground state.",
         "practice": "Team presentation of the project specification: problem, Ising formulation, target solvers, and evaluation plan.",
-        "project": "Deliver the written and oral project specification milestone."
+        "project": "Deliver the written and oral project specification milestone.",
+        "links": [
+          {
+            "title": "Quantum Annealing (Quantum Computing at Davis)",
+            "url": "https://www.youtube.com/watch?v=VJEjdK5XSME"
+          },
+          {
+            "title": "Quantum Computing Tutorial Part 1: Quantum annealing, QUBOs and more (D-Wave)",
+            "url": "https://www.youtube.com/watch?v=teraaPiaG8s"
+          }
+        ]
       },
       {
         "week": 6,
@@ -109,7 +151,21 @@
         "title": "D-Wave hardware and minor embedding",
         "lecture": "Physical annealers, qubit connectivity, chimera and pegasus topologies, minor embedding, and chain strength. Practical limits of current devices.",
         "practice": "Use the D-Wave Ocean SDK to embed and sample the project Ising model on a simulated or cloud sampler.",
-        "project": "Obtain first annealing samples for the project problem and record solution quality."
+        "project": "Obtain first annealing samples for the project problem and record solution quality.",
+        "links": [
+          {
+            "title": "Embedding on to the Quantum Processing Unit (D-Wave Webinar)",
+            "url": "https://www.youtube.com/watch?v=OhoJw2jz1Yo"
+          },
+          {
+            "title": "Quantum Programming Tutorial (D-Wave Qubits 2021)",
+            "url": "https://www.youtube.com/watch?v=jTDnGox0c9Y"
+          },
+          {
+            "title": "Quantum Computing Tutorials Part 2: QUBOs and Embedding (D-Wave)",
+            "url": "https://www.youtube.com/watch?v=vknIOydOJOo"
+          }
+        ]
       },
       {
         "week": 7,
@@ -117,7 +173,21 @@
         "title": "QAOA theory",
         "lecture": "The variational principle, cost and mixer Hamiltonians, the QAOA ansatz at depth p, and the p to infinity limit recovering adiabatic evolution. Performance bounds on MaxCut.",
         "practice": "Construct a depth one QAOA circuit for a small project instance and evaluate the expectation value.",
-        "project": "Implement a working QAOA cost function for the project problem."
+        "project": "Implement a working QAOA cost function for the project problem.",
+        "links": [
+          {
+            "title": "Introduction to the Quantum Approximate Optimization Algorithm and Applications (Qiskit)",
+            "url": "https://www.youtube.com/watch?v=YpLzSQPrgSc"
+          },
+          {
+            "title": "QAOA: A different perspective (PennyLane Tutorial)",
+            "url": "https://www.youtube.com/watch?v=cMZcA2SQnYQ"
+          },
+          {
+            "title": "Solving MaxCut with QAOA: Quantum Tutorial for 100+ Qubits (Qiskit)",
+            "url": "https://www.youtube.com/watch?v=P3s7TIMIvZ0"
+          }
+        ]
       },
       {
         "week": 8,
@@ -125,7 +195,13 @@
         "title": "Variational optimization and parameter training",
         "lecture": "Classical optimizers, gradient and gradient-free methods, parameter landscapes, barren plateaus, and warm starting. The hybrid quantum-classical loop.",
         "practice": "Team interim presentation: progress, annealing versus QAOA results so far, and obstacles.",
-        "project": "Deliver the interim presentation milestone and a tuned QAOA parameter set."
+        "project": "Deliver the interim presentation milestone and a tuned QAOA parameter set.",
+        "links": [
+          {
+            "title": "Optimizing QAOA Circuits for Hardware (Qiskit Tutorial)",
+            "url": "https://www.youtube.com/watch?v=rBfK-l-qSNk"
+          }
+        ]
       },
       {
         "week": 9,
@@ -133,7 +209,13 @@
         "title": "Simulated annealing and parallel tempering",
         "lecture": "Classical Metropolis sampling, temperature schedules, parallel tempering, and why these are strong baselines for quantum methods.",
         "practice": "Run simulated annealing and parallel tempering on the project instance and compare against quantum samples.",
-        "project": "Add classical baselines to the project benchmark suite."
+        "project": "Add classical baselines to the project benchmark suite.",
+        "links": [
+          {
+            "title": "Quantum Computing Tutorial Part 1: Quantum annealing, QUBOs and more (D-Wave)",
+            "url": "https://www.youtube.com/watch?v=teraaPiaG8s"
+          }
+        ]
       },
       {
         "week": 10,
@@ -141,7 +223,13 @@
         "title": "Tensor networks and digital annealers",
         "lecture": "Quantum-inspired tensor-network optimizers, mean-field methods, and commercial digital annealers. Where quantum inspiration helps without quantum hardware.",
         "practice": "Apply a tensor-network or specialized quantum-inspired solver to the project instance.",
-        "project": "Integrate a quantum-inspired solver and log its results in the benchmark."
+        "project": "Integrate a quantum-inspired solver and log its results in the benchmark.",
+        "links": [
+          {
+            "title": "News on Tensor Networks for Machine Learning and Quantum Computing Simulation (Roman Orus, IPAM)",
+            "url": "https://www.youtube.com/watch?v=pbwQEU67d_c"
+          }
+        ]
       },
       {
         "week": 11,
@@ -149,7 +237,21 @@
         "title": "Noise, error, and mitigation",
         "lecture": "Decoherence, gate and readout error, sampling overhead, and error mitigation strategies for noisy intermediate-scale devices.",
         "practice": "Run QAOA under a noise model and apply a mitigation technique, measuring the effect on solution quality.",
-        "project": "Quantify noise impact on the project QAOA results and apply mitigation."
+        "project": "Quantify noise impact on the project QAOA results and apply mitigation.",
+        "links": [
+          {
+            "title": "Quantum Error Mitigation I (Zlatko Minev, BSS2023)",
+            "url": "https://www.youtube.com/watch?v=A7glm-9_afg"
+          },
+          {
+            "title": "Quantum Error Mitigation 2 (Zlatko Minev, BSS2023)",
+            "url": "https://www.youtube.com/watch?v=TPxJW-NoPGE"
+          },
+          {
+            "title": "Quantum Error Mitigation III (Zlatko Minev, BSS2023)",
+            "url": "https://www.youtube.com/watch?v=xL89AZc2BRc"
+          }
+        ]
       },
       {
         "week": 12,
@@ -157,7 +259,13 @@
         "title": "Benchmarking and scaling",
         "lecture": "Fair benchmarking methodology, time to solution, approximation ratios, and scaling behavior across solver families. Reporting pitfalls.",
         "practice": "Assemble a unified benchmark comparing all solvers on shared metrics and instance sizes.",
-        "project": "Finalize the benchmark table and figures for the project."
+        "project": "Finalize the benchmark table and figures for the project.",
+        "links": [
+          {
+            "title": "Solving MaxCut with QAOA: Quantum Tutorial for 100+ Qubits (Qiskit)",
+            "url": "https://www.youtube.com/watch?v=P3s7TIMIvZ0"
+          }
+        ]
       },
       {
         "week": 13,
@@ -165,7 +273,13 @@
         "title": "Final project defense",
         "lecture": "Course synthesis: when quantum, hybrid, and quantum-inspired methods are justified, and the outlook for fault-tolerant optimization.",
         "practice": "Team final presentation with oral defense of methodology, results, and design choices.",
-        "project": "Deliver the final report, code, and benchmark with oral defense."
+        "project": "Deliver the final report, code, and benchmark with oral defense.",
+        "links": [
+          {
+            "title": "Scott Aaronson on the Possibility of Fault-Tolerant Quantum Computing by 2028",
+            "url": "https://www.youtube.com/watch?v=0_7SH3Eons0"
+          }
+        ]
       }
     ],
     "project": {
@@ -252,7 +366,8 @@
         "url": "https://arxiv.org/abs/1302.5843",
         "note": "Catalog of QUBO and Ising encodings"
       }
-    ]
+    ],
+    "ai_usage": "Students lean on AI coding assistants to vibe-code the quantum optimization pipeline: scaffolding Qiskit and PennyLane circuits, refactoring QUBO and Ising mappings, and wiring up the D-Wave Ocean SDK from natural language descriptions of the problem. They drive the assistant to call tools and MCP servers that query quantum simulators and cloud backends, generate small validation instances and unit tests for QUBO objective values, and synthesize parameter sweeps for QAOA and annealing schedules. AI is also used to read back, plot, and interpret benchmark results, sanity checking approximation ratios and flagging suspicious solver behavior before it reaches the report."
   },
   "QCF2": {
     "tagline": "AI, optimization, and risk for modern quantitative finance",
@@ -324,7 +439,13 @@
         "title": "Markets, data, and returns",
         "lecture": "Asset classes, price and return definitions, log returns, stylized facts of financial time series, and stationarity. Data quality and survivorship bias.",
         "practice": "Set up the environment and load, clean, and resample market data into return series with pandas.",
-        "project": "Initialize the project repository and assemble a clean multi-asset return dataset."
+        "project": "Initialize the project repository and assemble a clean multi-asset return dataset.",
+        "links": [
+          {
+            "title": "Introduction, Financial Terms and Concepts (MIT 18.S096)",
+            "url": "https://www.youtube.com/watch?v=wvXDB9dMdEo"
+          }
+        ]
       },
       {
         "week": 2,
@@ -332,7 +453,17 @@
         "title": "Stochastic processes and Brownian motion",
         "lecture": "Random walks, Brownian motion, martingales, and the construction of continuous-time price processes. Properties of Wiener processes.",
         "practice": "Simulate Brownian motion and geometric Brownian motion price paths and study their statistics.",
-        "project": "Add a Monte Carlo price simulator to the project toolkit."
+        "project": "Add a Monte Carlo price simulator to the project toolkit.",
+        "links": [
+          {
+            "title": "Lecture 5: Stochastic Processes I (MIT 18.S096)",
+            "url": "https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/resources/lecture-5-stochastic-processes-i/"
+          },
+          {
+            "title": "Stochastic Processes II (MIT 18.S096)",
+            "url": "https://www.youtube.com/watch?v=PPl-7_RL0Ko"
+          }
+        ]
       },
       {
         "week": 3,
@@ -340,7 +471,21 @@
         "title": "Ito calculus and pricing intuition",
         "lecture": "Ito's lemma, stochastic differential equations, geometric Brownian motion, and the Black-Scholes-Merton framework as risk-neutral pricing.",
         "practice": "Implement Ito-based simulation and a Black-Scholes pricer, comparing to Monte Carlo estimates.",
-        "project": "Integrate a stochastic model used later for scenario generation."
+        "project": "Integrate a stochastic model used later for scenario generation.",
+        "links": [
+          {
+            "title": "Ito Calculus (MIT 18.S096)",
+            "url": "https://www.youtube.com/watch?v=Z5yRMMVUC5w"
+          },
+          {
+            "title": "Stochastic Differential Equations (MIT 18.S096)",
+            "url": "https://www.youtube.com/watch?v=qdbkvD4N-us"
+          },
+          {
+            "title": "Black-Scholes Formula, Risk-neutral Valuation (MIT 18.S096)",
+            "url": "https://www.youtube.com/watch?v=TnS8kI_KuJc"
+          }
+        ]
       },
       {
         "week": 4,
@@ -348,7 +493,13 @@
         "title": "Mean-variance optimization",
         "lecture": "Expected return and covariance estimation, the mean-variance objective, the efficient frontier, and the tangency portfolio. Assumptions and limitations.",
         "practice": "Estimate the covariance matrix and compute the efficient frontier for the project universe.",
-        "project": "Produce a baseline mean-variance portfolio for the project assets."
+        "project": "Produce a baseline mean-variance portfolio for the project assets.",
+        "links": [
+          {
+            "title": "Portfolio Theory (MIT 18.S096)",
+            "url": "https://www.youtube.com/watch?v=ywl3pq6yc54"
+          }
+        ]
       },
       {
         "week": 5,
@@ -356,7 +507,13 @@
         "title": "Convex optimization for portfolios",
         "lecture": "Convex sets and functions, quadratic programs, duality, and constrained portfolio formulations with budget, long-only, and turnover constraints.",
         "practice": "Team presentation of the project specification: universe, objective, constraints, and evaluation plan.",
-        "project": "Deliver the written and oral project specification milestone."
+        "project": "Deliver the written and oral project specification milestone.",
+        "links": [
+          {
+            "title": "Stanford EE364A Convex Optimization I, Stephen Boyd, Lecture 1",
+            "url": "https://www.youtube.com/watch?v=kV1ru-Inzl4"
+          }
+        ]
       },
       {
         "week": 6,
@@ -364,7 +521,13 @@
         "title": "Robust and advanced allocation",
         "lecture": "Estimation error, shrinkage, Black-Litterman views, risk parity, and hierarchical risk parity. Why naive optimization fails out of sample.",
         "practice": "Implement risk parity and a shrinkage-based optimizer with cvxpy and compare allocations.",
-        "project": "Add robust allocation variants to the project portfolio engine."
+        "project": "Add robust allocation variants to the project portfolio engine.",
+        "links": [
+          {
+            "title": "Portfolio Management (MIT 18.S096)",
+            "url": "https://www.youtube.com/watch?v=8TJQhQ2GZ0Y"
+          }
+        ]
       },
       {
         "week": 7,
@@ -372,7 +535,13 @@
         "title": "Value at risk and expected shortfall",
         "lecture": "Risk measures, coherence, historical, parametric, and Monte Carlo value at risk, expected shortfall, and backtesting risk estimates.",
         "practice": "Compute and backtest value at risk and expected shortfall for the project portfolio.",
-        "project": "Add a risk reporting module to the project."
+        "project": "Add a risk reporting module to the project.",
+        "links": [
+          {
+            "title": "Value At Risk (VaR) Models (MIT 18.S096)",
+            "url": "https://www.youtube.com/watch?v=92WaNz9mPeY"
+          }
+        ]
       },
       {
         "week": 8,
@@ -380,7 +549,13 @@
         "title": "Volatility, correlation, and stress",
         "lecture": "GARCH volatility, dynamic correlation, tail dependence, and stress and scenario testing for portfolio risk.",
         "practice": "Team interim presentation: portfolio engine, risk results, and open questions.",
-        "project": "Deliver the interim presentation milestone with risk-aware portfolios."
+        "project": "Deliver the interim presentation milestone with risk-aware portfolios.",
+        "links": [
+          {
+            "title": "Volatility Modeling (MIT 18.S096)",
+            "url": "https://www.youtube.com/watch?v=cDlbEQz1PQk"
+          }
+        ]
       },
       {
         "week": 9,
@@ -388,7 +563,13 @@
         "title": "Features, labels, and leakage",
         "lecture": "Financial feature engineering, fractional differentiation, the triple-barrier labeling method, sample weighting, and avoiding lookahead bias.",
         "practice": "Engineer features and triple-barrier labels for the project assets.",
-        "project": "Build the labeled supervised dataset for the project."
+        "project": "Build the labeled supervised dataset for the project.",
+        "links": [
+          {
+            "title": "The 7 Reasons Most Machine Learning Funds Fail (Marcos Lopez de Prado, QuantCon 2018)",
+            "url": "https://www.youtube.com/watch?v=BRUlSm4gdQ4"
+          }
+        ]
       },
       {
         "week": 10,
@@ -396,7 +577,17 @@
         "title": "Models and purged cross-validation",
         "lecture": "Tree ensembles and regularized models for finance, feature importance, and purged and embargoed cross-validation to respect time structure.",
         "practice": "Train models with purged cross-validation and evaluate predictive signal quality.",
-        "project": "Produce a validated predictive signal for the strategy."
+        "project": "Produce a validated predictive signal for the strategy.",
+        "links": [
+          {
+            "title": "Lecture 10: Regularized Pricing and Risk Models (MIT 18.S096)",
+            "url": "https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/resources/lecture-10-regularized-pricing-and-risk-models/"
+          },
+          {
+            "title": "The 7 Reasons Most Machine Learning Funds Fail (Marcos Lopez de Prado, QuantCon 2018)",
+            "url": "https://www.youtube.com/watch?v=BRUlSm4gdQ4"
+          }
+        ]
       },
       {
         "week": 11,
@@ -404,7 +595,13 @@
         "title": "Strategy design and execution",
         "lecture": "Signal to position mapping, bet sizing, transaction costs, slippage, and execution and rebalancing under turnover limits.",
         "practice": "Convert the predictive signal into a traded strategy with sizing and cost modeling.",
-        "project": "Implement the trading strategy layer on top of the signal."
+        "project": "Implement the trading strategy layer on top of the signal.",
+        "links": [
+          {
+            "title": "Portfolio Management (MIT 18.S096)",
+            "url": "https://www.youtube.com/watch?v=8TJQhQ2GZ0Y"
+          }
+        ]
       },
       {
         "week": 12,
@@ -412,7 +609,13 @@
         "title": "Backtesting and overfitting",
         "lecture": "Backtest design, walk-forward and combinatorial purged cross-validation, the deflated Sharpe ratio, and the dangers of selection bias.",
         "practice": "Run a rigorous backtest with cost and risk controls and compute performance statistics.",
-        "project": "Finalize the backtest, metrics, and figures for the project."
+        "project": "Finalize the backtest, metrics, and figures for the project.",
+        "links": [
+          {
+            "title": "The 7 Reasons Most Machine Learning Funds Fail (Marcos Lopez de Prado, QuantCon 2018)",
+            "url": "https://www.youtube.com/watch?v=BRUlSm4gdQ4"
+          }
+        ]
       },
       {
         "week": 13,
@@ -420,7 +623,13 @@
         "title": "Final strategy defense",
         "lecture": "Course synthesis: integrating optimization, risk, and machine learning into a defensible quantitative strategy and the limits of backtested evidence.",
         "practice": "Team final presentation with oral defense of methodology, results, and design choices.",
-        "project": "Deliver the final report, code, and backtest with oral defense."
+        "project": "Deliver the final report, code, and backtest with oral defense.",
+        "links": [
+          {
+            "title": "The 7 Reasons Most Machine Learning Funds Fail (Marcos Lopez de Prado, QuantCon 2018)",
+            "url": "https://www.youtube.com/watch?v=BRUlSm4gdQ4"
+          }
+        ]
       }
     ],
     "project": {
@@ -507,6 +716,7 @@
         "url": "https://scikit-learn.org/stable/user_guide.html",
         "note": "Machine learning models and validation"
       }
-    ]
+    ],
+    "ai_usage": "Students use AI coding assistants to vibe-code the quantitative research pipeline: generating pandas data-cleaning steps, drafting cvxpy and PyPortfolioOpt optimization models, and refactoring backtest loops from plain-language strategy specifications. They have the assistant call tools and MCP servers to pull and validate market data, generate synthetic price scenarios and unit tests that guard against lookahead bias and leakage, and scaffold scikit-learn pipelines with purged cross-validation. AI also helps evaluate and analyze results, computing and interpreting risk metrics, deflated Sharpe ratios, and backtest diagnostics, and challenging overfit strategies before they are defended."
   }
 }

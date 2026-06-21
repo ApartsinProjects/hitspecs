@@ -1,0 +1,65 @@
+{
+  "CY1": [
+    {
+      "title": "קריפטוגרפיה - סדרת הרצאות של פרופ' יהודה לינדל (הרצאה 1)",
+      "provider": "אוניברסיטת בר-אילן, YouTube",
+      "url": "https://www.youtube.com/watch?v=EPI-3yQZ73A",
+      "note": "הרצאה ראשונה בסדרת קורס קריפטוגרפיה מלאה בעברית של פרופ' יהודה לינדל, חוקר הצפנה מוביל."
+    },
+    {
+      "title": "קריפטוגרפיה - הרצאה 3 - פרופ' יהודה לינדל",
+      "provider": "אוניברסיטת בר-אילן, YouTube",
+      "url": "https://www.youtube.com/watch?v=IsHO0MZ7Hto",
+      "note": "המשך סדרת ההרצאות בעברית בקריפטוגרפיה באותו ערוץ."
+    },
+    {
+      "title": "קריפטוגרפיה, לא רק הצפנה",
+      "provider": "אוניברסיטת תל אביב, חמישי בקמפוס",
+      "url": "https://www.youtube.com/watch?v=9bYejp39U6c",
+      "note": "הרצאה נגישה בעברית המסבירה מה זו קריפטוגרפיה מעבר להצפנה."
+    }
+  ],
+  "CY2": [
+    {
+      "title": "מרושתים - איך עובד האינטרנט?",
+      "provider": "Campus IL, מערך הסייבר הלאומי",
+      "url": "https://campus.gov.il/en/course/cs-gov-cs-reshatot101/",
+      "note": "קורס וידאו חינמי בעברית על IP, DNS, HTTP ומודל חמש השכבות של האינטרנט, בסיס להבנת רשתות ופרוטוקולים."
+    },
+    {
+      "title": "WebSec - לזהות חולשות, לבנות הגנות",
+      "provider": "Campus IL",
+      "url": "https://campus.gov.il/en/course/cs-gov-cs-websec/",
+      "note": "קורס וידאו חינמי בעברית על אבטחת רשת ואינטרנט, זיהוי חולשות ובניית הגנות."
+    },
+    {
+      "title": "Network.Py - לתכנת במרחב הרשת",
+      "provider": "Campus IL",
+      "url": "https://campus.gov.il/en/course/cs-gov-cs-networkpy103/",
+      "note": "קורס וידאו חינמי בעברית על רשתות מחשבים ופרוטוקולים כולל TCP ו-UDP ותכנות סוקטים."
+    }
+  ],
+  "CY3": [
+    {
+      "title": "ARDUINO בעברית, ללמוד לתכנת בחינם (ד\"ר רועי יוזביץ')",
+      "provider": "YouTube, ד\"ר רועי יוזביץ' (אוניברסיטת אריאל)",
+      "url": "https://www.youtube.com/playlist?list=PLfXlCkihgwwVscAyKRq6Ful172eVpMj9X",
+      "note": "פלייליסט חינמי בעברית על תכנות מיקרו-בקרים Arduino, ההתאמה הקרובה ביותר לחומרה ומערכות משובצות בעברית."
+    },
+    {
+      "title": "קורס מיקרו-בקרים, אוניברסיטת אריאל (רועי יוזביץ')",
+      "provider": "YouTube, ד\"ר רועי יוזביץ' (אוניברסיטת אריאל)",
+      "url": "https://www.youtube.com/watch?v=iwGK9j1-1EQ",
+      "note": "הרצאה אקדמית בעברית על מיקרו-בקרים ומערכות משובצות מאוניברסיטת אריאל."
+    }
+  ],
+  "CY4": [],
+  "CY5": [
+    {
+      "title": "קורס קריפטו מלא בחינם (סדרת פרקים)",
+      "provider": "YouTube, סדרת קורס בעברית",
+      "url": "https://www.youtube.com/playlist?list=PL9tF-zl-rSTTdmC8ZRvnfCwEyiYh9fVJ8",
+      "note": "סדרת וידאו ממוספרת חינמית בעברית על יסודות קריפטו, טכנולוגיית בלוקצ'יין ופרטיות; פרקים 1 ו-2 אומתו כדיבור בעברית."
+    }
+  ]
+}

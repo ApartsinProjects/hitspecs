@@ -46,8 +46,8 @@ TRACKS = {
         he="בינה מלאכותית ורובוטיקה",
         nav="AI & Robotics",
         color="7A3E9D", soft="EFE7F6", ink="5D2F79",
-        tag="Design intelligent systems that perceive, reason, and act.",
-        tag_he="מתכננים מערכות אינטליגנטיות שתופסות, מסיקות ופועלות.",
+        tag="Machines that learn from data, perceive, and act in the real world.",
+        tag_he="מכונות שלומדות מנתונים, תופסות ופועלות בעולם האמיתי.",
         rationale=(
             "The AI track gives you the modeling depth to build systems that "
             "perceive, reason, and act. It covers the major modern paradigms: large "
@@ -345,8 +345,17 @@ if os.path.isfile(_cf):
 ONLINE_BASIS = {}
 for _f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                         "onlinebasis", "*.json"))):
+    if os.path.basename(_f).startswith("_"):
+        continue
     with open(_f, encoding="utf-8") as _fh:
         ONLINE_BASIS.update(json.load(_fh))
+
+# Free online video courses in Hebrew, per course.
+HEBREW_BASIS = {}
+for _f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                        "hebrewbasis", "*.json"))):
+    with open(_f, encoding="utf-8") as _fh:
+        HEBREW_BASIS.update(json.load(_fh))
 
 import re as _re
 def slugify(s):
@@ -473,9 +482,9 @@ PILLARS = [
     ("Enrichment electives", "F59E0B", "FEF1CF", [
         'Deepen expertise beyond core courses, improving fit for concentration <a href="careers.html"><b>job roles</b></a>.',
         "Prepare students for <b>graduate studies</b>."]),
-    ("Core course reuse", "2FA161", "DDF4E6", [
-        "Core courses are a <b>flagship</b>: high-quality, comprehensive, current, and project-based.",
-        "Some core courses are <b>shared between concentrations</b>."]),
+    ("Shared flagship courses", "2FA161", "DDF4E6", [
+        "A few <b>flagship</b> courses are shared across concentrations: high-quality, comprehensive, and current.",
+        "Students from different specializations <b>learn side by side</b>, gaining cross-disciplinary breadth and a shared language."]),
 ]
 
 def course_family(cid):
@@ -710,7 +719,7 @@ def build_index():
 <main class="wrap">
   <section class="block" style="margin-top:1.8rem">
     <h2>The Concentration Model</h2>
-    <p>Every student completes a shared computer-science core, then chooses one concentration: a curated sequence of <b>eight core courses</b>, across two semesters (three on the flexible program), that turns a broad CS foundation into a job-ready specialization. Each concentration equips a complete toolbox for a <a href="careers.html">cluster of roles</a>, pairs academic rigor with state-of-the-art tools, and produces a demonstrable portfolio of project-based work, all while reusing a shared core so courses stay cross-disciplinary. Six principles shape how every concentration is designed:</p>
+    <p>Every student completes a shared computer-science core, then chooses one concentration: a curated sequence of <b>eight core courses</b>, across two semesters (three on the flexible program), that turns a broad CS foundation into a job-ready specialization. Each concentration equips a complete toolbox for a <a href="careers.html">cluster of roles</a>, pairs academic rigor with state-of-the-art tools, and produces a demonstrable portfolio of project-based work.</p>
     <div class="pillars">{pillars_html}
     </div>
   </section>
@@ -997,23 +1006,30 @@ def build_course(cid):
         <b>AI tools in this course.</b> {body_aiu}
       </div>"""
 
-    # Free online courses (self-study basis)
-    basis_section = ""
-    basis = ONLINE_BASIS.get(cid, [])
-    if basis:
-        bitems = ""
-        for r in basis:
+    # Free online courses (self-study basis), English and Hebrew
+    def _basis_items(lst, rtl=False):
+        out = ""
+        for r in lst:
             url = r.get("url", "")
             ttl = e(r.get("title", ""))
-            ttl_html = (f'<a href="{e(url)}" target="_blank" rel="noopener">{ttl}</a>' if url else f"<b>{ttl}</b>")
-            bitems += (f'<li class="ref"><span class="refkind">{e(r.get("provider",""))}</span>'
-                       f'<span class="reftitle">{ttl_html}</span>'
-                       f'<div class="meta">{e(r.get("note",""))}</div></li>')
+            d = ' dir="rtl"' if rtl else ""
+            ttl_html = (f'<a href="{e(url)}" target="_blank" rel="noopener"{d}>{ttl}</a>' if url else f"<b{d}>{ttl}</b>")
+            out += (f'<li class="ref"><span class="refkind">{e(r.get("provider",""))}</span>'
+                    f'<span class="reftitle">{ttl_html}</span>'
+                    f'<div class="meta"{d}>{e(r.get("note",""))}</div></li>')
+        return out
+    eng_basis = ONLINE_BASIS.get(cid, [])
+    heb_basis = HEBREW_BASIS.get(cid, [])
+    basis_section = ""
+    if eng_basis or heb_basis:
+        eng_html = f'<ul class="refs">{_basis_items(eng_basis)}</ul>' if eng_basis else ""
+        heb_html = (f'<h3 class="subhead">In Hebrew &middot; בעברית</h3><ul class="refs">{_basis_items(heb_basis, rtl=True)}</ul>'
+                    if heb_basis else "")
         basis_section = f"""
       <section class="block">
         <h2>Free online courses</h2>
         <p class="muted">Existing free, video-based courses this course can build on, for self-study or as a teaching basis.</p>
-        <ul class="refs">{bitems}</ul>
+        {eng_html}{heb_html}
       </section>"""
 
     # Primary literature (seminal works, linked)

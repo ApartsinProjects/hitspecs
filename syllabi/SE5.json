@@ -25,7 +25,17 @@
         "title": "Production Engineering & the Ops Landscape",
         "lecture": "The prototype-to-production gap and the 90/10 inversion; SLIs, SLOs, SLAs, and error budgets; toil, day-one vs day-two operations, blameless postmortems, and the five operational layers.",
         "practice": "Set up a team repository from a template with branch protection and containerise a hello-service with pinned versions.",
-        "project": "Create the team repo, containerise the hello-service, and shortlist two use-case domains."
+        "project": "Create the team repo, containerise the hello-service, and shortlist two use-case domains.",
+        "links": [
+          {
+            "title": "MLOps Zoomcamp 1.1: Introduction (DataTalksClub)",
+            "url": "https://www.youtube.com/watch?v=s0uaFZSzwfI"
+          },
+          {
+            "title": "MLOps Zoomcamp 1.5: MLOps Maturity Model (DataTalksClub)",
+            "url": "https://www.youtube.com/watch?v=XwTH8BDGzYk"
+          }
+        ]
       },
       {
         "week": 2,
@@ -33,7 +43,13 @@
         "title": "Cloud Computing Fundamentals",
         "lecture": "Cloud primitives (compute, storage, networking); IaaS, PaaS, SaaS, and serverless; regions and availability zones; the shared-responsibility model; the cost model and blast radius.",
         "practice": "Provision a cloud footprint on a free tier with a budget alert, deploy the hello-service in two deployment models, and tear it down.",
-        "project": "Create the team cloud space with a budget alert and provision the project storage bucket accessed from code."
+        "project": "Create the team cloud space with a budget alert and provision the project storage bucket accessed from code.",
+        "links": [
+          {
+            "title": "MLOps Zoomcamp 1.2: Environment Preparation on AWS (DataTalksClub)",
+            "url": "https://www.youtube.com/watch?v=IXSiYkP23zo"
+          }
+        ]
       },
       {
         "week": 3,
@@ -41,7 +57,13 @@
         "title": "CI/CD, Testing & REST Services",
         "lecture": "DORA metrics and the testing pyramid; trunk-based development; infrastructure as code with Terraform (desired state, idempotency); REST design, API versioning, and health and readiness endpoints.",
         "practice": "Build a CI pipeline that lints, tests, builds, and publishes an artifact, and design a versioned REST API skeleton.",
-        "project": "Commit to the project use case; REST API skeleton with two endpoints, a health check, validation, and tests; CI gating every merge."
+        "project": "Commit to the project use case; REST API skeleton with two endpoints, a health check, validation, and tests; CI gating every merge.",
+        "links": [
+          {
+            "title": "Complete Terraform Course, Beginner to Pro (DevOps Directive)",
+            "url": "https://www.youtube.com/watch?v=7xngnjfIlK4"
+          }
+        ]
       },
       {
         "week": 4,
@@ -49,7 +71,17 @@
         "title": "Orchestration, Deployment Patterns & Observability",
         "lecture": "Kubernetes desired-state and reconciliation; deployment patterns (blue-green, canary) and GitOps; the three pillars of observability, the RED method, and reasoning about tail latency on percentiles.",
         "practice": "Run the service under an orchestrator with probes and scaling, execute a canary rollout and rollback, and build a RED dashboard.",
-        "project": "Deploy with probes and three replicas, demonstrate canary plus rollback, and record a baseline p95 on a RED dashboard."
+        "project": "Deploy with probes and three replicas, demonstrate canary plus rollback, and record a baseline p95 on a RED dashboard.",
+        "links": [
+          {
+            "title": "Kubernetes Tutorial for Beginners, Full Course in 4 Hours (TechWorld with Nana)",
+            "url": "https://www.youtube.com/watch?v=X48VuDVv0do"
+          },
+          {
+            "title": "MLOps Zoomcamp 4.1: Three Ways of Deploying a Model (DataTalksClub)",
+            "url": "https://www.youtube.com/watch?v=JMGe4yIoBRA"
+          }
+        ]
       },
       {
         "week": 5,
@@ -57,7 +89,13 @@
         "title": "Data Lakes, Pipelines & Versioning",
         "lecture": "Warehouse vs lake vs lakehouse; the medallion architecture (bronze, silver, gold); orchestration and idempotency; data versioning and lineage.",
         "practice": "Student Presentation 1 (Specification): each team presents the problem statement and success metrics (SLOs), the system and data architecture, DevOps status, and a risk and governance register, then submits a written report and a tagged release.",
-        "project": "An orchestrated pipeline with retries and backfills, and a versioned dataset reproduced from a pinned snapshot."
+        "project": "An orchestrated pipeline with retries and backfills, and a versioned dataset reproduced from a pinned snapshot.",
+        "links": [
+          {
+            "title": "MLOps Zoomcamp 1.3: Reading Parquet Files (DataTalksClub)",
+            "url": "https://www.youtube.com/watch?v=r94QjpX9vSE"
+          }
+        ]
       },
       {
         "week": 6,
@@ -65,7 +103,17 @@
         "title": "Data Quality, Contracts, Streaming & Feature Stores",
         "lecture": "Validation as code; data contracts between producer and consumer; streaming with Kafka (topics, partitions, consumer groups, at-least-once delivery, idempotent consumers); feature stores and train/serve skew.",
         "practice": "Add validation gates from bronze to silver with a quarantine table, enforce a data contract, and land a live stream into the lake.",
-        "project": "Validation gates with quarantine, an enforced data contract, and gold feature tables built on one shared definition."
+        "project": "Validation gates with quarantine, an enforced data contract, and gold feature tables built on one shared definition.",
+        "links": [
+          {
+            "title": "What is Apache Kafka? Confluent Lightboard (Tim Berglund)",
+            "url": "https://www.youtube.com/watch?v=06iRM1Ghr1k"
+          },
+          {
+            "title": "MLOps Zoomcamp 5.7: Data Quality Monitoring (DataTalksClub)",
+            "url": "https://www.youtube.com/watch?v=fytrmPbcLhI"
+          }
+        ]
       },
       {
         "week": 7,
@@ -73,7 +121,21 @@
         "title": "Experiment Tracking, Model Registry & Serving",
         "lecture": "The reproducibility triple (git SHA, data version, environment); experiment tracking; the model registry and model cards; serving patterns (online, batch, streaming) and safe rollout (shadow, canary, A/B).",
         "practice": "Instrument training with tracking, register a model with a model card, and serve it behind REST with a safe rollout.",
-        "project": "Tracked training with the reproducibility triple pinned; model v1 registered and served; v2 canaried against v1."
+        "project": "Tracked training with the reproducibility triple pinned; model v1 registered and served; v2 canaried against v1.",
+        "links": [
+          {
+            "title": "MLOps Zoomcamp 2.3: Experiment Tracking with MLflow (DataTalksClub)",
+            "url": "https://www.youtube.com/watch?v=iaJz-T7VWec"
+          },
+          {
+            "title": "MLOps Zoomcamp 2.5: Model Registry (DataTalksClub)",
+            "url": "https://www.youtube.com/watch?v=TKHU7HAvGH8"
+          },
+          {
+            "title": "MLOps Zoomcamp 4.2: Deploying Models with Flask and Docker (DataTalksClub)",
+            "url": "https://www.youtube.com/watch?v=D7wfMAdgdF8"
+          }
+        ]
       },
       {
         "week": 8,
@@ -81,7 +143,17 @@
         "title": "Monitoring, Model Drift & Governance",
         "lecture": "Data drift vs concept drift and how to detect each (PSI, KS tests, embedding distance); retraining triggers paired with documented actions; audit trails and governance.",
         "practice": "Student Presentation 2 (Interim): teams demonstrate live a working pipeline, a tracked and versioned model in the registry, the model served with canary and a live RED dashboard, a change landing through CI/CD during the talk, and a monitoring and drift plan; submit a report and a tagged release.",
-        "project": "Drift detectors each paired with a documented action, and retraining triggers defined."
+        "project": "Drift detectors each paired with a documented action, and retraining triggers defined.",
+        "links": [
+          {
+            "title": "MLOps Zoomcamp 5.1: Intro to ML Monitoring (DataTalksClub)",
+            "url": "https://www.youtube.com/watch?v=SQ0jBwd_3kk"
+          },
+          {
+            "title": "MLOps Zoomcamp 5.4: Evidently Metrics and Data Drift (DataTalksClub)",
+            "url": "https://www.youtube.com/watch?v=kP3lzh_HfWY"
+          }
+        ]
       },
       {
         "week": 9,
@@ -89,7 +161,13 @@
         "title": "LLM Foundations: AI APIs, Tokens & the Token Economy",
         "lecture": "Next-token prediction and tokenization; API anatomy and structured outputs; the token economy and its cost levers (shorter context, prompt caching, batching); managed AI services.",
         "practice": "Call an AI API with structured outputs and schema validation, build a token-economy cost model, and add a retry-with-backoff wrapper.",
-        "project": "Wire an LLM feature through the course proxy with structured outputs, a cost-per-request and monthly projection, and a pinned model version."
+        "project": "Wire an LLM feature through the course proxy with structured outputs, a cost-per-request and monthly projection, and a pinned model version.",
+        "links": [
+          {
+            "title": "Lets Build the GPT Tokenizer (Andrej Karpathy)",
+            "url": "https://www.youtube.com/watch?v=zduSFxRajkE"
+          }
+        ]
       },
       {
         "week": 10,
@@ -97,7 +175,13 @@
         "title": "RAG & Serving LLMs: Vector Databases & Gateways",
         "lecture": "Retrieval-augmented generation end to end (embeddings, vector databases, chunking, grounded prompts); prompts as versioned code; hosted vs self-hosted serving with vLLM; the gateway pattern.",
         "practice": "Build a RAG service over a real corpus and route all LLM traffic through a gateway with fallbacks and a budget cap.",
-        "project": "The project's RAG or extraction pipeline runs behind the gateway with fallback and a budget cap."
+        "project": "The project's RAG or extraction pipeline runs behind the gateway with fallback and a budget cap.",
+        "links": [
+          {
+            "title": "Production RAG with LangChain and Vector Databases, Full Course (freeCodeCamp)",
+            "url": "https://www.youtube.com/watch?v=mHxLXzYjQRE"
+          }
+        ]
       },
       {
         "week": 11,
@@ -105,7 +189,8 @@
         "title": "LLM Evaluation, Guardrails & Observability",
         "lecture": "Evaluation that means something (faithfulness, answer relevance, retrieval recall); LLM-as-judge biases and calibration; LLM tracing and observability; guardrails and prompt injection.",
         "practice": "Build a representative eval set and run it as a regression suite, add request tracing, and demonstrate a guardrail against injection.",
-        "project": "An eval set of at least fifty items wired into CI, live tracing of prompt version, tokens, cost, and latency, and one guardrail with a measured response cache."
+        "project": "An eval set of at least fifty items wired into CI, live tracing of prompt version, tokens, cost, and latency, and one guardrail with a measured response cache.",
+        "links": []
       },
       {
         "week": 12,
@@ -113,7 +198,13 @@
         "title": "Agents & AgentOps: Tools, MCP & Managed Agents",
         "lecture": "The agent loop (plan, act, observe) and function calling; the Model Context Protocol and tool ecosystem; AgentOps (tracing, step-level evaluation, mandatory bounds); managed agent services.",
         "practice": "Build and trace a tool-using agent, bound it with step, cost, and permission limits, and expose a tool as an MCP server.",
-        "project": "One agentic capability with tracing, bounds, and step caps, and at least one tool exposed via MCP."
+        "project": "One agentic capability with tracing, bounds, and step caps, and at least one tool exposed via MCP.",
+        "links": [
+          {
+            "title": "Building Agents with the Model Context Protocol, Workshop with Mahesh Murag (Anthropic)",
+            "url": "https://www.youtube.com/watch?v=kQmXtrmQ5Zg"
+          }
+        ]
       },
       {
         "week": 13,
@@ -121,7 +212,13 @@
         "title": "Security, Governance & Synthesis",
         "lecture": "Software, data, and model supply-chain security (secrets, dependency tracking, provenance, SBOM); the OWASP Top 10 for LLM applications; governance (privacy, audit trails, model cards, NIST AI RMF); synthesis of the five layers.",
         "practice": "Student Presentation 3 (Final, with oral defense): teams deliver an end-to-end production demo (data in, decision out, live), observability with an actionable alert and runbook, evaluation, guardrails, and a cost and latency report, and a security and governance review against the OWASP LLM Top 10.",
-        "project": "A governed production deployment with an audit trail, and the repository tagged v1.0."
+        "project": "A governed production deployment with an audit trail, and the repository tagged v1.0.",
+        "links": [
+          {
+            "title": "OWASP Top 10 for LLM Applications 2025 Explained",
+            "url": "https://www.youtube.com/watch?v=IvDCxdJRKRg"
+          }
+        ]
       }
     ],
     "project": {
@@ -270,6 +367,7 @@
         "url": "https://sre.google/sre-book/table-of-contents/"
       }
     ],
-    "build": "Build, deploy, and operate a production AI service end to end: a containerized, CI/CD-gated REST API on Kubernetes, fed by a medallion data pipeline, with an MLflow model registry, a gateway-fronted RAG feature, live drift monitoring, and a security review against the OWASP LLM Top 10."
+    "build": "Build, deploy, and operate a production AI service end to end: a containerized, CI/CD-gated REST API on Kubernetes, fed by a medallion data pipeline, with an MLflow model registry, a gateway-fronted RAG feature, live drift monitoring, and a security review against the OWASP LLM Top 10.",
+    "ai_usage": "Students treat AI assistants as a core part of the operations toolchain: generating Terraform, CI/CD, and Kubernetes config, refactoring service code, and drafting data-quality and drift checks. They wire LLM features through the course gateway, build RAG and extraction pipelines, and expose project tools as MCP servers that their own agents call under step, cost, and permission bounds. AI is used to generate evaluation sets, synthesize test data, and analyze RED dashboards, traces, and drift metrics into concrete actions. Because the course grades exactly what an assistant cannot do for a student, operating under load, reading telemetry, and defending decisions, every generated artifact is traced, evaluated, and reviewed before it ships."
   }
 }

@@ -75,7 +75,17 @@
         "title": "Number theory and algebraic structures",
         "lecture": "Cover modular arithmetic, the Euclidean algorithm, groups, rings, finite fields, and Euler's theorem as the language of cryptography.",
         "practice": "Implement modular exponentiation, GCD, and modular inverse, and benchmark them on large integers.",
-        "project": "Set up the crypto library skeleton and a tested big-integer modular arithmetic core."
+        "project": "Set up the crypto library skeleton and a tested big-integer modular arithmetic core.",
+        "links": [
+          {
+            "title": "Modular Arithmetic and Historical Ciphers (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=W1SY6qKZrUk"
+          },
+          {
+            "title": "Number Theory for PKC: Euclidean Algorithm, Euler's Phi and Euler's Theorem (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=fq6SXByItUI"
+          }
+        ]
       },
       {
         "week": 2,
@@ -83,7 +93,13 @@
         "title": "Hardness assumptions and security definitions",
         "lecture": "Introduce one-way functions, the factoring and discrete-log problems, CDH/DDH, and formal indistinguishability-based security definitions.",
         "practice": "Build a discrete-log toy solver and measure how runtime scales to motivate the hardness assumption.",
-        "project": "Add a primitives interface and a security-definition test harness to the library."
+        "project": "Add a primitives interface and a security-definition test harness to the library.",
+        "links": [
+          {
+            "title": "The Generalized Discrete Log Problem and the Security of Diffie-Hellman (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=IGqrbM52wtg"
+          }
+        ]
       },
       {
         "week": 3,
@@ -91,7 +107,17 @@
         "title": "Block ciphers and modes of operation",
         "lecture": "Analyze pseudorandom permutations, the AES structure, and CBC, CTR, and GCM modes with their security properties.",
         "practice": "Wrap a vetted AES implementation, implement CTR and CBC modes, and write known-answer tests.",
-        "project": "Integrate AES with multiple modes into the library with passing test vectors."
+        "project": "Integrate AES with multiple modes into the library with passing test vectors.",
+        "links": [
+          {
+            "title": "Advanced Encryption Standard (AES) (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=NHuibtoL_qk"
+          },
+          {
+            "title": "Modes of Operation for Block Ciphers (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=4FBgb2uobWI"
+          }
+        ]
       },
       {
         "week": 4,
@@ -99,7 +125,13 @@
         "title": "Authenticated encryption and MACs",
         "lecture": "Define IND-CCA security, present HMAC and GMAC, and explain encrypt-then-MAC and AEAD constructions.",
         "practice": "Implement HMAC and an encrypt-then-MAC AEAD wrapper, then attack a deliberately broken MAC-then-encrypt variant.",
-        "project": "Add authenticated encryption with associated data and negative-test the broken variant."
+        "project": "Add authenticated encryption with associated data and negative-test the broken variant.",
+        "links": [
+          {
+            "title": "Message Authentication Codes (MAC) and HMAC (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=DiLPn_ldAAQ"
+          }
+        ]
       },
       {
         "week": 5,
@@ -107,7 +139,17 @@
         "title": "Hash functions and the random oracle model",
         "lecture": "Cover collision, preimage, and second-preimage resistance, Merkle-Damgard and sponge constructions, and the random oracle heuristic.",
         "practice": "Team presentation: each team defends its project specification, threat model, and chosen security definitions before the class.",
-        "project": "Freeze the project specification document approved at the milestone review."
+        "project": "Freeze the project specification document approved at the milestone review.",
+        "links": [
+          {
+            "title": "Hash Functions (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=tLkHk__-M6Q"
+          },
+          {
+            "title": "SHA-3 Hash Function (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=JWskjzgiIa4"
+          }
+        ]
       },
       {
         "week": 6,
@@ -115,7 +157,13 @@
         "title": "RSA: construction and attacks",
         "lecture": "Derive RSA from Euler's theorem, prove correctness, and survey attacks: small exponents, common modulus, and padding oracles.",
         "practice": "Implement textbook RSA, then exploit it with a Bleichenbacher-style padding oracle on a vulnerable endpoint.",
-        "project": "Add OAEP-padded RSA encryption and a regression test that the padding oracle is closed."
+        "project": "Add OAEP-padded RSA encryption and a regression test that the padding oracle is closed.",
+        "links": [
+          {
+            "title": "The RSA Cryptosystem and Efficient Exponentiation (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=QSlWzKNbKrU"
+          }
+        ]
       },
       {
         "week": 7,
@@ -123,7 +171,17 @@
         "title": "Discrete-log systems and ElGamal",
         "lecture": "Present cyclic groups, ElGamal encryption, the DDH assumption, and semantic security reductions.",
         "practice": "Implement ElGamal over a safe prime group and verify the homomorphic property experimentally.",
-        "project": "Integrate ElGamal encryption with parameter validation into the library."
+        "project": "Integrate ElGamal encryption with parameter validation into the library.",
+        "links": [
+          {
+            "title": "Diffie-Hellman Key Exchange and the Discrete Log Problem (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=aeOzBCbwxUo"
+          },
+          {
+            "title": "ElGamal Encryption Scheme (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=tKNY1zhK3sQ"
+          }
+        ]
       },
       {
         "week": 8,
@@ -131,7 +189,17 @@
         "title": "Elliptic-curve cryptography",
         "lecture": "Introduce the group law on elliptic curves, ECDH, and the elliptic-curve discrete-log problem and its efficiency advantages.",
         "practice": "Team presentation: interim demo of the working crypto library with a live encryption and decryption walkthrough.",
-        "project": "Add an ECDH key-agreement module and present the interim build."
+        "project": "Add an ECDH key-agreement module and present the interim build.",
+        "links": [
+          {
+            "title": "Introduction to Elliptic Curves (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=vnpZXJL6QCQ"
+          },
+          {
+            "title": "Elliptic Curve Cryptography (ECC) (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=zTt4gvuQ6sY"
+          }
+        ]
       },
       {
         "week": 9,
@@ -139,7 +207,17 @@
         "title": "Digital signatures and unforgeability",
         "lecture": "Define existential unforgeability under chosen-message attack and analyze RSA-PSS, ECDSA, and EdDSA.",
         "practice": "Implement ECDSA signing and verification and demonstrate the catastrophic nonce-reuse key-recovery attack.",
-        "project": "Add EdDSA signatures and a deterministic-nonce safeguard to the library."
+        "project": "Add EdDSA signatures and a deterministic-nonce safeguard to the library.",
+        "links": [
+          {
+            "title": "Digital Signatures and Security Services (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=jbBe4AS5pk0"
+          },
+          {
+            "title": "ElGamal Digital Signature (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=AQXRX55hgHs"
+          }
+        ]
       },
       {
         "week": 10,
@@ -147,7 +225,13 @@
         "title": "Authenticated key exchange and PKI",
         "lecture": "Cover Diffie-Hellman, man-in-the-middle threats, certificates, chains of trust, and forward secrecy.",
         "practice": "Build an authenticated Diffie-Hellman handshake and a minimal certificate verifier with chain validation.",
-        "project": "Add a handshake protocol and certificate-chain verification to the library."
+        "project": "Add a handshake protocol and certificate-chain verification to the library.",
+        "links": [
+          {
+            "title": "Man-in-the-Middle Attack, Certificates and PKI (Christof Paar)",
+            "url": "https://www.youtube.com/watch?v=B9UirR9YDnQ"
+          }
+        ]
       },
       {
         "week": 11,
@@ -155,7 +239,8 @@
         "title": "Protocol design and common pitfalls",
         "lecture": "Analyze replay, reflection, downgrade, and timing attacks, and the principles of robust protocol design.",
         "practice": "Run a constant-time review, fix a timing leak in the project, and verify with statistical timing measurement.",
-        "project": "Harden the protocol layer against replay and timing side channels."
+        "project": "Harden the protocol layer against replay and timing side channels.",
+        "links": []
       },
       {
         "week": 12,
@@ -163,7 +248,8 @@
         "title": "Provable security and post-quantum cryptography",
         "lecture": "Walk through full reduction proofs and survey lattice-based and post-quantum standards and migration strategy.",
         "practice": "Integrate a post-quantum KEM via liboqs and design a hybrid classical-plus-PQ key exchange.",
-        "project": "Add a hybrid post-quantum key-exchange option to the library."
+        "project": "Add a hybrid post-quantum key-exchange option to the library.",
+        "links": []
       },
       {
         "week": 13,
@@ -171,7 +257,8 @@
         "title": "Final integration and defense",
         "lecture": "Review the full cryptographic stack, security arguments, and threat coverage across the project.",
         "practice": "Team presentation: final demonstration with oral defense of design choices, security proofs, and known limitations.",
-        "project": "Deliver the complete, tested cryptographic library with documentation and security rationale."
+        "project": "Deliver the complete, tested cryptographic library with documentation and security rationale.",
+        "links": []
       }
     ],
     "project": {
@@ -260,7 +347,8 @@
         "kind": "Textbook",
         "url": "https://nostarch.com/serious-cryptography-2nd-edition"
       }
-    ]
+    ],
+    "ai_usage": "Students lean on AI coding assistants to scaffold and refactor the teaching crypto library, turning math from the lectures into tested Python: prompting for big-integer routines, AES modes, or an ECDH module, then asking the assistant to explain why a draft is not constant-time. They generate Wycheproof-style test vectors and edge cases with AI, and use it to write the attack scripts that break naive variants such as the textbook-RSA padding oracle or a nonce-reuse ECDSA bug. AI is also used to read reduction proofs critically and to compare an implementation against the PyCryptodome and pyca reference, but every AI-suggested primitive is checked against official test vectors before it enters the library, since a plausible-looking but wrong crypto construction is the central risk the course teaches students to catch."
   },
   "CY2": {
     "tagline": "Securing networks with protocols, perimeters, and attack detection.",
@@ -332,7 +420,13 @@
         "title": "Network threat models and the security stack",
         "lecture": "Review the OSI and TCP/IP stacks, attacker capabilities at each layer, and the goals of confidentiality, integrity, and availability.",
         "practice": "Build a lab network in containers or VMs and map its attack surface with reconnaissance tools.",
-        "project": "Stand up the lab topology and document the initial threat model."
+        "project": "Stand up the lab topology and document the initial threat model.",
+        "links": [
+          {
+            "title": "OSI Model Explained with a Real World Example",
+            "url": "https://www.youtube.com/watch?v=LANW3m7UgWs"
+          }
+        ]
       },
       {
         "week": 2,
@@ -340,7 +434,17 @@
         "title": "Transport security and TLS internals",
         "lecture": "Walk through the TLS 1.3 handshake, key schedule, AEAD record layer, and forward secrecy guarantees.",
         "practice": "Trace a real TLS 1.3 handshake byte by byte in Wireshark and identify each message.",
-        "project": "Add an instrumented TLS endpoint to the lab and capture its handshakes."
+        "project": "Add an instrumented TLS endpoint to the lab and capture its handshakes.",
+        "links": [
+          {
+            "title": "TLS Handshake Explained (Computerphile)",
+            "url": "https://www.youtube.com/watch?v=86cQJ0MMses"
+          },
+          {
+            "title": "TLS Essentials 14: TLS 1.3 Wireshark Analysis",
+            "url": "https://www.youtube.com/watch?v=jjETd0YlKFs"
+          }
+        ]
       },
       {
         "week": 3,
@@ -348,7 +452,13 @@
         "title": "Certificates, PKI, and protocol downgrade",
         "lecture": "Cover certificate validation, chains of trust, OCSP, and downgrade and stripping attacks on secure protocols.",
         "practice": "Run sslyze and testssl.sh against the endpoint and exploit a deliberately weakened configuration.",
-        "project": "Harden the lab TLS endpoint and record before-and-after scan results."
+        "project": "Harden the lab TLS endpoint and record before-and-after scan results.",
+        "links": [
+          {
+            "title": "What Is Public Key Infrastructure (PKI)?",
+            "url": "https://www.youtube.com/watch?v=uVaUgrxjMe0"
+          }
+        ]
       },
       {
         "week": 4,
@@ -356,7 +466,13 @@
         "title": "Firewalls and network segmentation",
         "lecture": "Explain stateful filtering, default-deny policy, segmentation, and the zero-trust architecture model.",
         "practice": "Configure nftables and pfSense rules to segment the lab and verify enforcement with port scans.",
-        "project": "Add firewall segmentation between the lab zones with a documented ruleset."
+        "project": "Add firewall segmentation between the lab zones with a documented ruleset.",
+        "links": [
+          {
+            "title": "What is a Firewall?",
+            "url": "https://www.youtube.com/watch?v=kDEX1HXybrU"
+          }
+        ]
       },
       {
         "week": 5,
@@ -364,7 +480,13 @@
         "title": "Designing the defended architecture",
         "lecture": "Discuss defense in depth, choke points, and how detection and prevention fit into network design.",
         "practice": "Team presentation: each team defends its network security specification and detection plan.",
-        "project": "Freeze the network architecture and detection specification document."
+        "project": "Freeze the network architecture and detection specification document.",
+        "links": [
+          {
+            "title": "What is Defense in Depth? Definition, Examples, and Strategy",
+            "url": "https://www.youtube.com/watch?v=mbr2JkK8-HM"
+          }
+        ]
       },
       {
         "week": 6,
@@ -372,7 +494,13 @@
         "title": "Intrusion detection fundamentals",
         "lecture": "Compare signature-based and anomaly-based detection, and the IDS versus IPS placement trade-offs.",
         "practice": "Deploy Suricata in the lab and write a first signature to catch a known exploit pattern.",
-        "project": "Add an IDS sensor to the lab with an initial rule set."
+        "project": "Add an IDS sensor to the lab with an initial rule set.",
+        "links": [
+          {
+            "title": "Introduction To Suricata IDS",
+            "url": "https://www.youtube.com/watch?v=91i7InHVOso"
+          }
+        ]
       },
       {
         "week": 7,
@@ -380,7 +508,13 @@
         "title": "Traffic analysis and protocol forensics",
         "lecture": "Cover flow analysis, encrypted-traffic fingerprinting, and indicators of reconnaissance and exfiltration.",
         "practice": "Analyze a malicious pcap with Zeek and Wireshark to reconstruct an attack timeline.",
-        "project": "Add a Zeek-based flow logging pipeline to the lab."
+        "project": "Add a Zeek-based flow logging pipeline to the lab.",
+        "links": [
+          {
+            "title": "How to use Zeek for PCAP Analysis",
+            "url": "https://www.youtube.com/watch?v=bznH1yMyjjo"
+          }
+        ]
       },
       {
         "week": 8,
@@ -388,7 +522,8 @@
         "title": "Detection engineering and tuning",
         "lecture": "Explain rule quality, false-positive management, and validation of detection coverage.",
         "practice": "Team presentation: interim demo of the lab detecting a live simulated attack end to end.",
-        "project": "Demonstrate the interim detection pipeline against a scripted attack."
+        "project": "Demonstrate the interim detection pipeline against a scripted attack.",
+        "links": []
       },
       {
         "week": 9,
@@ -396,7 +531,8 @@
         "title": "IPsec and VPN architecture",
         "lecture": "Present IKE, IPsec tunnels, the security associations model, and site-to-site versus remote-access designs.",
         "practice": "Build an IPsec tunnel between lab zones and inspect the negotiated parameters.",
-        "project": "Add an encrypted IPsec tunnel connecting two lab segments."
+        "project": "Add an encrypted IPsec tunnel connecting two lab segments.",
+        "links": []
       },
       {
         "week": 10,
@@ -404,7 +540,13 @@
         "title": "Modern VPNs and key management",
         "lecture": "Compare WireGuard's cryptographic design with IPsec and discuss key distribution and rotation.",
         "practice": "Deploy WireGuard, then attempt and detect a key-compromise scenario in the lab.",
-        "project": "Add a WireGuard overlay and a key-rotation procedure to the lab."
+        "project": "Add a WireGuard overlay and a key-rotation procedure to the lab.",
+        "links": [
+          {
+            "title": "WireGuard VPN Tutorial: Fast, Secure and Simple Setup Guide",
+            "url": "https://www.youtube.com/watch?v=nLW3gZlVSEs"
+          }
+        ]
       },
       {
         "week": 11,
@@ -412,7 +554,17 @@
         "title": "Active network attacks and mitigations",
         "lecture": "Analyze ARP and DNS spoofing, man-in-the-middle, and denial-of-service techniques and their defenses.",
         "practice": "Launch a controlled MITM and DoS against the lab and confirm the detection rules fire.",
-        "project": "Validate that the detection layer catches active attacks and tune the rules."
+        "project": "Validate that the detection layer catches active attacks and tune the rules.",
+        "links": [
+          {
+            "title": "ARP Poisoning: Man-in-the-Middle Attack",
+            "url": "https://www.youtube.com/watch?v=A7nih6SANYs"
+          },
+          {
+            "title": "Secret Key Exchange (Diffie-Hellman) (Computerphile)",
+            "url": "https://www.youtube.com/watch?v=NmM9HA2MQGI"
+          }
+        ]
       },
       {
         "week": 12,
@@ -420,7 +572,13 @@
         "title": "Centralized monitoring and response",
         "lecture": "Cover log aggregation, SIEM correlation, alert triage, and incident escalation workflows.",
         "practice": "Ship lab logs into a SIEM, build correlation alerts, and run a triage exercise.",
-        "project": "Integrate a SIEM dashboard and alerting into the lab."
+        "project": "Integrate a SIEM dashboard and alerting into the lab.",
+        "links": [
+          {
+            "title": "Introduction To Wazuh SIEM",
+            "url": "https://www.youtube.com/watch?v=Hq58_yGJwHk"
+          }
+        ]
       },
       {
         "week": 13,
@@ -428,7 +586,8 @@
         "title": "Final architecture and red-team defense",
         "lecture": "Review the complete defended architecture and the detection coverage achieved across the term.",
         "practice": "Team presentation: final red-team-versus-blue-team demonstration with oral defense of the design.",
-        "project": "Deliver the complete monitored, segmented, attack-resilient lab with documentation."
+        "project": "Deliver the complete monitored, segmented, attack-resilient lab with documentation.",
+        "links": []
       }
     ],
     "project": {
@@ -506,7 +665,8 @@
         "kind": "Documentation",
         "url": "https://tls13.xargs.org/"
       }
-    ]
+    ],
+    "ai_usage": "Students use AI assistants to generate and tune detection content for the lab: drafting Suricata and Zeek signatures from an attack description, refactoring nftables and pfSense rulesets, and writing the Python and Lua glue that ships logs into the Wazuh SIEM. They paste captured pcaps and TLS handshakes into the assistant to explain each record and to propose Wireshark display filters, and they vibe-code the attack scripts (ARP and DNS spoofing, downgrade, DoS) used to exercise the blue-team rules. AI helps generate correlation logic and triage summaries from raw alerts, and students drive lab tools and MCP-style automation through it, but they validate every generated rule against real traffic and measure its false-positive rate, since an AI signature that looks right but never fires is a graded failure."
   },
   "CY3": {
     "tagline": "Attacking and defending hardware, firmware, and embedded devices.",
@@ -578,7 +738,8 @@
         "title": "Embedded threat models and attack surface",
         "lecture": "Survey embedded system architectures, the physical attacker model, and the spectrum of hardware attacks.",
         "practice": "Tear down a target board, identify components and interfaces, and document its attack surface.",
-        "project": "Choose the target device and produce its initial hardware threat model."
+        "project": "Choose the target device and produce its initial hardware threat model.",
+        "links": []
       },
       {
         "week": 2,
@@ -586,7 +747,13 @@
         "title": "Debug interfaces and bus sniffing",
         "lecture": "Explain UART, JTAG, SWD, SPI, and I2C and how exposed debug ports become entry points.",
         "practice": "Locate and connect to a UART console and sniff an SPI bus with a logic analyzer.",
-        "project": "Map and access the debug and bus interfaces on the target."
+        "project": "Map and access the debug and bus interfaces on the target.",
+        "links": [
+          {
+            "title": "Hacker's Guide to UART Root Shells (Flashback)",
+            "url": "https://www.youtube.com/watch?v=01mw0oTHwxg"
+          }
+        ]
       },
       {
         "week": 3,
@@ -594,7 +761,13 @@
         "title": "Firmware extraction and analysis",
         "lecture": "Cover flash dumping, firmware image formats, and static reverse engineering of embedded binaries.",
         "practice": "Dump flash over SPI, unpack the firmware with binwalk, and disassemble it in Ghidra.",
-        "project": "Extract the target firmware and begin a reverse-engineering map."
+        "project": "Extract the target firmware and begin a reverse-engineering map.",
+        "links": [
+          {
+            "title": "Intro to Firmware Analysis with QEMU and Ghidra",
+            "url": "https://www.youtube.com/watch?v=50lFwNvHbDs"
+          }
+        ]
       },
       {
         "week": 4,
@@ -602,7 +775,13 @@
         "title": "Finding secrets and logic flaws",
         "lecture": "Discuss hardcoded keys, weak update mechanisms, and vulnerability patterns in firmware.",
         "practice": "Hunt for hardcoded credentials and an update-verification flaw in the dumped firmware.",
-        "project": "Document recovered secrets and a firmware vulnerability in the target."
+        "project": "Document recovered secrets and a firmware vulnerability in the target.",
+        "links": [
+          {
+            "title": "Hardware Hacking: UART Root Shells and Finding Secrets",
+            "url": "https://www.youtube.com/watch?v=Ddgdydmzqkc"
+          }
+        ]
       },
       {
         "week": 5,
@@ -610,7 +789,8 @@
         "title": "Threat model and analysis specification",
         "lecture": "Review how interface, firmware, and physical findings combine into a coherent attack plan.",
         "practice": "Team presentation: each team defends its target, threat model, and planned attack chain.",
-        "project": "Freeze the project specification and attack-plan document."
+        "project": "Freeze the project specification and attack-plan document.",
+        "links": []
       },
       {
         "week": 6,
@@ -618,7 +798,13 @@
         "title": "Side-channel theory and timing attacks",
         "lecture": "Introduce the leakage model, timing attacks on cryptographic implementations, and the underlying statistics.",
         "practice": "Reproduce a timing attack to recover key bits from a vulnerable software routine.",
-        "project": "Add a timing-leak analysis of the target's crypto operations."
+        "project": "Add a timing-leak analysis of the target's crypto operations.",
+        "links": [
+          {
+            "title": "Breaking AES with ChipWhisperer (Side Channel Analysis 100)",
+            "url": "https://www.youtube.com/watch?v=FktI4qSjzaE"
+          }
+        ]
       },
       {
         "week": 7,
@@ -626,7 +812,13 @@
         "title": "Power analysis and DPA",
         "lecture": "Derive simple and differential power analysis and the hypothesis-testing model behind key recovery.",
         "practice": "Capture power traces on ChipWhisperer and run DPA to extract an AES key.",
-        "project": "Mount a power-analysis attack against an encryption routine on the target."
+        "project": "Mount a power-analysis attack against an encryption routine on the target.",
+        "links": [
+          {
+            "title": "Breaking AES with ChipWhisperer (Side Channel Analysis 100)",
+            "url": "https://www.youtube.com/watch?v=FktI4qSjzaE"
+          }
+        ]
       },
       {
         "week": 8,
@@ -634,7 +826,17 @@
         "title": "Fault injection and glitching",
         "lecture": "Explain voltage and clock glitching, fault models, and bypassing security checks via faults.",
         "practice": "Team presentation: interim demo of a working side-channel or fault attack on the target.",
-        "project": "Demonstrate the interim physical attack against the device."
+        "project": "Demonstrate the interim physical attack against the device.",
+        "links": [
+          {
+            "title": "ChipWhisperer Tutorial: Clock Glitching Attacks and Glitch Explorer",
+            "url": "https://www.youtube.com/watch?v=PAMo611ERWU"
+          },
+          {
+            "title": "ChipWhisperer Tutorial: VCC Glitching Attacks against ATMega328",
+            "url": "https://www.youtube.com/watch?v=hxU5uVbYCYo"
+          }
+        ]
       },
       {
         "week": 9,
@@ -642,7 +844,13 @@
         "title": "Secure boot and chain of trust",
         "lecture": "Cover measured and verified boot, signature verification, and rollback protection in the boot chain.",
         "practice": "Analyze a secure-boot implementation and attempt a glitch to bypass signature verification.",
-        "project": "Evaluate and attack the target's boot integrity mechanism."
+        "project": "Evaluate and attack the target's boot integrity mechanism.",
+        "links": [
+          {
+            "title": "Secure Boot from A to Z (Bootlin)",
+            "url": "https://www.youtube.com/watch?v=jtLQ8SzfrDU"
+          }
+        ]
       },
       {
         "week": 10,
@@ -650,7 +858,13 @@
         "title": "TPM and hardware key storage",
         "lecture": "Present the TPM 2.0 architecture, sealed storage, attestation, and hardware-backed key isolation.",
         "practice": "Use a TPM to seal a secret and reason about which attacks it does and does not stop.",
-        "project": "Design a TPM-backed key-protection improvement for the target."
+        "project": "Design a TPM-backed key-protection improvement for the target.",
+        "links": [
+          {
+            "title": "TPM Based Attestation: How Can We Use It for Good? (Matthew Garrett, LCA 2020)",
+            "url": "https://www.youtube.com/watch?v=FobfM9S9xSI"
+          }
+        ]
       },
       {
         "week": 11,
@@ -658,7 +872,8 @@
         "title": "Countermeasures and constant-time design",
         "lecture": "Discuss masking, hiding, constant-time coding, and tamper-resistant design principles.",
         "practice": "Add masking and constant-time fixes to a routine and re-run the side-channel attack to measure improvement.",
-        "project": "Implement and validate a countermeasure on the target."
+        "project": "Implement and validate a countermeasure on the target.",
+        "links": []
       },
       {
         "week": 12,
@@ -666,7 +881,13 @@
         "title": "Hardened firmware and secure updates",
         "lecture": "Cover signed updates, anti-rollback, debug-port lockdown, and secure provisioning.",
         "practice": "Implement a signed-update verifier and lock down the exposed debug interfaces.",
-        "project": "Harden the firmware update path and disable insecure interfaces."
+        "project": "Harden the firmware update path and disable insecure interfaces.",
+        "links": [
+          {
+            "title": "Secure Boot from A to Z (Bootlin)",
+            "url": "https://www.youtube.com/watch?v=jtLQ8SzfrDU"
+          }
+        ]
       },
       {
         "week": 13,
@@ -674,7 +895,8 @@
         "title": "Final assessment and defense",
         "lecture": "Review the full attack chain and the defenses applied across the term.",
         "practice": "Team presentation: final demonstration of attacks and mitigations with oral defense of findings.",
-        "project": "Deliver the complete hardware security assessment with attacks, fixes, and report."
+        "project": "Deliver the complete hardware security assessment with attacks, fixes, and report.",
+        "links": []
       }
     ],
     "project": {
@@ -752,7 +974,8 @@
         "kind": "Paper",
         "url": "https://link.springer.com/chapter/10.1007/3-540-68697-5_9"
       }
-    ]
+    ],
+    "ai_usage": "Students use AI assistants to accelerate the slow parts of a hardware assessment: scripting ChipWhisperer capture and DPA analysis in Python, summarizing Ghidra decompilation of dumped firmware, and generating glue to parse SPI dumps and logic-analyzer traces. They prompt the assistant to identify candidate hardcoded keys and update-verification flaws in disassembled code, to write the statistical key-recovery analysis over power traces, and to draft masking and constant-time rewrites of a leaky routine. AI also drives tool automation (flashrom, OpenOCD, tpm2-tools) and helps interpret glitching results, but students confirm every claimed leak or recovered secret on the real bench, because power and fault behavior is physical and the assistant cannot see the oscilloscope."
   },
   "CY4": {
     "tagline": "Managing cyber-security through risk, frameworks, audit, and response.",
@@ -824,7 +1047,13 @@
         "title": "Governance, risk, and compliance overview",
         "lecture": "Define GRC, the roles of governance and accountability, and how security supports organizational objectives.",
         "practice": "Profile a case-study organization and map its assets, stakeholders, and obligations.",
-        "project": "Select the organization and produce its context and scope document."
+        "project": "Select the organization and produce its context and scope document.",
+        "links": [
+          {
+            "title": "What is GRC? Governance, Risk, and Compliance in 8 Minutes",
+            "url": "https://www.youtube.com/watch?v=ujkNmD3ygoY"
+          }
+        ]
       },
       {
         "week": 2,
@@ -832,7 +1061,13 @@
         "title": "Risk concepts and assessment methods",
         "lecture": "Cover threats, vulnerabilities, likelihood, impact, and qualitative versus quantitative risk methods.",
         "practice": "Build an asset inventory and a first threat-and-vulnerability list for the organization.",
-        "project": "Add an asset register and threat catalog to the project."
+        "project": "Add an asset register and threat catalog to the project.",
+        "links": [
+          {
+            "title": "ISO/IEC 27001 Explained in Plain English: ISMS, Risk and Controls",
+            "url": "https://www.youtube.com/watch?v=6LaB0r-Ylm0"
+          }
+        ]
       },
       {
         "week": 3,
@@ -840,7 +1075,13 @@
         "title": "Conducting a risk assessment",
         "lecture": "Present the SP 800-30 risk assessment process and risk-rating and prioritization techniques.",
         "practice": "Run a structured risk assessment and produce a ranked risk register.",
-        "project": "Add a complete prioritized risk register to the project."
+        "project": "Add a complete prioritized risk register to the project.",
+        "links": [
+          {
+            "title": "Breaking Down NIST 800-30: Guide to Risk Assessment",
+            "url": "https://www.youtube.com/watch?v=vMxujLYNZqI"
+          }
+        ]
       },
       {
         "week": 4,
@@ -848,7 +1089,17 @@
         "title": "Risk management frameworks",
         "lecture": "Explain the NIST RMF lifecycle and the Cybersecurity Framework 2.0 functions and outcomes.",
         "practice": "Map the organization's risks and current state onto the CSF 2.0 functions.",
-        "project": "Add a CSF 2.0 current-state profile to the project."
+        "project": "Add a CSF 2.0 current-state profile to the project.",
+        "links": [
+          {
+            "title": "The NIST Cybersecurity Framework (CSF) 2.0",
+            "url": "https://www.youtube.com/watch?v=pPPiaGU12Og"
+          },
+          {
+            "title": "Risk Management Framework (RMF): Overview",
+            "url": "https://www.youtube.com/watch?v=hfcIlUfWqz0"
+          }
+        ]
       },
       {
         "week": 5,
@@ -856,7 +1107,13 @@
         "title": "Program specification and scope",
         "lecture": "Discuss how risk results drive control selection and the structure of a security program.",
         "practice": "Team presentation: each team defends its risk assessment and proposed program scope.",
-        "project": "Freeze the security program specification and scope."
+        "project": "Freeze the security program specification and scope.",
+        "links": [
+          {
+            "title": "How to Implement NIST RMF to an Organization (Full Course)",
+            "url": "https://www.youtube.com/watch?v=OopX8zGgVBg"
+          }
+        ]
       },
       {
         "week": 6,
@@ -864,7 +1121,17 @@
         "title": "ISO/IEC 27001 and the ISMS",
         "lecture": "Present the ISO/IEC 27001 management-system model, the PDCA cycle, and the statement of applicability.",
         "practice": "Draft a statement of applicability and ISMS scope for the organization.",
-        "project": "Add the ISMS scope and statement of applicability to the project."
+        "project": "Add the ISMS scope and statement of applicability to the project.",
+        "links": [
+          {
+            "title": "ISO/IEC 27001 Explained in Plain English: ISMS, Risk and Controls",
+            "url": "https://www.youtube.com/watch?v=6LaB0r-Ylm0"
+          },
+          {
+            "title": "What is ISO 27001? Explained",
+            "url": "https://www.youtube.com/watch?v=SHp41xcK0Bg"
+          }
+        ]
       },
       {
         "week": 7,
@@ -872,7 +1139,13 @@
         "title": "Control selection and the control catalog",
         "lecture": "Cover control families, the SP 800-53 catalog, and tailoring controls to assessed risk.",
         "practice": "Select and tailor controls to treat the top risks in the register.",
-        "project": "Add a tailored control set mapped to the risk register."
+        "project": "Add a tailored control set mapped to the risk register.",
+        "links": [
+          {
+            "title": "Risk Management Framework (RMF): Overview",
+            "url": "https://www.youtube.com/watch?v=hfcIlUfWqz0"
+          }
+        ]
       },
       {
         "week": 8,
@@ -880,7 +1153,17 @@
         "title": "Policies, standards, and procedures",
         "lecture": "Explain the policy hierarchy, enforceability, and writing controls that can be audited.",
         "practice": "Team presentation: interim review of the ISMS, controls, and draft policy set.",
-        "project": "Present the interim program with its initial policy suite."
+        "project": "Present the interim program with its initial policy suite.",
+        "links": [
+          {
+            "title": "Understanding Policies, Procedures, Guidelines, and Standards in Cybersecurity",
+            "url": "https://www.youtube.com/watch?v=slpJQZBKpVs"
+          },
+          {
+            "title": "CISSP Domain 1.6: Policies, Standards, Baselines, Procedures, Guidelines",
+            "url": "https://www.youtube.com/watch?v=9uyqD5aNets"
+          }
+        ]
       },
       {
         "week": 9,
@@ -888,7 +1171,13 @@
         "title": "Authoring an auditable policy suite",
         "lecture": "Discuss roles and responsibilities, exceptions, and mapping policies to controls and evidence.",
         "practice": "Write a full policy and matching procedure for a chosen control domain.",
-        "project": "Add a complete policy and procedure set to the program."
+        "project": "Add a complete policy and procedure set to the program.",
+        "links": [
+          {
+            "title": "CISSP Domain 1.6: Policies, Standards, Baselines, Procedures, Guidelines",
+            "url": "https://www.youtube.com/watch?v=9uyqD5aNets"
+          }
+        ]
       },
       {
         "week": 10,
@@ -896,7 +1185,8 @@
         "title": "Audit and control assessment",
         "lecture": "Cover audit planning, evidence gathering, sampling, and assessing control effectiveness.",
         "practice": "Conduct a mock internal audit and document findings and nonconformities.",
-        "project": "Add an internal audit report with findings to the project."
+        "project": "Add an internal audit report with findings to the project.",
+        "links": []
       },
       {
         "week": 11,
@@ -904,7 +1194,8 @@
         "title": "Remediation and continuous improvement",
         "lecture": "Explain corrective action plans, risk acceptance, and continuous monitoring.",
         "practice": "Build a remediation plan and a continuous-monitoring approach for open findings.",
-        "project": "Add a corrective-action and monitoring plan to the program."
+        "project": "Add a corrective-action and monitoring plan to the program.",
+        "links": []
       },
       {
         "week": 12,
@@ -912,7 +1203,13 @@
         "title": "Incident response and resilience",
         "lecture": "Present the SP 800-61 incident-handling lifecycle, roles, and communication and escalation paths.",
         "practice": "Run a tabletop incident exercise and capture lessons learned for the plan.",
-        "project": "Add an incident response plan validated by a tabletop exercise."
+        "project": "Add an incident response plan validated by a tabletop exercise.",
+        "links": [
+          {
+            "title": "Breaking Down NIST 800-30: Guide to Risk Assessment",
+            "url": "https://www.youtube.com/watch?v=vMxujLYNZqI"
+          }
+        ]
       },
       {
         "week": 13,
@@ -920,7 +1217,13 @@
         "title": "Final program and defense",
         "lecture": "Review the complete GRC program and how its parts trace from risk to control to evidence.",
         "practice": "Team presentation: final program delivery with oral defense to a simulated steering committee.",
-        "project": "Deliver the complete GRC program package with documentation and defense."
+        "project": "Deliver the complete GRC program package with documentation and defense.",
+        "links": [
+          {
+            "title": "What is GRC? Governance, Risk, and Compliance in 8 Minutes",
+            "url": "https://www.youtube.com/watch?v=ujkNmD3ygoY"
+          }
+        ]
       }
     ],
     "project": {
@@ -998,7 +1301,8 @@
         "kind": "Textbook",
         "url": "https://www.amazon.com/Management-Information-Security-Michael-Whitman/dp/133740571X"
       }
-    ]
+    ],
+    "ai_usage": "Students use AI assistants as GRC drafting partners: generating first-draft policies, procedures, and statements of applicability, mapping assessed risks to SP 800-53 controls and CSF 2.0 outcomes, and summarizing long standards such as ISO/IEC 27001 and SP 800-30 into working checklists. They prompt the assistant to expand a risk register, to phrase controls so they are auditable, and to produce tabletop incident scenarios and interview questions for the mock audit. AI also helps reconcile evidence against control requirements and turn raw findings into executive-ready risk narratives, but students verify every citation, control mapping, and obligation against the authoritative source, since an AI that invents a control reference or misstates a regulatory duty would make the program fail an audit."
   },
   "CY5": {
     "tagline": "Building and securing blockchains, smart contracts, and DeFi.",
@@ -1070,7 +1374,13 @@
         "title": "Distributed systems and consensus theory",
         "lecture": "Cover replication, the CAP trade-off, failure models, and the FLP impossibility result that frames consensus.",
         "practice": "Simulate a small replicated log and observe how message loss and ordering break consistency.",
-        "project": "Set up the project repo and a baseline distributed-ledger simulation."
+        "project": "Set up the project repo and a baseline distributed-ledger simulation.",
+        "links": [
+          {
+            "title": "MIT 6.824 Distributed Systems, Lecture 1: Introduction",
+            "url": "https://www.youtube.com/watch?v=cQP8WApzIQQ"
+          }
+        ]
       },
       {
         "week": 2,
@@ -1078,7 +1388,13 @@
         "title": "Byzantine fault tolerance",
         "lecture": "Present the Byzantine generals problem and the PBFT protocol with its safety and liveness guarantees.",
         "practice": "Implement a simplified PBFT round and test it against simulated Byzantine nodes.",
-        "project": "Add a Byzantine-fault-tolerant agreement module to the ledger."
+        "project": "Add a Byzantine-fault-tolerant agreement module to the ledger.",
+        "links": [
+          {
+            "title": "MIT 15.S12 Blockchain and Money, 4. Blockchain Basics and Consensus",
+            "url": "https://www.youtube.com/watch?v=w7HDA8gUbpQ"
+          }
+        ]
       },
       {
         "week": 3,
@@ -1086,7 +1402,13 @@
         "title": "Hashes, signatures, and Merkle trees",
         "lecture": "Review cryptographic hashing, digital signatures, and Merkle trees as the integrity backbone of blockchains.",
         "practice": "Build a Merkle tree and signature-verification layer for the ledger's blocks.",
-        "project": "Add cryptographic block integrity and signed transactions to the ledger."
+        "project": "Add cryptographic block integrity and signed transactions to the ledger.",
+        "links": [
+          {
+            "title": "MIT 15.S12 Blockchain and Money, 3. Blockchain Basics and Cryptography",
+            "url": "https://www.youtube.com/watch?v=0UvVOMZqpEA"
+          }
+        ]
       },
       {
         "week": 4,
@@ -1094,7 +1416,17 @@
         "title": "Nakamoto consensus and proof of work",
         "lecture": "Derive proof-of-work, the longest-chain rule, and the security analysis of the Bitcoin backbone protocol.",
         "practice": "Implement a proof-of-work miner and study fork resolution under competing chains.",
-        "project": "Add proof-of-work mining and longest-chain selection to the ledger."
+        "project": "Add proof-of-work mining and longest-chain selection to the ledger.",
+        "links": [
+          {
+            "title": "Princeton Bitcoin, Lecture 1: Intro to Crypto and Cryptocurrencies",
+            "url": "https://www.youtube.com/watch?v=fOMVZXLjKYo"
+          },
+          {
+            "title": "MIT 15.S12 Blockchain and Money, 4. Blockchain Basics and Consensus",
+            "url": "https://www.youtube.com/watch?v=w7HDA8gUbpQ"
+          }
+        ]
       },
       {
         "week": 5,
@@ -1102,7 +1434,8 @@
         "title": "Design specification and threat model",
         "lecture": "Discuss proof-of-stake, finality, and the security and decentralization trade-offs across consensus designs.",
         "practice": "Team presentation: each team defends its system specification, consensus choice, and threat model.",
-        "project": "Freeze the system specification and threat-model document."
+        "project": "Freeze the system specification and threat-model document.",
+        "links": []
       },
       {
         "week": 6,
@@ -1110,7 +1443,13 @@
         "title": "Smart contracts and the EVM",
         "lecture": "Explain account models, the Ethereum Virtual Machine, gas, and the smart-contract execution lifecycle.",
         "practice": "Write, test, and deploy a first Solidity contract to a local development chain.",
-        "project": "Add a deployed smart-contract layer to the project."
+        "project": "Add a deployed smart-contract layer to the project.",
+        "links": [
+          {
+            "title": "MIT 15.S12 Blockchain and Money, 6. Smart Contracts and DApps",
+            "url": "https://www.youtube.com/watch?v=JPkgJwJHYSc"
+          }
+        ]
       },
       {
         "week": 7,
@@ -1118,7 +1457,17 @@
         "title": "Smart-contract vulnerabilities",
         "lecture": "Analyze reentrancy, integer issues, access-control flaws, and oracle manipulation with real case studies.",
         "practice": "Exploit a vulnerable contract in a sandbox and then patch the reentrancy flaw.",
-        "project": "Document and fix vulnerabilities in the project's contracts."
+        "project": "Document and fix vulnerabilities in the project's contracts.",
+        "links": [
+          {
+            "title": "Reentrancy: Hack Solidity (0.6)",
+            "url": "https://www.youtube.com/watch?v=4Mm3BCyHtDY"
+          },
+          {
+            "title": "Read Only Reentrancy: Hack Solidity (0.8)",
+            "url": "https://www.youtube.com/watch?v=0fgGTRlsDxI"
+          }
+        ]
       },
       {
         "week": 8,
@@ -1126,7 +1475,8 @@
         "title": "Secure development and testing",
         "lecture": "Cover secure patterns, invariants, formal-style testing, and the role of audits.",
         "practice": "Team presentation: interim demo of the deployed contracts with a live vulnerability and its fix.",
-        "project": "Present the interim contract suite with a security test report."
+        "project": "Present the interim contract suite with a security test report.",
+        "links": []
       },
       {
         "week": 9,
@@ -1134,7 +1484,13 @@
         "title": "Wallets and key management",
         "lecture": "Present elliptic-curve keys, address derivation, hierarchical deterministic wallets, and seed-phrase security.",
         "practice": "Build an HD wallet that derives keys and signs transactions for the ledger.",
-        "project": "Add a hierarchical deterministic wallet to the project."
+        "project": "Add a hierarchical deterministic wallet to the project.",
+        "links": [
+          {
+            "title": "Hierarchical Deterministic Wallets (HD): BIP32 from Seed",
+            "url": "https://www.youtube.com/watch?v=Bhs1bsJYl38"
+          }
+        ]
       },
       {
         "week": 10,
@@ -1142,7 +1498,8 @@
         "title": "Custody and multi-signature security",
         "lecture": "Discuss hot versus cold storage, multi-signature schemes, threshold signatures, and key-recovery design.",
         "practice": "Implement a multi-signature approval flow and test recovery and revocation scenarios.",
-        "project": "Add multi-signature custody controls to the wallet."
+        "project": "Add multi-signature custody controls to the wallet.",
+        "links": []
       },
       {
         "week": 11,
@@ -1150,7 +1507,8 @@
         "title": "DeFi protocols and mechanisms",
         "lecture": "Explain automated market makers, lending, liquidity, and the economic assumptions DeFi relies on.",
         "practice": "Deploy a simple automated-market-maker contract and trace swaps and liquidity events.",
-        "project": "Add a basic DeFi mechanism to the project's contract layer."
+        "project": "Add a basic DeFi mechanism to the project's contract layer.",
+        "links": []
       },
       {
         "week": 12,
@@ -1158,7 +1516,13 @@
         "title": "DeFi attacks and auditing",
         "lecture": "Cover flash-loan attacks, oracle manipulation, and economic exploits, plus the audit methodology.",
         "practice": "Run a flash-loan-style attack against the AMM, then audit and harden it.",
-        "project": "Audit the DeFi layer and apply hardening fixes."
+        "project": "Audit the DeFi layer and apply hardening fixes.",
+        "links": [
+          {
+            "title": "Flash Loans and Attacks Explained",
+            "url": "https://www.youtube.com/watch?v=0Q1_95J10XI"
+          }
+        ]
       },
       {
         "week": 13,
@@ -1166,7 +1530,8 @@
         "title": "Final system and audit defense",
         "lecture": "Review the full stack from consensus through contracts and wallets and the security arguments at each layer.",
         "practice": "Team presentation: final demonstration with an oral defense of the audit report and design choices.",
-        "project": "Deliver the complete decentralized system with a security audit report."
+        "project": "Deliver the complete decentralized system with a security audit report.",
+        "links": []
       }
     ],
     "project": {
@@ -1252,6 +1617,7 @@
         "kind": "Textbook",
         "url": "https://bitcoinbook.cs.princeton.edu/"
       }
-    ]
+    ],
+    "ai_usage": "Students use AI assistants throughout the decentralized-system build: scaffolding and refactoring Solidity contracts and the off-chain ledger code, generating Foundry and Echidna test suites and invariants, and explaining Slither static-analysis output. They vibe-code exploit proofs of concept, prompting the assistant to write a reentrancy or flash-loan attack against their own AMM and then to propose the checks-effects-interactions fix. AI helps interpret EVM traces in Tenderly, derive HD-wallet and multi-signature logic, and turn an audit pass into a structured findings report, and students drive deployment tooling and wallet libraries through it, but they re-run every AI-proposed fix through the fuzzer and on-chain tests, because a contract that merely looks safe can still lose funds."
   }
 }

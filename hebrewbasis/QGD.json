@@ -1,0 +1,47 @@
+{
+  "QCF1": [
+    {
+      "title": "טכנולוגיות קוונטיות - הרצאה",
+      "provider": "Technion (YouTube)",
+      "url": "https://www.youtube.com/playlist?list=PLW3u28VuDAHJ9uO5ueiTteNGLbSgYN8oW",
+      "note": "Hebrew-spoken Technion lecture playlist on quantum information and quantum technologies, touching quantum computing foundations."
+    },
+    {
+      "title": "טכנולוגיות קוונטיות - תרגול",
+      "provider": "Technion (YouTube)",
+      "url": "https://www.youtube.com/playlist?list=PLW3u28VuDAHKFCf_j3QH7QSS9tgbO39Bg",
+      "note": "Companion Hebrew-spoken tutorial playlist for the Technion quantum technologies lectures."
+    }
+  ],
+  "QCF2": [
+    {
+      "title": "רשתות נוירונים למסחר אלגוריתמי",
+      "provider": "CapitalMind (Yigal Weinberg)",
+      "url": "https://capitalmind.co.il/%D7%A8%D7%A9%D7%AA%D7%95%D7%AA-%D7%A0%D7%95%D7%99%D7%A8%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%9E%D7%A1%D7%97%D7%A8-%D7%90%D7%9C%D7%92%D7%95%D7%A8%D7%99%D7%AA%D7%9E%D7%99-%D7%9E%D7%90%D7%AA-%D7%99%D7%92/",
+      "note": "Free Hebrew-spoken recorded webinar on LSTM neural networks and Python deep learning for stock trading."
+    },
+    {
+      "title": "מסחר אלגוריתמי עם פייתון",
+      "provider": "CapitalMind (Ran Arusi)",
+      "url": "https://capitalmind.co.il/%D7%9E%D7%A1%D7%97%D7%A8-%D7%90%D7%9C%D7%92%D7%95%D7%A8%D7%99%D7%AA%D7%9E%D7%99-%D7%A2%D7%9D-%D7%A4%D7%99%D7%99%D7%AA%D7%95%D7%9F-%D7%9E%D7%90%D7%AA-%D7%A8%D7%9F-%D7%90%D7%A8%D7%95%D7%A1%D7%99/",
+      "note": "Free Hebrew-spoken recorded webinar on the Python finance ecosystem, backtesting and strategy optimization."
+    }
+  ],
+  "GM1": [],
+  "GM2": [],
+  "DF1": [
+    {
+      "title": "אלגוריתמי ניווט ושיערוך מקום",
+      "provider": "Campus IL (Ariel University)",
+      "url": "https://campus.gov.il/en/course/ariel-acd-rfp4-ariel-nivut/",
+      "note": "Free Hebrew course covering Kalman filter, extended Kalman, particle filter and sensor fusion, by Dr. Roi Yozevitch."
+    },
+    {
+      "title": "אריאל - אלגוריתמי ניווט",
+      "provider": "Dr. Roi Yozevitch (YouTube)",
+      "url": "https://www.youtube.com/playlist?list=PL2Tn4MQqND9oUX34IgedXIoeSLpFu18M4",
+      "note": "Hebrew-spoken video playlist companion to the Campus IL navigation course, covering Kalman filter and sensor fusion."
+    }
+  ],
+  "DF2": []
+}

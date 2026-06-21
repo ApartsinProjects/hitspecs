@@ -1,0 +1,86 @@
+{
+  "AI1": [
+    {
+      "title": "Deep Learning and NLP - קורס למידה עמוקה ועיבוד שפות טבעיות",
+      "provider": "Dr. Amos Azaria, Ariel University (YouTube)",
+      "url": "https://www.youtube.com/playlist?list=PLRMgNpO86xg0ZRHA0QeQsvn57dq4v7iaL",
+      "note": "Full Hebrew-spoken university course covering deep learning and natural language processing, including sequence models and language modeling."
+    },
+    {
+      "title": "עיבוד שפות טבעיות (Natural Language Processing)",
+      "provider": "Yoav Goldberg / Ido Dagan (YouTube)",
+      "url": "https://www.youtube.com/playlist?list=PLM96W_EHEqh78zJ0bPqT3Wy8DPHbJU-Zh",
+      "note": "Hebrew-spoken NLP lecture series covering word representations, sequence models and core language processing methods."
+    },
+    {
+      "title": "Transformer Models and BERT Model - בעברית",
+      "provider": "Google Cloud (Coursera)",
+      "url": "https://www.coursera.org/learn/transformer-models-and-bert-model-he",
+      "note": "Hebrew-narrated course on the transformer architecture, attention and BERT; free to audit."
+    }
+  ],
+  "AI2": [
+    {
+      "title": "Reinforcement Learning 1 - למידה מונחית חיזוקים",
+      "provider": "Dr. Amos Azaria, Ariel University (YouTube)",
+      "url": "https://www.youtube.com/watch?v=qZwM9Yxyyoo&list=PLRMgNpO86xg1QBVfnSDuzuZAPC-AdbrF6",
+      "note": "Hebrew-spoken university course on reinforcement learning."
+    },
+    {
+      "title": "מבוא לבינה מלאכותית: מתאוריה לפרקטיקה",
+      "provider": "Ben-Gurion University (Campus IL)",
+      "url": "https://campus.gov.il/en/course/bgu-acd-bgu-ai101/",
+      "note": "Free Hebrew video course; includes a unit on reinforcement learning (general AI fallback)."
+    }
+  ],
+  "AI3": [
+    {
+      "title": "Deep Learning and NLP - קורס למידה עמוקה ועיבוד שפות טבעיות",
+      "provider": "Dr. Amos Azaria, Ariel University (YouTube)",
+      "url": "https://www.youtube.com/watch?v=A74z-DzYt9c&list=PLRMgNpO86xg0ZRHA0QeQsvn57dq4v7iaL",
+      "note": "Hebrew-spoken deep learning course covering neural networks and representation learning used in computer vision."
+    },
+    {
+      "title": "למידת מכונה (Machine Learning)",
+      "provider": "Prof. Yossi Keshet (YouTube)",
+      "url": "https://www.youtube.com/playlist?list=PLM96W_EHEqh7QUKH_z-z-2muKa42n0zpK",
+      "note": "Hebrew-spoken machine learning lecture series foundational to deep learning and vision."
+    }
+  ],
+  "AI4": [
+    {
+      "title": "מבוא למדעי הנתונים: כלים ושיטות",
+      "provider": "HIT - Holon Institute of Technology (Campus IL)",
+      "url": "https://campus.gov.il/en/course/hit-acd-rfp4-datascienceintro-he/",
+      "note": "Free Hebrew video course on data acquisition, automated data analysis in Python and introductory machine learning methods."
+    },
+    {
+      "title": "למידת מכונה (Machine Learning)",
+      "provider": "Prof. Yossi Keshet (YouTube)",
+      "url": "https://www.youtube.com/playlist?list=PLM96W_EHEqh7QUKH_z-z-2muKa42n0zpK",
+      "note": "Hebrew-spoken machine learning lecture series; methods that scale to large datasets."
+    }
+  ],
+  "AI5": [
+    {
+      "title": "Introduction to Generative AI - בעברית",
+      "provider": "Google Cloud (Coursera)",
+      "url": "https://www.coursera.org/learn/introduction-to-generative-ai-he",
+      "note": "Hebrew-narrated introduction to generative AI and how it differs from traditional machine learning; free to audit."
+    },
+    {
+      "title": "Deep Learning and NLP - קורס למידה עמוקה ועיבוד שפות טבעיות",
+      "provider": "Dr. Amos Azaria, Ariel University (YouTube)",
+      "url": "https://www.youtube.com/playlist?list=PLRMgNpO86xg0ZRHA0QeQsvn57dq4v7iaL",
+      "note": "Hebrew-spoken deep learning course providing the generative-model foundations (GANs, autoencoders, sequence generation)."
+    }
+  ],
+  "AI6": [
+    {
+      "title": "רובוטים אוטונומיים (Autonomous Robots)",
+      "provider": "Ariel University (Campus IL)",
+      "url": "https://campus.gov.il/en/course/ariel-acd-rfp4-ariel-robot-he/",
+      "note": "Free Hebrew video course on autonomous robotics: navigation, mapping and obstacle detection."
+    }
+  ]
+}
