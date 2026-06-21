@@ -59,9 +59,9 @@ TRACKS = {
                "Data Scientist", "NLP Engineer", "Computer Vision Engineer"],
     ),
     "QCF": dict(
-        name="Optimization and Quantum Computing for Computational Finance",
-        he="אופטימיזציה ומחשוב קוונטי למערכות פיננסיות",
-        nav="Optimization & Quantum",
+        name="AI and Quantum Computing for Finance",
+        he="בינה מלאכותית וחישוב קוונטי למערכות פיננסיות",
+        nav="AI & Quantum",
         color="B5530B", soft="FBEEDE", ink="8A3F08",
         tag="Quantitative modeling, optimization, and quantum algorithms.",
         tag_he="מידול כמותי, אופטימיזציה ואלגוריתמים קוונטיים.",
