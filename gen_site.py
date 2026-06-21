@@ -11,7 +11,7 @@ TRACKS = {
     "SE": dict(
         name="Intelligent Software Systems",
         he="הנדסת מערכות תוכנה תבוניות",
-        nav="Software Systems",
+        nav="Intelligent Systems",
         color="3A4B9D", soft="E7EAF5", ink="2A3873",
         tag="Build and operate the intelligent software systems the world runs on.",
         rationale=(
@@ -58,7 +58,7 @@ TRACKS = {
     "QCF": dict(
         name="Computational Finance, Optimization & Quantum Computing",
         he="הנדסת מערכות פיננסיות, אופטימיזציה וחישובים קוונטיים",
-        nav="Finance & Quantum",
+        nav="Computational Finance",
         color="B5530B", soft="FBEEDE", ink="8A3F08",
         tag="Quantitative modeling, optimization, and quantum algorithms.",
         rationale=(
@@ -74,7 +74,7 @@ TRACKS = {
     "GM": dict(
         name="Immersive Systems & Game Development",
         he="מערכות אימרסיביות ופיתוח משחקים",
-        nav="Games & XR",
+        nav="Immersive Systems",
         color="0B6B8A", soft="E0EEF2", ink="084E63",
         tag="Build immersive games and extended-reality worlds.",
         rationale=(
@@ -91,7 +91,7 @@ TRACKS = {
     "DF": dict(
         name="Defense Technologies & Autonomous Systems",
         he="טכנולוגיות ביטחוניות ומערכות אוטונומיות",
-        nav="Defense Tech",
+        nav="Defense Technologies",
         color="1F6F54", soft="E1F0E9", ink="134734",
         tag="Engineer mission-critical defense and autonomous systems.",
         rationale=(
@@ -1192,7 +1192,7 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.15}
 
 /* top bar */
 .topbar{position:sticky;top:0;z-index:20;background:rgba(20,56,92,.97);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.12)}
-.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:1rem}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;min-height:58px;padding-top:.35rem;padding-bottom:.35rem;gap:1rem}
 .brand{color:#fff;font-weight:700;font-size:1.02rem;display:flex;align-items:center;gap:.55rem}
 .brand:hover{text-decoration:none}
 .logo{height:30px;width:auto;display:block;background:#fff;border-radius:4px;padding:2px}

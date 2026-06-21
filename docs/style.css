@@ -15,7 +15,7 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.15}
 
 /* top bar */
 .topbar{position:sticky;top:0;z-index:20;background:rgba(20,56,92,.97);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.12)}
-.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:1rem}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;min-height:58px;padding-top:.35rem;padding-bottom:.35rem;gap:1rem}
 .brand{color:#fff;font-weight:700;font-size:1.02rem;display:flex;align-items:center;gap:.55rem}
 .brand:hover{text-decoration:none}
 .logo{height:30px;width:auto;display:block;background:#fff;border-radius:4px;padding:2px}
