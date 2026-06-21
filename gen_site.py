@@ -353,7 +353,6 @@ ELECTIVE_CATALOGUE = [
     ("65355", "Principles of Functional Programming", "עקרונות התכנות הפונקציונלי", "3", "Michael Haim", "SE", "Software"),
     ("65346", "Human-Computer Interaction (UI)", "ממשקי אדם מחשב UI", "3", "Dr. Naava Shaked", "SE", "Software"),
     ("65365", "Parallel Programming", "תכנות מקבילי", "3", "Michael Haim", "SE", "Software"),
-    ("67026", "Introduction to Embedded Software and Applications", "מבוא לתוכנה משובצת מחשב ויישומים", "3.5", "Vladi Sorkin", "SE", "Software"),
     ("65345", "Competitive Programming", "תכנות תחרותי", "3.5", "Yuval Meir", "SE", "Project"),
     ("67000", "Advanced Software Solutions Engineering, Part A", "הנדסת פתרונות תוכנה מתקדמים חלק א'", "3.5", "Dr. Yossi Eliaz", "SE", "Project"),
     ("67013", "Advanced Software Solutions Engineering, Part B", "הנדסת פתרונות תוכנה מתקדמים חלק ב'", "3.5", "Dr. Yossi Eliaz", "SE", "Project"),
@@ -384,6 +383,7 @@ BASE_AVAILABLE = {
     "GM1": [("65235", "Computer Graphics", "Dr. Vladimir Nodelman", "")],
     "CY1": [("68012", "Applied Introduction to Modern Cryptography", "Zeev Geyzel", "")],
     "CY2": [("65338", "Network and Internet Security", "Adrian Shpeler", "")],
+    "DF2": [("67026", "Introduction to Embedded Software and Applications", "Vladi Sorkin", "Partial: covers embedded software foundations; real-time scheduling, safety-critical design, and certification to add")],
     "CY5": [("67007", "Blockchain: Vision and Practice", "Michael Bershadsky", "")],
     "AI1": [("65339", "LLM & Agents (NLP)", "Dr. Alexander Apartsin", "")],
     "AI3": [("67025", "Deep-Learning-Based Computer Vision", "Lehav Yefet", "")],
@@ -718,38 +718,46 @@ def build_index():
     <h2>Core course catalogue &amp; track map</h2>
     <p class="muted">Every course below is a <b>core course</b> in one or more concentrations and an <b>elective</b> to the others. The same eight core courses can be scheduled two ways. Click a course to open it; click any column header to sort.</p>
 
-    <h3 class="pathhead">Regular Path <span class="lbl">2 semesters</span></h3>
-    <p class="muted">Within a concentration, core courses are taught in the <b>first semester (A)</b> or <b>second semester (B)</b>.</p>
-    <div class="legend">
-      <span><i class="sw" style="background:#14385C"></i> Core &middot; semester 1 (A)</span>
-      <span><i class="sw" style="background:#94A3B8"></i> Core &middot; semester 2 (B)</span>
-      <span><i class="sw e"></i> Elective to that concentration</span>
-    </div>
-    {filter_bar('catalogRegular')}
-    <div class="tablewrap">{matrix_regular}</div>
+    <details class="collapse" open>
+      <summary><span class="pathhead">Regular Path <span class="lbl">2 semesters</span></span></summary>
+      <p class="muted">Within a concentration, core courses are taught in the <b>first semester (A)</b> or <b>second semester (B)</b>.</p>
+      <div class="legend">
+        <span><i class="sw" style="background:#14385C"></i> Core &middot; semester 1 (A)</span>
+        <span><i class="sw" style="background:#94A3B8"></i> Core &middot; semester 2 (B)</span>
+        <span><i class="sw e"></i> Elective to that concentration</span>
+      </div>
+      {filter_bar('catalogRegular')}
+      <div class="tablewrap">{matrix_regular}</div>
+    </details>
 
-    <h3 class="pathhead">Flexible Path <span class="lbl">3 semesters</span></h3>
-    <p class="muted">A lighter schedule that spreads the same eight core courses across <b>three semesters</b> (three, three, then two), for students who want a gentler load or room for more electives.</p>
-    <div class="legend">
-      <span><i class="sw" style="background:#14385C"></i> Semester 1 (S1)</span>
-      <span><i class="sw" style="background:#94A3B8"></i> Semester 2 (S2)</span>
-      <span><i class="sw" style="background:#fff;border:1px solid #14385C"></i> Semester 3 (S3)</span>
-      <span><i class="sw e"></i> Elective to that concentration</span>
-    </div>
-    {filter_bar('catalogFlexible')}
-    <div class="tablewrap">{matrix_flexible}</div>
+    <details class="collapse">
+      <summary><span class="pathhead">Flexible Path <span class="lbl">3 semesters</span></span></summary>
+      <p class="muted">A lighter schedule that spreads the same eight core courses across <b>three semesters</b> (three, three, then two), for students who want a gentler load or room for more electives.</p>
+      <div class="legend">
+        <span><i class="sw" style="background:#14385C"></i> Semester 1 (S1)</span>
+        <span><i class="sw" style="background:#94A3B8"></i> Semester 2 (S2)</span>
+        <span><i class="sw" style="background:#fff;border:1px solid #14385C"></i> Semester 3 (S3)</span>
+        <span><i class="sw e"></i> Elective to that concentration</span>
+      </div>
+      {filter_bar('catalogFlexible')}
+      <div class="tablewrap">{matrix_flexible}</div>
+    </details>
   </section>
 
   <section class="block">
-    <h2>Base courses: current coverage &amp; gaps</h2>
-    <p class="muted">How each planned core course maps to a course HIT already runs, and where new courses still need to be built.</p>
-    {build_base_table()}
+    <details class="collapse">
+      <summary><h2>Base courses: current coverage &amp; gaps</h2></summary>
+      <p class="muted">How each planned core course maps to a course HIT already runs, and where new courses still need to be built.</p>
+      {build_base_table()}
+    </details>
   </section>
 
   <section class="block">
-    <h2>Selected elective catalogue</h2>
-    <p class="muted">A selection of example electives, open to every concentration, that deepen or broaden a student's expertise beyond the core eight. These are examples, not the full list; the elective catalogue is larger and grows over time.</p>
-    {extra_html}
+    <details class="collapse">
+      <summary><h2>Selected elective catalogue</h2></summary>
+      <p class="muted">A selection of example electives, open to every concentration, that deepen or broaden a student's expertise beyond the core eight. These are examples, not the full list; the elective catalogue is larger and grows over time.</p>
+      {extra_html}
+    </details>
   </section>
 </main>
 <script>{TABLE_JS}</script>"""
@@ -1289,6 +1297,16 @@ main{padding:2.6rem 0 3rem}
 .matrix.sortable thead th[data-dir=asc]:after{content:' \\25B2';font-size:.66rem;opacity:1}
 .matrix.sortable thead th[data-dir=desc]:after{content:' \\25BC';font-size:.66rem;opacity:1}
 .pathhead{font-size:1.25rem;margin:1.8rem 0 .35rem}
+/* collapsible sections */
+.collapse{margin:.3rem 0 1.1rem}
+.collapse>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:.55rem;padding:.25rem 0}
+.collapse>summary::-webkit-details-marker{display:none}
+.collapse>summary::before{content:'';width:0;height:0;flex:none;
+  border-left:7px solid var(--accent);border-top:5px solid transparent;border-bottom:5px solid transparent;
+  transition:transform .15s ease}
+.collapse[open]>summary::before{transform:rotate(90deg)}
+.collapse>summary h2,.collapse>summary .pathhead{margin:0}
+.collapse>summary:hover h2,.collapse>summary:hover .pathhead{color:var(--accent)}
 .pathhead .lbl{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-weight:400;background:var(--soft);padding:.12rem .5rem;border-radius:5px;margin-left:.4rem;vertical-align:2px}
 .filterbar{display:flex;gap:.6rem;flex-wrap:wrap;margin:.2rem 0 .7rem}
 .filterbar input,.filterbar select{font:inherit;font-size:.88rem;padding:.45rem .65rem;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink2)}
