@@ -483,9 +483,9 @@ PILLARS = [
     ("Portfolio-driven", "3B82F6", "DBEAFE", [
         "A <b>guided</b> effort to help students build a strong <b>project portfolio</b>.",
         "Project-based learning stresses project depth and <b>demonstrable artifacts</b>."]),
-    ("Academic depth with tools", "A855F7", "F2E8FE", [
-        "Combines rigorous academic foundations with current <b>tools</b>, programming languages, and platforms.",
-        "Embeds <b>AI-assisted</b> development practices."]),
+    ("Academic rigor, modern tools", "A855F7", "F2E8FE", [
+        "Builds <b>rigorous theoretical foundations</b>, then puts them to work with the tools, languages, and platforms used in industry today.",
+        "Treats <b>AI-assisted development</b> as a first-class practice, not an afterthought."]),
     ("Problem-driven design", "F59E0B", "FEF1CF", [
         "Each course is organized around a <b>real problem domain</b>, integrating the diverse knowledge, technologies, and techniques needed to solve that challenge.",
         "Depth over exhaustive detail: students reach <b>deep understanding</b> and learn to build new systems by integrating ideas with <b>AI assistants</b>."]),
