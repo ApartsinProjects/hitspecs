@@ -739,8 +739,8 @@ def build_index():
   </section>
 
   <section class="block">
-    <h2>Shared elective catalogue</h2>
-    <p class="muted">Enrichment courses, open to every concentration, that deepen or broaden a student's expertise beyond the core eight. They are not core to any concentration. The catalogue grows over time.</p>
+    <h2>Selected elective catalogue</h2>
+    <p class="muted">A selection of example electives, open to every concentration, that deepen or broaden a student's expertise beyond the core eight. These are examples, not the full list; the elective catalogue is larger and grows over time.</p>
     {extra_html}
   </section>
 </main>
