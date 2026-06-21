@@ -719,7 +719,7 @@ def build_index():
     <p class="muted">Every course below is a <b>core course</b> in one or more concentrations and an <b>elective</b> to the others. The same eight core courses can be scheduled two ways. Click a course to open it; click any column header to sort.</p>
 
     <details class="collapse" open>
-      <summary><span class="pathhead">Regular Path <span class="lbl">2 semesters</span></span></summary>
+      <summary><span class="pathhead">Regular Path <span class="lbl">2 semesters</span></span><span class="toggle"><span class="toggle-show">Show</span><span class="toggle-hide">Hide</span></span></summary>
       <p class="muted">Within a concentration, core courses are taught in the <b>first semester (A)</b> or <b>second semester (B)</b>.</p>
       <div class="legend">
         <span><i class="sw" style="background:#14385C"></i> Core &middot; semester 1 (A)</span>
@@ -731,7 +731,7 @@ def build_index():
     </details>
 
     <details class="collapse">
-      <summary><span class="pathhead">Flexible Path <span class="lbl">3 semesters</span></span></summary>
+      <summary><span class="pathhead">Flexible Path <span class="lbl">3 semesters</span></span><span class="toggle"><span class="toggle-show">Show</span><span class="toggle-hide">Hide</span></span></summary>
       <p class="muted">A lighter schedule that spreads the same eight core courses across <b>three semesters</b> (three, three, then two), for students who want a gentler load or room for more electives.</p>
       <div class="legend">
         <span><i class="sw" style="background:#14385C"></i> Semester 1 (S1)</span>
@@ -746,7 +746,7 @@ def build_index():
 
   <section class="block">
     <details class="collapse">
-      <summary><h2>Base courses: current coverage &amp; gaps</h2></summary>
+      <summary><h2>Base courses: current coverage &amp; gaps</h2><span class="toggle"><span class="toggle-show">Show</span><span class="toggle-hide">Hide</span></span></summary>
       <p class="muted">How each planned core course maps to a course HIT already runs, and where new courses still need to be built.</p>
       {build_base_table()}
     </details>
@@ -754,7 +754,7 @@ def build_index():
 
   <section class="block">
     <details class="collapse">
-      <summary><h2>Selected elective catalogue</h2></summary>
+      <summary><h2>Selected elective catalogue</h2><span class="toggle"><span class="toggle-show">Show</span><span class="toggle-hide">Hide</span></span></summary>
       <p class="muted">A selection of example electives, open to every concentration, that deepen or broaden a student's expertise beyond the core eight. These are examples, not the full list; the elective catalogue is larger and grows over time.</p>
       {extra_html}
     </details>
@@ -1255,8 +1255,9 @@ main{padding:2.6rem 0 3rem}
 
 /* concentration grid (home) */
 .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
-.ccard{display:block;border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.4rem;color:var(--ink2);
+.ccard{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.4rem;color:var(--ink2);
   border-left:5px solid var(--accent);transition:box-shadow .15s,transform .15s;background:#fff}
+.ccard .chip-label{margin-top:auto;padding-top:.5rem}
 .ccard:hover{text-decoration:none;box-shadow:0 12px 30px -12px rgba(15,23,42,.25);transform:translateY(-2px)}
 .ccard-tag{font-family:var(--mono);font-size:.74rem;font-weight:700;color:var(--accent);background:var(--soft);padding:.15rem .5rem;border-radius:5px}
 .ccard h3{font-size:1.3rem;margin:.5rem 0 0}
@@ -1298,15 +1299,20 @@ main{padding:2.6rem 0 3rem}
 .matrix.sortable thead th[data-dir=desc]:after{content:' \\25BC';font-size:.66rem;opacity:1}
 .pathhead{font-size:1.25rem;margin:1.8rem 0 .35rem}
 /* collapsible sections */
-.collapse{margin:.3rem 0 1.1rem}
-.collapse>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:.55rem;padding:.25rem 0}
+.collapse{margin:.5rem 0 1.4rem}
+.collapse>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:.7rem;
+  padding:.65rem .95rem;background:var(--soft);border:1px solid var(--line);border-radius:8px}
+.collapse>summary:hover{background:#EBEEF2}
 .collapse>summary::-webkit-details-marker{display:none}
 .collapse>summary::before{content:'';width:0;height:0;flex:none;
-  border-left:7px solid var(--accent);border-top:5px solid transparent;border-bottom:5px solid transparent;
+  border-left:8px solid var(--accent);border-top:6px solid transparent;border-bottom:6px solid transparent;
   transition:transform .15s ease}
 .collapse[open]>summary::before{transform:rotate(90deg)}
+.collapse[open]>summary{margin-bottom:.9rem}
 .collapse>summary h2,.collapse>summary .pathhead{margin:0}
-.collapse>summary:hover h2,.collapse>summary:hover .pathhead{color:var(--accent)}
+.collapse>summary .toggle{margin-left:auto;font-family:var(--mono);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+.collapse[open]>summary .toggle-show{display:none}
+.collapse:not([open])>summary .toggle-hide{display:none}
 .pathhead .lbl{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-weight:400;background:var(--soft);padding:.12rem .5rem;border-radius:5px;margin-left:.4rem;vertical-align:2px}
 .filterbar{display:flex;gap:.6rem;flex-wrap:wrap;margin:.2rem 0 .7rem}
 .filterbar input,.filterbar select{font:inherit;font-size:.88rem;padding:.45rem .65rem;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink2)}
