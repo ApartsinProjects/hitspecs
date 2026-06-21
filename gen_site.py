@@ -611,7 +611,7 @@ def build_base_table():
             ac = '<span class="muted">No existing course yet; to be developed.</span>'
         rows += (f'<tr><td class="bcid"><span class="dot" style="background:#{col}"></span>'
                  f'<a href="courses/{cid}.html">{e(cid)}</a></td>'
-                 f'<td class="bname">{e(COURSES[cid][0])}</td>'
+                 f'<td class="bname"><a href="courses/{cid}.html">{e(COURSES[cid][0])}</a></td>'
                  f'<td>{ac}</td>'
                  f'<td><span class="bstatus {scls}">{status}</span></td></tr>')
     summary = (f'<div class="legend"><span><i class="sw" style="background:#1F6F54"></i> '
@@ -1421,6 +1421,8 @@ h2 .hetx{font-size:1rem;font-weight:400}
 .basetbl .bcid a{color:var(--ink2)}
 .dot{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;margin-right:.35rem;vertical-align:1px}
 .bname{font-weight:600;color:var(--ink)}
+.bname a{color:var(--ink)}
+.bname a:hover{color:var(--accent)}
 .bav{margin-bottom:.35rem}
 .bav:last-child{margin-bottom:0}
 .bnum{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-right:.3rem}

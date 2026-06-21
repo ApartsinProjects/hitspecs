@@ -244,6 +244,8 @@ h2 .hetx{font-size:1rem;font-weight:400}
 .basetbl .bcid a{color:var(--ink2)}
 .dot{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;margin-right:.35rem;vertical-align:1px}
 .bname{font-weight:600;color:var(--ink)}
+.bname a{color:var(--ink)}
+.bname a:hover{color:var(--accent)}
 .bav{margin-bottom:.35rem}
 .bav:last-child{margin-bottom:0}
 .bnum{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-right:.3rem}
