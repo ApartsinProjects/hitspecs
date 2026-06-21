@@ -1442,6 +1442,7 @@ def main():
     os.makedirs(OUT)
     copy_assets()
     write(".nojekyll", "")  # serve files as-is on GitHub Pages
+    write("CNAME", "hitspecs.apartsin.com")  # GitHub Pages custom domain
     write("style.css", CSS)
     build_index()
     build_careers()
