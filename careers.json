@@ -410,56 +410,52 @@
       "JFrog"
     ]
   },
-  "applied-scientist": {
-    "title": "Applied Scientist",
-    "title_he": "מדען יישומי",
+  "algorithm-engineer": {
+    "title": "Algorithm Engineer",
+    "title_he": "מהנדס אלגוריתמים",
     "concentration": "AI",
-    "summary": "An Applied Scientist conducts applied research to develop novel algorithms and models that solve concrete business and product problems. They combine scientific rigor with engineering practicality, designing experiments, prototyping methods, and translating research advances into deployable solutions.",
+    "summary": "An Algorithm Engineer designs, implements, and optimizes the algorithms at the core of intelligent products, from machine learning and perception to search and optimization. They turn mathematical and research ideas into efficient, tested, production-ready code.",
     "responsibilities": [
-      "Formulate research problems from product and business needs",
-      "Design and run experiments to test hypotheses and compare methods",
-      "Prototype and validate novel models and algorithms",
-      "Analyze results with rigorous statistical methods and ablations",
-      "Translate research prototypes into production-ready solutions with engineers",
-      "Read, reproduce, and adapt state-of-the-art research from the literature"
+      "Design and implement algorithms for perception, estimation, optimization, or learning",
+      "Translate research papers and mathematical models into efficient, tested code",
+      "Profile and optimize algorithms for speed, memory, and numerical stability",
+      "Benchmark algorithm variants and analyze accuracy, complexity, and trade-offs",
+      "Integrate algorithms into production systems and real-time pipelines",
+      "Collaborate with researchers and product engineers to refine requirements"
     ],
     "knowledge": [
-      "Probability theory, statistics, and experimental design",
-      "Linear algebra, optimization, and multivariate calculus",
-      "Machine learning and deep learning theory in depth",
-      "Statistical inference, hypothesis testing, and causal reasoning",
-      "Information theory and the foundations of representation learning",
-      "Research methodology, reproducibility, and the scientific method"
+      "Algorithms, data structures, and complexity analysis",
+      "Linear algebra, probability, and optimization",
+      "Machine learning and statistical modeling foundations",
+      "Numerical methods and numerical stability",
+      "Signal or image processing fundamentals where relevant"
     ],
     "skills": [
-      "Designing rigorous experiments and ablation studies",
-      "Reading and reproducing academic research papers",
-      "Prototyping novel algorithms from mathematical formulations",
-      "Performing statistical analysis and interpreting significance",
-      "Communicating findings through papers, reports, and presentations",
-      "Collaborating with engineers to deploy research outcomes"
+      "Strong programming and software engineering",
+      "Mathematical modeling and problem decomposition",
+      "Performance profiling and optimization",
+      "Rigorous experimental design and benchmarking",
+      "Reading and reproducing research literature"
     ],
     "tools": [
-      "Python",
-      "PyTorch and JAX",
-      "NumPy, SciPy, and pandas",
-      "Hugging Face Transformers",
-      "Jupyter and matplotlib",
-      "Weights and Biases",
-      "scikit-learn",
-      "LaTeX",
-      "Ray and Slurm",
-      "CUDA"
+      "Python: algorithm prototyping and development",
+      "C++: high-performance algorithm implementation",
+      "NumPy and SciPy: numerical computing",
+      "PyTorch: learning-based components",
+      "OpenCV: computer-vision algorithms",
+      "Numba or Cython: acceleration of hot loops",
+      "Git and CI: versioned, tested code",
+      "Profilers (perf, py-spy): performance analysis"
     ],
     "example_employers": [
-      "Google",
-      "Microsoft",
-      "Nvidia",
-      "Amazon",
-      "Meta",
       "Mobileye",
-      "AI21 Labs",
-      "Intel"
+      "Intel",
+      "NVIDIA",
+      "Google",
+      "Qualcomm",
+      "Lightricks",
+      "Rafael",
+      "Trigo"
     ]
   },
   "financial-software-engineer": {

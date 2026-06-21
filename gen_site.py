@@ -52,7 +52,7 @@ TRACKS = {
             "computer vision, scalable big-data learning, generative models, and "
             "embodied AI for robotics, all grounded in the engineering needed to "
             "deploy them in production."),
-        roles=["ML / AI Engineer", "MLOps Engineer", "Applied Scientist",
+        roles=["ML / AI Engineer", "MLOps Engineer", "Algorithm Engineer",
                "Data Scientist", "NLP Engineer", "Computer Vision Engineer"],
     ),
     "QCF": dict(
