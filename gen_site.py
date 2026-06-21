@@ -84,8 +84,9 @@ TRACKS = {
             "pairs a strong computer-graphics and spatial-computing core with vision, "
             "generative, and embodied AI to create worlds that render, react, and "
             "scale."),
-        roles=["Game Developer", "XR / AR Developer", "Graphics / Rendering Engineer",
-               "Technical Artist", "Game Systems Engineer", "Simulation Engineer"],
+        roles=["Gameplay Programmer", "Graphics / Rendering Engineer",
+               "XR / AR Software Developer", "Game Engine Developer",
+               "Game Backend Engineer", "Simulation Software Engineer"],
     ),
     "DF": dict(
         name="Defense Technologies & Autonomous Systems",
@@ -99,9 +100,9 @@ TRACKS = {
             "real-time software, secure communications, and autonomous platforms. It "
             "builds on cryptography, embedded security, vision, and temporal AI to "
             "deliver systems that must perform reliably under real-world constraints."),
-        roles=["Defense Systems Engineer", "Embedded / Avionics Engineer",
-               "Autonomous Systems Engineer", "Sensor & Signal-Processing Engineer",
-               "C4ISR Engineer", "Modeling & Simulation Engineer"],
+        roles=["Defense Software Engineer", "Embedded Software Engineer",
+               "Autonomous Systems Software Engineer", "Signal-Processing Software Engineer",
+               "Secure Communications Software Engineer", "Simulation & Modeling Engineer"],
     ),
 }
 TRACK_ORDER = ["SE", "CY", "AI", "QCF", "GM", "DF"]
@@ -347,7 +348,6 @@ ELECTIVE_CATALOGUE = [
     ("65346", "Human-Computer Interaction (UI)", "ממשקי אדם מחשב UI", "3", "Dr. Naava Shaked", "SE", "Software"),
     ("65365", "Parallel Programming", "תכנות מקבילי", "3", "Michael Haim", "SE", "Software"),
     ("67026", "Introduction to Embedded Software and Applications", "מבוא לתוכנה משובצת מחשב ויישומים", "3.5", "Vladi Sorkin", "SE", "Software"),
-    ("65235", "Computer Graphics", "גרפיקה ממוחשבת", "3", "Dr. Vladimir Nodelman", "SE", "Graphics"),
     ("65345", "Competitive Programming", "תכנות תחרותי", "3.5", "Yuval Meir", "SE", "Project"),
     ("67000", "Advanced Software Solutions Engineering, Part A", "הנדסת פתרונות תוכנה מתקדמים חלק א'", "3.5", "Dr. Yossi Eliaz", "SE", "Project"),
     ("67013", "Advanced Software Solutions Engineering, Part B", "הנדסת פתרונות תוכנה מתקדמים חלק ב'", "3.5", "Dr. Yossi Eliaz", "SE", "Project"),
@@ -375,6 +375,7 @@ BASE_AVAILABLE = {
     "SE5": [("65353", "Introduction to DevOps", "Moshe Mamia", "About 30%: DevOps basics; DataOps, MLOps, LLMOps, AgentOps to add")],
     "SE6": [("65348", "Software for IoT in a Smart-City Environment", "Yuri Yurchenko", ""),
             ("65351", "Android Client-Side Development 1", "Effi Propes", "")],
+    "GM1": [("65235", "Computer Graphics", "Dr. Vladimir Nodelman", "")],
     "CY1": [("68012", "Applied Introduction to Modern Cryptography", "Zeev Geyzel", "")],
     "CY5": [("67007", "Blockchain: Vision and Practice", "Michael Bershadsky", "")],
     "AI1": [("65339", "LLM & Agents (NLP)", "Dr. Alexander Apartsin", "")],

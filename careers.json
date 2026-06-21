@@ -1230,44 +1230,43 @@
       "Migdal Insurance"
     ]
   },
-  "game-developer": {
-    "title": "Game Developer",
-    "title_he": "מפתח משחקים",
+  "gameplay-programmer": {
+    "title": "Gameplay Programmer",
+    "title_he": "מתכנת גיימפליי",
     "concentration": "GM",
-    "summary": "A Game Developer designs and implements the interactive systems, gameplay logic, and runtime behavior that bring a game to life. They work inside a game engine to turn design documents into playable features, balancing performance, feel, and reliability across target platforms.",
+    "summary": "A Gameplay Programmer writes the code that turns design ideas into playable features inside a game engine. They implement player controls, combat, abilities, AI behaviors, and game-state logic, working in C# or C++ alongside designers to make systems feel responsive and fun.",
     "responsibilities": [
-      "Implement gameplay mechanics, player controllers, and game state systems from design specifications",
-      "Integrate art, audio, animation, and UI assets into the engine and wire up their behavior",
-      "Profile and optimize frame time, memory, and load times across target platforms",
-      "Build and tune AI behaviors for non-player characters and enemies",
-      "Collaborate with designers and artists to iterate on game feel and balance",
-      "Fix bugs, write automated and playtest-driven tests, and maintain build pipelines"
+      "Implement gameplay mechanics, player controllers, and ability systems from design specifications",
+      "Write and maintain enemy and NPC behavior logic such as state machines and behavior trees",
+      "Build the in-game UI flow and wire user input to gameplay actions in code",
+      "Profile and optimize gameplay code to stay within the per-frame time budget",
+      "Write automated tests and fix gameplay bugs reported by QA and playtests",
+      "Collaborate with designers to prototype, tune, and iterate on game feel"
     ],
     "knowledge": [
+      "Data structures, algorithms, and computational complexity analysis",
+      "Object-oriented and component-based programming paradigms",
       "Linear algebra and 3D math for transforms, vectors, and quaternions",
       "Game loop architecture, fixed and variable timestep, and frame timing",
-      "Real-time physics, collision detection, and spatial partitioning",
-      "Data structures, algorithms, and memory management for performance",
-      "Entity-component and object-oriented design patterns for games",
-      "Networking models for multiplayer state synchronization"
+      "Entity-component-system and common gameplay design patterns",
+      "Memory management and performance considerations for real-time code"
     ],
     "skills": [
-      "Translating game design documents into working, maintainable systems",
-      "Profiling and optimizing real-time performance under tight frame budgets",
-      "Debugging complex runtime and timing-dependent issues",
-      "Iterating quickly on gameplay feel through prototyping",
-      "Writing clean, reusable engine and gameplay code",
-      "Collaborating across art, design, and engineering disciplines"
+      "Translating design documents into clean, maintainable gameplay code",
+      "Debugging timing-dependent and state-related runtime issues",
+      "Prototyping features quickly to iterate on game feel",
+      "Profiling and optimizing code under tight frame budgets",
+      "Writing reusable systems that designers can configure safely",
+      "Collaborating across design and engineering in agile teams"
     ],
     "tools": [
       "Unity and C#",
       "Unreal Engine and C++",
-      "Godot",
-      "Git and Perforce",
+      "Godot and GDScript",
       "Visual Studio and Rider",
-      "Blender",
-      "FMOD and Wwise",
-      "Jenkins for build automation",
+      "Git and Perforce",
+      "Visual scripting tools such as Blueprints",
+      "Jira",
       "RenderDoc for profiling"
     ],
     "example_employers": [
@@ -1281,48 +1280,97 @@
       "Rovio"
     ]
   },
-  "xr-ar-developer": {
-    "title": "XR / AR Developer",
-    "title_he": "מפתח מציאות מורחבת ורבודה",
+  "graphics-rendering-engineer": {
+    "title": "Graphics / Rendering Engineer",
+    "title_he": "מהנדס גרפיקה ורינדור",
     "concentration": "GM",
-    "summary": "An XR / AR Developer builds immersive applications for augmented, virtual, and mixed reality headsets and mobile devices. They combine spatial computing, real-time 3D rendering, and natural interaction to blend digital content with the physical world.",
+    "summary": "A Graphics / Rendering Engineer writes the software that turns 3D scene data into images on screen. They implement and optimize shaders, rendering pipelines, and GPU code in C++ and a shading language to reach high visual quality at interactive frame rates.",
     "responsibilities": [
-      "Develop interactive XR experiences using spatial tracking, anchors, and hand or controller input",
-      "Implement and optimize 3D scenes and shaders to hit headset frame and latency targets",
-      "Integrate device sensors, cameras, and SLAM-based tracking into applications",
-      "Design intuitive spatial user interfaces and natural interaction patterns",
-      "Test across multiple headsets and mobile devices for comfort and performance",
+      "Implement rendering pipeline features, lighting models, and post-processing effects in code",
+      "Write and optimize shaders across vertex, fragment, and compute stages",
+      "Profile GPU performance and reduce frame time through bottleneck analysis",
+      "Integrate rendering techniques such as shadow mapping and physically based rendering into the engine",
+      "Maintain and port rendering code across graphics APIs and platforms",
+      "Build debugging and visualization tools for the rendering team"
+    ],
+    "knowledge": [
+      "Linear algebra, projective geometry, and the rendering equation",
+      "GPU architecture, the rasterization pipeline, and memory hierarchies",
+      "Real-time rendering algorithms and physically based rendering theory",
+      "Data structures, algorithms, and computational complexity analysis",
+      "Numerical methods and floating-point precision considerations",
+      "Sampling theory, anti-aliasing, and color and gamma fundamentals"
+    ],
+    "skills": [
+      "Writing and debugging high-performance shader code",
+      "Profiling and optimizing GPU workloads with capture tools",
+      "Implementing modern rendering techniques from research papers",
+      "Reasoning about precision, bandwidth, and cache behavior",
+      "Working across multiple graphics APIs and hardware targets",
+      "Writing clean, performant systems-level C++"
+    ],
+    "tools": [
+      "C++ and HLSL or GLSL",
+      "Vulkan and DirectX 12",
+      "OpenGL and Metal",
+      "Unreal Engine and Unity",
+      "RenderDoc and NVIDIA Nsight",
+      "Shader Graph",
+      "CMake",
+      "Git"
+    ],
+    "example_employers": [
+      "NVIDIA",
+      "Epic Games",
+      "Unity",
+      "Meta",
+      "Intel",
+      "Apple",
+      "Electronic Arts",
+      "Playtika"
+    ]
+  },
+  "xr-ar-software-developer": {
+    "title": "XR / AR Software Developer",
+    "title_he": "מפתח תוכנה למציאות מורחבת ורבודה",
+    "concentration": "GM",
+    "summary": "An XR / AR Software Developer writes the application code for augmented, virtual, and mixed reality experiences on headsets and mobile devices. They program spatial tracking, 3D interaction, and real-time rendering in C# or C++ using XR SDKs to blend digital content with the physical world.",
+    "responsibilities": [
+      "Develop interactive XR application features using spatial tracking, anchors, and hand or controller input",
+      "Implement and optimize 3D scenes and shaders in code to hit headset frame and latency targets",
+      "Integrate XR SDKs and device APIs for cameras, sensors, and tracking",
+      "Program intuitive spatial user interfaces and natural interaction logic",
+      "Test and debug applications across multiple headsets and mobile devices",
       "Collaborate with 3D artists and designers to deliver immersive content"
     ],
     "knowledge": [
       "3D math, coordinate systems, and spatial transforms",
       "Real-time rendering pipelines and shader fundamentals",
+      "Object-oriented programming and software architecture for interactive apps",
       "SLAM, computer vision, and inside-out tracking principles",
       "Human factors of immersion, comfort, and motion sickness",
-      "Stereoscopic rendering and field-of-view considerations",
-      "Interaction design for spatial and gesture-based interfaces"
+      "Data structures, algorithms, and performance optimization"
     ],
     "skills": [
       "Building performant real-time 3D applications for constrained hardware",
       "Optimizing draw calls, polygon counts, and latency for headsets",
-      "Designing comfortable, intuitive spatial interactions",
+      "Programming comfortable, intuitive spatial interactions",
       "Debugging tracking and calibration issues on device",
-      "Prototyping immersive concepts rapidly",
-      "Integrating third-party XR SDKs and toolkits"
+      "Integrating third-party XR SDKs and toolkits in code",
+      "Prototyping immersive concepts rapidly"
     ],
     "tools": [
       "Unity and C#",
-      "Unreal Engine",
+      "Unreal Engine and C++",
       "ARKit and ARCore",
       "OpenXR",
       "Meta Quest SDK",
       "Apple visionOS and RealityKit",
       "Vuforia",
-      "Blender",
       "Shader Graph"
     ],
     "example_employers": [
-      "Meta Reality Labs",
+      "Meta",
       "Apple",
       "Snap",
       "Microsoft",
@@ -1332,185 +1380,133 @@
       "WSC Sports"
     ]
   },
-  "graphics-engineer": {
-    "title": "Graphics / Rendering Engineer",
-    "title_he": "מהנדס גרפיקה ורינדור",
+  "game-engine-developer": {
+    "title": "Game Engine Developer",
+    "title_he": "מפתח מנוע משחק",
     "concentration": "GM",
-    "summary": "A Graphics / Rendering Engineer develops the low-level rendering systems that turn 3D scene data into images on screen. They write and optimize shaders, rendering pipelines, and GPU code to achieve high visual fidelity at interactive frame rates.",
+    "summary": "A Game Engine Developer builds the reusable software systems and tools that games are built on, such as the scene graph, asset pipeline, scripting layer, and editor tooling. They write performant C++ engine code and APIs that gameplay and feature teams program against.",
     "responsibilities": [
-      "Design and implement rendering pipelines, lighting models, and post-processing effects",
-      "Write and optimize shaders across vertex, fragment, and compute stages",
-      "Profile GPU performance and reduce frame time through bottleneck analysis",
-      "Implement techniques such as shadow mapping, global illumination, and physically based rendering",
-      "Port and maintain rendering code across graphics APIs and platforms",
-      "Collaborate with technical artists to balance visual quality and performance"
+      "Design and implement core engine subsystems such as the scene graph, asset loading, and memory management",
+      "Build and maintain editor tools and content pipelines for the production teams",
+      "Define clean APIs and scripting bindings consumed by gameplay programmers",
+      "Profile and optimize engine systems for CPU and memory performance",
+      "Implement serialization, hot-reload, and build pipeline automation",
+      "Diagnose and fix low-level engine bugs across platforms"
     ],
     "knowledge": [
-      "Linear algebra, projective geometry, and the rendering equation",
-      "GPU architecture, the rasterization pipeline, and memory hierarchies",
-      "Physically based rendering and light transport theory",
-      "Color theory, gamma, and high dynamic range imaging",
-      "Numerical methods and floating-point precision considerations",
-      "Anti-aliasing, sampling theory, and signal processing"
+      "Data structures, algorithms, and computational complexity analysis",
+      "Software architecture patterns and API design principles",
+      "Memory management, allocators, and cache-friendly data layout",
+      "Linear algebra and 3D math for engine systems",
+      "Concurrency, threading, and parallel programming models",
+      "Compiler, build system, and toolchain fundamentals"
     ],
     "skills": [
-      "Writing and debugging high-performance shader code",
-      "Profiling and optimizing GPU workloads with capture tools",
-      "Implementing modern rendering techniques from research papers",
-      "Reasoning about precision, bandwidth, and cache behavior",
-      "Working across multiple graphics APIs and hardware targets",
-      "Collaborating with artists to translate visual goals into code"
-    ],
-    "tools": [
-      "C++ and HLSL or GLSL",
-      "Vulkan and DirectX 12",
-      "OpenGL and Metal",
-      "RenderDoc and NVIDIA Nsight",
-      "Unreal Engine",
-      "Unity",
-      "PIX for performance analysis",
-      "CMake",
-      "Git"
-    ],
-    "example_employers": [
-      "NVIDIA",
-      "Epic Games",
-      "Unity",
-      "AMD",
-      "Intel",
-      "Apple",
-      "Electronic Arts",
-      "Playtika"
-    ]
-  },
-  "technical-artist": {
-    "title": "Technical Artist",
-    "title_he": "אמן טכני",
-    "concentration": "GM",
-    "summary": "A Technical Artist bridges the art and engineering teams, building the tools, shaders, and pipelines that let artists realize their vision efficiently within engine constraints. They solve the technical problems behind visual content, from material authoring to performance budgets.",
-    "responsibilities": [
-      "Build shaders, materials, and visual effects that meet both artistic and performance goals",
-      "Create tools and scripts that automate and streamline art production workflows",
-      "Define and enforce art performance budgets for polygons, textures, and draw calls",
-      "Set up rigging, skinning, and animation pipelines for characters and assets",
-      "Diagnose and resolve rendering and asset import issues for the art team",
-      "Document pipelines and train artists on engine tools and best practices"
-    ],
-    "knowledge": [
-      "Real-time rendering and shader fundamentals",
-      "3D content creation pipelines and asset optimization",
-      "Rigging, skinning, and animation systems",
-      "Color theory, lighting, and physically based material workflows",
-      "Scripting and tool development concepts",
-      "Performance profiling and memory budgeting for assets"
-    ],
-    "skills": [
-      "Authoring node-based and code shaders for stylized and realistic looks",
-      "Writing automation tools and editor extensions for artists",
-      "Optimizing art assets to fit runtime performance budgets",
-      "Bridging communication between artists and engineers",
-      "Debugging asset pipeline and rendering problems",
-      "Prototyping visual effects and procedural content"
-    ],
-    "tools": [
-      "Unity and Unreal Engine",
-      "Python and C#",
-      "Houdini",
-      "Substance Designer and Painter",
-      "Maya and Blender",
-      "Shader Graph and Material Editor",
-      "Git and Perforce",
-      "ZBrush"
-    ],
-    "example_employers": [
-      "Playtika",
-      "Moon Active",
-      "Plarium",
-      "Unity",
-      "Epic Games",
-      "Ubisoft",
-      "Electronic Arts",
-      "NVIDIA"
-    ]
-  },
-  "game-systems-engineer": {
-    "title": "Game Systems Engineer",
-    "title_he": "מהנדס מערכות משחק",
-    "concentration": "GM",
-    "summary": "A Game Systems Engineer designs and builds the core architectural systems that a game is built on, such as networking, save systems, scripting backends, and live-service infrastructure. They focus on scalable, reliable foundations rather than individual gameplay features.",
-    "responsibilities": [
-      "Architect core engine and game systems for networking, persistence, and content delivery",
-      "Build scalable backend services for multiplayer, matchmaking, and live operations",
-      "Design data and scripting layers that empower designers to build content safely",
-      "Ensure reliability, security, and performance of online game services",
-      "Profile and optimize server and client systems under realistic load",
-      "Define APIs and tooling consumed by gameplay and feature teams"
-    ],
-    "knowledge": [
-      "Distributed systems, consistency, and state synchronization",
-      "Network protocols, latency compensation, and client prediction",
-      "Software architecture patterns and API design",
-      "Database design and data persistence strategies",
-      "Concurrency, threading, and memory management",
-      "Security fundamentals for online services and anti-cheat"
-    ],
-    "skills": [
-      "Designing robust, scalable system architectures",
-      "Implementing authoritative server and client-side networking",
-      "Building tooling and APIs for other engineering teams",
-      "Diagnosing distributed and concurrency bugs",
-      "Load testing and capacity planning for live services",
-      "Balancing performance, reliability, and maintainability"
+      "Writing high-performance, maintainable systems-level C++",
+      "Designing clean engine APIs for other programmers",
+      "Profiling and optimizing CPU and memory hot paths",
+      "Building editor tools and content pipelines",
+      "Debugging complex low-level and cross-platform issues",
+      "Reasoning about data-oriented design and parallelism"
     ],
     "tools": [
       "C++ and C#",
-      "Unity and Unreal Engine",
-      "Photon and Mirror networking",
+      "Unreal Engine and Unity source",
+      "Godot engine source",
+      "Visual Studio and Rider",
+      "CMake and build automation",
+      "Git and Perforce",
+      "RenderDoc and profiling tools",
+      "Python for tooling"
+    ],
+    "example_employers": [
+      "Unity",
+      "Epic Games",
+      "NVIDIA",
+      "Electronic Arts",
+      "Ubisoft",
+      "Playtika",
+      "Plarium",
+      "Riot Games"
+    ]
+  },
+  "game-backend-engineer": {
+    "title": "Game Backend Engineer",
+    "title_he": "מהנדס צד שרת למשחקים",
+    "concentration": "GM",
+    "summary": "A Game Backend Engineer builds the server-side services that power online and live-service games, including multiplayer, matchmaking, player accounts, and live operations. They write scalable, reliable backend code and APIs that game clients connect to at scale.",
+    "responsibilities": [
+      "Design and implement backend services for multiplayer, matchmaking, and live operations",
+      "Build and maintain APIs for player accounts, progression, and in-game economy",
+      "Ensure service reliability, scalability, and low latency under heavy player load",
+      "Model and optimize data stores for player and game state",
+      "Implement authentication, anti-cheat hooks, and secure server-side validation",
+      "Monitor live services, write automated tests, and respond to production incidents"
+    ],
+    "knowledge": [
+      "Data structures, algorithms, and computational complexity analysis",
+      "Distributed systems concepts including consistency, caching, and partitioning",
+      "Relational and non-relational database theory and modeling",
+      "Network protocols, the client-server model, and state synchronization",
+      "Concurrency, parallelism, and asynchronous execution models",
+      "Security fundamentals for online services and anti-cheat"
+    ],
+    "skills": [
+      "Designing scalable and resilient backend services",
+      "Building clean, well-documented service APIs",
+      "Modeling data and writing efficient queries",
+      "Diagnosing performance bottlenecks and concurrency bugs",
+      "Load testing and capacity planning for live services",
+      "Writing maintainable, testable server-side code"
+    ],
+    "tools": [
+      "C# and Go",
+      "Node.js and Python",
       "PlayFab and Nakama",
-      "AWS GameLift",
       "Redis and PostgreSQL",
+      "AWS GameLift",
       "Docker and Kubernetes",
       "gRPC and Protocol Buffers",
-      "Git and Perforce"
+      "Git and GitHub Actions"
     ],
     "example_employers": [
       "Playtika",
       "Moon Active",
       "Plarium",
-      "Riot Games",
+      "Unity",
       "Epic Games",
       "Electronic Arts",
-      "Unity",
-      "Supercell"
+      "Supercell",
+      "Riot Games"
     ]
   },
-  "simulation-engineer": {
-    "title": "Simulation Engineer",
-    "title_he": "מהנדס סימולציה",
+  "simulation-software-engineer": {
+    "title": "Simulation Software Engineer",
+    "title_he": "מהנדס תוכנת סימולציה",
     "concentration": "GM",
-    "summary": "A Simulation Engineer builds real-time interactive simulations of physical, dynamic, or virtual systems for games, training, and visualization. They implement numerical models that are both physically plausible and performant enough to run interactively.",
+    "summary": "A Simulation Software Engineer writes the code for real-time interactive simulations of physical and dynamic systems used in games, training, and visualization. They implement numerical solvers and simulation systems in C++ and Python that are physically plausible and fast enough to run interactively.",
     "responsibilities": [
-      "Implement real-time physics, fluid, particle, and dynamics simulations",
+      "Implement real-time physics, particle, and dynamics simulation code",
       "Develop numerical solvers and integration schemes balancing accuracy and speed",
       "Optimize simulation code for CPU and GPU parallelism",
-      "Validate simulation behavior against physical references and design intent",
       "Integrate simulation systems into engines and interactive applications",
+      "Validate simulation behavior against references and write regression tests",
       "Collaborate with designers and researchers to tune model fidelity"
     ],
     "knowledge": [
-      "Classical mechanics, rigid body, and continuum dynamics",
       "Numerical methods, ODE and PDE integration, and stability",
       "Linear algebra and computational geometry",
+      "Classical mechanics and rigid body dynamics",
+      "Data structures, algorithms, and computational complexity analysis",
       "Parallel and GPU computing principles",
-      "Collision detection and constraint solving",
       "Floating-point precision and numerical error analysis"
     ],
     "skills": [
-      "Implementing stable, performant numerical solvers",
+      "Implementing stable, performant numerical solvers in code",
       "Parallelizing simulation workloads across cores and GPUs",
       "Validating and debugging physically based models",
       "Profiling and optimizing compute-heavy code",
-      "Translating physical models into interactive systems",
+      "Translating physical models into interactive software systems",
       "Tuning fidelity against performance constraints"
     ],
     "tools": [
@@ -1518,60 +1514,60 @@
       "CUDA and compute shaders",
       "Unity DOTS and Unreal Engine Chaos",
       "NVIDIA PhysX and Havok",
-      "Houdini",
       "NumPy and SciPy",
-      "MATLAB",
+      "Visual Studio and Rider",
+      "RenderDoc and Nsight",
       "Git"
     ],
     "example_employers": [
       "NVIDIA",
       "Unity",
       "Epic Games",
-      "Ansys",
-      "Dassault Systemes",
+      "Meta",
+      "Playtika",
       "Improbable",
-      "Israel Aerospace Industries (IAI)",
-      "Elbit Systems"
+      "Plarium",
+      "Moon Active"
     ]
   },
-  "defense-systems-engineer": {
-    "title": "Defense Systems Engineer",
-    "title_he": "מהנדס מערכות ביטחוניות",
+  "defense-software-engineer": {
+    "title": "Defense Software Engineer",
+    "title_he": "מהנדס תוכנה ביטחונית",
     "concentration": "DF",
-    "summary": "A Defense Systems Engineer designs, integrates, and validates complex defense systems that combine hardware, software, sensors, and effectors. They own system-level requirements and architecture, ensuring components work together to meet operational, safety, and reliability needs.",
+    "summary": "A Defense Software Engineer designs and builds the software systems that run defense platforms, from mission software and command applications to data processing services. They write reliable, well-tested code in C++, Java, or Python and integrate it with sensors, communications, and other subsystems.",
     "responsibilities": [
-      "Define system requirements and architecture for defense platforms and subsystems",
-      "Integrate hardware, software, sensors, and communications into cohesive systems",
-      "Develop and execute verification, validation, and field test plans",
-      "Perform trade studies and risk analysis across competing design options",
-      "Coordinate across multidisciplinary teams and external suppliers",
-      "Ensure compliance with safety, reliability, and military standards"
+      "Design and implement mission and command-and-control software components",
+      "Build services that process and integrate data from sensors and subsystems",
+      "Write automated tests and participate in code reviews for high-reliability software",
+      "Integrate software with communications, hardware, and external systems through defined interfaces",
+      "Profile and optimize software for performance and reliability requirements",
+      "Document software and support verification, validation, and field testing"
     ],
     "knowledge": [
-      "Systems engineering lifecycle, requirements, and V-model methodology",
-      "Control theory and feedback systems",
-      "Reliability, availability, and safety analysis methods",
-      "Signal processing and sensor fundamentals",
-      "Communications and networking principles",
-      "Electromagnetics and physics of detection and guidance"
+      "Data structures, algorithms, and computational complexity analysis",
+      "Software design principles such as SOLID, design patterns, and architecture",
+      "Concurrency, parallelism, and asynchronous execution models",
+      "Networking, communication protocols, and the client-server model",
+      "Real-time and high-reliability software concepts",
+      "Software development lifecycle, testing, and verification methodology"
     ],
     "skills": [
-      "Decomposing operational needs into verifiable system requirements",
-      "Integrating multidisciplinary subsystems into working platforms",
-      "Conducting trade studies and quantitative risk analysis",
-      "Planning and executing verification and field tests",
-      "Modeling system performance and failure modes",
-      "Communicating across engineering disciplines and stakeholders"
+      "Writing clean, well-tested, high-reliability code",
+      "Designing software architecture for complex systems",
+      "Integrating software with hardware and external subsystems",
+      "Debugging across software, network, and system layers",
+      "Profiling and optimizing performance-critical software",
+      "Collaborating across multidisciplinary engineering teams"
     ],
     "tools": [
-      "MATLAB and Simulink",
-      "DOORS for requirements management",
-      "SysML and Cameo Systems Modeler",
+      "C++ and Java",
       "Python",
-      "C and C++",
-      "STK for system analysis",
+      "Linux",
       "Git and Jira",
-      "LabVIEW"
+      "Docker",
+      "gRPC and Protocol Buffers",
+      "PostgreSQL and Kafka",
+      "CMake and CI pipelines"
     ],
     "example_employers": [
       "Rafael Advanced Defense Systems",
@@ -1579,50 +1575,49 @@
       "Israel Aerospace Industries (IAI)",
       "Lockheed Martin",
       "Northrop Grumman",
-      "Raytheon",
-      "BAE Systems",
+      "Palantir Technologies",
+      "Anduril Industries",
       "Israel Ministry of Defense"
     ]
   },
-  "embedded-avionics-engineer": {
-    "title": "Embedded / Avionics Engineer",
-    "title_he": "מהנדס מערכות משובצות ואוויוניקה",
+  "embedded-software-engineer": {
+    "title": "Embedded Software Engineer",
+    "title_he": "מהנדס תוכנה משובצת",
     "concentration": "DF",
-    "summary": "An Embedded / Avionics Engineer develops the real-time software and firmware that runs on flight and defense hardware, from flight controllers to mission computers. They write deterministic, safety-critical code that operates under tight timing, memory, and reliability constraints.",
+    "summary": "An Embedded Software Engineer writes the real-time firmware and software that runs on defense and avionics hardware, from flight controllers to mission computers. They program deterministic C and C++ code that operates under tight timing, memory, and reliability constraints.",
     "responsibilities": [
-      "Develop real-time embedded firmware and software for avionics and defense hardware",
-      "Implement device drivers and interfaces for sensors, actuators, and buses",
-      "Ensure deterministic timing and meet hard real-time deadlines",
-      "Perform hardware-in-the-loop and bench testing of embedded systems",
-      "Debug low-level issues using logic analyzers, oscilloscopes, and debuggers",
-      "Document and certify software to applicable avionics safety standards"
+      "Develop real-time embedded firmware and application software for defense hardware",
+      "Implement device drivers and software interfaces for sensors, actuators, and buses",
+      "Write deterministic code that meets hard real-time deadlines",
+      "Build and run software tests including hardware-in-the-loop verification",
+      "Debug low-level software issues using debuggers and trace tools",
+      "Document software and support certification to applicable safety standards"
     ],
     "knowledge": [
       "Real-time operating systems and scheduling theory",
       "Computer architecture, memory maps, and interrupt handling",
-      "Digital and analog electronics fundamentals",
+      "C and C++ language internals and low-level programming",
       "Communication buses such as MIL-STD-1553, ARINC 429, and CAN",
-      "Control systems and signal processing basics",
-      "Safety-critical standards such as DO-178C"
+      "Concurrency, timing, and determinism in embedded systems",
+      "Safety-critical software standards such as DO-178C"
     ],
     "skills": [
       "Writing deterministic, resource-constrained embedded code",
-      "Debugging at the hardware and register level",
       "Implementing and testing device drivers and protocols",
+      "Debugging at the software and register level",
       "Reasoning about timing, concurrency, and interrupts",
-      "Performing hardware-in-the-loop verification",
+      "Performing hardware-in-the-loop software verification",
       "Producing certifiable, well-documented safety-critical software"
     ],
     "tools": [
       "C and C++",
       "Ada and SPARK",
       "VxWorks and FreeRTOS",
-      "ARM Cortex and DSP processors",
-      "JTAG debuggers and oscilloscopes",
+      "ARM Cortex toolchains",
+      "JTAG debuggers and trace tools",
       "Green Hills MULTI",
       "Python for test automation",
-      "Git",
-      "MATLAB and Simulink"
+      "Git"
     ],
     "example_employers": [
       "Israel Aerospace Industries (IAI)",
@@ -1631,38 +1626,38 @@
       "Lockheed Martin",
       "Honeywell Aerospace",
       "Collins Aerospace",
-      "BAE Systems",
-      "Astronautics"
+      "Astronautics",
+      "Anduril Industries"
     ]
   },
-  "autonomous-systems-engineer": {
-    "title": "Autonomous Systems Engineer",
-    "title_he": "מהנדס מערכות אוטונומיות",
+  "autonomous-systems-software-engineer": {
+    "title": "Autonomous Systems Software Engineer",
+    "title_he": "מהנדס תוכנה למערכות אוטונומיות",
     "concentration": "DF",
-    "summary": "An Autonomous Systems Engineer develops the perception, planning, and control software that lets robots, drones, and unmanned vehicles operate without direct human control. They combine algorithms, sensor fusion, and real-time decision-making to achieve safe, reliable autonomy.",
+    "summary": "An Autonomous Systems Software Engineer writes the perception, planning, and control software that lets robots, drones, and unmanned vehicles operate on their own. They implement algorithms in C++ and Python on frameworks such as ROS to achieve safe, reliable autonomy.",
     "responsibilities": [
-      "Develop perception, localization, and mapping algorithms from sensor data",
-      "Implement motion planning, navigation, and obstacle avoidance",
-      "Design and tune control loops for stable autonomous behavior",
-      "Fuse data from cameras, LiDAR, radar, IMU, and GPS",
-      "Test autonomy in simulation and on real platforms in the field",
-      "Analyze logged data to diagnose failures and improve robustness"
+      "Implement perception, localization, and mapping software from sensor data",
+      "Write motion planning, navigation, and obstacle avoidance code",
+      "Develop and tune control loop software for stable autonomous behavior",
+      "Build sensor-fusion software that combines camera, LiDAR, radar, and GPS data",
+      "Test autonomy software in simulation and on real platforms",
+      "Analyze logged data and write tools to diagnose failures and improve robustness"
     ],
     "knowledge": [
       "Robotics kinematics, dynamics, and control theory",
       "State estimation, Kalman filtering, and sensor fusion",
       "Path and motion planning algorithms",
+      "Data structures, algorithms, and computational complexity analysis",
       "Probability, optimization, and machine learning fundamentals",
-      "Computer vision and perception methods",
       "Coordinate frames, transforms, and SLAM"
     ],
     "skills": [
-      "Implementing robust perception and state estimation pipelines",
-      "Designing and tuning planning and control algorithms",
-      "Fusing heterogeneous sensor data reliably",
-      "Validating autonomy in simulation and on hardware",
+      "Implementing robust perception and state estimation software",
+      "Writing and tuning planning and control algorithms in code",
+      "Building sensor-fusion pipelines that combine heterogeneous data",
+      "Validating autonomy software in simulation and on hardware",
       "Debugging real-world failures from logged telemetry",
-      "Reasoning about safety and edge cases in autonomy"
+      "Writing clean, testable robotics software"
     ],
     "tools": [
       "ROS and ROS 2",
@@ -1671,7 +1666,6 @@
       "PyTorch and OpenCV",
       "PX4 and ArduPilot",
       "Eigen and Ceres Solver",
-      "MATLAB and Simulink",
       "Git",
       "Docker"
     ],
@@ -1681,49 +1675,49 @@
       "Rafael Advanced Defense Systems",
       "Mobileye",
       "Lockheed Martin",
-      "Northrop Grumman",
       "Anduril Industries",
-      "Cognata"
+      "Cognata",
+      "Northrop Grumman"
     ]
   },
-  "sensor-signal-processing-engineer": {
-    "title": "Sensor & Signal-Processing Engineer",
-    "title_he": "מהנדס חיישנים ועיבוד אותות",
+  "signal-processing-software-engineer": {
+    "title": "Signal-Processing Software Engineer",
+    "title_he": "מהנדס תוכנה לעיבוד אותות",
     "concentration": "DF",
-    "summary": "A Sensor and Signal-Processing Engineer designs the algorithms that extract meaningful information from raw sensor data such as radar, sonar, electro-optical, and RF signals. They develop detection, estimation, and classification methods that work reliably in noisy, real-world conditions.",
+    "summary": "A Signal-Processing Software Engineer writes the software that extracts meaningful information from raw sensor data such as radar, sonar, electro-optical, and RF signals. They implement detection, estimation, and classification algorithms in C++ and Python that run reliably in noisy, real-world conditions.",
     "responsibilities": [
-      "Design and implement detection, estimation, and tracking algorithms",
-      "Develop digital signal-processing chains for radar, EO/IR, sonar, or RF data",
-      "Characterize noise, clutter, and interference and design mitigation",
-      "Implement and optimize algorithms for real-time embedded or FPGA targets",
-      "Validate algorithm performance against recorded and synthetic data",
-      "Collaborate with hardware and systems engineers on sensor integration"
+      "Implement detection, estimation, and tracking algorithms in software",
+      "Develop digital signal-processing software chains for radar, EO/IR, sonar, or RF data",
+      "Write code to characterize and mitigate noise, clutter, and interference",
+      "Optimize signal-processing software for real-time and embedded targets",
+      "Validate algorithm software against recorded and synthetic data",
+      "Collaborate with hardware and systems engineers on integration through software interfaces"
     ],
     "knowledge": [
       "Digital signal processing, Fourier analysis, and filtering",
       "Detection and estimation theory and statistical inference",
-      "Radar, sonar, and electro-optical sensing principles",
+      "Data structures, algorithms, and computational complexity analysis",
       "Probability, stochastic processes, and noise modeling",
       "Spectral analysis and adaptive filtering",
       "Machine learning for classification and pattern recognition"
     ],
     "skills": [
-      "Designing and validating detection and tracking algorithms",
-      "Building efficient real-time signal-processing pipelines",
-      "Characterizing and mitigating noise and clutter",
-      "Implementing algorithms on embedded and FPGA platforms",
+      "Implementing and validating detection and tracking algorithms in code",
+      "Building efficient real-time signal-processing software pipelines",
+      "Writing code to characterize and mitigate noise and clutter",
+      "Optimizing algorithms for embedded and real-time targets",
       "Analyzing performance against recorded field data",
-      "Applying machine learning to sensor classification"
+      "Applying machine learning to sensor classification in software"
     ],
     "tools": [
-      "MATLAB and Simulink",
       "Python with NumPy and SciPy",
       "C and C++",
+      "MATLAB and Simulink",
       "GNU Radio",
-      "VHDL and Verilog for FPGA",
-      "Xilinx and Intel FPGA toolchains",
       "PyTorch",
-      "Git"
+      "Linux",
+      "Git",
+      "CMake"
     ],
     "example_employers": [
       "Rafael Advanced Defense Systems",
@@ -1733,48 +1727,47 @@
       "Lockheed Martin",
       "Northrop Grumman",
       "Camero-Tech",
-      "RADA Electronic Industries"
+      "Mobileye"
     ]
   },
-  "c4isr-engineer": {
-    "title": "C4ISR Engineer",
-    "title_he": "מהנדס C4ISR",
+  "secure-communications-software-engineer": {
+    "title": "Secure Communications Software Engineer",
+    "title_he": "מהנדס תוכנה לתקשורת מאובטחת",
     "concentration": "DF",
-    "summary": "A C4ISR Engineer builds the command, control, communications, computers, intelligence, surveillance, and reconnaissance systems that give operators a unified picture of the battlespace. They integrate data from many sources into secure, resilient networks and decision-support software.",
+    "summary": "A Secure Communications Software Engineer builds the software for secure, resilient communication systems and tactical networks used across defense platforms. They implement networking, encryption, and messaging code in C++ and Go that keeps data confidential and available in contested environments.",
     "responsibilities": [
-      "Design and integrate command-and-control software and data-fusion systems",
-      "Build secure, resilient communication networks across distributed platforms",
-      "Develop common operating picture and situational-awareness displays",
-      "Integrate intelligence, surveillance, and reconnaissance data feeds",
-      "Ensure interoperability across systems using military data standards",
-      "Harden systems for cybersecurity and operate in contested environments"
+      "Design and implement software for secure messaging and tactical communication systems",
+      "Build networking and protocol software that is resilient in degraded conditions",
+      "Integrate cryptography and key management into communication software",
+      "Develop data-fusion and situational-awareness software services",
+      "Harden communication software against cyber threats and write security tests",
+      "Ensure interoperability across platforms using defined data standards and interfaces"
     ],
     "knowledge": [
       "Networking, communication protocols, and tactical data links",
-      "Distributed systems and data-fusion principles",
-      "Cybersecurity and secure system design",
-      "Military standards and interoperability frameworks",
-      "Real-time data processing and message-oriented architectures",
-      "Geospatial systems and situational-awareness concepts"
+      "Cryptography fundamentals including encryption, hashing, and key management",
+      "Distributed systems and message-oriented architecture principles",
+      "Data structures, algorithms, and computational complexity analysis",
+      "Cybersecurity and secure software design concepts",
+      "Concurrency, parallelism, and real-time data processing"
     ],
     "skills": [
-      "Integrating heterogeneous systems into a common operating picture",
-      "Designing secure, resilient tactical networks",
-      "Fusing multi-source intelligence and sensor data",
-      "Ensuring interoperability across platforms and standards",
-      "Hardening systems against cyber threats",
-      "Reasoning about resilience in contested, degraded conditions"
+      "Writing secure, reliable networking and protocol software",
+      "Integrating cryptography and key management into applications",
+      "Designing resilient message-oriented software architectures",
+      "Hardening software against cyber threats",
+      "Debugging across software, network, and protocol layers",
+      "Ensuring interoperability across platforms and standards"
     ],
     "tools": [
-      "C++ and Java",
-      "Python",
+      "C++ and Go",
+      "Java and Python",
       "Link 16 and tactical data links",
       "Kafka and message brokers",
-      "PostgreSQL and Elasticsearch",
-      "Kubernetes and Docker",
-      "GIS frameworks such as Esri ArcGIS",
-      "Git",
-      "Wireshark"
+      "OpenSSL and libsodium",
+      "Wireshark",
+      "Docker and Kubernetes",
+      "Git"
     ],
     "example_employers": [
       "Elbit Systems",
@@ -1782,48 +1775,47 @@
       "Rafael Advanced Defense Systems",
       "Lockheed Martin",
       "Northrop Grumman",
-      "Leidos",
       "General Dynamics",
-      "Palantir Technologies"
+      "Palantir Technologies",
+      "Anduril Industries"
     ]
   },
-  "modeling-simulation-engineer": {
-    "title": "Modeling & Simulation Engineer",
-    "title_he": "מהנדס מידול וסימולציה",
+  "simulation-modeling-engineer": {
+    "title": "Simulation & Modeling Engineer",
+    "title_he": "מהנדס סימולציה ומידול",
     "concentration": "DF",
-    "summary": "A Modeling and Simulation Engineer builds high-fidelity computational models and virtual environments used to design, test, and train defense systems before and instead of costly live trials. They develop simulations that faithfully represent platforms, sensors, and scenarios.",
+    "summary": "A Simulation and Modeling Engineer writes the software for high-fidelity simulations and virtual environments used to design, test, and train defense systems before costly live trials. They implement physics-based and behavioral models in C++ and Python and integrate distributed simulation software.",
     "responsibilities": [
-      "Develop physics-based and behavioral models of platforms, sensors, and environments",
-      "Build constructive, virtual, and hardware-in-the-loop simulation environments",
-      "Run scenario-based experiments and analyze simulation outputs",
-      "Validate and verify models against real-world and reference data",
-      "Integrate distributed simulations using interoperability standards",
-      "Support training, mission rehearsal, and system trade studies with simulation"
+      "Implement physics-based and behavioral model software for platforms, sensors, and environments",
+      "Build constructive, virtual, and hardware-in-the-loop simulation software",
+      "Write tools to run scenario-based experiments and analyze simulation outputs",
+      "Develop verification and validation software comparing models to reference data",
+      "Integrate distributed simulations in code using interoperability standards",
+      "Support training and trade studies with reliable simulation software"
     ],
     "knowledge": [
       "Numerical methods, modeling theory, and discrete-event simulation",
+      "Data structures, algorithms, and computational complexity analysis",
       "Physics of motion, sensing, and signal propagation",
       "Probability, statistics, and Monte Carlo methods",
       "Verification, validation, and accreditation of models",
-      "Distributed simulation standards such as HLA and DIS",
-      "Control systems and platform dynamics"
+      "Distributed simulation standards such as HLA and DIS"
     ],
     "skills": [
-      "Building validated, high-fidelity simulation models",
-      "Designing and running scenario-based experiments",
-      "Analyzing and interpreting large simulation datasets",
+      "Implementing validated, high-fidelity simulation software",
+      "Writing tools to design and run scenario-based experiments",
+      "Analyzing and interpreting large simulation datasets in code",
       "Integrating distributed and hardware-in-the-loop simulations",
-      "Verifying and validating models against reference data",
-      "Translating system requirements into simulation scenarios"
+      "Building verification and validation software",
+      "Translating system requirements into simulation software"
     ],
     "tools": [
-      "MATLAB and Simulink",
-      "Python with NumPy and SciPy",
       "C++ and C#",
-      "STK Systems Tool Kit",
+      "Python with NumPy and SciPy",
       "Unity and Unreal Engine",
       "VR-Forces and HLA or DIS frameworks",
       "AnyLogic",
+      "MATLAB and Simulink",
       "Git",
       "Docker"
     ],
@@ -1833,8 +1825,8 @@
       "Rafael Advanced Defense Systems",
       "Lockheed Martin",
       "Northrop Grumman",
-      "Boeing",
-      "Cole Engineering Services",
+      "Improbable",
+      "Cognata",
       "Presagis"
     ]
   }
