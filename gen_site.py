@@ -479,9 +479,9 @@ PILLARS = [
     ("Academic depth with tools", "A855F7", "F2E8FE", [
         "Combines rigorous academic foundations with current <b>tools</b>, programming languages, and platforms.",
         "Embeds <b>AI-assisted</b> development practices."]),
-    ("Enrichment electives", "F59E0B", "FEF1CF", [
-        'Deepen expertise beyond core courses, improving fit for concentration <a href="careers.html"><b>job roles</b></a>.',
-        "Prepare students for <b>graduate studies</b>."]),
+    ("Problem-driven design", "F59E0B", "FEF1CF", [
+        "Each course is organized around a <b>real problem domain</b>, integrating the diverse knowledge, technologies, and techniques needed to solve that challenge.",
+        "Depth over exhaustive detail: students reach <b>deep understanding</b> and learn to build new systems by integrating ideas with <b>AI assistants</b>."]),
     ("Shared flagship courses", "2FA161", "DDF4E6", [
         "A few <b>flagship</b> courses are shared across concentrations: high-quality, comprehensive, and current.",
         "Students from different specializations <b>learn side by side</b>, gaining cross-disciplinary breadth and a shared language."]),
