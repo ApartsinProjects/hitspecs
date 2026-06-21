@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#3A4B9D">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GM1: Computer Graphics | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="on" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../concentrations/GM.html">Games &amp; XR</a><a class="" href="../concentrations/DF.html">Defense Tech</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#3A4B9D;--ink:#2A3873">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; GM1</p>
+    <h1>Computer Graphics</h1>
+    <p class="hetx" dir="rtl">גרפיקה ממוחשבת</p>
+    <p class="csub">rasterization, physically based shading, and interactive real-time rendering pipelines</p>
+    <p class="lead">Build a real-time renderer and ship a playable engine demo</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Master the foundations of computer graphics: the rendering pipeline, rasterization and ray tracing, shading and lighting, and real-time rendering on modern GPUs and engines.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #3A4B9D">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #3A4B9D"><span class="bk" style="color:#3A4B9D">What you will build</span><p>Built a real-time 3D rendering application in Unity, Unreal, or a custom OpenGL and Vulkan engine, implementing a physically based shading pipeline with cascaded shadow maps, image-based lighting, and frustum culling, profiled with RenderDoc and Nsight to meet a fixed frame-rate budget.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#3A4B9D"><li>Derive the rendering equation and explain how rasterization and ray tracing each approximate it</li><li>Implement the programmable GPU pipeline stages from vertex transform through fragment shading</li><li>Write vertex, fragment, and compute shaders in GLSL or HLSL for lighting and post effects</li><li>Apply physically based shading using microfacet BRDFs and energy-conserving reflectance models</li><li>Construct and traverse scene graphs and spatial data structures for visibility and culling</li><li>Implement real-time shadowing with shadow maps and analyze depth-bias and aliasing tradeoffs</li><li>Profile a frame and optimize draw calls, batching, and GPU bottlenecks to hit a frame-rate budget</li><li>Integrate gameplay logic, assets, and rendering inside Unity or Unreal Engine</li><li>Evaluate global illumination approximations including ambient occlusion and image-based lighting</li><li>Design and defend a complete interactive real-time graphics application as a team project</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#3A4B9D"><li>Rendering pipeline &amp; rasterization</li><li>Ray tracing &amp; global illumination</li><li>Shading, lighting &amp; materials</li><li>Real-time GPU rendering</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#3A4B9D"><li>the rendering equation and the distinction between rasterization and ray tracing</li><li>homogeneous coordinates and the model-view-projection transform chain</li><li>the microfacet BRDF and physically based reflectance with Fresnel, geometry, and distribution terms</li><li>the z-buffer visibility algorithm and shadow-map depth comparison</li><li>bounding volume hierarchies and frustum and occlusion culling</li><li>radiometry: radiance, irradiance, and the cosine-weighted hemisphere integral</li><li>the GPU execution model of parallel warps and the cost of state changes</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #3A4B9D">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#3A4B9D"><li>Linear algebra</li><li>Programming in C++ or C#</li><li>Data structures and algorithms</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Foundations</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 1</div><div class="wk-body"><b>The rendering pipeline and frame anatomy</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Overview of real-time rendering: the rendering equation as the ground truth, and how rasterization and ray tracing approximate it. The graphics pipeline from application stage to framebuffer.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Set up the engine toolchain and render a first triangle with a custom vertex and fragment shader, then animate it through a transform.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Repository, build system, and a window rendering a shaded primitive at a measured frame rate.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 2</div><div class="wk-body"><b>Transforms, cameras, and the GPU</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Homogeneous coordinates, model-view-projection matrices, perspective and the depth buffer. GPU architecture: SIMD lanes, warps, and the cost of state changes.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a free-look camera and a transform hierarchy, and load a textured mesh from disk into a vertex buffer.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Interactive scene with a controllable camera and loaded 3D assets.</div></div></div><div class="wpart">Shading</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 3</div><div class="wk-body"><b>Lighting models and shaders</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Local illumination: Lambertian diffuse, Blinn-Phong specular, and the move toward physically based shading. Shader stages, uniforms, and the data flow to the GPU.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Author shaders for directional, point, and spot lights with normal mapping on a textured model.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Multi-light shaded scene with normal-mapped surfaces.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 4</div><div class="wk-body"><b>Physically based rendering</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>The microfacet model, the Cook-Torrance BRDF, Fresnel, geometry, and normal distribution terms. Metallic-roughness workflow and energy conservation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a PBR material with metallic and roughness inputs and validate it against reference spheres.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>PBR material system integrated into the running scene.</div></div></div><div class="wpart">Milestone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 5</div><div class="wk-body"><b>Specification presentation<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Scoping a real-time graphics project: feature budget, target frame rate, asset pipeline, and technical risks. Rubric for the specification defense.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>STUDENT PRESENTATION milestone, specification. Teams present their project concept, target platform and engine, the rendering features they will build, an asset and milestone plan, and a frame-rate and quality budget.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Approved project specification and a vertical slice plan.</div></div></div><div class="wpart">Visibility</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 6</div><div class="wk-body"><b>Scene graphs and spatial structures</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Scene graphs, bounding volume hierarchies, frustum and occlusion culling, and level-of-detail selection. Sorting for opaque and transparent draws.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Build a scene graph with frustum culling and a BVH, and measure the draw-call reduction.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Culling and scene-management layer feeding the renderer.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 7</div><div class="wk-body"><b>Shadows and depth techniques</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Shadow mapping from Williams onward: depth bias, peter-panning, percentage-closer filtering, and cascaded shadow maps for large scenes.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add cascaded shadow maps with PCF and tune bias to remove acne and peter-panning.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Dynamic shadowing across the project scene.</div></div></div><div class="wpart">Milestone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 8</div><div class="wk-body"><b>Interim demo presentation<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Demonstrating a vertical slice: what a credible interim build shows and how to measure progress against the specification.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>STUDENT PRESENTATION milestone, interim demo. Teams demo a playable vertical slice with lighting, shadows, and assets in engine, report current frame timings, and show their profiler output.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Playable vertical slice with core rendering features working.</div></div></div><div class="wpart">Global illumination</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 9</div><div class="wk-body"><b>Ambient occlusion and image-based lighting</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Approximating indirect light: screen-space ambient occlusion, prefiltered environment maps, irradiance probes, and reflection capture.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add SSAO and image-based lighting from an HDR environment map to the project.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Indirect-lighting layer raising visual fidelity.</div></div></div><div class="wpart">Performance</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 10</div><div class="wk-body"><b>Profiling and frame-rate optimization</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Finding the bottleneck: CPU versus GPU bound, draw-call batching, instancing, overdraw, and bandwidth. GPU profilers and frame capture tools.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Profile the project with a GPU frame debugger, then apply batching and instancing to hit the frame-rate budget.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Optimized build meeting the target frame time.</div></div></div><div class="wpart">Advanced</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 11</div><div class="wk-body"><b>Deferred shading and post-processing</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Forward versus deferred rendering, the G-buffer, tiled and clustered shading, HDR, tone mapping, and bloom.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a post-processing chain with HDR tone mapping and bloom, and compare forward and deferred costs.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Post-processing pipeline and rendering-path choice locked in.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 12</div><div class="wk-body"><b>Animation, particles, and polish</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Skeletal animation and skinning, particle systems, and integration of gameplay systems with the render loop. Determinism and the fixed timestep.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add a skinned animated character or a particle system and integrate it with the gameplay loop.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Feature-complete build ready for the final defense.</div></div></div><div class="wpart">Milestone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 13</div><div class="wk-body"><b>Final demo and oral defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Course synthesis: from the rendering equation to a shipped real-time engine demo, and the engineering tradeoffs that defined the project.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>STUDENT PRESENTATION milestone, final demo with oral defense. Teams present the finished interactive application, walk through their rendering architecture, justify performance and quality tradeoffs, and answer technical questions.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Final interactive real-time graphics application with documentation.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Each team builds one interactive real-time 3D application across the term, either a small game or an interactive renderer, in Unity, Unreal, or a custom engine. The project grows weekly from a shaded primitive to a feature-complete build with physically based shading, shadows, indirect lighting, and a met frame-rate budget. The same artifact is presented at the specification, interim, and final milestones.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#3A4B9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#E7EAF5;color:#3A4B9D">First-person exploration demo with dynamic time of day</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Top-down arena game with instanced enemy crowds</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Custom OpenGL or Vulkan PBR scene viewer</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Procedural terrain renderer with LOD</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Stylized racing prototype with post-processing</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Physics sandbox with real-time shadows</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Architectural walkthrough with image-based lighting</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#3A4B9D"><li><b>Unity</b>: cross-platform game engine for gameplay and rendering</li><li><b>Unreal Engine 5</b>: high-fidelity engine with Nanite and Lumen</li><li><b>OpenGL</b>: cross-platform graphics API for custom renderers</li><li><b>Vulkan</b>: low-overhead explicit graphics and compute API</li><li><b>GLSL</b>: OpenGL Shading Language for vertex and fragment shaders</li><li><b>HLSL</b>: High-Level Shading Language used by DirectX and Unreal</li><li><b>RenderDoc</b>: open-source single-frame GPU debugger and profiler</li><li><b>NVIDIA Nsight Graphics</b>: GPU frame capture and performance analysis</li><li><b>Blender</b>: open-source asset authoring and export pipeline</li><li><b>Tracy</b>: real-time frame and CPU and GPU profiler</li><li><b>Shadertoy</b>: browser shader prototyping environment</li><li><b>Dear ImGui</b>: immediate-mode debug UI for engine tooling</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1145/15922.15902" target="_blank" rel="noopener">The Rendering Equation</a></span><div class="meta">James T. Kajiya, 1986</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1145/800248.807402" target="_blank" rel="noopener">Casting Curved Shadows on Curved Surfaces</a></span><div class="meta">Lance Williams, 1978</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1145/965161.806819" target="_blank" rel="noopener">A Reflectance Model for Computer Graphics</a></span><div class="meta">Robert L. Cook and Kenneth E. Torrance, 1982</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://pbr-book.org/" target="_blank" rel="noopener">Physically Based Rendering: From Theory to Implementation</a></span><div class="meta">Matt Pharr, Wenzel Jakob, and Greg Humphreys, 2023</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.realtimerendering.com/" target="_blank" rel="noopener">Real-Time Rendering, 4th Edition</a></span><div class="meta">Tomas Akenine-Moller, Eric Haines, and Naty Hoffman, 2018, The standard reference for real-time graphics</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://pbr-book.org/" target="_blank" rel="noopener">Physically Based Rendering: From Theory to Implementation</a></span><div class="meta">Matt Pharr, Wenzel Jakob, and Greg Humphreys, 2023, Full text free online</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://docs.unity3d.com/Manual/index.html" target="_blank" rel="noopener">Unity User Manual</a></span><div class="meta">Unity Technologies, 2025</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine" target="_blank" rel="noopener">Unreal Engine Documentation</a></span><div class="meta">Epic Games, 2025</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://developer.nvidia.com/gpugems/gpugems/contributors" target="_blank" rel="noopener">GPU Gems</a></span><div class="meta">Randima Fernando, editor, NVIDIA, 2004, Free online lighting and performance chapters</div></li><li class="ref"><span class="refkind">Course</span><span class="reftitle"><a href="https://learnopengl.com/" target="_blank" rel="noopener">Learn OpenGL</a></span><div class="meta">Joey de Vries, 2014, Free shader, lighting, and PBR tutorials</div></li><li class="ref"><span class="refkind">Course</span><span class="reftitle"><a href="https://www.cemyuksel.com/courses/" target="_blank" rel="noopener">Interactive Computer Graphics</a></span><div class="meta">Cem Yuksel, University of Utah, 2021, Full lecture videos with shader and real-time coverage</div></li><li class="ref"><span class="refkind">Course</span><span class="reftitle"><a href="https://www.cg.tuwien.ac.at/courses/Rendering/VU" target="_blank" rel="noopener">Rendering Course Materials</a></span><div class="meta">TU Wien Research Unit of Computer Graphics, 2024</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/GM.html">Immersive Systems &amp; Game Development</a></td><td><span class="rbadge" style="background:#0B6B8A;color:#fff">Core &middot; Semester 1</span></td></tr><tr><td><a href="../concentrations/DF.html">Defense Technologies &amp; Autonomous Systems</a></td><td><span class="rbadge e">Elective</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="QCF2.html">&larr; QCF2 &middot; AI &amp; Optimization for Finance</a><a href="GM2.html">GM2 &middot; Spatial Computing &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #3A4B9D">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>GM1</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/SE.html">Intelligent Software Systems</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: Immersive Systems &amp; Game Development</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>12</dd>
+          <dt>References</dt><dd>8</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#3A4B9D">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li><li><a href="../concentrations/GM.html">Immersive Systems &amp; Game Development</a></li><li><a href="../concentrations/DF.html">Defense Technologies &amp; Autonomous Systems</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

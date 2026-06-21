@@ -89,8 +89,10 @@ main{padding:2.4rem 0 3rem}
 /* sortable headers + filter bar */
 .matrix.sortable thead th{cursor:pointer;user-select:none;position:relative}
 .matrix.sortable thead th:hover{filter:brightness(1.15)}
-.matrix.sortable thead th[data-dir=asc]:after{content:' \25B2';font-size:.66rem}
-.matrix.sortable thead th[data-dir=desc]:after{content:' \25BC';font-size:.66rem}
+.matrix.sortable thead th:after{content:' \21C5';font-size:.74rem;opacity:.45;margin-left:.15rem}
+.matrix.sortable thead th:hover:after{opacity:.85}
+.matrix.sortable thead th[data-dir=asc]:after{content:' \25B2';font-size:.66rem;opacity:1}
+.matrix.sortable thead th[data-dir=desc]:after{content:' \25BC';font-size:.66rem;opacity:1}
 .pathhead{font-size:1.25rem;margin:1.8rem 0 .35rem}
 .pathhead .lbl{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-weight:400;background:var(--soft);padding:.12rem .5rem;border-radius:5px;margin-left:.4rem;vertical-align:2px}
 .filterbar{display:flex;gap:.6rem;flex-wrap:wrap;margin:.2rem 0 .7rem}

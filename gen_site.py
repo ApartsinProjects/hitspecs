@@ -71,8 +71,40 @@ TRACKS = {
         roles=["Financial Software Engineer", "Algo-Trading Developer", "Quant Analyst",
                "Quantitative Developer", "Risk Analyst", "Data Engineer (Finance)"],
     ),
+    "GM": dict(
+        name="Immersive Systems & Game Development",
+        he="מערכות אימרסיביות ופיתוח משחקים",
+        nav="Games & XR",
+        color="0B6B8A", soft="E0EEF2", ink="084E63",
+        tag="Build immersive games and extended-reality worlds.",
+        rationale=(
+            "This concentration trains you to build real-time interactive and "
+            "immersive software: game engines, 3D graphics, virtual and augmented "
+            "reality, and the AI, simulation, and cloud backends behind them. It "
+            "pairs a strong computer-graphics and spatial-computing core with vision, "
+            "generative, and embodied AI to create worlds that render, react, and "
+            "scale."),
+        roles=["Game Developer", "XR / AR Developer", "Graphics / Rendering Engineer",
+               "Technical Artist", "Game Systems Engineer", "Simulation Engineer"],
+    ),
+    "DF": dict(
+        name="Defense Technologies & Autonomous Systems",
+        he="טכנולוגיות ביטחוניות ומערכות אוטונומיות",
+        nav="Defense Tech",
+        color="1F6F54", soft="E1F0E9", ink="134734",
+        tag="Engineer mission-critical defense and autonomous systems.",
+        rationale=(
+            "This concentration prepares you to engineer mission-critical defense and "
+            "autonomous systems: sensor fusion and signal processing, safety-critical "
+            "real-time software, secure communications, and autonomous platforms. It "
+            "builds on cryptography, embedded security, vision, and temporal AI to "
+            "deliver systems that must perform reliably under real-world constraints."),
+        roles=["Defense Systems Engineer", "Embedded / Avionics Engineer",
+               "Autonomous Systems Engineer", "Sensor & Signal-Processing Engineer",
+               "C4ISR Engineer", "Modeling & Simulation Engineer"],
+    ),
 }
-TRACK_ORDER = ["SE", "CY", "AI", "QCF"]
+TRACK_ORDER = ["SE", "CY", "AI", "QCF", "GM", "DF"]
 
 # course id -> (title, description, [topics], {track: 'A'|'B'|'E'})
 COURSES = {
@@ -201,8 +233,56 @@ COURSES = {
         ["Portfolio optimization", "Algorithmic trading",
          "Risk modeling", "Machine learning for finance"],
         {"SE": "E", "CY": "E", "AI": "E", "QCF": "B"}),
+    "GM1": ("Computer Graphics",
+        "Master the foundations of computer graphics: the rendering pipeline, "
+        "rasterization and ray tracing, shading and lighting, and real-time "
+        "rendering on modern GPUs and engines.",
+        ["Rendering pipeline & rasterization", "Ray tracing & global illumination",
+         "Shading, lighting & materials", "Real-time GPU rendering"],
+        {}),
+    "GM2": ("Spatial Computing",
+        "Build spatial and immersive applications: 3D tracking and scene "
+        "understanding, virtual and augmented reality, natural interaction, and "
+        "spatial UX across XR devices.",
+        ["VR/AR & OpenXR", "Tracking & spatial mapping (SLAM)",
+         "Natural interaction & UX", "On-device performance"],
+        {}),
+    "DF1": ("Sensor Fusion & Signal Processing",
+        "Process and fuse data from radar, electro-optical, infrared, and RF sensors "
+        "using signal processing and estimation to build a coherent picture of the "
+        "environment.",
+        ["Digital signal processing", "Kalman filtering & estimation",
+         "Multi-sensor fusion", "Radar, EO/IR and RF"],
+        {}),
+    "DF2": ("Mission-Critical Real-Time Systems",
+        "Engineer software that must be correct and on time: real-time scheduling, "
+        "safety-critical design, fault tolerance, and the reliability and "
+        "certification practices defense systems demand.",
+        ["Real-time scheduling", "Safety-critical software",
+         "Fault tolerance & reliability", "Certification standards"],
+        {}),
 }
 COURSE_ORDER = list(COURSES.keys())
+
+# New-concentration core assignments: course_id -> {track: "A"|"B"}.
+# (Every other track defaults to "E" via the normalization loop below.)
+NEW_CORE = {
+    # Immersive Systems & Game Development (GM): A1-A4 then B1-B4
+    "GM1": {"GM": "A"}, "AI3": {"GM": "A", "DF": "A"}, "SE3": {"GM": "A"},
+    "SE6": {"GM": "A", "DF": "B"},
+    "GM2": {"GM": "B"}, "AI5": {"GM": "B"}, "AI6": {"GM": "B", "DF": "B"},
+    "SE1": {"GM": "B"},
+    # Defense Technologies & Autonomous Systems (DF): A1-A4 then B1-B4
+    "DF1": {"DF": "A"}, "CY1": {"DF": "A"}, "CY3": {"DF": "A"},
+    "DF2": {"DF": "B"}, "AI2": {"DF": "B"},
+}
+# Ensure every course's role map has all tracks, then apply the new-core overrides.
+for _cid, _c in COURSES.items():
+    _roles = _c[3]
+    for _t in TRACK_ORDER:
+        _roles.setdefault(_t, "E")
+    for _t, _v in NEW_CORE.get(_cid, {}).items():
+        _roles[_t] = _v
 
 # Hebrew course names (shown as a light-grey subtitle alongside the English title).
 COURSE_HE = {
@@ -226,6 +306,10 @@ COURSE_HE = {
     "AI6": "AI מגולם: רובוטיקה ומערכות אוטונומיות",
     "QCF1": "אופטימיזציה קוונטית",
     "QCF2": "בינה מלאכותית ואופטימיזציה למימון",
+    "GM1": "גרפיקה ממוחשבת",
+    "GM2": "מחשוב מרחבי",
+    "DF1": "מיזוג חיישנים ועיבוד אותות",
+    "DF2": "מערכות זמן-אמת קריטיות למשימה",
 }
 
 # A course is "core-bearing" if it is a core course (A or B) in at least one
@@ -350,6 +434,10 @@ PREREQS = {
     "AI6": ["Machine Learning and basic reinforcement learning", "Linear algebra", "Calculus and basic physics"],
     "QCF1": ["Basic Quantum Algorithms", "Linear algebra", "Algorithms and optimization basics"],
     "QCF2": ["Machine Learning", "Probability and statistics", "Calculus and convex optimization"],
+    "GM1": ["Linear algebra", "Programming in C++ or C#", "Data structures and algorithms"],
+    "GM2": ["Computer Graphics or 3D graphics basics", "Linear algebra", "Computer vision basics"],
+    "DF1": ["Signals and systems or linear algebra", "Probability and statistics", "Programming in Python or C++"],
+    "DF2": ["Operating systems", "Embedded or systems programming", "Software engineering"],
 }
 
 # The design principles behind the concentration structure (the "Six Pillars").
@@ -599,7 +687,7 @@ def build_index():
   <div class="wrap">
     <p class="eyebrow">UNDERGRADUATE CS PROGRAM</p>
     <h1>Degree Concentrations</h1>
-    <p class="lead">Four specialization tracks students choose in their third year. Each is a focused sequence of eight core courses built on one shared computer-science backbone.</p>
+    <p class="lead">Six specialization tracks students choose in their third year. Each is a focused sequence of eight core courses built on one shared computer-science backbone.</p>
   </div>
 </section>
 
@@ -612,7 +700,7 @@ def build_index():
   </section>
 
   <section class="block">
-    <h2>The four concentrations</h2>
+    <h2>The six concentrations</h2>
     <div class="cgrid">{cards}
     </div>
   </section>
@@ -644,15 +732,15 @@ def build_index():
   </section>
 
   <section class="block">
-    <h2>Shared elective catalogue</h2>
-    <p class="muted">Enrichment courses, open to every concentration, that deepen or broaden a student's expertise beyond the core eight. They are not core to any concentration. The catalogue grows over time.</p>
-    {extra_html}
-  </section>
-
-  <section class="block">
     <h2>Base courses: current coverage &amp; gaps</h2>
     <p class="muted">How each planned core course maps to a course HIT already runs, and where new courses still need to be built.</p>
     {build_base_table()}
+  </section>
+
+  <section class="block">
+    <h2>Shared elective catalogue</h2>
+    <p class="muted">Enrichment courses, open to every concentration, that deepen or broaden a student's expertise beyond the core eight. They are not core to any concentration. The catalogue grows over time.</p>
+    {extra_html}
   </section>
 </main>
 <script>{TABLE_JS}</script>"""
@@ -1177,8 +1265,10 @@ main{padding:2.4rem 0 3rem}
 /* sortable headers + filter bar */
 .matrix.sortable thead th{cursor:pointer;user-select:none;position:relative}
 .matrix.sortable thead th:hover{filter:brightness(1.15)}
-.matrix.sortable thead th[data-dir=asc]:after{content:' \\25B2';font-size:.66rem}
-.matrix.sortable thead th[data-dir=desc]:after{content:' \\25BC';font-size:.66rem}
+.matrix.sortable thead th:after{content:' \\21C5';font-size:.74rem;opacity:.45;margin-left:.15rem}
+.matrix.sortable thead th:hover:after{opacity:.85}
+.matrix.sortable thead th[data-dir=asc]:after{content:' \\25B2';font-size:.66rem;opacity:1}
+.matrix.sortable thead th[data-dir=desc]:after{content:' \\25BC';font-size:.66rem;opacity:1}
 .pathhead{font-size:1.25rem;margin:1.8rem 0 .35rem}
 .pathhead .lbl{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-weight:400;background:var(--soft);padding:.12rem .5rem;border-radius:5px;margin-left:.4rem;vertical-align:2px}
 .filterbar{display:flex;gap:.6rem;flex-wrap:wrap;margin:.2rem 0 .7rem}

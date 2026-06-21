@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#3A4B9D">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DF1: Sensor Fusion &amp; Signal Processing | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="on" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../concentrations/GM.html">Games &amp; XR</a><a class="" href="../concentrations/DF.html">Defense Tech</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#3A4B9D;--ink:#2A3873">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; DF1</p>
+    <h1>Sensor Fusion &amp; Signal Processing</h1>
+    <p class="hetx" dir="rtl">מיזוג חיישנים ועיבוד אותות</p>
+    <p class="csub">stochastic estimation, recursive Bayesian filtering, and multi-sensor data fusion</p>
+    <p class="lead">Build a multi-sensor estimation and tracking pipeline</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Process and fuse data from radar, electro-optical, infrared, and RF sensors using signal processing and estimation to build a coherent picture of the environment.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #3A4B9D">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #3A4B9D"><span class="bk" style="color:#3A4B9D">What you will build</span><p>Built a multi-sensor estimation and tracking pipeline in Python with FilterPy and Stone Soup, implementing Kalman, unscented, and particle filters with data association to fuse radar, EO-IR, and inertial measurements into validated multi-target tracks with covariance-consistency checks.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#3A4B9D"><li>Analyze discrete-time signals and systems with sampling, the DFT, and digital filtering</li><li>Formulate state estimation as recursive Bayesian inference over a state-space model</li><li>Derive and implement the Kalman filter and prove its optimality for the linear Gaussian case</li><li>Extend estimation to nonlinear systems with the extended and unscented Kalman filters</li><li>Implement particle filtering for non-Gaussian and multimodal state estimation</li><li>Fuse measurements from heterogeneous sensors into a single coherent state estimate</li><li>Solve the data-association problem for multi-target tracking</li><li>Characterize radar, EO-IR, and RF sensor models, noise, and measurement geometry</li><li>Evaluate estimator performance with covariance consistency and error metrics</li><li>Design and defend a complete sensor fusion and tracking system as a team project</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#3A4B9D"><li>Digital signal processing</li><li>Kalman filtering &amp; estimation</li><li>Multi-sensor fusion</li><li>Radar, EO/IR and RF</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#3A4B9D"><li>the recursive Bayes filter as the unifying framework for state estimation</li><li>the linear Gaussian state-space model and Kalman optimality in mean-square error</li><li>linearization and the sigma-point unscented transform for nonlinear estimation</li><li>sequential Monte Carlo, importance sampling, and resampling</li><li>the data-association problem and multiple hypothesis tracking</li><li>sampling theory, the discrete Fourier transform, and digital filter design</li><li>estimator consistency, the covariance, and the Cramer-Rao lower bound</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #3A4B9D">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#3A4B9D"><li>Signals and systems or linear algebra</li><li>Probability and statistics</li><li>Programming in Python or C++</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Signal processing</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 1</div><div class="wk-body"><b>Discrete-time signals and sampling</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Sampling and the Nyquist criterion, discrete-time signals and systems, convolution, and the discrete and fast Fourier transforms.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Sample, transform, and inspect real sensor signals in Python and identify aliasing and spectral content.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Repository, a sensor dataset, and a signal-inspection notebook.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 2</div><div class="wk-body"><b>Digital filtering and spectral estimation</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>FIR and IIR filter design, the z-transform, frequency response, and power spectral density estimation for noisy measurements.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Design and apply digital filters to denoise sensor streams and estimate their spectra.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Filtering and preprocessing front end for the sensor data.</div></div></div><div class="wpart">Estimation</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 3</div><div class="wk-body"><b>Probability and Bayesian estimation</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Random variables, the Gaussian, conditional expectation, and the recursive Bayes filter as the foundation of all state estimation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a recursive Bayes filter on a discretized state space and visualize belief updates.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Bayesian estimation baseline on a toy tracking problem.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 4</div><div class="wk-body"><b>The Kalman filter</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>State-space models, the linear Gaussian assumption, and the derivation of the Kalman filter as the optimal recursive minimum-mean-square-error estimator from Kalman 1960.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a Kalman filter for a constant-velocity target and check covariance consistency.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Kalman tracker estimating state from noisy measurements.</div></div></div><div class="wpart">Milestone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 5</div><div class="wk-body"><b>Specification presentation<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Scoping a fusion project: sensors, state model, motion model, evaluation metrics, and technical risks. Rubric for the specification defense.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>STUDENT PRESENTATION milestone, specification. Teams present their estimation problem, the sensors and state-space model, the filtering approach, an evaluation plan with metrics, and a milestone plan.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Approved project specification and an estimation design.</div></div></div><div class="wpart">Nonlinear estimation</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 6</div><div class="wk-body"><b>Extended and unscented Kalman filters</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Linearizing nonlinear dynamics with the EKF and its Jacobians, and the sigma-point unscented transform of Julier and Uhlmann for better consistency.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement an EKF and a UKF for a nonlinear tracking model and compare their accuracy and consistency.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Nonlinear filter handling the project motion model.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 7</div><div class="wk-body"><b>Particle filters</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Sequential Monte Carlo, importance sampling, resampling, and the bootstrap particle filter of Gordon, Salmond, and Smith for non-Gaussian state estimation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a particle filter and apply it to a multimodal or non-Gaussian tracking problem.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Particle filter alternative evaluated against the Kalman variants.</div></div></div><div class="wpart">Milestone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 8</div><div class="wk-body"><b>Interim demo presentation<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Demonstrating an estimation slice: showing a working single-sensor tracker with quantified accuracy and consistency.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>STUDENT PRESENTATION milestone, interim demo. Teams demo a working single-sensor filter on real or recorded data, report error and covariance-consistency metrics, and show estimated tracks against ground truth.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Working single-sensor tracker with quantified performance.</div></div></div><div class="wpart">Fusion</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 9</div><div class="wk-body"><b>Multi-sensor data fusion</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Centralized versus decentralized fusion, measurement and track fusion, the information filter, and handling asynchronous and out-of-sequence measurements.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Fuse two heterogeneous sensors into one state estimate and measure the accuracy gain.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Multi-sensor fusion improving the track estimate.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 10</div><div class="wk-body"><b>Data association and multi-target tracking</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>The data-association problem, nearest neighbor, probabilistic data association, and multiple hypothesis tracking from Reid for multiple targets in clutter.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add gating and data association to track multiple targets in cluttered measurements.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Multi-target tracker with association handling clutter.</div></div></div><div class="wpart">Sensors</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 11</div><div class="wk-body"><b>Radar, EO-IR, and RF sensor models</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Radar range-Doppler processing and detection, EO-IR imaging geometry, RF angle-of-arrival, and the noise and measurement models each sensor contributes to fusion.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Model a radar or EO-IR measurement source and integrate its detections into the fusion pipeline.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Realistic heterogeneous sensor models feeding the tracker.</div></div></div><div class="wpart">Integration</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 12</div><div class="wk-body"><b>Evaluation and robustness</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Estimator consistency with the normalized estimation error squared, the Cramer-Rao bound, track metrics, and robustness to dropout and bias.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Run a full evaluation with consistency tests and stress the system with sensor dropout and bias.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Validated, robust fusion system ready for the final defense.</div></div></div><div class="wpart">Milestone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 13</div><div class="wk-body"><b>Final demo and oral defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Course synthesis: from the Bayes filter to a deployed multi-sensor tracking system and the estimation tradeoffs that defined it.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>STUDENT PRESENTATION milestone, final demo with oral defense. Teams present the finished fusion system, walk through their filtering and association architecture, justify estimator choices with consistency evidence, and answer technical questions.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Final sensor fusion and tracking system with documentation.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Each team builds one multi-sensor estimation and tracking pipeline across the term on real or realistically simulated sensor data. The project grows weekly from signal preprocessing and a single Kalman tracker to a fused multi-target system with data association, heterogeneous sensor models, and validated covariance consistency. The same artifact is presented at the specification, interim, and final milestones.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#3A4B9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Radar and camera fusion for vehicle tracking</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">IMU and GPS fusion for navigation</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Pedestrian multi-target tracker from lidar</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Drone tracking from fused RF and EO-IR</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Indoor localization from IMU and UWB</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Maritime target tracking from radar in clutter</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Acoustic and visual fusion for source localization</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#3A4B9D"><li><b>Python with NumPy and SciPy</b>: numerical estimation and DSP</li><li><b>scipy.signal</b>: digital filter design and spectral analysis</li><li><b>FilterPy</b>: Kalman and Bayesian filter implementations in Python</li><li><b>MATLAB Sensor Fusion and Tracking Toolbox</b>: estimation and tracking</li><li><b>Stone Soup</b>: open-source multi-target tracking framework</li><li><b>GTSAM</b>: factor-graph smoothing and estimation library</li><li><b>ROS 2</b>: sensor data transport and the robot ecosystem</li><li><b>OpenCV</b>: vision-based detection and measurement extraction</li><li><b>Matplotlib</b>: track and covariance visualization</li><li><b>pandas</b>: sensor log handling and alignment</li><li><b>Jupyter</b>: interactive estimation experiments</li><li><b>rosbag and HDF5</b>: recorded sensor dataset storage</li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1115/1.3662552" target="_blank" rel="noopener">A New Approach to Linear Filtering and Prediction Problems</a></span><div class="meta">Rudolf E. Kalman, 1960</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1049/ip-f-2.1993.0015" target="_blank" rel="noopener">Novel approach to nonlinear and non-Gaussian Bayesian state estimation</a></span><div class="meta">Neil J. Gordon, David J. Salmond, and Adrian F. M. Smith, 1993</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1117/12.280797" target="_blank" rel="noopener">New extension of the Kalman filter to nonlinear systems</a></span><div class="meta">Simon J. Julier and Jeffrey K. Uhlmann, 1997</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://doi.org/10.1109/TAC.1979.1102177" target="_blank" rel="noopener">An Algorithm for Tracking Multiple Targets</a></span><div class="meta">Donald B. Reid, 1979</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://onlinelibrary.wiley.com/doi/book/10.1002/0471221279" target="_blank" rel="noopener">Estimation with Applications to Tracking and Navigation</a></span><div class="meta">Yaakov Bar-Shalom, X. Rong Li, and Thiagalingam Kirubarajan, 2001</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://mitpress.mit.edu/9780262201629/probabilistic-robotics/" target="_blank" rel="noopener">Probabilistic Robotics</a></span><div class="meta">Sebastian Thrun, Wolfram Burgard, and Dieter Fox, 2005</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.pearson.com/en-us/subject-catalog/p/discrete-time-signal-processing/P200000003226/9780137549771" target="_blank" rel="noopener">Discrete-Time Signal Processing, 3rd Edition</a></span><div class="meta">Alan V. Oppenheim and Ronald W. Schafer, 2009</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.mheducation.com/highered/mhp/product/fundamentals-radar-signal-processing-third-edition.html" target="_blank" rel="noopener">Fundamentals of Radar Signal Processing, 3rd Edition</a></span><div class="meta">Mark A. Richards, 2022</div></li><li class="ref"><span class="refkind">Course</span><span class="reftitle"><a href="https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python" target="_blank" rel="noopener">Kalman and Bayesian Filters in Python</a></span><div class="meta">Roger R. Labbe, 2020, Free interactive book and notebooks</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://www.mathworks.com/help/fusion/index.html" target="_blank" rel="noopener">Sensor Fusion and Tracking Toolbox Documentation</a></span><div class="meta">MathWorks, 2025</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://docs.scipy.org/doc/scipy/reference/signal.html" target="_blank" rel="noopener">scipy.signal Reference</a></span><div class="meta">SciPy developers, 2025</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://filterpy.readthedocs.io/en/latest/" target="_blank" rel="noopener">FilterPy Documentation</a></span><div class="meta">Roger R. Labbe, 2024</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/GM.html">Immersive Systems &amp; Game Development</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/DF.html">Defense Technologies &amp; Autonomous Systems</a></td><td><span class="rbadge" style="background:#1F6F54;color:#fff">Core &middot; Semester 1</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="GM2.html">&larr; GM2 &middot; Spatial Computing</a><a href="DF2.html">DF2 &middot; Mission-Critical Real-Time Systems &rarr;</a></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #3A4B9D">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>DF1</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/SE.html">Intelligent Software Systems</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: Defense Technologies &amp; Autonomous Systems</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>12</dd>
+          <dt>References</dt><dd>8</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#3A4B9D">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li><li><a href="../concentrations/GM.html">Immersive Systems &amp; Game Development</a></li><li><a href="../concentrations/DF.html">Defense Technologies &amp; Autonomous Systems</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>

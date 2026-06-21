@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" style="--accent:#3A4B9D">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DF2: Mission-Critical Real-Time Systems | CS Concentrations</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/hit-logo.png" alt="HIT logo"> <span>HIT &middot; CS Concentrations</span></a>
+    <nav><a class="" href="../index.html">Overview</a><a class="on" href="../concentrations/SE.html">Software Systems</a><a class="" href="../concentrations/CY.html">Cyber Security</a><a class="" href="../concentrations/AI.html">AI &amp; Robotics</a><a class="" href="../concentrations/QCF.html">Finance &amp; Quantum</a><a class="" href="../concentrations/GM.html">Games &amp; XR</a><a class="" href="../concentrations/DF.html">Defense Tech</a><a class="" href="../careers.html">Careers</a></nav>
+  </div>
+</header>
+<section class="chero course" style="--accent:#3A4B9D;--ink:#2A3873">
+  <div class="wrap">
+    <p class="eyebrow">COURSE &middot; DF2</p>
+    <h1>Mission-Critical Real-Time Systems</h1>
+    <p class="hetx" dir="rtl">מערכות זמן-אמת קריטיות למשימה</p>
+    <p class="csub">real-time scheduling, dependability, and certification of safety-critical embedded software</p>
+    <p class="lead">Build a certifiable real-time safety-critical control system</p>
+    <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
+  </div>
+</section>
+
+<main class="wrap course-body">
+  <div class="conc-grid">
+    <div class="conc-main">
+      <section class="block">
+        <h2>About this course</h2>
+        <p>Engineer software that must be correct and on time: real-time scheduling, safety-critical design, fault tolerance, and the reliability and certification practices defense systems demand.</p>
+      </section>
+      <div class="formatbox" style="border-left:4px solid #3A4B9D">
+        <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
+      </div><div class="buildbox" style="border-left:4px solid #3A4B9D"><span class="bk" style="color:#3A4B9D">What you will build</span><p>Built a mission-critical real-time control system on FreeRTOS and an ARM Cortex-M target, implementing rate-monotonic scheduling with proven schedulability, priority-inheritance synchronization, triple-modular redundancy with voting, and a DO-178C-style requirements traceability and structural-coverage evidence package.</p></div>
+      <section class="block">
+        <h2>Expected outcomes</h2>
+        <ul class="objectives" style="--accent:#3A4B9D"><li>Model real-time tasks with periods, deadlines, and worst-case execution times</li><li>Apply rate-monotonic and earliest-deadline-first scheduling and prove schedulability</li><li>Perform response-time analysis and reason about worst-case execution time</li><li>Analyze and bound priority inversion and apply priority inheritance and ceiling protocols</li><li>Design fault-tolerant systems using redundancy, voting, and error detection</li><li>Quantify reliability, availability, and safety with dependability models</li><li>Build hard real-time software on a real-time operating system</li><li>Map software development to certification objectives such as DO-178C</li><li>Evaluate a design against safety requirements with hazard and failure analysis</li><li>Design and defend a complete mission-critical real-time system as a team project</li></ul>
+      </section>
+      <section class="block">
+        <h2>Key topics</h2>
+        <ul class="topics" style="--accent:#3A4B9D"><li>Real-time scheduling</li><li>Safety-critical software</li><li>Fault tolerance &amp; reliability</li><li>Certification standards</li></ul>
+      </section>
+      <section class="block">
+        <h2>Theoretical foundations</h2>
+        <p class="muted">The concepts and results this course rests on.</p>
+        <ul class="foundations" style="--accent:#3A4B9D"><li>the periodic task model with periods, deadlines, and worst-case execution times</li><li>rate-monotonic optimality and the Liu and Layland utilization bound</li><li>exact response-time analysis and the schedulability test</li><li>priority inversion and the priority inheritance and ceiling protocols</li><li>the dependability taxonomy of faults, errors, and failures</li><li>redundancy, voting, and the Byzantine agreement problem</li><li>reliability and safety modeling with fault trees and FMEA</li></ul>
+      </section>
+      <section class="block">
+        <h2>Prerequisites</h2>
+        <div class="formatbox" style="border-left:4px solid #3A4B9D">This is a Year-3 course. It assumes the mandatory CS core: data structures and algorithms, operating systems, computer networks, databases, software engineering, and the core mathematics (linear algebra, probability and statistics, calculus, discrete mathematics). It additionally requires the specific prior courses listed below.</div>
+        <p class="muted" style="margin:.2rem 0 .6rem">Course-specific prerequisites:</p><ul class="prereqs" style="--accent:#3A4B9D"><li>Operating systems</li><li>Embedded or systems programming</li><li>Software engineering</li></ul>
+      </section>
+      <section class="block">
+        <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
+        <div class="weeks"><div class="wpart">Foundations</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 1</div><div class="wk-body"><b>Real-time systems and timing</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>What makes a system real-time: hard versus soft deadlines, the task model with periods and deadlines, and why timing correctness is a functional requirement.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Set up the RTOS toolchain and run periodic tasks, measuring their timing on target hardware.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Repository, target platform, and periodic tasks with measured timing.</div></div></div><div class="wpart">Scheduling</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 2</div><div class="wk-body"><b>Fixed-priority scheduling</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Rate-monotonic scheduling and the Liu and Layland utilization bound, optimality of rate-monotonic priority assignment, and the periodic task model.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Assign rate-monotonic priorities to a task set and verify schedulability against the bound.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Rate-monotonic task set running on the RTOS.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 3</div><div class="wk-body"><b>Response-time analysis and EDF</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Exact response-time analysis from Audsley and colleagues, earliest-deadline-first dynamic scheduling, and the comparison of fixed and dynamic priority.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Compute worst-case response times for the task set and compare a fixed-priority and an EDF schedule.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Schedulability analysis report for the project task set.</div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 4</div><div class="wk-body"><b>Resource sharing and priority inversion</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Priority inversion, the priority inheritance and priority ceiling protocols of Sha, Rajkumar, and Lehoczky, and bounding blocking time.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Reproduce a priority inversion, then apply priority inheritance and measure the bounded blocking.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Synchronization with bounded blocking in the system.</div></div></div><div class="wpart">Milestone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 5</div><div class="wk-body"><b>Specification presentation<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Scoping a safety-critical project: the task model, timing requirements, safety requirements, and certification target. Rubric for the specification defense.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>STUDENT PRESENTATION milestone, specification. Teams present their system concept, the task and timing model, identified hazards and safety requirements, the target certification objectives, and a milestone plan.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Approved specification with a requirements and timing model.</div></div></div><div class="wpart">Timing</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 6</div><div class="wk-body"><b>Worst-case execution time</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>WCET analysis, the challenge of caches and pipelines, static versus measurement-based estimation, and why timing predictability matters for safety.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Estimate WCET for critical tasks with measurement and static analysis and bound the timing.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>WCET bounds feeding the schedulability argument.</div></div></div><div class="wpart">Fault tolerance</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 7</div><div class="wk-body"><b>Redundancy and fault tolerance</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Fault, error, and failure from the Avizienis dependability taxonomy, redundancy, N-version programming, and triple modular redundancy with voting.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add redundancy and a voter to a critical function and inject faults to test recovery.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Fault-tolerant critical path in the system.</div></div></div><div class="wpart">Milestone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 8</div><div class="wk-body"><b>Interim demo presentation<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Demonstrating a safety slice: a scheduled, fault-tolerant build meeting deadlines under load.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>STUDENT PRESENTATION milestone, interim demo. Teams demo the scheduled system meeting its deadlines on target, show timing and overload behavior, and demonstrate fault detection and recovery.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Scheduled, fault-tolerant build meeting deadlines.</div></div></div><div class="wpart">Dependability</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 9</div><div class="wk-body"><b>Reliability and safety modeling</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Reliability, availability, MTBF, fault trees, failure modes and effects analysis, and quantifying safety integrity.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Build a fault tree and an FMEA for the system and compute a reliability estimate.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Reliability and hazard analysis for the design.</div></div></div><div class="wpart">Distributed</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 10</div><div class="wk-body"><b>Distributed fault tolerance and consensus</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Byzantine faults and the Byzantine generals problem of Lamport, agreement under failure, and time-triggered communication for deterministic distributed systems.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a fault-tolerant agreement or a time-triggered message schedule across nodes.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Robust distributed coordination in the system.</div></div></div><div class="wpart">Certification</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 11</div><div class="wk-body"><b>Safety standards and DO-178C</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>The certification landscape, DO-178C software levels and objectives, requirements-based testing, structural coverage, and traceability.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Build a requirements-to-test traceability matrix and measure structural coverage on critical code.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Certification evidence package taking shape.</div></div></div><div class="wpart">Integration</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 12</div><div class="wk-body"><b>Verification and the safety case</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Verification strategy, the assurance argument and safety case, configuration management, and tool qualification for certified workflows.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Assemble the safety case and complete verification against the requirements and timing budget.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Verified system with a safety case ready for the final defense.</div></div></div><div class="wpart">Milestone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 13</div><div class="wk-body"><b>Final demo and oral defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Course synthesis: from rate-monotonic scheduling to a verified, certifiable safety-critical system and the dependability tradeoffs that defined it.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>STUDENT PRESENTATION milestone, final demo with oral defense. Teams present the finished system meeting its deadlines on target, walk through scheduling, fault tolerance, and certification evidence, and answer technical questions.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Final mission-critical real-time system with certification evidence.</div></div></div></div>
+      </section>
+      <section class="block">
+        <h2>Student project</h2>
+        <p>Each team builds one mission-critical real-time control or monitoring system across the term on a real-time operating system and target hardware. The project grows weekly from periodic scheduled tasks to a fault-tolerant system with proven schedulability, bounded blocking, reliability analysis, and a DO-178C-style traceability and verification evidence package. The same artifact is presented at the specification, interim, and final milestones.</p>
+        <h3 class="subhead">Requirements</h3>
+        <ul class="objectives" style="--accent:#3A4B9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Flight-control loop for a small fixed-wing UAV</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Engine or motor controller with redundant sensing</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Railway signaling interlock prototype</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Medical infusion-pump controller</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Triple-redundant attitude estimation node</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Automotive brake-by-wire control loop</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Time-triggered distributed sensor network</span></div>
+      </section>
+      <section class="block">
+        <h2>Assessment &amp; grading</h2>
+        <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+      </section>
+      <section class="block">
+        <h2>Tools &amp; platforms</h2>
+        <ul class="tools" style="--accent:#3A4B9D"><li><b>FreeRTOS</b>: open-source real-time kernel for embedded targets</li><li><b>Zephyr RTOS</b>: scalable real-time OS for embedded systems</li><li><b>Ada and SPARK</b>: language and toolset for high-integrity software</li><li><b>Cheddar</b>: open-source real-time scheduling analysis tool</li><li><b>STM32 or similar ARM Cortex-M target board</b></li><li><b>GNAT and the Ada toolchain for certified development</b></li><li><b>AbsInt aiT</b>: static worst-case execution time analysis</li><li><b>LDRA or VectorCAST</b>: structural coverage and unit testing for DO-178C</li><li><b>GoogleTest</b>: unit testing of critical components</li><li><b>Git and a configuration-management workflow for traceability</b></li><li><b>Logic analyzer and oscilloscope for timing measurement</b></li><li><b>Wireshark with time-triggered protocols for network analysis</b></li></ul>
+      </section>
+      <section class="block">
+        <h2>Primary literature</h2>
+        <p class="muted">Seminal works to read for graduate-level depth.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1145/321738.321743" target="_blank" rel="noopener">Scheduling Algorithms for Multiprogramming in a Hard-Real-Time Environment</a></span><div class="meta">C. L. Liu and James W. Layland, 1973</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1109/12.57058" target="_blank" rel="noopener">Priority Inheritance Protocols: An Approach to Real-Time Synchronization</a></span><div class="meta">Lui Sha, Ragunathan Rajkumar, and John P. Lehoczky, 1990</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1145/357172.357176" target="_blank" rel="noopener">The Byzantine Generals Problem</a></span><div class="meta">Leslie Lamport, Robert Shostak, and Marshall Pease, 1982</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://dl.acm.org/doi/10.1109/TDSC.2004.2" target="_blank" rel="noopener">Basic Concepts and Taxonomy of Dependable and Secure Computing</a></span><div class="meta">Algirdas Avizienis, Jean-Claude Laprie, Brian Randell, and Carl Landwehr, 2004</div></li><li class="ref"><span class="refkind">Paper</span><span class="reftitle"><a href="https://www.cs.york.ac.uk/rts/publications/Audsley1993.html" target="_blank" rel="noopener">Applying New Scheduling Theory to Static Priority Pre-emptive Scheduling</a></span><div class="meta">Neil Audsley, Alan Burns, Mike Richardson, Ken Tindell, and Andy Wellings, 1993</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>References</h2>
+        <p class="muted">Books and resources link to an online or publisher page.</p>
+        <ul class="refs"><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://www.cs.york.ac.uk/rts/books/RTSBookFourthEdition.html" target="_blank" rel="noopener">Real-Time Systems and Programming Languages, 4th Edition</a></span><div class="meta">Alan Burns and Andy Wellings, 2009</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://link.springer.com/book/10.1007/978-1-4614-0676-1" target="_blank" rel="noopener">Hard Real-Time Computing Systems, 3rd Edition</a></span><div class="meta">Giorgio C. Buttazzo, 2011</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://www.rtca.org/training/do-178c-training/" target="_blank" rel="noopener">DO-178C Software Considerations in Airborne Systems and Equipment Certification</a></span><div class="meta">RTCA SC-205, 2011, Civil avionics software certification standard</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://www.freertos.org/Documentation/00-Overview" target="_blank" rel="noopener">FreeRTOS Documentation</a></span><div class="meta">Amazon Web Services and the FreeRTOS project, 2025</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://www.sae.org/standards/content/arinc653p1-5/" target="_blank" rel="noopener">ARINC 653 Part 1 Required Services</a></span><div class="meta">SAE ITC AEEC, 2019, Avionics application software partitioning standard</div></li><li class="ref"><span class="refkind">Textbook</span><span class="reftitle"><a href="https://users.ece.cmu.edu/~koopman/depend/book/store96.htm" target="_blank" rel="noopener">Safety-Critical Computer Systems</a></span><div class="meta">Neil Storey, 1996, ISBN 9780201427875</div></li><li class="ref"><span class="refkind">Documentation</span><span class="reftitle"><a href="https://docs.zephyrproject.org/latest/index.html" target="_blank" rel="noopener">Zephyr Project Documentation</a></span><div class="meta">Zephyr Project, 2025</div></li></ul>
+      </section>
+      <section class="block">
+        <h2>Role in each concentration</h2>
+        <table class="roletable">
+          <thead><tr><th>Concentration</th><th>Role</th></tr></thead>
+          <tbody><tr><td><a href="../concentrations/SE.html">Intelligent Software Systems</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/AI.html">AI &amp; Robotics</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/GM.html">Immersive Systems &amp; Game Development</a></td><td><span class="rbadge e">Elective</span></td></tr><tr><td><a href="../concentrations/DF.html">Defense Technologies &amp; Autonomous Systems</a></td><td><span class="rbadge" style="background:#E1F0E9;color:#1F6F54">Core &middot; Semester 2</span></td></tr></tbody>
+        </table>
+      </section>
+      <div class="prevnext"><a href="DF1.html">&larr; DF1 &middot; Sensor Fusion &amp; Signal Processing</a><span></span></div>
+    </div>
+    <aside class="conc-side">
+      <div class="side-card" style="border-top:4px solid #3A4B9D">
+        <h3>Course</h3>
+        <dl>
+          <dt>Code</dt><dd>DF2</dd>
+          <dt>Home area</dt><dd><a href="../concentrations/SE.html">Intelligent Software Systems</a></dd>
+        </dl>
+        <p class="muted" style="margin:.6rem 0 0;font-size:.85rem">Core course in: Defense Technologies &amp; Autonomous Systems</p>
+      </div>
+      <div class="side-card">
+        <h3>Syllabus</h3>
+        <dl>
+          <dt>Duration</dt><dd>13 weeks</dd>
+          <dt>Per week</dt><dd>2h + 2h</dd>
+          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Presentations</dt><dd>3</dd>
+          <dt>Tools</dt><dd>12</dd>
+          <dt>References</dt><dd>7</dd>
+        </dl>
+      </div>
+      <div class="side-card">
+        <h3>Browse</h3>
+        <p class="muted" style="margin:0 0 .5rem">Jump to a concentration:</p>
+        <ul class="rolelist" style="--accent:#3A4B9D">
+          <li><a href="../concentrations/SE.html">Intelligent Software Systems</a></li><li><a href="../concentrations/CY.html">Networking &amp; Cyber Security</a></li><li><a href="../concentrations/AI.html">AI &amp; Robotics</a></li><li><a href="../concentrations/QCF.html">Computational Finance, Optimization &amp; Quantum Computing</a></li><li><a href="../concentrations/GM.html">Immersive Systems &amp; Game Development</a></li><li><a href="../concentrations/DF.html">Defense Technologies &amp; Autonomous Systems</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="../assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="../index.html">Program overview</a>
+  </div>
+</footer>
+</body>
+</html>
