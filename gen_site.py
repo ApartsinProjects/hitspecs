@@ -161,12 +161,12 @@ COURSES = {
         ["Symmetric & public-key crypto", "Hashing & digital signatures",
          "Key exchange & PKI", "Protocol design pitfalls"],
         {"SE": "E", "CY": "A", "AI": "E", "QCF": "E"}),
-    "CY2": ("Network & Communication Security",
+    "CY2": ("Network Security",
         "Secure networks and communication channels against interception, "
         "tampering, and intrusion across the protocol stack.",
         ["TLS & secure protocols", "Firewalls & IDS/IPS",
          "VPNs & network segmentation", "Attack detection"],
-        {"SE": "E", "CY": "E", "AI": "E", "QCF": "E"}),
+        {"SE": "E", "CY": "A", "AI": "E", "QCF": "E"}),
     "CY3": ("Hardware & Embedded Systems Security",
         "Examine security at the hardware and firmware level, where physical "
         "access, side channels, and constrained devices create distinct threats.",
@@ -191,7 +191,7 @@ COURSES = {
         "reasoning.",
         ["LLM fundamentals", "Prompting & RAG",
          "Tool use & agents", "Evaluation & guardrails"],
-        {"SE": "A", "CY": "A", "AI": "A", "QCF": "A"}),
+        {"SE": "A", "CY": "E", "AI": "A", "QCF": "A"}),
     "AI2": ("Temporal AI: Time Series & Sequential Decision Making",
         "Model data that unfolds over time and learn to make sequential decisions "
         "under uncertainty.",
@@ -295,7 +295,7 @@ COURSE_HE = {
     "SE6": "פיתוח תוכנה לנייד, IoT וקצה",
     "SE7": "תכן מערכות מבוססות-AI ועתירות-נתונים",
     "CY1": "קריפטוגרפיה יישומית",
-    "CY2": "אבטחת רשתות ותקשורת",
+    "CY2": "אבטחת רשתות",
     "CY3": "אבטחת חומרה ומערכות משובצות",
     "CY4": "ממשל אבטחת סייבר, סיכון וציות",
     "CY5": "בלוקצ'יין ומערכות מבוזרות",
@@ -377,6 +377,7 @@ BASE_AVAILABLE = {
             ("65351", "Android Client-Side Development 1", "Effi Propes", "")],
     "GM1": [("65235", "Computer Graphics", "Dr. Vladimir Nodelman", "")],
     "CY1": [("68012", "Applied Introduction to Modern Cryptography", "Zeev Geyzel", "")],
+    "CY2": [("65338", "Network and Internet Security", "Adrian Shpeler", "")],
     "CY5": [("67007", "Blockchain: Vision and Practice", "Michael Bershadsky", "")],
     "AI1": [("65339", "LLM & Agents (NLP)", "Dr. Alexander Apartsin", "")],
     "AI3": [("67025", "Deep-Learning-Based Computer Vision", "Lehav Yefet", "")],
@@ -512,7 +513,7 @@ def body_nav(p):  # unused placeholder
 def nav_html(active, p):
     links = [("Overview", f"{p}index.html", active == "home")]
     for t in TRACK_ORDER:
-        links.append((TRACKS[t].get("nav", TRACKS[t]["name"]),
+        links.append((TRACKS[t]["name"],
                       f"{p}concentrations/{t}.html", active == t))
     links.append(("Careers", f"{p}careers.html", active == "careers"))
     items = "".join(
@@ -621,9 +622,7 @@ def build_base_table():
     table = (f'<table class="basetbl"><thead><tr><th>Core course</th><th>Title</th>'
              f'<th>Currently available at HIT</th><th>Status</th></tr></thead>'
              f'<tbody>{rows}</tbody></table>')
-    note = ('<p class="muted" style="margin-top:.8rem">Also available: Network &amp; Internet '
-            'Security (65338, Adrian Shpeler), which maps to the CY2 elective rather than a core course.</p>')
-    return summary + '<div class="tablewrap">' + table + '</div>' + note
+    return summary + '<div class="tablewrap">' + table + '</div>'
 
 # ----------------------------------------------------------------------------
 # PAGE: INDEX
@@ -639,11 +638,12 @@ def build_index():
         cards += f"""
       <a class="ccard" style="--accent:#{c['color']};--soft:#{c['soft']}" href="concentrations/{t}.html">
         <div class="ccard-top">
-          <span class="ccard-tag">{t}</span>
+          <span class="ccard-tag">Concentration</span>
           <h3>{e(c['name'])}</h3>
           <div class="hetx" dir="rtl">{e(c.get('he',''))}</div>
         </div>
         <p>{e(c['tag'])}</p>
+        <div class="chip-label">Potential job roles</div>
         <div class="chips">{roles}</div>
       </a>"""
 
@@ -771,8 +771,9 @@ def build_careers():
             he = (f'<span class="rhe" dir="rtl">{e(r["title_he"])}</span>' if r.get("title_he") else "")
             cards += f"""
       <article class="role" id="{e(slug)}" style="--accent:#{c['color']}">
+        <p class="role-eyebrow">Job role</p>
         <div class="role-head"><h3>{e(r['title'])}{he}</h3>
-          <a class="role-conc" href="concentrations/{t}.html" style="background:#{c['soft']};color:#{c['color']}">{e(c['name'])}</a></div>
+          <a class="role-conc" href="concentrations/{t}.html" style="background:#{c['soft']};color:#{c['color']}">Concentration: {e(c['name'])}</a></div>
         <p>{e(r.get('summary',''))}</p>
         <div class="role-grid">
           {col('Responsibilities', r.get('responsibilities', []))}
@@ -784,7 +785,9 @@ def build_careers():
       </article>"""
         sections += f"""
   <section class="block">
+    <p class="conc-eyebrow">Concentration</p>
     <h2 style="color:#{c['color']}">{e(c['name'])} <span class="hetx" dir="rtl">{e(c.get('he',''))}</span></h2>
+    <p class="muted" style="margin:-.2rem 0 1.1rem">Job roles a graduate of this concentration can step into:</p>
     <div class="roles">{cards}
     </div>
   </section>"""
@@ -794,7 +797,7 @@ def build_careers():
   <div class="wrap">
     <p class="eyebrow">CAREERS &amp; OUTCOMES</p>
     <h1>Where these concentrations lead</h1>
-    <p class="lead">Each concentration targets a distinct family of professional roles that a recent graduate can enter. For every role: what you do, the knowledge and skills it needs, the tools you use, and example employers.</p>
+    <p class="lead">A concentration is a third-year specialization. Each one prepares graduates for a family of job roles. Below, the roles are grouped by the concentration that leads to them, with what you do, the knowledge and skills you need, the tools you use, and example employers for each.</p>
   </div>
 </section>
 <main class="wrap">{sections}
@@ -1244,6 +1247,9 @@ main{padding:1.1rem 0 3rem}
 .ccard p{margin:.5rem 0 .9rem;color:var(--muted);font-size:.96rem}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem}
 .chip{font-size:.74rem;font-weight:600;padding:.22rem .55rem;border-radius:20px}
+.chip-label{font-family:var(--mono);font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:.1rem 0 .4rem}
+.role-eyebrow{font-family:var(--mono);font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin:0 0 .25rem}
+.conc-eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 .15rem}
 .ccard-meta{margin-top:1rem;font-size:.82rem;color:var(--muted);font-family:var(--mono);display:flex;justify-content:space-between;align-items:center}
 .ccard-meta .go{font-size:1.1rem;color:var(--accent)}
 
