@@ -562,58 +562,6 @@
       "Bank Leumi"
     ]
   },
-  "quant-analyst": {
-    "title": "Quant Analyst",
-    "title_he": "אנליסט כמותי",
-    "concentration": "QCF",
-    "summary": "A Quant Analyst applies mathematical, statistical, and computational methods to model financial markets, price instruments, and manage risk. They develop and validate quantitative models that inform trading, investment, and risk decisions.",
-    "responsibilities": [
-      "Develop and calibrate pricing and valuation models for financial instruments",
-      "Build statistical and machine learning models for forecasting and signals",
-      "Conduct risk modeling including value-at-risk and stress testing",
-      "Validate models and back-test strategies against historical data",
-      "Analyze large financial datasets to identify patterns and anomalies",
-      "Document model assumptions, methodology, and results for stakeholders"
-    ],
-    "knowledge": [
-      "Stochastic calculus and the theory of derivative pricing",
-      "Probability theory, statistics, and time series analysis",
-      "Linear algebra, optimization, and numerical methods",
-      "Financial economics, portfolio theory, and risk management",
-      "Monte Carlo and partial differential equation pricing methods",
-      "Machine learning theory as applied to financial data"
-    ],
-    "skills": [
-      "Building and calibrating quantitative pricing and risk models",
-      "Performing statistical analysis on noisy financial data",
-      "Implementing numerical methods and simulations in code",
-      "Backtesting and validating models rigorously",
-      "Communicating quantitative results to non-technical stakeholders",
-      "Cleaning and managing large financial datasets"
-    ],
-    "tools": [
-      "Python",
-      "NumPy, SciPy, and pandas",
-      "R",
-      "QuantLib",
-      "scikit-learn and statsmodels",
-      "MATLAB",
-      "SQL",
-      "Jupyter",
-      "Bloomberg Terminal",
-      "C++"
-    ],
-    "example_employers": [
-      "JPMorgan Chase",
-      "Citadel",
-      "Goldman Sachs",
-      "Bank Hapoalim",
-      "Bank Leumi",
-      "Two Sigma",
-      "Bloomberg",
-      "Migdal Insurance"
-    ]
-  },
   "cloud-platform-engineer": {
     "title": "Cloud & Platform Engineer",
     "title_he": "מהנדס ענן ופלטפורמה",

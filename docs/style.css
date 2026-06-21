@@ -208,6 +208,12 @@ h2 .hetx{font-size:1rem;font-weight:400}
 .wk-tag.lec{background:#E0E7FF;color:#3730A3}
 .wk-tag.pra{background:#DCFCE7;color:#166534}
 .wk-tag.prj{background:var(--soft);color:var(--muted)}
+.wk-tag.vid{background:#FEE2E2;color:#9C2B22}
+.wk-links{font-size:.88rem;margin-top:.3rem}
+.wk-links a{margin-right:.1rem}
+.aiu-box .aiu{margin:.3rem 0 0;padding-left:1.1rem}
+.aiu-box .aiu li{margin-bottom:.25rem}
+.aiu-box p{display:inline;margin:0}
 .presbadge{display:inline-block;font-family:var(--mono);font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
   background:#F59E0B;color:#fff;padding:.1rem .45rem;border-radius:4px;margin-left:.55rem;vertical-align:2px}
 .assess{border-collapse:collapse;width:100%;font-size:.92rem}

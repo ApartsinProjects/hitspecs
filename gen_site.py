@@ -72,7 +72,7 @@ TRACKS = {
             "finance, quantum optimization, and AI-driven financial modeling, "
             "preparing you for quantitative and algorithmic roles in finance and "
             "beyond."),
-        roles=["Financial Software Engineer", "Algo-Trading Developer", "Quant Analyst",
+        roles=["Financial Software Engineer", "Algo-Trading Developer",
                "Quantitative Developer", "Risk Analyst", "Data Engineer (Finance)"],
     ),
     "GM": dict(
@@ -310,7 +310,7 @@ COURSE_HE = {
     "AI3": "בינת ראייה: למידה עמוקה לראייה ממוחשבת",
     "AI4": "AI בקנה מידה: אלגוריתמים לנתוני עתק",
     "AI5": "AI יוצר: מודלים גנרטיביים עמוקים",
-    "AI6": "AI מגולם: רובוטיקה ומערכות אוטונומיות",
+    "AI6": "בינה מלאכותית פיזית: רובוטיקה ומערכות אוטונומיות",
     "QCF1": "אופטימיזציה קוונטית",
     "QCF2": "בינה מלאכותית ואופטימיזציה למימון",
     "GM1": "גרפיקה ממוחשבת",
@@ -708,7 +708,7 @@ def build_index():
 </section>
 
 <main class="wrap">
-  <section class="block">
+  <section class="block" style="margin-top:1.8rem">
     <h2>The Concentration Model</h2>
     <p>Every student completes a shared computer-science core, then chooses one concentration: a curated sequence of <b>eight core courses</b>, across two semesters (three on the flexible program), that turns a broad CS foundation into a job-ready specialization. Each concentration equips a complete toolbox for a <a href="careers.html">cluster of roles</a>, pairs academic rigor with state-of-the-art tools, and produces a demonstrable portfolio of project-based work, all while reusing a shared core so courses stay cross-disciplinary. Six principles shape how every concentration is designed:</p>
     <div class="pillars">{pillars_html}
@@ -984,6 +984,19 @@ def build_course(cid):
         <ul class="foundations" style="--accent:#{c['color']}">{fh}</ul>
       </section>"""
 
+    # How AI tools / vibe-coding are used in this course
+    ai_usage_section = ""
+    aiu = syl.get("ai_usage", "")
+    if aiu:
+        if isinstance(aiu, list):
+            body_aiu = '<ul class="aiu">' + "".join(f"<li>{e(x)}</li>" for x in aiu) + "</ul>"
+        else:
+            body_aiu = f"<p>{e(aiu)}</p>"
+        ai_usage_section = f"""
+      <div class="formatbox aiu-box" style="border-left:4px solid #{c['color']}">
+        <b>AI tools in this course.</b> {body_aiu}
+      </div>"""
+
     # Free online courses (self-study basis)
     basis_section = ""
     basis = ONLINE_BASIS.get(cid, [])
@@ -1070,6 +1083,13 @@ def build_course(cid):
                     rows += f'<div class="wk-proj"><span class="wk-tag prj">Project</span>{e(w["project"])}</div>'
             else:  # legacy fallback
                 rows = f'<div class="wk-line">{e(w.get("details",""))}</div>'
+            wlinks = w.get("links", [])
+            if wlinks:
+                lk = " &middot; ".join(
+                    f'<a href="{e(l["url"])}" target="_blank" rel="noopener">{e(l.get("title", "video"))}</a>'
+                    for l in wlinks if l.get("url"))
+                if lk:
+                    rows += f'<div class="wk-links"><span class="wk-tag vid">Watch</span>{lk}</div>'
             wrows += (f'<div class="week{" pres" if is_pres else ""}">'
                       f'<div class="wk-num" style="color:#{c["color"]}">Wk {e(w.get("week",""))}</div>'
                       f'<div class="wk-body"><b>{e(w.get("title",""))}{badge}</b>{rows}</div></div>')
@@ -1186,7 +1206,7 @@ def build_course(cid):
       <section class="block">
         <h2>Key topics</h2>
         <ul class="topics" style="--accent:#{c['color']}">{topic_html}</ul>
-      </section>{foundations_section}{prereq_section}{weeks_section}{project_section}{assessment_section}{tools_section}{basis_section}{literature_section}{refs_section}
+      </section>{foundations_section}{prereq_section}{weeks_section}{ai_usage_section}{project_section}{assessment_section}{tools_section}{basis_section}{literature_section}{refs_section}
       <section class="block">
         <h2>Role in each concentration</h2>
         <table class="roletable">
@@ -1430,6 +1450,12 @@ h2 .hetx{font-size:1rem;font-weight:400}
 .wk-tag.lec{background:#E0E7FF;color:#3730A3}
 .wk-tag.pra{background:#DCFCE7;color:#166534}
 .wk-tag.prj{background:var(--soft);color:var(--muted)}
+.wk-tag.vid{background:#FEE2E2;color:#9C2B22}
+.wk-links{font-size:.88rem;margin-top:.3rem}
+.wk-links a{margin-right:.1rem}
+.aiu-box .aiu{margin:.3rem 0 0;padding-left:1.1rem}
+.aiu-box .aiu li{margin-bottom:.25rem}
+.aiu-box p{display:inline;margin:0}
 .presbadge{display:inline-block;font-family:var(--mono);font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
   background:#F59E0B;color:#fff;padding:.1rem .45rem;border-radius:4px;margin-left:.55rem;vertical-align:2px}
 .assess{border-collapse:collapse;width:100%;font-size:.92rem}
