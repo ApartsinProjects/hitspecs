@@ -445,7 +445,7 @@ PREREQS = {
 # Bullet strings contain inline HTML and must NOT be html-escaped.
 PILLARS = [
     ("Job role-oriented", "EA6A52", "FBE6E1", [
-        "A sequence of <b>8 core courses</b> that prepares students for <b>target job roles</b>.",
+        'A sequence of <b>8 core courses</b> that prepares students for <a href="careers.html"><b>target job roles</b></a>.',
         "Gives students a <b>complete toolbox</b> for the job role."]),
     ("Structured progression", "5F8A6B", "E7EFE9", [
         "Advanced courses may <b>depend on</b> earlier concentration courses.",
@@ -457,7 +457,7 @@ PILLARS = [
         "Combines rigorous academic foundations with current <b>tools</b>, programming languages, and platforms.",
         "Embeds <b>AI-assisted</b> development practices."]),
     ("Enrichment electives", "F59E0B", "FEF1CF", [
-        "Deepen expertise beyond core courses, improving fit for concentration <b>job roles</b>.",
+        'Deepen expertise beyond core courses, improving fit for concentration <a href="careers.html"><b>job roles</b></a>.',
         "Prepare students for <b>graduate studies</b>."]),
     ("Core course reuse", "2FA161", "DDF4E6", [
         "Core courses are a <b>flagship</b>: high-quality, comprehensive, current, and project-based.",
@@ -652,8 +652,7 @@ def build_index():
         blis = "".join(f"<li>{b}</li>" for b in bullets)  # bullets carry inline HTML
         pillars_html += f"""
       <div class="pcard" style="background:#{ps}">
-        <div class="pnum" style="background:#{pc}">{i}</div>
-        <h3>{e(ptitle)}</h3>
+        <div class="pcard-head"><span class="pnum" style="background:#{pc}">{i}</span><h3>{e(ptitle)}</h3></div>
         <ul>{blis}</ul>
       </div>"""
 
@@ -695,7 +694,7 @@ def build_index():
 <main class="wrap">
   <section class="block">
     <h2>The Concentration Model</h2>
-    <p>Every student completes a shared computer-science core, then chooses one concentration: a curated sequence of <b>eight core courses</b>, across two semesters (three on the flexible program), that turns a broad CS foundation into a job-ready specialization. Each concentration equips a complete toolbox for a cluster of roles, pairs academic rigor with state-of-the-art tools, and produces a demonstrable portfolio of project-based work, all while reusing a shared core so courses stay cross-disciplinary. Six principles shape how every concentration is designed:</p>
+    <p>Every student completes a shared computer-science core, then chooses one concentration: a curated sequence of <b>eight core courses</b>, across two semesters (three on the flexible program), that turns a broad CS foundation into a job-ready specialization. Each concentration equips a complete toolbox for a <a href="careers.html">cluster of roles</a>, pairs academic rigor with state-of-the-art tools, and produces a demonstrable portfolio of project-based work, all while reusing a shared core so courses stay cross-disciplinary. Six principles shape how every concentration is designed:</p>
     <div class="pillars">{pillars_html}
     </div>
   </section>
@@ -1213,8 +1212,9 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.15}
 .stat span{font-size:.84rem;color:#94A3B8;display:block;margin-top:.3rem}
 
 /* blocks */
-main{padding:2.4rem 0 3rem}
+main{padding:1.1rem 0 3rem}
 .block{margin:0 0 2.6rem}
+.block h2:first-child,main>.block:first-child h2{margin-top:0}
 .block h2{font-size:1.7rem;margin:0 0 .8rem}
 .block h2 .lbl,.lbl{font-family:var(--mono);font-size:.8rem;color:var(--muted);font-weight:400;letter-spacing:.05em}
 .muted{color:var(--muted)}
@@ -1225,9 +1225,10 @@ main{padding:2.4rem 0 3rem}
 /* six pillars */
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .pcard{border-radius:14px;padding:1.2rem 1.3rem;border:1px solid rgba(15,23,42,.05)}
-.pcard .pnum{width:2.1rem;height:2.1rem;border-radius:9px;color:#fff;font-weight:700;font-family:var(--serif);
-  display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.7rem}
-.pcard h3{font-size:1.18rem;margin:0 0 .55rem}
+.pcard-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.55rem}
+.pcard .pnum{flex:none;width:2rem;height:2rem;border-radius:8px;color:#fff;font-weight:700;font-family:var(--serif);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.pcard h3{font-size:1.18rem;margin:0}
 .pcard ul{margin:0;padding-left:1.05rem}
 .pcard li{font-size:.91rem;line-height:1.5;margin-bottom:.4rem;color:var(--ink2)}
 .pcard li:last-child{margin-bottom:0}
@@ -1468,21 +1469,24 @@ TABLE_JS = r"""
     v = (v||'').trim(); var n = parseFloat(v);
     return isNaN(n) ? v.toLowerCase() : n;
   }
-  document.querySelectorAll('table.sortable').forEach(function(table){
+  function sortTable(table, idx, asc){
+    var tbody = table.tBodies[0];
+    var rows = Array.prototype.slice.call(tbody.rows);
+    rows.sort(function(a,b){
+      var x = sortVal(a.cells[idx]), y = sortVal(b.cells[idx]);
+      if(x<y) return asc?-1:1; if(x>y) return asc?1:-1; return 0;
+    });
+    rows.forEach(function(r){ tbody.appendChild(r); });
+    table._sortIdx = idx; table._sortAsc = asc;
     var ths = table.tHead.rows[0].cells;
-    Array.prototype.forEach.call(ths, function(th, idx){
+    Array.prototype.forEach.call(ths, function(h){ h.removeAttribute('data-dir'); });
+    ths[idx].setAttribute('data-dir', asc ? 'asc' : 'desc');
+  }
+  document.querySelectorAll('table.sortable').forEach(function(table){
+    Array.prototype.forEach.call(table.tHead.rows[0].cells, function(th, idx){
       th.addEventListener('click', function(){
-        var tbody = table.tBodies[0];
-        var rows = Array.prototype.slice.call(tbody.rows);
         var asc = !(table._sortIdx === idx && table._sortAsc);
-        rows.sort(function(a,b){
-          var x = sortVal(a.cells[idx]), y = sortVal(b.cells[idx]);
-          if(x<y) return asc?-1:1; if(x>y) return asc?1:-1; return 0;
-        });
-        rows.forEach(function(r){ tbody.appendChild(r); });
-        table._sortIdx = idx; table._sortAsc = asc;
-        Array.prototype.forEach.call(ths, function(h){ h.removeAttribute('data-dir'); });
-        th.setAttribute('data-dir', asc ? 'asc' : 'desc');
+        sortTable(table, idx, asc);
       });
     });
   });
@@ -1500,6 +1504,8 @@ TABLE_JS = r"""
     Array.prototype.forEach.call(sels, function(s){
       if(s.value){ var ci = colIndex(table, s.value); if(ci >= 0) cols.push(ci); }
     });
+    // When a concentration/role filter is active, also sort by that column.
+    if(cols.length){ sortTable(table, cols[0], true); }
     Array.prototype.forEach.call(table.tBodies[0].rows, function(r){
       var matchText = r.textContent.toLowerCase().indexOf(q) !== -1;
       var matchCore = cols.every(function(ci){ return !r.cells[ci].classList.contains('e'); });
