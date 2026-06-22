@@ -1341,6 +1341,7 @@ h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.15}
 
 /* blocks */
 main{padding:2.6rem 0 3rem}
+main.course-body,main.conc{padding-top:4.2rem}
 .block{margin:0 0 2.6rem}
 .block h2{font-size:1.7rem;margin:0 0 .8rem}
 .block h2 .lbl,.lbl{font-family:var(--mono);font-size:.8rem;color:var(--muted);font-weight:400;letter-spacing:.05em}
