@@ -336,7 +336,8 @@
     "foundations": [
       "Saltzer and Schroeder protection principles and least privilege",
       "STRIDE threat modeling over data-flow trust boundaries",
-      "Coverage criteria and fault-based testing theory",
+      "Coverage criteria, risk-based testing, and fault-based testing theory",
+      "Test pyramid design, API contract testing, and end-to-end workflow validation",
       "Static data-flow and taint analysis with soundness trade-offs",
       "Trusting-trust and supply-chain integrity reasoning",
       "Service level objectives, error budgets, and reliability theory",
@@ -380,15 +381,17 @@
         "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
       }
     ],
-    "build": "Hardened a web application end to end: threat-modeled it with OWASP Threat Dragon, remediated OWASP Top 10 risks, and built a GitHub Actions CI pipeline gating on Semgrep SAST, OWASP ZAP DAST, and dependency scanning, with OpenTelemetry, Prometheus, and Grafana enforcing service level objectives.",
+    "build": "Hardened a web application end to end: threat-modeled it with OWASP Threat Dragon, built a QA strategy from acceptance criteria and risk, automated unit, API, contract, and end-to-end UI tests, remediated OWASP Top 10 risks, and built a GitHub Actions CI pipeline gating on tests, Semgrep SAST, OWASP ZAP DAST, dependency scanning, accessibility checks, and k6 smoke performance thresholds, with OpenTelemetry, Prometheus, and Grafana enforcing service level objectives.",
     "objectives": [
       "Explain the principles of secure software development across the lifecycle",
       "Analyze the OWASP Top 10 risks and apply secure coding countermeasures",
       "Construct threat models using data-flow diagrams and trust boundaries",
       "Evaluate dependency and supply-chain risks and apply provenance controls",
       "Apply SAST and DAST tooling and interpret their findings critically",
-      "Design automated test suites grounded in coverage and fault-based theory",
+      "Design automated test suites grounded in coverage, risk, acceptance criteria, and fault-based theory",
+      "Automate API, contract, UI end-to-end, accessibility, and smoke performance tests",
       "Build continuous integration and delivery pipelines with quality gates",
+      "Report, triage, reproduce, and verify defects using professional QA workflows",
       "Conduct effective code reviews focused on correctness and security",
       "Instrument systems for observability with metrics, logs, and traces",
       "Reason about reliability using service level objectives and error budgets"
@@ -454,9 +457,9 @@
         "week": 4,
         "part": "Testing and CI",
         "title": "Software Testing Foundations",
-        "lecture": "Cover test oracles, coverage criteria, equivalence partitioning, and fault-based testing theory.",
-        "practice": "Write unit and integration tests guided by coverage criteria for the project.",
-        "project": "Project gains a baseline automated test suite with measured coverage.",
+        "lecture": "Cover test oracles, coverage criteria, equivalence partitioning, boundary-value analysis, risk-based testing, the test pyramid, and fault-based testing theory.",
+        "practice": "Write unit, integration, API, and end-to-end UI tests guided by acceptance criteria and coverage criteria, then log reproducible defects from failed or exploratory cases.",
+        "project": "Project gains a baseline automated test suite with measured coverage, core user-flow E2E tests, and a defect register.",
         "links": [
           {
             "title": "Equivalence Partitioning in Software Testing",
@@ -472,9 +475,9 @@
         "week": 5,
         "part": "Testing and CI",
         "title": "Specification Milestone",
-        "lecture": "Review test strategy, security requirements, and how quality attributes shape design.",
-        "practice": "Student teams present their project specification: security requirements, threat model, and test and reliability plan.",
-        "project": "Approved specification with security and quality goals is delivered.",
+        "lecture": "Review test strategy, security requirements, acceptance criteria, traceability, and how quality attributes shape design.",
+        "practice": "Student teams present their project specification: security requirements, threat model, risk-based test matrix, acceptance tests, and reliability plan.",
+        "project": "Approved specification with security goals, quality goals, and a traceable QA plan is delivered.",
         "links": [
           {
             "title": "Eliciting and Specifying Quality Attribute Requirements (SEI Carnegie Mellon)",
@@ -486,9 +489,9 @@
         "week": 6,
         "part": "Testing and CI",
         "title": "Continuous Integration and Delivery",
-        "lecture": "Discuss pipeline theory, deployment automation, and the economics of fast feedback.",
-        "practice": "Build a CI pipeline that runs tests and blocks merges on failures.",
-        "project": "Project has a CI pipeline enforcing tests on every change.",
+        "lecture": "Discuss pipeline theory, deployment automation, flaky-test control, test reporting, and the economics of fast feedback.",
+        "practice": "Build a CI pipeline that runs unit, integration, API, E2E, and accessibility checks, publishes test reports, and blocks merges on failures.",
+        "project": "Project has a CI pipeline enforcing automated QA gates on every change.",
         "links": [
           {
             "title": "CI/CD Explained in 7 Minutes",
@@ -518,9 +521,9 @@
         "week": 8,
         "part": "AppSec in Depth",
         "title": "Interim Demo Milestone",
-        "lecture": "Cover dynamic analysis and fuzzing concepts and how they complement static testing.",
-        "practice": "Student teams present an interim demo of the secured project, its pipeline, and current findings.",
-        "project": "Secured project with working CI and analysis is demonstrated.",
+        "lecture": "Cover dynamic analysis, fuzzing concepts, exploratory testing, defect triage, and how they complement static and automated testing.",
+        "practice": "Student teams present an interim demo of the secured project, its pipeline, current findings, exploratory-test notes, and defect lifecycle.",
+        "project": "Secured project with working CI, analysis, exploratory QA evidence, and defect triage is demonstrated.",
         "links": [
           {
             "title": "Fuzzing Programs to Find Bugs (Computerphile)",
@@ -568,9 +571,9 @@
         "week": 11,
         "part": "Reliability",
         "title": "Reliability and SRE",
-        "lecture": "Introduce service level objectives, error budgets, and reliability engineering principles.",
-        "practice": "Define SLOs for the project and add resilience to a critical path.",
-        "project": "Project defines SLOs and improves a critical-path failure mode.",
+        "lecture": "Introduce service level objectives, error budgets, reliability engineering principles, load testing, and failure-mode validation.",
+        "practice": "Define SLOs for the project, run a k6 smoke load test, and add resilience to a critical path.",
+        "project": "Project defines SLOs, records performance thresholds, and improves a critical-path failure mode.",
         "links": [
           {
             "title": "SRE Fundamentals: SLIs, SLOs, SLAs and Error Budgets",
@@ -597,13 +600,13 @@
         "part": "Capstone",
         "title": "Final Demo and Defense",
         "lecture": "Synthesize secure, tested, and reliable engineering and review the full quality pipeline.",
-        "practice": "Student teams present the final demo with an oral defense of security, testing, and reliability decisions.",
-        "project": "Final secure and reliable system is delivered with documentation and defense.",
+        "practice": "Student teams present the final demo with an oral defense of security, QA strategy, test evidence, defect decisions, and reliability decisions.",
+        "project": "Final secure and reliable system is delivered with test evidence, defect history, documentation, and defense.",
         "links": []
       }
     ],
     "project": {
-      "summary": "Teams take one web application and engineer it to be secure, tested, and reliable end to end. They threat-model it, remediate OWASP Top 10 risks, build a CI and CD pipeline with SAST, DAST, and dependency scanning, and add observability and service level objectives. Application security is revisited every week as new attack surfaces appear.",
+      "summary": "Teams take one web application and engineer it to be secure, tested, and reliable end to end. They turn requirements into acceptance criteria, maintain a risk-based QA plan and defect register, automate unit, integration, API, contract, end-to-end UI, accessibility, and smoke performance tests, threat-model the app, remediate OWASP Top 10 risks, build a CI and CD pipeline with SAST, DAST, dependency scanning, and QA gates, and add observability and service level objectives. Application security and product quality are revisited every week as new attack surfaces and regression risks appear.",
       "ideas": [
         "Online banking demo app",
         "Healthcare records portal",
@@ -617,6 +620,12 @@
     },
     "tools": [
       "JUnit or pytest: write unit and integration tests",
+      "Playwright or Cypress: automate end-to-end browser workflows",
+      "Postman or REST Assured: validate API behavior and regression suites",
+      "OpenAPI: document and validate API contracts",
+      "axe DevTools: audit accessibility compliance",
+      "k6: run smoke performance and load tests",
+      "Jira or TestRail: manage test cases, defects, and verification status",
       "GitHub Actions: run continuous integration pipelines",
       "OWASP ZAP: perform dynamic application security testing",
       "Semgrep: run static application security testing",
@@ -694,7 +703,7 @@
         "note": "Supply-chain and SDLC controls"
       }
     ],
-    "ai_usage": "Students use AI assistants to generate and refactor application code, then turn the same tools on themselves to find and remediate OWASP Top 10 weaknesses through guided code review. They prompt AI to expand unit and integration suites, propose equivalence classes and edge cases, and draft GitHub Actions pipeline steps that wire in Semgrep, OWASP ZAP, and dependency scans. Agents connected to repository and scanner MCP servers help triage SAST and DAST findings, separating real issues from false positives. AI further helps analyze telemetry and error budgets, but every security fix and test is verified by the team, since vibe-coded changes can quietly introduce new attack surface."
+    "ai_usage": "Students use AI assistants to generate and refactor application code, then turn the same tools on themselves to find and remediate OWASP Top 10 weaknesses through guided code review. They prompt AI to expand unit, integration, API, contract, and E2E suites, propose equivalence classes and edge cases, draft exploratory charters, sharpen defect reports, and generate GitHub Actions pipeline steps that wire in Playwright or Cypress, accessibility checks, k6 smoke tests, Semgrep, OWASP ZAP, and dependency scans. Agents connected to repository, browser, API, and scanner MCP servers help triage test failures, SAST findings, and DAST findings, separating real issues from false positives. AI further helps analyze telemetry and error budgets, but every security fix, test, and defect disposition is verified by the team, since vibe-coded changes can quietly introduce new attack surface or false confidence."
   },
   "SE3": {
     "tagline": "Craft fast, accessible, component-driven web interfaces",
