@@ -1312,8 +1312,10 @@
       "the FLP impossibility result for asynchronous consensus",
       "Byzantine fault tolerance and the Byzantine generals problem",
       "Nakamoto consensus, proof of work, and the longest-chain rule",
+      "transaction structure, UTXO accounting, mempools, forks, and Bloom filters",
       "hashes, digital signatures, and Merkle trees as integrity backbone",
       "the smart-contract execution and gas-metering model",
+      "token standards, decentralized storage, wallets, and DApp integration",
       "economic security assumptions and attack vectors of DeFi"
     ],
     "literature": [
@@ -1348,13 +1350,14 @@
         "url": "https://eprint.iacr.org/2014/765"
       }
     ],
-    "build": "Built a minimal but complete decentralized system, layering a simplified PBFT agreement module, Merkle-backed block integrity, proof-of-work mining, deployed Solidity contracts, a hierarchical deterministic multi-signature wallet, and an automated market maker, then audited and hardened it against reentrancy and flash-loan attacks.",
+    "build": "Built a minimal but complete decentralized system, layering a simplified PBFT agreement module, Merkle-backed block integrity, proof-of-work mining, deployed Solidity contracts, ERC-20 or ERC-721 token flows, an IPFS-backed DApp interface, a hierarchical deterministic multi-signature wallet, and an automated market maker, then audited and hardened it against reentrancy, oracle, and flash-loan attacks.",
     "objectives": [
       "Explain the distributed-systems foundations: replication, the CAP trade-off, and failure models.",
       "Analyze Byzantine fault tolerance and the theory behind consensus protocols.",
       "Describe Nakamoto consensus and proof-of-work and proof-of-stake security arguments.",
-      "Apply the cryptographic foundations of blockchains: hashes, signatures, and Merkle trees.",
+      "Apply the cryptographic and data-structure foundations of blockchains: hashes, signatures, Merkle trees, UTXOs, mempools, forks, and Bloom filters.",
       "Build and deploy smart contracts and reason about their execution model.",
+      "Implement token standards and DApp integrations using modern Ethereum libraries and decentralized storage.",
       "Identify and exploit smart-contract vulnerabilities such as reentrancy and integer flaws.",
       "Design secure wallet and key-management systems including hierarchical deterministic keys.",
       "Assess DeFi protocols for economic and technical attack vectors.",
@@ -1400,9 +1403,9 @@
         "week": 3,
         "part": "Cryptographic foundations",
         "title": "Hashes, signatures, and Merkle trees",
-        "lecture": "Review cryptographic hashing, digital signatures, and Merkle trees as the integrity backbone of blockchains.",
-        "practice": "Build a Merkle tree and signature-verification layer for the ledger's blocks.",
-        "project": "Add cryptographic block integrity and signed transactions to the ledger.",
+        "lecture": "Review cryptographic hashing, digital signatures, Merkle trees, UTXO accounting, mempools, Bloom filters, and fork handling as the integrity backbone of blockchains.",
+        "practice": "Build a Merkle tree, transaction pool, signature-verification layer, and UTXO or account-state validator for the ledger's blocks.",
+        "project": "Add cryptographic block integrity, signed transactions, transaction validation, and fork-aware block acceptance to the ledger.",
         "links": [
           {
             "title": "MIT 15.S12 Blockchain and Money, 3. Blockchain Basics and Cryptography",
@@ -1432,18 +1435,18 @@
         "week": 5,
         "part": "Consensus",
         "title": "Design specification and threat model",
-        "lecture": "Discuss proof-of-stake, finality, and the security and decentralization trade-offs across consensus designs.",
-        "practice": "Team presentation: each team defends its system specification, consensus choice, and threat model.",
-        "project": "Freeze the system specification and threat-model document.",
+        "lecture": "Discuss proof-of-stake, finality, privacy-preserving systems, layer-2 scaling, and the security and decentralization trade-offs across consensus designs.",
+        "practice": "Team presentation: each team defends its system specification, consensus choice, threat model, and practical network assumptions including 51 percent attacks, hard and soft forks, and L2 dependencies.",
+        "project": "Freeze the system specification, threat-model document, and practical deployment assumptions.",
         "links": []
       },
       {
         "week": 6,
         "part": "Smart contracts",
         "title": "Smart contracts and the EVM",
-        "lecture": "Explain account models, the Ethereum Virtual Machine, gas, and the smart-contract execution lifecycle.",
-        "practice": "Write, test, and deploy a first Solidity contract to a local development chain.",
-        "project": "Add a deployed smart-contract layer to the project.",
+        "lecture": "Explain account models, the Ethereum Virtual Machine, gas, the smart-contract execution lifecycle, Web3 integration, and the developer workflow with local chains and wallets.",
+        "practice": "Write, test, debug, and deploy a first Solidity contract to a local development chain using Remix, Hardhat or Foundry, ethers.js or Web3.js, Ganache, and MetaMask.",
+        "project": "Add a deployed smart-contract layer and a minimal DApp client to the project.",
         "links": [
           {
             "title": "MIT 15.S12 Blockchain and Money, 6. Smart Contracts and DApps",
@@ -1472,10 +1475,10 @@
       {
         "week": 8,
         "part": "Smart contracts",
-        "title": "Secure development and testing",
-        "lecture": "Cover secure patterns, invariants, formal-style testing, and the role of audits.",
-        "practice": "Team presentation: interim demo of the deployed contracts with a live vulnerability and its fix.",
-        "project": "Present the interim contract suite with a security test report.",
+        "title": "Secure DApp development and testing",
+        "lecture": "Cover secure patterns, reusable audited libraries, invariants, formal-style testing, token standards, and the role of audits.",
+        "practice": "Team presentation: interim demo of the deployed contracts and DApp client with a live vulnerability, its fix, and at least one ERC-20 or ERC-721 token flow.",
+        "project": "Present the interim contract suite, DApp integration, token implementation, and security test report.",
         "links": []
       },
       {
@@ -1495,19 +1498,19 @@
       {
         "week": 10,
         "part": "Wallets and keys",
-        "title": "Custody and multi-signature security",
-        "lecture": "Discuss hot versus cold storage, multi-signature schemes, threshold signatures, and key-recovery design.",
-        "practice": "Implement a multi-signature approval flow and test recovery and revocation scenarios.",
-        "project": "Add multi-signature custody controls to the wallet.",
+        "title": "Custody, multi-signature security, and decentralized storage",
+        "lecture": "Discuss hot versus cold storage, multi-signature schemes, threshold signatures, key-recovery design, IPFS content addressing, and off-chain data integrity.",
+        "practice": "Implement a multi-signature approval flow, test recovery and revocation scenarios, and pin project metadata or assets to IPFS with an on-chain content hash.",
+        "project": "Add multi-signature custody controls and decentralized-storage integration to the wallet or DApp.",
         "links": []
       },
       {
         "week": 11,
         "part": "DeFi",
         "title": "DeFi protocols and mechanisms",
-        "lecture": "Explain automated market makers, lending, liquidity, and the economic assumptions DeFi relies on.",
-        "practice": "Deploy a simple automated-market-maker contract and trace swaps and liquidity events.",
-        "project": "Add a basic DeFi mechanism to the project's contract layer.",
+        "lecture": "Explain automated market makers, lending, liquidity, tokenomics, ICO-style crowdfunding patterns, and the economic assumptions DeFi relies on.",
+        "practice": "Deploy a simple automated-market-maker or token-crowdfunding contract and trace swaps, liquidity events, and token balances.",
+        "project": "Add a basic DeFi or token-funding mechanism to the project's contract layer.",
         "links": []
       },
       {
@@ -1535,15 +1538,17 @@
       }
     ],
     "project": {
-      "summary": "Teams build a minimal but complete decentralized system, layering consensus, cryptographic integrity, smart contracts, wallets, and a DeFi mechanism, then audit and harden it. Each layer is accompanied by a demonstrated attack and a fix. The capstone defends a full security audit report orally.",
+      "summary": "Teams build a minimal but complete decentralized system, layering consensus, cryptographic integrity, smart contracts, a DApp client, token flows, wallets, decentralized storage, and a DeFi or token-funding mechanism, then audit and harden it. Each layer is accompanied by a demonstrated attack and a fix. The capstone defends a working system and full security audit report orally.",
       "ideas": [
         "Mini proof-of-work blockchain",
         "PBFT permissioned ledger",
         "Token with audited contracts",
+        "ICO-style crowdfunding DApp with ERC-20 token",
+        "NFT marketplace security study with ERC-721",
         "HD multi-sig wallet",
         "Automated market maker with audit",
-        "NFT marketplace security study",
         "Lending protocol exploit lab",
+        "IPFS-backed DAO voting system",
         "Cross-layer audit toolkit"
       ]
     },
@@ -1552,11 +1557,15 @@
       "Foundry: contract development, testing, and fuzzing",
       "Hardhat: Ethereum development and deployment environment",
       "Remix: browser-based contract IDE and debugger",
+      "OpenZeppelin Contracts: audited ERC-20, ERC-721, access-control, and security libraries",
       "Slither: static analysis for Solidity vulnerabilities",
       "Echidna: property-based smart-contract fuzzing",
       "Ganache: local Ethereum test chain",
       "ethers.js: blockchain interaction and wallet library",
+      "Web3.js: blockchain interaction library for legacy and browser-based DApps",
       "MetaMask: wallet and key-management client",
+      "IPFS: decentralized content-addressed storage for DApp metadata and assets",
+      "Chainlink: oracle network for studying external data dependencies",
       "Tenderly: transaction simulation and debugging"
     ],
     "references": [
@@ -1618,6 +1627,6 @@
         "url": "https://bitcoinbook.cs.princeton.edu/"
       }
     ],
-    "ai_usage": "Students use AI assistants throughout the decentralized-system build: scaffolding and refactoring Solidity contracts and the off-chain ledger code, generating Foundry and Echidna test suites and invariants, and explaining Slither static-analysis output. They vibe-code exploit proofs of concept, prompting the assistant to write a reentrancy or flash-loan attack against their own AMM and then to propose the checks-effects-interactions fix. AI helps interpret EVM traces in Tenderly, derive HD-wallet and multi-signature logic, and turn an audit pass into a structured findings report, and students drive deployment tooling and wallet libraries through it, but they re-run every AI-proposed fix through the fuzzer and on-chain tests, because a contract that merely looks safe can still lose funds."
+    "ai_usage": "Students use AI assistants throughout the decentralized-system build: scaffolding and refactoring Solidity contracts, DApp clients, token flows, IPFS metadata handling, and the off-chain ledger code, generating Foundry and Echidna test suites and invariants, and explaining Slither static-analysis output. They vibe-code exploit proofs of concept, prompting the assistant to write a reentrancy, oracle-manipulation, or flash-loan attack against their own AMM and then to propose the checks-effects-interactions fix or an oracle hardening strategy. AI helps interpret EVM traces in Tenderly, derive HD-wallet and multi-signature logic, compare ethers.js and Web3.js calls, and turn an audit pass into a structured findings report, and students drive deployment tooling and wallet libraries through it, but they re-run every AI-proposed fix through the fuzzer and on-chain tests, because a contract that merely looks safe can still lose funds."
   }
 }
