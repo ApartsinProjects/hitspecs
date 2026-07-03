@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Build the HIT catalogue package for CY5: Blockchain & Decentralized Systems.
+"""Build the HIT catalogue package for CY5: Blockchain and Decentralized Cryptographic Systems.
 
 The script clones the existing HIT DOCX templates from the AI Systems course
 package and replaces the body content while preserving template headers,
@@ -19,9 +19,9 @@ COMMITTEE_TEMPLATE = r"E:\Projects\Courses\AIApsCourse\hit-catalogue\committee_q
 OUT = os.path.join(ROOT, "hit-catalogue", "CY5")
 os.makedirs(OUT, exist_ok=True)
 
-TITLE_EN = "Blockchain & Decentralized Systems"
-TITLE_HE = "בלוקצ'יין ומערכות מבוזרות"
-OFFICIAL_TITLE_HE = "בלוקצ'יין חזון ופרקטיקה"
+TITLE_EN = "Blockchain and Decentralized Cryptographic Systems"
+TITLE_HE = "בלוקצ'יין ומערכות קריפטוגרפיות מבוזרות"
+OFFICIAL_TITLE_HE = TITLE_HE
 COURSE_NO = "67007"
 LECTURER_HE = "מיכה ברשפ"
 LECTURER_EN = "Micha Barshap"
@@ -262,7 +262,7 @@ def build_rationale():
     para(doc, f"מסמך רציונל לקורס {OFFICIAL_TITLE_HE}", rtl=True, align=right, bold=True, size=14)
     para(doc, TITLE_EN, align=left, bold=True)
     para(doc, "הקורס נדרש משום שבלוקצ'יין איננו רק נושא תיאורטי בקריפטוגרפיה או במערכות מבוזרות, אלא תחום הנדסי שבו החלטות תכן, מימוש ואבטחה משפיעות ישירות על נכסים דיגיטליים, אמון, ממשל ותשתיות פיננסיות. סטודנטים במדעי המחשב זקוקים להבנה מעשית של הרכיבים: רשת P2P, עסקאות, קונצנזוס, חוזים חכמים, ארנקים, טוקנים, DApps ו-DeFi.", rtl=True, align=right)
-    para(doc, "הקורס משמר את הראייה הרחבה של בלוקצ'יין חזון ופרקטיקה, כולל שוק הקריפטו, ICO, Ethereum, DApps, רשתות חלופיות ויישומי עולם אמיתי, ומעדכן אותה בפרקטיקות הנדרשות כיום: בדיקות חוזים חכמים, fuzzing, static analysis, ביקורת קוד, ניתוח התקפות reentrancy, oracle ו-flash loan, ושימוש בכלים מודרניים כמו Foundry, Hardhat, Slither, Echidna, Tenderly, IPFS ו-Chainlink.", rtl=True, align=right)
+    para(doc, "הקורס משמר ראייה רחבה של תשתיות ופרקטיקה בבלוקצ'יין, כולל שוק הקריפטו, ICO, Ethereum, DApps, רשתות חלופיות ויישומי עולם אמיתי, ומעדכן אותה בפרקטיקות הנדרשות כיום: בדיקות חוזים חכמים, fuzzing, static analysis, ביקורת קוד, ניתוח התקפות reentrancy, oracle ו-flash loan, ושימוש בכלים מודרניים כמו Foundry, Hardhat, Slither, Echidna, Tenderly, IPFS ו-Chainlink.", rtl=True, align=right)
     para(doc, "הקורס מתאים לשנה ג' משום שהוא מחבר בין מבני נתונים, תכנות מונחה עצמים, קריפטוגרפיה, רשתות ומערכות מבוזרות לכדי פרויקט הנדסי אחד. התוצר הסופי מחייב את הסטודנט לבנות, לבדוק, להסביר ולהגן על מערכת מבוזרת עובדת ודוח ביקורת אבטחה.", rtl=True, align=right)
     doc.save(os.path.join(OUT, "rationale.docx"))
 

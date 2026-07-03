@@ -185,7 +185,7 @@ COURSES = {
         ["Risk assessment", "Standards (ISO 27001, NIST)",
          "Policy & audit", "Incident response"],
         {"SE": "E", "CY": "B", "AI": "E", "QCF": "A"}),
-    "CY5": ("Blockchain & Decentralized Systems",
+    "CY5": ("Blockchain and Decentralized Cryptographic Systems",
         "Study distributed ledgers, consensus, and smart contracts, and the "
         "security properties and limits of decentralized systems.",
         ["Consensus mechanisms", "Smart contracts",
@@ -314,7 +314,7 @@ COURSE_HE = {
     "CY2": "אבטחת רשתות",
     "CY3": "אבטחת חומרה ומערכות משובצות",
     "CY4": "ממשל אבטחת סייבר, סיכון וציות",
-    "CY5": "בלוקצ'יין ומערכות מבוזרות",
+    "CY5": "בלוקצ'יין ומערכות קריפטוגרפיות מבוזרות",
     "AI1": "בינת שפה: מודלי שפה גדולים ומערכות סוכניות",
     "AI2": "AI טמפורלי: סדרות עתיות וקבלת החלטות רציפה",
     "AI3": "בינת ראייה: למידה עמוקה לראייה ממוחשבת",
