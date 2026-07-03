@@ -9,4 +9,5 @@ q_*.png
 v_*.png
 shot*.png
 *.pdf
+hit-catalogue/*/rendered/
 package-lock.json

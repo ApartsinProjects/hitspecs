@@ -269,6 +269,16 @@ COURSES = {
          "Fault tolerance & reliability", "Certification standards"],
         {}),
 }
+
+COURSE_DOWNLOADS = {
+    "CY5": [
+        ("Hebrew syllabus", "../hit-catalogue/CY5/syllabus_he.docx"),
+        ("English syllabus", "../hit-catalogue/CY5/syllabus_en.docx"),
+        ("Rationale", "../hit-catalogue/CY5/rationale.docx"),
+        ("Committee questionnaire", "../hit-catalogue/CY5/committee_questionnaire.docx"),
+        ("Catalogue summary", "../hit-catalogue/CY5/catalogue_summary.docx"),
+    ],
+}
 COURSE_ORDER = list(COURSES.keys())
 
 # New-concentration core assignments: course_id -> {track: "A"|"B"}.
@@ -1003,6 +1013,21 @@ def build_course(cid):
     literature = syl.get("literature", [])
     build_txt = syl.get("build", "")
 
+    # Downloadable institutional catalogue package, when available.
+    downloads_section = ""
+    downloads = COURSE_DOWNLOADS.get(cid, [])
+    if downloads:
+        links = "".join(
+            f'<a class="chip" style="background:#{c["soft"]};color:#{c["color"]}" href="{e(url)}">{e(label)}</a>'
+            for label, url in downloads
+        )
+        downloads_section = f"""
+      <section class="block">
+        <h2>HIT catalogue documents</h2>
+        <p class="muted">Download the Word package prepared for the institutional catalogue process.</p>
+        <div class="chips">{links}</div>
+      </section>"""
+
     # "What you'll build" resume-bullet box
     build_box = ""
     if build_txt:
@@ -1246,7 +1271,7 @@ def build_course(cid):
       <section class="block">
         <h2>About this course</h2>
         <p>{e(desc)}</p>
-      </section>{format_section}{build_box}{obj_section}
+      </section>{format_section}{build_box}{downloads_section}{obj_section}
       <section class="block">
         <h2>Key topics</h2>
         <ul class="topics" style="--accent:#{c['color']}">{topic_html}</ul>
@@ -1703,11 +1728,27 @@ def copy_assets():
         for fn in os.listdir(src):
             shutil.copy2(os.path.join(src, fn), os.path.join(dst, fn))
 
+def copy_catalogue_downloads():
+    """Copy downloadable catalogue DOCX files into the published docs tree."""
+    src_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "hit-catalogue")
+    if not os.path.isdir(src_root):
+        return
+    for cid in COURSE_DOWNLOADS:
+        src_dir = os.path.join(src_root, cid)
+        dst_dir = os.path.join(OUT, "hit-catalogue", cid)
+        if not os.path.isdir(src_dir):
+            continue
+        os.makedirs(dst_dir, exist_ok=True)
+        for fn in os.listdir(src_dir):
+            if fn.lower().endswith(".docx"):
+                shutil.copy2(os.path.join(src_dir, fn), os.path.join(dst_dir, fn))
+
 def main():
     if os.path.isdir(OUT):
         shutil.rmtree(OUT)
     os.makedirs(OUT)
     copy_assets()
+    copy_catalogue_downloads()
     write(".nojekyll", "")  # serve files as-is on GitHub Pages
     write("CNAME", "hitspecs.apartsin.com")  # GitHub Pages custom domain
     write("style.css", CSS)
