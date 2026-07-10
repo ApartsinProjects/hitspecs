@@ -116,11 +116,10 @@ TRACK_ORDER = ["SE", "CY", "AI", "QCF", "GM", "DF"]
 # course id -> (title, description, [topics], {track: 'A'|'B'|'E'})
 COURSES = {
     "SE1": ("Cloud Computing & Cloud-Native Platforms",
-        "Design and operate applications built for the cloud, using containers, "
-        "orchestration, and managed services to achieve elasticity, resilience, and "
-        "cost efficiency.",
-        ["Containers & Kubernetes", "Microservices & service meshes",
-         "Infrastructure as code", "Scalability & cost management"],
+        "Design and build scalable cloud applications by choosing the right compute, "
+        "storage, networking, and managed-service patterns for each workload.",
+        ["Compute options", "Cloud storage choices",
+         "Scalable application design", "Cloud architecture patterns"],
         {"SE": "A", "CY": "A", "AI": "E", "QCF": "A"}),
     "SE2": ("Secure & Reliable Software Development",
         "Engineer software that is correct, testable, and secure by design, "

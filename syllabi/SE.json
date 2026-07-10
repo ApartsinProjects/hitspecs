@@ -1,15 +1,17 @@
 {
   "SE1": {
-    "tagline": "Build and operate scalable cloud-native systems with confidence",
-    "subtitle": "foundations of distributed systems, declarative orchestration, and the economics of elastic computation",
+    "tagline": "Design and build scalable cloud applications across compute, storage, and managed services",
+    "subtitle": "cloud architecture decisions, scalable application patterns, managed compute, storage trade-offs, and production delivery",
     "foundations": [
+      "Cloud compute placement: virtual machines, containers, Kubernetes, serverless functions, and managed application platforms",
+      "Cloud storage semantics: object, block, file, relational, document, key-value, cache, queue, and stream systems",
       "CAP theorem and the availability, consistency, partition-tolerance trade-off",
-      "Quorum and eventual-consistency models for replicated state",
+      "Replication, partitioning, indexing, caching, and eventual-consistency models for cloud data",
+      "Stateless service design, idempotency, backpressure, retries, timeouts, and circuit breakers",
       "Reconciliation and the declarative desired-state control loop",
-      "Process isolation through namespaces and cgroups",
       "Queueing theory and tail-latency analysis under load",
       "Autoscaling control theory and capacity versus cost models",
-      "Supply-chain provenance and reproducible-build theory"
+      "Supply-chain provenance, reproducible-build theory, and deployment safety"
     ],
     "literature": [
       {
@@ -49,18 +51,18 @@
         "url": "https://research.google.com/archive/gfs.html"
       }
     ],
-    "build": "Engineered a cloud-native multi-service platform deployed to Kubernetes with Helm and Istio, provisioned end to end as Terraform infrastructure code, autoscaled under k6 load tests, and instrumented with Prometheus and Grafana to a defined cost budget.",
+    "build": "Designed and engineered a scalable cloud application with an API, background workers, object storage, relational or NoSQL persistence, queues or events, caching, CDN delivery, and containerized or serverless compute, provisioned through Terraform, load-tested with k6, and instrumented with Prometheus and Grafana against latency, reliability, and cost goals.",
     "objectives": [
-      "Explain cloud service models, regions, and the shared responsibility model",
-      "Analyze distributed-systems foundations of availability, consistency, and partition tolerance",
-      "Containerize applications and design minimal, reproducible images",
-      "Operate workloads on Kubernetes using Deployments, Services, and Ingress",
-      "Decompose systems into microservices and reason about coupling and resilience",
-      "Provision infrastructure declaratively using infrastructure as code",
-      "Configure autoscaling and load balancing to meet latency and availability targets",
-      "Evaluate cloud cost and the economic trade-offs of elasticity and reservation",
-      "Instrument clusters and services for metrics, logs, and traces",
-      "Justify architectural choices against scalability and reliability requirements"
+      "Compare cloud compute options: virtual machines, containers, Kubernetes, serverless functions, managed application platforms, and managed databases.",
+      "Choose appropriate storage for workload requirements: object storage, block storage, file storage, relational databases, document stores, key-value stores, caches, queues, and streams.",
+      "Design a scalable cloud application around stateless services, durable state, asynchronous workflows, caching, and content delivery.",
+      "Apply cloud architecture patterns including API gateway, worker queue, event-driven integration, fan-out, materialized views, cache-aside, bulkhead, retry, circuit breaker, and idempotent consumer.",
+      "Containerize application components and decide when Kubernetes is appropriate versus serverless or managed platform deployment.",
+      "Model availability, consistency, latency, throughput, and cost trade-offs in cloud architecture decisions.",
+      "Provision infrastructure declaratively using infrastructure as code and environment-specific configuration.",
+      "Configure load balancing, autoscaling, and deployment strategies that meet defined latency and availability targets.",
+      "Instrument services with metrics, logs, traces, alerts, and dashboards tied to service-level objectives.",
+      "Defend architecture choices using design diagrams, load-test evidence, failure-mode analysis, and cost estimates."
     ],
     "prerequisites": [
       "Programming in a general-purpose language",
@@ -72,10 +74,10 @@
       {
         "week": 1,
         "part": "Foundations",
-        "title": "Cloud Computing Foundations",
-        "lecture": "Survey cloud service models, virtualization, regions, and the CAP theorem framing of distributed trade-offs.",
-        "practice": "Set up cloud accounts and tooling, then provision a first managed service and inspect its topology.",
-        "project": "Project repository, cloud account, and a deployed hello-service baseline are established.",
+        "title": "Cloud application architecture and provider landscape",
+        "lecture": "Survey cloud service models, regions, availability zones, managed services, shared responsibility, and the design difference between lifting a server and building for cloud elasticity.",
+        "practice": "Compare the same small application deployed as a virtual machine, container service, and managed application service, then map the operational responsibilities of each option.",
+        "project": "Project repository, cloud account, workload scenario, initial architecture diagram, and baseline hello-service are established.",
         "links": [
           {
             "title": "Cloud Native Concepts: Docker and Kubernetes Fundamentals (freeCodeCamp)",
@@ -90,10 +92,10 @@
       {
         "week": 2,
         "part": "Foundations",
-        "title": "Containers and Docker",
-        "lecture": "Examine Linux namespaces and cgroups, image layering, and the theory behind reproducible builds.",
-        "practice": "Write Dockerfiles for the project services and run them locally with volumes and networks.",
-        "project": "Core service is containerized with a clean, layered, reproducible image.",
+        "title": "Compute choices: VMs, containers, Kubernetes, serverless, and managed platforms",
+        "lecture": "Compare virtual machines, containers, Kubernetes, serverless functions, batch jobs, and managed runtimes by startup time, isolation, scaling model, state constraints, cost, and operational burden.",
+        "practice": "Containerize one service, deploy a simple serverless function, and document which compute model fits each component of the project.",
+        "project": "Project compute decision matrix is delivered and the core API runs in a container with a clean, layered, reproducible image.",
         "links": [
           {
             "title": "What Containers Are: Docker and Kubernetes course section (freeCodeCamp)",
@@ -108,10 +110,10 @@
       {
         "week": 3,
         "part": "Foundations",
-        "title": "Registries and Image Hygiene",
-        "lecture": "Discuss supply-chain provenance, image scanning, and the economics of small immutable artifacts.",
-        "practice": "Tag, scan, and publish project images to a registry and pin reproducible base images.",
-        "project": "Versioned, scanned images are published to a registry for the project.",
+        "title": "Storage choices: object, block, file, relational, NoSQL, cache, queue, and stream",
+        "lecture": "Compare cloud storage services by access pattern, consistency, durability, query model, latency, scale, backup model, and cost.",
+        "practice": "Implement one project feature twice using different storage choices, then justify the final storage model for structured data, blobs, cache, and asynchronous messages.",
+        "project": "Project data model, storage decision record, object-storage integration, and first durable persistence layer are implemented.",
         "links": [
           {
             "title": "Docker Images and CLI: Docker and Kubernetes course section (freeCodeCamp)",
@@ -121,11 +123,11 @@
       },
       {
         "week": 4,
-        "part": "Orchestration",
-        "title": "Kubernetes Architecture",
-        "lecture": "Study the control plane, reconciliation loops, and the declarative desired-state model.",
-        "practice": "Deploy the project to a cluster using Pods, Deployments, and Services.",
-        "project": "Project runs on Kubernetes with declarative manifests under version control.",
+        "part": "Application Design",
+        "title": "Designing scalable cloud application structure",
+        "lecture": "Design stateless services, externalized state, configuration, sessions, health checks, rate limits, request correlation, and twelve-factor application boundaries.",
+        "practice": "Refactor the project into an API service, worker boundary, persistence layer, and externalized configuration with health and readiness checks.",
+        "project": "Project exposes a stateless API service with externalized state and documented service boundaries.",
         "links": [
           {
             "title": "Microservices Explained: the What, Why and How (TechWorld with Nana)",
@@ -135,29 +137,29 @@
       },
       {
         "week": 5,
-        "part": "Orchestration",
-        "title": "Specification Milestone",
-        "lecture": "Review configuration, secrets, and persistent storage abstractions for stateful workloads.",
-        "practice": "Student teams present their project specification: scope, target architecture, scaling goals, and cost budget.",
-        "project": "Approved specification document and cluster configuration plan are delivered.",
+        "part": "Application Design",
+        "title": "Architecture specification milestone",
+        "lecture": "Review workload requirements, architecture decision records, threat boundaries, scaling goals, storage choices, compute choices, and cost assumptions.",
+        "practice": "Student teams present their project specification: user flows, data model, compute and storage choices, scaling goals, reliability targets, and cost budget.",
+        "project": "Approved architecture specification, decision records, and project implementation plan are delivered.",
         "links": []
       },
       {
         "week": 6,
-        "part": "Orchestration",
-        "title": "Networking and Ingress",
-        "lecture": "Analyze service discovery, the Kubernetes networking model, and ingress routing theory.",
-        "practice": "Expose project services through Ingress controllers and apply network policies.",
-        "project": "Project is reachable externally through managed ingress with policy controls.",
+        "part": "Application Design",
+        "title": "Networking, API gateways, load balancing, and content delivery",
+        "lecture": "Analyze VPCs, subnets, security groups, DNS, TLS, API gateways, load balancers, ingress, CDN caching, and edge delivery.",
+        "practice": "Expose the project through an API gateway or ingress, add TLS and routing rules, and serve static or media assets through object storage and a CDN.",
+        "project": "Project is reachable through a managed entry point with documented network boundaries, TLS, routing, and CDN or object-storage delivery.",
         "links": []
       },
       {
         "week": 7,
-        "part": "Microservices",
-        "title": "Packaging with Helm",
-        "lecture": "Discuss templating, configuration drift, and release management for declarative systems.",
-        "practice": "Package the project as a versioned Helm chart with environment overrides.",
-        "project": "Project ships as a parameterized, versioned Helm release.",
+        "part": "Cloud Patterns",
+        "title": "Asynchronous workflows, queues, events, and background workers",
+        "lecture": "Design worker queues, publish-subscribe events, fan-out, scheduled jobs, idempotent consumers, dead-letter queues, and backpressure.",
+        "practice": "Move a slow project workflow behind a queue or event bus, add a background worker, and make processing idempotent and observable.",
+        "project": "Project includes an asynchronous workflow with durable messaging, worker processing, retry policy, and failure handling.",
         "links": [
           {
             "title": "What is Helm in Kubernetes? Helm and Helm Charts Explained (TechWorld with Nana)",
@@ -167,11 +169,11 @@
       },
       {
         "week": 8,
-        "part": "Microservices",
-        "title": "Interim Demo Milestone",
-        "lecture": "Cover microservice decomposition, bounded contexts, and inter-service resilience patterns.",
-        "practice": "Student teams present an interim demo of the running multi-service deployment and discuss design trade-offs.",
-        "project": "Working multi-service deployment is demonstrated with documented architecture.",
+        "part": "Cloud Patterns",
+        "title": "Scalable design patterns milestone",
+        "lecture": "Cover microservice decomposition, bounded contexts, cache-aside, materialized views, outbox, saga, bulkhead, retry, timeout, circuit breaker, and graceful degradation.",
+        "practice": "Student teams present an interim demo showing a scalable workflow, a storage decision, an asynchronous path, and one resilience pattern under failure.",
+        "project": "Working cloud application is demonstrated with architecture diagrams, pattern choices, and measured behavior under a realistic load path.",
         "links": [
           {
             "title": "Microservices Explained: the What, Why and How (TechWorld with Nana)",
@@ -181,11 +183,11 @@
       },
       {
         "week": 9,
-        "part": "Microservices",
-        "title": "Service Meshes",
-        "lecture": "Examine sidecar proxies, mutual TLS, retries, and circuit breaking as reliability mechanisms.",
-        "practice": "Add a service mesh to project traffic with observability and mTLS enabled.",
-        "project": "Inter-service traffic is secured and observable through a mesh.",
+        "part": "Delivery Platforms",
+        "title": "Container platforms and Kubernetes when they are the right fit",
+        "lecture": "Study Kubernetes control plane concepts, deployments, services, ingress, config, secrets, persistent volumes, Helm packaging, and when Kubernetes complexity is justified.",
+        "practice": "Deploy the project to Kubernetes or a managed container platform with manifests or Helm and compare it against a simpler managed-service option.",
+        "project": "Project has a documented container-platform deployment path and a justified Kubernetes versus managed-platform decision.",
         "links": [
           {
             "title": "Istio Service Mesh Tutorial: Ingress Gateway, Virtual Service, mTLS",
@@ -195,11 +197,11 @@
       },
       {
         "week": 10,
-        "part": "Scale and Cost",
-        "title": "Infrastructure as Code",
-        "lecture": "Discuss declarative provisioning, state management, and idempotency in infrastructure tooling.",
-        "practice": "Reprovision the project environment from Terraform code with managed state.",
-        "project": "Entire environment is reproducible from versioned infrastructure code.",
+        "part": "Delivery Platforms",
+        "title": "Serverless and managed-service architectures",
+        "lecture": "Design with functions, managed runtimes, managed databases, object storage triggers, event buses, API gateways, scheduled jobs, and cold-start and limit-aware constraints.",
+        "practice": "Implement one project component as a serverless or managed-service flow and compare latency, cost, failure handling, and operational effort against the containerized version.",
+        "project": "Project includes a serverless or managed-service component with clear integration boundaries and measured trade-offs.",
         "links": [
           {
             "title": "Terraform Explained in 15 mins: Tutorial for Beginners (TechWorld with Nana)",
@@ -209,11 +211,11 @@
       },
       {
         "week": 11,
-        "part": "Scale and Cost",
-        "title": "Autoscaling and Load Balancing",
-        "lecture": "Analyze horizontal and vertical scaling, queueing theory intuition, and load distribution.",
-        "practice": "Configure autoscaling and load testing to meet defined latency targets.",
-        "project": "Project scales automatically under load within latency objectives.",
+        "part": "Delivery Platforms",
+        "title": "Infrastructure as code, environments, and deployment safety",
+        "lecture": "Discuss declarative provisioning, state management, modules, secrets, environment promotion, blue-green and canary releases, rollback, and configuration drift.",
+        "practice": "Provision the project environment from Terraform, separate dev and production-like variables, and run a controlled deployment with rollback.",
+        "project": "Project infrastructure and deployment pipeline are reproducible from versioned code with documented environment configuration.",
         "links": [
           {
             "title": "Kubernetes Horizontal Pod Autoscaler (HPA) Explained",
@@ -228,24 +230,24 @@
       {
         "week": 12,
         "part": "Scale and Cost",
-        "title": "Observability and Cost",
-        "lecture": "Cover metrics, tracing, SLOs, and the cost models of elastic versus reserved capacity.",
-        "practice": "Add dashboards and alerts, then produce a cost analysis with optimization actions.",
-        "project": "Observability stack and a cost optimization report are in place.",
+        "title": "Scaling, reliability, observability, and cost optimization",
+        "lecture": "Analyze horizontal and vertical scaling, load balancing, autoscaling signals, queue depth, cache hit ratio, latency percentiles, SLOs, and cost models for elastic versus reserved capacity.",
+        "practice": "Run load tests, tune autoscaling or concurrency, add dashboards and alerts, and produce a cost analysis with optimization actions.",
+        "project": "Project meets defined latency and throughput targets under load, with observability, alerts, and a cost optimization report in place.",
         "links": []
       },
       {
         "week": 13,
         "part": "Capstone",
         "title": "Final Demo and Defense",
-        "lecture": "Synthesize cloud-native architecture principles and review the path from container to scaled service.",
-        "practice": "Student teams present the final demo with an oral defense of architecture, scaling, and cost decisions.",
-        "project": "Final scalable cloud-native system is delivered with documentation and defense.",
+        "lecture": "Synthesize cloud architecture principles and review the path from requirements to compute, storage, networking, reliability, scalability, and cost decisions.",
+        "practice": "Student teams present the final demo with an oral defense of architecture, compute choices, storage choices, scaling evidence, failure handling, and cost decisions.",
+        "project": "Final scalable cloud application is delivered with architecture documentation, load-test evidence, operational dashboards, and defense.",
         "links": []
       }
     ],
     "project": {
-      "summary": "Teams build one cloud-native application and carry it from a single container to a scaled, observable, multi-service deployment on Kubernetes. The system is provisioned entirely as infrastructure code, secured and observed through a service mesh, and tuned for autoscaling within a defined cost budget.",
+      "summary": "Teams design and build one scalable cloud application from workload requirements through architecture decision records, then implement an API, durable storage, object storage, asynchronous workers, caching or CDN delivery, and a deployment path using containers, serverless functions, or managed platforms. The system is provisioned through infrastructure as code, load-tested, instrumented, and defended with evidence for scalability, reliability, and cost.",
       "ideas": [
         "Image-sharing platform",
         "URL shortener with analytics",
@@ -263,6 +265,15 @@
       "Helm: package and template Kubernetes manifests",
       "Istio: manage service to service traffic and policy",
       "Terraform: provision cloud infrastructure as code",
+      "AWS Lambda: implement serverless functions",
+      "Amazon S3: provide object storage for files, logs, and static assets",
+      "Amazon RDS: provide managed relational database storage",
+      "Amazon DynamoDB: provide managed key-value and document storage",
+      "Amazon SQS and Amazon SNS: provide durable queues and pub-sub messaging",
+      "Amazon API Gateway: expose managed HTTP APIs",
+      "Amazon CloudFront: deliver content through a CDN",
+      "Redis: provide low-latency caching and rate-limit state",
+      "PostgreSQL: model relational cloud application data",
       "Prometheus: collect cluster and application metrics",
       "Grafana: visualize metrics and build dashboards",
       "Amazon Web Services: host managed cloud services",
@@ -312,6 +323,38 @@
         "note": ""
       },
       {
+        "title": "Designing Data-Intensive Applications",
+        "authors": "Martin Kleppmann",
+        "year": 2017,
+        "kind": "Textbook",
+        "url": "https://dataintensive.net/",
+        "note": "Storage, replication, partitioning, and stream-processing design"
+      },
+      {
+        "title": "AWS Well-Architected Framework",
+        "authors": "Amazon Web Services",
+        "year": 2026,
+        "kind": "Documentation",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+        "note": "Official cloud architecture best practices"
+      },
+      {
+        "title": "Azure Architecture Center",
+        "authors": "Microsoft",
+        "year": 2026,
+        "kind": "Documentation",
+        "url": "https://learn.microsoft.com/en-us/azure/architecture/",
+        "note": "Architecture patterns and design guidance"
+      },
+      {
+        "title": "Google Cloud Architecture Framework",
+        "authors": "Google Cloud",
+        "year": 2026,
+        "kind": "Documentation",
+        "url": "https://cloud.google.com/architecture/framework",
+        "note": "Architecture principles for scalable cloud systems"
+      },
+      {
         "title": "Kubernetes Documentation",
         "authors": "The Kubernetes Authors, CNCF",
         "year": 2026,
@@ -328,7 +371,7 @@
         "note": "Official, continuously updated"
       }
     ],
-    "ai_usage": "Students lean on AI assistants to scaffold Dockerfiles and Kubernetes manifests, then refactor them toward smaller, reproducible images and cleaner Helm charts. They use chat-based and editor-integrated tools to draft Terraform modules, generate k6 load scripts, and synthesize realistic test traffic, while connecting agents to kubectl and cloud MCP servers to inspect cluster state and propose fixes. AI also helps interpret Prometheus and Grafana output, summarizing latency and cost data into concrete autoscaling and budget actions. Teams are expected to review every generated manifest critically, since a confidently wrong resource limit or policy can break a live deployment."
+    "ai_usage": "Students use AI assistants to compare cloud architecture options, draft architecture decision records, scaffold Terraform modules, generate Dockerfiles, sketch API and worker boundaries, and produce candidate storage schemas for relational, document, key-value, cache, queue, and object-storage services. They use chat-based and editor-integrated tools to generate k6 load scripts and realistic traffic, then connect agents to kubectl and cloud MCP servers to inspect deployment state and propose fixes. AI also helps interpret Prometheus and Grafana output, summarizing latency, queue depth, cache hit ratio, and cost data into concrete autoscaling and design actions. Teams are expected to review every generated architecture and manifest critically, since a plausible but wrong compute or storage choice can create a system that cannot scale."
   },
   "SE2": {
     "tagline": "Engineer software that is secure, tested, and reliable by design",
