@@ -1831,11 +1831,13 @@
   },
   "SE7": {
     "tagline": "Architect data-intensive and AI-driven systems at scale",
-    "subtitle": "data systems theory, distributed consensus, streaming dataflow, and the operational debt of machine learning",
+    "subtitle": "data systems theory, distributed consensus, ETL and ELT pipelines, Spark data processing, and the operational debt of machine learning",
     "foundations": [
       "Reliability, scalability, and maintainability as system properties",
       "Storage-engine internals and data-model trade-offs",
+      "ETL and ELT pipeline design from raw ingestion to curated analytical datasets",
       "The MapReduce model of large-scale batch computation",
+      "Apache Spark execution, PySpark transformations, and lakehouse processing with Databricks",
       "Event-time dataflow, watermarks, and windowing theory",
       "Replication, partitioning, and the CAP and PACELC trade-offs",
       "Distributed consensus and exactly-once processing semantics",
@@ -1879,11 +1881,12 @@
         "url": "https://proceedings.neurips.cc/paper_files/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html"
       }
     ],
-    "build": "Architected a data-intensive system that ingests events through Apache Kafka, processes them with Spark batch and Flink streaming pipelines into a replicated, partitioned Cassandra store, serves predictions from an MLflow-tracked model, and guards quality with Evidently drift monitoring.",
+    "build": "Architected a data-intensive system that ingests events through Apache Kafka, runs ETL and ELT flows with PySpark on Apache Spark and Databricks, processes streams with Flink into a replicated, partitioned Cassandra store, serves predictions from an MLflow-tracked model, and guards quality with Evidently drift monitoring.",
     "objectives": [
       "Explain the foundations of reliability, scalability, and maintainability",
       "Analyze data models, storage engines, and indexing trade-offs",
       "Design batch and streaming data pipelines",
+      "Implement ETL and ELT transformations with PySpark, Apache Spark, and lakehouse tables",
       "Reason about distributed storage, replication, and partitioning",
       "Apply the theory of consistency, consensus, and the CAP trade-off",
       "Integrate machine learning models into production systems",
@@ -1944,10 +1947,10 @@
       {
         "week": 4,
         "part": "Pipelines",
-        "title": "Batch Processing",
-        "lecture": "Cover the batch processing model, MapReduce, and the theory of large-scale computation.",
-        "practice": "Build a batch pipeline that transforms project data into derived datasets.",
-        "project": "Project produces derived datasets through a batch pipeline.",
+        "title": "Batch Processing with Spark and PySpark",
+        "lecture": "Cover the batch processing model, MapReduce, Apache Spark execution, PySpark DataFrames, partitions, shuffles, and the theory of large-scale computation.",
+        "practice": "Build a PySpark ETL pipeline that reads raw project data, cleans and joins records, writes curated Parquet or Delta tables, and measures job behavior.",
+        "project": "Project produces derived datasets through a tested Spark batch pipeline.",
         "links": [
           {
             "title": "MIT 6.824 Lecture 15: Big Data, Spark",
@@ -1962,10 +1965,10 @@
       {
         "week": 5,
         "part": "Pipelines",
-        "title": "Specification Milestone",
-        "lecture": "Review streaming concepts and how architecture choices shape data systems.",
-        "practice": "Student teams present their project specification: data sources, pipeline architecture, and scaling goals.",
-        "project": "Approved specification with pipeline architecture is delivered.",
+        "title": "ETL Architecture and Specification Milestone",
+        "lecture": "Review ETL and ELT architecture, orchestration boundaries, data contracts, streaming concepts, and how architecture choices shape data systems.",
+        "practice": "Student teams present their project specification: data sources, raw-to-curated ETL flow, pipeline architecture, and scaling goals.",
+        "project": "Approved specification with ETL architecture, data contracts, and pipeline design is delivered.",
         "links": [
           {
             "title": "Apache Kafka: What It Is and Where It Is Going (Tim Berglund)",
@@ -2063,9 +2066,9 @@
         "week": 11,
         "part": "ML Systems",
         "title": "Feature Stores and Data Quality",
-        "lecture": "Discuss feature engineering pipelines, data lineage, and the cost of poor data quality.",
-        "practice": "Add feature processing and data-quality checks to the project pipeline.",
-        "project": "Project enforces data-quality checks feeding the model.",
+        "lecture": "Discuss feature engineering pipelines, ETL lineage, lakehouse tables, data contracts, and the cost of poor data quality.",
+        "practice": "Add feature processing and data-quality checks to the Spark or Databricks project pipeline.",
+        "project": "Project enforces data-quality checks and lineage for curated features feeding the model.",
         "links": [
           {
             "title": "The Future of Feature Stores and Platforms (MLOps Community Podcast)",
@@ -2102,7 +2105,7 @@
       }
     ],
     "project": {
-      "summary": "Teams build one data-intensive system that ingests data, processes it through batch and streaming pipelines, and stores it in a replicated, partitioned distributed store. They integrate a machine learning model for serving, add data-quality and drift monitoring, and reason explicitly about consistency, fault tolerance, and architectural trade-offs throughout.",
+      "summary": "Teams build one data-intensive system that ingests data, processes it through ETL and ELT flows with PySpark, Apache Spark, and optionally Databricks, and stores it in a replicated, partitioned distributed store. They integrate a machine learning model for serving, add data-quality and drift monitoring, and reason explicitly about consistency, fault tolerance, and architectural trade-offs throughout.",
       "ideas": [
         "Real-time analytics platform",
         "Recommendation system pipeline",
@@ -2116,12 +2119,16 @@
     },
     "tools": [
       "Apache Kafka: stream and buffer event data",
-      "Apache Spark: run batch and distributed processing",
+      "Apache Spark: run batch ETL and distributed processing",
+      "PySpark: implement Spark transformations and DataFrame pipelines in Python",
+      "Databricks: develop notebooks, jobs, and lakehouse workflows on managed Spark",
+      "Apache Parquet: store columnar analytical datasets",
       "Apache Flink: process streams with event-time semantics",
       "PostgreSQL: store relational and derived data",
       "Apache Cassandra: provide distributed partitioned storage",
       "Apache Airflow: orchestrate data pipelines",
       "dbt: transform and model warehouse data",
+      "Great Expectations: validate ETL outputs and data contracts",
       "MLflow: track and serve machine learning models",
       "Feast: manage a feature store",
       "Docker: package pipeline and serving components",
@@ -2183,8 +2190,24 @@
         "kind": "Documentation",
         "url": "https://kafka.apache.org/documentation/",
         "note": "Official, continuously updated"
+      },
+      {
+        "title": "Apache Spark Documentation",
+        "authors": "Apache Software Foundation",
+        "year": 2026,
+        "kind": "Documentation",
+        "url": "https://spark.apache.org/docs/latest/",
+        "note": "Official Spark and PySpark reference"
+      },
+      {
+        "title": "Databricks Documentation",
+        "authors": "Databricks",
+        "year": 2026,
+        "kind": "Documentation",
+        "url": "https://docs.databricks.com/",
+        "note": "Managed Spark, notebooks, jobs, and lakehouse workflows"
       }
     ],
-    "ai_usage": "Students use AI assistants to generate Spark and Flink transformations, refactor pipeline code, and draft Kafka producers, consumers, and schema definitions. They prompt tools to build data-quality checks, synthesize event streams, and write tests for exactly-once and fault-tolerance paths, while connecting agents to database, MLflow, and pipeline MCP servers to inspect state and metrics. AI helps wire model serving, feature processing, and Evidently drift monitoring, and to analyze lineage and operational telemetry into remediation steps. Because generated distributed code can hide consistency or replay bugs, students validate every pipeline change against partitioning, replication, and delivery-guarantee behavior."
+    "ai_usage": "Students use AI assistants to generate PySpark DataFrame transformations, Spark SQL queries, Databricks notebooks and jobs, Flink transformations, and Kafka producers, consumers, and schema definitions. They prompt tools to build ETL data-quality checks, synthesize event streams, and write tests for exactly-once and fault-tolerance paths, while connecting agents to database, Databricks, MLflow, and pipeline MCP servers to inspect state and metrics. AI helps wire model serving, feature processing, and Evidently drift monitoring, and to analyze lineage and operational telemetry into remediation steps. Because generated distributed code can hide consistency, shuffle, partitioning, or replay bugs, students validate every pipeline change against partitioning, replication, and delivery-guarantee behavior."
   }
 }
