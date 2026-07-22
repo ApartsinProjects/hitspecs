@@ -389,14 +389,6 @@ a{color:inherit;text-decoration:none}
             <td class="td-concepts">SE(3) transforms, SLAM, stereoscopic rendering, spatial anchors, cybersickness theory</td>
             <td class="td-tools">Unity XR Toolkit, OpenXR, ARCore/ARKit, Meta SDK, Vuforia</td>
           </tr>
-          <tr>
-            <td class="td-code c-gm">GM3</td>
-            <td class="td-new">Computational Geometry and Geographic Information Systems</td>
-            <td class="td-existing"><span class="td-num">61221</span><span dir="rtl">מבוא למערכות מידע גיאוגרפי 1</span><br>Introduction to Geographic Information Systems 1 <em>(Aaron Cohen)</em></td>
-            <td class="td-role">Geospatial Developer, GIS Analyst</td>
-            <td class="td-concepts">Delaunay triangulation, k-d trees, R-trees, GIS projections, topological relationships</td>
-            <td class="td-tools">CGAL, PostGIS, QGIS, Shapely, GeoPandas</td>
-          </tr>
           <!-- DF -->
           <tr class="group-start">
             <td class="td-code c-df">DF1</td>
@@ -434,6 +426,14 @@ a{color:inherit;text-decoration:none}
             <td class="td-role">Audio/Speech ML Engineer, Conversational AI Developer</td>
             <td class="td-concepts">MFCCs, CTC loss, attention-based ASR, voice activity detection, speaker diarization</td>
             <td class="td-tools">librosa, PyTorch Audio, Whisper, SpeechBrain, Hugging Face Transformers</td>
+          </tr>
+          <tr>
+            <td class="td-code c-df">DF5</td>
+            <td class="td-new">Computational Geometry and Geographic Information Systems</td>
+            <td class="td-existing"><span class="td-num">61221</span><span dir="rtl">מבוא למערכות מידע גיאוגרפי 1</span><br>Introduction to Geographic Information Systems 1 <em>(Aaron Cohen)</em></td>
+            <td class="td-role">Geospatial Developer, GIS Analyst</td>
+            <td class="td-concepts">Delaunay triangulation, k-d trees, R-trees, GIS projections, topological relationships</td>
+            <td class="td-tools">CGAL, PostGIS, QGIS, Shapely, GeoPandas</td>
           </tr>
         </tbody>
       </table>
@@ -492,7 +492,7 @@ function toggleTheme(){
   r.setAttribute('data-theme',c==='dark'?'light':c==='light'?'dark':(window.matchMedia('(prefers-color-scheme:dark)').matches?'light':'dark'));
 }
 (function(){
-  const ext={'SE8':'https://apartsin.github.io/DotNetCourse/','SE9':'https://apartsin.github.io/AlgoSolving/','GM3':'https://apartsin.github.io/CompGeomCourse/'};
+  const ext={'SE8':'https://apartsin.github.io/DotNetCourse/','SE9':'https://apartsin.github.io/AlgoSolving/','DF5':'https://apartsin.github.io/CompGeomCourse/'};
   document.querySelectorAll('.map-table tbody tr').forEach(function(row){
     var cc=row.querySelector('.td-code'),nc=row.querySelector('.td-new');
     if(!cc||!nc)return;
