@@ -362,7 +362,7 @@ details>summary::-webkit-details-marker{display:none}
   <div class="track-hd">
     <span class="track-code">SE</span>
     <h2 class="track-name">Software Engineering</h2>
-    <span class="track-count">7 courses</span>
+    <span class="track-count">8 courses</span>
   </div>
   <div class="course-grid">
 
@@ -719,6 +719,59 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build one data-intensive system that ingests data, processes it through ETL/ELT flows with PySpark and Databricks, and stores it in a replicated, partitioned distributed store. They integrate an ML model for serving, add data-quality and drift monitoring, and reason explicitly about consistency, fault tolerance, and architectural trade-offs throughout.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- SE8 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code" data-href="https://apartsin.github.io/DotNetCourse/">SE8</span><h3 class="card-title"><a href="https://apartsin.github.io/DotNetCourse/" target="_blank">Enterprise Software Engineering with C# and .NET</a></h3></div>
+        <p class="card-tagline">Architecture, quality attributes, design patterns, .NET depth, and AI-enabled enterprise systems</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Designed and built a complete enterprise backend application: modeled the domain with entities, value objects, aggregates, and domain events; built a RESTful ASP.NET Core API with DTOs, versioning, and ProblemDetails error handling; applied Clean Architecture with explicit layer boundaries; implemented GoF and enterprise patterns (Repository, Unit of Work, CQRS, Outbox, Mediator); secured with JWT authentication, threat modeling, and OWASP API Security practices; integrated Azure services and AI APIs behind replaceable boundaries using Microsoft.Extensions.AI and Semantic Kernel; and defended the complete system through a graded oral architecture review.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Design enterprise backend systems with Clean Architecture, explicit domain boundaries, and quality-attribute-driven architectural decisions documented in ADRs.</li>
+              <li><span class="out-num">02</span>Build production-ready ASP.NET Core APIs with Entity Framework Core persistence, GoF and enterprise design patterns, and domain-driven modeling.</li>
+              <li><span class="out-num">03</span>Integrate AI APIs and Azure cloud services behind governable, replaceable boundaries and defend complete design decisions under oral review.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>SOLID principles and dependency inversion</li>
+              <li>Domain-Driven Design: entities, value objects, aggregates, domain services, domain events</li>
+              <li>Quality attributes, architecture scenarios, and Architecture Decision Records</li>
+              <li>GoF design patterns: Creational, Structural, Behavioral</li>
+              <li>Enterprise patterns: Repository, Unit of Work, CQRS, Outbox, Mediator</li>
+              <li>Clean Architecture and ports-and-adapters (hexagonal architecture)</li>
+              <li>Threat modeling and OWASP API Security Top 10</li>
+              <li>Async concurrency model: tasks, cancellation, backpressure, resilience</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">.NET SDK</span><span class="tool-tag">ASP.NET Core</span><span class="tool-tag">C# 12+</span><span class="tool-tag">Entity Framework Core</span><span class="tool-tag">SQL Server</span><span class="tool-tag">PostgreSQL</span><span class="tool-tag">MediatR</span><span class="tool-tag">FluentValidation</span><span class="tool-tag">Polly</span><span class="tool-tag">Swagger / OpenAPI</span><span class="tool-tag">Azure App Service</span><span class="tool-tag">Azure SQL</span><span class="tool-tag">Azure Key Vault</span><span class="tool-tag">Azure Service Bus</span><span class="tool-tag">Microsoft.Extensions.AI</span><span class="tool-tag">Semantic Kernel</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams of 3-4 carry a single enterprise application across 13 weeks through three graded milestones: a domain and architecture proposal (week 5, 20%); a working API with persistence, design patterns, and business workflows (week 8, 30%); and a complete system with architecture walkthrough, security, Azure integration, and optional AI layer defended orally (week 13, 50%).</p>
           </div>
         </details>
       </div>
@@ -1690,7 +1743,8 @@ document.querySelectorAll('.card-code').forEach(el => {
   const code = el.textContent.trim();
   const link = document.createElement('a');
   link.className = 'syllabus-link';
-  link.href = `courses/${code}.html`;
+  link.href = el.dataset.href || `courses/${code}.html`;
+  if (el.dataset.href) link.target = '_blank';
   link.textContent = 'Full syllabus →';
   el.closest('.card-hd').appendChild(link);
 });
