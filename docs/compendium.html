@@ -884,6 +884,59 @@ details>summary::-webkit-details-marker{display:none}
       </div>
     </article>
 
+    <!-- SE11 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">SE11</span><h3 class="card-title"><a href="courses/SE11.html">High-Performance Computing and Programming</a></h3></div>
+        <p class="card-tagline">Implement parallel algorithms with OpenMP and MPI, optimize GPU kernels with CUDA, and build a distributed computation pipeline on multi-node clusters</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Designed and implemented a parallelized computation pipeline that runs on a multi-node cluster: profiled a serial baseline with perf and VTune to locate hotspots, rewrote compute kernels with OpenMP for shared-memory speedup, added an MPI communication layer for inter-node distribution, ported the most compute-intensive kernel to CUDA for GPU acceleration, used NCCL for multi-GPU collective operations, managed job scheduling with Slurm, and produced a final benchmark report with roofline-model analysis and scalability curves for thread count, process count, and GPU count.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Write correct, high-throughput OpenMP and MPI programs by applying shared-memory synchronization, collective communication algorithms, and distributed fault-tolerance patterns.</li>
+              <li><span class="out-num">02</span>Implement and optimize CUDA kernels using shared memory, memory coalescing, and occupancy tuning, and extend to multi-GPU workloads with NCCL collectives.</li>
+              <li><span class="out-num">03</span>Profile and analyze parallel programs with perf, VTune, and Nsight Compute, construct roofline models, and produce scalability reports backed by strong-scaling and weak-scaling experiments.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Flynn's taxonomy and Amdahl's Law / Gustafson's Law</li>
+              <li>Cache coherence: MSI, MESI, MOESI protocols</li>
+              <li>OpenMP memory model: flush, acquire, and release semantics</li>
+              <li>MPI communication: point-to-point, collectives, and ring all-reduce</li>
+              <li>GPU SIMT model: warps, occupancy, memory coalescing, and warp divergence</li>
+              <li>Roofline performance model: arithmetic intensity versus memory bandwidth</li>
+              <li>CAP theorem, consistency models, and checkpoint-restart fault tolerance</li>
+              <li>Work stealing and load balancing in task-parallel runtimes</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">OpenMP</span><span class="tool-tag">MPI</span><span class="tool-tag">CUDA</span><span class="tool-tag">NCCL</span><span class="tool-tag">perf</span><span class="tool-tag">Intel VTune</span><span class="tool-tag">Nsight Compute</span><span class="tool-tag">Slurm</span><span class="tool-tag">ThreadSanitizer</span><span class="tool-tag">CUDA-MEMCHECK</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams select a compute-intensive application, produce a profiled serial baseline, and progressively parallelize it across shared memory, distributed memory, and GPU hardware. The final deliverable is a Slurm-managed multi-node pipeline integrating OpenMP, MPI, and CUDA, backed by a benchmark report with roofline-model analysis and scalability curves for thread count, process count, and GPU count.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
   </div><!-- /course-grid -->
 </section>
 
