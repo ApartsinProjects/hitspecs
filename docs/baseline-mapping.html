@@ -112,7 +112,7 @@ a{color:inherit;text-decoration:none}
 <nav class="site-nav">
   <span class="nav-brand">HIT·CS</span>
   <a class="nav-pill" href="compendium.html">Course Compendium</a>
-  <a class="nav-pill" href="core-courses.html">Core Courses</a>
+  <a class="nav-pill" href="core-courses.html">Core Elective Courses</a>
   <a class="nav-pill active" href="baseline-mapping.html">Baseline Mapping</a>
   <span class="nav-spacer"></span>
   <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
@@ -121,24 +121,24 @@ a{color:inherit;text-decoration:none}
 <header class="hero">
   <p class="hero-eyebrow">Holon Institute of Technology · Advanced CS Electives</p>
   <h1>Baseline Course Mapping</h1>
-  <p class="hero-sub">Existing HIT electives that could potentially provide a conceptual or structural base for developing each new concentration course. These are possible starting points, not commitments: whether and how each is used remains an open decision.</p>
-  <p class="hero-sub" style="margin-top:10px">More advanced elective courses may also co-exist alongside the new concentration courses, expanding the curriculum while building on the core elective as a prerequisite or thematic foundation.</p>
-  <p class="hero-sub" style="margin-top:10px">All concentration courses are designed according to the <a href="https://www.apartsin.com/teaching/advanced-cs-elective-framework.html" target="_blank" rel="noopener" style="color:var(--sub);text-decoration:underline;text-underline-offset:3px">Advanced CS Elective Framework</a>.</p>
+  <p class="hero-sub">Existing HIT electives that could potentially provide a conceptual or structural base for developing each core elective course. These are possible starting points, not commitments: whether and how each is used remains an open decision.</p>
+  <p class="hero-sub" style="margin-top:10px">More advanced elective courses may also co-exist alongside the core elective courses, expanding the curriculum while building on the core elective as a prerequisite or thematic foundation.</p>
+  <p class="hero-sub" style="margin-top:10px">All core elective courses are designed according to the <a href="https://www.apartsin.com/teaching/advanced-cs-elective-framework.html" target="_blank" rel="noopener" style="color:var(--sub);text-decoration:underline;text-underline-offset:3px">Advanced CS Elective Framework</a>.</p>
 </header>
 
 <main class="page-body">
   <section class="panel">
     <div class="panel-hd">
-      <h2>Concentration Courses and Their Elective Starting Points</h2>
+      <h2>Core Elective Courses and Their Elective Starting Points</h2>
       <span class="panel-sub">30 courses · <a href="https://hitspecs.apartsin.com/" target="_blank" rel="noopener" style="color:var(--sub);text-decoration:underline;text-underline-offset:3px">hitspecs.apartsin.com</a></span>
     </div>
 
     <div class="table-scroll">
-      <table class="map-table" aria-label="New concentration courses with elective starting points, job roles, concepts, and tools">
+      <table class="map-table" aria-label="Core elective courses with elective starting points, job roles, concepts, and tools">
         <thead>
           <tr>
             <th style="width:5%">Code</th>
-            <th style="width:16%">New Course</th>
+            <th style="width:16%">Core Elective Course</th>
             <th style="width:20%">Elective Starting Point</th>
             <th style="width:14%">Job Role</th>
             <th style="width:25%">Key Theoretical or Engineering Concepts</th>
@@ -151,7 +151,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-se">SE1</td>
             <td class="td-new">Cloud Computing &amp; Cloud-Native Platforms</td>
             <td class="td-existing"><span class="td-num">62213</span><span dir="rtl">AWS עם Serverless מבוא לענן ולפיתוח</span><br>Introduction to Cloud and Development with AWS Serverless <em>(Yogev Shani)</em></td>
-            <td class="td-role">Cloud Architect, Platform Engineer, Site Reliability Engineer</td>
+            <td class="td-role">Junior Cloud Engineer, Platform Engineer</td>
             <td class="td-concepts">Distributed systems, container orchestration, service mesh, observability, twelve-factor app</td>
             <td class="td-tools">Kubernetes, Helm, Argo CD, Terraform, Prometheus/Grafana</td>
           </tr>
@@ -159,7 +159,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-se">SE2</td>
             <td class="td-new">Secure &amp; Reliable Software Development</td>
             <td class="td-existing"><span class="td-num">64444</span><span dir="rtl">בדיקות תוכנה</span><br>Software Testing <em>(David Tobias)</em></td>
-            <td class="td-role">Software Quality Engineer, Test Architect, Reliability Engineer</td>
+            <td class="td-role">Junior QA Engineer, Test Engineer</td>
             <td class="td-concepts">Software quality attributes, TDD/BDD, mutation testing, fault injection, SLO/SLI/SLA</td>
             <td class="td-tools">JUnit/pytest, PIT/mutmut, SonarQube, GitHub Actions, Chaos Monkey</td>
           </tr>
@@ -168,7 +168,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-new">Modern Front-End Web Development</td>
             <td class="td-existing"><span class="td-num">65364</span><span dir="rtl">פיתוח צד לקוח</span><br>Client-Side Development <em>(Haim Michael)</em><br>
               <span class="td-num">65200</span><span dir="rtl">תכנות בסביבות האינטרנט</span><br>Web Programming Environments <em>(Nissim Barmi)</em></td>
-            <td class="td-role">Front-End Developer, UI Engineer, Web Performance Engineer</td>
+            <td class="td-role">Junior Front-End Developer, UI Engineer</td>
             <td class="td-concepts">Component architecture, client-side rendering, Core Web Vitals, WCAG 2.2 accessibility</td>
             <td class="td-tools">React, Next.js, TypeScript, Tailwind CSS, Lighthouse, Playwright</td>
           </tr>
@@ -179,7 +179,7 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">64410</span><span dir="rtl">פיתוח מערכות צד שרת בסביבת קוד פתוח</span><br>Server-Side Systems Development Open Source <em>(Ofer Vald)</em><br>
               <span class="td-num">65356</span><span dir="rtl">פיתוח צד שרת אסינכרוני</span><br>Asynchronous Server-Side Development <em>(Haim Michael)</em>
             </td>
-            <td class="td-role">Back-End Developer, API Engineer, Platform Engineer</td>
+            <td class="td-role">Junior Back-End Developer, API Engineer</td>
             <td class="td-concepts">REST/GraphQL, API contract-first design, JWT/OAuth2, database normalization, caching</td>
             <td class="td-tools">Node.js, Express, FastAPI, PostgreSQL, OpenAPI/Swagger, Redis</td>
           </tr>
@@ -187,7 +187,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-se">SE5</td>
             <td class="td-new">Engineering of AI Systems</td>
             <td class="td-existing"><span class="td-num">65353</span><span dir="rtl">מבוא ל-DevOps</span><br>Introduction to DevOps <em>(Moshe Mamia)</em></td>
-            <td class="td-role">DevOps Engineer, MLOps Engineer, Platform Engineer</td>
+            <td class="td-role">Junior DevOps Engineer, Platform Engineer</td>
             <td class="td-concepts">CI/CD pipelines, infrastructure-as-code, shift-left security, MLOps, observability</td>
             <td class="td-tools">GitHub Actions, Terraform, Docker, Prometheus, OWASP ZAP, Trivy</td>
           </tr>
@@ -200,7 +200,7 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65352</span><span dir="rtl">פיתוח צד לקוח בסביבת אנדרואיד 2</span><br>Client-Side Android Development 2 <em>(Effi Propos)</em><br>
               <span class="td-num">67018</span><span dir="rtl">פיתוח אפליקציות אנדרואיד בשפת קוטלין</span><br>Android Application Development with Kotlin <em>(Eran Katzav)</em>
             </td>
-            <td class="td-role">Mobile Developer, IoT Engineer, Edge Software Developer</td>
+            <td class="td-role">Junior Mobile Developer, IoT Engineer</td>
             <td class="td-concepts">Cross-platform frameworks, MQTT/IoT protocols, edge computing, reactive patterns</td>
             <td class="td-tools">React Native, Flutter, MQTT, AWS IoT Greengrass, Android Studio</td>
           </tr>
@@ -208,7 +208,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-se">SE7</td>
             <td class="td-new">Design of AI-based &amp; Data-Intensive Systems</td>
             <td class="td-existing"><span class="td-num">64409</span><span dir="rtl">כריית נתונים</span><br>Data Mining <em>(Dr. Abraham Yosipof)</em></td>
-            <td class="td-role">ML Engineer, Data Engineer, AI Systems Architect</td>
+            <td class="td-role">Junior ML Engineer, Data Engineer</td>
             <td class="td-concepts">Feature engineering, ML experiment tracking, data pipeline architecture, model serving</td>
             <td class="td-tools">Apache Spark, MLflow, Feast, DVC, Apache Airflow</td>
           </tr>
@@ -219,7 +219,7 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65313</span><span dir="rtl">C# תכנות מונחה עצמים בסביבת דוט-נט ושפת</span><br>Object-Oriented Programming in .NET with C# <em>(Guy Ronen)</em><br>
               <span class="td-num">64332</span><span dir="rtl">תכנות יישומי באמצעות תבניות עיצוב</span><br>Applied Programming with Design Patterns <em>(Guy Ronen)</em>
             </td>
-            <td class="td-role">.NET Developer, Enterprise Architect, Solutions Engineer</td>
+            <td class="td-role">Junior .NET Developer, Software Engineer</td>
             <td class="td-concepts">Domain-driven design, CQRS, clean architecture, dependency injection, design patterns</td>
             <td class="td-tools">.NET 8, ASP.NET Core, Entity Framework Core, xUnit, Azure DevOps</td>
           </tr>
@@ -229,7 +229,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-existing">
               <span class="td-num">65345</span><span dir="rtl">תכנות תחרותי</span><br>Competitive Programming <em>(Yuval Meir)</em>
             </td>
-            <td class="td-role">Algorithm Engineer, SWE Interview Candidate, Competitive Programmer</td>
+            <td class="td-role">Algorithm Engineer, Software Engineer</td>
             <td class="td-concepts">Algorithmic complexity, graph theory, dynamic programming, greedy algorithms, NP-hardness</td>
             <td class="td-tools">C++/Python, LeetCode, Codeforces, competitive judge environments</td>
           </tr>
@@ -240,7 +240,7 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">67028</span>Human-Smart AI Interaction Workshop <em>(Eran Ahronson)</em><br>
               <span class="td-num">65346</span><span dir="rtl">UI ממשקי אדם מחשב</span><br>Human-Computer Interfaces (HCI/UI) <em>(Dr. Nava Shaked)</em>
             </td>
-            <td class="td-role">UX Engineer, HCI Researcher, Interaction Designer</td>
+            <td class="td-role">Junior UX Engineer, Interaction Designer</td>
             <td class="td-concepts">Cognitive load theory, Fitts' Law, affordances, mental models, usability evaluation</td>
             <td class="td-tools">Figma, Maze, axe DevTools, think-aloud protocols, eye-tracking</td>
           </tr>
@@ -249,7 +249,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-cy">CY1</td>
             <td class="td-new">Applied Cryptography</td>
             <td class="td-existing"><span class="td-num">68012</span><span dir="rtl">מבוא יישומי לקריפטוגרפיה מודרנית</span><br>Applied Introduction to Modern Cryptography <em>(Zeev Geyzel)</em></td>
-            <td class="td-role">Cryptography Engineer, Security Researcher, Protocol Designer</td>
+            <td class="td-role">Junior Cryptography Engineer, Security Researcher</td>
             <td class="td-concepts">Number theory, group theory, RSA/ECC/AES, zero-knowledge proofs, PKI</td>
             <td class="td-tools">OpenSSL, Python cryptography library, SageMath, Bouncy Castle</td>
           </tr>
@@ -262,7 +262,7 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65362</span><span dir="rtl">היבטים מעשיים באבטחת סייבר</span><br>Practical Aspects of Cybersecurity <em>(Adrian Shpeler)</em><br>
               <span class="td-num">62206</span><span dir="rtl">מבוא לאבטחת סייבר מונחית בינה מלאכותית</span><br>Introduction to AI-Guided Cybersecurity <em>(Vyacheslav Napdov)</em>
             </td>
-            <td class="td-role">Network Security Engineer, Security Architect, SOC Analyst</td>
+            <td class="td-role">Junior Network Security Engineer, SOC Analyst</td>
             <td class="td-concepts">TCP/IP stack, TLS/PKI, IDS/IPS design, firewall policy, network forensics</td>
             <td class="td-tools">Wireshark, Snort, iptables, Nmap, Metasploit</td>
           </tr>
@@ -270,7 +270,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-cy">CY3</td>
             <td class="td-new">Hardware &amp; Embedded Systems Security</td>
             <td class="td-existing"><span class="td-num">65343</span><span dir="rtl">הנדסה לאחור וניתוח תוכנות זדוניות</span><br>Reverse Engineering and Malware Analysis <em>(Shurna Preyer)</em></td>
-            <td class="td-role">Malware Analyst, Reverse Engineer, Embedded Security Researcher</td>
+            <td class="td-role">Junior Malware Analyst, Reverse Engineer</td>
             <td class="td-concepts">x86/ARM assembly, memory exploitation, ROP chains, firmware analysis, side-channel attacks</td>
             <td class="td-tools">Ghidra, IDA Pro, GDB/pwndbg, Binwalk, QEMU</td>
           </tr>
@@ -281,7 +281,7 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65362</span><span dir="rtl">היבטים מעשיים באבטחת סייבר</span><br>Practical Aspects of Cybersecurity <em>(Adrian Shpeler)</em><br>
               <span class="td-num">62206</span><span dir="rtl">מבוא לאבטחת סייבר מונחית בינה מלאכותית</span><br>Introduction to AI-Guided Cybersecurity <em>(Vyacheslav Napdov)</em>
             </td>
-            <td class="td-role">GRC Manager, CISO Analyst, Compliance Officer</td>
+            <td class="td-role">Junior GRC Analyst, Compliance Analyst</td>
             <td class="td-concepts">ISO 27001, NIST CSF, risk assessment, BIA, incident-response frameworks</td>
             <td class="td-tools">Splunk, IBM QRadar, ServiceNow GRC, Nessus, OpenFAIR</td>
           </tr>
@@ -289,7 +289,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-cy">CY5</td>
             <td class="td-new">Blockchain and Decentralized Cryptographic Systems</td>
             <td class="td-existing"><span class="td-num">67007</span><span dir="rtl">בלוקצ'יין: חזון ופרקטיקה</span><br>Blockchain: Vision and Practice <em>(Michael Bershap)</em></td>
-            <td class="td-role">Blockchain Developer, Smart Contract Auditor, Web3 Engineer</td>
+            <td class="td-role">Junior Blockchain Developer, Smart Contract Developer</td>
             <td class="td-concepts">Distributed consensus, Merkle trees, smart contract security, tokenomics, DeFi protocols</td>
             <td class="td-tools">Solidity, Hardhat, OpenZeppelin, Ethers.js, Foundry</td>
           </tr>
@@ -298,7 +298,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-ai">AI1</td>
             <td class="td-new">Language AI: LLMs and Agentic Systems</td>
             <td class="td-existing"><span class="td-num">65339</span><span dir="rtl">מודלי שפה גדולים וסוכנים</span><br>LLM and Agents <em>(Dr. Alexander Apartsin)</em></td>
-            <td class="td-role">LLM Engineer, AI Product Developer, Conversational AI Engineer</td>
+            <td class="td-role">Junior LLM Engineer, AI Developer</td>
             <td class="td-concepts">Transformer architecture, attention mechanisms, RAG, prompt engineering, RLHF</td>
             <td class="td-tools">LangChain, LlamaIndex, OpenAI API, Hugging Face, Pinecone/Weaviate</td>
           </tr>
@@ -306,7 +306,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-ai">AI2</td>
             <td class="td-new">Temporal AI: Time Series &amp; Sequential Decision Making</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
-            <td class="td-role">Data Scientist, Quantitative Analyst, ML Researcher</td>
+            <td class="td-role">Junior Data Scientist, ML Researcher</td>
             <td class="td-concepts">Recurrent networks, Temporal Fusion Transformers, Markov decision processes, Bellman equations</td>
             <td class="td-tools">PyTorch, pytorch-forecasting, Stable Baselines3, Gymnasium, sktime</td>
           </tr>
@@ -319,7 +319,7 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">62120</span><span dir="rtl">אלגוריתמים במולטימדיה ולמידת מכונה בסביבת פייתון</span><br>Algorithms in Multimedia and Machine Learning with Python <em>(Idan Tobis)</em><br>
               <span class="td-num">65361</span><span dir="rtl">אלגוריתמים בסיסיים של בינה מלאכותית ויישומים ברפואה דיגיטלית</span><br>Fundamental AI Algorithms and Applications in Digital Medicine <em>(Prof. Eugene Levner)</em>
             </td>
-            <td class="td-role">Computer Vision Engineer, Imaging Scientist, ML Engineer</td>
+            <td class="td-role">Junior Computer Vision Engineer, ML Engineer</td>
             <td class="td-concepts">Convolutional networks, Vision Transformers, object detection, image segmentation</td>
             <td class="td-tools">PyTorch, YOLO, TensorRT, ONNX, Roboflow, OpenCV</td>
           </tr>
@@ -327,7 +327,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-ai">AI4</td>
             <td class="td-new">Scalable AI: Big-Data Algorithms</td>
             <td class="td-existing"><span class="td-num">64409</span><span dir="rtl">כריית נתונים</span><br>Data Mining <em>(Dr. Abraham Yosipof)</em></td>
-            <td class="td-role">Data Engineer, Big Data Architect, Analytics Engineer</td>
+            <td class="td-role">Junior Data Engineer, Analytics Engineer</td>
             <td class="td-concepts">Distributed computing, stream processing, data lake architecture, data versioning</td>
             <td class="td-tools">Apache Spark, Kafka, Delta Lake, MLflow, dbt</td>
           </tr>
@@ -335,7 +335,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-ai">AI5</td>
             <td class="td-new">Generative AI: Deep Generative Models</td>
             <td class="td-existing"><span class="td-num">67030</span><span dir="rtl">מודלים עמוקים לבינה מלאכותית יוצרת</span><br>Deep Models for Generative AI <em>(Dr. Alexander Apartsin)</em></td>
-            <td class="td-role">Generative AI Engineer, AI Researcher, Creative Technologist</td>
+            <td class="td-role">Junior Generative AI Engineer, AI Researcher</td>
             <td class="td-concepts">Generative adversarial networks, variational autoencoders, diffusion models, score matching</td>
             <td class="td-tools">PyTorch, Hugging Face Diffusers, Stable Diffusion, DALL-E API, FID/CLIP metrics</td>
           </tr>
@@ -347,7 +347,7 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">62304</span><span dir="rtl">פיתוח תוכנה לאינטראקציה בין אדם ורובוט הומנואיד</span><br>Software Development for Human-Humanoid Robot Interaction <em>(Idan Tobis)</em><br>
               <span class="td-num">67006</span><span dir="rtl">פיתוח תוכנה עבור רכב אוטונומי אינטליגנטי</span><br>Software Development for Intelligent Autonomous Vehicles <em>(Dr. Vadim Talis)</em>
             </td>
-            <td class="td-role">Robotics Engineer, Autonomous Systems Developer, Embedded AI Engineer</td>
+            <td class="td-role">Junior Robotics Engineer, Embedded AI Engineer</td>
             <td class="td-concepts">Robot kinematics, SLAM, motion planning, ROS architecture, sensor fusion</td>
             <td class="td-tools">ROS 2, Nav2, MoveIt 2, Gazebo, OpenCV</td>
           </tr>
@@ -356,7 +356,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-qcf">QCF1</td>
             <td class="td-new">Quantum Optimization</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
-            <td class="td-role">Quantum Software Engineer, Optimization Researcher, Quantum Algorithms Developer</td>
+            <td class="td-role">Junior Quantum Software Engineer, Optimization Researcher</td>
             <td class="td-concepts">Quantum gates, QAOA, variational quantum eigensolver, quantum advantage, annealing</td>
             <td class="td-tools">Qiskit, IBM Quantum, D-Wave Ocean, PennyLane</td>
           </tr>
@@ -364,7 +364,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-qcf">QCF2</td>
             <td class="td-new">AI &amp; Optimization for Finance</td>
             <td class="td-existing"><span class="td-num">67033</span><span dir="rtl">אלגוריתמים נומריים ויישומיהם</span><br>Numerical Algorithms and Their Applications <em>(Zeev Geyzel)</em></td>
-            <td class="td-role">Quantitative Analyst, Risk Engineer, FinTech Developer</td>
+            <td class="td-role">Junior Quantitative Analyst, FinTech Developer</td>
             <td class="td-concepts">Mean-variance optimization, Black-Scholes, Monte Carlo simulation, quantum annealing</td>
             <td class="td-tools">Python (NumPy/SciPy), QuantLib, D-Wave Ocean, Bloomberg API</td>
           </tr>
@@ -373,7 +373,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-gm">GM1</td>
             <td class="td-new">Computer Graphics</td>
             <td class="td-existing"><span class="td-num">65235</span><span dir="rtl">גרפיקה ממוחשבת</span><br>Computer Graphics <em>(Dr. Vladimir Nodelman)</em></td>
-            <td class="td-role">Graphics Programmer, Game Engine Developer, Rendering Engineer</td>
+            <td class="td-role">Junior Graphics Programmer, Game Developer</td>
             <td class="td-concepts">Rasterization pipeline, PBR shading, shadow algorithms, GPU architecture, scene graphs</td>
             <td class="td-tools">OpenGL, WebGPU, Unity/Unreal, GLSL/HLSL, RenderDoc</td>
           </tr>
@@ -381,7 +381,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-gm">GM2</td>
             <td class="td-new">Virtual, Augmented and Mixed Reality</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
-            <td class="td-role">XR Developer, Spatial Computing Engineer, VR/AR Engineer</td>
+            <td class="td-role">Junior XR Developer, VR/AR Engineer</td>
             <td class="td-concepts">SE(3) transforms, SLAM, stereoscopic rendering, spatial anchors, cybersickness theory</td>
             <td class="td-tools">Unity XR Toolkit, OpenXR, ARCore/ARKit, Meta SDK, Vuforia</td>
           </tr>
@@ -389,7 +389,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-gm">GM3</td>
             <td class="td-new">Computational Geometry and Geographic Information Systems</td>
             <td class="td-existing"><span class="td-num">66122</span>Computational Geometry and GIS</td>
-            <td class="td-role">Geospatial Developer, Computational Geometry Engineer, GIS Analyst</td>
+            <td class="td-role">Junior Geospatial Developer, GIS Analyst</td>
             <td class="td-concepts">Delaunay triangulation, k-d trees, R-trees, GIS projections, topological relationships</td>
             <td class="td-tools">CGAL, PostGIS, QGIS, Shapely, GeoPandas</td>
           </tr>
@@ -398,7 +398,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-df">DF1</td>
             <td class="td-new">Sensor Fusion &amp; Signal Processing</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
-            <td class="td-role">Sensor Fusion Engineer, Navigation Systems Developer, Signal Processing Engineer</td>
+            <td class="td-role">Junior Sensor Fusion Engineer, Signal Processing Engineer</td>
             <td class="td-concepts">Kalman filtering, factor graphs, IMU preintegration, sensor noise models, LIDAR processing</td>
             <td class="td-tools">ROS 2, Open3D, GTSAM, Eigen, LIDAR/IMU drivers</td>
           </tr>
@@ -406,7 +406,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-df">DF2</td>
             <td class="td-new">Mission-Critical Real-Time Systems</td>
             <td class="td-existing"><span class="td-num">67026</span><span dir="rtl">מבוא לתוכנה משובצת מחשב ויישומים</span><br>Introduction to Embedded Software and Applications <em>(Vladi Sorkin)</em></td>
-            <td class="td-role">Embedded Systems Engineer, Safety-Critical Software Developer, RTOS Developer</td>
+            <td class="td-role">Junior Embedded Systems Engineer, RTOS Developer</td>
             <td class="td-concepts">Real-time scheduling, WCET analysis, interrupt handling, safety-integrity levels, AUTOSAR</td>
             <td class="td-tools">FreeRTOS, AUTOSAR, STM32, JTAG/SWD debugger, Tracealyzer</td>
           </tr>
@@ -417,7 +417,7 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">62302</span><span dir="rtl">מערכות ספרתיות מתקדמות</span><br>Advanced Digital Systems <em>(Prof. Samri Barnov)</em><br>
               <span class="td-num">65311</span><span dir="rtl">ארכיטקטורת מערכות VLSI</span><br>VLSI Systems Architecture <em>(Prof. Samri Barnov)</em>
             </td>
-            <td class="td-role">FPGA Engineer, Digital Hardware Designer, RTL Developer</td>
+            <td class="td-role">Junior FPGA Engineer, RTL Developer</td>
             <td class="td-concepts">Boolean algebra, finite state machines, RTL design, FPGA architecture, timing analysis</td>
             <td class="td-tools">Xilinx Vivado, ModelSim, GHDL, Icarus Verilog, Intel Quartus Prime</td>
           </tr>
@@ -427,7 +427,7 @@ a{color:inherit;text-decoration:none}
             <td class="td-existing">
               <span class="td-num">67011</span><span dir="rtl">עיבוד קול למערכות תבוניות</span><br>Audio Processing for Intelligent Systems <em>(Dr. Nava Shaked and Yuri Yurchenko)</em>
             </td>
-            <td class="td-role">Speech/Audio ML Engineer, Conversational AI Developer, Audio Systems Engineer</td>
+            <td class="td-role">Junior Audio/Speech ML Engineer, Conversational AI Developer</td>
             <td class="td-concepts">MFCCs, CTC loss, attention-based ASR, voice activity detection, speaker diarization</td>
             <td class="td-tools">librosa, PyTorch Audio, Whisper, SpeechBrain, Hugging Face Transformers</td>
           </tr>
