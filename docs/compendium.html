@@ -313,6 +313,19 @@ details>summary::-webkit-details-marker{display:none}
 .project-text{
   font-size:12.5px; color:var(--sub); line-height:1.55;
 }
+.books-list{
+  list-style:none; padding-left:0;
+  display:flex; flex-direction:column; gap:5px;
+}
+.books-list li{ font-size:12px; line-height:1.45; }
+.book-link{
+  color:var(--sub);
+  text-decoration:underline;
+  text-decoration-style:dotted;
+  text-underline-offset:2px;
+  text-decoration-thickness:1px;
+}
+.book-link:hover{ color:var(--text); text-decoration-style:solid; }
 
 /* ── Footer ──────────────────────────────────────────── */
 .site-footer{
@@ -414,6 +427,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams design and build one scalable cloud application from workload requirements through architecture decision records, then implement an API, durable storage, object storage, asynchronous workers, caching or CDN delivery, and a deployment path using containers, serverless functions, or managed platforms. The system is provisioned through infrastructure as code, load-tested, instrumented, and defended with evidence for scalability, reliability, and cost.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Cloud+Native+Patterns+Cornelia+Davis" class="book-link" target="_blank" rel="noopener"><em>Cloud Native Patterns</em> by Cornelia Davis (2019)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Designing+Distributed+Systems+Brendan+Burns" class="book-link" target="_blank" rel="noopener"><em>Designing Distributed Systems</em> by Brendan Burns (2018)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Production+Kubernetes+Rosso+Shanley" class="book-link" target="_blank" rel="noopener"><em>Production Kubernetes</em> by Josh Rosso et al. (2021)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -463,6 +486,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams take one web application and engineer it to be secure, tested, and reliable end to end. They build QA artifacts (test plan, RTM, defect register, quality-metrics dashboard, release recommendation), automate the full test pyramid, threat-model the app, remediate OWASP Top 10 risks, build a CI/CD pipeline with SAST, DAST, dependency scanning, and QA gates, and add observability with SLO enforcement.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Software+Engineering+at+Google+Winters+Manshreck" class="book-link" target="_blank" rel="noopener"><em>Software Engineering at Google</em> by Titus Winters, Tom Manshreck & Hyrum Wright (2020)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Art+of+Software+Testing+Myers+Sandler" class="book-link" target="_blank" rel="noopener"><em>The Art of Software Testing</em> by Glenford J. Myers, Corey Sandler & Tom Badgett (3rd ed. 2011)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Threat+Modeling+Designing+Security+Shostack" class="book-link" target="_blank" rel="noopener"><em>Threat Modeling: Designing for Security</em> by Adam Shostack (2014)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -516,6 +549,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams design and build one single-page web application that grows from a static shell into a component-based, state-managed product. The application is made responsive, accessible to WCAG standards, and tuned to performance budgets with an optimized Vite build. Every increment is validated through component and interaction tests.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Learning+React+Banks+Porcello+2020" class="book-link" target="_blank" rel="noopener"><em>Learning React</em> by Alex Banks & Eve Porcello (2nd ed. 2020)</a></li>
+              <li><a href="https://www.amazon.com/s?k=TypeScript+50+Lessons+Baumgartner" class="book-link" target="_blank" rel="noopener"><em>TypeScript in 50 Lessons</em> by Stefan Baumgartner (2020)</a></li>
+              <li><a href="https://www.amazon.com/s?k=CSS+Definitive+Guide+Meyer+Weyl+5th" class="book-link" target="_blank" rel="noopener"><em>CSS: The Definitive Guide</em> by Eric Meyer & Estelle Weyl (5th ed. 2023)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -565,6 +608,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build one back-end service that grows from basic endpoints into a complete API platform with a tuned data layer. The service exposes both REST and GraphQL, enforces secure authentication and authorization, adds caching and scaling to meet load targets, and is validated with automated and contract tests.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Designing+Web+APIs+Jin+Sahni+Shevat" class="book-link" target="_blank" rel="noopener"><em>Designing Web APIs</em> by Brenda Jin, Saurabh Sahni & Amir Shevat (2018)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Database+Internals+Alex+Petrov" class="book-link" target="_blank" rel="noopener"><em>Database Internals</em> by Alex Petrov (2019)</a></li>
+              <li><a href="https://www.amazon.com/s?k=OAuth+2+in+Action+Richer+Sanso" class="book-link" target="_blank" rel="noopener"><em>OAuth 2 in Action</em> by Justin Richer & Antonio Sanso (2017)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -618,6 +671,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams build a production AI service through four operational layers: containerized REST API with CI/CD on Kubernetes; a medallion data pipeline with quality checks; an MLflow-managed model registry with a RAG serving layer; and live drift monitoring with OWASP LLM security review; each increment extends the previous.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Designing+Machine+Learning+Systems+Chip+Huyen" class="book-link" target="_blank" rel="noopener"><em>Designing Machine Learning Systems</em> by Chip Huyen (2022)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Machine+Learning+Engineering+Andriy+Burkov" class="book-link" target="_blank" rel="noopener"><em>Machine Learning Engineering</em> by Andriy Burkov (2020)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Reliable+Machine+Learning+Chen+Murphy+OReilly" class="book-link" target="_blank" rel="noopener"><em>Reliable Machine Learning</em> by Cathy Chen, Niall Richard Murphy et al. (2022)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -667,6 +730,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build one connected system spanning a cross-platform mobile app, IoT sensors, and an edge processing component. The system communicates over MQTT and CoAP, processes data at the edge, and works offline with reliable synchronization and conflict resolution. Each weekly increment extends the device-to-cloud pipeline.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Flutter+in+Action+Eric+Windmill" class="book-link" target="_blank" rel="noopener"><em>Flutter in Action</em> by Eric Windmill (2020)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Programming+Internet+of+Things+Andy+King+OReilly" class="book-link" target="_blank" rel="noopener"><em>Programming the Internet of Things</em> by Andy King (2021)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Practical+Internet+Things+Security+Russell+Van+Duren" class="book-link" target="_blank" rel="noopener"><em>Practical Internet of Things Security</em> by Brian Russell & Drew Van Duren (2nd ed. 2018)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -719,6 +792,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build one data-intensive system that ingests data, processes it through ETL/ELT flows with PySpark and Databricks, and stores it in a replicated, partitioned distributed store. They integrate an ML model for serving, add data-quality and drift monitoring, and reason explicitly about consistency, fault tolerance, and architectural trade-offs throughout.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Designing+Data+Intensive+Applications+Kleppmann" class="book-link" target="_blank" rel="noopener"><em>Designing Data-Intensive Applications</em> by Martin Kleppmann (2017)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Fundamentals+Data+Engineering+Reis+Housley" class="book-link" target="_blank" rel="noopener"><em>Fundamentals of Data Engineering</em> by Joe Reis & Matt Housley (2022)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Streaming+Systems+Akidau+Chernyak+Lax" class="book-link" target="_blank" rel="noopener"><em>Streaming Systems</em> by Tyler Akidau, Slava Chernyak & Reuven Lax (2018)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -774,6 +857,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams of 3-4 carry a single enterprise application across 13 weeks through three graded milestones: a domain and architecture proposal (week 5, 20%); a working API with persistence, design patterns, and business workflows (week 8, 30%); and a complete system with architecture walkthrough, security, Azure integration, and optional AI layer defended orally (week 13, 50%).</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Domain+Driven+Design+Eric+Evans" class="book-link" target="_blank" rel="noopener"><em>Domain-Driven Design</em> by Eric Evans (2003)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Implementing+Domain+Driven+Design+Vaughn+Vernon" class="book-link" target="_blank" rel="noopener"><em>Implementing Domain-Driven Design</em> by Vaughn Vernon (2013)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Clean+Architecture+Robert+Martin+Prentice" class="book-link" target="_blank" rel="noopener"><em>Clean Architecture</em> by Robert C. Martin (2017)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -825,6 +918,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">A final 2-3 hour internal programming competition synthesizes techniques from all prior weeks; students submit full solutions with editorial analysis and post-contest reflection on strategy and technique selection. The semester also requires a curated technique portfolio: a collection of solved problems each annotated with correctness proof, complexity analysis, and technique classification.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Introduction+to+Algorithms+Cormen+4th+edition" class="book-link" target="_blank" rel="noopener"><em>Introduction to Algorithms</em> by Cormen, Leiserson, Rivest & Stein (4th ed. 2022)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Competitive+Programmer+Handbook+Laaksonen" class="book-link" target="_blank" rel="noopener"><em>Competitive Programmer's Handbook</em> by Antti Laaksonen (2018)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Algorithm+Design+Kleinberg+Tardos" class="book-link" target="_blank" rel="noopener"><em>Algorithm Design</em> by Jon Kleinberg & Eva Tardos (2005)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -881,6 +984,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams design, prototype, and evaluate one human-machine interface for a real system or well-defined domain problem. The interface evolves from a user-research synthesis and low-fidelity concept into a high-fidelity Figma prototype with a multimodal input channel, an AI-augmented layer, full WCAG 2.2 Level AA compliance, and a final usability evaluation report backed by two rounds of testing and an A/B test design.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Design+Everyday+Things+Don+Norman+revised" class="book-link" target="_blank" rel="noopener"><em>The Design of Everyday Things</em> by Don Norman (revised ed. 2013)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Designing+Mind+in+Mind+Jeff+Johnson+3rd" class="book-link" target="_blank" rel="noopener"><em>Designing with the Mind in Mind</em> by Jeff Johnson (3rd ed. 2020)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Measuring+User+Experience+Tullis+Albert" class="book-link" target="_blank" rel="noopener"><em>Measuring the User Experience</em> by Tom Tullis & Bill Albert (2nd ed. 2013)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -932,6 +1045,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams select a compute-intensive application, produce a profiled serial baseline, and progressively parallelize it across shared memory, distributed memory, and GPU hardware. The final deliverable is a Slurm-managed multi-node pipeline integrating OpenMP, MPI, and CUDA, backed by a benchmark report with roofline-model analysis and scalability curves for thread count, process count, and GPU count.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Programming+Massively+Parallel+Processors+Hwu+Kirk+4th" class="book-link" target="_blank" rel="noopener"><em>Programming Massively Parallel Processors</em> by Wen-mei Hwu, David Kirk & Izzat El Hajj (4th ed. 2022)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Parallel+Programming+MPI+OpenMP+Michael+Quinn" class="book-link" target="_blank" rel="noopener"><em>Parallel Programming in C with MPI and OpenMP</em> by Michael J. Quinn (2003)</a></li>
+              <li><a href="https://www.amazon.com/s?k=CUDA+Programming+Developer+Guide+GPU+Cook" class="book-link" target="_blank" rel="noopener"><em>CUDA Programming: A Developer's Guide to Parallel Computing with GPUs</em> by Shane Cook (2012)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -986,6 +1109,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build a compressed, searchable corpus over a multi-gigabyte real-world text collection. The system evolves from a raw inverted index into a full hybrid retrieval pipeline, adding BM25 ranking, posting-list and corpus-level compression, a dense FAISS HNSW index over SentenceTransformer embeddings, and a REST API with hybrid BM25-dense ranking using reciprocal rank fusion. The final deliverable includes source code, a live demo, latency-recall benchmarks, and an engineering report analyzing compression tradeoffs and retrieval quality.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Introduction+Information+Retrieval+Manning+Raghavan+Schutze" class="book-link" target="_blank" rel="noopener"><em>Introduction to Information Retrieval</em> by Manning, Raghavan & Schutze (2008)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Relevant+Search+Turnbull+Berryman+Manning" class="book-link" target="_blank" rel="noopener"><em>Relevant Search</em> by Doug Turnbull & John Berryman (2016)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Search+Engines+Information+Retrieval+Practice+Croft" class="book-link" target="_blank" rel="noopener"><em>Search Engines: Information Retrieval in Practice</em> by Croft, Metzler & Strohman (2009)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -1054,6 +1187,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams build a production-ready tool-using LLM agent: a vector knowledge base with chunking and retrieval, a ReAct planning loop calling real tools, safety guardrails, and a systematic evaluation suite with LLM-as-judge scoring, grounded in a chosen domain problem.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Natural+Language+Processing+Transformers+Tunstall+Wolf" class="book-link" target="_blank" rel="noopener"><em>Natural Language Processing with Transformers</em> by Tunstall, von Werra & Wolf (2022)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Build+Large+Language+Model+From+Scratch+Raschka" class="book-link" target="_blank" rel="noopener"><em>Build a Large Language Model (From Scratch)</em> by Sebastian Raschka (2024)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Prompt+Engineering+LLMs+Berryman+Ziegler" class="book-link" target="_blank" rel="noopener"><em>Prompt Engineering for LLMs</em> by John Berryman & Albert Ziegler (2024)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -1103,6 +1246,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build a forecasting-and-control pipeline on a chosen domain: a neural forecaster predicts future states, and a deep RL agent trained with DQN and PPO uses those predictions to control a simulated system; benchmarks compare classical and learned baselines.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Time+Series+Forecasting+Python+Peixeiro+Manning" class="book-link" target="_blank" rel="noopener"><em>Time Series Forecasting in Python</em> by Marco Peixeiro (2022)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Deep+Reinforcement+Learning+Hands+On+Lapan+2nd" class="book-link" target="_blank" rel="noopener"><em>Deep Reinforcement Learning Hands-On</em> by Maxim Lapan (2nd ed. 2020)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Forecasting+Principles+Practice+Hyndman+Athanasopoulos" class="book-link" target="_blank" rel="noopener"><em>Forecasting: Principles and Practice</em> by Rob Hyndman & George Athanasopoulos (3rd ed. 2021)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -1156,6 +1309,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams build an end-to-end computer-vision pipeline on a chosen dataset: starting with a fine-tuned residual classifier, extending to an object detector, and culminating in a Mask R-CNN instance-segmentation system with mAP and IoU evaluation and error analysis.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Deep+Learning+Vision+Systems+Elgendy+Manning" class="book-link" target="_blank" rel="noopener"><em>Deep Learning for Vision Systems</em> by Mohamed Elgendy (2020)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Programming+PyTorch+Deep+Learning+Ian+Pointer" class="book-link" target="_blank" rel="noopener"><em>Programming PyTorch for Deep Learning</em> by Ian Pointer (2019)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Computer+Vision+Algorithms+Applications+Szeliski+2nd" class="book-link" target="_blank" rel="noopener"><em>Computer Vision: Algorithms and Applications</em> by Richard Szeliski (2nd ed. 2022)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -1205,6 +1368,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build a scalable training and serving pipeline: data and pipeline parallelism with PyTorch Distributed, ZeRO sharding with DeepSpeed for a large model, streaming feature ingestion via Kafka, and a throughput and cost benchmark comparing parallelism strategies.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Learning+Spark+Lightning+Fast+Data+Analytics+Damji+2nd" class="book-link" target="_blank" rel="noopener"><em>Learning Spark: Lightning-Fast Data Analytics</em> by Jules Damji et al. (2nd ed. 2020)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Kafka+Definitive+Guide+Shapira+Palino+2nd" class="book-link" target="_blank" rel="noopener"><em>Kafka: The Definitive Guide</em> by Gwen Shapira et al. (2nd ed. 2021)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Distributed+Machine+Learning+Patterns+Yuan+Tang" class="book-link" target="_blank" rel="noopener"><em>Distributed Machine Learning Patterns</em> by Yuan Tang (2023)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -1258,6 +1431,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams implement and benchmark all four generative paradigms (VAE, GAN, autoregressive, diffusion) on a shared data modality, add conditional generation with classifier-free guidance, and compare architectures with FID and precision-recall, including diagnostic analysis of failure modes.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Generative+Deep+Learning+David+Foster+2nd+OReilly" class="book-link" target="_blank" rel="noopener"><em>Generative Deep Learning</em> by David Foster (2nd ed. 2023)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Hands+On+Generative+AI+Transformers+Diffusion+Sanseviero" class="book-link" target="_blank" rel="noopener"><em>Hands-On Generative AI with Transformers and Diffusion Models</em> by Sanseviero, Cuenca et al. (2024)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Deep+Generative+Modeling+Tomczak+Springer" class="book-link" target="_blank" rel="noopener"><em>Deep Generative Modeling</em> by Jakub Tomczak (2022)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -1307,6 +1490,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build one autonomous embodied agent in simulation, layering perception, probabilistic estimation, motion planning, and feedback control into a full perceive-plan-act stack. The project advances from classical estimation and planning into learned control and a sim-to-real robustness study.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Probabilistic+Robotics+Thrun+Burgard+Fox+MIT" class="book-link" target="_blank" rel="noopener"><em>Probabilistic Robotics</em> by Sebastian Thrun, Wolfram Burgard & Dieter Fox (2005)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Modern+Robotics+Mechanics+Planning+Control+Lynch+Park" class="book-link" target="_blank" rel="noopener"><em>Modern Robotics: Mechanics, Planning, and Control</em> by Kevin Lynch & Frank Park (2017)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Programming+Robots+ROS+Quigley+Gerkey+Smart" class="book-link" target="_blank" rel="noopener"><em>Programming Robots with ROS</em> by Morgan Quigley, Brian Gerkey & William Smart (2015)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -1363,6 +1556,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams choose a real decision problem with measurable uncertainty (medical diagnosis, fault detection, resource allocation, or autonomous agent planning), model it with at least two complementary formalisms (e.g., Bayesian network for diagnosis combined with a fuzzy controller for action selection), implement inference and decision pipelines, validate against ground-truth data, and present a comparative analysis of model trade-offs.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Probabilistic+Graphical+Models+Koller+Friedman+MIT" class="book-link" target="_blank" rel="noopener"><em>Probabilistic Graphical Models</em> by Daphne Koller & Nir Friedman (2009)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Decision+Making+Under+Uncertainty+Kochenderfer+Wheeler" class="book-link" target="_blank" rel="noopener"><em>Decision Making Under Uncertainty</em> by Mykel Kochenderfer, Tim Wheeler & Kyle Wray (2022)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Fuzzy+Logic+Engineering+Applications+Timothy+Ross+4th" class="book-link" target="_blank" rel="noopener"><em>Fuzzy Logic with Engineering Applications</em> by Timothy Ross (4th ed. 2017)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -1431,6 +1634,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams build a cryptographic library from scratch: big-integer arithmetic, symmetric and asymmetric primitives, an authenticated key exchange protocol, and a hybrid post-quantum KEM. Each component is unit-tested against known-answer test vectors.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Serious+Cryptography+Jean+Philippe+Aumasson+No+Starch" class="book-link" target="_blank" rel="noopener"><em>Serious Cryptography</em> by Jean-Philippe Aumasson (2017)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Cryptography+Engineering+Ferguson+Schneier+Kohno" class="book-link" target="_blank" rel="noopener"><em>Cryptography Engineering</em> by Niels Ferguson, Bruce Schneier & Tadayoshi Kohno (2010)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Introduction+Modern+Cryptography+Katz+Lindell+3rd" class="book-link" target="_blank" rel="noopener"><em>Introduction to Modern Cryptography</em> by Jonathan Katz & Yehuda Lindell (3rd ed. 2020)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -1480,6 +1693,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build a progressively hardened virtual network lab: a TLS endpoint with certificate pinning, nftables and pfSense microsegmentation, Suricata and Zeek IDS sensors tuned with custom rules, IPsec and WireGuard tunnels, and a Wazuh SIEM correlating all security events with alerting.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Practice+Network+Security+Monitoring+Bejtlich+No+Starch" class="book-link" target="_blank" rel="noopener"><em>The Practice of Network Security Monitoring</em> by Richard Bejtlich (2013)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Zero+Trust+Networks+Gilman+Barth+OReilly" class="book-link" target="_blank" rel="noopener"><em>Zero Trust Networks</em> by Evan Gilman & Doug Barth (2017)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Network+Security+Assessment+Chris+McNab+3rd+OReilly" class="book-link" target="_blank" rel="noopener"><em>Network Security Assessment</em> by Chris McNab (3rd ed. 2016)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -1533,6 +1756,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams perform a complete hardware security assessment of a target embedded device: interface discovery with a logic analyzer, firmware extraction and reverse engineering with Ghidra, and an AES key extraction via differential power analysis on ChipWhisperer, documented as a structured assessment report.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Hardware+Hacker+Andrew+Huang+bunnie+No+Starch" class="book-link" target="_blank" rel="noopener"><em>The Hardware Hacker</em> by Andrew 'bunnie' Huang (2017)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Practical+Hardware+Pentesting+Jean+Georges+Valle+2nd" class="book-link" target="_blank" rel="noopener"><em>Practical Hardware Pentesting</em> by Jean-Georges Valle (2nd ed. 2023)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Hardware+Hacking+Handbook+Woudenberg+OFlynn+No+Starch" class="book-link" target="_blank" rel="noopener"><em>The Hardware Hacking Handbook</em> by Jasper van Woudenberg & Colin O'Flynn (2021)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -1584,6 +1817,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams author a complete security governance program for a case-study organization: SP 800-30 risk register, CSF 2.0 target profile with gap analysis, ISO/IEC 27001 ISMS with statement of applicability, tailored SP 800-53 control baseline, and a vendor risk assessment process.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Cybersecurity+Risk+Management+Brumfield+Haugli+Wiley" class="book-link" target="_blank" rel="noopener"><em>Cybersecurity Risk Management</em> by Cynthia Brumfield & Brian Haugli (2022)</a></li>
+              <li><a href="https://www.amazon.com/s?k=CISO+Desk+Reference+Guide+Bonney+Hayslip+Stamper" class="book-link" target="_blank" rel="noopener"><em>CISO Desk Reference Guide</em> by Bill Bonney, Gary Hayslip & Matt Stamper (2016)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Information+Security+Risk+Assessment+Toolkit+Talabis+Martin" class="book-link" target="_blank" rel="noopener"><em>Information Security Risk Assessment Toolkit</em> by Mark Talabis & Jason Martin (2012)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -1633,6 +1876,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build a complete decentralized system from scratch: a PBFT consensus layer and PoW blockchain in Python, then Solidity smart contracts with ERC-20/ERC-721 token flows deployed to a testnet, and a DApp front end backed by IPFS for metadata storage.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Mastering+Bitcoin+Andreas+Antonopoulos+3rd+OReilly" class="book-link" target="_blank" rel="noopener"><em>Mastering Bitcoin</em> by Andreas Antonopoulos (3rd ed. 2023)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Mastering+Ethereum+Antonopoulos+Wood+OReilly" class="book-link" target="_blank" rel="noopener"><em>Mastering Ethereum</em> by Andreas Antonopoulos & Gavin Wood (2018)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Ethereum+Smart+Contract+Development+Solidity+Gavin+Chen" class="book-link" target="_blank" rel="noopener"><em>Ethereum Smart Contract Development in Solidity</em> by Gavin Chen (2020)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -1701,6 +1954,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams select a real combinatorial problem, formulate it as QUBO and Ising, then implement and benchmark three solvers (QAOA via Qiskit/PennyLane, D-Wave quantum annealing, and a quantum-inspired classical heuristic), with solution quality and runtime comparisons.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Quantum+Computing+Applied+Approach+Jack+Hidary+2nd+Springer" class="book-link" target="_blank" rel="noopener"><em>Quantum Computing: An Applied Approach</em> by Jack Hidary (2nd ed. 2021)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Programming+Quantum+Computers+Johnston+Harrigan+Gimeno" class="book-link" target="_blank" rel="noopener"><em>Programming Quantum Computers</em> by Eric Johnston, Nic Harrigan & Mercedes Gimeno-Segovia (2019)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Quantum+Computation+Quantum+Information+Nielsen+Chuang" class="book-link" target="_blank" rel="noopener"><em>Quantum Computation and Quantum Information</em> by Michael Nielsen & Isaac Chuang (10th anniv. ed. 2010)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -1750,6 +2013,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build a reproducible quantitative research pipeline: mean-variance and risk-parity optimized portfolios with CVXPY, ML-based signals (momentum, factor models) added to the allocation, and a cost-aware trading strategy rigorously backtested under purged cross-validation with Sharpe ratio and max drawdown analysis.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Advances+Financial+Machine+Learning+Lopez+de+Prado+Wiley" class="book-link" target="_blank" rel="noopener"><em>Advances in Financial Machine Learning</em> by Marcos Lopez de Prado (2018)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Machine+Learning+Asset+Managers+Lopez+de+Prado+Cambridge" class="book-link" target="_blank" rel="noopener"><em>Machine Learning for Asset Managers</em> by Marcos Lopez de Prado (2020)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Quantitative+Portfolio+Management+Michael+Isichenko+Wiley" class="book-link" target="_blank" rel="noopener"><em>Quantitative Portfolio Management</em> by Michael Isichenko (2021)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -1818,6 +2091,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams build a real-time 3D scene with a physically based shading pipeline, cascaded shadow maps, image-based lighting, and frustum culling, profiled with RenderDoc and Nsight to diagnose GPU bottlenecks and verified to sustain a target frame rate under complexity constraints.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Real+Time+Rendering+Akenine+Moller+Haines+Hoffman+4th" class="book-link" target="_blank" rel="noopener"><em>Real-Time Rendering</em> by Akenine-Moller, Haines & Hoffman (4th ed. 2018)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Physically+Based+Rendering+Pharr+Jakob+Humphreys+4th" class="book-link" target="_blank" rel="noopener"><em>Physically Based Rendering: From Theory to Implementation</em> by Pharr, Jakob & Humphreys (4th ed. 2023)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Game+Engine+Architecture+Jason+Gregory+3rd+CRC" class="book-link" target="_blank" rel="noopener"><em>Game Engine Architecture</em> by Jason Gregory (3rd ed. 2018)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -1867,6 +2150,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build a cross-device spatial computing application: hand-tracked XR interactions on OpenXR, SLAM-based inside-out tracking with plane detection and persistent spatial anchors, and a comfort-tuned locomotion system validated against cybersickness criteria on target hardware.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Augmented+Reality+Principles+Practice+Schmalstieg+Hollerer" class="book-link" target="_blank" rel="noopener"><em>Augmented Reality: Principles and Practice</em> by Dieter Schmalstieg & Tobias Hollerer (2016)</a></li>
+              <li><a href="https://www.amazon.com/s?k=VR+Book+Human+Centered+Design+Virtual+Reality+Jerald" class="book-link" target="_blank" rel="noopener"><em>The VR Book: Human-Centered Design for Virtual Reality</em> by Jason Jerald (2015)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Learning+Virtual+Reality+Tony+Parisi+OReilly" class="book-link" target="_blank" rel="noopener"><em>Learning Virtual Reality</em> by Tony Parisi (2015)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -1922,6 +2215,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Three-milestone team project: spatial data model and algorithmic plan (week 5, 20%), working GIS prototype with validated spatial queries and preliminary results (week 8, 30%), and a complete GIS product or analysis with final maps, computational-geometry explanation, performance evaluation, and oral defense (week 13, 50%).</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Computational+Geometry+Algorithms+Applications+de+Berg+3rd" class="book-link" target="_blank" rel="noopener"><em>Computational Geometry: Algorithms and Applications</em> by Mark de Berg et al. (3rd ed. 2008)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Geographic+Information+Systems+Science+Longley+4th+Wiley" class="book-link" target="_blank" rel="noopener"><em>Geographic Information Systems and Science</em> by Paul Longley et al. (4th ed. 2015)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Python+Geospatial+Development+Erik+Westra+Packt+3rd" class="book-link" target="_blank" rel="noopener"><em>Python Geospatial Development</em> by Erik Westra (3rd ed. 2016)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -1975,6 +2278,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams select a physical system spanning at least two domains (e.g., a robotic arm operating in a game-physics environment, or an engineering structure with a live digital twin), implement the simulation pipeline end to end, validate fidelity against a ground-truth baseline or real sensor data, and present scalability, accuracy, and real-time performance results.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Game+Physics+David+Eberly+2nd+Morgan+Kaufmann" class="book-link" target="_blank" rel="noopener"><em>Game Physics</em> by David H. Eberly (2nd ed. 2010)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Real+Time+Collision+Detection+Christer+Ericson+Morgan" class="book-link" target="_blank" rel="noopener"><em>Real-Time Collision Detection</em> by Christer Ericson (2004)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Physics+Based+Animation+Erleben+Sporring+Henriksen" class="book-link" target="_blank" rel="noopener"><em>Physics-Based Animation</em> by Kenny Erleben et al. (2005)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -2043,6 +2356,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams build a multi-sensor fusion pipeline: simulated radar, EO-IR, and IMU measurements are fused with Kalman, UKF, and particle filters, multi-target data association (JPDA/MHT) is applied to maintain track identity, and track quality is validated against ground-truth trajectories with OSPA and RMSE metrics.</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Optimal+State+Estimation+Dan+Simon+Wiley" class="book-link" target="_blank" rel="noopener"><em>Optimal State Estimation</em> by Dan Simon (2006)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Probabilistic+Robotics+Thrun+Burgard+Fox+MIT" class="book-link" target="_blank" rel="noopener"><em>Probabilistic Robotics</em> by Sebastian Thrun, Wolfram Burgard & Dieter Fox (2005)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Introduction+Random+Signals+Applied+Kalman+Filtering+Brown+Hwang" class="book-link" target="_blank" rel="noopener"><em>Introduction to Random Signals and Applied Kalman Filtering</em> by Brown & Hwang (4th ed. 2012)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -2092,6 +2415,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams build a mission-critical real-time control system on FreeRTOS with ARM Cortex-M: a task set with proven RM schedulability, priority-inheritance mutexes, triple-modular redundancy with voting logic, and DO-178C-style traceability linking every requirement to code to test evidence.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Real+Time+Systems+Design+Principles+Distributed+Embedded+Kopetz+2nd" class="book-link" target="_blank" rel="noopener"><em>Real-Time Systems: Design Principles for Distributed Embedded Applications</em> by Hermann Kopetz (2nd ed. 2011)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Hard+Real+Time+Computing+Systems+Giorgio+Buttazzo+3rd+Springer" class="book-link" target="_blank" rel="noopener"><em>Hard Real-Time Computing Systems</em> by Giorgio Buttazzo (3rd ed. 2011)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Real+Time+Concepts+Embedded+Systems+Qing+Li+Caroline+Yao" class="book-link" target="_blank" rel="noopener"><em>Real-Time Concepts for Embedded Systems</em> by Qing Li & Caroline Yao (2003)</a></li>
+            </ul>
           </div>
         </details>
       </div>
@@ -2145,6 +2478,16 @@ details>summary::-webkit-details-marker{display:none}
             <p class="project-text">Teams design and implement one digital subsystem on FPGA across the term: a block diagram and FSM specification (week 5), core HDL modules running on the FPGA board with a timing summary (week 8), and a complete verified system with timing closure, a self-checking testbench, and a SystemVerilog assertion suite defended in an oral presentation (week 13).</p>
           </div>
         </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Digital+Design+Computer+Architecture+ARM+Edition+Harris" class="book-link" target="_blank" rel="noopener"><em>Digital Design and Computer Architecture: ARM Edition</em> by David Harris & Sarah Harris (2015)</a></li>
+              <li><a href="https://www.amazon.com/s?k=FPGA+Prototyping+SystemVerilog+Examples+Pong+Chu+Wiley" class="book-link" target="_blank" rel="noopener"><em>FPGA Prototyping by SystemVerilog Examples</em> by Pong P. Chu (2011)</a></li>
+              <li><a href="https://www.amazon.com/s?k=RTL+Hardware+Design+VHDL+Pong+Chu+Wiley" class="book-link" target="_blank" rel="noopener"><em>RTL Hardware Design Using VHDL</em> by Pong P. Chu (2006)</a></li>
+            </ul>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -2194,6 +2537,16 @@ details>summary::-webkit-details-marker{display:none}
           <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
           <div class="acc-body">
             <p class="project-text">Teams design and build one audio or speech intelligent system across the term: a dataset, feature pipeline, and architecture specification (week 5), a working baseline system with evaluation metrics (week 8), and a complete integrated system with a real-time streaming pipeline, latency profiling, and error analysis defended in an oral presentation (week 13).</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">&#9671;</span>Textbooks<span class="acc-chevron">&#8250;</span></summary>
+          <div class="acc-body">
+            <ul class="books-list">
+              <li><a href="https://www.amazon.com/s?k=Speech+Language+Processing+Jurafsky+Martin+3rd+edition" class="book-link" target="_blank" rel="noopener"><em>Speech and Language Processing</em> by Daniel Jurafsky & James Martin (3rd ed. 2023)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Fundamentals+Music+Processing+Meinard+Muller+Springer+2nd" class="book-link" target="_blank" rel="noopener"><em>Fundamentals of Music Processing</em> by Meinard Muller (2nd ed. 2021)</a></li>
+              <li><a href="https://www.amazon.com/s?k=Digital+Audio+Signal+Processing+Udo+Zolzer+2nd+Wiley" class="book-link" target="_blank" rel="noopener"><em>Digital Audio Signal Processing</em> by Udo Zolzer (2nd ed. 2008)</a></li>
+            </ul>
           </div>
         </details>
       </div>
