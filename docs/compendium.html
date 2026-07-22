@@ -937,6 +937,60 @@ details>summary::-webkit-details-marker{display:none}
       </div>
     </article>
 
+    <!-- SE12 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">SE12</span><h3 class="card-title"><a href="courses/SE12.html">Modern Storage and Information Retrieval Systems</a></h3></div>
+        <p class="card-tagline">Build a compressed full-text search engine with inverted indexes and BM25, then extend it with dense vector retrieval for hybrid semantic search</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Designed and implemented a compressed full-text search engine: tokenized and indexed a multi-gigabyte text corpus into an inverted index with variable-byte and PForDelta posting compression, implemented TF-IDF and BM25 ranking with efficient DAAT traversal, encoded the static corpus with Huffman and Brotli to reduce storage footprint, added a dense retrieval layer using SentenceTransformers and a FAISS HNSW index for semantic search, and fused lexical and dense scores into a hybrid pipeline exposed through a REST API with sub-100 ms latency on a commodity machine.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Construct and query an inverted index from a large text corpus, including posting list compression with variable-byte and PForDelta encoding.</li>
+              <li><span class="out-num">02</span>Implement BM25 ranking and compare it against TF-IDF on labeled relevance sets using NDCG and MAP.</li>
+              <li><span class="out-num">03</span>Build and benchmark a FAISS HNSW approximate nearest-neighbour index over dense embeddings and combine it with BM25 using reciprocal rank fusion.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Shannon entropy and the source coding theorem</li>
+              <li>Inverted index model: postings, term frequency, document frequency</li>
+              <li>TF-IDF and Okapi BM25 probabilistic ranking</li>
+              <li>Huffman coding, LZ77/LZ78, arithmetic coding</li>
+              <li>Variable-byte and PForDelta posting list compression</li>
+              <li>DAAT and TAAT query evaluation with skip pointers</li>
+              <li>HNSW graph construction and greedy layer search</li>
+              <li>Bi-encoder dense retrieval and contrastive training</li>
+              <li>Reciprocal rank fusion for hybrid retrieval</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Elasticsearch</span><span class="tool-tag">Apache Lucene</span><span class="tool-tag">FAISS</span><span class="tool-tag">HNSW</span><span class="tool-tag">SentenceTransformers</span><span class="tool-tag">zlib</span><span class="tool-tag">Brotli</span><span class="tool-tag">LZ4</span><span class="tool-tag">Zstandard</span><span class="tool-tag">FastAPI</span><span class="tool-tag">Python</span><span class="tool-tag">NumPy</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a compressed, searchable corpus over a multi-gigabyte real-world text collection. The system evolves from a raw inverted index into a full hybrid retrieval pipeline, adding BM25 ranking, posting-list and corpus-level compression, a dense FAISS HNSW index over SentenceTransformer embeddings, and a REST API with hybrid BM25-dense ranking using reciprocal rank fusion. The final deliverable includes source code, a live demo, latency-recall benchmarks, and an engineering report analyzing compression tradeoffs and retrieval quality.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
   </div><!-- /course-grid -->
 </section>
 
