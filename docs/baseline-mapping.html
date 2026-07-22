@@ -87,6 +87,7 @@ a{color:inherit;text-decoration:none}
 .td-code{font-family:var(--mono);font-size:11px;font-weight:700;white-space:nowrap}
 .td-new{font-size:13px;color:var(--text);font-weight:500}
 .td-existing{font-size:12.5px;color:var(--sub);line-height:1.45}
+.td-outcome{font-size:12.5px;color:var(--text);font-style:italic;line-height:1.45;max-width:280px}
 .td-num{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap;margin-right:4px}
 
 .badge{display:inline-flex;align-items:center;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:4px;white-space:nowrap}
@@ -118,14 +119,14 @@ a{color:inherit;text-decoration:none}
 <header class="hero">
   <p class="hero-eyebrow">Holon Institute of Technology · Advanced CS Electives</p>
   <h1>Baseline Course Mapping</h1>
-  <p class="hero-sub">How each of the 28 advanced elective courses relates to existing HIT baseline courses.</p>
+  <p class="hero-sub">How each of the 30 advanced elective courses relates to existing HIT baseline courses.</p>
 </header>
 
 <main class="page-body">
   <section class="panel">
     <div class="panel-hd">
       <h2>New Course → Existing HIT Course</h2>
-      <span class="panel-sub">28 courses · source: <a href="https://hitspecs.apartsin.com/" target="_blank" rel="noopener" style="color:var(--sub);text-decoration:underline;text-underline-offset:3px">hitspecs.apartsin.com</a></span>
+      <span class="panel-sub">30 courses · source: <a href="https://hitspecs.apartsin.com/" target="_blank" rel="noopener" style="color:var(--sub);text-decoration:underline;text-underline-offset:3px">hitspecs.apartsin.com</a></span>
     </div>
 
     <div class="table-scroll">
@@ -135,6 +136,7 @@ a{color:inherit;text-decoration:none}
             <th style="width:52px">Code</th>
             <th style="min-width:220px">New Course</th>
             <th style="min-width:340px">Existing or Partially Overlapping</th>
+            <th style="min-width:280px">Learning Outcome</th>
           </tr>
         </thead>
         <tbody>
@@ -143,17 +145,20 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-se">SE1</td>
             <td class="td-new">Cloud Computing &amp; Cloud-Native Platforms</td>
             <td class="td-existing"><span class="td-num">62213</span><span dir="rtl">AWS עם Serverless מבוא לענן ולפיתוח</span><br>Introduction to Cloud and Development with AWS Serverless <em>(Yogev Shani)</em></td>
+            <td class="td-outcome">Design and deploy a production microservices system with containers and CI/CD</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE2</td>
             <td class="td-new">Secure &amp; Reliable Software Development</td>
             <td class="td-existing"><span class="td-num">64444</span><span dir="rtl">בדיקות תוכנה</span><br>Software Testing <em>(David Tobias)</em></td>
+            <td class="td-outcome">Architect, test, and validate a quality-assured software system</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE3</td>
             <td class="td-new">Modern Front-End Web Development</td>
             <td class="td-existing"><span class="td-num">65364</span><span dir="rtl">פיתוח צד לקוח</span><br>Client-Side Development <em>(Michael Haim)</em><br>
               <span class="td-num">65200</span><span dir="rtl">תכנות בסביבות האינטרנט</span><br>Web Programming Environments <em>(Nissim Barmi)</em></td>
+            <td class="td-outcome">Build and deploy a full-stack cloud-native web application</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE4</td>
@@ -162,11 +167,13 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">64410</span><span dir="rtl">פיתוח מערכות צד שרת בסביבת קוד פתוח</span><br>Server-Side Systems Development Open Source <em>(Ofer Vald)</em><br>
               <span class="td-num">65356</span><span dir="rtl">פיתוח צד שרת אסינכרוני</span><br>Asynchronous Server-Side Development <em>(Michael Haim)</em>
             </td>
+            <td class="td-outcome">Design and implement scalable server-side APIs across multiple backend frameworks</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE5</td>
             <td class="td-new">Engineering of AI Systems</td>
             <td class="td-existing"><span class="td-num">65353</span><span dir="rtl">מבוא ל-DevOps</span><br>Introduction to DevOps <em>(Moshe Mamia)</em></td>
+            <td class="td-outcome">Automate and operate a complete DevSecOps pipeline with infrastructure-as-code</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE6</td>
@@ -177,11 +184,13 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65352</span><span dir="rtl">פיתוח צד לקוח בסביבת אנדרואיד 2</span><br>Android Client-Side Development 2 <em>(Effi Propes)</em><br>
               <span class="td-num">67018</span><span dir="rtl">פיתוח אפליקציות אנדרואיד בשפת קוטלין</span><br>Android Application Development with Kotlin <em>(Eran Katzav)</em>
             </td>
+            <td class="td-outcome">Build and publish a cross-platform mobile application using modern frameworks</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE7</td>
             <td class="td-new">Design of AI-based &amp; Data-Intensive Systems</td>
             <td class="td-existing"><span class="td-num">64409</span><span dir="rtl">כריית נתונים</span><br>Data Mining <em>(Dr. Abraham Yosipof)</em></td>
+            <td class="td-outcome">Design, train, and deploy an end-to-end data and ML pipeline</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE8</td>
@@ -190,6 +199,7 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65313</span><span dir="rtl">C# תכנות מונחה עצמים בסביבת דוט-נט ושפת</span><br>Object-Oriented Programming in .NET with C# <em>(Guy Ronen)</em><br>
               <span class="td-num">64332</span><span dir="rtl">תכנות יישומי באמצעות תבניות עיצוב</span><br>Applied Programming with Design Patterns <em>(Guy Ronen)</em>
             </td>
+            <td class="td-outcome">Build enterprise-grade .NET applications using advanced C# design patterns</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE9</td>
@@ -197,12 +207,23 @@ a{color:inherit;text-decoration:none}
             <td class="td-existing">
               <span class="td-num">65345</span><span dir="rtl">תכנות תחרותי</span><br>Competitive Programming <em>(Yuval Meir)</em>
             </td>
+            <td class="td-outcome">Solve and optimize complex algorithmic problems under competitive constraints</td>
+          </tr>
+          <tr>
+            <td class="td-code c-se">SE10</td>
+            <td class="td-new">Human-Machine Interaction</td>
+            <td class="td-existing">
+              <span class="td-num">67028</span>Human-Smart AI Interaction Workshop <em>(Eran Ahronson)</em><br>
+              <span class="td-num">65346</span><span dir="rtl">UI ממשקי אדם מחשב</span><br>Human-Computer Interfaces (HCI/UI) <em>(Dr. Nava Shaked)</em>
+            </td>
+            <td class="td-outcome">Design, prototype, and evaluate a multimodal human-machine interface</td>
           </tr>
           <!-- CY -->
           <tr class="group-start">
             <td class="td-code c-cy">CY1</td>
             <td class="td-new">Applied Cryptography</td>
             <td class="td-existing"><span class="td-num">68012</span><span dir="rtl">מבוא יישומי לקריפטוגרפיה מודרנית</span><br>Applied Introduction to Modern Cryptography <em>(Zeev Geyzel)</em></td>
+            <td class="td-outcome">Implement and apply modern cryptographic protocols in real-world systems</td>
           </tr>
           <tr>
             <td class="td-code c-cy">CY2</td>
@@ -213,11 +234,13 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65362</span><span dir="rtl">היבטים מעשיים באבטחת סייבר</span><br>Practical Aspects of Cybersecurity <em>(Adrian Shpeler)</em><br>
               <span class="td-num">62206</span><span dir="rtl">מבוא לאבטחת סייבר מונחית בינה מלאכותית</span><br>Introduction to AI-Guided Cybersecurity <em>(Vyacheslav Napdov)</em>
             </td>
+            <td class="td-outcome">Architect, audit, and harden secure networked systems against real-world attacks</td>
           </tr>
           <tr>
             <td class="td-code c-cy">CY3</td>
             <td class="td-new">Hardware &amp; Embedded Systems Security</td>
             <td class="td-existing"><span class="td-num">65343</span><span dir="rtl">הנדסה לאחור וניתוח תוכנות זדוניות</span><br>Reverse Engineering and Malware Analysis <em>(Shurna Preyer)</em></td>
+            <td class="td-outcome">Reverse-engineer, exploit, and secure embedded hardware and firmware</td>
           </tr>
           <tr>
             <td class="td-code c-cy">CY4</td>
@@ -226,22 +249,26 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65362</span><span dir="rtl">היבטים מעשיים באבטחת סייבר</span><br>Practical Aspects of Cybersecurity <em>(Adrian Shpeler)</em><br>
               <span class="td-num">62206</span><span dir="rtl">מבוא לאבטחת סייבר מונחית בינה מלאכותית</span><br>Introduction to AI-Guided Cybersecurity <em>(Vyacheslav Napdov)</em>
             </td>
+            <td class="td-outcome">Assess, document, and manage organizational cyber risk and compliance frameworks</td>
           </tr>
           <tr>
             <td class="td-code c-cy">CY5</td>
             <td class="td-new">Blockchain and Decentralized Cryptographic Systems</td>
             <td class="td-existing"><span class="td-num">67007</span><span dir="rtl">בלוקצ'יין: חזון ופרקטיקה</span><br>Blockchain: Vision and Practice <em>(Michael Bershadsky)</em></td>
+            <td class="td-outcome">Design and deploy a blockchain-secured distributed ledger application</td>
           </tr>
           <!-- AI -->
           <tr class="group-start">
             <td class="td-code c-ai">AI1</td>
             <td class="td-new">Language AI: LLMs and Agentic Systems</td>
             <td class="td-existing"><span class="td-num">65339</span><span dir="rtl">עיבוד שפה טבעית (דיבור וטקסט) N.L.P</span><br>LLM &amp; Agents NLP <em>(Dr. Alexander Apartsin)</em></td>
+            <td class="td-outcome">Build and deploy LLM-powered applications and multi-step agentic systems</td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI2</td>
             <td class="td-new">Temporal AI: Time Series &amp; Sequential Decision Making</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td class="td-outcome">Model, forecast, and act on temporal data using time-series and RL methods</td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI3</td>
@@ -252,16 +279,19 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">62120</span><span dir="rtl">אלגוריתמים במולטימדיה ולמידת מכונה בסביבת פייתון</span><br>Algorithms in Multimedia and Machine Learning with Python <em>(Idan Tobis)</em><br>
               <span class="td-num">65361</span><span dir="rtl">אלגוריתמים בסיסיים של בינה מלאכותית ויישומים ברפואה דיגיטלית</span><br>Fundamental AI Algorithms and Applications in Digital Medicine <em>(Prof. Eugene Levner)</em>
             </td>
+            <td class="td-outcome">Implement computer vision and multimedia AI pipelines on real-world datasets</td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI4</td>
             <td class="td-new">Scalable AI: Big-Data Algorithms</td>
             <td class="td-existing"><span class="td-num">64409</span><span dir="rtl">כריית נתונים</span><br>Data Mining <em>(Dr. Abraham Yosipof)</em></td>
+            <td class="td-outcome">Design and deploy scalable data engineering and big-data analytics systems</td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI5</td>
             <td class="td-new">Generative AI: Deep Generative Models</td>
             <td class="td-existing"><span class="td-num">67030</span><span dir="rtl">מודלים עמוקים לבינה מלאכותית יוצרת</span><br>Deep Models for Generative AI <em>(Dr. Alexander Apartsin)</em></td>
+            <td class="td-outcome">Design, train, and evaluate deep generative models for images, text, and audio</td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI6</td>
@@ -271,44 +301,52 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">62304</span><span dir="rtl">פיתוח תוכנה לאינטראקציה בין אדם ורובוט הומנואיד</span><br>Software Development for Human-Humanoid Robot Interaction <em>(Idan Tobis)</em><br>
               <span class="td-num">67006</span><span dir="rtl">פיתוח תוכנה עבור רכב אוטונומי אינטליגנטי</span><br>Software Development for Intelligent Autonomous Vehicles <em>(Dr. Vadim Talis)</em>
             </td>
+            <td class="td-outcome">Develop and test software for intelligent autonomous robotic platforms</td>
           </tr>
           <!-- QCF -->
           <tr class="group-start">
             <td class="td-code c-qcf">QCF1</td>
             <td class="td-new">Quantum Optimization</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td class="td-outcome">Implement and benchmark quantum optimization algorithms on real quantum hardware</td>
           </tr>
           <tr>
             <td class="td-code c-qcf">QCF2</td>
             <td class="td-new">AI &amp; Optimization for Finance</td>
             <td class="td-existing"><span class="td-num">67033</span><span dir="rtl">אלגוריתמים נומריים ויישומיהם</span><br>Numerical Algorithms and Their Applications <em>(Zeev Geyzel)</em></td>
+            <td class="td-outcome">Model and optimize financial portfolios using quantum and classical methods</td>
           </tr>
           <!-- GM -->
           <tr class="group-start">
             <td class="td-code c-gm">GM1</td>
             <td class="td-new">Computer Graphics</td>
             <td class="td-existing"><span class="td-num">65235</span><span dir="rtl">גרפיקה ממוחשבת</span><br>Computer Graphics <em>(Dr. Vladimir Nodelman)</em></td>
+            <td class="td-outcome">Build a real-time renderer and ship a playable game engine demo</td>
           </tr>
           <tr>
             <td class="td-code c-gm">GM2</td>
-            <td class="td-new">Spatial Computing</td>
+            <td class="td-new">Virtual, Augmented and Mixed Reality</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td class="td-outcome">Build and defend a cross-device XR application spanning VR, AR and mixed reality</td>
           </tr>
           <tr>
             <td class="td-code c-gm">GM3</td>
             <td class="td-new">Computational Geometry and Geographic Information Systems</td>
             <td class="td-existing"><span class="td-num">66122</span>Computational Geometry and GIS</td>
+            <td class="td-outcome">Build a spatial data application combining computational geometry and GIS analysis</td>
           </tr>
           <!-- DF -->
           <tr class="group-start">
             <td class="td-code c-df">DF1</td>
             <td class="td-new">Sensor Fusion &amp; Signal Processing</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td class="td-outcome">Fuse multi-sensor data streams into a real-time situational awareness system</td>
           </tr>
           <tr>
             <td class="td-code c-df">DF2</td>
             <td class="td-new">Mission-Critical Real-Time Systems</td>
             <td class="td-existing"><span class="td-num">67026</span><span dir="rtl">מבוא לתוכנה משובצת מחשב ויישומים</span><br>Introduction to Embedded Software and Applications <em>(Vladi Sorkin)</em></td>
+            <td class="td-outcome">Design, implement, and certify a mission-critical real-time embedded system</td>
           </tr>
           <tr>
             <td class="td-code c-df">DF3</td>
@@ -317,6 +355,15 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">62302</span><span dir="rtl">מערכות ספרתיות מתקדמות</span><br>Advanced Digital Systems <em>(Prof. Samri Barnov)</em><br>
               <span class="td-num">65311</span><span dir="rtl">ארכיטקטורת מערכות VLSI</span><br>VLSI Systems Architecture <em>(Prof. Samri Barnov)</em>
             </td>
+            <td class="td-outcome">Design, simulate, and synthesize a digital hardware system on FPGA</td>
+          </tr>
+          <tr>
+            <td class="td-code c-df">DF4</td>
+            <td class="td-new">Audio and Speech Processing for Intelligent Systems</td>
+            <td class="td-existing">
+              <span class="td-num">67011</span><span dir="rtl">עיבוד קול למערכות תבוניות</span><br>Audio Processing for Intelligent Systems <em>(Dr. Yosi Eliaz)</em>
+            </td>
+            <td class="td-outcome">Build an end-to-end audio and speech intelligence pipeline</td>
           </tr>
         </tbody>
       </table>
@@ -326,7 +373,7 @@ a{color:inherit;text-decoration:none}
 </main>
 
 <footer class="site-footer">
-  HIT · Holon Institute of Technology · Advanced CS Elective Concentrations &nbsp;·&nbsp; 28 courses · 6 concentrations
+  HIT · Holon Institute of Technology · Advanced CS Elective Concentrations &nbsp;·&nbsp; 30 courses · 6 concentrations
 </footer>
 
 <script>
