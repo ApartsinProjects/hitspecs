@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HIT CS — Core Courses</title>
+<style>
+:root {
+  --bg:      #0D1119;
+  --surface: #141C2D;
+  --sur2:    #1A2438;
+  --border:  #253050;
+  --faint:   #1E2D48;
+  --text:    #D9E4F5;
+  --sub:     #8A9DC0;
+  --muted:   #5C6E8C;
+
+  --se:  #31D0A5; --se-a:  rgba(49,208,165,.10);
+  --ai:  #9B7AEA; --ai-a:  rgba(155,122,234,.10);
+  --cy:  #F5A33A; --cy-a:  rgba(245,163,58,.10);
+  --qcf: #4FC8E8; --qcf-a: rgba(79,200,232,.10);
+  --gm:  #E8595A; --gm-a:  rgba(232,89,90,.10);
+  --df:  #7DC88A; --df-a:  rgba(125,200,138,.10);
+
+  --sans: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono: "SF Mono","Cascadia Code","Fira Code","Consolas",monospace;
+  --r: 8px;
+}
+@media(prefers-color-scheme:light){:root{
+  --bg:#EEF3FB; --surface:#FFF; --sur2:#F4F7FE;
+  --border:#CDD8EE; --faint:#E4ECFA; --text:#152035;
+  --sub:#4D6080; --muted:#8096B8;
+  --se:#1B9E7A; --se-a:rgba(27,158,122,.07);
+  --ai:#6744C8; --ai-a:rgba(103,68,200,.07);
+  --cy:#C47A0A; --cy-a:rgba(196,122,10,.07);
+  --qcf:#1A8FB0; --qcf-a:rgba(26,143,176,.07);
+  --gm:#B83838; --gm-a:rgba(184,56,56,.07);
+  --df:#3A844A; --df-a:rgba(58,132,74,.07);
+}}
+:root[data-theme=dark]{
+  --bg:#0D1119; --surface:#141C2D; --sur2:#1A2438;
+  --border:#253050; --faint:#1E2D48; --text:#D9E4F5; --sub:#8A9DC0; --muted:#5C6E8C;
+  --se:#31D0A5; --se-a:rgba(49,208,165,.10); --ai:#9B7AEA; --ai-a:rgba(155,122,234,.10);
+  --cy:#F5A33A; --cy-a:rgba(245,163,58,.10); --qcf:#4FC8E8; --qcf-a:rgba(79,200,232,.10);
+  --gm:#E8595A; --gm-a:rgba(232,89,90,.10); --df:#7DC88A; --df-a:rgba(125,200,138,.10);
+}
+:root[data-theme=light]{
+  --bg:#EEF3FB; --surface:#FFF; --sur2:#F4F7FE;
+  --border:#CDD8EE; --faint:#E4ECFA; --text:#152035; --sub:#4D6080; --muted:#8096B8;
+  --se:#1B9E7A; --se-a:rgba(27,158,122,.07); --ai:#6744C8; --ai-a:rgba(103,68,200,.07);
+  --cy:#C47A0A; --cy-a:rgba(196,122,10,.07); --qcf:#1A8FB0; --qcf-a:rgba(26,143,176,.07);
+  --gm:#B83838; --gm-a:rgba(184,56,56,.07); --df:#3A844A; --df-a:rgba(58,132,74,.07);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;color-scheme:dark light}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* ── Nav ── */
+.site-nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;gap:4px;padding:0 16px;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  overflow-x:auto;white-space:nowrap;scrollbar-width:none;
+}
+.site-nav::-webkit-scrollbar{display:none}
+.nav-brand{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--sub);text-transform:uppercase;padding:12px 8px 12px 0;border-right:1px solid var(--border);margin-right:4px;flex-shrink:0}
+.nav-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--sub);border:1.5px solid transparent;flex-shrink:0;transition:background .15s,border-color .15s,color .15s}
+.nav-pill:hover{background:var(--sur2);border-color:var(--border);color:var(--text)}
+.nav-pill.active{color:var(--text);background:var(--sur2);border-color:var(--border)}
+.nav-spacer{flex:1}
+.theme-btn{background:none;border:1.5px solid var(--border);color:var(--sub);border-radius:6px;padding:4px 8px;font-size:12px;cursor:pointer;flex-shrink:0}
+.theme-btn:hover{border-color:var(--muted);color:var(--text)}
+
+/* ── Hero ── */
+.hero{padding:52px 24px 44px;max-width:900px;margin:0 auto;border-bottom:1px solid var(--border)}
+.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.hero h1{font-size:clamp(24px,3.5vw,38px);font-weight:800;line-height:1.15;letter-spacing:-.02em}
+.hero-sub{margin-top:10px;font-size:15px;color:var(--sub);max-width:580px;line-height:1.55}
+
+/* ── Layout ── */
+.page-body{max-width:960px;margin:0 auto;padding:40px 24px 60px;display:flex;flex-direction:column;gap:24px}
+
+/* ── Card 1: Compendium link ── */
+.nav-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:32px 36px;
+  display:flex;align-items:center;gap:32px;
+  text-decoration:none;
+  transition:border-color .15s,background .15s;
+}
+.nav-card:hover{border-color:var(--se);background:color-mix(in srgb,var(--se) 4%,var(--surface))}
+.nav-card-icon{
+  font-size:36px;flex-shrink:0;
+  width:64px;height:64px;border-radius:12px;
+  background:var(--se-a);
+  display:flex;align-items:center;justify-content:center;
+}
+.nav-card-body{flex:1}
+.nav-card-label{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--se);margin-bottom:6px}
+.nav-card-title{font-size:20px;font-weight:700;letter-spacing:-.01em;color:var(--text)}
+.nav-card-desc{margin-top:5px;font-size:13.5px;color:var(--sub);line-height:1.5}
+.nav-card-arrow{font-size:20px;color:var(--muted);flex-shrink:0;transition:transform .15s}
+.nav-card:hover .nav-card-arrow{transform:translateX(4px);color:var(--se)}
+.nav-card--mapping:hover{border-color:var(--qcf);background:color-mix(in srgb,var(--qcf) 4%,var(--surface))}
+.nav-card-icon--mapping{background:var(--qcf-a)}
+.nav-card-label--mapping{color:var(--qcf)}
+.nav-card--mapping:hover .nav-card-arrow{color:var(--qcf)}
+
+/* ── Card 2: Mapping table ── */
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.panel-hd{padding:20px 24px 18px;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:10px}
+.panel-hd h2{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.panel-hd .panel-sub{font-size:13px;color:var(--muted);margin-left:auto}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.map-table{width:100%;border-collapse:collapse;font-size:13px}
+.map-table th,.map-table td{padding:9px 14px;border-bottom:1px solid var(--border);text-align:left}
+.map-table thead th{
+  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);background:var(--sur2);white-space:nowrap;
+}
+.map-table tbody tr:hover td{background:var(--sur2)}
+.map-table tbody tr.group-start td{border-top:2px solid var(--border)}
+
+.td-code{font-family:var(--mono);font-size:11px;font-weight:700;white-space:nowrap}
+.td-new{font-size:13px;color:var(--text);font-weight:500}
+.td-existing{font-size:12.5px;color:var(--sub)}
+.td-num{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
+
+/* Status badges */
+.badge{
+  display:inline-flex;align-items:center;
+  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.06em;
+  padding:2px 7px;border-radius:4px;white-space:nowrap;
+}
+.badge-ok    {background:rgba(49,208,165,.12);color:#31D0A5}
+.badge-part  {background:rgba(245,163,58,.12);color:#F5A33A}
+.badge-todo  {background:rgba(92,110,140,.12);color:#8A9DC0}
+
+/* per-track code colors */
+.c-se  {color:var(--se)}
+.c-ai  {color:var(--ai)}
+.c-cy  {color:var(--cy)}
+.c-qcf {color:var(--qcf)}
+.c-gm  {color:var(--gm)}
+.c-df  {color:var(--df)}
+
+.legend{display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding:14px 24px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
+.legend-item{display:flex;align-items:center;gap:6px}
+
+/* ── Footer ── */
+.site-footer{padding:28px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
+@media(max-width:600px){
+  .page-body{padding:24px 12px 40px}
+  .nav-card{flex-direction:column;align-items:flex-start;gap:16px;padding:20px}
+  .hero{padding:32px 16px 28px}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Primary navigation">
+  <span class="nav-brand">HIT·CS</span>
+  <a class="nav-pill" href="compendium.html">Course Compendium</a>
+  <a class="nav-pill active" href="core-courses.html">Core Courses</a>
+  <a class="nav-pill" href="baseline-mapping.html">Baseline Mapping</a>
+  <span class="nav-spacer"></span>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Holon Institute of Technology · Advanced CS Electives</p>
+  <h1>Core Courses</h1>
+  <p class="hero-sub">24 advanced elective courses across six concentrations, and how each maps to existing HIT baseline courses.</p>
+</header>
+
+<main class="page-body">
+
+  <!-- Card 1: Compendium link -->
+  <a class="nav-card" href="compendium.html">
+    <div class="nav-card-icon">📋</div>
+    <div class="nav-card-body">
+      <div class="nav-card-label">Course Compendium</div>
+      <div class="nav-card-title">Graduate Course Compendium</div>
+      <p class="nav-card-desc">All 24 courses in detail: what graduates build, master, and deliver — outcomes, theory, tools, and capstone project for each course.</p>
+    </div>
+    <span class="nav-card-arrow">›</span>
+  </a>
+
+  <!-- Card 2: Baseline mapping link -->
+  <a class="nav-card nav-card--mapping" href="baseline-mapping.html">
+    <div class="nav-card-icon nav-card-icon--mapping">🗺</div>
+    <div class="nav-card-body">
+      <div class="nav-card-label nav-card-label--mapping">Baseline Mapping</div>
+      <div class="nav-card-title">Baseline Course Mapping</div>
+      <p class="nav-card-desc">How each of the 24 new courses relates to existing HIT electives — 12 available, 3 partial, 9 to develop.</p>
+    </div>
+    <span class="nav-card-arrow">›</span>
+  </a>
+
+</main>
+
+<footer class="site-footer">
+  HIT · Holon Institute of Technology · Advanced CS Elective Concentrations &nbsp;·&nbsp; 24 courses · 6 concentrations
+</footer>
+
+<script>
+function toggleTheme(){
+  const root=document.documentElement,cur=root.getAttribute('data-theme');
+  root.setAttribute('data-theme',cur==='dark'?'light':cur==='light'?'dark':(window.matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark'));
+}
+</script>
+</body>
+</html>

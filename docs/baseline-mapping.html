@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HIT CS: Baseline Course Mapping</title>
+<style>
+:root {
+  --bg:#0D1119; --surface:#141C2D; --sur2:#1A2438;
+  --border:#253050; --faint:#1E2D48; --text:#D9E4F5;
+  --sub:#8A9DC0; --muted:#5C6E8C;
+  --se:#31D0A5; --se-a:rgba(49,208,165,.10);
+  --ai:#9B7AEA; --ai-a:rgba(155,122,234,.10);
+  --cy:#F5A33A; --cy-a:rgba(245,163,58,.10);
+  --qcf:#4FC8E8; --qcf-a:rgba(79,200,232,.10);
+  --gm:#E8595A; --gm-a:rgba(232,89,90,.10);
+  --df:#7DC88A; --df-a:rgba(125,200,138,.10);
+  --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"SF Mono","Cascadia Code","Fira Code","Consolas",monospace;
+  --r:8px;
+}
+@media(prefers-color-scheme:light){:root{
+  --bg:#EEF3FB; --surface:#FFF; --sur2:#F4F7FE;
+  --border:#CDD8EE; --faint:#E4ECFA; --text:#152035;
+  --sub:#4D6080; --muted:#8096B8;
+  --se:#1B9E7A; --se-a:rgba(27,158,122,.07);
+  --ai:#6744C8; --ai-a:rgba(103,68,200,.07);
+  --cy:#C47A0A; --cy-a:rgba(196,122,10,.07);
+  --qcf:#1A8FB0; --qcf-a:rgba(26,143,176,.07);
+  --gm:#B83838; --gm-a:rgba(184,56,56,.07);
+  --df:#3A844A; --df-a:rgba(58,132,74,.07);
+}}
+:root[data-theme=dark]{
+  --bg:#0D1119; --surface:#141C2D; --sur2:#1A2438;
+  --border:#253050; --faint:#1E2D48; --text:#D9E4F5; --sub:#8A9DC0; --muted:#5C6E8C;
+  --se:#31D0A5; --se-a:rgba(49,208,165,.10); --ai:#9B7AEA; --ai-a:rgba(155,122,234,.10);
+  --cy:#F5A33A; --cy-a:rgba(245,163,58,.10); --qcf:#4FC8E8; --qcf-a:rgba(79,200,232,.10);
+  --gm:#E8595A; --gm-a:rgba(232,89,90,.10); --df:#7DC88A; --df-a:rgba(125,200,138,.10);
+}
+:root[data-theme=light]{
+  --bg:#EEF3FB; --surface:#FFF; --sur2:#F4F7FE;
+  --border:#CDD8EE; --faint:#E4ECFA; --text:#152035; --sub:#4D6080; --muted:#8096B8;
+  --se:#1B9E7A; --se-a:rgba(27,158,122,.07); --ai:#6744C8; --ai-a:rgba(103,68,200,.07);
+  --cy:#C47A0A; --cy-a:rgba(196,122,10,.07); --qcf:#1A8FB0; --qcf-a:rgba(26,143,176,.07);
+  --gm:#B83838; --gm-a:rgba(184,56,56,.07); --df:#3A844A; --df-a:rgba(58,132,74,.07);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;color-scheme:dark light}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* Nav */
+.site-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:4px;padding:0 16px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.site-nav::-webkit-scrollbar{display:none}
+.nav-brand{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--sub);text-transform:uppercase;padding:12px 8px 12px 0;border-right:1px solid var(--border);margin-right:4px;flex-shrink:0}
+.nav-pill{display:inline-flex;align-items:center;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--sub);border:1.5px solid transparent;flex-shrink:0;transition:background .15s,border-color .15s,color .15s}
+.nav-pill:hover{background:var(--sur2);border-color:var(--border);color:var(--text)}
+.nav-pill.active{color:var(--text);background:var(--sur2);border-color:var(--border)}
+.nav-spacer{flex:1}
+.theme-btn{background:none;border:1.5px solid var(--border);color:var(--sub);border-radius:6px;padding:4px 8px;font-size:12px;cursor:pointer;flex-shrink:0}
+.theme-btn:hover{border-color:var(--muted);color:var(--text)}
+
+/* Hero */
+.hero{padding:52px 24px 44px;max-width:900px;margin:0 auto;border-bottom:1px solid var(--border)}
+.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.hero h1{font-size:clamp(24px,3.5vw,38px);font-weight:800;line-height:1.15;letter-spacing:-.02em}
+.hero-sub{margin-top:10px;font-size:15px;color:var(--sub);max-width:580px;line-height:1.55}
+.hero-stats{display:flex;flex-wrap:wrap;gap:24px;margin-top:24px}
+.hero-stat{font-size:13px;color:var(--muted)}
+.hero-stat strong{font-size:22px;font-weight:700;color:var(--text);display:block;line-height:1.1;letter-spacing:-.02em}
+
+/* Main */
+.page-body{max-width:1100px;margin:0 auto;padding:40px 24px 60px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.panel-hd{padding:20px 24px 18px;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:10px}
+.panel-hd h2{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.panel-sub{font-size:13px;color:var(--muted);margin-left:auto}
+
+/* Table */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.map-table{width:100%;border-collapse:collapse;font-size:13px}
+.map-table th,.map-table td{padding:10px 14px;border-bottom:1px solid var(--border);text-align:left}
+.map-table thead th{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--sur2);white-space:nowrap}
+.map-table tbody tr:hover td{background:var(--sur2)}
+.map-table tbody tr.group-start td{border-top:2px solid var(--border)}
+
+.td-code{font-family:var(--mono);font-size:11px;font-weight:700;white-space:nowrap}
+.td-new{font-size:13px;color:var(--text);font-weight:500}
+.td-existing{font-size:12.5px;color:var(--sub);line-height:1.45}
+.td-num{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap;margin-right:4px}
+
+.badge{display:inline-flex;align-items:center;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:4px;white-space:nowrap}
+.badge-ok  {background:rgba(49,208,165,.12);color:#31D0A5}
+.badge-part{background:rgba(245,163,58,.12);color:#F5A33A}
+.badge-todo{background:rgba(92,110,140,.12);color:#8A9DC0}
+
+.c-se{color:var(--se)} .c-cy{color:var(--cy)} .c-ai{color:var(--ai)}
+.c-qcf{color:var(--qcf)} .c-gm{color:var(--gm)} .c-df{color:var(--df)}
+
+.legend{display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding:14px 24px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
+.legend-item{display:flex;align-items:center;gap:6px}
+
+.site-footer{padding:28px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
+@media(max-width:600px){.page-body{padding:24px 12px 40px}.hero{padding:32px 16px 28px}}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <span class="nav-brand">HIT·CS</span>
+  <a class="nav-pill" href="compendium.html">Course Compendium</a>
+  <a class="nav-pill" href="core-courses.html">Core Courses</a>
+  <a class="nav-pill active" href="baseline-mapping.html">Baseline Mapping</a>
+  <span class="nav-spacer"></span>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Holon Institute of Technology · Advanced CS Electives</p>
+  <h1>Baseline Course Mapping</h1>
+  <p class="hero-sub">How each of the 24 new advanced elective courses relates to existing HIT baseline courses.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>12</strong>Available</div>
+    <div class="hero-stat"><strong>3</strong>Partial</div>
+    <div class="hero-stat"><strong>9</strong>To develop</div>
+  </div>
+</header>
+
+<main class="page-body">
+  <section class="panel">
+    <div class="panel-hd">
+      <h2>New Course → Existing HIT Course</h2>
+      <span class="panel-sub">24 courses · source: <a href="https://hitspecs.apartsin.com/" target="_blank" rel="noopener" style="color:var(--sub);text-decoration:underline;text-underline-offset:3px">hitspecs.apartsin.com</a></span>
+    </div>
+
+    <div class="table-scroll">
+      <table class="map-table" aria-label="New courses mapped to existing HIT baseline courses">
+        <thead>
+          <tr>
+            <th style="width:52px">Code</th>
+            <th style="min-width:220px">New Course</th>
+            <th style="min-width:340px">Existing HIT Course</th>
+            <th style="width:110px">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- SE -->
+          <tr class="group-start">
+            <td class="td-code c-se">SE1</td>
+            <td class="td-new">Cloud Computing &amp; Cloud-Native Platforms</td>
+            <td class="td-existing"><span class="td-num">62213</span>Introduction to Cloud and Development with AWS Serverless <em>(Yogev Shani)</em></td>
+            <td><span class="badge badge-ok">Available</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-se">SE2</td>
+            <td class="td-new">Secure &amp; Reliable Software Development</td>
+            <td class="td-existing"><span class="td-num">64444</span>Software Testing <em>(David Tobias)</em></td>
+            <td><span class="badge badge-part">Partial</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-se">SE3</td>
+            <td class="td-new">Modern Front-End Web Development</td>
+            <td class="td-existing"><span class="td-num">65364</span>Client-Side Development <em>(Michael Haim)</em></td>
+            <td><span class="badge badge-ok">Available</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-se">SE4</td>
+            <td class="td-new">Back-End Web Development &amp; APIs</td>
+            <td class="td-existing"><span class="td-num">64410</span>Server-Side Systems Development Open Source <em>(Ofer Vald)</em></td>
+            <td><span class="badge badge-ok">Available</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-se">SE5</td>
+            <td class="td-new">Engineering of AI Systems</td>
+            <td class="td-existing"><span class="td-num">65353</span>Introduction to DevOps <em>(Moshe Mamia)</em></td>
+            <td><span class="badge badge-part">Partial</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-se">SE6</td>
+            <td class="td-new">Mobile, IoT &amp; Edge Software Development</td>
+            <td class="td-existing">
+              <span class="td-num">65348</span>Software for IoT in Smart-City Environment <em>(Yuri Yurchenko)</em><br>
+              <span class="td-num">65351</span>Android Client-Side Development 1 <em>(Effi Propes)</em>
+            </td>
+            <td><span class="badge badge-ok">Available</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-se">SE7</td>
+            <td class="td-new">Design of AI-based &amp; Data-Intensive Systems</td>
+            <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td><span class="badge badge-todo">To develop</span></td>
+          </tr>
+          <!-- CY -->
+          <tr class="group-start">
+            <td class="td-code c-cy">CY1</td>
+            <td class="td-new">Applied Cryptography</td>
+            <td class="td-existing"><span class="td-num">68012</span>Applied Introduction to Modern Cryptography <em>(Zeev Geyzel)</em></td>
+            <td><span class="badge badge-ok">Available</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-cy">CY2</td>
+            <td class="td-new">Network Security</td>
+            <td class="td-existing"><span class="td-num">65338</span>Network and Internet Security <em>(Adrian Shpeler)</em></td>
+            <td><span class="badge badge-ok">Available</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-cy">CY3</td>
+            <td class="td-new">Hardware &amp; Embedded Systems Security</td>
+            <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td><span class="badge badge-todo">To develop</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-cy">CY4</td>
+            <td class="td-new">Cyber-Security Governance, Risk &amp; Compliance</td>
+            <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td><span class="badge badge-todo">To develop</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-cy">CY5</td>
+            <td class="td-new">Blockchain and Decentralized Cryptographic Systems</td>
+            <td class="td-existing"><span class="td-num">67007</span>Blockchain: Vision and Practice <em>(Michael Bershadsky)</em></td>
+            <td><span class="badge badge-ok">Available</span></td>
+          </tr>
+          <!-- AI -->
+          <tr class="group-start">
+            <td class="td-code c-ai">AI1</td>
+            <td class="td-new">Language AI: LLMs and Agentic Systems</td>
+            <td class="td-existing"><span class="td-num">65339</span>LLM &amp; Agents NLP <em>(Dr. Alexander Apartsin)</em></td>
+            <td><span class="badge badge-ok">Available</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-ai">AI2</td>
+            <td class="td-new">Temporal AI: Time Series &amp; Sequential Decision Making</td>
+            <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td><span class="badge badge-todo">To develop</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-ai">AI3</td>
+            <td class="td-new">Vision AI: Deep Learning for Computer Vision</td>
+            <td class="td-existing"><span class="td-num">67025</span>Deep-Learning-Based Computer Vision <em>(Lehav Yefet)</em></td>
+            <td><span class="badge badge-ok">Available</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-ai">AI4</td>
+            <td class="td-new">Scalable AI: Big-Data Algorithms</td>
+            <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td><span class="badge badge-todo">To develop</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-ai">AI5</td>
+            <td class="td-new">Generative AI: Deep Generative Models</td>
+            <td class="td-existing"><span class="td-num">67030</span>Deep Models for Generative AI <em>(Dr. Alexander Apartsin)</em></td>
+            <td><span class="badge badge-ok">Available</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-ai">AI6</td>
+            <td class="td-new">Embodied AI: Robotics &amp; Autonomous Systems</td>
+            <td class="td-existing"><span class="td-num">69983</span>Robotics for Computer Science <em>(Dr. Eliyahu Matzliach)</em></td>
+            <td><span class="badge badge-ok">Available</span></td>
+          </tr>
+          <!-- QCF -->
+          <tr class="group-start">
+            <td class="td-code c-qcf">QCF1</td>
+            <td class="td-new">Quantum Optimization</td>
+            <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td><span class="badge badge-todo">To develop</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-qcf">QCF2</td>
+            <td class="td-new">AI &amp; Optimization for Finance</td>
+            <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td><span class="badge badge-todo">To develop</span></td>
+          </tr>
+          <!-- GM -->
+          <tr class="group-start">
+            <td class="td-code c-gm">GM1</td>
+            <td class="td-new">Computer Graphics</td>
+            <td class="td-existing"><span class="td-num">65235</span>Computer Graphics <em>(Dr. Vladimir Nodelman)</em></td>
+            <td><span class="badge badge-ok">Available</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-gm">GM2</td>
+            <td class="td-new">Spatial Computing</td>
+            <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td><span class="badge badge-todo">To develop</span></td>
+          </tr>
+          <!-- DF -->
+          <tr class="group-start">
+            <td class="td-code c-df">DF1</td>
+            <td class="td-new">Sensor Fusion &amp; Signal Processing</td>
+            <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
+            <td><span class="badge badge-todo">To develop</span></td>
+          </tr>
+          <tr>
+            <td class="td-code c-df">DF2</td>
+            <td class="td-new">Mission-Critical Real-Time Systems</td>
+            <td class="td-existing"><span class="td-num">67026</span>Introduction to Embedded Software and Applications <em>(Vladi Sorkin)</em></td>
+            <td><span class="badge badge-part">Partial</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="legend">
+      <span style="font-weight:600;color:var(--sub)">Status:</span>
+      <span class="legend-item"><span class="badge badge-ok">Available</span> Existing HIT course covers this content</span>
+      <span class="legend-item"><span class="badge badge-part">Partial</span> Existing course covers ~50% of the content</span>
+      <span class="legend-item"><span class="badge badge-todo">To develop</span> New course required</span>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  HIT · Holon Institute of Technology · Advanced CS Elective Concentrations &nbsp;·&nbsp; 24 courses · 6 concentrations
+</footer>
+
+<script>
+function toggleTheme(){
+  const r=document.documentElement,c=r.getAttribute('data-theme');
+  r.setAttribute('data-theme',c==='dark'?'light':c==='light'?'dark':(window.matchMedia('(prefers-color-scheme:dark)').matches?'light':'dark'));
+}
+</script>
+</body>
+</html>

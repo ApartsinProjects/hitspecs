@@ -1,0 +1,1711 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HIT CS Concentrations: Graduate Course Compendium</title>
+<style>
+/* ── Tokens ─────────────────────────────────────────── */
+:root {
+  --bg:       #0D1119;
+  --surface:  #141C2D;
+  --sur2:     #1A2438;
+  --border:   #253050;
+  --faint:    #1E2D48;
+  --text:     #D9E4F5;
+  --sub:      #8A9DC0;
+  --muted:    #5C6E8C;
+
+  --se:    #31D0A5; --se-a:  rgba(49,208,165,.09);
+  --ai:    #9B7AEA; --ai-a:  rgba(155,122,234,.09);
+  --cy:    #F5A33A; --cy-a:  rgba(245,163,58,.09);
+  --qcf:   #4FC8E8; --qcf-a: rgba(79,200,232,.09);
+  --gm:    #E8595A; --gm-a:  rgba(232,89,90,.09);
+  --df:    #7DC88A; --df-a:  rgba(125,200,138,.09);
+
+  --sans:  system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:  "SF Mono","Cascadia Code","Fira Code","Consolas",monospace;
+  --r:     8px;
+}
+@media (prefers-color-scheme:light){:root{
+  --bg:#EEF3FB; --surface:#FFF; --sur2:#F4F7FE;
+  --border:#CDD8EE; --faint:#E4ECFA; --text:#152035;
+  --sub:#4D6080; --muted:#8096B8;
+  --se:#1B9E7A; --se-a:rgba(27,158,122,.07);
+  --ai:#6744C8; --ai-a:rgba(103,68,200,.07);
+  --cy:#C47A0A; --cy-a:rgba(196,122,10,.07);
+  --qcf:#1A8FB0; --qcf-a:rgba(26,143,176,.07);
+  --gm:#B83838; --gm-a:rgba(184,56,56,.07);
+  --df:#3A844A; --df-a:rgba(58,132,74,.07);
+}}
+:root[data-theme=dark]{
+  --bg:#0D1119; --surface:#141C2D; --sur2:#1A2438;
+  --border:#253050; --faint:#1E2D48; --text:#D9E4F5;
+  --sub:#8A9DC0; --muted:#5C6E8C;
+  --se:#31D0A5; --se-a:rgba(49,208,165,.09);
+  --ai:#9B7AEA; --ai-a:rgba(155,122,234,.09);
+  --cy:#F5A33A; --cy-a:rgba(245,163,58,.09);
+  --qcf:#4FC8E8; --qcf-a:rgba(79,200,232,.09);
+  --gm:#E8595A; --gm-a:rgba(232,89,90,.09);
+  --df:#7DC88A; --df-a:rgba(125,200,138,.09);
+}
+:root[data-theme=light]{
+  --bg:#EEF3FB; --surface:#FFF; --sur2:#F4F7FE;
+  --border:#CDD8EE; --faint:#E4ECFA; --text:#152035;
+  --sub:#4D6080; --muted:#8096B8;
+  --se:#1B9E7A; --se-a:rgba(27,158,122,.07);
+  --ai:#6744C8; --ai-a:rgba(103,68,200,.07);
+  --cy:#C47A0A; --cy-a:rgba(196,122,10,.07);
+  --qcf:#1A8FB0; --qcf-a:rgba(26,143,176,.07);
+  --gm:#B83838; --gm-a:rgba(184,56,56,.07);
+  --df:#3A844A; --df-a:rgba(58,132,74,.07);
+}
+
+/* ── Reset ───────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;color-scheme:dark light}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:var(--sans); font-size:15px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+ul,ol{padding-left:1.2em}
+li{margin:.18em 0}
+details>summary{list-style:none}
+details>summary::-webkit-details-marker{display:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ── Site nav ────────────────────────────────────────── */
+.site-nav{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; gap:4px;
+  padding:0 16px;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  overflow-x:auto; white-space:nowrap;
+  scrollbar-width:none;
+}
+.site-nav::-webkit-scrollbar{display:none}
+.nav-brand{
+  font-size:13px; font-weight:700; letter-spacing:.06em;
+  color:var(--sub); text-transform:uppercase;
+  padding:12px 8px 12px 0;
+  border-right:1px solid var(--border);
+  margin-right:4px; flex-shrink:0;
+}
+.nav-pill{
+  display:inline-flex; align-items:center; gap:5px;
+  padding:5px 10px; border-radius:20px;
+  font-size:12px; font-weight:600; letter-spacing:.04em;
+  background:transparent; border:1.5px solid transparent;
+  cursor:pointer; flex-shrink:0;
+  transition:background .15s,border-color .15s,color .15s;
+}
+.nav-pill:hover{ background:var(--sur2); border-color:var(--border) }
+.nav-pill[data-track=se]{ color:var(--se) }
+.nav-pill[data-track=ai]{ color:var(--ai) }
+.nav-pill[data-track=cy]{ color:var(--cy) }
+.nav-pill[data-track=qcf]{ color:var(--qcf) }
+.nav-pill[data-track=gm]{ color:var(--gm) }
+.nav-pill[data-track=df]{ color:var(--df) }
+.nav-spacer{flex:1}
+.theme-btn{
+  background:none; border:1.5px solid var(--border);
+  color:var(--sub); border-radius:6px;
+  padding:4px 8px; font-size:12px; cursor:pointer;
+  flex-shrink:0;
+}
+.theme-btn:hover{border-color:var(--muted);color:var(--text)}
+
+/* ── Hero ────────────────────────────────────────────── */
+.hero{
+  padding:60px 24px 52px;
+  max-width:900px; margin:0 auto;
+  border-bottom:1px solid var(--border);
+}
+.hero-eyebrow{
+  font-family:var(--mono); font-size:11px;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:14px;
+}
+.hero h1{
+  font-size:clamp(26px,4vw,42px); font-weight:800;
+  line-height:1.15; letter-spacing:-.02em;
+  text-wrap:balance;
+}
+.hero-sub{
+  margin-top:12px; font-size:16px;
+  color:var(--sub); max-width:600px; line-height:1.55;
+}
+.hero-meta{
+  display:flex; flex-wrap:wrap; gap:20px;
+  margin-top:24px;
+}
+.hero-stat{
+  font-size:13px; color:var(--muted);
+}
+.hero-stat strong{
+  font-size:22px; font-weight:700;
+  color:var(--text); display:block;
+  line-height:1.1; letter-spacing:-.02em;
+}
+
+/* ── Track section ───────────────────────────────────── */
+.track{ padding:48px 0 12px; scroll-margin-top:50px }
+.track-hd{
+  display:flex; align-items:baseline; gap:14px;
+  padding:0 24px 20px;
+  max-width:1300px; margin:0 auto;
+  border-bottom:1px solid var(--border);
+  margin-bottom:24px;
+}
+.track-code{
+  font-family:var(--mono); font-size:11px;
+  font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:3px 8px; border-radius:4px;
+}
+.track-name{
+  font-size:20px; font-weight:700; letter-spacing:-.01em;
+}
+.track-count{
+  font-size:12px; color:var(--muted);
+  margin-left:auto;
+}
+/* per-track colours */
+#se .track-code{color:var(--se);background:var(--se-a)}
+#ai .track-code{color:var(--ai);background:var(--ai-a)}
+#cy .track-code{color:var(--cy);background:var(--cy-a)}
+#qcf .track-code{color:var(--qcf);background:var(--qcf-a)}
+#gm .track-code{color:var(--gm);background:var(--gm-a)}
+#df .track-code{color:var(--df);background:var(--df-a)}
+
+/* ── Course grid ─────────────────────────────────────── */
+.course-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(370px,1fr));
+  gap:16px;
+  padding:0 24px 24px;
+  max-width:1300px; margin:0 auto;
+}
+
+/* ── Course card ─────────────────────────────────────── */
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  border-top:3px solid var(--accent);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+}
+#se  .card{ --accent:var(--se)  }
+#ai  .card{ --accent:var(--ai)  }
+#cy  .card{ --accent:var(--cy)  }
+#qcf .card{ --accent:var(--qcf) }
+#gm  .card{ --accent:var(--gm)  }
+#df  .card{ --accent:var(--df)  }
+
+.card-hd{
+  padding:16px 18px 14px;
+  border-bottom:1px solid var(--border);
+}
+.card-id{
+  display:flex; align-items:center; gap:8px;
+  margin-bottom:6px;
+}
+.card-code{
+  font-family:var(--mono); font-size:11px;
+  font-weight:700; letter-spacing:.1em;
+  color:var(--accent); background:color-mix(in srgb,var(--accent) 12%,transparent);
+  padding:2px 7px; border-radius:4px;
+}
+.card-title{
+  font-size:15px; font-weight:700; letter-spacing:-.01em;
+}
+.card-title a{ color:inherit; text-decoration:none }
+.card-title a:hover{ text-decoration:underline; text-underline-offset:3px }
+.card-tagline{
+  font-size:12px; color:var(--sub); line-height:1.45;
+  margin-top:3px;
+}
+.syllabus-link{
+  display:inline-flex; align-items:center; gap:4px;
+  margin-top:8px;
+  font-family:var(--mono); font-size:11px; font-weight:600;
+  letter-spacing:.04em; color:var(--accent);
+  text-decoration:none; opacity:.75;
+  transition:opacity .12s;
+}
+.syllabus-link:hover{ opacity:1; text-decoration:underline; text-underline-offset:3px }
+
+/* ── BUILD block ─────────────────────────────────────── */
+.build-block{
+  margin:14px 18px;
+  background:color-mix(in srgb,var(--accent) 7%,var(--sur2));
+  border-left:3px solid var(--accent);
+  border-radius:0 var(--r) var(--r) 0;
+  padding:10px 12px;
+}
+.build-label{
+  font-family:var(--mono); font-size:10px;
+  font-weight:700; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--accent);
+  margin-bottom:5px;
+}
+.build-text{
+  font-size:12.5px; line-height:1.55; color:var(--text);
+}
+
+/* ── Accordion sections ──────────────────────────────── */
+.card-sections{ padding:0 18px 14px; display:flex; flex-direction:column; gap:6px }
+.acc{
+  border:1px solid var(--border); border-radius:6px;
+  overflow:hidden;
+}
+.acc summary{
+  display:flex; align-items:center; gap:6px;
+  padding:8px 10px; cursor:pointer;
+  font-size:11.5px; font-weight:600; letter-spacing:.03em;
+  color:var(--sub); background:var(--sur2);
+  user-select:none;
+  transition:background .12s,color .12s;
+}
+.acc summary:hover{ background:var(--faint); color:var(--text) }
+.acc[open] summary{ color:var(--text); border-bottom:1px solid var(--border) }
+.acc-icon{ font-size:13px; flex-shrink:0 }
+.acc-chevron{
+  margin-left:auto; font-size:10px; color:var(--muted);
+  transform:rotate(0deg); transition:transform .15s;
+}
+.acc[open] .acc-chevron{ transform:rotate(90deg) }
+.acc-body{ padding:10px 12px; background:var(--surface) }
+
+/* ── Content inside accordions ───────────────────────── */
+.outcomes-list{
+  padding-left:0; list-style:none;
+  display:flex; flex-direction:column; gap:5px;
+}
+.outcomes-list li{
+  display:flex; gap:8px;
+  font-size:12.5px; line-height:1.45; color:var(--text);
+}
+.out-num{
+  font-family:var(--mono); font-size:10px; font-weight:700;
+  color:var(--accent); flex-shrink:0; margin-top:2px;
+}
+.concepts-list{
+  font-size:12px; color:var(--sub); line-height:1.5;
+  padding-left:1em;
+}
+.concepts-list li{ margin:.18em 0 }
+.tools-wrap{
+  display:flex; flex-wrap:wrap; gap:5px;
+}
+.tool-tag{
+  font-family:var(--mono); font-size:11px;
+  background:var(--faint); color:var(--sub);
+  border:1px solid var(--border);
+  padding:2px 7px; border-radius:4px;
+  white-space:nowrap;
+}
+.project-text{
+  font-size:12.5px; color:var(--sub); line-height:1.55;
+}
+
+/* ── Footer ──────────────────────────────────────────── */
+.site-footer{
+  padding:32px 24px; text-align:center;
+  border-top:1px solid var(--border);
+  font-size:12px; color:var(--muted);
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media(max-width:600px){
+  .course-grid{ grid-template-columns:1fr; padding:0 12px 16px }
+  .hero{ padding:36px 16px 32px }
+  .track-hd{ padding:0 12px 16px }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav class="site-nav" role="navigation" aria-label="Track navigation">
+  <span class="nav-brand">HIT·CS</span>
+  <a class="nav-pill" href="#se"  data-track="se">SE · Software Engineering</a>
+  <a class="nav-pill" href="#ai"  data-track="ai">AI · Artificial Intelligence</a>
+  <a class="nav-pill" href="#cy"  data-track="cy">CY · Cybersecurity</a>
+  <a class="nav-pill" href="#qcf" data-track="qcf">QCF · Quantum &amp; Finance</a>
+  <a class="nav-pill" href="#gm"  data-track="gm">GM · Graphics &amp; Mixed Reality</a>
+  <a class="nav-pill" href="#df"  data-track="df">DF · Defense Systems</a>
+  <span class="nav-spacer"></span>
+  <a class="nav-pill" href="core-courses.html" style="border-color:var(--border);color:var(--sub)">Core Courses</a>
+  <a class="nav-pill" href="baseline-mapping.html" style="border-color:var(--border);color:var(--sub)">Baseline Mapping</a>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
+</nav>
+
+<!-- ── Hero ── -->
+<header class="hero">
+  <p class="hero-eyebrow">Holon Institute of Technology · Advanced CS Electives</p>
+  <h1>CS Concentrations<br>Graduate Course Compendium</h1>
+  <p class="hero-sub">What every graduate builds, masters, and delivers. One reference for every course across all six specialization tracks.</p>
+</header>
+
+<main>
+
+<!-- ════════════════════════════════════════════════════
+     SE: SOFTWARE ENGINEERING  (7 courses)
+════════════════════════════════════════════════════ -->
+<section class="track" id="se">
+  <div class="track-hd">
+    <span class="track-code">SE</span>
+    <h2 class="track-name">Software Engineering</h2>
+    <span class="track-count">7 courses</span>
+  </div>
+  <div class="course-grid">
+
+    <!-- SE1 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">SE1</span><h3 class="card-title"><a href="courses/SE1.html">Cloud Computing &amp; Cloud-Native Platforms</a></h3></div>
+        <p class="card-tagline">Design and build scalable cloud applications across compute, storage, and managed services</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Designed and engineered a scalable cloud application with an API, background workers, object storage, relational or NoSQL persistence, queues or events, caching, CDN delivery, and containerized or serverless compute, provisioned through Terraform, load-tested with k6, and instrumented with Prometheus and Grafana against latency, reliability, and cost goals.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Compare cloud compute options (VMs, containers, Kubernetes, serverless, managed platforms) and choose the right fit for each workload component.</li>
+              <li><span class="out-num">02</span>Design a scalable cloud application around stateless services, durable state, asynchronous workflows, caching, and CDN delivery.</li>
+              <li><span class="out-num">03</span>Provision infrastructure declaratively with IaC, instrument with SLO-tied dashboards, and defend architecture choices with load-test evidence and cost estimates.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>CAP theorem and availability/consistency/partition trade-offs</li>
+              <li>Stateless service design, idempotency, backpressure, circuit breakers</li>
+              <li>Queueing theory and tail-latency analysis under load</li>
+              <li>Autoscaling control theory and capacity vs. cost models</li>
+              <li>Declarative desired-state control loops (GitOps)</li>
+              <li>Supply-chain provenance and reproducible-build theory</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Docker</span><span class="tool-tag">Kubernetes</span><span class="tool-tag">Helm</span><span class="tool-tag">Terraform</span><span class="tool-tag">AWS Lambda</span><span class="tool-tag">Amazon S3</span><span class="tool-tag">Amazon RDS</span><span class="tool-tag">DynamoDB</span><span class="tool-tag">Amazon SQS/SNS</span><span class="tool-tag">CloudFront</span><span class="tool-tag">Redis</span><span class="tool-tag">PostgreSQL</span><span class="tool-tag">Prometheus</span><span class="tool-tag">Grafana</span><span class="tool-tag">k6</span><span class="tool-tag">Trivy</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams design and build one scalable cloud application from workload requirements through architecture decision records, then implement an API, durable storage, object storage, asynchronous workers, caching or CDN delivery, and a deployment path using containers, serverless functions, or managed platforms. The system is provisioned through infrastructure as code, load-tested, instrumented, and defended with evidence for scalability, reliability, and cost.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- SE2 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">SE2</span><h3 class="card-title"><a href="courses/SE2.html">Secure &amp; Reliable Software Development</a></h3></div>
+        <p class="card-tagline">Engineer software that is secure, tested, and reliable by design</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Hardened a web application end to end: threat-modeled with OWASP Threat Dragon, built a QA strategy with test plan, risk matrix, traceability matrix, defect reports, and quality-metrics dashboard, automated unit, integration, REST API, contract, mutation, end-to-end UI, cross-browser, accessibility, and performance tests, remediated OWASP Top 10 risks, and built a GitHub Actions CI pipeline gating on SAST, DAST, dependency scanning, coverage, and mutation score, with OpenTelemetry, Prometheus, and Grafana enforcing SLOs.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Construct threat models using STRIDE, data-flow diagrams, and trust boundaries; remediate OWASP Top 10 risks with hardened authentication and supply-chain controls.</li>
+              <li><span class="out-num">02</span>Design and automate a complete test suite (unit, integration, contract, E2E, mutation, accessibility, performance) with professional QA artifacts and a CI quality gate.</li>
+              <li><span class="out-num">03</span>Define and enforce SLOs with error budgets, instrument services for observability, and produce a release-readiness report backed by measurable quality metrics.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Saltzer &amp; Schroeder protection principles and least privilege</li>
+              <li>STRIDE threat modeling over data-flow trust boundaries</li>
+              <li>Black-box design: equivalence partitioning, boundary-value analysis, decision tables, pairwise testing</li>
+              <li>White-box and fault-based design: coverage criteria, mutation testing</li>
+              <li>Static data-flow and taint analysis with soundness trade-offs</li>
+              <li>SLOs, error budgets, and reliability theory; three pillars of observability</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">JUnit / pytest</span><span class="tool-tag">Playwright / Cypress</span><span class="tool-tag">Stryker / mutmut</span><span class="tool-tag">SonarQube</span><span class="tool-tag">Pact</span><span class="tool-tag">axe DevTools</span><span class="tool-tag">k6</span><span class="tool-tag">GitHub Actions</span><span class="tool-tag">OWASP ZAP</span><span class="tool-tag">Semgrep</span><span class="tool-tag">Snyk</span><span class="tool-tag">Trivy</span><span class="tool-tag">OWASP Threat Dragon</span><span class="tool-tag">OpenTelemetry</span><span class="tool-tag">Prometheus</span><span class="tool-tag">Grafana</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams take one web application and engineer it to be secure, tested, and reliable end to end. They build QA artifacts (test plan, RTM, defect register, quality-metrics dashboard, release recommendation), automate the full test pyramid, threat-model the app, remediate OWASP Top 10 risks, build a CI/CD pipeline with SAST, DAST, dependency scanning, and QA gates, and add observability with SLO enforcement.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- SE3 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">SE3</span><h3 class="card-title"><a href="courses/SE3.html">Modern Front-End Web Development</a></h3></div>
+        <p class="card-tagline">Craft fast, accessible, component-driven web interfaces</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Shipped an accessible single-page application in React or Vue with TypeScript: a composed component hierarchy, predictable store-managed state, client-side routing, WCAG-audited markup, and a Vite code-split build tuned to performance budgets and covered by Vitest and Playwright tests.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Build component-based, state-managed SPAs in React or Vue with TypeScript, applying the component model and unidirectional data flow correctly.</li>
+              <li><span class="out-num">02</span>Apply WCAG accessibility principles with semantic markup and ARIA, and verify compliance with automated tooling.</li>
+              <li><span class="out-num">03</span>Optimize front-end performance to meet loading budgets using code splitting, tree shaking, and Lighthouse metrics.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>DOM and the browser rendering pipeline</li>
+              <li>The component model, declarative rendering, and virtual DOM reconciliation</li>
+              <li>Reactive programming and dependency-tracked state propagation</li>
+              <li>WCAG 2.2 accessibility principles and semantic, inclusive interaction</li>
+              <li>Critical rendering path and Core Web Vitals</li>
+              <li>Module bundling, tree shaking, and code splitting</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">React</span><span class="tool-tag">Vue</span><span class="tool-tag">TypeScript</span><span class="tool-tag">Vite</span><span class="tool-tag">Redux Toolkit / Pinia</span><span class="tool-tag">React Router / Vue Router</span><span class="tool-tag">Tailwind CSS</span><span class="tool-tag">Vitest</span><span class="tool-tag">Playwright</span><span class="tool-tag">axe DevTools</span><span class="tool-tag">Lighthouse</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams design and build one single-page web application that grows from a static shell into a component-based, state-managed product. The application is made responsive, accessible to WCAG standards, and tuned to performance budgets with an optimized Vite build. Every increment is validated through component and interaction tests.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- SE4 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">SE4</span><h3 class="card-title"><a href="courses/SE4.html">Back-End Web Development &amp; APIs</a></h3></div>
+        <p class="card-tagline">Design robust back-end services, APIs, and data layers</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a back-end API platform on Node.js or FastAPI exposing both REST and an Apollo GraphQL layer over a normalized, indexed PostgreSQL schema, secured with JWT authentication and role-based access control, accelerated with Redis caching, and load-tested with k6 against scaling targets.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Design REST and GraphQL API platforms with versioning, pagination, validation, and OpenAPI contracts, reasoning about the trade-offs between the two styles.</li>
+              <li><span class="out-num">02</span>Model relational data with normalization theory, design indexes, and implement ACID-compliant transactions with correct isolation levels.</li>
+              <li><span class="out-num">03</span>Secure APIs with JWT, OAuth 2.0, and role-based access control; apply caching and horizontal scaling to meet load targets.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>REST architectural constraints and resource-oriented design</li>
+              <li>The relational model and normalization theory (1NF–BCNF)</li>
+              <li>ACID transactions, isolation levels, and indexing internals</li>
+              <li>Token and federated identity flows (JWT, OAuth 2.0, OIDC)</li>
+              <li>Cache coherence, invalidation strategies, and consistency trade-offs</li>
+              <li>Statelessness, replication, and the CAP theorem</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Node.js</span><span class="tool-tag">Python</span><span class="tool-tag">Express</span><span class="tool-tag">FastAPI</span><span class="tool-tag">PostgreSQL</span><span class="tool-tag">Prisma / SQLAlchemy</span><span class="tool-tag">Apollo Server</span><span class="tool-tag">Redis</span><span class="tool-tag">JWT</span><span class="tool-tag">OpenAPI</span><span class="tool-tag">Postman</span><span class="tool-tag">Docker</span><span class="tool-tag">k6</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build one back-end service that grows from basic endpoints into a complete API platform with a tuned data layer. The service exposes both REST and GraphQL, enforces secure authentication and authorization, adds caching and scaling to meet load targets, and is validated with automated and contract tests.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- SE5 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">SE5</span><h3 class="card-title"><a href="courses/SE5.html">Engineering of AI Systems</a></h3></div>
+        <p class="card-tagline">DevOps, DataOps, MLOps, LLMOps, AgentOps: one running project, end to end</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built, deployed, and operated a production AI service end to end: a containerized, CI/CD-gated REST API on Kubernetes, fed by a medallion data pipeline, with an MLflow model registry, a gateway-fronted RAG feature, live drift monitoring, and a security review against the OWASP LLM Top 10.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Build and operate end-to-end CI/CD pipelines for containerized AI services on Kubernetes, from code commit to production deployment with rollback.</li>
+              <li><span class="out-num">02</span>Orchestrate medallion data pipelines (raw → curated) and manage ML experiments, model registries, and serving with MLflow and feature stores.</li>
+              <li><span class="out-num">03</span>Monitor data and model drift in production, apply OWASP LLM Top 10 security controls, and instrument LLM/agent pipelines with observability tooling.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>GitOps, declarative infrastructure, and IaC with Terraform</li>
+              <li>Medallion lakehouse architecture (bronze/silver/gold)</li>
+              <li>MLflow experiment tracking, model registry, and artifact lineage</li>
+              <li>RAG (retrieval-augmented generation) architecture and vector stores</li>
+              <li>Data and model drift detection; statistical process control</li>
+              <li>OWASP LLM Top 10 and AI security threat modeling</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Docker</span><span class="tool-tag">Kubernetes</span><span class="tool-tag">GitHub Actions</span><span class="tool-tag">Terraform</span><span class="tool-tag">Apache Airflow</span><span class="tool-tag">Apache Kafka</span><span class="tool-tag">DVC</span><span class="tool-tag">Great Expectations</span><span class="tool-tag">MLflow</span><span class="tool-tag">FAISS / Qdrant</span><span class="tool-tag">LiteLLM</span><span class="tool-tag">EvidentlyAI</span><span class="tool-tag">Langfuse</span><span class="tool-tag">Prometheus</span><span class="tool-tag">Grafana</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a production AI service through four operational layers: containerized REST API with CI/CD on Kubernetes; a medallion data pipeline with quality checks; an MLflow-managed model registry with a RAG serving layer; and live drift monitoring with OWASP LLM security review; each increment extends the previous.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- SE6 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">SE6</span><h3 class="card-title"><a href="courses/SE6.html">Mobile, IoT &amp; Edge Software Development</a></h3></div>
+        <p class="card-tagline">Build software for mobile, IoT, and the edge</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Delivered a device-to-cloud system pairing a Flutter cross-platform app with IoT sensors over MQTT and CoAP, a Raspberry Pi edge node that filters and aggregates readings, and offline-first local storage that synchronizes with conflict resolution over secured channels.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Build cross-platform mobile applications with Flutter, integrating device sensors, local storage, and lifecycle management.</li>
+              <li><span class="out-num">02</span>Apply MQTT and CoAP to connect IoT devices; implement edge computing nodes that filter and aggregate sensor data before cloud transmission.</li>
+              <li><span class="out-num">03</span>Design offline-first applications with local-first storage, data synchronization, and CRDT-based conflict resolution.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Ubiquitous and pervasive computing models</li>
+              <li>Publish-subscribe messaging and QoS semantics (MQTT)</li>
+              <li>Constrained-device RESTful communication (CoAP)</li>
+              <li>Edge and fog computing latency and bandwidth economics</li>
+              <li>Local-first design and eventual consistency</li>
+              <li>Conflict-free replicated data types (CRDTs) and merge theory</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Flutter</span><span class="tool-tag">Dart</span><span class="tool-tag">React Native</span><span class="tool-tag">SQLite</span><span class="tool-tag">Eclipse Mosquitto</span><span class="tool-tag">MQTT.js</span><span class="tool-tag">aiocoap</span><span class="tool-tag">Node-RED</span><span class="tool-tag">Raspberry Pi</span><span class="tool-tag">PowerSync / CouchDB</span><span class="tool-tag">Firebase</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build one connected system spanning a cross-platform mobile app, IoT sensors, and an edge processing component. The system communicates over MQTT and CoAP, processes data at the edge, and works offline with reliable synchronization and conflict resolution. Each weekly increment extends the device-to-cloud pipeline.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- SE7 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">SE7</span><h3 class="card-title"><a href="courses/SE7.html">Design of AI-based &amp; Data-Intensive Systems</a></h3></div>
+        <p class="card-tagline">Architect data-intensive and AI-driven systems at scale</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Architected a data-intensive system that ingests events through Apache Kafka, runs ETL and ELT flows with PySpark on Apache Spark and Databricks, processes streams with Flink into a replicated, partitioned Cassandra store, serves predictions from an MLflow-tracked model, and guards quality with Evidently drift monitoring.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Design and implement ETL/ELT pipelines with PySpark on Apache Spark and Databricks, applying the MapReduce model and batch-processing theory.</li>
+              <li><span class="out-num">02</span>Apply distributed storage trade-offs (CAP, PACELC), configure replication and partitioning, and implement exactly-once delivery guarantees.</li>
+              <li><span class="out-num">03</span>Integrate ML models into production data systems, enforce data quality, detect drift, and reason about ML technical debt.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Reliability, scalability, and maintainability as system properties</li>
+              <li>Storage-engine internals and data-model trade-offs</li>
+              <li>MapReduce model; Apache Spark execution and PySpark DataFrames</li>
+              <li>Event-time dataflow, watermarks, and windowing theory</li>
+              <li>Replication, partitioning, and CAP/PACELC trade-offs</li>
+              <li>Distributed consensus and exactly-once processing semantics</li>
+              <li>Hidden technical debt in ML systems</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Apache Kafka</span><span class="tool-tag">Apache Spark</span><span class="tool-tag">PySpark</span><span class="tool-tag">Databricks</span><span class="tool-tag">Apache Flink</span><span class="tool-tag">Apache Cassandra</span><span class="tool-tag">Apache Airflow</span><span class="tool-tag">dbt</span><span class="tool-tag">Great Expectations</span><span class="tool-tag">MLflow</span><span class="tool-tag">Feast</span><span class="tool-tag">Evidently</span><span class="tool-tag">Docker</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build one data-intensive system that ingests data, processes it through ETL/ELT flows with PySpark and Databricks, and stores it in a replicated, partitioned distributed store. They integrate an ML model for serving, add data-quality and drift monitoring, and reason explicitly about consistency, fault tolerance, and architectural trade-offs throughout.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+  </div><!-- /course-grid -->
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     AI: ARTIFICIAL INTELLIGENCE  (6 courses)
+════════════════════════════════════════════════════ -->
+<section class="track" id="ai">
+  <div class="track-hd">
+    <span class="track-code">AI</span>
+    <h2 class="track-name">Artificial Intelligence</h2>
+    <span class="track-count">6 courses</span>
+  </div>
+  <div class="course-grid">
+
+    <!-- AI1 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">AI1</span><h3 class="card-title"><a href="courses/AI1.html">Language AI: LLMs and Agentic Systems</a></h3></div>
+        <p class="card-tagline">Build, ground, and guard production LLM agents</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a grounded, tool-using LLM agent in Python with PyTorch, Hugging Face Transformers, LangChain, and FAISS, adding retrieval-augmented generation, a ReAct planning loop, safety guardrails, and an LLM-as-judge evaluation suite.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Build and deploy tool-using LLM agents grounded with retrieval-augmented generation over a vector knowledge base.</li>
+              <li><span class="out-num">02</span>Implement a ReAct planning loop with safety guardrails and structured tool-calling.</li>
+              <li><span class="out-num">03</span>Evaluate agent quality systematically with LLM-as-judge frameworks and task-success metrics.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Transformer architecture and scaled dot-product attention</li>
+              <li>Retrieval-augmented generation (RAG) and dense vector retrieval</li>
+              <li>ReAct (Reasoning + Acting) planning and tool-calling patterns</li>
+              <li>RLHF and Constitutional AI alignment approaches</li>
+              <li>Safety guardrails and hallucination mitigation</li>
+              <li>LLM-as-judge evaluation methodology</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Python</span><span class="tool-tag">PyTorch</span><span class="tool-tag">Hugging Face Transformers</span><span class="tool-tag">LangChain</span><span class="tool-tag">FAISS</span><span class="tool-tag">LangSmith</span><span class="tool-tag">OpenAI API</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a production-ready tool-using LLM agent: a vector knowledge base with chunking and retrieval, a ReAct planning loop calling real tools, safety guardrails, and a systematic evaluation suite with LLM-as-judge scoring, grounded in a chosen domain problem.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- AI2 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">AI2</span><h3 class="card-title"><a href="courses/AI2.html">Temporal AI: Time Series &amp; Sequential Decision Making</a></h3></div>
+        <p class="card-tagline">Forecast, decide, and act under uncertainty over time</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built an end-to-end forecasting and control agent in Python with PyTorch, statsmodels, and Gymnasium, coupling a neural sequence forecaster to a deep reinforcement-learning controller trained with DQN and PPO inside a simulated environment.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Build neural sequence forecasters (LSTM, Transformer) and evaluate them against classical baselines (ARIMA, ETS) on real time-series data.</li>
+              <li><span class="out-num">02</span>Train deep RL agents using DQN and PPO in simulated environments, applying experience replay and advantage estimation correctly.</li>
+              <li><span class="out-num">03</span>Couple forecasting and control into one end-to-end pipeline where predicted future states inform the agent's policy.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Time-series stationarity, decomposition, and ARIMA models</li>
+              <li>LSTM and Transformer architectures for sequence modeling</li>
+              <li>Markov decision processes and the Bellman equation</li>
+              <li>Deep Q-networks (DQN) and experience replay</li>
+              <li>Proximal Policy Optimization (PPO) and advantage estimation</li>
+              <li>Forecasting error metrics (MAE, RMSE, MAPE) and RL evaluation</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Python</span><span class="tool-tag">PyTorch</span><span class="tool-tag">statsmodels</span><span class="tool-tag">Gymnasium</span><span class="tool-tag">Stable-Baselines3</span><span class="tool-tag">NumPy</span><span class="tool-tag">Matplotlib</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a forecasting-and-control pipeline on a chosen domain: a neural forecaster predicts future states, and a deep RL agent trained with DQN and PPO uses those predictions to control a simulated system; benchmarks compare classical and learned baselines.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- AI3 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">AI3</span><h3 class="card-title"><a href="courses/AI3.html">Vision AI: Deep Learning for Computer Vision</a></h3></div>
+        <p class="card-tagline">See the world with deep convolutional and transformer vision</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built an end-to-end computer-vision pipeline in Python with PyTorch, torchvision, and Detectron2, progressing from a residual classifier to an object detector and a Mask R-CNN instance-segmentation system evaluated with mean average precision and intersection over union.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Implement and train CNN classifiers with residual connections, applying transfer learning and fine-tuning for domain adaptation.</li>
+              <li><span class="out-num">02</span>Build and evaluate object detectors, progressing from anchor-based detection to region-proposal networks.</li>
+              <li><span class="out-num">03</span>Implement Mask R-CNN instance segmentation and evaluate with mAP and IoU against held-out test sets.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Convolutional networks, receptive fields, and spatial hierarchies</li>
+              <li>Residual connections and batch normalization</li>
+              <li>Anchor-based object detection (YOLO, SSD) and region proposals (R-CNN family)</li>
+              <li>Mask R-CNN: RPN, RoI pooling, and mask heads</li>
+              <li>Mean average precision (mAP) and intersection over union (IoU)</li>
+              <li>Data augmentation and domain adaptation via transfer learning</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Python</span><span class="tool-tag">PyTorch</span><span class="tool-tag">torchvision</span><span class="tool-tag">Detectron2</span><span class="tool-tag">OpenCV</span><span class="tool-tag">NumPy</span><span class="tool-tag">Albumentations</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build an end-to-end computer-vision pipeline on a chosen dataset: starting with a fine-tuned residual classifier, extending to an object detector, and culminating in a Mask R-CNN instance-segmentation system with mAP and IoU evaluation and error analysis.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- AI4 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">AI4</span><h3 class="card-title"><a href="courses/AI4.html">Scalable AI: Big-Data Algorithms</a></h3></div>
+        <p class="card-tagline">Train and serve AI at massive data and compute scale</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a scalable training and serving pipeline in Python with PyTorch Distributed, DeepSpeed, Apache Spark, and Kafka, layering data and pipeline parallelism, ZeRO sharding, sketch-based approximate aggregation, and streaming ingestion measured for throughput and cost.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Implement data and pipeline parallelism in distributed PyTorch, measuring throughput and scaling efficiency across nodes.</li>
+              <li><span class="out-num">02</span>Apply ZeRO optimizer sharding with DeepSpeed to train large models that exceed single-GPU memory.</li>
+              <li><span class="out-num">03</span>Build streaming ML pipelines on Kafka, integrating approximate aggregation and cost-aware throughput analysis.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Data parallelism, model parallelism, and pipeline parallelism</li>
+              <li>ZeRO (Zero Redundancy Optimizer) sharding stages</li>
+              <li>All-reduce algorithms (Ring-AllReduce) and gradient compression</li>
+              <li>Sketch-based approximate aggregation (Count-Min, HyperLogLog)</li>
+              <li>Streaming ingestion, at-least-once vs. exactly-once semantics</li>
+              <li>GPU memory management and mixed-precision training (FP16/BF16)</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Python</span><span class="tool-tag">PyTorch Distributed</span><span class="tool-tag">DeepSpeed</span><span class="tool-tag">Apache Spark</span><span class="tool-tag">Apache Kafka</span><span class="tool-tag">Ray</span><span class="tool-tag">NumPy</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a scalable training and serving pipeline: data and pipeline parallelism with PyTorch Distributed, ZeRO sharding with DeepSpeed for a large model, streaming feature ingestion via Kafka, and a throughput and cost benchmark comparing parallelism strategies.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- AI5 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">AI5</span><h3 class="card-title"><a href="courses/AI5.html">Generative AI: Deep Generative Models</a></h3></div>
+        <p class="card-tagline">Model and sample from data with deep generative models</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a conditional generative pipeline in Python with PyTorch and Hugging Face Diffusers, implementing and benchmarking VAE, GAN, autoregressive, and diffusion generators with classifier-free guidance and FID evaluation on a shared data modality.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Implement VAE, GAN, autoregressive, and DDPM generators from mathematical foundations, diagnosing mode collapse and posterior collapse.</li>
+              <li><span class="out-num">02</span>Apply classifier-free guidance for conditional generation and tune the guidance scale for quality-diversity trade-offs.</li>
+              <li><span class="out-num">03</span>Evaluate generative models rigorously with FID, precision-recall, and qualitative analysis across modalities.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Variational autoencoders: ELBO, reparameterization trick, KL divergence</li>
+              <li>Generative adversarial networks: minimax training, Wasserstein GAN</li>
+              <li>Autoregressive generation: PixelCNN, GPT-style causal models</li>
+              <li>Denoising diffusion probabilistic models (DDPM) and score-based models</li>
+              <li>Classifier-free guidance and conditioning mechanisms</li>
+              <li>Fréchet Inception Distance (FID) and precision-recall for generative evaluation</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Python</span><span class="tool-tag">PyTorch</span><span class="tool-tag">Hugging Face Diffusers</span><span class="tool-tag">torchvision</span><span class="tool-tag">Weights &amp; Biases</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams implement and benchmark all four generative paradigms (VAE, GAN, autoregressive, diffusion) on a shared data modality, add conditional generation with classifier-free guidance, and compare architectures with FID and precision-recall, including diagnostic analysis of failure modes.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- AI6 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">AI6</span><h3 class="card-title"><a href="courses/AI6.html">Embodied AI: Robotics &amp; Autonomous Systems</a></h3></div>
+        <p class="card-tagline">Perceive, plan, and act with embodied autonomous systems</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a full perceive-plan-act autonomy stack in Python with ROS 2, PyBullet, and PyTorch, fusing sensors with Kalman and particle filters, planning with A-star and RRT, and tracking trajectories with model-predictive and reinforcement-learning controllers under sim-to-real domain randomization.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Derive and implement Kalman and particle filters for probabilistic state estimation and sensor fusion from camera, lidar, and IMU.</li>
+              <li><span class="out-num">02</span>Plan robot motion with graph-search (A-star) and sampling-based (RRT) algorithms in high-dimensional configuration spaces.</li>
+              <li><span class="out-num">03</span>Track planned trajectories with MPC and learned RL policies, applying domain randomization for sim-to-real robustness.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Rigid-body kinematics, transforms, and robot state representation</li>
+              <li>The Bayes filter and the recursive predict-update cycle</li>
+              <li>Kalman filter (linear and extended) and particle filter</li>
+              <li>Configuration-space planning: A-star and rapidly-exploring random trees (RRT)</li>
+              <li>PID control, linear-quadratic regulator (LQR), and model-predictive control</li>
+              <li>Policy-gradient RL (PPO, SAC) for continuous control; sim-to-real gap</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">ROS 2</span><span class="tool-tag">PyBullet</span><span class="tool-tag">MuJoCo</span><span class="tool-tag">NVIDIA Isaac Sim</span><span class="tool-tag">Gymnasium</span><span class="tool-tag">Stable-Baselines3</span><span class="tool-tag">Open3D</span><span class="tool-tag">OpenCV</span><span class="tool-tag">PyTorch</span><span class="tool-tag">NumPy</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build one autonomous embodied agent in simulation, layering perception, probabilistic estimation, motion planning, and feedback control into a full perceive-plan-act stack. The project advances from classical estimation and planning into learned control and a sim-to-real robustness study.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     CY: CYBERSECURITY  (5 courses)
+════════════════════════════════════════════════════ -->
+<section class="track" id="cy">
+  <div class="track-hd">
+    <span class="track-code">CY</span>
+    <h2 class="track-name">Cybersecurity</h2>
+    <span class="track-count">5 courses</span>
+  </div>
+  <div class="course-grid">
+
+    <!-- CY1 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">CY1</span><h3 class="card-title"><a href="courses/CY1.html">Applied Cryptography</a></h3></div>
+        <p class="card-tagline">From number theory to provably secure cryptosystems and protocols</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a rigorous applied-cryptography library in Python from big-integer arithmetic primitives up to authenticated key exchange, with AES-GCM AEAD, RSA-OAEP, ECDH, EdDSA, and a hybrid post-quantum KEM via liboqs.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Implement symmetric cryptography (AES-GCM AEAD) and asymmetric primitives (RSA-OAEP, ECDH, EdDSA) from mathematical foundations.</li>
+              <li><span class="out-num">02</span>Design and implement authenticated key exchange protocols with forward secrecy.</li>
+              <li><span class="out-num">03</span>Apply post-quantum cryptography (CRYSTALS-Kyber) in a hybrid KEM that maintains classical security as a fallback.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Number theory: modular arithmetic, Euler's theorem, discrete logarithm problem</li>
+              <li>Symmetric encryption: block ciphers, modes of operation, AES-GCM AEAD</li>
+              <li>Public-key cryptography: RSA, elliptic curves, ECDH, EdDSA</li>
+              <li>Key derivation functions (HKDF) and hash-based MACs</li>
+              <li>Post-quantum lattice-based cryptography (CRYSTALS-Kyber, CRYSTALS-Dilithium)</li>
+              <li>Authenticated key exchange and forward secrecy (TLS 1.3 handshake)</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Python</span><span class="tool-tag">cryptography (pyca)</span><span class="tool-tag">liboqs</span><span class="tool-tag">OpenSSL</span><span class="tool-tag">NumPy</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a cryptographic library from scratch: big-integer arithmetic, symmetric and asymmetric primitives, an authenticated key exchange protocol, and a hybrid post-quantum KEM. Each component is unit-tested against known-answer test vectors.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- CY2 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">CY2</span><h3 class="card-title"><a href="courses/CY2.html">Network Security</a></h3></div>
+        <p class="card-tagline">Securing networks with protocols, perimeters, and attack detection</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a progressively defended virtual network lab in containers with a hardened TLS 1.3 endpoint, nftables and pfSense microsegmentation, Suricata and Zeek detection sensors, IPsec and WireGuard tunnels, and a Wazuh SIEM correlation pipeline.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Harden TLS 1.3 endpoints and design network microsegmentation with stateful firewall rules and zero-trust principles.</li>
+              <li><span class="out-num">02</span>Deploy and tune Suricata IDS and Zeek network monitoring; write detection rules and parse behavioral logs.</li>
+              <li><span class="out-num">03</span>Build IPsec and WireGuard VPN tunnels and correlate security events in a Wazuh SIEM pipeline.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>TLS 1.3 handshake, certificate chains, and PKI</li>
+              <li>Firewall rule theory: stateful packet inspection, netfilter, nftables</li>
+              <li>Network intrusion detection: Suricata rule syntax, Zeek scripting</li>
+              <li>IPsec (IKEv2) and WireGuard protocol design and key management</li>
+              <li>SIEM log aggregation, correlation rules, and alert triage</li>
+              <li>Zero-trust network architecture and microsegmentation</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">nftables</span><span class="tool-tag">pfSense</span><span class="tool-tag">Suricata</span><span class="tool-tag">Zeek</span><span class="tool-tag">WireGuard</span><span class="tool-tag">strongSwan (IPsec)</span><span class="tool-tag">Wazuh</span><span class="tool-tag">Wireshark</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a progressively hardened virtual network lab: a TLS endpoint with certificate pinning, nftables and pfSense microsegmentation, Suricata and Zeek IDS sensors tuned with custom rules, IPsec and WireGuard tunnels, and a Wazuh SIEM correlating all security events with alerting.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- CY3 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">CY3</span><h3 class="card-title"><a href="courses/CY3.html">Hardware &amp; Embedded Systems Security</a></h3></div>
+        <p class="card-tagline">Attacking and defending hardware, firmware, and embedded devices</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Performed a full hardware security assessment of an embedded device: mapped UART and SPI interfaces, dumped and reverse-engineered firmware with binwalk and Ghidra, and extracted an AES key by differential power analysis on ChipWhisperer.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Map hardware debug interfaces (UART, SPI, JTAG), extract firmware via flash dumping, and analyze binaries with binwalk and Ghidra.</li>
+              <li><span class="out-num">02</span>Perform differential power analysis (DPA) on ChipWhisperer to recover cryptographic key bytes from power traces.</li>
+              <li><span class="out-num">03</span>Produce a structured hardware security assessment report with attack surface map, exploitation paths, and mitigation recommendations.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Embedded hardware interfaces: UART, SPI, I2C, JTAG, SWD</li>
+              <li>Firmware analysis: file system extraction, entropy analysis, string extraction</li>
+              <li>Binary reverse engineering with disassembly and decompilation</li>
+              <li>Side-channel attack theory: power analysis, timing attacks</li>
+              <li>Differential power analysis (DPA) and correlation power analysis (CPA)</li>
+              <li>Secure element design and hardware security countermeasures</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">ChipWhisperer</span><span class="tool-tag">binwalk</span><span class="tool-tag">Ghidra</span><span class="tool-tag">OpenOCD</span><span class="tool-tag">Saleae Logic</span><span class="tool-tag">Python</span><span class="tool-tag">radare2</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams perform a complete hardware security assessment of a target embedded device: interface discovery with a logic analyzer, firmware extraction and reverse engineering with Ghidra, and an AES key extraction via differential power analysis on ChipWhisperer, documented as a structured assessment report.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- CY4 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">CY4</span><h3 class="card-title"><a href="courses/CY4.html">Cyber-Security Governance, Risk &amp; Compliance</a></h3></div>
+        <p class="card-tagline">Managing cyber-security through risk, frameworks, audit, and response</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Authored a complete security governance program for a case-study organization: a prioritized SP 800-30 risk register, a CSF 2.0 profile, an ISO/IEC 27001 ISMS with statement of applicability, tailored SP 800-53 controls, and a vendor risk management process.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Produce a NIST SP 800-30 risk assessment with a prioritized risk register, likelihood-impact ratings, and a treatment plan.</li>
+              <li><span class="out-num">02</span>Build an ISO/IEC 27001 ISMS with a statement of applicability and map it against a NIST CSF 2.0 profile.</li>
+              <li><span class="out-num">03</span>Tailor NIST SP 800-53 control baselines to organizational context and design a third-party vendor risk management process.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Risk management framework (RMF) theory: threat, vulnerability, likelihood, impact</li>
+              <li>NIST Cybersecurity Framework 2.0 (Identify, Protect, Detect, Respond, Recover, Govern)</li>
+              <li>ISO/IEC 27001 ISMS lifecycle and statement of applicability</li>
+              <li>NIST SP 800-53 control families and baseline tailoring</li>
+              <li>Third-party risk management and supply-chain security</li>
+              <li>Security policy hierarchy: policy, standard, procedure, guideline</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Eramba</span><span class="tool-tag">OpenSCAP</span><span class="tool-tag">Wazuh</span><span class="tool-tag">NIST CPRT</span><span class="tool-tag">MITRE ATT&amp;CK Navigator</span><span class="tool-tag">FAIR-U</span><span class="tool-tag">draw.io</span><span class="tool-tag">TheHive</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams author a complete security governance program for a case-study organization: SP 800-30 risk register, CSF 2.0 target profile with gap analysis, ISO/IEC 27001 ISMS with statement of applicability, tailored SP 800-53 control baseline, and a vendor risk assessment process.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- CY5 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">CY5</span><h3 class="card-title"><a href="courses/CY5.html">Blockchain and Decentralized Cryptographic Systems</a></h3></div>
+        <p class="card-tagline">Building and securing blockchains, smart contracts, and DeFi</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a minimal but complete decentralized system: a simplified PBFT consensus module, Merkle-backed block integrity, proof-of-work mining, deployed Solidity smart contracts with ERC-20 or ERC-721 token flows, and an IPFS-backed DApp interface.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Implement Byzantine fault-tolerant consensus (PBFT) and proof-of-work mining with Merkle tree integrity verification.</li>
+              <li><span class="out-num">02</span>Write, test, and deploy Solidity smart contracts implementing ERC-20 and ERC-721 token standards with security analysis.</li>
+              <li><span class="out-num">03</span>Build an IPFS-backed decentralized application interface that interacts with deployed contracts via MetaMask.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Byzantine fault tolerance and the PBFT consensus protocol</li>
+              <li>Merkle trees and hash-chain block integrity</li>
+              <li>Proof-of-work mining and difficulty adjustment</li>
+              <li>The Ethereum virtual machine (EVM) and Solidity execution model</li>
+              <li>ERC-20 (fungible) and ERC-721 (NFT) token standards</li>
+              <li>IPFS content addressing and decentralized storage</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Python</span><span class="tool-tag">Solidity</span><span class="tool-tag">Hardhat / Foundry</span><span class="tool-tag">MetaMask</span><span class="tool-tag">IPFS</span><span class="tool-tag">Remix IDE</span><span class="tool-tag">Ethers.js</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a complete decentralized system from scratch: a PBFT consensus layer and PoW blockchain in Python, then Solidity smart contracts with ERC-20/ERC-721 token flows deployed to a testnet, and a DApp front end backed by IPFS for metadata storage.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     QCF: QUANTUM & QUANTITATIVE FINANCE  (2 courses)
+════════════════════════════════════════════════════ -->
+<section class="track" id="qcf">
+  <div class="track-hd">
+    <span class="track-code">QCF</span>
+    <h2 class="track-name">Quantum Computing &amp; Quantitative Finance</h2>
+    <span class="track-count">2 courses</span>
+  </div>
+  <div class="course-grid">
+
+    <!-- QCF1 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">QCF1</span><h3 class="card-title"><a href="courses/QCF1.html">Quantum Optimization</a></h3></div>
+        <p class="card-tagline">Quantum and quantum-inspired methods for hard combinatorial optimization</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built an end-to-end quantum optimization pipeline in Python with Qiskit, PennyLane, and the D-Wave Ocean SDK that maps a real combinatorial problem to QUBO and Ising forms and benchmarks QAOA, quantum annealing, and quantum-inspired solvers head to head.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Formulate combinatorial optimization problems (MaxCut, TSP, portfolio optimization) as QUBO and Ising Hamiltonians.</li>
+              <li><span class="out-num">02</span>Implement QAOA circuits in Qiskit and PennyLane, tuning variational parameters and interpreting solution quality.</li>
+              <li><span class="out-num">03</span>Run quantum annealing on D-Wave hardware and benchmark against quantum-inspired classical solvers with rigorous metrics.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Quantum circuit model: qubits, gates, superposition, entanglement</li>
+              <li>Quadratic unconstrained binary optimization (QUBO) formulation</li>
+              <li>Ising Hamiltonian and the mapping from combinatorial to physical models</li>
+              <li>Quantum Approximate Optimization Algorithm (QAOA) and variational circuits</li>
+              <li>Adiabatic quantum computation and D-Wave annealing</li>
+              <li>Quantum-inspired heuristics: simulated bifurcation, tensor networks</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Python</span><span class="tool-tag">Qiskit</span><span class="tool-tag">PennyLane</span><span class="tool-tag">D-Wave Ocean SDK</span><span class="tool-tag">NumPy</span><span class="tool-tag">Matplotlib</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams select a real combinatorial problem, formulate it as QUBO and Ising, then implement and benchmark three solvers (QAOA via Qiskit/PennyLane, D-Wave quantum annealing, and a quantum-inspired classical heuristic), with solution quality and runtime comparisons.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- QCF2 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">QCF2</span><h3 class="card-title"><a href="courses/QCF2.html">AI &amp; Optimization for Finance</a></h3></div>
+        <p class="card-tagline">AI, optimization, and risk for modern quantitative finance</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a reproducible quantitative research pipeline in Python with cvxpy, PyPortfolioOpt, scikit-learn, and vectorbt that constructs risk-aware optimized portfolios, adds machine learning signals, and rigorously backtests a cost-aware trading strategy under purged cross-validation.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Construct mean-variance and risk-parity optimized portfolios with CVXPY, incorporating constraints and transaction cost modeling.</li>
+              <li><span class="out-num">02</span>Add machine learning signals (momentum, factor models) to portfolio construction and assess out-of-sample predictive power.</li>
+              <li><span class="out-num">03</span>Backtest trading strategies under purged cross-validation to avoid look-ahead bias and data snooping, measuring risk-adjusted performance.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Markowitz mean-variance optimization and the efficient frontier</li>
+              <li>Convex portfolio optimization with CVXPY and constraint handling</li>
+              <li>Risk-parity and maximum diversification portfolio construction</li>
+              <li>ML for finance: momentum signals, factor models, and feature engineering</li>
+              <li>Backtesting pitfalls: look-ahead bias, survivorship bias, data snooping</li>
+              <li>Purged and embargo cross-validation; transaction cost-aware Sharpe ratio</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Python</span><span class="tool-tag">cvxpy</span><span class="tool-tag">PyPortfolioOpt</span><span class="tool-tag">scikit-learn</span><span class="tool-tag">vectorbt</span><span class="tool-tag">pandas</span><span class="tool-tag">NumPy</span><span class="tool-tag">Matplotlib</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a reproducible quantitative research pipeline: mean-variance and risk-parity optimized portfolios with CVXPY, ML-based signals (momentum, factor models) added to the allocation, and a cost-aware trading strategy rigorously backtested under purged cross-validation with Sharpe ratio and max drawdown analysis.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     GM: GRAPHICS & MIXED REALITY  (2 courses)
+════════════════════════════════════════════════════ -->
+<section class="track" id="gm">
+  <div class="track-hd">
+    <span class="track-code">GM</span>
+    <h2 class="track-name">Graphics &amp; Mixed Reality</h2>
+    <span class="track-count">2 courses</span>
+  </div>
+  <div class="course-grid">
+
+    <!-- GM1 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">GM1</span><h3 class="card-title"><a href="courses/GM1.html">Computer Graphics</a></h3></div>
+        <p class="card-tagline">Build a real-time renderer and ship a playable engine demo</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a real-time 3D rendering application in Unity, Unreal, or a custom OpenGL/Vulkan engine, implementing a physically based shading pipeline with cascaded shadow maps, image-based lighting, and frustum culling, profiled with RenderDoc and Nsight to meet a fixed frame-rate budget.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Implement a physically based shading pipeline (Cook-Torrance BRDF) with metallic-roughness workflow in a real-time engine.</li>
+              <li><span class="out-num">02</span>Build cascaded shadow maps and image-based lighting with HDR environment maps for realistic scene illumination.</li>
+              <li><span class="out-num">03</span>Profile GPU performance with RenderDoc and Nsight, apply frustum culling and draw-call batching to meet a target frame rate.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Rasterization pipeline stages: vertex processing, rasterization, fragment shading</li>
+              <li>Physically based rendering (PBR): BRDFs, microfacet theory, Cook-Torrance model</li>
+              <li>Shadow mapping: basic, PCF, and cascaded shadow maps</li>
+              <li>Image-based lighting: environment maps, diffuse irradiance, specular prefiltering</li>
+              <li>GPU architecture: shader stages, memory bandwidth, overdraw</li>
+              <li>Frustum culling, LOD, and draw-call batching for performance</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Unity</span><span class="tool-tag">Unreal Engine</span><span class="tool-tag">OpenGL</span><span class="tool-tag">Vulkan</span><span class="tool-tag">GLSL / HLSL</span><span class="tool-tag">RenderDoc</span><span class="tool-tag">NVIDIA Nsight</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a real-time 3D scene with a physically based shading pipeline, cascaded shadow maps, image-based lighting, and frustum culling, profiled with RenderDoc and Nsight to diagnose GPU bottlenecks and verified to sustain a target frame rate under complexity constraints.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- GM2 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">GM2</span><h3 class="card-title"><a href="courses/GM2.html">Spatial Computing</a></h3></div>
+        <p class="card-tagline">Build and defend an immersive VR or AR application</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a cross-device spatial computing application on OpenXR with the Unity XR Interaction Toolkit, implementing hand-tracked interaction, SLAM-based inside-out tracking, plane detection and spatial anchors, and a comfort-tuned locomotion system.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Build hand-tracked XR interactions in the Unity XR Interaction Toolkit, implementing grab, poke, and teleportation with correct event handling.</li>
+              <li><span class="out-num">02</span>Apply SLAM-based inside-out tracking with plane detection and spatial anchors for persistent, environment-aware AR experiences.</li>
+              <li><span class="out-num">03</span>Design and test a comfort-tuned locomotion system that minimizes vection-induced cybersickness across user profiles.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Stereoscopic display geometry, lens distortion, and reprojection</li>
+              <li>Simultaneous Localization and Mapping (SLAM) for inside-out tracking</li>
+              <li>Plane detection, spatial anchors, and persistent coordinate frames</li>
+              <li>Hand tracking algorithms and skeletal hand models</li>
+              <li>Locomotion comfort theory: vection, cybersickness, and mitigation strategies</li>
+              <li>OpenXR specification and cross-device abstraction layer</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Unity</span><span class="tool-tag">OpenXR</span><span class="tool-tag">Unity XR Interaction Toolkit</span><span class="tool-tag">Apple ARKit</span><span class="tool-tag">Google ARCore</span><span class="tool-tag">Meta Quest SDK</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a cross-device spatial computing application: hand-tracked XR interactions on OpenXR, SLAM-based inside-out tracking with plane detection and persistent spatial anchors, and a comfort-tuned locomotion system validated against cybersickness criteria on target hardware.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     DF: DEFENSE SYSTEMS  (2 courses)
+════════════════════════════════════════════════════ -->
+<section class="track" id="df">
+  <div class="track-hd">
+    <span class="track-code">DF</span>
+    <h2 class="track-name">Defense Systems</h2>
+    <span class="track-count">2 courses</span>
+  </div>
+  <div class="course-grid">
+
+    <!-- DF1 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">DF1</span><h3 class="card-title"><a href="courses/DF1.html">Sensor Fusion &amp; Signal Processing</a></h3></div>
+        <p class="card-tagline">Build a multi-sensor estimation and tracking pipeline</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a multi-sensor estimation and tracking pipeline in Python with FilterPy and Stone Soup, implementing Kalman, unscented, and particle filters with data association to fuse radar, EO-IR, and inertial measurements into validated multi-target tracks.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Derive and implement Kalman, unscented Kalman (UKF), and particle filters for linear and nonlinear estimation problems.</li>
+              <li><span class="out-num">02</span>Solve multi-target data association with JPDA and MHT, maintaining track identity across frames.</li>
+              <li><span class="out-num">03</span>Fuse radar, EO-IR, and inertial sensor modalities into a combined estimator with validated track quality metrics.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Bayesian estimation: prior, likelihood, and posterior; the predict-update cycle</li>
+              <li>Kalman filter derivation and optimality conditions</li>
+              <li>Extended (EKF) and unscented (UKF) Kalman filters for nonlinear dynamics</li>
+              <li>Particle filter: importance sampling and resampling</li>
+              <li>Multi-target tracking: JPDA, MHT, and track management</li>
+              <li>Sensor-level fusion: coordinate transforms, registration, and track-to-track fusion</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">Python</span><span class="tool-tag">FilterPy</span><span class="tool-tag">Stone Soup</span><span class="tool-tag">NumPy</span><span class="tool-tag">Matplotlib</span><span class="tool-tag">SciPy</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a multi-sensor fusion pipeline: simulated radar, EO-IR, and IMU measurements are fused with Kalman, UKF, and particle filters, multi-target data association (JPDA/MHT) is applied to maintain track identity, and track quality is validated against ground-truth trajectories with OSPA and RMSE metrics.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- DF2 -->
+    <article class="card">
+      <div class="card-hd">
+        <div class="card-id"><span class="card-code">DF2</span><h3 class="card-title"><a href="courses/DF2.html">Mission-Critical Real-Time Systems</a></h3></div>
+        <p class="card-tagline">Build a certifiable real-time safety-critical control system</p>
+      </div>
+      <div class="build-block">
+        <div class="build-label">What You'll BUILD</div>
+        <p class="build-text">Built a mission-critical real-time control system on FreeRTOS and an ARM Cortex-M target, implementing rate-monotonic scheduling with proven schedulability, priority-inheritance synchronization, triple-modular redundancy with voting, and a DO-178C-style requirements traceability.</p>
+      </div>
+      <div class="card-sections">
+        <details class="acc" open>
+          <summary><span class="acc-icon">✦</span>Top Outcomes<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ol class="outcomes-list">
+              <li><span class="out-num">01</span>Design a real-time task set with rate-monotonic priority assignment, prove schedulability using the Liu &amp; Layland utilization bound, and verify with timing measurements.</li>
+              <li><span class="out-num">02</span>Implement priority-inheritance mutex synchronization to eliminate priority inversion and verify deadlock freedom.</li>
+              <li><span class="out-num">03</span>Build triple-modular redundancy with majority voting and produce DO-178C-style requirements traceability linking code to test to specification.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⬡</span>Theory &amp; Concepts<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <ul class="concepts-list">
+              <li>Real-time scheduling theory: rate-monotonic (RM) and earliest-deadline-first (EDF)</li>
+              <li>Schedulability analysis: Liu &amp; Layland utilization bound</li>
+              <li>Priority inversion, priority inheritance, and priority ceiling protocol</li>
+              <li>Triple-modular redundancy (TMR) and Byzantine voting</li>
+              <li>DO-178C software levels (A–E) and requirements traceability</li>
+              <li>Watchdog timers, hardware fault detection, and graceful degradation</li>
+            </ul>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">⚙</span>Tools &amp; Platforms<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <div class="tools-wrap">
+              <span class="tool-tag">FreeRTOS</span><span class="tool-tag">ARM Cortex-M (STM32)</span><span class="tool-tag">Ada and SPARK</span><span class="tool-tag">JTAG debugger</span><span class="tool-tag">Saleae Logic</span><span class="tool-tag">LDRA or VectorCAST</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc">
+          <summary><span class="acc-icon">◈</span>Capstone Project<span class="acc-chevron">›</span></summary>
+          <div class="acc-body">
+            <p class="project-text">Teams build a mission-critical real-time control system on FreeRTOS with ARM Cortex-M: a task set with proven RM schedulability, priority-inheritance mutexes, triple-modular redundancy with voting logic, and DO-178C-style traceability linking every requirement to code to test evidence.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  HIT · Holon Institute of Technology · Advanced CS Elective Concentrations &nbsp;·&nbsp; 24 courses · 6 tracks
+</footer>
+
+<script>
+// Theme toggle
+function toggleTheme(){
+  const root = document.documentElement;
+  const cur = root.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : cur === 'light' ? 'dark' :
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark');
+  root.setAttribute('data-theme', next);
+}
+
+// Inject "Full syllabus →" link into every card header
+document.querySelectorAll('.card-code').forEach(el => {
+  const code = el.textContent.trim();
+  const link = document.createElement('a');
+  link.className = 'syllabus-link';
+  link.href = `courses/${code}.html`;
+  link.textContent = 'Full syllabus →';
+  el.closest('.card-hd').appendChild(link);
+});
+
+// Smooth scroll for nav pills
+document.querySelectorAll('.nav-pill').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
