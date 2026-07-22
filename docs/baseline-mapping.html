@@ -87,7 +87,9 @@ a{color:inherit;text-decoration:none}
 .td-code{font-family:var(--mono);font-size:11px;font-weight:700;white-space:nowrap}
 .td-new{font-size:13px;color:var(--text);font-weight:500}
 .td-existing{font-size:12.5px;color:var(--sub);line-height:1.45}
-.td-outcome{font-size:12.5px;color:var(--text);font-style:italic;line-height:1.45;max-width:280px}
+.td-role{font-size:12px;color:var(--text);line-height:1.4}
+.td-concepts{font-size:12px;color:var(--sub);line-height:1.4}
+.td-tools{font-size:12px;color:var(--muted);font-family:var(--mono);line-height:1.4;word-break:break-word}
 .td-num{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap;margin-right:4px}
 
 .badge{display:inline-flex;align-items:center;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:4px;white-space:nowrap}
@@ -130,13 +132,15 @@ a{color:inherit;text-decoration:none}
     </div>
 
     <div class="table-scroll">
-      <table class="map-table" aria-label="New courses mapped to existing HIT baseline courses">
+      <table class="map-table" aria-label="New concentration courses with elective starting points, job roles, concepts, and tools">
         <thead>
           <tr>
             <th style="width:52px">Code</th>
             <th style="min-width:220px">New Course</th>
             <th style="min-width:340px">Elective Starting Point</th>
-            <th style="min-width:280px">Learning Outcome</th>
+            <th style="min-width:180px">Job Role</th>
+            <th style="min-width:260px">Key Theoretical or Engineering Concepts</th>
+            <th style="min-width:200px">Platforms / Tools</th>
           </tr>
         </thead>
         <tbody>
@@ -145,20 +149,26 @@ a{color:inherit;text-decoration:none}
             <td class="td-code c-se">SE1</td>
             <td class="td-new">Cloud Computing &amp; Cloud-Native Platforms</td>
             <td class="td-existing"><span class="td-num">62213</span><span dir="rtl">AWS עם Serverless מבוא לענן ולפיתוח</span><br>Introduction to Cloud and Development with AWS Serverless <em>(Yogev Shani)</em></td>
-            <td class="td-outcome">Containerize and deploy microservices on Kubernetes using Helm, Argo CD, and twelve-factor principles</td>
+            <td class="td-role">Cloud Architect, Platform Engineer, Site Reliability Engineer</td>
+            <td class="td-concepts">Distributed systems, container orchestration, service mesh, observability, twelve-factor app</td>
+            <td class="td-tools">Kubernetes, Helm, Argo CD, Terraform, Prometheus/Grafana</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE2</td>
             <td class="td-new">Secure &amp; Reliable Software Development</td>
             <td class="td-existing"><span class="td-num">64444</span><span dir="rtl">בדיקות תוכנה</span><br>Software Testing <em>(David Tobias)</em></td>
-            <td class="td-outcome">Build a quality-assured system with TDD, mutation testing, fault injection, and formal SLO definitions</td>
+            <td class="td-role">Software Quality Engineer, Test Architect, Reliability Engineer</td>
+            <td class="td-concepts">Software quality attributes, TDD/BDD, mutation testing, fault injection, SLO/SLI/SLA</td>
+            <td class="td-tools">JUnit/pytest, PIT/mutmut, SonarQube, GitHub Actions, Chaos Monkey</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE3</td>
             <td class="td-new">Modern Front-End Web Development</td>
             <td class="td-existing"><span class="td-num">65364</span><span dir="rtl">פיתוח צד לקוח</span><br>Client-Side Development <em>(Michael Haim)</em><br>
               <span class="td-num">65200</span><span dir="rtl">תכנות בסביבות האינטרנט</span><br>Web Programming Environments <em>(Nissim Barmi)</em></td>
-            <td class="td-outcome">Ship a React/Next.js SPA with TypeScript, Tailwind CSS, Core Web Vitals optimization, and WCAG 2.2 accessibility</td>
+            <td class="td-role">Front-End Developer, UI Engineer, Web Performance Engineer</td>
+            <td class="td-concepts">Component architecture, client-side rendering, Core Web Vitals, WCAG 2.2 accessibility</td>
+            <td class="td-tools">React, Next.js, TypeScript, Tailwind CSS, Lighthouse, Playwright</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE4</td>
@@ -167,13 +177,17 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">64410</span><span dir="rtl">פיתוח מערכות צד שרת בסביבת קוד פתוח</span><br>Server-Side Systems Development Open Source <em>(Ofer Vald)</em><br>
               <span class="td-num">65356</span><span dir="rtl">פיתוח צד שרת אסינכרוני</span><br>Asynchronous Server-Side Development <em>(Michael Haim)</em>
             </td>
-            <td class="td-outcome">Implement REST and GraphQL APIs in Node.js and Python with OpenAPI contracts, JWT auth, and rate-limiting middleware</td>
+            <td class="td-role">Back-End Developer, API Engineer, Platform Engineer</td>
+            <td class="td-concepts">REST/GraphQL, API contract-first design, JWT/OAuth2, database normalization, caching</td>
+            <td class="td-tools">Node.js, Express, FastAPI, PostgreSQL, OpenAPI/Swagger, Redis</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE5</td>
             <td class="td-new">Engineering of AI Systems</td>
             <td class="td-existing"><span class="td-num">65353</span><span dir="rtl">מבוא ל-DevOps</span><br>Introduction to DevOps <em>(Moshe Mamia)</em></td>
-            <td class="td-outcome">Automate a DevSecOps pipeline with GitHub Actions, Terraform, Prometheus, and OWASP SAST/DAST scanning</td>
+            <td class="td-role">DevOps Engineer, MLOps Engineer, Platform Engineer</td>
+            <td class="td-concepts">CI/CD pipelines, infrastructure-as-code, shift-left security, MLOps, observability</td>
+            <td class="td-tools">GitHub Actions, Terraform, Docker, Prometheus, OWASP ZAP, Trivy</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE6</td>
@@ -184,13 +198,17 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65352</span><span dir="rtl">פיתוח צד לקוח בסביבת אנדרואיד 2</span><br>Android Client-Side Development 2 <em>(Effi Propes)</em><br>
               <span class="td-num">67018</span><span dir="rtl">פיתוח אפליקציות אנדרואיד בשפת קוטלין</span><br>Android Application Development with Kotlin <em>(Eran Katzav)</em>
             </td>
-            <td class="td-outcome">Build and publish a React Native or Flutter mobile app with MQTT-based IoT edge integration</td>
+            <td class="td-role">Mobile Developer, IoT Engineer, Edge Software Developer</td>
+            <td class="td-concepts">Cross-platform frameworks, MQTT/IoT protocols, edge computing, reactive patterns</td>
+            <td class="td-tools">React Native, Flutter, MQTT, AWS IoT Greengrass, Android Studio</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE7</td>
             <td class="td-new">Design of AI-based &amp; Data-Intensive Systems</td>
             <td class="td-existing"><span class="td-num">64409</span><span dir="rtl">כריית נתונים</span><br>Data Mining <em>(Dr. Abraham Yosipof)</em></td>
-            <td class="td-outcome">Design an ML-serving system using Apache Spark, MLflow, and feature stores with reproducible experiment tracking</td>
+            <td class="td-role">ML Engineer, Data Engineer, AI Systems Architect</td>
+            <td class="td-concepts">Feature engineering, ML experiment tracking, data pipeline architecture, model serving</td>
+            <td class="td-tools">Apache Spark, MLflow, Feast, DVC, Apache Airflow</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE8</td>
@@ -199,7 +217,9 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65313</span><span dir="rtl">C# תכנות מונחה עצמים בסביבת דוט-נט ושפת</span><br>Object-Oriented Programming in .NET with C# <em>(Guy Ronen)</em><br>
               <span class="td-num">64332</span><span dir="rtl">תכנות יישומי באמצעות תבניות עיצוב</span><br>Applied Programming with Design Patterns <em>(Guy Ronen)</em>
             </td>
-            <td class="td-outcome">Build enterprise .NET 8 systems using CQRS, DDD aggregates, ASP.NET Core, and Entity Framework Core</td>
+            <td class="td-role">.NET Developer, Enterprise Architect, Solutions Engineer</td>
+            <td class="td-concepts">Domain-driven design, CQRS, clean architecture, dependency injection, design patterns</td>
+            <td class="td-tools">.NET 8, ASP.NET Core, Entity Framework Core, xUnit, Azure DevOps</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE9</td>
@@ -207,7 +227,9 @@ a{color:inherit;text-decoration:none}
             <td class="td-existing">
               <span class="td-num">65345</span><span dir="rtl">תכנות תחרותי</span><br>Competitive Programming <em>(Yuval Meir)</em>
             </td>
-            <td class="td-outcome">Solve NP-hard and graph problems using dynamic programming, segment trees, and competitive-programming techniques</td>
+            <td class="td-role">Algorithm Engineer, SWE Interview Candidate, Competitive Programmer</td>
+            <td class="td-concepts">Algorithmic complexity, graph theory, dynamic programming, greedy algorithms, NP-hardness</td>
+            <td class="td-tools">C++/Python, LeetCode, Codeforces, competitive judge environments</td>
           </tr>
           <tr>
             <td class="td-code c-se">SE10</td>
@@ -216,14 +238,18 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">67028</span>Human-Smart AI Interaction Workshop <em>(Eran Ahronson)</em><br>
               <span class="td-num">65346</span><span dir="rtl">UI ממשקי אדם מחשב</span><br>Human-Computer Interfaces (HCI/UI) <em>(Dr. Nava Shaked)</em>
             </td>
-            <td class="td-outcome">Design and evaluate multimodal HCI prototypes applying Fitts’ Law, cognitive load theory, and WCAG accessibility</td>
+            <td class="td-role">UX Engineer, HCI Researcher, Interaction Designer</td>
+            <td class="td-concepts">Cognitive load theory, Fitts' Law, affordances, mental models, usability evaluation</td>
+            <td class="td-tools">Figma, Maze, axe DevTools, think-aloud protocols, eye-tracking</td>
           </tr>
           <!-- CY -->
           <tr class="group-start">
             <td class="td-code c-cy">CY1</td>
             <td class="td-new">Applied Cryptography</td>
             <td class="td-existing"><span class="td-num">68012</span><span dir="rtl">מבוא יישומי לקריפטוגרפיה מודרנית</span><br>Applied Introduction to Modern Cryptography <em>(Zeev Geyzel)</em></td>
-            <td class="td-outcome">Implement and attack RSA, ECC, AES, and zero-knowledge proofs using OpenSSL and Python cryptographic libraries</td>
+            <td class="td-role">Cryptography Engineer, Security Researcher, Protocol Designer</td>
+            <td class="td-concepts">Number theory, group theory, RSA/ECC/AES, zero-knowledge proofs, PKI</td>
+            <td class="td-tools">OpenSSL, Python cryptography library, SageMath, Bouncy Castle</td>
           </tr>
           <tr>
             <td class="td-code c-cy">CY2</td>
@@ -234,13 +260,17 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65362</span><span dir="rtl">היבטים מעשיים באבטחת סייבר</span><br>Practical Aspects of Cybersecurity <em>(Adrian Shpeler)</em><br>
               <span class="td-num">62206</span><span dir="rtl">מבוא לאבטחת סייבר מונחית בינה מלאכותית</span><br>Introduction to AI-Guided Cybersecurity <em>(Vyacheslav Napdov)</em>
             </td>
-            <td class="td-outcome">Configure and harden TCP/IP networks using Wireshark, Snort IDS, iptables, and TLS/PKI certificate infrastructure</td>
+            <td class="td-role">Network Security Engineer, Security Architect, SOC Analyst</td>
+            <td class="td-concepts">TCP/IP stack, TLS/PKI, IDS/IPS design, firewall policy, network forensics</td>
+            <td class="td-tools">Wireshark, Snort, iptables, Nmap, Metasploit</td>
           </tr>
           <tr>
             <td class="td-code c-cy">CY3</td>
             <td class="td-new">Hardware &amp; Embedded Systems Security</td>
             <td class="td-existing"><span class="td-num">65343</span><span dir="rtl">הנדסה לאחור וניתוח תוכנות זדוניות</span><br>Reverse Engineering and Malware Analysis <em>(Shurna Preyer)</em></td>
-            <td class="td-outcome">Reverse-engineer x86/ARM binaries with Ghidra and IDA Pro, and exploit buffer overflows and ROP chains in safe lab environments</td>
+            <td class="td-role">Malware Analyst, Reverse Engineer, Embedded Security Researcher</td>
+            <td class="td-concepts">x86/ARM assembly, memory exploitation, ROP chains, firmware analysis, side-channel attacks</td>
+            <td class="td-tools">Ghidra, IDA Pro, GDB/pwndbg, Binwalk, QEMU</td>
           </tr>
           <tr>
             <td class="td-code c-cy">CY4</td>
@@ -249,26 +279,34 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65362</span><span dir="rtl">היבטים מעשיים באבטחת סייבר</span><br>Practical Aspects of Cybersecurity <em>(Adrian Shpeler)</em><br>
               <span class="td-num">62206</span><span dir="rtl">מבוא לאבטחת סייבר מונחית בינה מלאכותית</span><br>Introduction to AI-Guided Cybersecurity <em>(Vyacheslav Napdov)</em>
             </td>
-            <td class="td-outcome">Build a GRC program applying ISO 27001, NIST CSF, BIA, and incident-response playbooks to organizational risk</td>
+            <td class="td-role">GRC Manager, CISO Analyst, Compliance Officer</td>
+            <td class="td-concepts">ISO 27001, NIST CSF, risk assessment, BIA, incident-response frameworks</td>
+            <td class="td-tools">Splunk, IBM QRadar, ServiceNow GRC, Nessus, OpenFAIR</td>
           </tr>
           <tr>
             <td class="td-code c-cy">CY5</td>
             <td class="td-new">Blockchain and Decentralized Cryptographic Systems</td>
             <td class="td-existing"><span class="td-num">67007</span><span dir="rtl">בלוקצ'יין: חזון ופרקטיקה</span><br>Blockchain: Vision and Practice <em>(Michael Bershadsky)</em></td>
-            <td class="td-outcome">Implement and audit Solidity smart contracts on Ethereum, deploying DeFi protocols with Hardhat and OpenZeppelin</td>
+            <td class="td-role">Blockchain Developer, Smart Contract Auditor, Web3 Engineer</td>
+            <td class="td-concepts">Distributed consensus, Merkle trees, smart contract security, tokenomics, DeFi protocols</td>
+            <td class="td-tools">Solidity, Hardhat, OpenZeppelin, Ethers.js, Foundry</td>
           </tr>
           <!-- AI -->
           <tr class="group-start">
             <td class="td-code c-ai">AI1</td>
             <td class="td-new">Language AI: LLMs and Agentic Systems</td>
             <td class="td-existing"><span class="td-num">65339</span><span dir="rtl">מודלי שפה גדולים וסוכנים</span><br>LLM and Agents <em>(Dr. Alexander Apartsin)</em></td>
-            <td class="td-outcome">Fine-tune transformers, build RAG pipelines, and deploy multi-step LLM agents using LangChain and LlamaIndex</td>
+            <td class="td-role">LLM Engineer, AI Product Developer, Conversational AI Engineer</td>
+            <td class="td-concepts">Transformer architecture, attention mechanisms, RAG, prompt engineering, RLHF</td>
+            <td class="td-tools">LangChain, LlamaIndex, OpenAI API, Hugging Face, Pinecone/Weaviate</td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI2</td>
             <td class="td-new">Temporal AI: Time Series &amp; Sequential Decision Making</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
-            <td class="td-outcome">Implement LSTM, Temporal Fusion Transformers, and Q-learning policies for forecasting and sequential decision tasks</td>
+            <td class="td-role">Data Scientist, Quantitative Analyst, ML Researcher</td>
+            <td class="td-concepts">Recurrent networks, Temporal Fusion Transformers, Markov decision processes, Bellman equations</td>
+            <td class="td-tools">PyTorch, pytorch-forecasting, Stable Baselines3, Gymnasium, sktime</td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI3</td>
@@ -279,19 +317,25 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">62120</span><span dir="rtl">אלגוריתמים במולטימדיה ולמידת מכונה בסביבת פייתון</span><br>Algorithms in Multimedia and Machine Learning with Python <em>(Idan Tobis)</em><br>
               <span class="td-num">65361</span><span dir="rtl">אלגוריתמים בסיסיים של בינה מלאכותית ויישומים ברפואה דיגיטלית</span><br>Fundamental AI Algorithms and Applications in Digital Medicine <em>(Prof. Eugene Levner)</em>
             </td>
-            <td class="td-outcome">Build CNN, ViT, and YOLO vision pipelines in PyTorch with TensorRT optimization for real-world image and video tasks</td>
+            <td class="td-role">Computer Vision Engineer, Imaging Scientist, ML Engineer</td>
+            <td class="td-concepts">Convolutional networks, Vision Transformers, object detection, image segmentation</td>
+            <td class="td-tools">PyTorch, YOLO, TensorRT, ONNX, Roboflow, OpenCV</td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI4</td>
             <td class="td-new">Scalable AI: Big-Data Algorithms</td>
             <td class="td-existing"><span class="td-num">64409</span><span dir="rtl">כריית נתונים</span><br>Data Mining <em>(Dr. Abraham Yosipof)</em></td>
-            <td class="td-outcome">Orchestrate big-data ML pipelines with Apache Spark, Kafka, Delta Lake, and MLflow on distributed clusters</td>
+            <td class="td-role">Data Engineer, Big Data Architect, Analytics Engineer</td>
+            <td class="td-concepts">Distributed computing, stream processing, data lake architecture, data versioning</td>
+            <td class="td-tools">Apache Spark, Kafka, Delta Lake, MLflow, dbt</td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI5</td>
             <td class="td-new">Generative AI: Deep Generative Models</td>
             <td class="td-existing"><span class="td-num">67030</span><span dir="rtl">מודלים עמוקים לבינה מלאכותית יוצרת</span><br>Deep Models for Generative AI <em>(Dr. Alexander Apartsin)</em></td>
-            <td class="td-outcome">Train GANs, VAEs, and DDPM diffusion models for image and text generation, evaluated with FID and CLIP metrics</td>
+            <td class="td-role">Generative AI Engineer, AI Researcher, Creative Technologist</td>
+            <td class="td-concepts">Generative adversarial networks, variational autoencoders, diffusion models, score matching</td>
+            <td class="td-tools">PyTorch, Hugging Face Diffusers, Stable Diffusion, DALL-E API, FID/CLIP metrics</td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI6</td>
@@ -301,52 +345,68 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">62304</span><span dir="rtl">פיתוח תוכנה לאינטראקציה בין אדם ורובוט הומנואיד</span><br>Software Development for Human-Humanoid Robot Interaction <em>(Idan Tobis)</em><br>
               <span class="td-num">67006</span><span dir="rtl">פיתוח תוכנה עבור רכב אוטונומי אינטליגנטי</span><br>Software Development for Intelligent Autonomous Vehicles <em>(Dr. Vadim Talis)</em>
             </td>
-            <td class="td-outcome">Develop ROS 2 stacks integrating SLAM, motion planning, and sensor fusion for autonomous mobile and robotic platforms</td>
+            <td class="td-role">Robotics Engineer, Autonomous Systems Developer, Embedded AI Engineer</td>
+            <td class="td-concepts">Robot kinematics, SLAM, motion planning, ROS architecture, sensor fusion</td>
+            <td class="td-tools">ROS 2, Nav2, MoveIt 2, Gazebo, OpenCV</td>
           </tr>
           <!-- QCF -->
           <tr class="group-start">
             <td class="td-code c-qcf">QCF1</td>
             <td class="td-new">Quantum Optimization</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
-            <td class="td-outcome">Implement QAOA and VQE circuits on Qiskit targeting IBM Quantum hardware for combinatorial optimization</td>
+            <td class="td-role">Quantum Software Engineer, Optimization Researcher, Quantum Algorithms Developer</td>
+            <td class="td-concepts">Quantum gates, QAOA, variational quantum eigensolver, quantum advantage, annealing</td>
+            <td class="td-tools">Qiskit, IBM Quantum, D-Wave Ocean, PennyLane</td>
           </tr>
           <tr>
             <td class="td-code c-qcf">QCF2</td>
             <td class="td-new">AI &amp; Optimization for Finance</td>
             <td class="td-existing"><span class="td-num">67033</span><span dir="rtl">אלגוריתמים נומריים ויישומיהם</span><br>Numerical Algorithms and Their Applications <em>(Zeev Geyzel)</em></td>
-            <td class="td-outcome">Apply mean-variance theory, Black-Scholes pricing, and D-Wave quantum annealing to portfolio optimization problems</td>
+            <td class="td-role">Quantitative Analyst, Risk Engineer, FinTech Developer</td>
+            <td class="td-concepts">Mean-variance optimization, Black-Scholes, Monte Carlo simulation, quantum annealing</td>
+            <td class="td-tools">Python (NumPy/SciPy), QuantLib, D-Wave Ocean, Bloomberg API</td>
           </tr>
           <!-- GM -->
           <tr class="group-start">
             <td class="td-code c-gm">GM1</td>
             <td class="td-new">Computer Graphics</td>
             <td class="td-existing"><span class="td-num">65235</span><span dir="rtl">גרפיקה ממוחשבת</span><br>Computer Graphics <em>(Dr. Vladimir Nodelman)</em></td>
-            <td class="td-outcome">Implement a PBR renderer in OpenGL or WebGPU applying rasterization, shadow maps, and deferred shading pipelines</td>
+            <td class="td-role">Graphics Programmer, Game Engine Developer, Rendering Engineer</td>
+            <td class="td-concepts">Rasterization pipeline, PBR shading, shadow algorithms, GPU architecture, scene graphs</td>
+            <td class="td-tools">OpenGL, WebGPU, Unity/Unreal, GLSL/HLSL, RenderDoc</td>
           </tr>
           <tr>
             <td class="td-code c-gm">GM2</td>
             <td class="td-new">Virtual, Augmented and Mixed Reality</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
-            <td class="td-outcome">Build a cross-device XR app in Unity with OpenXR, hand tracking, SLAM spatial anchors, and cybersickness mitigation</td>
+            <td class="td-role">XR Developer, Spatial Computing Engineer, VR/AR Engineer</td>
+            <td class="td-concepts">SE(3) transforms, SLAM, stereoscopic rendering, spatial anchors, cybersickness theory</td>
+            <td class="td-tools">Unity XR Toolkit, OpenXR, ARCore/ARKit, Meta SDK, Vuforia</td>
           </tr>
           <tr>
             <td class="td-code c-gm">GM3</td>
             <td class="td-new">Computational Geometry and Geographic Information Systems</td>
             <td class="td-existing"><span class="td-num">66122</span>Computational Geometry and GIS</td>
-            <td class="td-outcome">Implement Delaunay triangulation, k-d trees, and R-trees, and build a GIS pipeline with PostGIS and QGIS</td>
+            <td class="td-role">Geospatial Developer, Computational Geometry Engineer, GIS Analyst</td>
+            <td class="td-concepts">Delaunay triangulation, k-d trees, R-trees, GIS projections, topological relationships</td>
+            <td class="td-tools">CGAL, PostGIS, QGIS, Shapely, GeoPandas</td>
           </tr>
           <!-- DF -->
           <tr class="group-start">
             <td class="td-code c-df">DF1</td>
             <td class="td-new">Sensor Fusion &amp; Signal Processing</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
-            <td class="td-outcome">Fuse IMU, LIDAR, and camera data with Kalman filtering and factor graphs in a real-time ROS 2 tracking system</td>
+            <td class="td-role">Sensor Fusion Engineer, Navigation Systems Developer, Signal Processing Engineer</td>
+            <td class="td-concepts">Kalman filtering, factor graphs, IMU preintegration, sensor noise models, LIDAR processing</td>
+            <td class="td-tools">ROS 2, Open3D, GTSAM, Eigen, LIDAR/IMU drivers</td>
           </tr>
           <tr>
             <td class="td-code c-df">DF2</td>
             <td class="td-new">Mission-Critical Real-Time Systems</td>
             <td class="td-existing"><span class="td-num">67026</span><span dir="rtl">מבוא לתוכנה משובצת מחשב ויישומים</span><br>Introduction to Embedded Software and Applications <em>(Vladi Sorkin)</em></td>
-            <td class="td-outcome">Design and certify RTOS schedulers and ISRs meeting WCET budgets using FreeRTOS or AUTOSAR on embedded hardware</td>
+            <td class="td-role">Embedded Systems Engineer, Safety-Critical Software Developer, RTOS Developer</td>
+            <td class="td-concepts">Real-time scheduling, WCET analysis, interrupt handling, safety-integrity levels, AUTOSAR</td>
+            <td class="td-tools">FreeRTOS, AUTOSAR, STM32, JTAG/SWD debugger, Tracealyzer</td>
           </tr>
           <tr>
             <td class="td-code c-df">DF3</td>
@@ -355,7 +415,9 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">62302</span><span dir="rtl">מערכות ספרתיות מתקדמות</span><br>Advanced Digital Systems <em>(Prof. Samri Barnov)</em><br>
               <span class="td-num">65311</span><span dir="rtl">ארכיטקטורת מערכות VLSI</span><br>VLSI Systems Architecture <em>(Prof. Samri Barnov)</em>
             </td>
-            <td class="td-outcome">Design, simulate, and synthesize pipelined FSMs and datapaths in VHDL/Verilog on Xilinx Vivado targeting FPGA</td>
+            <td class="td-role">FPGA Engineer, Digital Hardware Designer, RTL Developer</td>
+            <td class="td-concepts">Boolean algebra, finite state machines, RTL design, FPGA architecture, timing analysis</td>
+            <td class="td-tools">Xilinx Vivado, ModelSim, GHDL, Icarus Verilog, Intel Quartus Prime</td>
           </tr>
           <tr>
             <td class="td-code c-df">DF4</td>
@@ -363,7 +425,9 @@ a{color:inherit;text-decoration:none}
             <td class="td-existing">
               <span class="td-num">67011</span><span dir="rtl">עיבוד קול למערכות תבוניות</span><br>Audio Processing for Intelligent Systems <em>(Dr. Yosi Eliaz)</em>
             </td>
-            <td class="td-outcome">Extract MFCCs, train CTC-based ASR models, and deploy real-time speech pipelines with Whisper and PyTorch Audio</td>
+            <td class="td-role">Speech/Audio ML Engineer, Conversational AI Developer, Audio Systems Engineer</td>
+            <td class="td-concepts">MFCCs, CTC loss, attention-based ASR, voice activity detection, speaker diarization</td>
+            <td class="td-tools">librosa, PyTorch Audio, Whisper, SpeechBrain, Hugging Face Transformers</td>
           </tr>
         </tbody>
       </table>
