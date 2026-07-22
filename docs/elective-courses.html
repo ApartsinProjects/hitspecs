@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HIT CS: קורסי בחירה תשפ"ז</title>
+<style>
+:root {
+  --bg:#0D1119; --surface:#141C2D; --sur2:#1A2438;
+  --border:#253050; --text:#D9E4F5; --sub:#8A9DC0; --muted:#5C6E8C;
+  --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"SF Mono","Cascadia Code","Consolas",monospace;
+}
+@media(prefers-color-scheme:light){:root{
+  --bg:#EEF3FB; --surface:#FFF; --sur2:#F4F7FE;
+  --border:#CDD8EE; --text:#152035; --sub:#4D6080; --muted:#8096B8;
+}}
+:root[data-theme=dark]{--bg:#0D1119;--surface:#141C2D;--sur2:#1A2438;--border:#253050;--text:#D9E4F5;--sub:#8A9DC0;--muted:#5C6E8C}
+:root[data-theme=light]{--bg:#EEF3FB;--surface:#FFF;--sur2:#F4F7FE;--border:#CDD8EE;--text:#152035;--sub:#4D6080;--muted:#8096B8}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;color-scheme:dark light}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.site-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:4px;padding:0 16px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.site-nav::-webkit-scrollbar{display:none}
+.nav-brand{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--sub);text-transform:uppercase;padding:12px 8px 12px 0;border-right:1px solid var(--border);margin-right:4px;flex-shrink:0}
+.nav-pill{display:inline-flex;align-items:center;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--sub);border:1.5px solid transparent;flex-shrink:0;transition:background .15s,border-color .15s,color .15s}
+.nav-pill:hover,.nav-pill.active{background:var(--sur2);border-color:var(--border);color:var(--text)}
+.nav-spacer{flex:1}
+.theme-btn{background:none;border:1.5px solid var(--border);color:var(--sub);border-radius:6px;padding:4px 8px;font-size:12px;cursor:pointer;flex-shrink:0}
+.theme-btn:hover{border-color:var(--muted);color:var(--text)}
+.hero{padding:48px 24px 32px;max-width:960px;margin:0 auto;border-bottom:1px solid var(--border)}
+.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;direction:ltr}
+.hero h1{font-size:clamp(22px,3vw,34px);font-weight:800;line-height:1.2}
+.hero-sub{margin-top:8px;font-size:14px;color:var(--sub)}
+.search-wrap{max-width:960px;margin:20px auto 0;padding:0 24px}
+.search-input{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:14px;font-family:var(--sans);direction:ltr}
+.search-input::placeholder{color:var(--muted)}
+.search-input:focus{outline:none;border-color:var(--sub)}
+.page-body{max-width:960px;margin:20px auto 60px;padding:0 24px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.panel-hd{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:8px}
+.panel-hd h2{font-size:15px;font-weight:700}
+.panel-ct{font-size:12px;color:var(--muted);margin-inline-start:auto;font-family:var(--mono)}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.courses-table{width:100%;border-collapse:collapse;font-size:13px}
+.courses-table th,.courses-table td{padding:9px 14px;border-bottom:1px solid var(--border);text-align:start;vertical-align:top}
+.courses-table thead th{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--sur2);white-space:nowrap}
+.courses-table tbody tr:hover td{background:var(--sur2)}
+.courses-table tbody tr.hidden{display:none}
+.td-num{font-family:var(--mono);font-size:11px;font-weight:700;white-space:nowrap;color:var(--muted)}
+.td-heb{font-size:13px;min-width:200px}
+.td-eng{font-size:13px;min-width:180px;color:var(--sub)}
+.td-cr{font-family:var(--mono);font-size:12px;text-align:center;white-space:nowrap}
+.td-ins{font-size:12px;color:var(--sub);min-width:120px}
+.badge{display:inline-flex;align-items:center;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.08em;padding:2px 6px;border-radius:4px;white-space:nowrap}
+.lang-en{background:rgba(79,200,232,.12);color:#4FC8E8}
+.lang-he{background:rgba(138,157,192,.10);color:#8A9DC0}
+.site-footer{padding:28px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
+@media(max-width:600px){.hero{padding:28px 14px 24px}.page-body,.search-wrap{padding:0 10px}}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation">
+  <span class="nav-brand">HIT&middot;CS</span>
+  <a class="nav-pill" href="index.html">ראשי</a>
+  <a class="nav-pill" href="compendium.html">Course Compendium</a>
+  <a class="nav-pill active" href="elective-courses.html">קורסי בחירה</a>
+  <span class="nav-spacer"></span>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">&#9680;</button>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow" dir="ltr">Holon Institute of Technology &middot; CS Department &middot; תשפ"ז</p>
+  <h1>קורסי בחירה במדעי המחשב</h1>
+  <p class="hero-sub">55 קורסים ייחודיים, לאחר סינון כפילויות מהרשימה המלאה</p>
+</header>
+
+<div class="search-wrap">
+  <input class="search-input" type="search" id="q" placeholder="Search by name, number, or instructor&hellip;" oninput="filterTable()" dir="auto">
+</div>
+
+<main class="page-body">
+  <section class="panel">
+    <div class="panel-hd">
+      <h2>רשימת הקורסים</h2>
+      <span class="panel-ct" id="count">55 / 55</span>
+    </div>
+    <div class="table-scroll">
+      <table class="courses-table" id="tbl" aria-label="קורסי בחירה במדעי המחשב">
+        <thead>
+          <tr>
+            <th style="width:90px" dir="ltr">מספר קורס</th>
+            <th style="min-width:200px">שם בעברית</th>
+            <th style="min-width:180px" dir="ltr">English Name</th>
+            <th style="width:44px" dir="ltr">נ"ז</th>
+            <th style="width:44px" dir="ltr">שפה</th>
+            <th style="min-width:120px">מרצה</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="td-num" dir="ltr">0060309</td>
+        <td class="td-heb" dir="rtl">עיבוד תמונה למדעי המחשב</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ד"ר לוסטיג קורנל</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0060311</td>
+        <td class="td-heb" dir="rtl">למידה עמוקה למדעי המחשב</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">ד"ר בובשובר ארקדי</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0061221</td>
+        <td class="td-heb" dir="rtl">מבוא למערכות מידע גיאוגרפי 1</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">כהן אהרון</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0062120</td>
+        <td class="td-heb" dir="rtl">אלגוריתמים במולטימדיה ולמידת מכונה בסביבת פייתון</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">טוביס עידן</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0062121</td>
+        <td class="td-heb" dir="rtl"></td>
+        <td class="td-eng" dir="ltr">LLM-Augmented Software Practice</td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">גורסקי מיקאל</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0062206</td>
+        <td class="td-heb" dir="rtl">מבוא לאבטחת סייבר מונחית בינה מלאכותית</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">נפדוב ויאצ'סלב</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0062211</td>
+        <td class="td-heb" dir="rtl">בינה מלאכותית גנרטיבי . במדע , טכנולוגיה וחברה</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">פרופ' לוין איליה</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0062213</td>
+        <td class="td-heb" dir="rtl">AWS עם Serverless מבוא לענן ולפיתוח</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">שני יוגב</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0062302</td>
+        <td class="td-heb" dir="rtl">(מערכות ספרתיות מתקדמות (זום</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">פרופ' ברנוב סמרי</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0062304</td>
+        <td class="td-heb" dir="rtl">פיתוח תוכנה לאינטראקציה בין אדם & רובוט הומנואיד</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">טוביס עידן</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0064332</td>
+        <td class="td-heb" dir="rtl">תכנות יישומי באמצעות תבניות עיצוב</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">רונן גיא</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0064409</td>
+        <td class="td-heb" dir="rtl">כריית נתונים</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ד"ר יוסיפוף אברהם</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0064410</td>
+        <td class="td-heb" dir="rtl">פיתוח מערכות צד שרת בסביבת קוד פתוח</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ולד עופר</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0064444</td>
+        <td class="td-heb" dir="rtl">בדיקות תוכנה</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">טוביאס דוד</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065200</td>
+        <td class="td-heb" dir="rtl">(תכנות בסביבות האינטרנט (בזום</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">ברמי ניסים</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065235</td>
+        <td class="td-heb" dir="rtl">(גרפיקה ממוחשבת (בזום</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ד"ר נודלמן ולדימיר</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065311</td>
+        <td class="td-heb" dir="rtl">VLSI - ם וארכיטק' של מע' "מערכות תיב</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">פרופ' ברנוב סמרי</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065313</td>
+        <td class="td-heb" dir="rtl">C# תכנות מונחה עצמים בסביבת דוט-נט ושפת</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">רונן גיא</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065335</td>
+        <td class="td-heb" dir="rtl">(דחיסת נתונים - (בזום</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ד"ר ויסמן יאיר</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065337</td>
+        <td class="td-heb" dir="rtl">(אבטחת מחשבים - (זום</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">זימון רועי</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065338</td>
+        <td class="td-heb" dir="rtl">אבטחת רשתות ומרשתת</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">שפלר אדריאן</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065339</td>
+        <td class="td-heb" dir="rtl">עיבוד שפה טיבעית (דבור וטקסט) בעזרת מחשב N.L.P</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ד"ר אפארצין אלכסנדר</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065343</td>
+        <td class="td-heb" dir="rtl">(הנדסה לאחור וניתוח תוכנות זדוניות - (זום</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">פרייר שורנה</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065345</td>
+        <td class="td-heb" dir="rtl">תכנות תחרותי</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">מאיר יובל</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065346</td>
+        <td class="td-heb" dir="rtl">UI ממשקי אדם מחשב</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ד"ר שקד נאווה</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065348</td>
+        <td class="td-heb" dir="rtl">פיתוח תוכנה למערכות IOT בסביבת עיר חכמה</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">יורצ'נקו יורי</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065351</td>
+        <td class="td-heb" dir="rtl">פיתוח צד לקוח בסביבת אנדרואיד 1</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">פרופוס אפי</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065352</td>
+        <td class="td-heb" dir="rtl">פיתוח צד לקוח בסביבת אנדרואיד 2</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">פרופוס אפי</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065353</td>
+        <td class="td-heb" dir="rtl">"Devops" - מבוא ל</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">מאמיה משה</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065355</td>
+        <td class="td-heb" dir="rtl">עקרונות התכנות הפונקציונלי</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">מיכאל חיים</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065356</td>
+        <td class="td-heb" dir="rtl">פיתוח צד שרת -אסינכרוני</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">מיכאל חיים</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065361</td>
+        <td class="td-heb" dir="rtl">אלגוריתמים בסיסיים של בינה מלאכותית ויישומים ברפואה דיגיטלית</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">פרופ' לבנר יוג'ין</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065362</td>
+        <td class="td-heb" dir="rtl">היבטים מעשיים באבטחת סייבר</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">שפלר אדריאן</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065363</td>
+        <td class="td-heb" dir="rtl">תבניות עיצוב תוכנה קלאסיות</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">מיכאל חיים</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065364</td>
+        <td class="td-heb" dir="rtl">פיתוח צד לקוח</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">מיכאל חיים</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0065365</td>
+        <td class="td-heb" dir="rtl">תכנות מקבילי</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">מיכאל חיים</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067000</td>
+        <td class="td-heb" dir="rtl">הנדסת פתרונות תוכנה מתקדמים חלק א'</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">ד"ר אליעז יוסי</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067006</td>
+        <td class="td-heb" dir="rtl">פיתוח תוכנה עבור רכב אוטונומי אינטליגנטי</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ד"ר טליס ודים</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067007</td>
+        <td class="td-heb" dir="rtl">בלוקצ'יין- חזון ופרקטיקה</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ברשפ מיכאל</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067011</td>
+        <td class="td-heb" dir="rtl">עיבוד קול למערכות תבוניות</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.0</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ד"ר שקד נאווה ויורי יוריצ'נקו</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067013</td>
+        <td class="td-heb" dir="rtl">הנדסת פתרונות תוכנה מתקדמים חלק ב'</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">ד"ר אליעז יוסי</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067018</td>
+        <td class="td-heb" dir="rtl">פיתוח אפליקציות אנדרואיד בשפת קוטלין</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">קצב ערן</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067021</td>
+        <td class="td-heb" dir="rtl">אתיקה של בינה מלאכותית - זום + 2/3 מפגשים פרונטאלים</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ד"ר ולנר גלית</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067023</td>
+        <td class="td-heb" dir="rtl">מבוא לאחזור מידע</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">פרידמן משה</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067024</td>
+        <td class="td-heb" dir="rtl">מערכות תוכנה מבוזרות – עקרונות ויישומים מעשיים</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">פרופ' אקסמן יעקב</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067025</td>
+        <td class="td-heb" dir="rtl">ראייה ממוחשבת מבוססת למידה עמוקה</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">יפת  להב</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067026</td>
+        <td class="td-heb" dir="rtl">מבוא לתוכנה משובצת מחשב ויישומים</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">סורקין ולדי</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067028</td>
+        <td class="td-heb" dir="rtl"></td>
+        <td class="td-eng" dir="ltr">Human – Smart AI Interaction Workshop</td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">אהרונסון ערן</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067030</td>
+        <td class="td-heb" dir="rtl">) GenAIמודלים עמוקים לבינה מלאכותית יוצרת(</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ד"ר אפארצין אלכסנדר</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0067033</td>
+        <td class="td-heb" dir="rtl">אלגוריתמים נומריים ויישומיהם</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">גייזל זאב</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0068007</td>
+        <td class="td-heb" dir="rtl"></td>
+        <td class="td-eng" dir="ltr">Fuzzy Logic and Soft Computing</td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-en">EN</span></td>
+        <td class="td-ins" dir="rtl">פרופ' לבנר יוג'ין</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0068012</td>
+        <td class="td-heb" dir="rtl">מבוא יישומי לקריפטוגרפיה מודרנית</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">גייזל זאב</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0068013</td>
+        <td class="td-heb" dir="rtl">פיסיקה חישובית למדעי המחשב</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">פרופ' קלוש שמשון</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0069983</td>
+        <td class="td-heb" dir="rtl">רובוטיקה למדעי המחשב</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ד"ר אליהו מצליח</td>
+      </tr>
+      <tr>
+        <td class="td-num" dir="ltr">0069998</td>
+        <td class="td-heb" dir="rtl">אסטרטגיה ויזמות עסקית</td>
+        <td class="td-eng" dir="ltr"></td>
+        <td class="td-cr" dir="ltr">3.5</td>
+        <td><span class="badge lang-he">HE</span></td>
+        <td class="td-ins" dir="rtl">ד"ר קנצפולסקי בוריס</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  HIT &middot; מחלקת מדעי המחשב &middot; קורסי בחירה תשפ"ז &middot; 55 קורסים
+</footer>
+
+<script>
+function toggleTheme(){
+  const r=document.documentElement,c=r.getAttribute('data-theme');
+  r.setAttribute('data-theme',c==='dark'?'light':c==='light'?'dark':(window.matchMedia('(prefers-color-scheme:dark)').matches?'light':'dark'));
+}
+function filterTable(){
+  const q=document.getElementById('q').value.toLowerCase();
+  const rows=[...document.querySelectorAll('#tbl tbody tr')];
+  let shown=0;
+  rows.forEach(tr=>{
+    const txt=tr.textContent.toLowerCase();
+    const hide=q&&!txt.includes(q);
+    tr.classList.toggle('hidden',hide);
+    if(!hide)shown++;
+  });
+  document.getElementById('count').textContent=shown+' / 55';
+}
+</script>
+</body>
+</html>
