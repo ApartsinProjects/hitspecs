@@ -93,6 +93,7 @@ a{color:inherit;text-decoration:none}
 .td-concepts{font-size:12px;color:var(--sub);line-height:1.4}
 .td-tools{font-size:12px;color:var(--muted);font-family:var(--mono);line-height:1.4;word-break:break-word}
 .td-num{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap;margin-right:4px}
+.td-seq{font-family:var(--mono);font-size:10px;color:var(--muted);text-align:right;padding-right:6px!important;white-space:nowrap;width:28px}
 
 .badge{display:inline-flex;align-items:center;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:4px;white-space:nowrap}
 .badge-ok  {background:rgba(49,208,165,.12);color:#31D0A5}
@@ -603,6 +604,20 @@ function toggleTheme(){
     nc.querySelector('a').style.cssText='color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--border);transition:text-decoration-color .15s';
     nc.querySelector('a').onmouseenter=function(){this.style.textDecorationColor='var(--text)'};
     nc.querySelector('a').onmouseleave=function(){this.style.textDecorationColor='var(--border)'};
+  });
+})();
+(function(){
+  var seq=0;
+  document.querySelectorAll('.map-table').forEach(function(tbl){
+    var th=document.createElement('th');
+    th.style.width='28px';th.style.textAlign='right';th.textContent='#';
+    var thead=tbl.querySelector('thead tr');
+    if(thead)thead.insertBefore(th,thead.firstChild);
+    tbl.querySelectorAll('tbody tr').forEach(function(row){
+      var td=document.createElement('td');
+      td.className='td-seq';td.textContent=++seq;
+      row.insertBefore(td,row.firstChild);
+    });
   });
 })();
 </script>
