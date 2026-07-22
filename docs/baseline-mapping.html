@@ -108,7 +108,19 @@ a{color:inherit;text-decoration:none}
 
 .site-footer{padding:28px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
 @media(max-width:600px){.page-body{padding:24px 12px 40px}.hero{padding:32px 16px 28px}}
-</style>
+
+    /* ref-link: subtle dotted underline on concepts/tools */
+    td .ref-link {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+    }
+    td .ref-link:hover {
+      text-decoration-style: solid;
+    }
+  </style>
 </head>
 <body>
 
@@ -158,16 +170,16 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">67000</span><span dir="rtl">הנדסת פתרונות תוכנה מתקדמים חלק א'</span><br>Advanced Software Solutions Engineering, Part 1 <em>(Dr. Yossi Eliaz)</em><br>
               <span class="td-num">67013</span><span dir="rtl">הנדסת פתרונות תוכנה מתקדמים חלק ב'</span><br>Advanced Software Solutions Engineering, Part 2 <em>(Dr. Yossi Eliaz)</em></td>
             <td class="td-role">Cloud Engineer, Platform Engineer</td>
-            <td class="td-concepts">Cloud resource model (compute/storage/networking), container orchestration, observability and reliability engineering</td>
-            <td class="td-tools">Kubernetes, Terraform, Prometheus/Grafana</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Cloud_computing" class="ref-link" target="_blank" rel="noopener noreferrer">Cloud resource model (compute/storage/networking)</a>, <a href="https://en.wikipedia.org/wiki/Container_orchestration" class="ref-link" target="_blank" rel="noopener noreferrer">container orchestration</a>, <a href="https://en.wikipedia.org/wiki/Observability_(software)" class="ref-link" target="_blank" rel="noopener noreferrer">observability and reliability engineering</a></td>
+            <td class="td-tools"><a href="https://kubernetes.io" class="ref-link" target="_blank" rel="noopener noreferrer">Kubernetes</a>, <a href="https://developer.hashicorp.com/terraform" class="ref-link" target="_blank" rel="noopener noreferrer">Terraform</a>, <a href="https://prometheus.io" class="ref-link" target="_blank" rel="noopener noreferrer">Prometheus/Grafana</a></td>
           </tr>
           <tr>
             <td class="td-code c-se">SE2</td>
             <td class="td-new">Secure &amp; Reliable Software Development</td>
             <td class="td-existing"><span class="td-num">64444</span><span dir="rtl">בדיקות תוכנה</span><br>Software Testing <em>(David Tobias)</em></td>
             <td class="td-role">QA Engineer, Test Engineer</td>
-            <td class="td-concepts">Test-driven quality (TDD/BDD), fault injection and chaos engineering, service reliability (SLO/SLI/SLA)</td>
-            <td class="td-tools">pytest, SonarQube, GitHub Actions</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Test-driven_development" class="ref-link" target="_blank" rel="noopener noreferrer">Test-driven quality (TDD/BDD)</a>, <a href="https://en.wikipedia.org/wiki/Chaos_engineering" class="ref-link" target="_blank" rel="noopener noreferrer">fault injection and chaos engineering</a>, <a href="https://en.wikipedia.org/wiki/Service-level_objective" class="ref-link" target="_blank" rel="noopener noreferrer">service reliability (SLO/SLI/SLA)</a></td>
+            <td class="td-tools"><a href="https://docs.pytest.org" class="ref-link" target="_blank" rel="noopener noreferrer">pytest</a>, <a href="https://www.sonarsource.com/products/sonarqube/" class="ref-link" target="_blank" rel="noopener noreferrer">SonarQube</a>, <a href="https://github.com/features/actions" class="ref-link" target="_blank" rel="noopener noreferrer">GitHub Actions</a></td>
           </tr>
           <tr>
             <td class="td-code c-se">SE3</td>
@@ -175,8 +187,8 @@ a{color:inherit;text-decoration:none}
             <td class="td-existing"><span class="td-num">65364</span><span dir="rtl">פיתוח צד לקוח</span><br>Client-Side Development <em>(Haim Michael)</em><br>
               <span class="td-num">65200</span><span dir="rtl">תכנות בסביבות האינטרנט</span><br>Web Programming Environments <em>(Nissim Barmi)</em></td>
             <td class="td-role">Front-End Developer, UI Engineer</td>
-            <td class="td-concepts">Component architecture and state management, rendering strategies (CSR/SSR), web performance and accessibility</td>
-            <td class="td-tools">React/Next.js, TypeScript, Playwright</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Component-based_software_engineering" class="ref-link" target="_blank" rel="noopener noreferrer">Component architecture and state management</a>, <a href="https://web.dev/articles/rendering-on-the-web" class="ref-link" target="_blank" rel="noopener noreferrer">rendering strategies (CSR/SSR)</a>, <a href="https://en.wikipedia.org/wiki/Web_performance" class="ref-link" target="_blank" rel="noopener noreferrer">web performance and accessibility</a></td>
+            <td class="td-tools"><a href="https://nextjs.org" class="ref-link" target="_blank" rel="noopener noreferrer">React/Next.js</a>, <a href="https://www.typescriptlang.org" class="ref-link" target="_blank" rel="noopener noreferrer">TypeScript</a>, <a href="https://playwright.dev" class="ref-link" target="_blank" rel="noopener noreferrer">Playwright</a></td>
           </tr>
           <tr>
             <td class="td-code c-se">SE4</td>
@@ -186,16 +198,16 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65356</span><span dir="rtl">פיתוח צד שרת אסינכרוני</span><br>Asynchronous Server-Side Development <em>(Haim Michael)</em>
             </td>
             <td class="td-role">Back-End Developer, API Engineer</td>
-            <td class="td-concepts">API design (REST/GraphQL), authentication and authorization, data persistence and normalization</td>
-            <td class="td-tools">FastAPI, PostgreSQL, OpenAPI/Swagger</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/API" class="ref-link" target="_blank" rel="noopener noreferrer">API design (REST/GraphQL)</a>, <a href="https://en.wikipedia.org/wiki/Authentication" class="ref-link" target="_blank" rel="noopener noreferrer">authentication and authorization</a>, <a href="https://en.wikipedia.org/wiki/Database_normalization" class="ref-link" target="_blank" rel="noopener noreferrer">data persistence and normalization</a></td>
+            <td class="td-tools"><a href="https://fastapi.tiangolo.com" class="ref-link" target="_blank" rel="noopener noreferrer">FastAPI</a>, <a href="https://www.postgresql.org" class="ref-link" target="_blank" rel="noopener noreferrer">PostgreSQL</a>, <a href="https://swagger.io" class="ref-link" target="_blank" rel="noopener noreferrer">OpenAPI/Swagger</a></td>
           </tr>
           <tr>
             <td class="td-code c-se">SE5</td>
             <td class="td-new">Engineering of AI Systems</td>
             <td class="td-existing"><span class="td-num">65353</span><span dir="rtl">מבוא ל-DevOps</span><br>Introduction to DevOps <em>(Moshe Mamia)</em></td>
             <td class="td-role">DevOps Engineer, MLOps Engineer</td>
-            <td class="td-concepts">CI/CD automation and shift-left security, infrastructure-as-code, MLOps and model lifecycle</td>
-            <td class="td-tools">GitHub Actions, Terraform, MLflow</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/CI/CD" class="ref-link" target="_blank" rel="noopener noreferrer">CI/CD automation and shift-left security</a>, <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code" class="ref-link" target="_blank" rel="noopener noreferrer">infrastructure-as-code</a>, <a href="https://en.wikipedia.org/wiki/MLOps" class="ref-link" target="_blank" rel="noopener noreferrer">MLOps and model lifecycle</a></td>
+            <td class="td-tools"><a href="https://github.com/features/actions" class="ref-link" target="_blank" rel="noopener noreferrer">GitHub Actions</a>, <a href="https://developer.hashicorp.com/terraform" class="ref-link" target="_blank" rel="noopener noreferrer">Terraform</a>, <a href="https://mlflow.org" class="ref-link" target="_blank" rel="noopener noreferrer">MLflow</a></td>
           </tr>
           <tr>
             <td class="td-code c-se">SE6</td>
@@ -207,16 +219,16 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">67018</span><span dir="rtl">פיתוח אפליקציות אנדרואיד בשפת קוטלין</span><br>Android Application Development with Kotlin <em>(Eran Katzav)</em>
             </td>
             <td class="td-role">Mobile Developer, IoT Engineer</td>
-            <td class="td-concepts">Cross-platform mobile development, IoT protocols (MQTT) and device integration, edge computing</td>
-            <td class="td-tools">Flutter, Mosquitto, AWS IoT Greengrass</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Cross-platform_software" class="ref-link" target="_blank" rel="noopener noreferrer">Cross-platform mobile development</a>, <a href="https://en.wikipedia.org/wiki/MQTT" class="ref-link" target="_blank" rel="noopener noreferrer">IoT protocols (MQTT) and device integration</a>, <a href="https://en.wikipedia.org/wiki/Edge_computing" class="ref-link" target="_blank" rel="noopener noreferrer">edge computing</a></td>
+            <td class="td-tools"><a href="https://flutter.dev" class="ref-link" target="_blank" rel="noopener noreferrer">Flutter</a>, <a href="https://mosquitto.org" class="ref-link" target="_blank" rel="noopener noreferrer">Mosquitto</a>, <a href="https://aws.amazon.com/greengrass/" class="ref-link" target="_blank" rel="noopener noreferrer">AWS IoT Greengrass</a></td>
           </tr>
           <tr>
             <td class="td-code c-se">SE7</td>
             <td class="td-new">Design of AI-based &amp; Data-Intensive Systems</td>
             <td class="td-existing"><span class="td-num">64409</span><span dir="rtl">כריית נתונים</span><br>Data Mining <em>(Dr. Abraham Yosipof)</em></td>
             <td class="td-role">ML Engineer, Data Engineer</td>
-            <td class="td-concepts">Data pipeline and orchestration, feature engineering and experiment management, model serving and inference</td>
-            <td class="td-tools">Apache Spark, MLflow, Apache Airflow</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Pipeline_(computing)" class="ref-link" target="_blank" rel="noopener noreferrer">Data pipeline and orchestration</a>, <a href="https://en.wikipedia.org/wiki/Feature_engineering" class="ref-link" target="_blank" rel="noopener noreferrer">feature engineering and experiment management</a>, <a href="https://en.wikipedia.org/wiki/Machine_learning#Deployment" class="ref-link" target="_blank" rel="noopener noreferrer">model serving and inference</a></td>
+            <td class="td-tools"><a href="https://spark.apache.org" class="ref-link" target="_blank" rel="noopener noreferrer">Apache Spark</a>, <a href="https://mlflow.org" class="ref-link" target="_blank" rel="noopener noreferrer">MLflow</a>, <a href="https://airflow.apache.org" class="ref-link" target="_blank" rel="noopener noreferrer">Apache Airflow</a></td>
           </tr>
           
 
@@ -228,8 +240,8 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65346</span><span dir="rtl">UI ממשקי אדם מחשב</span><br>Human-Computer Interfaces (HCI/UI) <em>(Dr. Nava Shaked)</em>
             </td>
             <td class="td-role">UX Engineer, Interaction Designer</td>
-            <td class="td-concepts">Cognitive models and mental models, interaction design principles, usability evaluation and research</td>
-            <td class="td-tools">Figma, Maze, axe DevTools</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Mental_model" class="ref-link" target="_blank" rel="noopener noreferrer">Cognitive models and mental models</a>, <a href="https://en.wikipedia.org/wiki/Interaction_design" class="ref-link" target="_blank" rel="noopener noreferrer">interaction design principles</a>, <a href="https://en.wikipedia.org/wiki/Usability_testing" class="ref-link" target="_blank" rel="noopener noreferrer">usability evaluation and research</a></td>
+            <td class="td-tools"><a href="https://www.figma.com" class="ref-link" target="_blank" rel="noopener noreferrer">Figma</a>, <a href="https://maze.co" class="ref-link" target="_blank" rel="noopener noreferrer">Maze</a>, <a href="https://www.deque.com/axe/devtools/" class="ref-link" target="_blank" rel="noopener noreferrer">axe DevTools</a></td>
           </tr>
           <!-- CY -->
           <tr class="group-start">
@@ -237,8 +249,8 @@ a{color:inherit;text-decoration:none}
             <td class="td-new">Applied Cryptography</td>
             <td class="td-existing"><span class="td-num">68012</span><span dir="rtl">מבוא יישומי לקריפטוגרפיה מודרנית</span><br>Applied Introduction to Modern Cryptography <em>(Zeev Geyzel)</em></td>
             <td class="td-role">Cryptography Engineer, Security Researcher</td>
-            <td class="td-concepts">Symmetric/asymmetric cryptographic primitives (AES/RSA/ECC), public key infrastructure (PKI), zero-knowledge proofs</td>
-            <td class="td-tools">OpenSSL, Python cryptography library, SageMath</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Cryptographic_primitive" class="ref-link" target="_blank" rel="noopener noreferrer">Symmetric/asymmetric cryptographic primitives (AES/RSA/ECC)</a>, <a href="https://en.wikipedia.org/wiki/Public_key_infrastructure" class="ref-link" target="_blank" rel="noopener noreferrer">public key infrastructure (PKI)</a>, <a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof" class="ref-link" target="_blank" rel="noopener noreferrer">zero-knowledge proofs</a></td>
+            <td class="td-tools"><a href="https://www.openssl.org" class="ref-link" target="_blank" rel="noopener noreferrer">OpenSSL</a>, <a href="https://cryptography.io" class="ref-link" target="_blank" rel="noopener noreferrer">Python cryptography library</a>, <a href="https://www.sagemath.org" class="ref-link" target="_blank" rel="noopener noreferrer">SageMath</a></td>
           </tr>
           <tr>
             <td class="td-code c-cy">CY2</td>
@@ -250,16 +262,16 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">62206</span><span dir="rtl">מבוא לאבטחת סייבר מונחית בינה מלאכותית</span><br>Introduction to AI-Guided Cybersecurity <em>(Vyacheslav Napdov)</em>
             </td>
             <td class="td-role">Network Security Engineer, SOC Analyst</td>
-            <td class="td-concepts">Secure communication protocols (TLS/PKI), intrusion detection and prevention (IDS/IPS), network forensics</td>
-            <td class="td-tools">Wireshark, Snort, Nmap</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" class="ref-link" target="_blank" rel="noopener noreferrer">Secure communication protocols (TLS/PKI)</a>, <a href="https://en.wikipedia.org/wiki/Intrusion_detection_system" class="ref-link" target="_blank" rel="noopener noreferrer">intrusion detection and prevention (IDS/IPS)</a>, <a href="https://en.wikipedia.org/wiki/Network_forensics" class="ref-link" target="_blank" rel="noopener noreferrer">network forensics</a></td>
+            <td class="td-tools"><a href="https://www.wireshark.org" class="ref-link" target="_blank" rel="noopener noreferrer">Wireshark</a>, <a href="https://www.snort.org" class="ref-link" target="_blank" rel="noopener noreferrer">Snort</a>, <a href="https://nmap.org" class="ref-link" target="_blank" rel="noopener noreferrer">Nmap</a></td>
           </tr>
           <tr>
             <td class="td-code c-cy">CY3</td>
             <td class="td-new">Hardware &amp; Embedded Systems Security</td>
             <td class="td-existing"><span class="td-num">65343</span><span dir="rtl">הנדסה לאחור וניתוח תוכנות זדוניות</span><br>Reverse Engineering and Malware Analysis <em>(Shurna Preyer)</em></td>
             <td class="td-role">Malware Analyst, Reverse Engineer</td>
-            <td class="td-concepts">Binary analysis and reverse engineering, memory exploitation and vulnerability research, firmware and hardware security</td>
-            <td class="td-tools">Ghidra, IDA Pro, GDB/pwndbg</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Reverse_engineering" class="ref-link" target="_blank" rel="noopener noreferrer">Binary analysis and reverse engineering</a>, <a href="https://en.wikipedia.org/wiki/Vulnerability_(computing)" class="ref-link" target="_blank" rel="noopener noreferrer">memory exploitation and vulnerability research</a>, <a href="https://en.wikipedia.org/wiki/Firmware" class="ref-link" target="_blank" rel="noopener noreferrer">firmware and hardware security</a></td>
+            <td class="td-tools"><a href="https://ghidra-sre.org" class="ref-link" target="_blank" rel="noopener noreferrer">Ghidra</a>, <a href="https://hex-rays.com/ida-pro/" class="ref-link" target="_blank" rel="noopener noreferrer">IDA Pro</a>, <a href="https://github.com/pwndbg/pwndbg" class="ref-link" target="_blank" rel="noopener noreferrer">GDB/pwndbg</a></td>
           </tr>
           <tr>
             <td class="td-code c-cy">CY4</td>
@@ -269,16 +281,16 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">62206</span><span dir="rtl">מבוא לאבטחת סייבר מונחית בינה מלאכותית</span><br>Introduction to AI-Guided Cybersecurity <em>(Vyacheslav Napdov)</em>
             </td>
             <td class="td-role">GRC Analyst, Compliance Analyst</td>
-            <td class="td-concepts">Security governance frameworks (ISO 27001/NIST CSF), risk assessment and business impact analysis, incident response and GRC</td>
-            <td class="td-tools">Splunk, Nessus, ServiceNow GRC</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/ISO/IEC_27001" class="ref-link" target="_blank" rel="noopener noreferrer">Security governance frameworks (ISO 27001/NIST CSF)</a>, <a href="https://en.wikipedia.org/wiki/Risk_assessment" class="ref-link" target="_blank" rel="noopener noreferrer">risk assessment and business impact analysis</a>, <a href="https://en.wikipedia.org/wiki/Incident_management" class="ref-link" target="_blank" rel="noopener noreferrer">incident response and GRC</a></td>
+            <td class="td-tools"><a href="https://www.splunk.com" class="ref-link" target="_blank" rel="noopener noreferrer">Splunk</a>, <a href="https://www.tenable.com/products/nessus" class="ref-link" target="_blank" rel="noopener noreferrer">Nessus</a>, <a href="https://www.servicenow.com/products/governance-risk-compliance.html" class="ref-link" target="_blank" rel="noopener noreferrer">ServiceNow GRC</a></td>
           </tr>
           <tr>
             <td class="td-code c-cy">CY5</td>
             <td class="td-new">Blockchain and Decentralized Cryptographic Systems</td>
             <td class="td-existing"><span class="td-num">67007</span><span dir="rtl">בלוקצ'יין: חזון ופרקטיקה</span><br>Blockchain: Vision and Practice <em>(Michael Bershap)</em></td>
             <td class="td-role">Blockchain Developer, Smart Contract Developer</td>
-            <td class="td-concepts">Distributed consensus and fault tolerance, smart contract design and security, cryptographic data structures</td>
-            <td class="td-tools">Solidity, Hardhat, OpenZeppelin</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Consensus_(computer_science)" class="ref-link" target="_blank" rel="noopener noreferrer">Distributed consensus and fault tolerance</a>, <a href="https://en.wikipedia.org/wiki/Smart_contract" class="ref-link" target="_blank" rel="noopener noreferrer">smart contract design and security</a>, <a href="https://en.wikipedia.org/wiki/Merkle_tree" class="ref-link" target="_blank" rel="noopener noreferrer">cryptographic data structures</a></td>
+            <td class="td-tools"><a href="https://soliditylang.org" class="ref-link" target="_blank" rel="noopener noreferrer">Solidity</a>, <a href="https://hardhat.org" class="ref-link" target="_blank" rel="noopener noreferrer">Hardhat</a>, <a href="https://openzeppelin.com" class="ref-link" target="_blank" rel="noopener noreferrer">OpenZeppelin</a></td>
           </tr>
           <!-- AI -->
           <tr class="group-start">
@@ -286,16 +298,16 @@ a{color:inherit;text-decoration:none}
             <td class="td-new">Language AI: LLMs and Agentic Systems</td>
             <td class="td-existing"><span class="td-num">65339</span><span dir="rtl">מודלי שפה גדולים וסוכנים</span><br>LLM and Agents <em>(Dr. Alexander Apartsin)</em></td>
             <td class="td-role">LLM Engineer, AI Developer</td>
-            <td class="td-concepts">Transformer architecture and attention mechanisms, retrieval-augmented generation (RAG), prompt engineering and RLHF</td>
-            <td class="td-tools">LangChain, OpenAI API, Hugging Face Transformers</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)" class="ref-link" target="_blank" rel="noopener noreferrer">Transformer architecture and attention mechanisms</a>, <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" class="ref-link" target="_blank" rel="noopener noreferrer">retrieval-augmented generation (RAG)</a>, <a href="https://en.wikipedia.org/wiki/Prompt_engineering" class="ref-link" target="_blank" rel="noopener noreferrer">prompt engineering and RLHF</a></td>
+            <td class="td-tools"><a href="https://python.langchain.com" class="ref-link" target="_blank" rel="noopener noreferrer">LangChain</a>, <a href="https://platform.openai.com/docs" class="ref-link" target="_blank" rel="noopener noreferrer">OpenAI API</a>, <a href="https://huggingface.co/docs/transformers" class="ref-link" target="_blank" rel="noopener noreferrer">Hugging Face Transformers</a></td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI2</td>
             <td class="td-new">Temporal AI: Time Series &amp; Sequential Decision Making</td>
             <td class="td-existing">Machine Learning for Time Series<br><em>(Igor Sheinman)</em></td>
             <td class="td-role">Data Scientist, ML Researcher</td>
-            <td class="td-concepts">Sequence modeling and temporal dynamics, Markov decision processes, reinforcement learning and policy optimization</td>
-            <td class="td-tools">pytorch-forecasting, Stable Baselines3, Gymnasium</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Recurrent_neural_network" class="ref-link" target="_blank" rel="noopener noreferrer">Sequence modeling and temporal dynamics</a>, <a href="https://en.wikipedia.org/wiki/Markov_decision_process" class="ref-link" target="_blank" rel="noopener noreferrer">Markov decision processes</a>, <a href="https://en.wikipedia.org/wiki/Reinforcement_learning" class="ref-link" target="_blank" rel="noopener noreferrer">reinforcement learning and policy optimization</a></td>
+            <td class="td-tools"><a href="https://pytorch-forecasting.readthedocs.io" class="ref-link" target="_blank" rel="noopener noreferrer">pytorch-forecasting</a>, <a href="https://stable-baselines3.readthedocs.io" class="ref-link" target="_blank" rel="noopener noreferrer">Stable Baselines3</a>, <a href="https://gymnasium.farama.org" class="ref-link" target="_blank" rel="noopener noreferrer">Gymnasium</a></td>
           </tr>
           
           <tr>
@@ -308,24 +320,24 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65361</span><span dir="rtl">אלגוריתמים בסיסיים של בינה מלאכותית ויישומים ברפואה דיגיטלית</span><br>Fundamental AI Algorithms and Applications in Digital Medicine <em>(Prof. Eugene Levner)</em>
             </td>
             <td class="td-role">Computer Vision Engineer, ML Engineer</td>
-            <td class="td-concepts">Deep convolutional and attention-based architectures, object detection and segmentation, model optimization</td>
-            <td class="td-tools">Ultralytics YOLO, OpenCV, TensorRT</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Convolutional_neural_network" class="ref-link" target="_blank" rel="noopener noreferrer">Deep convolutional and attention-based architectures</a>, <a href="https://en.wikipedia.org/wiki/Object_detection" class="ref-link" target="_blank" rel="noopener noreferrer">object detection and segmentation</a>, <a href="https://en.wikipedia.org/wiki/Quantization_(machine_learning)" class="ref-link" target="_blank" rel="noopener noreferrer">model optimization</a></td>
+            <td class="td-tools"><a href="https://docs.ultralytics.com" class="ref-link" target="_blank" rel="noopener noreferrer">Ultralytics YOLO</a>, <a href="https://opencv.org" class="ref-link" target="_blank" rel="noopener noreferrer">OpenCV</a>, <a href="https://developer.nvidia.com/tensorrt" class="ref-link" target="_blank" rel="noopener noreferrer">TensorRT</a></td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI4</td>
             <td class="td-new">Scalable AI: Big-Data Algorithms</td>
             <td class="td-existing"><span class="td-num">64409</span><span dir="rtl">כריית נתונים</span><br>Data Mining <em>(Dr. Abraham Yosipof)</em></td>
             <td class="td-role">Data Engineer, Analytics Engineer</td>
-            <td class="td-concepts">Distributed computation and MapReduce paradigm, real-time stream processing, data lakehouse architecture</td>
-            <td class="td-tools">Apache Spark, Kafka, Delta Lake</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/MapReduce" class="ref-link" target="_blank" rel="noopener noreferrer">Distributed computation and MapReduce paradigm</a>, <a href="https://en.wikipedia.org/wiki/Stream_processing" class="ref-link" target="_blank" rel="noopener noreferrer">real-time stream processing</a>, <a href="https://en.wikipedia.org/wiki/Data_lake" class="ref-link" target="_blank" rel="noopener noreferrer">data lakehouse architecture</a></td>
+            <td class="td-tools"><a href="https://spark.apache.org" class="ref-link" target="_blank" rel="noopener noreferrer">Apache Spark</a>, <a href="https://kafka.apache.org" class="ref-link" target="_blank" rel="noopener noreferrer">Kafka</a>, <a href="https://delta.io" class="ref-link" target="_blank" rel="noopener noreferrer">Delta Lake</a></td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI5</td>
             <td class="td-new">Generative AI: Deep Generative Models</td>
             <td class="td-existing"><span class="td-num">67030</span><span dir="rtl">מודלים עמוקים לבינה מלאכותית יוצרת</span><br>Deep Models for Generative AI <em>(Dr. Alexander Apartsin)</em></td>
             <td class="td-role">Generative AI Engineer, AI Researcher</td>
-            <td class="td-concepts">Diffusion models and score-based generation, generative adversarial networks (GANs), variational inference and latent space</td>
-            <td class="td-tools">Hugging Face Diffusers, Stable Diffusion XL, cleanfid</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Diffusion_model" class="ref-link" target="_blank" rel="noopener noreferrer">Diffusion models and score-based generation</a>, <a href="https://en.wikipedia.org/wiki/Generative_adversarial_network" class="ref-link" target="_blank" rel="noopener noreferrer">generative adversarial networks (GANs)</a>, <a href="https://en.wikipedia.org/wiki/Variational_autoencoder" class="ref-link" target="_blank" rel="noopener noreferrer">variational inference and latent space</a></td>
+            <td class="td-tools"><a href="https://huggingface.co/docs/diffusers" class="ref-link" target="_blank" rel="noopener noreferrer">Hugging Face Diffusers</a>, <a href="https://stability.ai/stable-image" class="ref-link" target="_blank" rel="noopener noreferrer">Stable Diffusion XL</a>, <a href="https://pypi.org/project/clean-fid/" class="ref-link" target="_blank" rel="noopener noreferrer">cleanfid</a></td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI6</td>
@@ -336,8 +348,8 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">67006</span><span dir="rtl">פיתוח תוכנה עבור רכב אוטונומי אינטליגנטי</span><br>Software Development for Intelligent Autonomous Vehicles <em>(Dr. Vadim Talis)</em>
             </td>
             <td class="td-role">Robotics Engineer, Embedded AI Engineer</td>
-            <td class="td-concepts">Simultaneous Localization and Mapping (SLAM), motion planning and trajectory optimization, sensor fusion and state estimation</td>
-            <td class="td-tools">ROS 2, Nav2, MoveIt 2</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping" class="ref-link" target="_blank" rel="noopener noreferrer">Simultaneous Localization and Mapping (SLAM)</a>, <a href="https://en.wikipedia.org/wiki/Motion_planning" class="ref-link" target="_blank" rel="noopener noreferrer">motion planning and trajectory optimization</a>, <a href="https://en.wikipedia.org/wiki/Sensor_fusion" class="ref-link" target="_blank" rel="noopener noreferrer">sensor fusion and state estimation</a></td>
+            <td class="td-tools"><a href="https://docs.ros.org" class="ref-link" target="_blank" rel="noopener noreferrer">ROS 2</a>, <a href="https://nav2.ros.org" class="ref-link" target="_blank" rel="noopener noreferrer">Nav2</a>, <a href="https://moveit.ros.org" class="ref-link" target="_blank" rel="noopener noreferrer">MoveIt 2</a></td>
           </tr>
 
 
@@ -348,8 +360,8 @@ a{color:inherit;text-decoration:none}
             <td class="td-new">Mission-Critical Real-Time Systems</td>
             <td class="td-existing"><span class="td-num">67026</span><span dir="rtl">מבוא לתוכנה משובצת מחשב ויישומים</span><br>Introduction to Embedded Software and Applications <em>(Vladi Sorkin)</em></td>
             <td class="td-role">Embedded Systems Engineer, RTOS Developer</td>
-            <td class="td-concepts">Real-time scheduling theory (EDF/RMS), worst-case execution time (WCET) analysis, functional safety and SIL/ASIL</td>
-            <td class="td-tools">FreeRTOS, STM32, Tracealyzer</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Real-time_computing" class="ref-link" target="_blank" rel="noopener noreferrer">Real-time scheduling theory (EDF/RMS)</a>, <a href="https://en.wikipedia.org/wiki/Worst-case_execution_time" class="ref-link" target="_blank" rel="noopener noreferrer">worst-case execution time (WCET) analysis</a>, <a href="https://en.wikipedia.org/wiki/Safety_integrity_level" class="ref-link" target="_blank" rel="noopener noreferrer">functional safety and SIL/ASIL</a></td>
+            <td class="td-tools"><a href="https://freertos.org" class="ref-link" target="_blank" rel="noopener noreferrer">FreeRTOS</a>, <a href="https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html" class="ref-link" target="_blank" rel="noopener noreferrer">STM32</a>, <a href="https://percepio.com/tracealyzer/" class="ref-link" target="_blank" rel="noopener noreferrer">Tracealyzer</a></td>
           </tr>
           
           
@@ -384,24 +396,24 @@ a{color:inherit;text-decoration:none}
             <td class="td-new">Generative AI in Science, Technology, and Society</td>
             <td class="td-existing"><span class="td-num">62211</span><span dir="rtl">בינה מלאכותית גנרטיבית במדע, טכנולוגיה וחברה</span><br>Generative AI in Science, Technology, and Society <em>(Prof. Ilya Levin)</em></td>
             <td class="td-role">AI Policy Analyst, Technology Ethicist</td>
-            <td class="td-concepts">Societal impact of AI, algorithmic bias, AI regulation</td>
-            <td class="td-tools">Generative model APIs, policy frameworks, survey tools</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Ethics_of_artificial_intelligence" class="ref-link" target="_blank" rel="noopener noreferrer">Societal impact of AI</a>, <a href="https://en.wikipedia.org/wiki/Algorithmic_bias" class="ref-link" target="_blank" rel="noopener noreferrer">algorithmic bias</a>, <a href="https://en.wikipedia.org/wiki/Regulation_of_artificial_intelligence" class="ref-link" target="_blank" rel="noopener noreferrer">AI regulation</a></td>
+            <td class="td-tools"><a href="https://platform.openai.com/docs" class="ref-link" target="_blank" rel="noopener noreferrer">Generative model APIs</a>, <a href="https://oecd.ai/en/ai-principles" class="ref-link" target="_blank" rel="noopener noreferrer">policy frameworks</a>, <a href="https://www.qualtrics.com" class="ref-link" target="_blank" rel="noopener noreferrer">survey tools</a></td>
           </tr>
           <tr>
             <td class="td-code style="color:var(--muted)"">67021</td>
             <td class="td-new">Ethics of Artificial Intelligence</td>
             <td class="td-existing"><span class="td-num">67021</span><span dir="rtl">אתיקה של בינה מלאכותית</span><br>Ethics of Artificial Intelligence <em>(Dr. Galit Wellner)</em></td>
             <td class="td-role">AI Ethics Researcher, Policy Advisor</td>
-            <td class="td-concepts">Value alignment, fairness and accountability, AI risk</td>
-            <td class="td-tools">Fairlearn, AI Incident Database, ethics frameworks</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/AI_alignment" class="ref-link" target="_blank" rel="noopener noreferrer">Value alignment</a>, <a href="https://en.wikipedia.org/wiki/Algorithmic_accountability" class="ref-link" target="_blank" rel="noopener noreferrer">fairness and accountability</a>, <a href="https://en.wikipedia.org/wiki/AI_safety" class="ref-link" target="_blank" rel="noopener noreferrer">AI risk</a></td>
+            <td class="td-tools"><a href="https://fairlearn.org" class="ref-link" target="_blank" rel="noopener noreferrer">Fairlearn</a>, <a href="https://incidentdatabase.ai" class="ref-link" target="_blank" rel="noopener noreferrer">AI Incident Database</a>, <a href="https://www.partnershiponai.org" class="ref-link" target="_blank" rel="noopener noreferrer">ethics frameworks</a></td>
           </tr>
           <tr>
             <td class="td-code style="color:var(--muted)"">69998</td>
             <td class="td-new">Business Strategy and Entrepreneurship</td>
             <td class="td-existing"><span class="td-num">69998</span><span dir="rtl">אסטרטגיה ויזמות עסקית</span><br>Business Strategy and Entrepreneurship <em>(Dr. Boris Kantsepolsky)</em></td>
             <td class="td-role">Technology Entrepreneur, Product Manager</td>
-            <td class="td-concepts">Business model design, competitive strategy, go-to-market</td>
-            <td class="td-tools">Business Model Canvas, financial modeling, pitch frameworks</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Business_model" class="ref-link" target="_blank" rel="noopener noreferrer">Business model design</a>, <a href="https://en.wikipedia.org/wiki/Competitive_advantage" class="ref-link" target="_blank" rel="noopener noreferrer">competitive strategy</a>, <a href="https://en.wikipedia.org/wiki/Go_to_market" class="ref-link" target="_blank" rel="noopener noreferrer">go-to-market</a></td>
+            <td class="td-tools"><a href="https://www.strategyzer.com/library/the-business-model-canvas" class="ref-link" target="_blank" rel="noopener noreferrer">Business Model Canvas</a>, <a href="https://en.wikipedia.org/wiki/Financial_modeling" class="ref-link" target="_blank" rel="noopener noreferrer">financial modeling</a>, <a href="https://www.ycombinator.com/library" class="ref-link" target="_blank" rel="noopener noreferrer">pitch frameworks</a></td>
           </tr>
         </tbody>
       </table>
@@ -435,8 +447,8 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65355</span><span dir="rtl">עקרונות התכנות הפונקציונלי</span><br>Principles of Functional Programming <em>(Haim Michael)</em>
             </td>
             <td class="td-role">HPC Developer, Systems Engineer</td>
-            <td class="td-concepts">Shared-memory parallelism (OpenMP/MPI), GPU architecture and CUDA, functional concurrency and immutability</td>
-            <td class="td-tools">OpenMP/MPI, CUDA/NCCL, Slurm</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Shared_memory" class="ref-link" target="_blank" rel="noopener noreferrer">Shared-memory parallelism (OpenMP/MPI)</a>, <a href="https://en.wikipedia.org/wiki/CUDA" class="ref-link" target="_blank" rel="noopener noreferrer">GPU architecture and CUDA</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming" class="ref-link" target="_blank" rel="noopener noreferrer">functional concurrency and immutability</a></td>
+            <td class="td-tools"><a href="https://www.openmp.org" class="ref-link" target="_blank" rel="noopener noreferrer">OpenMP/MPI</a>, <a href="https://developer.nvidia.com/cuda-toolkit" class="ref-link" target="_blank" rel="noopener noreferrer">CUDA/NCCL</a>, <a href="https://slurm.schedmd.com" class="ref-link" target="_blank" rel="noopener noreferrer">Slurm</a></td>
           </tr>
           <tr>
             <td class="td-code c-se">SE12</td>
@@ -446,8 +458,8 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65335</span><span dir="rtl">דחיסת נתונים</span><br>Data Compression <em>(Dr. Yair Weisman)</em>
             </td>
             <td class="td-role">Search Engineer, Data Engineer</td>
-            <td class="td-concepts">Inverted index and BM25 ranking, entropy coding and lossless compression, dense vector retrieval and ANN search</td>
-            <td class="td-tools">Elasticsearch, FAISS/HNSW, SentenceTransformers</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Inverted_index" class="ref-link" target="_blank" rel="noopener noreferrer">Inverted index and BM25 ranking</a>, <a href="https://en.wikipedia.org/wiki/Entropy_coding" class="ref-link" target="_blank" rel="noopener noreferrer">entropy coding and lossless compression</a>, <a href="https://en.wikipedia.org/wiki/Nearest_neighbor_search" class="ref-link" target="_blank" rel="noopener noreferrer">dense vector retrieval and ANN search</a></td>
+            <td class="td-tools"><a href="https://www.elastic.co/elasticsearch" class="ref-link" target="_blank" rel="noopener noreferrer">Elasticsearch</a>, <a href="https://github.com/facebookresearch/faiss" class="ref-link" target="_blank" rel="noopener noreferrer">FAISS/HNSW</a>, <a href="https://www.sbert.net" class="ref-link" target="_blank" rel="noopener noreferrer">SentenceTransformers</a></td>
           </tr>
           <tr>
             <td class="td-code c-se">SE8</td>
@@ -458,24 +470,24 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65363</span><span dir="rtl">תבניות עיצוב תוכנה קלאסיות</span><br>Classic Software Design Patterns <em>(Haim Michael)</em>
             </td>
             <td class="td-role">.NET Developer, Software Engineer</td>
-            <td class="td-concepts">Domain-driven design, CQRS, clean architecture</td>
-            <td class="td-tools">ASP.NET Core, Entity Framework Core, EventStoreDB</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Domain-driven_design" class="ref-link" target="_blank" rel="noopener noreferrer">Domain-driven design</a>, <a href="https://martinfowler.com/bliki/CQRS.html" class="ref-link" target="_blank" rel="noopener noreferrer">CQRS</a>, <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html" class="ref-link" target="_blank" rel="noopener noreferrer">clean architecture</a></td>
+            <td class="td-tools"><a href="https://dotnet.microsoft.com/en-us/apps/aspnet" class="ref-link" target="_blank" rel="noopener noreferrer">ASP.NET Core</a>, <a href="https://learn.microsoft.com/en-us/ef/core/" class="ref-link" target="_blank" rel="noopener noreferrer">Entity Framework Core</a>, <a href="https://www.eventstore.com" class="ref-link" target="_blank" rel="noopener noreferrer">EventStoreDB</a></td>
           </tr>
           <tr>
             <td class="td-code c-se">SE9</td>
             <td class="td-new">Advanced Algorithmic Problem Solving</td>
             <td class="td-existing"><span class="td-num">65345</span><span dir="rtl">תכנות תחרותי</span><br>Competitive Programming <em>(Yuval Meir)</em></td>
             <td class="td-role">Algorithm Engineer, Software Engineer</td>
-            <td class="td-concepts">Algorithmic complexity, dynamic programming, graph theory</td>
-            <td class="td-tools">C++ STL, LeetCode, Codeforces</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Computational_complexity" class="ref-link" target="_blank" rel="noopener noreferrer">Algorithmic complexity</a>, <a href="https://en.wikipedia.org/wiki/Dynamic_programming" class="ref-link" target="_blank" rel="noopener noreferrer">dynamic programming</a>, <a href="https://en.wikipedia.org/wiki/Graph_theory" class="ref-link" target="_blank" rel="noopener noreferrer">graph theory</a></td>
+            <td class="td-tools"><a href="https://en.cppreference.com/w/cpp/algorithm" class="ref-link" target="_blank" rel="noopener noreferrer">C++ STL</a>, <a href="https://leetcode.com" class="ref-link" target="_blank" rel="noopener noreferrer">LeetCode</a>, <a href="https://codeforces.com" class="ref-link" target="_blank" rel="noopener noreferrer">Codeforces</a></td>
           </tr>
           <tr class="group-start">
             <td class="td-code c-df">DF1</td>
             <td class="td-new">Sensor Fusion &amp; Signal Processing</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
             <td class="td-role">Sensor Fusion Engineer, Signal Processing Engineer</td>
-            <td class="td-concepts">Probabilistic state estimation (Kalman/particle filter), IMU integration and dead reckoning, 3D point cloud processing</td>
-            <td class="td-tools">ROS 2, GTSAM, Open3D</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Kalman_filter" class="ref-link" target="_blank" rel="noopener noreferrer">Probabilistic state estimation (Kalman/particle filter)</a>, <a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit" class="ref-link" target="_blank" rel="noopener noreferrer">IMU integration and dead reckoning</a>, <a href="https://en.wikipedia.org/wiki/Point_cloud" class="ref-link" target="_blank" rel="noopener noreferrer">3D point cloud processing</a></td>
+            <td class="td-tools"><a href="https://docs.ros.org" class="ref-link" target="_blank" rel="noopener noreferrer">ROS 2</a>, <a href="https://gtsam.org" class="ref-link" target="_blank" rel="noopener noreferrer">GTSAM</a>, <a href="http://www.open3d.org" class="ref-link" target="_blank" rel="noopener noreferrer">Open3D</a></td>
           </tr>
           <tr>
             <td class="td-code c-df">DF3</td>
@@ -485,8 +497,8 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">65311</span><span dir="rtl">ארכיטקטורת מערכות VLSI</span><br>VLSI Systems Architecture <em>(Prof. Samri Barnov)</em>
             </td>
             <td class="td-role">FPGA Engineer, RTL Developer</td>
-            <td class="td-concepts">RTL design, finite state machines, FPGA architecture</td>
-            <td class="td-tools">Xilinx Vivado, ModelSim, Intel Quartus Prime</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Register-transfer_level" class="ref-link" target="_blank" rel="noopener noreferrer">RTL design</a>, <a href="https://en.wikipedia.org/wiki/Finite-state_machine" class="ref-link" target="_blank" rel="noopener noreferrer">finite state machines</a>, <a href="https://en.wikipedia.org/wiki/Field-programmable_gate_array" class="ref-link" target="_blank" rel="noopener noreferrer">FPGA architecture</a></td>
+            <td class="td-tools"><a href="https://www.xilinx.com/products/design-tools/vivado.html" class="ref-link" target="_blank" rel="noopener noreferrer">Xilinx Vivado</a>, <a href="https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/model-sim.html" class="ref-link" target="_blank" rel="noopener noreferrer">ModelSim</a>, <a href="https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/overview.html" class="ref-link" target="_blank" rel="noopener noreferrer">Intel Quartus Prime</a></td>
           </tr>
           <tr>
             <td class="td-code c-df">DF4</td>
@@ -495,72 +507,72 @@ a{color:inherit;text-decoration:none}
               <span class="td-num">67011</span><span dir="rtl">עיבוד קול למערכות תבוניות</span><br>Audio Processing for Intelligent Systems <em>(Dr. Nava Shaked and Yuri Yurchenko)</em>
             </td>
             <td class="td-role">Audio/Speech ML Engineer, Conversational AI Developer</td>
-            <td class="td-concepts">MFCCs, attention-based ASR, speaker diarization</td>
-            <td class="td-tools">librosa, Whisper, SpeechBrain</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Mel-frequency_cepstrum" class="ref-link" target="_blank" rel="noopener noreferrer">MFCCs</a>, <a href="https://en.wikipedia.org/wiki/Speech_recognition" class="ref-link" target="_blank" rel="noopener noreferrer">attention-based ASR</a>, <a href="https://en.wikipedia.org/wiki/Speaker_diarisation" class="ref-link" target="_blank" rel="noopener noreferrer">speaker diarization</a></td>
+            <td class="td-tools"><a href="https://librosa.org" class="ref-link" target="_blank" rel="noopener noreferrer">librosa</a>, <a href="https://openai.com/research/whisper" class="ref-link" target="_blank" rel="noopener noreferrer">Whisper</a>, <a href="https://speechbrain.github.io" class="ref-link" target="_blank" rel="noopener noreferrer">SpeechBrain</a></td>
           </tr>
           <tr>
             <td class="td-code c-df">DF5</td>
             <td class="td-new">Computational Geometry and Geographic Information Systems</td>
             <td class="td-existing"><span class="td-num">61221</span><span dir="rtl">מבוא למערכות מידע גיאוגרפי 1</span><br>Introduction to Geographic Information Systems 1 <em>(Aaron Cohen)</em></td>
             <td class="td-role">Geospatial Developer, GIS Analyst</td>
-            <td class="td-concepts">Delaunay triangulation, k-d trees/R-trees, GIS projections</td>
-            <td class="td-tools">CGAL, PostGIS, QGIS</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Delaunay_triangulation" class="ref-link" target="_blank" rel="noopener noreferrer">Delaunay triangulation</a>, <a href="https://en.wikipedia.org/wiki/K-d_tree" class="ref-link" target="_blank" rel="noopener noreferrer">k-d trees/R-trees</a>, <a href="https://en.wikipedia.org/wiki/Map_projection" class="ref-link" target="_blank" rel="noopener noreferrer">GIS projections</a></td>
+            <td class="td-tools"><a href="https://www.cgal.org" class="ref-link" target="_blank" rel="noopener noreferrer">CGAL</a>, <a href="https://postgis.net" class="ref-link" target="_blank" rel="noopener noreferrer">PostGIS</a>, <a href="https://qgis.org" class="ref-link" target="_blank" rel="noopener noreferrer">QGIS</a></td>
           </tr>
           <tr>
             <td class="td-code c-ai">AI7</td>
             <td class="td-new">Decision-Making Under Uncertainty: Models and Applications</td>
             <td class="td-existing"><span class="td-num">68007</span><span dir="rtl">לוגיקה עמומה וחישוב רך</span><br>Fuzzy Logic and Soft Computing <em>(Prof. Eugene Levner)</em></td>
             <td class="td-role">Decision Systems Engineer, AI Researcher</td>
-            <td class="td-concepts">Probabilistic inference and Bayesian reasoning, fuzzy logic and approximate reasoning, decision-making under uncertainty (MDPs/POMDPs)</td>
-            <td class="td-tools">pgmpy, scikit-fuzzy, PyMC</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Bayesian_inference" class="ref-link" target="_blank" rel="noopener noreferrer">Probabilistic inference and Bayesian reasoning</a>, <a href="https://en.wikipedia.org/wiki/Fuzzy_logic" class="ref-link" target="_blank" rel="noopener noreferrer">fuzzy logic and approximate reasoning</a>, <a href="https://en.wikipedia.org/wiki/Partially_observable_Markov_decision_process" class="ref-link" target="_blank" rel="noopener noreferrer">decision-making under uncertainty (MDPs/POMDPs)</a></td>
+            <td class="td-tools"><a href="https://pgmpy.org" class="ref-link" target="_blank" rel="noopener noreferrer">pgmpy</a>, <a href="https://pythonhosted.org/scikit-fuzzy/" class="ref-link" target="_blank" rel="noopener noreferrer">scikit-fuzzy</a>, <a href="https://www.pymc.io" class="ref-link" target="_blank" rel="noopener noreferrer">PyMC</a></td>
           </tr>
           <tr class="group-start">
             <td class="td-code c-gm">GM1</td>
             <td class="td-new">Computer Graphics</td>
             <td class="td-existing"><span class="td-num">65235</span><span dir="rtl">גרפיקה ממוחשבת</span><br>Computer Graphics <em>(Dr. Vladimir Nodelman)</em></td>
             <td class="td-role">Graphics Programmer, Game Developer</td>
-            <td class="td-concepts">Real-time rendering and rasterization pipeline, physically-based rendering (PBR), GPU architecture and programmable shading</td>
-            <td class="td-tools">OpenGL, Vulkan, RenderDoc</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Rasterisation" class="ref-link" target="_blank" rel="noopener noreferrer">Real-time rendering and rasterization pipeline</a>, <a href="https://en.wikipedia.org/wiki/Physically_based_rendering" class="ref-link" target="_blank" rel="noopener noreferrer">physically-based rendering (PBR)</a>, <a href="https://en.wikipedia.org/wiki/Shader" class="ref-link" target="_blank" rel="noopener noreferrer">GPU architecture and programmable shading</a></td>
+            <td class="td-tools"><a href="https://www.opengl.org" class="ref-link" target="_blank" rel="noopener noreferrer">OpenGL</a>, <a href="https://www.vulkan.org" class="ref-link" target="_blank" rel="noopener noreferrer">Vulkan</a>, <a href="https://renderdoc.org" class="ref-link" target="_blank" rel="noopener noreferrer">RenderDoc</a></td>
           </tr>
           <tr>
             <td class="td-code c-gm">GM2</td>
             <td class="td-new">Virtual, Augmented and Mixed Reality</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
             <td class="td-role">XR Developer, VR/AR Engineer</td>
-            <td class="td-concepts">Spatial tracking and inside-out SLAM, stereoscopic rendering and reprojection, cybersickness and perceptual comfort</td>
-            <td class="td-tools">Unity XR Toolkit, OpenXR, ARCore/ARKit</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping" class="ref-link" target="_blank" rel="noopener noreferrer">Spatial tracking and inside-out SLAM</a>, <a href="https://en.wikipedia.org/wiki/Stereoscopy" class="ref-link" target="_blank" rel="noopener noreferrer">stereoscopic rendering and reprojection</a>, <a href="https://en.wikipedia.org/wiki/Virtual_reality_sickness" class="ref-link" target="_blank" rel="noopener noreferrer">cybersickness and perceptual comfort</a></td>
+            <td class="td-tools"><a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@latest" class="ref-link" target="_blank" rel="noopener noreferrer">Unity XR Toolkit</a>, <a href="https://www.khronos.org/openxr/" class="ref-link" target="_blank" rel="noopener noreferrer">OpenXR</a>, <a href="https://developers.google.com/ar" class="ref-link" target="_blank" rel="noopener noreferrer">ARCore/ARKit</a></td>
           </tr>
           <tr>
             <td class="td-code c-gm">GM4</td>
             <td class="td-new">Simulation of Physical Worlds: Games, Engineering, Robotics, and Digital Twins</td>
             <td class="td-existing"><span class="td-num">68013</span><span dir="rtl">פיסיקה חישובית למדעי המחשב</span><br>Computational Physics for Computer Science <em>(Prof. Shimshon Klosh)</em></td>
             <td class="td-role">Simulation Engineer, Robotics Developer</td>
-            <td class="td-concepts">Rigid-body dynamics, finite element method (FEM), digital twin architecture</td>
-            <td class="td-tools">MuJoCo, Gazebo, OpenFOAM</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Rigid_body_dynamics" class="ref-link" target="_blank" rel="noopener noreferrer">Rigid-body dynamics</a>, <a href="https://en.wikipedia.org/wiki/Finite_element_method" class="ref-link" target="_blank" rel="noopener noreferrer">finite element method (FEM)</a>, <a href="https://en.wikipedia.org/wiki/Digital_twin" class="ref-link" target="_blank" rel="noopener noreferrer">digital twin architecture</a></td>
+            <td class="td-tools"><a href="https://mujoco.org" class="ref-link" target="_blank" rel="noopener noreferrer">MuJoCo</a>, <a href="https://gazebosim.org" class="ref-link" target="_blank" rel="noopener noreferrer">Gazebo</a>, <a href="https://www.openfoam.com" class="ref-link" target="_blank" rel="noopener noreferrer">OpenFOAM</a></td>
           </tr>
           <tr>
             <td class="td-code c-qcf">QCF1</td>
             <td class="td-new">Quantum Optimization</td>
             <td class="td-existing" style="color:var(--muted);font-style:italic">No existing course</td>
             <td class="td-role">Quantum Software Engineer, Optimization Researcher</td>
-            <td class="td-concepts">QAOA, variational quantum eigensolver, quantum annealing</td>
-            <td class="td-tools">Qiskit, D-Wave Ocean, PennyLane</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Quantum_optimization_algorithms" class="ref-link" target="_blank" rel="noopener noreferrer">QAOA</a>, <a href="https://en.wikipedia.org/wiki/Variational_quantum_eigensolver" class="ref-link" target="_blank" rel="noopener noreferrer">variational quantum eigensolver</a>, <a href="https://en.wikipedia.org/wiki/Quantum_annealing" class="ref-link" target="_blank" rel="noopener noreferrer">quantum annealing</a></td>
+            <td class="td-tools"><a href="https://qiskit.org" class="ref-link" target="_blank" rel="noopener noreferrer">Qiskit</a>, <a href="https://docs.ocean.dwavesys.com" class="ref-link" target="_blank" rel="noopener noreferrer">D-Wave Ocean</a>, <a href="https://pennylane.ai" class="ref-link" target="_blank" rel="noopener noreferrer">PennyLane</a></td>
           </tr>
           <tr>
             <td class="td-code c-qcf">QCF2</td>
             <td class="td-new">AI &amp; Optimization for Finance</td>
             <td class="td-existing"><span class="td-num">67033</span><span dir="rtl">אלגוריתמים נומריים ויישומיהם</span><br>Numerical Algorithms and Their Applications <em>(Zeev Geyzel)</em></td>
             <td class="td-role">Quantitative Analyst, FinTech Developer</td>
-            <td class="td-concepts">Mean-variance optimization, Black-Scholes, Monte Carlo simulation</td>
-            <td class="td-tools">QuantLib, D-Wave Ocean, Bloomberg API</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Modern_portfolio_theory" class="ref-link" target="_blank" rel="noopener noreferrer">Mean-variance optimization</a>, <a href="https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model" class="ref-link" target="_blank" rel="noopener noreferrer">Black-Scholes</a>, <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method" class="ref-link" target="_blank" rel="noopener noreferrer">Monte Carlo simulation</a></td>
+            <td class="td-tools"><a href="https://www.quantlib.org" class="ref-link" target="_blank" rel="noopener noreferrer">QuantLib</a>, <a href="https://docs.ocean.dwavesys.com" class="ref-link" target="_blank" rel="noopener noreferrer">D-Wave Ocean</a>, <a href="https://www.bloomberg.com/professional/product/api/" class="ref-link" target="_blank" rel="noopener noreferrer">Bloomberg API</a></td>
           </tr>
           <tr>
             <td class="td-code c-se">SE13</td>
             <td class="td-new">LLM-Augmented Software Practice</td>
             <td class="td-existing"><span class="td-num">62121</span>LLM-Augmented Software Practice <em>(Mikal Gorsky)</em></td>
             <td class="td-role">AI-Augmented Developer, Software Engineer</td>
-            <td class="td-concepts">Prompt engineering, RAG, LLM integration in software workflows</td>
-            <td class="td-tools">GitHub Copilot, OpenAI API, LangChain</td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Prompt_engineering" class="ref-link" target="_blank" rel="noopener noreferrer">Prompt engineering</a>, <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" class="ref-link" target="_blank" rel="noopener noreferrer">RAG</a>, <a href="https://en.wikipedia.org/wiki/Large_language_model" class="ref-link" target="_blank" rel="noopener noreferrer">LLM integration in software workflows</a></td>
+            <td class="td-tools"><a href="https://github.com/features/copilot" class="ref-link" target="_blank" rel="noopener noreferrer">GitHub Copilot</a>, <a href="https://platform.openai.com/docs" class="ref-link" target="_blank" rel="noopener noreferrer">OpenAI API</a>, <a href="https://python.langchain.com" class="ref-link" target="_blank" rel="noopener noreferrer">LangChain</a></td>
           </tr>
         </tbody>
       </table>
