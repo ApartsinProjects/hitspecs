@@ -346,3 +346,32 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;font-
   .download-chips{display:grid;grid-template-columns:1fr;gap:.45rem}
   .download-chips .chip{width:100%;font-size:.88rem}
 }
+
+/* ── Unified site-nav (all pages) ──────────────────────────── */
+.site-nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;gap:4px;padding:0 16px;
+  background:rgba(13,17,25,0.95);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(37,48,80,1);
+  overflow-x:auto;white-space:nowrap;scrollbar-width:none;
+  min-height:50px;
+}
+.site-nav::-webkit-scrollbar{display:none}
+.nav-brand{font-size:13px;font-weight:700;letter-spacing:.06em;color:#8A9DC0;
+  text-transform:uppercase;padding:12px 10px 12px 0;
+  border-right:1px solid rgba(37,48,80,1);margin-right:4px;flex-shrink:0;
+  text-decoration:none}
+.nav-brand:hover{color:#D9E4F5;text-decoration:none}
+.nav-pill{display:inline-flex;align-items:center;padding:5px 10px;border-radius:20px;
+  font-size:12px;font-weight:600;letter-spacing:.04em;color:#8A9DC0;
+  border:1.5px solid transparent;text-decoration:none;
+  transition:color .15s,border-color .15s,background .15s;flex-shrink:0}
+.nav-pill:hover{color:#D9E4F5;border-color:rgba(37,48,80,1);text-decoration:none}
+.nav-pill.active{color:#D9E4F5;border-color:rgba(37,48,80,1);background:rgba(30,45,72,1)}
+.nav-spacer{flex:1 1 auto;min-width:8px}
+.theme-btn{display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  border:1.5px solid rgba(37,48,80,1);background:transparent;
+  color:#8A9DC0;cursor:pointer;font-size:14px;flex-shrink:0;margin-left:4px}
+.theme-btn:hover{color:#D9E4F5}
