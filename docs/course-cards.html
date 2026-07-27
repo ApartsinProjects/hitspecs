@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Course Cards | CS Concentrations</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.cc-wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.cc-hero{padding:52px 0 26px;max-width:1120px;margin:0 auto;padding-left:20px;padding-right:20px}
+.cc-hero .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#38bdf8;font-weight:700;margin:0 0 10px}
+.cc-hero h1{font-size:clamp(28px,4vw,40px);font-weight:800;line-height:1.12;margin:0 0 12px;letter-spacing:-.02em}
+.cc-hero p.lede{font-size:16px;line-height:1.55;max-width:760px;margin:0;opacity:.85}
+.cc-legend{display:flex;flex-wrap:wrap;gap:10px 16px;margin:20px 0 4px}
+.cc-legend span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;opacity:.9}
+.cc-legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.cc-list{display:flex;flex-direction:column;gap:26px;padding:20px 0 60px}
+
+/* ---- self-contained dark card ---- */
+.ccard{
+  --area:#31D0A5;
+  background:#0d1526;
+  color:#cbd5e1;
+  border:1px solid rgba(255,255,255,.08);
+  border-left:4px solid var(--area);
+  border-radius:18px;
+  padding:22px 22px 24px;
+  box-shadow:0 10px 30px rgba(2,6,23,.35);
+  scroll-margin-top:64px;
+}
+.ccard-hd{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 12px;margin:0 0 4px}
+.ccard-kick{font-size:13px;font-weight:700;letter-spacing:.02em;color:#38bdf8}
+.ccard-name{font-size:22px;font-weight:800;color:#f8fafc;letter-spacing:-.01em;line-height:1.15}
+.ccard-tags{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.ccard-code{font-family:"Cascadia Code","Fira Code",Consolas,monospace;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--area);background:color-mix(in srgb,var(--area) 16%,transparent);border:1px solid color-mix(in srgb,var(--area) 40%,transparent);padding:3px 9px;border-radius:20px}
+.ccard-area{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--area);background:color-mix(in srgb,var(--area) 12%,transparent);border:1px solid color-mix(in srgb,var(--area) 30%,transparent);padding:3px 10px;border-radius:20px}
+
+.ccard-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:16px;
+}
+@media(max-width:760px){.ccard-grid{grid-template-columns:1fr}}
+
+.ccpanel{
+  background:#16203a;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  padding:14px 15px 15px;
+  min-width:0;
+}
+.ccpanel h3{
+  font-size:12.5px;font-weight:700;letter-spacing:.04em;
+  text-transform:uppercase;margin:0 0 9px;
+}
+.ccpanel.role h3{color:#38bdf8}
+.ccpanel.concepts h3{color:#60a5fa}
+.ccpanel.tools h3{color:#34d399}
+.ccpanel.capstone h3{color:#34d399}
+
+.ccrole-name{font-weight:800;color:#f1f5f9;font-size:14.5px;margin:0 0 6px}
+.ccrole-resp{font-size:13px;line-height:1.5;margin:0;color:#cbd5e1}
+
+.cclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.cclist li{position:relative;padding-left:16px;font-size:12.7px;line-height:1.45;color:#cbd5e1;overflow-wrap:anywhere}
+.cclist li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:#64748b}
+.cclist.tools li b{color:#e8eefb;font-weight:700}
+.cclist.tools .tcat{color:#94a3b8}
+
+.cccap-sum{font-weight:700;color:#e8eefb;font-size:13px;line-height:1.45;margin:0 0 9px}
+
+@media(max-width:600px){
+  .ccard{padding:18px 15px 20px;border-radius:14px}
+  .ccard-tags{margin-left:0;width:100%}
+}
+</style>
+</head>
+<body>
+<nav class="site-nav" role="navigation" aria-label="Site navigation">
+  <a class="nav-brand" href="index.html">HIT·CS</a>
+  <a class="nav-pill" href="index.html">Overview</a>
+  <a class="nav-pill" href="concentrations/SE.html">SE</a>
+  <a class="nav-pill" href="concentrations/CY.html">CY</a>
+  <a class="nav-pill" href="concentrations/AI.html">AI</a>
+  <a class="nav-pill" href="concentrations/QCF.html">QCF</a>
+  <a class="nav-pill" href="concentrations/GM.html">GM</a>
+  <a class="nav-pill" href="concentrations/DF.html">DF</a>
+  <a class="nav-pill" href="careers.html">Careers</a>
+  <span class="nav-spacer"></span>
+  <a class="nav-pill" href="compendium.html">Compendium</a>
+  <a class="nav-pill" href="core-courses.html">Core Electives</a>
+  <a class="nav-pill" href="baseline-mapping.html">Mapping</a>
+  <a class="nav-pill active" href="course-cards.html">Course Cards</a>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">&#9680;</button>
+</nav>
+<section class="cc-hero">
+  <p class="eyebrow">QUICK REFERENCE</p>
+  <h1>Course Cards</h1>
+  <p class="lede">Compact quick-reference cards summarizing each course at a glance: its target job role, the core engineering and science concepts, the tools and platforms to master, and the capstone project you deliver.</p>
+  <div class="cc-legend">
+    <span><i style="background:#31D0A5"></i>SE · Intelligent Software Systems</span>
+    <span><i style="background:#F5A33A"></i>CY · Networking &amp; Cyber Security</span>
+    <span><i style="background:#9B7AEA"></i>AI · AI &amp; Robotics</span>
+    <span><i style="background:#4FC8E8"></i>QCF · AI &amp; Quantum Computing for Finance</span>
+    <span><i style="background:#E8595A"></i>GM · Immersive Systems &amp; Game Development</span>
+    <span><i style="background:#7DC88A"></i>DF · Defense Technologies &amp; Autonomous Systems</span>
+  </div>
+</section>
+<main class="cc-wrap">
+  <div class="cc-list">
+  <article class="ccard" id="card-SE1" style="--area:#31D0A5">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Cloud Computing &amp; Cloud-Native Platforms</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">SE1</span>
+        <span class="ccard-area">Intelligent Software Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Cloud &amp; Platform Engineer</p>
+        <p class="ccrole-resp">Designs and builds scalable cloud applications, choosing the right compute, storage, networking, and managed-service patterns for each workload and provisioning them as reproducible infrastructure. Owns the availability, latency, throughput, and cost trade-offs for production delivery.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Containers &amp; orchestration:</span> <b>Docker, Kubernetes, Helm, Istio, kubectl</b></li>
+        <li><span class="tcat">Infrastructure as code:</span> <b>Terraform</b></li>
+        <li><span class="tcat">Serverless &amp; managed AWS:</span> <b>Lambda, S3, RDS, DynamoDB, SQS, SNS, API Gateway, CloudFront</b></li>
+        <li><span class="tcat">Data &amp; cache:</span> <b>PostgreSQL, Redis</b></li>
+        <li><span class="tcat">Observability:</span> <b>Prometheus, Grafana</b></li>
+        <li><span class="tcat">Load testing:</span> <b>k6</b></li>
+        <li><span class="tcat">Security:</span> <b>Trivy</b></li>
+        <li><span class="tcat">Cloud platform:</span> <b>Amazon Web Services</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Compute placement: VMs, containers, Kubernetes, serverless, managed platforms</li>
+        <li>Cloud storage semantics: object, block, file, relational, document, key-value, cache, queue, stream</li>
+        <li>CAP theorem and availability / consistency / partition-tolerance trade-offs</li>
+        <li>Replication, partitioning, indexing, caching, and eventual-consistency models</li>
+        <li>Stateless service design, idempotency, backpressure, retries, timeouts, circuit breakers</li>
+        <li>Declarative desired-state reconciliation control loops</li>
+        <li>Queueing theory and tail-latency analysis under load</li>
+        <li>Autoscaling control theory and capacity-versus-cost models</li>
+        <li>Supply-chain provenance and reproducible-build / deployment safety</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end scalable cloud application with:</p>
+        <ul class="cclist">
+        <li>An API service plus asynchronous background workers behind durable queues or events</li>
+        <li>Durable persistence (relational or NoSQL) plus object storage</li>
+        <li>Caching and CDN content delivery</li>
+        <li>Containerized and/or serverless deployment with a justified compute choice</li>
+        <li>Infrastructure provisioned declaratively via Terraform across dev and production-like environments</li>
+        <li>Load testing (k6) and SLO-tied dashboards and alerts (Prometheus, Grafana)</li>
+        <li>A defense with architecture diagrams, load-test evidence, failure-mode analysis, and a cost report</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-SE2" style="--area:#31D0A5">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Secure &amp; Reliable Software Development</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">SE2</span>
+        <span class="ccard-area">Intelligent Software Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">QA Engineer</p>
+        <p class="ccrole-resp">Engineers software to be correct, testable, and secure by design, building the QA strategy, test automation, and security remediation that run throughout the development lifecycle. Owns the CI quality gates, defect workflow, and reliability objectives that decide release readiness.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Unit &amp; integration:</span> <b>JUnit or pytest, Mockito or unittest.mock</b></li>
+        <li><span class="tcat">Coverage &amp; mutation:</span> <b>JaCoCo or coverage.py, Stryker or mutmut</b></li>
+        <li><span class="tcat">Quality &amp; reporting:</span> <b>SonarQube, Allure Report</b></li>
+        <li><span class="tcat">Browser &amp; E2E:</span> <b>Playwright, Cypress, Selenium, BrowserStack</b></li>
+        <li><span class="tcat">API testing:</span> <b>Postman/Newman, REST Assured, Schemathesis, Pact</b></li>
+        <li><span class="tcat">AppSec:</span> <b>Semgrep, OWASP ZAP, Snyk, Trivy, OWASP Threat Dragon</b></li>
+        <li><span class="tcat">Accessibility &amp; performance:</span> <b>axe DevTools, k6</b></li>
+        <li><span class="tcat">CI &amp; observability:</span> <b>GitHub Actions, OpenTelemetry, Prometheus, Grafana</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Saltzer and Schroeder protection principles and least privilege</li>
+        <li>STRIDE threat modeling over data-flow trust boundaries; OWASP Top 10</li>
+        <li>Black-box design: equivalence partitioning, boundary-value, decision tables, pairwise, state-transition</li>
+        <li>White-box and fault-based design: coverage criteria, mutation testing, risk-based testing</li>
+        <li>QA artifacts: test strategy, traceability matrix, defect lifecycle, release-readiness evidence</li>
+        <li>Software quality metrics: defect density, coverage, mutation score, complexity, SLO attainment</li>
+        <li>Static data-flow / taint analysis and soundness trade-offs</li>
+        <li>SLOs, error budgets, and the three pillars of observability</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end hardened, tested, and reliable web application with:</p>
+        <ul class="cclist">
+        <li>A threat model (OWASP Threat Dragon) and full OWASP Top 10 remediation</li>
+        <li>QA artifacts: test plan, risk and traceability matrices, defect register, quality dashboard, release report</li>
+        <li>Automated unit, integration, contract, E2E, cross-browser, accessibility, and mutation tests</li>
+        <li>A GitHub Actions CI pipeline gating on tests, coverage, mutation score, SAST, DAST, and dependency scanning</li>
+        <li>Observability with OpenTelemetry, Prometheus, and Grafana enforcing SLOs and error budgets</li>
+        <li>Hardened authentication and access control plus structured peer code review</li>
+        <li>A final oral defense of security, QA strategy, test evidence, and reliability decisions</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-SE3" style="--area:#31D0A5">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Modern Front-End Web Development</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">SE3</span>
+        <span class="ccard-area">Intelligent Software Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Full-Stack Software Developer</p>
+        <p class="ccrole-resp">Crafts fast, accessible, component-driven web interfaces, building responsive single-page applications with modern frameworks, predictable state management, and optimized builds. Owns the front-end architecture, accessibility compliance, and performance budgets, validated by automated tests.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Frameworks:</span> <b>React, Vue</b></li>
+        <li><span class="tcat">Language:</span> <b>TypeScript</b></li>
+        <li><span class="tcat">Build tooling:</span> <b>Vite</b></li>
+        <li><span class="tcat">State:</span> <b>Redux Toolkit or Pinia</b></li>
+        <li><span class="tcat">Routing:</span> <b>React Router or Vue Router</b></li>
+        <li><span class="tcat">Styling:</span> <b>Tailwind CSS</b></li>
+        <li><span class="tcat">Testing:</span> <b>Vitest, Playwright</b></li>
+        <li><span class="tcat">Accessibility &amp; performance:</span> <b>axe DevTools, Lighthouse</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>The DOM and the browser rendering pipeline</li>
+        <li>The component model and unidirectional data flow</li>
+        <li>Declarative rendering, reconciliation, and the virtual DOM</li>
+        <li>Reactive programming and dependency-tracked state propagation</li>
+        <li>WCAG accessibility principles and semantic, inclusive interaction</li>
+        <li>The critical rendering path and front-end performance metrics</li>
+        <li>Module bundling, tree shaking, and code splitting</li>
+        <li>Client-side routing and server-state synchronization</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end accessible single-page web application with:</p>
+        <ul class="cclist">
+        <li>A composed component hierarchy with clear prop and event contracts, built in React or Vue with TypeScript</li>
+        <li>Predictable shared state managed through a store</li>
+        <li>Client-side routing with resilient data fetching (loading and error states)</li>
+        <li>Responsive layouts across mobile and desktop breakpoints</li>
+        <li>WCAG-audited accessible markup with verified remediation</li>
+        <li>A Vite code-split production build tuned to performance budgets</li>
+        <li>An automated component and interaction test suite (Vitest, Playwright)</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-SE4" style="--area:#31D0A5">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Back-End Web Development &amp; APIs</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">SE4</span>
+        <span class="ccard-area">Intelligent Software Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Backend Engineer</p>
+        <p class="ccrole-resp">Designs robust server-side services, well-structured APIs, and tuned data layers that power web and mobile clients. Owns data modeling, authentication and authorization, caching, and horizontal scaling under consistency, availability, and latency trade-offs.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Runtimes &amp; frameworks:</span> <b>Node.js or Python, Express or FastAPI</b></li>
+        <li><span class="tcat">Database &amp; ORM:</span> <b>PostgreSQL, Prisma or SQLAlchemy</b></li>
+        <li><span class="tcat">GraphQL:</span> <b>Apollo Server</b></li>
+        <li><span class="tcat">Cache:</span> <b>Redis</b></li>
+        <li><span class="tcat">Auth &amp; contracts:</span> <b>JSON Web Tokens, OpenAPI</b></li>
+        <li><span class="tcat">API tooling:</span> <b>Postman</b></li>
+        <li><span class="tcat">Infrastructure:</span> <b>Docker</b></li>
+        <li><span class="tcat">Load testing:</span> <b>k6</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>REST architectural constraints and resource-oriented design</li>
+        <li>The relational model and normalization theory</li>
+        <li>ACID transactions, isolation levels, and indexing internals</li>
+        <li>Token and federated identity flows (OAuth, OpenID Connect, JWT)</li>
+        <li>Cache coherence, invalidation, and consistency trade-offs</li>
+        <li>Replication, statelessness, and the CAP trade-off</li>
+        <li>Role- and attribute-based access control and least privilege</li>
+        <li>REST versus GraphQL trade-offs; API versioning, pagination, and contracts</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end back-end API platform with:</p>
+        <ul class="cclist">
+        <li>A coherent RESTful resource model plus a GraphQL layer over the same domain</li>
+        <li>A normalized, indexed relational schema with transactional, performance-tuned data access</li>
+        <li>Validated, paginated, and versioned API contracts</li>
+        <li>Secure authentication and session handling (tokens, OAuth / OIDC)</li>
+        <li>Role-based access control enforced across resources</li>
+        <li>Response and data caching with a controlled invalidation strategy</li>
+        <li>Scaling safeguards validated by load tests, plus automated and contract tests</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-SE5" style="--area:#31D0A5">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Engineering of AI Systems</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">SE5</span>
+        <span class="ccard-area">Intelligent Software Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">DevOps Engineer</p>
+        <p class="ccrole-resp">Applies operations discipline (DevOps, DataOps, MLOps, LLMOps, AgentOps) to carry AI and LLM systems into governed production, automating training, deployment, monitoring, and continuous delivery. Owns operating the system under load, reading telemetry, and defending design and cost decisions.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Containers &amp; CI/CD:</span> <b>Docker, Kubernetes, GitHub Actions, Terraform</b></li>
+        <li><span class="tcat">Observability:</span> <b>Prometheus, Grafana</b></li>
+        <li><span class="tcat">DataOps:</span> <b>Apache Airflow, DVC, Great Expectations, Apache Kafka</b></li>
+        <li><span class="tcat">MLOps:</span> <b>MLflow, EvidentlyAI</b></li>
+        <li><span class="tcat">LLMOps:</span> <b>LiteLLM, FAISS / Qdrant, Langfuse</b></li>
+        <li><span class="tcat">AgentOps:</span> <b>Model Context Protocol</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Service-level objectives, error budgets, and reliability theory</li>
+        <li>The medallion data architecture, data contracts, and dataset versioning</li>
+        <li>The reproducibility triple: code version, data version, environment</li>
+        <li>Data drift versus concept drift and statistical detection (PSI, KS tests)</li>
+        <li>Retrieval-augmented generation and grounded prompting</li>
+        <li>The agent loop, function calling, and step-level evaluation</li>
+        <li>Supply-chain security and the OWASP LLM Top 10</li>
+        <li>CI/CD, DORA metrics, testing pyramid, and IaC desired-state / idempotency</li>
+        <li>The LLM token economy and cost / latency engineering</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end governed production AI service with:</p>
+        <ul class="cclist">
+        <li>A containerized, CI/CD-gated REST API on Kubernetes with probes, canary rollout, and rollback</li>
+        <li>A medallion data pipeline with validation gates, data contracts, and versioned datasets</li>
+        <li>Tracked training with the reproducibility triple and an MLflow model registry</li>
+        <li>Live monitoring and drift detection (RED dashboards, PSI/KS) with retraining triggers</li>
+        <li>A gateway-fronted RAG feature with an eval set wired into CI, tracing, and a cost model</li>
+        <li>At least one traced, bounded tool-using agent with a tool exposed via MCP</li>
+        <li>A security and governance review against the OWASP LLM Top 10, with a tagged v1.0 release</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-SE6" style="--area:#31D0A5">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Mobile, IoT &amp; Edge Software Development</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">SE6</span>
+        <span class="ccard-area">Intelligent Software Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Mobile Developer</p>
+        <p class="ccrole-resp">Builds software spanning mobile devices, IoT sensors, and the edge, where connectivity, power, and compute are constrained and data is processed close to where it is generated. Owns cross-platform apps, device messaging, offline-first storage, and reliable synchronization with conflict resolution.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Mobile frameworks:</span> <b>Flutter, Dart, React Native</b></li>
+        <li><span class="tcat">Local storage:</span> <b>SQLite</b></li>
+        <li><span class="tcat">MQTT:</span> <b>Eclipse Mosquitto, MQTT.js or paho-mqtt</b></li>
+        <li><span class="tcat">CoAP:</span> <b>libcoap or aiocoap</b></li>
+        <li><span class="tcat">Edge &amp; prototyping:</span> <b>Node-RED, Raspberry Pi</b></li>
+        <li><span class="tcat">Synchronization:</span> <b>PowerSync or CouchDB</b></li>
+        <li><span class="tcat">Backend:</span> <b>Firebase</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Ubiquitous and pervasive computing models</li>
+        <li>Publish-subscribe messaging and quality-of-service semantics</li>
+        <li>Constrained-device RESTful communication and protocol trade-offs</li>
+        <li>Edge and fog computing latency and bandwidth economics</li>
+        <li>Local-first design and eventual consistency</li>
+        <li>Conflict-free replicated data types (CRDTs) and merge theory</li>
+        <li>Synchronization protocols and conflict detection</li>
+        <li>Device security and privacy across boundaries</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end device-to-cloud mobile / IoT / edge system with:</p>
+        <ul class="cclist">
+        <li>A cross-platform mobile app (Flutter / React Native) with core screens and device sensor access</li>
+        <li>IoT sensor ingestion communicating over MQTT publish-subscribe</li>
+        <li>A constrained-protocol (CoAP) communication path compared against MQTT</li>
+        <li>An edge processing node (Raspberry Pi) that filters and aggregates readings before the cloud</li>
+        <li>Offline-first local storage that keeps the app functional and queues changes</li>
+        <li>Reliable data synchronization between offline clients and backend</li>
+        <li>CRDT-based conflict resolution over secured communication channels</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-SE7" style="--area:#31D0A5">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Design of AI-based &amp; Data-Intensive Systems</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">SE7</span>
+        <span class="ccard-area">Intelligent Software Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Backend Engineer</p>
+        <p class="ccrole-resp">Architects large data-intensive systems whose core is data and machine learning, balancing throughput, latency, and consistency while building ingestion, ETL/ELT, streaming, distributed storage, and model-serving components that scale and stay operationally healthy.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Streaming &amp; messaging:</span> <b>Apache Kafka, Apache Flink</b></li>
+        <li><span class="tcat">Batch &amp; processing:</span> <b>Apache Spark, PySpark, Databricks</b></li>
+        <li><span class="tcat">Storage:</span> <b>Apache Parquet, PostgreSQL, Apache Cassandra</b></li>
+        <li><span class="tcat">Orchestration &amp; transform:</span> <b>Apache Airflow, dbt</b></li>
+        <li><span class="tcat">Data quality:</span> <b>Great Expectations</b></li>
+        <li><span class="tcat">ML lifecycle:</span> <b>MLflow, Feast</b></li>
+        <li><span class="tcat">Ops:</span> <b>Docker, Evidently</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Reliability, scalability, and maintainability as system properties</li>
+        <li>Data models, storage-engine internals, and indexing trade-offs</li>
+        <li>Batch (MapReduce, Spark/PySpark) and streaming (event-time, watermarks, windowing) design</li>
+        <li>ETL and ELT flows from raw ingestion to curated lakehouse datasets</li>
+        <li>Replication, partitioning, and the CAP / PACELC trade-offs</li>
+        <li>Distributed consensus and exactly-once processing semantics</li>
+        <li>ML system integration: feature pipelines and serving architectures</li>
+        <li>Hidden technical debt, data quality, lineage, and drift monitoring</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end data-intensive AI system with:</p>
+        <ul class="cclist">
+        <li>Event ingestion through Apache Kafka</li>
+        <li>ETL/ELT flows with PySpark on Spark and optionally Databricks</li>
+        <li>Stream processing (Flink) into a replicated, partitioned Cassandra store</li>
+        <li>An integrated ML model serving predictions</li>
+        <li>Data-quality checks, lineage, and Evidently drift monitoring</li>
+        <li>Explicit reasoning about consistency, fault tolerance, and delivery guarantees</li>
+        <li>One running project defended at three presentations (weeks 5, 8, 13)</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-SE8" style="--area:#31D0A5">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Enterprise Software Engineering and Architecture</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">SE8</span>
+        <span class="ccard-area">Intelligent Software Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Backend Engineer</p>
+        <p class="ccrole-resp">Builds enterprise-grade backend systems with C# and modern .NET, aligning business use cases, domain rules, persistence, integrations, security, and quality attributes into architecture that can be reviewed, extended, and defended.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Platform:</span> <b>.NET SDK, C#, ASP.NET Core, Entity Framework Core</b></li>
+        <li><span class="tcat">API:</span> <b>Swagger / OpenAPI, FluentValidation, ProblemDetails</b></li>
+        <li><span class="tcat">Patterns &amp; resilience:</span> <b>MediatR, Polly</b></li>
+        <li><span class="tcat">Architecture docs:</span> <b>C4 model, UML, ADRs</b></li>
+        <li><span class="tcat">Azure:</span> <b>App Service, Key Vault, Service Bus, Functions, Application Insights</b></li>
+        <li><span class="tcat">AI:</span> <b>Microsoft.Extensions.AI, Semantic Kernel, OpenAI .NET SDK</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Quality attributes as architecture drivers (modifiability, scalability, reliability, security)</li>
+        <li>Coupling, cohesion, and dependency inversion</li>
+        <li>UML (use-case, class, sequence) and C4 modelling</li>
+        <li>API contracts, domain invariants, and consistency boundaries</li>
+        <li>GoF and enterprise design patterns (intent, forces, consequences)</li>
+        <li>Distributed-system principles: latency, partial failure, idempotency, eventual consistency</li>
+        <li>Concurrency theory: threads, tasks, cancellation, synchronization</li>
+        <li>Security theory: threat modelling, least privilege, trust boundaries, auditability</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end enterprise backend application with:</p>
+        <ul class="cclist">
+        <li>An ASP.NET Core Web API over a domain model persisted with EF Core</li>
+        <li>A Clean Architecture structure with GoF and enterprise design patterns</li>
+        <li>Security: authentication, policy-based authorization, and audit trails</li>
+        <li>Integration with Azure services and an AI API behind a governed boundary</li>
+        <li>Documentation with UML and C4 diagrams and ADRs</li>
+        <li>A final architecture review with oral defence</li>
+        <li>Three presentations (weeks 5, 8, 13) with the repo tagged v1.0</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-SE9" style="--area:#31D0A5">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Advanced Algorithmic Problem Solving</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">SE9</span>
+        <span class="ccard-area">Intelligent Software Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Backend Engineer</p>
+        <p class="ccrole-resp">Builds the algorithmic competence a software engineer relies on: recognizing problem structure, choosing the right technique, proving correctness, analyzing complexity, and implementing robust solutions under tight constraints, with technical-interview readiness.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Languages:</span> <b>C++17, Python</b></li>
+        <li><span class="tcat">Practice platforms:</span> <b>LeetCode, Codeforces, CSES, Kattis, HackerRank</b></li>
+        <li><span class="tcat">References:</span> <b>CP-Algorithms, USACO Guide, Tech Interview Handbook</b></li>
+        <li><span class="tcat">Visualization:</span> <b>VisuAlgo</b></li>
+        <li><span class="tcat">Version control:</span> <b>Git</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Correctness reasoning: loop invariants, induction, exchange arguments, optimal substructure</li>
+        <li>Complexity: worst-case, amortized, recurrences, the Master theorem</li>
+        <li>Problem modelling, state-space construction, and reductions</li>
+        <li>Dynamic programming: states, transitions, reconstruction, advanced patterns</li>
+        <li>Greedy theory: greedy-choice property, cut properties, matroid intuition</li>
+        <li>Graph theory: shortest paths, spanning trees, connectivity, flows and cuts</li>
+        <li>Optimization: binary search on the answer, monotone predicates, dominance pruning</li>
+        <li>Hardness awareness: NP-completeness, reductions, approximation and heuristics</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end technique portfolio plus a final contest with:</p>
+        <ul class="cclist">
+        <li>Solved problems, each framed with a precise computational model</li>
+        <li>A chosen algorithm with a correctness argument and complexity analysis</li>
+        <li>Implementations that survive edge cases and strict runtime limits</li>
+        <li>Breadth across DP, graphs, greedy, divide and conquer, data structures, and strings</li>
+        <li>Interview-style explanations for each problem</li>
+        <li>A timed internal programming contest with a post-contest editorial and reflection</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-SE10" style="--area:#31D0A5">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Human-Machine Interaction</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">SE10</span>
+        <span class="ccard-area">Intelligent Software Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Full-Stack Software Developer</p>
+        <p class="ccrole-resp">Designs, prototypes, and evaluates human-machine interfaces grounded in cognitive science and AI: running user research, building interactive prototypes, conducting usability tests, ensuring accessibility, and integrating multimodal and AI-augmented interaction layers.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Design &amp; prototyping:</span> <b>Figma, Miro</b></li>
+        <li><span class="tcat">Accessibility:</span> <b>axe DevTools, WAVE</b></li>
+        <li><span class="tcat">Usability &amp; research:</span> <b>System Usability Scale, Lookback</b></li>
+        <li><span class="tcat">Multimodal:</span> <b>Web Speech API</b></li>
+        <li><span class="tcat">Analytics &amp; testing:</span> <b>PostHog</b></li>
+        <li><span class="tcat">Analysis:</span> <b>Python</b></li>
+        <li><span class="tcat">AI:</span> <b>OpenAI API</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Human information processing: perception, attention, working memory</li>
+        <li>Mental models, affordances, signifiers, and feedback (Norman)</li>
+        <li>Fitts&#x27; Law and GOMS models for interaction prediction</li>
+        <li>Design thinking and Gestalt visual principles</li>
+        <li>Multimodal fusion theory: voice, gesture, and gaze</li>
+        <li>WCAG 2.2 accessibility principles (perceivable, operable, understandable, robust)</li>
+        <li>Adaptive / personalized systems and user modeling</li>
+        <li>Conversational UI and dialogue management patterns</li>
+        <li>A/B testing theory: statistical power, Type I/II error, sequential testing</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end interface design-and-evaluation project with:</p>
+        <ul class="cclist">
+        <li>User research, competitive analysis, personas, and journey maps</li>
+        <li>Low- and high-fidelity Figma prototypes</li>
+        <li>Moderated usability tests with think-aloud protocols and SUS scoring</li>
+        <li>A WCAG 2.2 Level AA accessibility audit and remediation</li>
+        <li>A voice or gesture multimodal input channel</li>
+        <li>An AI-powered adaptive or conversational layer</li>
+        <li>A design system and final usability report with A/B test design and measurable improvement</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-SE11" style="--area:#31D0A5">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">High-Performance Computing and Programming</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">SE11</span>
+        <span class="ccard-area">Intelligent Software Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Backend Engineer</p>
+        <p class="ccrole-resp">Designs, implements, and profiles parallel and distributed programs that saturate multi-core, GPU, and cluster hardware, selecting the right parallel model for a workload and driving optimization from profiling evidence.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Shared-memory:</span> <b>OpenMP</b></li>
+        <li><span class="tcat">Distributed:</span> <b>MPI (Open MPI)</b></li>
+        <li><span class="tcat">GPU:</span> <b>CUDA Toolkit, NCCL</b></li>
+        <li><span class="tcat">Profiling:</span> <b>perf, Intel VTune, NVIDIA Nsight Compute</b></li>
+        <li><span class="tcat">Scheduling:</span> <b>Slurm</b></li>
+        <li><span class="tcat">Correctness:</span> <b>ThreadSanitizer, CUDA-MEMCHECK</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Parallel / distributed paradigms: threads, data-parallel, actor-based, pipeline</li>
+        <li>Parallel architectures: SMP, NUMA, GPU streaming multiprocessors, Flynn&#x27;s taxonomy</li>
+        <li>Synchronization: mutexes, semaphores, barriers, lock-free (CAS, ABA), STM</li>
+        <li>Cache coherence (MSI/MESI/MOESI) and false sharing</li>
+        <li>Amdahl&#x27;s and Gustafson&#x27;s Laws and the roofline performance model</li>
+        <li>MPI communication semantics and collective algorithms (ring all-reduce)</li>
+        <li>GPU / CUDA: SIMT, memory hierarchy, coalescing, warp divergence</li>
+        <li>Distributed fault tolerance: CAP, checkpoint-restart, message logging</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end parallelized computation pipeline on a cluster with:</p>
+        <ul class="cclist">
+        <li>A profiled serial baseline (perf, VTune) locating hotspots</li>
+        <li>Compute kernels rewritten with OpenMP for shared-memory speedup</li>
+        <li>An MPI communication layer for inter-node distribution</li>
+        <li>The most intensive kernel ported to CUDA, with NCCL for multi-GPU collectives</li>
+        <li>Slurm-managed job scheduling with strong- and weak-scaling sweeps</li>
+        <li>A benchmark report with roofline analysis and scalability curves</li>
+        <li>A fault-tolerance (checkpoint-restart) demonstration</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-SE12" style="--area:#31D0A5">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Modern Storage and Information Retrieval Systems</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">SE12</span>
+        <span class="ccard-area">Intelligent Software Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Backend Engineer</p>
+        <p class="ccrole-resp">Builds the storage and retrieval backends behind search engines and compressed databases: constructing inverted indexes, implementing ranking and compression algorithms, building vector / ANN indexes, and fusing lexical and semantic retrieval into low-latency services.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Search &amp; index:</span> <b>Elasticsearch, Apache Lucene</b></li>
+        <li><span class="tcat">Vector search:</span> <b>FAISS, SentenceTransformers</b></li>
+        <li><span class="tcat">Compression:</span> <b>zlib / Brotli, LZ4 / Zstandard</b></li>
+        <li><span class="tcat">Implementation:</span> <b>Python, NumPy</b></li>
+        <li><span class="tcat">Serving:</span> <b>FastAPI</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Information theory: Shannon entropy, source coding theorem, compression limits</li>
+        <li>Inverted index model: document / term frequency, postings, skip pointers</li>
+        <li>Vector space model, cosine similarity, TF-IDF weighting</li>
+        <li>Okapi BM25 probabilistic relevance (k1, b, length normalization)</li>
+        <li>Lossless compression: Huffman, LZ77/LZ78/DEFLATE, arithmetic coding</li>
+        <li>Variable-byte and PForDelta integer compression; DAAT vs TAAT</li>
+        <li>Approximate nearest-neighbour search: LSH, product quantization, HNSW</li>
+        <li>Contrastive learning and bi-encoder architecture for dense retrieval</li>
+        <li>Hybrid ranking: reciprocal rank fusion and linear interpolation</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end compressed full-text search engine with:</p>
+        <ul class="cclist">
+        <li>A multi-gigabyte corpus tokenized into an inverted index with VByte and PForDelta compression</li>
+        <li>TF-IDF and BM25 ranking with efficient DAAT traversal</li>
+        <li>A static corpus encoded with Huffman and Brotli to cut storage footprint</li>
+        <li>A dense retrieval layer using SentenceTransformers and a FAISS HNSW index</li>
+        <li>Lexical and dense scores fused into a hybrid pipeline</li>
+        <li>A REST API achieving sub-100 ms latency on commodity hardware</li>
+        <li>Reported NDCG, MRR, compression ratio, and latency for each retrieval mode</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-CY1" style="--area:#F5A33A">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Applied Cryptography</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">CY1</span>
+        <span class="ccard-area">Networking &amp; Cyber Security</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Security Engineer</p>
+        <p class="ccrole-resp">Designs and correctly implements the cryptographic primitives and protocols that underpin secure communication, authentication, and data protection, backing each construction with security arguments and test vectors rather than assumptions.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Language:</span> <b>Python</b></li>
+        <li><span class="tcat">Crypto libraries:</span> <b>PyCryptodome, cryptography (pyca), OpenSSL</b></li>
+        <li><span class="tcat">Number theory &amp; curves:</span> <b>SageMath</b></li>
+        <li><span class="tcat">Post-quantum:</span> <b>liboqs</b></li>
+        <li><span class="tcat">Big-integer arithmetic:</span> <b>GMP</b></li>
+        <li><span class="tcat">Attack &amp; strength tooling:</span> <b>Hashcat, dudect</b></li>
+        <li><span class="tcat">Testing:</span> <b>pytest</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Group theory, finite fields, and modular arithmetic as the language of cryptography</li>
+        <li>Hardness assumptions: factoring, discrete log, CDH/DDH; one-way and trapdoor functions</li>
+        <li>Security definitions and games: IND-CPA, IND-CCA, existential unforgeability</li>
+        <li>Reductionist security proofs and the random oracle model</li>
+        <li>Symmetric primitives: block ciphers, modes of operation, authenticated encryption</li>
+        <li>Public-key schemes: RSA, ElGamal, elliptic-curve cryptography</li>
+        <li>Hash functions, MACs, and digital signatures with collision and forgery resistance</li>
+        <li>Authenticated key exchange, PKI, certificates, and trust models</li>
+        <li>Protocol pitfalls (nonce reuse, padding oracles, timing leaks) and post-quantum hardness</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end applied-cryptography library, from arithmetic to authenticated protocols, with:</p>
+        <ul class="cclist">
+        <li>A big-integer modular arithmetic core built up to authenticated key exchange</li>
+        <li>AES-GCM AEAD, RSA-OAEP, ECDH, and EdDSA implementations</li>
+        <li>A hybrid post-quantum KEM via liboqs</li>
+        <li>Each increment backed by test vectors and a security argument</li>
+        <li>At least one demonstrated attack on a naive variant (padding oracle, nonce-reuse ECDSA)</li>
+        <li>A defense across three team presentations (weeks 5, 8, 13)</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-CY2" style="--area:#F5A33A">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Network Security</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">CY2</span>
+        <span class="ccard-area">Networking &amp; Cyber Security</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Security Engineer</p>
+        <p class="ccrole-resp">Secures networks and communication channels across the protocol stack against interception, tampering, and intrusion, combining layered defenses (secure protocols, segmentation, VPNs) with detection engineering and monitoring.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Traffic analysis:</span> <b>Wireshark, Zeek</b></li>
+        <li><span class="tcat">IDS/IPS:</span> <b>Suricata, Snort</b></li>
+        <li><span class="tcat">Firewalls:</span> <b>nftables, pfSense</b></li>
+        <li><span class="tcat">VPNs:</span> <b>WireGuard, strongSwan (IPsec / IKE)</b></li>
+        <li><span class="tcat">TLS auditing:</span> <b>testssl.sh</b></li>
+        <li><span class="tcat">SIEM &amp; monitoring:</span> <b>Wazuh</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>The layered network stack and per-layer threat models (OSI / TCP-IP)</li>
+        <li>Confidentiality, integrity, and availability as security goals</li>
+        <li>TLS 1.3 handshake, key schedule, AEAD record layer, and forward secrecy</li>
+        <li>PKI trust model, certificates, chains of trust, downgrade and stripping attacks</li>
+        <li>Firewalls, stateful filtering, network segmentation, and zero-trust boundaries</li>
+        <li>Signature-based versus anomaly-based intrusion detection theory</li>
+        <li>IPsec security associations, tunneling, and modern VPN key management</li>
+        <li>Traffic analysis, encrypted-traffic fingerprinting, and detection engineering</li>
+        <li>Active attacks (spoofing, MITM, downgrade, DoS) and defense in depth</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end progressively defended virtual network lab, validated in a live red-vs-blue exercise, with:</p>
+        <ul class="cclist">
+        <li>A containerized lab topology with a hardened TLS 1.3 endpoint</li>
+        <li>nftables and pfSense microsegmentation between zones</li>
+        <li>Suricata and Zeek detection sensors with tuned rules</li>
+        <li>IPsec and WireGuard encrypted tunnels with key rotation</li>
+        <li>A Wazuh SIEM correlation and alerting pipeline</li>
+        <li>Each week pairing an attack with a demonstrated mitigation</li>
+        <li>A final red-team-versus-blue-team demonstration with oral defense</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-CY3" style="--area:#F5A33A">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Hardware &amp; Embedded Systems Security</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">CY3</span>
+        <span class="ccard-area">Networking &amp; Cyber Security</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Penetration Tester</p>
+        <p class="ccrole-resp">Attacks and defends hardware, firmware, and embedded devices where physical access, side channels, and constrained resources create distinct threats, performing full hardware security assessments and designing countermeasures.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Side-channel &amp; fault:</span> <b>ChipWhisperer</b></li>
+        <li><span class="tcat">Reverse engineering:</span> <b>Ghidra, radare2, binwalk</b></li>
+        <li><span class="tcat">Bus &amp; logic analysis:</span> <b>Saleae Logic, Bus Pirate</b></li>
+        <li><span class="tcat">Flash &amp; debug:</span> <b>flashrom, OpenOCD</b></li>
+        <li><span class="tcat">Emulation:</span> <b>QEMU</b></li>
+        <li><span class="tcat">Trusted computing:</span> <b>tpm2-tools</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>The physical attacker model and the expanded embedded attack surface</li>
+        <li>Side-channel leakage models: power, timing, and electromagnetic</li>
+        <li>Differential power analysis and its hypothesis-testing statistics</li>
+        <li>Fault-injection and glitching (voltage, clock, electromagnetic) attacks</li>
+        <li>Secure boot, measured / verified boot, and rollback protection</li>
+        <li>Hardware roots of trust and the TPM 2.0 sealed-storage model</li>
+        <li>Firmware extraction and reverse engineering to recover secrets and logic</li>
+        <li>Hardware interfaces (UART, JTAG, SWD, SPI, I2C) as analysis entry points</li>
+        <li>Countermeasures: masking, hiding, constant-time code, tamper resistance</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end hardware security assessment of a real embedded device, from attack to hardening, with:</p>
+        <ul class="cclist">
+        <li>UART and SPI interface mapping and debug-port access</li>
+        <li>Firmware dumping and reverse engineering with binwalk and Ghidra</li>
+        <li>AES key extraction via differential power analysis on ChipWhisperer</li>
+        <li>Timing, power, or fault attacks reproduced and documented</li>
+        <li>Countermeasures added: masking, constant-time fixes, signed updates, debug-port lockdown</li>
+        <li>Each finding reproduced on the bench and documented</li>
+        <li>A final demonstration of attacks and mitigations with oral defense</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-CY4" style="--area:#F5A33A">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Cyber-Security Governance, Risk &amp; Compliance</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">CY4</span>
+        <span class="ccard-area">Networking &amp; Cyber Security</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Security Analyst</p>
+        <p class="ccrole-resp">Manages cyber-security as an organizational discipline, running structured risk assessments, aligning to control frameworks, authoring auditable policy, and building incident-response capability that traces from risk to control to evidence.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">GRC &amp; risk platforms:</span> <b>Eramba, FAIR-U</b></li>
+        <li><span class="tcat">Compliance scanning:</span> <b>OpenSCAP</b></li>
+        <li><span class="tcat">Monitoring &amp; evidence:</span> <b>Wazuh</b></li>
+        <li><span class="tcat">Framework reference:</span> <b>NIST CPRT, MITRE ATT&amp;CK Navigator</b></li>
+        <li><span class="tcat">Documentation &amp; version control:</span> <b>draw.io, Git, GRC spreadsheet templates</b></li>
+        <li><span class="tcat">Incident response:</span> <b>TheHive</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Governance, accountability, and aligning security with business goals</li>
+        <li>The threat, vulnerability, likelihood, and impact risk model</li>
+        <li>Qualitative and quantitative risk-assessment methods (SP 800-30)</li>
+        <li>The NIST Risk Management Framework lifecycle and control selection</li>
+        <li>The management-system model and plan-do-check-act cycle (ISO/IEC 27001)</li>
+        <li>Control catalogs, tailoring, and traceability to evidence (SP 800-53)</li>
+        <li>The policy hierarchy: auditable, enforceable policies, standards, procedures</li>
+        <li>Audit planning, evidence gathering, and control-effectiveness assessment</li>
+        <li>The incident-handling lifecycle (SP 800-61) and continuous monitoring</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end security governance program for a case-study organization, defended before a simulated steering committee, with:</p>
+        <ul class="cclist">
+        <li>A prioritized SP 800-30 risk register over an asset and threat inventory</li>
+        <li>A CSF 2.0 current-state profile</li>
+        <li>An ISO/IEC 27001 ISMS with scope and statement of applicability</li>
+        <li>Tailored SP 800-53 controls mapped to the risk register</li>
+        <li>An auditable policy and procedure suite</li>
+        <li>A mock internal audit with findings and a remediation / monitoring plan</li>
+        <li>A tabletop-validated incident response plan</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-CY5" style="--area:#F5A33A">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Blockchain and Decentralized Cryptographic Systems</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">CY5</span>
+        <span class="ccard-area">Networking &amp; Cyber Security</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Security Engineer</p>
+        <p class="ccrole-resp">Builds and secures distributed ledgers, consensus mechanisms, and smart contracts, reasoning about the security properties and limits of decentralized systems and auditing them against economic and technical attack vectors.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Contract language:</span> <b>Solidity</b></li>
+        <li><span class="tcat">Development &amp; testing:</span> <b>Foundry, Hardhat, Remix, Ganache</b></li>
+        <li><span class="tcat">Audited libraries:</span> <b>OpenZeppelin Contracts</b></li>
+        <li><span class="tcat">Security analysis:</span> <b>Slither, Echidna, Tenderly</b></li>
+        <li><span class="tcat">Client libraries &amp; wallet:</span> <b>ethers.js, Web3.js, MetaMask</b></li>
+        <li><span class="tcat">Infrastructure:</span> <b>IPFS, Chainlink</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Replication, the CAP trade-off, and distributed failure models</li>
+        <li>The FLP impossibility result for asynchronous consensus</li>
+        <li>Byzantine fault tolerance and the Byzantine generals problem (PBFT)</li>
+        <li>Nakamoto consensus, proof of work, and the longest-chain rule</li>
+        <li>Transaction structure: UTXO accounting, mempools, forks, Bloom filters</li>
+        <li>Hashes, digital signatures, and Merkle trees as integrity backbone</li>
+        <li>The smart-contract execution and gas-metering model (EVM)</li>
+        <li>Token standards, decentralized storage, wallets, and DApp integration</li>
+        <li>DeFi economic security and attack vectors (reentrancy, oracle, flash-loan)</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end minimal but complete decentralized system, audited and hardened, with:</p>
+        <ul class="cclist">
+        <li>A simplified PBFT agreement module and Merkle-backed block integrity</li>
+        <li>Proof-of-work mining with longest-chain selection</li>
+        <li>Deployed Solidity contracts with ERC-20 or ERC-721 token flows</li>
+        <li>An IPFS-backed DApp interface and a hierarchical deterministic multi-signature wallet</li>
+        <li>An automated market maker or token-funding mechanism</li>
+        <li>Demonstrated attacks (reentrancy, oracle, flash-loan) with fixes</li>
+        <li>A structured security audit report defended orally</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-AI1" style="--area:#9B7AEA">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Language AI: LLMs and Agentic Systems</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">AI1</span>
+        <span class="ccard-area">AI &amp; Robotics</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">NLP Engineer</p>
+        <p class="ccrole-resp">Builds applications on large language models and autonomous agents, covering prompting, tool use, retrieval, and the orchestration of multi-step reasoning, delivering a grounded, tool-using LLM agent with safety guardrails and evaluation.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Core ML:</span> <b>PyTorch, Hugging Face Transformers, PEFT</b></li>
+        <li><span class="tcat">Agents &amp; orchestration:</span> <b>LangChain, LlamaIndex</b></li>
+        <li><span class="tcat">Vector search:</span> <b>FAISS, Chroma</b></li>
+        <li><span class="tcat">Serving:</span> <b>Ollama, OpenAI API</b></li>
+        <li><span class="tcat">Evaluation &amp; observability:</span> <b>Ragas, LangSmith</b></li>
+        <li><span class="tcat">Structured output:</span> <b>Pydantic</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>The transformer and self-attention (scaled dot-product, multi-head, positional encoding)</li>
+        <li>Autoregressive next-token prediction and the chain rule of probability</li>
+        <li>Cross-entropy loss and backpropagation through the network</li>
+        <li>In-context learning and prompting (zero-shot, few-shot, chain-of-thought)</li>
+        <li>Dense embeddings and approximate nearest-neighbor retrieval; RAG</li>
+        <li>Tool use, function calling, and the ReAct reasoning-acting loop</li>
+        <li>Memory, multi-agent orchestration, and planning</li>
+        <li>Evaluation (task metrics, LLM-as-judge) and guardrails (injection, hallucination)</li>
+        <li>Neural scaling laws relating loss to parameters, data, and compute</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end grounded, tool-using, guarded LLM agent system with:</p>
+        <ul class="cclist">
+        <li>One production-grade LLM agent grown from a bare chat loop to a full agentic system</li>
+        <li>Retrieval-augmented generation grounded over a chosen knowledge-base corpus</li>
+        <li>A ReAct agent that plans and chains tool calls (calculator, search, code) toward a goal</li>
+        <li>Persistent memory and a second specialized collaborating agent</li>
+        <li>Safety guardrails against prompt injection plus input / output filtering</li>
+        <li>An automated evaluation and regression suite with LLM-as-judge scoring</li>
+        <li>Deployment with tracing, cost logging, and latency optimization (caching, batching)</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-AI2" style="--area:#9B7AEA">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Temporal AI: Time Series &amp; Sequential Decision Making</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">AI2</span>
+        <span class="ccard-area">AI &amp; Robotics</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Data Scientist</p>
+        <p class="ccrole-resp">Models data that unfolds over time and makes sequential decisions under uncertainty, building an end-to-end forecasting-and-control agent that couples a neural sequence forecaster to a deep reinforcement-learning controller in simulation.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Core ML:</span> <b>PyTorch</b></li>
+        <li><span class="tcat">Time series:</span> <b>statsmodels, sktime, Prophet</b></li>
+        <li><span class="tcat">Reinforcement learning:</span> <b>Gymnasium, Stable-Baselines3, Ray RLlib</b></li>
+        <li><span class="tcat">Numerics &amp; data:</span> <b>NumPy, pandas</b></li>
+        <li><span class="tcat">Visualization:</span> <b>Matplotlib</b></li>
+        <li><span class="tcat">Tuning &amp; tracking:</span> <b>Optuna, Weights and Biases</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Stochastic processes, stationarity, and autocorrelation</li>
+        <li>ARIMA and exponential smoothing with maximum-likelihood estimation</li>
+        <li>Sequence models: RNNs, LSTMs/GRUs, and temporal transformers</li>
+        <li>Markov decision processes and the Bellman optimality equations</li>
+        <li>Temporal-difference learning and the policy-gradient theorem</li>
+        <li>Deep RL: DQN, experience replay, actor-critic, and PPO</li>
+        <li>Multi-armed bandits, regret bounds, UCB, and Thompson sampling</li>
+        <li>Bayesian decision theory and expected-utility maximization</li>
+        <li>Probabilistic forecasting, prediction intervals, and proper scoring rules</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end forecasting-and-control agent system with:</p>
+        <ul class="cclist">
+        <li>One temporal decision agent that forecasts a real time series and acts on those forecasts in simulation</li>
+        <li>Classical forecasting baselines (ARIMA, exponential smoothing) with calibrated uncertainty bands</li>
+        <li>Neural sequence forecasters (LSTM and temporal transformer)</li>
+        <li>An explicit MDP formulation with an optimal planning policy for the known-model task</li>
+        <li>A value-based (Q-learning / DQN) and a policy-gradient (PPO / actor-critic) controller</li>
+        <li>Principled exploration added to the decision agent</li>
+        <li>An integrated forecast-driven decision policy delivered with backtests and evaluation</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-AI3" style="--area:#9B7AEA">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Vision AI: Deep Learning for Computer Vision</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">AI3</span>
+        <span class="ccard-area">AI &amp; Robotics</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Computer Vision Engineer</p>
+        <p class="ccrole-resp">Applies deep learning to images and video for recognition, detection, and segmentation, building an end-to-end vision pipeline from a residual classifier to an object detector and a Mask R-CNN instance-segmentation system, evaluated with mAP and IoU.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Core ML:</span> <b>PyTorch, torchvision, timm</b></li>
+        <li><span class="tcat">Detection &amp; segmentation:</span> <b>Detectron2, Ultralytics YOLO</b></li>
+        <li><span class="tcat">Augmentation &amp; processing:</span> <b>Albumentations, OpenCV</b></li>
+        <li><span class="tcat">Transformers:</span> <b>Hugging Face Transformers</b></li>
+        <li><span class="tcat">Deployment:</span> <b>ONNX Runtime</b></li>
+        <li><span class="tcat">Explainability &amp; tracking:</span> <b>Grad-CAM, Roboflow, Weights and Biases</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Discrete convolution, receptive fields, and parameter sharing</li>
+        <li>Backpropagation through convolutional and pooling layers</li>
+        <li>Residual learning and skip connections in very deep networks</li>
+        <li>Vision transformers: patch embeddings and self-attention for images</li>
+        <li>Object detection: anchors, bounding-box regression, non-max suppression</li>
+        <li>Encoder-decoder networks and per-pixel segmentation loss</li>
+        <li>Transfer learning, fine-tuning, and self-supervised pretraining</li>
+        <li>Interpretability (saliency, class activation maps) and adversarial robustness</li>
+        <li>Evaluation with mean average precision and intersection over union</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end detection-and-segmentation vision pipeline with:</p>
+        <ul class="cclist">
+        <li>One vision pipeline on a chosen image dataset grown from classifier to detector to instance segmentation</li>
+        <li>A from-scratch CNN baseline improved with regularization and augmentation</li>
+        <li>A residual backbone and a vision transformer prototype</li>
+        <li>A pretrained, fine-tuned backbone compared against training from scratch</li>
+        <li>Object detection benchmarking one-stage vs two-stage detectors (mAP)</li>
+        <li>Semantic (U-Net, IoU) and instance-level (Mask R-CNN) segmentation</li>
+        <li>Interpretability visualizations plus quantization and export for deployable inference</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-AI4" style="--area:#9B7AEA">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Scalable AI: Big-Data Algorithms</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">AI4</span>
+        <span class="ccard-area">AI &amp; Robotics</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">MLOps Engineer</p>
+        <p class="ccrole-resp">Builds algorithms and systems for machine learning at scale, where datasets and models exceed a single machine, delivering a scalable training-and-serving pipeline with data and pipeline parallelism, ZeRO sharding, sketch-based aggregation, and streaming ingestion.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Training:</span> <b>PyTorch, PyTorch Distributed, DeepSpeed, Hugging Face Accelerate</b></li>
+        <li><span class="tcat">Distributed data:</span> <b>Apache Spark, Ray, Dask</b></li>
+        <li><span class="tcat">Streaming:</span> <b>Apache Kafka, Apache Flink</b></li>
+        <li><span class="tcat">Storage:</span> <b>Apache Parquet</b></li>
+        <li><span class="tcat">GPU comms:</span> <b>NVIDIA NCCL</b></li>
+        <li><span class="tcat">Tracking:</span> <b>Weights and Biases</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Amdahl&#x27;s law and the memory, compute, and communication walls</li>
+        <li>The MapReduce model, dataflow graphs, and fault tolerance</li>
+        <li>Synchronous SGD and gradient all-reduce; data-parallel convergence</li>
+        <li>Model, pipeline, and tensor parallelism with ZeRO sharding</li>
+        <li>Mixed precision, activation checkpointing, and gradient accumulation</li>
+        <li>Count-min sketch, HyperLogLog, and locality-sensitive hashing</li>
+        <li>Streaming model, reservoir sampling, and the Johnson-Lindenstrauss lemma</li>
+        <li>Online learning and regret bounds</li>
+        <li>Neural scaling laws and compute-optimal resource allocation</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end scalable training-and-serving pipeline with:</p>
+        <ul class="cclist">
+        <li>One scalable AI pipeline that ingests, processes, trains on, and serves a large dataset</li>
+        <li>A distributed data-ingestion stage and a columnar layout optimized for parallel access</li>
+        <li>Data-parallel training plus memory-efficient training (mixed precision, ZeRO sharding)</li>
+        <li>Approximate aggregation (count-min sketch, HyperLogLog) and sampling / random projection</li>
+        <li>A streaming ingestion path with continuous online model updates</li>
+        <li>Scaling-law analysis used to choose the compute budget</li>
+        <li>Scalable serving under load, delivered with throughput and cost benchmarks</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-AI5" style="--area:#9B7AEA">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Generative AI: Deep Generative Models</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">AI5</span>
+        <span class="ccard-area">AI &amp; Robotics</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">ML / AI Engineer</p>
+        <p class="ccrole-resp">Studies and builds the models that generate images, text, and audio, from diffusion models to GANs and autoregressive generators, delivering a conditional generative pipeline that benchmarks VAE, GAN, autoregressive, and diffusion generators with FID evaluation.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Core ML:</span> <b>PyTorch, Hugging Face Diffusers, Transformers, torchvision</b></li>
+        <li><span class="tcat">Training:</span> <b>Accelerate, einops</b></li>
+        <li><span class="tcat">Evaluation:</span> <b>clean-fid, Weights and Biases</b></li>
+        <li><span class="tcat">Numerics &amp; visualization:</span> <b>NumPy, Matplotlib</b></li>
+        <li><span class="tcat">Demos &amp; serving:</span> <b>Gradio, ONNX Runtime</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Maximum-likelihood estimation of a data distribution</li>
+        <li>The evidence lower bound, variational inference, the reparameterization trick (VAE)</li>
+        <li>Discrete and hierarchical latents (VQ-VAE, posterior collapse)</li>
+        <li>The adversarial minimax game and the optimal discriminator (GANs); Wasserstein GANs</li>
+        <li>Autoregressive likelihood factorization and causal masking</li>
+        <li>Diffusion forward / reverse denoising processes and the DDPM objective</li>
+        <li>Score matching, stochastic differential equations, the probability-flow ODE</li>
+        <li>Conditional and guided generation, including classifier-free guidance and latent diffusion</li>
+        <li>Evaluation with FID, inception score, likelihood, and precision-recall</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end conditional generative pipeline with:</p>
+        <ul class="cclist">
+        <li>One conditional generative system comparing VAE, GAN, autoregressive, and diffusion approaches</li>
+        <li>A VAE generator upgraded with a discrete or hierarchical latent space</li>
+        <li>A GAN generator with stabilized (Wasserstein) training and conditioning</li>
+        <li>An autoregressive generator compared against the latent models</li>
+        <li>A diffusion generator refined with score-based sampling</li>
+        <li>Controllable, conditional generation via classifier-free guidance</li>
+        <li>All generators benchmarked on shared metrics (FID, precision-recall), plus deployable sampling</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-AI6" style="--area:#9B7AEA">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Embodied AI: Robotics &amp; Autonomous Systems</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">AI6</span>
+        <span class="ccard-area">AI &amp; Robotics</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Algorithm Engineer</p>
+        <p class="ccrole-resp">Brings AI into the physical world through perception, planning, and control for robots and autonomous systems, delivering a full perceive-plan-act autonomy stack with sensor fusion, motion planning, and learned control under sim-to-real domain randomization.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Robotics middleware &amp; sim:</span> <b>ROS 2, Gazebo, PyBullet, NVIDIA Isaac Sim, MuJoCo</b></li>
+        <li><span class="tcat">Reinforcement learning:</span> <b>Gymnasium, Stable-Baselines3</b></li>
+        <li><span class="tcat">Perception:</span> <b>Open3D, OpenCV</b></li>
+        <li><span class="tcat">Numerics &amp; visualization:</span> <b>NumPy, Matplotlib</b></li>
+        <li><span class="tcat">Learned policies:</span> <b>PyTorch</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Rigid-body kinematics, transforms, and robot state representation</li>
+        <li>The Bayes filter and the recursive predict-update cycle</li>
+        <li>The Kalman filter (and EKF) and the particle filter for sensor fusion; SLAM basics</li>
+        <li>Configuration-space planning with A* and rapidly-exploring random trees (RRT / RRT*)</li>
+        <li>PID control and the linear-quadratic regulator</li>
+        <li>The discrete-time Riccati equation and model-predictive control</li>
+        <li>Policy-gradient reinforcement learning for continuous control</li>
+        <li>Camera / lidar sensing, point clouds, calibration, and multi-sensor fusion</li>
+        <li>The sim-to-real gap, domain randomization, and system identification</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end perceive-plan-act autonomy stack with:</p>
+        <ul class="cclist">
+        <li>One autonomous embodied agent in simulation with a full perceive-plan-act stack and a real-transfer path</li>
+        <li>Probabilistic state estimation upgraded from a Bayes filter to a Kalman filter for sensor fusion</li>
+        <li>Robust localization via a particle filter and a multi-sensor perception stage</li>
+        <li>Motion planning with grid-based A* extended to sampling-based RRT for complex spaces</li>
+        <li>Feedback control (PID) upgraded to model-predictive trajectory tracking</li>
+        <li>A learned RL control policy for locomotion or manipulation</li>
+        <li>A sim-to-real robustness study with domain randomization, delivered with task metrics</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-AI8" style="--area:#9B7AEA">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Introduction to Deep Learning</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">AI8</span>
+        <span class="ccard-area">AI &amp; Robotics</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">ML / AI Engineer</p>
+        <p class="ccrole-resp">Turns an introductory machine-learning background into working neural-network skill in PyTorch: framing a task in tensor terms, then building, training, and debugging networks. Lab- and project-based, it provides the shared deep-learning foundation for later vision and LLM specialization.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Language:</span> <b>Python 3.11+</b></li>
+        <li><span class="tcat">Core ML:</span> <b>PyTorch, torchvision</b></li>
+        <li><span class="tcat">Numerics &amp; visualization:</span> <b>NumPy, Matplotlib</b></li>
+        <li><span class="tcat">Environment:</span> <b>Jupyter, Google Colab</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>A neural network as a parametric function; nonlinearity as the source of depth&#x27;s power</li>
+        <li>Backpropagation as the chain rule over a computational graph, automated by autograd</li>
+        <li>Overfitting, the bias-variance trade-off, and the train-minus-validation gap</li>
+        <li>Optimization: gradient descent, minibatch stochasticity, momentum, adaptive methods</li>
+        <li>Convolution as local connectivity with weight sharing; pooling and translation invariance</li>
+        <li>Normalization and residual learning for trainable very deep networks</li>
+        <li>Recurrence, backpropagation through time, and vanishing / exploding gradients</li>
+        <li>Gating (LSTM / GRU) for preserving gradients across long sequences</li>
+        <li>Representation learning (bottlenecks, self-supervision, contrastive objectives) and transfer</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end neural-network build-train-debug portfolio with:</p>
+        <ul class="cclist">
+        <li>Networks built, trained, and debugged end to end in PyTorch across eleven weekly labs</li>
+        <li>Data pipelines with Dataset and DataLoader using clean, leakage-free splits</li>
+        <li>MLPs trained by backpropagation with hand-verified gradients</li>
+        <li>A CNN mid-term mini-project: build, train, run a controlled ablation, and report</li>
+        <li>RNNs and LSTMs / GRUs for sequences, plus autoencoders and contrastive representation learning</li>
+        <li>A fine-tuned pretrained model comparing from-scratch, frozen-features, and fine-tuned regimes</li>
+        <li>A final project taking a task end to end with any course architecture family, with an oral defense</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-QCF1" style="--area:#4FC8E8">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Quantum Optimization</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">QCF1</span>
+        <span class="ccard-area">AI &amp; Quantum Computing for Finance</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Quantitative Developer</p>
+        <p class="ccrole-resp">Explores quantum and quantum-inspired approaches to hard combinatorial optimization, building an end-to-end pipeline that maps a real problem to QUBO and Ising forms and benchmarks QAOA, quantum annealing, and quantum-inspired solvers head to head.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Quantum SDKs:</span> <b>Qiskit, Qiskit Optimization, PennyLane</b></li>
+        <li><span class="tcat">Annealing:</span> <b>D-Wave Ocean SDK, dimod, minorminer</b></li>
+        <li><span class="tcat">Scientific Python:</span> <b>NumPy, SciPy, NetworkX, Matplotlib</b></li>
+        <li><span class="tcat">Cloud &amp; hardware:</span> <b>IBM Quantum Platform</b></li>
+        <li><span class="tcat">Notebooks:</span> <b>Jupyter</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Quantum computing basics: qubits, state vectors, unitary operators, measurement</li>
+        <li>QAOA circuits with cost and mixer Hamiltonians and the variational principle</li>
+        <li>Quantum annealing and the adiabatic theorem with time-dependent Hamiltonians</li>
+        <li>QUBO and Ising formulations of NP-hard combinatorial problems</li>
+        <li>Quantum-inspired heuristics: simulated annealing, parallel tempering, tensor networks</li>
+        <li>Statistical mechanics, energy landscapes, and Metropolis sampling</li>
+        <li>Noise, error mitigation, sampling overhead, and embedding limits on near-term devices</li>
+        <li>Fair benchmarking: time to solution, approximation ratios, and scaling</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end quantum optimization pipeline with:</p>
+        <ul class="cclist">
+        <li>One real combinatorial optimization problem taken through the full pipeline</li>
+        <li>A QUBO and a verified Ising Hamiltonian formulation with documented constraints</li>
+        <li>A quantum-annealing solution on the D-Wave Ocean SDK using minor embedding</li>
+        <li>A QAOA solution with variational parameters tuned in a hybrid loop</li>
+        <li>Quantum-inspired and classical baselines (simulated annealing, tensor networks)</li>
+        <li>A rigorous head-to-head benchmark on shared metrics and instances</li>
+        <li>A defense of design and results across three presentations (weeks 5, 8, 13)</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-QCF2" style="--area:#4FC8E8">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">AI &amp; Optimization for Finance</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">QCF2</span>
+        <span class="ccard-area">AI &amp; Quantum Computing for Finance</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Quantitative Developer</p>
+        <p class="ccrole-resp">Applies machine learning and optimization to financial problems such as pricing, portfolio construction, and algorithmic trading, delivering a reproducible research pipeline that builds risk-aware optimized portfolios, adds ML signals, and rigorously backtests a cost-aware strategy.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Data:</span> <b>pandas, NumPy, yfinance</b></li>
+        <li><span class="tcat">Optimization:</span> <b>cvxpy, PyPortfolioOpt, SciPy</b></li>
+        <li><span class="tcat">ML &amp; stats:</span> <b>scikit-learn, statsmodels, arch (GARCH)</b></li>
+        <li><span class="tcat">Backtesting:</span> <b>vectorbt</b></li>
+        <li><span class="tcat">Visualization:</span> <b>Matplotlib</b></li>
+        <li><span class="tcat">Notebooks:</span> <b>Jupyter</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Mean-variance portfolio theory, the efficient frontier, the tangency portfolio</li>
+        <li>Convex optimization, quadratic programs, and duality for portfolio construction</li>
+        <li>Brownian motion, Ito calculus, SDEs, and Black-Scholes-Merton risk-neutral pricing</li>
+        <li>Coherent risk measures: value at risk and expected shortfall</li>
+        <li>Financial feature engineering and labeling without leakage or lookahead bias</li>
+        <li>Machine learning for return prediction and signal generation</li>
+        <li>Purged and combinatorial cross-validation and backtest overfitting</li>
+        <li>Algorithmic strategy design with transaction costs, sizing, and turnover limits</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end quantitative investment strategy with:</p>
+        <ul class="cclist">
+        <li>A clean multi-asset return dataset for a chosen universe</li>
+        <li>Optimized, risk-aware portfolios (mean-variance plus robust variants)</li>
+        <li>A risk reporting module with value at risk and expected shortfall</li>
+        <li>Engineered features and triple-barrier labels with a validated predictive signal</li>
+        <li>The signal turned into a cost-aware algorithmic trading strategy with sizing</li>
+        <li>A rigorous backtest with purged cross-validation and deflated Sharpe</li>
+        <li>A defense of methodology and results across three presentations (weeks 5, 8, 13)</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-GM1" style="--area:#E8595A">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Computer Graphics</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">GM1</span>
+        <span class="ccard-area">Immersive Systems &amp; Game Development</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Graphics / Rendering Engineer</p>
+        <p class="ccrole-resp">Masters the real-time rendering pipeline, rasterization and ray tracing, physically based shading, and GPU optimization, shipping a real-time 3D rendering application that meets a fixed frame-rate budget.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Engines:</span> <b>Unity, Unreal Engine 5</b></li>
+        <li><span class="tcat">Graphics APIs:</span> <b>OpenGL, Vulkan</b></li>
+        <li><span class="tcat">Shading languages:</span> <b>GLSL, HLSL</b></li>
+        <li><span class="tcat">Profiling &amp; debugging:</span> <b>RenderDoc, NVIDIA Nsight Graphics, Tracy</b></li>
+        <li><span class="tcat">Assets &amp; prototyping:</span> <b>Blender, Shadertoy</b></li>
+        <li><span class="tcat">Tooling UI:</span> <b>Dear ImGui</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>The rendering equation and how rasterization and ray tracing approximate it</li>
+        <li>Homogeneous coordinates and the model-view-projection transform chain</li>
+        <li>Physically based shading: microfacet BRDF, Cook-Torrance, Fresnel, metallic-roughness</li>
+        <li>Z-buffer visibility, shadow mapping, and cascaded shadow maps</li>
+        <li>Scene graphs, bounding volume hierarchies, and frustum / occlusion culling</li>
+        <li>Radiometry: radiance, irradiance, and the cosine-weighted hemisphere integral</li>
+        <li>Global illumination approximations: ambient occlusion and image-based lighting</li>
+        <li>Deferred shading, the G-buffer, HDR tone mapping, and the GPU execution model</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end interactive real-time graphics application with:</p>
+        <ul class="cclist">
+        <li>One interactive real-time 3D app (small game or renderer) built across the term</li>
+        <li>A shaded primitive and controllable camera with loaded 3D assets as a starting point</li>
+        <li>A physically based shading (metallic-roughness) material system</li>
+        <li>Cascaded shadow maps and a culling / scene-management layer</li>
+        <li>Indirect lighting via SSAO and image-based lighting from HDR maps</li>
+        <li>GPU frame-debugger profiling to hit a target frame-rate budget</li>
+        <li>The same artifact presented at specification, interim, and final milestones (weeks 5, 8, 13)</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-GM2" style="--area:#E8595A">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Virtual, Augmented and Mixed Reality</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">GM2</span>
+        <span class="ccard-area">Immersive Systems &amp; Game Development</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">XR / AR Software Developer</p>
+        <p class="ccrole-resp">Builds spatial and immersive applications covering 3D tracking, scene understanding, natural interaction, and spatial UX, delivering a cross-device VR or AR application on OpenXR that meets its comfort and motion-to-photon latency budget.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">XR runtime &amp; frameworks:</span> <b>OpenXR, Unity XR Interaction Toolkit, Unreal Engine</b></li>
+        <li><span class="tcat">Device SDKs:</span> <b>Meta Quest SDK, Microsoft MRTK3, Apple ARKit, Google ARCore</b></li>
+        <li><span class="tcat">Tracking &amp; vision:</span> <b>ORB-SLAM3, OpenCV</b></li>
+        <li><span class="tcat">Assets:</span> <b>Blender</b></li>
+        <li><span class="tcat">Profiling &amp; debugging:</span> <b>RenderDoc, OVR Metrics Tool</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>SE(3) rigid-body transforms and quaternion rotation representation</li>
+        <li>Stereoscopic rendering and the optics and perception of head-mounted displays</li>
+        <li>SLAM and visual-inertial odometry for inside-out tracking</li>
+        <li>Epipolar and multiple-view geometry for tracking and reconstruction</li>
+        <li>Spatial mapping, plane detection, and persistent spatial anchors</li>
+        <li>The registration problem and Azuma&#x27;s criteria for augmented reality</li>
+        <li>Sensory conflict theory, motion-to-photon latency, and cybersickness mitigation</li>
+        <li>Presence, immersive interaction (selection, manipulation, locomotion), and spatial UX</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end immersive VR or AR application with:</p>
+        <ul class="cclist">
+        <li>One immersive VR or AR app on OpenXR for a real headset or AR device</li>
+        <li>A tracked stereo scene with head and controller pose visualization as a starting point</li>
+        <li>Cross-runtime OpenXR action-based input and hand / controller interaction</li>
+        <li>SLAM / VIO inside-out tracking with plane detection and spatial anchors</li>
+        <li>A comfort-tuned locomotion system and spatial UI</li>
+        <li>Motion-to-photon latency measurement with comfort mitigations and user testing</li>
+        <li>The same artifact presented at specification, interim, and final milestones (weeks 5, 8, 13)</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-GM3" style="--area:#E8595A">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Computational Geometry and Geographic Information Systems</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">GM3</span>
+        <span class="ccard-area">Immersive Systems &amp; Game Development</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Simulation Software Engineer</p>
+        <p class="ccrole-resp">Combines GIS practice with the computational-geometry primitives beneath it, carrying one running GIS project from a spatial question to a defended map, query pipeline, or analysis artifact evaluated for correctness, edge cases, and performance.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">GIS platforms:</span> <b>QGIS, PostGIS</b></li>
+        <li><span class="tcat">Python geospatial:</span> <b>GeoPandas, Shapely</b></li>
+        <li><span class="tcat">Geometry library:</span> <b>CGAL</b></li>
+        <li><span class="tcat">Language:</span> <b>Python</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Geometric primitives, orientation / sidedness tests, robust predicates, degeneracies</li>
+        <li>Map scale, geodesy, datums, projections, and coordinate reference systems</li>
+        <li>Point-in-polygon, ray casting, winding number, and line-segment intersection</li>
+        <li>Convex hulls and bounding geometries via monotone chain or Graham scan</li>
+        <li>Triangulations, TIN surfaces, Delaunay triangulation, and its Voronoi dual</li>
+        <li>Planar subdivisions, arrangements, map overlay, and polygon clipping</li>
+        <li>Spatial indexing: quadtrees, k-d trees, and R-trees and their query trade-offs</li>
+        <li>Nearest-neighbor search, range queries, spatial joins, and routing on spatial networks</li>
+        <li>Line and polygon simplification and scale-dependent geometric approximation</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end GIS product or analysis with:</p>
+        <ul class="cclist">
+        <li>A GIS question with a real or realistic spatial dataset and explicit CRS</li>
+        <li>Layers modelled geometrically as points, lines, polygons, rasters, or a network graph</li>
+        <li>At least one core primitive, algorithm, or spatial index (overlay, triangulation, indexing)</li>
+        <li>Spatial queries: nearest-neighbor, range, or spatial-join workflows with measured cost</li>
+        <li>A clear, well-symbolized final map with simplified geometry</li>
+        <li>An evaluation of correctness, edge cases, performance, and spatial interpretation</li>
+        <li>Every decision defended across three presentations (weeks 5, 8, 13)</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-DF1" style="--area:#7DC88A">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Sensor Fusion &amp; Signal Processing</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">DF1</span>
+        <span class="ccard-area">Defense Technologies &amp; Autonomous Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Signal-Processing Software Engineer</p>
+        <p class="ccrole-resp">Processes and fuses data from radar, EO-IR, and RF sensors using signal processing and estimation to form a coherent picture of the environment, building a multi-sensor estimation and tracking pipeline that fuses heterogeneous measurements into validated multi-target tracks.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Language &amp; numerics:</span> <b>Python with NumPy, SciPy, scipy.signal</b></li>
+        <li><span class="tcat">Estimation &amp; filtering:</span> <b>FilterPy, MATLAB Sensor Fusion and Tracking Toolbox</b></li>
+        <li><span class="tcat">Tracking frameworks:</span> <b>Stone Soup, GTSAM</b></li>
+        <li><span class="tcat">Robotics &amp; transport:</span> <b>ROS 2, rosbag</b></li>
+        <li><span class="tcat">Vision:</span> <b>OpenCV</b></li>
+        <li><span class="tcat">Data handling:</span> <b>pandas, HDF5</b></li>
+        <li><span class="tcat">Notebooks &amp; visualization:</span> <b>Jupyter, Matplotlib</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Digital signal processing: sampling, the DFT, and digital filtering</li>
+        <li>Recursive Bayesian inference over state-space models</li>
+        <li>Kalman filtering and its optimality for the linear Gaussian case</li>
+        <li>Nonlinear estimation with extended and unscented Kalman filters</li>
+        <li>Particle filtering for non-Gaussian, multimodal state estimation</li>
+        <li>Multi-sensor data fusion (centralized vs decentralized, information filter)</li>
+        <li>Data association and multiple hypothesis tracking for multi-target tracking</li>
+        <li>Radar, EO-IR, and RF sensor models, noise, and measurement geometry</li>
+        <li>Estimator consistency, covariance, and the Cramer-Rao lower bound</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end multi-sensor estimation and tracking system with:</p>
+        <ul class="cclist">
+        <li>A signal preprocessing and filtering front end for real or simulated sensor data</li>
+        <li>Kalman, unscented, and particle filters implemented in Python (FilterPy, Stone Soup)</li>
+        <li>Multi-sensor fusion of radar, EO-IR, and inertial measurements</li>
+        <li>Data association and gating for multi-target tracking in clutter</li>
+        <li>Realistic heterogeneous sensor models feeding the tracker</li>
+        <li>Covariance-consistency validation (NEES) and robustness to dropout and bias</li>
+        <li>One running project defended at three milestones (weeks 5, 8, 13)</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-DF2" style="--area:#7DC88A">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Mission-Critical Real-Time Systems</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">DF2</span>
+        <span class="ccard-area">Defense Technologies &amp; Autonomous Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Embedded Software Engineer</p>
+        <p class="ccrole-resp">Engineers software that must be correct and on time, covering real-time scheduling, safety-critical design, fault tolerance, and the reliability and certification practices defense systems demand, building a certifiable real-time control system on an RTOS and ARM target.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">RTOS:</span> <b>FreeRTOS, Zephyr RTOS</b></li>
+        <li><span class="tcat">High-integrity languages:</span> <b>Ada, SPARK, GNAT toolchain</b></li>
+        <li><span class="tcat">Scheduling analysis:</span> <b>Cheddar</b></li>
+        <li><span class="tcat">Target hardware:</span> <b>STM32 / ARM Cortex-M boards</b></li>
+        <li><span class="tcat">WCET analysis:</span> <b>AbsInt aiT</b></li>
+        <li><span class="tcat">Coverage &amp; unit testing:</span> <b>LDRA or VectorCAST, GoogleTest</b></li>
+        <li><span class="tcat">Config management &amp; instrumentation:</span> <b>Git, logic analyzer, Wireshark</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Periodic task model: periods, deadlines, and worst-case execution times</li>
+        <li>Rate-monotonic and earliest-deadline-first scheduling with schedulability proofs</li>
+        <li>Response-time analysis and worst-case execution time (WCET) analysis</li>
+        <li>Priority inversion, priority inheritance, and ceiling protocols</li>
+        <li>Fault tolerance: redundancy, N-version programming, TMR with voting</li>
+        <li>Dependability taxonomy of faults, errors, and failures</li>
+        <li>Reliability / safety modeling: fault trees, FMEA, MTBF, availability</li>
+        <li>Byzantine faults, agreement, and time-triggered distributed communication</li>
+        <li>Certification: DO-178C software levels, traceability, structural coverage</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end mission-critical real-time control or monitoring system with:</p>
+        <ul class="cclist">
+        <li>Rate-monotonic scheduled periodic tasks on an RTOS and target hardware</li>
+        <li>Proven schedulability with response-time and utilization analysis</li>
+        <li>Priority-inheritance synchronization with bounded blocking</li>
+        <li>Triple-modular redundancy with voting and fault injection / recovery</li>
+        <li>Reliability and hazard analysis (fault tree and FMEA)</li>
+        <li>WCET bounds feeding the schedulability argument</li>
+        <li>DO-178C-style requirements traceability, structural coverage, and a safety case</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-DF3" style="--area:#7DC88A">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Digital Systems</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">DF3</span>
+        <span class="ccard-area">Defense Technologies &amp; Autonomous Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Embedded Software Engineer</p>
+        <p class="ccrole-resp">Understands and builds digital hardware, from Boolean logic and synchronous sequential circuits through finite state machines and timing closure to a complete digital subsystem on a real FPGA, specified in HDL, verified, and validated on hardware.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">FPGA vendor tools:</span> <b>Xilinx Vivado, Intel Quartus Prime</b></li>
+        <li><span class="tcat">Simulation &amp; waveform:</span> <b>ModelSim / Questa, Icarus Verilog, GTKWave</b></li>
+        <li><span class="tcat">Verification frameworks:</span> <b>VUnit, cocotb, SystemVerilog</b></li>
+        <li><span class="tcat">Hardware boards:</span> <b>Digilent Basys 3, Intel DE10-Lite</b></li>
+        <li><span class="tcat">HDLs:</span> <b>VHDL, Verilog</b></li>
+        <li><span class="tcat">Version control:</span> <b>Git</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Number systems, Boolean algebra, and two-level logic minimization (K-maps, Quine-McCluskey)</li>
+        <li>Combinational logic building blocks and hazards</li>
+        <li>Sequential circuits: flip-flops, latches, registers, counters</li>
+        <li>Finite state machines: Moore and Mealy models, encoding, and minimization</li>
+        <li>Synchronous timing: setup / hold, clock-to-Q, and maximum clock frequency</li>
+        <li>FPGA LUT-based architecture and the synthesis-to-bitstream flow</li>
+        <li>Static timing analysis: arrival / required times, slack, and critical paths</li>
+        <li>Metastability, clock-domain crossing, and synchronizer design</li>
+        <li>Memory systems (SRAM/DRAM, block RAM, FIFO) and bus / SoC integration (AXI4)</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end FPGA-implemented digital subsystem with:</p>
+        <ul class="cclist">
+        <li>A full HDL specification in VHDL or Verilog for a Xilinx or Intel target</li>
+        <li>Combinational and sequential building blocks with a control FSM and datapath</li>
+        <li>Functional verification in simulation with a self-checking testbench</li>
+        <li>Synthesis, place-and-route, and on-board hardware validation against test vectors</li>
+        <li>A memory subsystem (block RAM / FIFO) and a peripheral / bus interface (AXI4-Lite)</li>
+        <li>Closed timing with a static timing analysis report and safe clock-domain crossing</li>
+        <li>A constrained-random testbench with SystemVerilog assertions and functional coverage</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  <article class="ccard" id="card-DF4" style="--area:#7DC88A">
+    <div class="ccard-hd">
+      <span class="ccard-kick">Course Card:</span>
+      <span class="ccard-name">Audio and Speech Processing for Intelligent Systems</span>
+      <span class="ccard-tags">
+        <span class="ccard-code">DF4</span>
+        <span class="ccard-area">Defense Technologies &amp; Autonomous Systems</span>
+      </span>
+    </div>
+    <div class="ccard-grid">
+      <section class="ccpanel role">
+        <h3>Target Job Role &amp; Responsibilities</h3>
+        <p class="ccrole-name">Signal-Processing Software Engineer</p>
+        <p class="ccrole-resp">Moves from raw audio waveforms to intelligent speech and audio systems, spanning signal-processing foundations, feature extraction, speaker recognition, ASR, and audio classification, then real-time low-latency deployment for defense, robotics, and field-intelligence scenarios.</p>
+      </section>
+      <section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Audio analysis:</span> <b>librosa, SoundFile</b></li>
+        <li><span class="tcat">Neural audio:</span> <b>PyTorch Audio (torchaudio), Hugging Face Transformers</b></li>
+        <li><span class="tcat">ASR &amp; speech toolkits:</span> <b>Whisper, SpeechBrain</b></li>
+        <li><span class="tcat">Real-time I/O:</span> <b>PyAudio</b></li>
+        <li><span class="tcat">Classical ML &amp; metrics:</span> <b>scikit-learn</b></li>
+        <li><span class="tcat">Version control:</span> <b>Git</b></li>
+        </ul>
+      </section>
+      <section class="ccpanel concepts">
+        <h3>Engineering &amp; Science Concepts</h3>
+        <ul class="cclist">
+        <li>Sampling, quantization, and the Nyquist-Shannon theorem; aliasing</li>
+        <li>Fourier analysis, STFT, and the time-frequency resolution trade-off</li>
+        <li>Spectrograms, mel-spectrograms, and the mel / perceptual auditory scale</li>
+        <li>Cepstral analysis and the MFCC pipeline; pitch and formant extraction</li>
+        <li>Voiced / unvoiced classification, VAD, and audio augmentation (SpecAugment)</li>
+        <li>Speaker recognition and diarization with i-vector / x-vector embeddings</li>
+        <li>ASR: HMM acoustic modeling (Viterbi, Baum-Welch), CTC, and attention / Whisper</li>
+        <li>Audio classification (CNN on spectrograms, PANNs, AST) and transfer learning</li>
+        <li>Real-time pipelines: ring buffers, streaming inference, and latency analysis</li>
+        </ul>
+      </section>
+      <section class="ccpanel capstone">
+        <h3>Capstone Project</h3>
+        <p class="cccap-sum">A non-trivial end-to-end audio and speech intelligent system with:</p>
+        <ul class="cclist">
+        <li>Raw audio ingestion with an extracted, normalized acoustic feature pipeline</li>
+        <li>Data augmentation and VAD pre-processing integrated into training</li>
+        <li>A trained or fine-tuned neural model for transcription, speaker verification, or event detection</li>
+        <li>Evaluation on a held-out test set with standard metrics (WER, EER, F1 / mAP)</li>
+        <li>A real-time streaming inference pipeline with measured end-to-end latency</li>
+        <li>Model compression (quantization) and error analysis for edge deployment</li>
+        <li>One running project defended at three milestones (weeks 5, 8, 13)</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img class="foot-logo" src="assets/hit-logo.png" alt="HIT logo"> Holon Institute of Technology &middot; Undergraduate Computer Science</span>
+    <a href="index.html">Program overview</a>
+  </div>
+</footer>
+<script>
+function toggleTheme(){
+  const r=document.documentElement,c=r.getAttribute('data-theme');
+  r.setAttribute('data-theme',c==='dark'?'light':c==='light'?'dark':(window.matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark'));
+}
+</script>
+</body>
+</html>
