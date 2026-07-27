@@ -476,6 +476,13 @@ a{color:inherit;text-decoration:none}
             <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Bayesian_inference" class="ref-link" target="_blank" rel="noopener noreferrer">Bayesian inference</a>, <a href="https://en.wikipedia.org/wiki/Graphical_model" class="ref-link" target="_blank" rel="noopener noreferrer">Graphical probabilistic models</a>, <a href="https://en.wikipedia.org/wiki/Decision_theory" class="ref-link" target="_blank" rel="noopener noreferrer">Utility and decision theory</a>, <a href="https://en.wikipedia.org/wiki/Partially_observable_Markov_decision_process" class="ref-link" target="_blank" rel="noopener noreferrer">MDPs and POMDPs</a>, <a href="https://en.wikipedia.org/wiki/Risk_management" class="ref-link" target="_blank" rel="noopener noreferrer">Risk-aware and robust decisions</a></td>
             <td class="td-tools"><a href="https://www.pymc.io/" class="ref-link" target="_blank" rel="noopener noreferrer">PyMC</a>, <a href="https://pgmpy.org/" class="ref-link" target="_blank" rel="noopener noreferrer">pgmpy</a>, <a href="https://docs.scipy.org/doc/scipy/" class="ref-link" target="_blank" rel="noopener noreferrer">SciPy</a>, <a href="https://gymnasium.farama.org/" class="ref-link" target="_blank" rel="noopener noreferrer">Gymnasium</a>, <a href="https://www.cvxpy.org/" class="ref-link" target="_blank" rel="noopener noreferrer">CVXPY</a></td>
           </tr>
+          <tr>
+            <td class="td-code c-ai">AI8</td>
+            <td class="td-new">Introduction to Deep Learning</td>
+            <td class="td-existing"><span dir="rtl">למידה עמוקה</span><br>Deep Learning <em>(active course)</em></td>
+            <td class="td-concepts"><a href="https://en.wikipedia.org/wiki/Backpropagation" class="ref-link" target="_blank" rel="noopener noreferrer">Neural networks and backpropagation</a>, <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent" class="ref-link" target="_blank" rel="noopener noreferrer">Optimization and training dynamics</a>, <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network" class="ref-link" target="_blank" rel="noopener noreferrer">Convolutional networks</a>, <a href="https://en.wikipedia.org/wiki/Long_short-term_memory" class="ref-link" target="_blank" rel="noopener noreferrer">Recurrent and sequence models</a>, <a href="https://en.wikipedia.org/wiki/Transfer_learning" class="ref-link" target="_blank" rel="noopener noreferrer">Representation and transfer learning</a></td>
+            <td class="td-tools"><a href="https://pytorch.org/docs/stable/" class="ref-link" target="_blank" rel="noopener noreferrer">PyTorch</a>, <a href="https://pytorch.org/vision/stable/" class="ref-link" target="_blank" rel="noopener noreferrer">torchvision</a>, <a href="https://numpy.org/doc/" class="ref-link" target="_blank" rel="noopener noreferrer">NumPy</a>, <a href="https://matplotlib.org/stable/" class="ref-link" target="_blank" rel="noopener noreferrer">Matplotlib</a>, <a href="https://colab.research.google.com/" class="ref-link" target="_blank" rel="noopener noreferrer">Google Colab</a></td>
+          </tr>
           <tr class="group-start">
             <td class="td-code c-gm">GM1</td>
             <td class="td-new">Computer Graphics</td>
@@ -578,7 +585,7 @@ function toggleTheme(){
   r.setAttribute('data-theme',c==='dark'?'light':c==='light'?'dark':(window.matchMedia('(prefers-color-scheme:dark)').matches?'light':'dark'));
 }
 (function(){
-  const ext={'SE8':'courses/SE8.html','SE9':'courses/SE9.html','GM3':'courses/GM3.html'};
+  const ext={'SE8':'courses/SE8.html','SE9':'courses/SE9.html','GM3':'courses/GM3.html','AI8':'courses/AI8.html'};
   document.querySelectorAll('.map-table tbody tr').forEach(function(row){
     var cc=row.querySelector('.td-code'),nc=row.querySelector('.td-new');
     if(!cc||!nc)return;
