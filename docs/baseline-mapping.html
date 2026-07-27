@@ -121,6 +121,17 @@ a{color:inherit;text-decoration:none}
       text-decoration-style: solid;
     }
   </style>
+<style id="ccpop-css">
+.ccpop-btn{background:none;border:0;padding:0;margin-inline-start:6px;cursor:pointer;color:var(--sub,#8A9DC0);vertical-align:middle;line-height:0;transition:color .15s}
+.ccpop-btn:hover,.ccpop-btn:focus-visible{color:var(--qcf,#4FC8E8)}
+.ccpop-btn svg{display:block}
+.ccpop{position:fixed;z-index:9999;width:min(640px,92vw);max-height:72vh;overflow:auto;background:#0d1526;border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:0 18px 50px rgba(2,6,23,.6);padding:10px;display:none}
+.ccpop[data-show="1"]{display:block}
+.ccpop .ccpop-inner{min-width:0}
+.ccpop .ccard{margin:0;border-radius:14px}
+.ccpop .ccard-grid{grid-template-columns:1fr}
+.ccpop .cccol{gap:12px}
+</style>
 </head>
 <body>
 
@@ -614,6 +625,130 @@ function toggleTheme(){
       row.insertBefore(td,row.firstChild);
     });
   });
+})();
+</script>
+<script>
+/* Course-card hover/focus popovers (self-contained, vanilla JS) */
+(function(){
+  function init(){
+    var pop=document.createElement("div");
+    pop.className="ccpop";
+    pop.setAttribute("role","dialog");
+    pop.setAttribute("aria-hidden","true");
+    document.body.appendChild(pop);
+
+    var cards=new Map();
+    var current=null, hideT=null;
+
+    var ICON='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">'
+      +'<rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" stroke-width="2"/>'
+      +'<line x1="6.5" y1="10" x2="13" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+      +'<line x1="6.5" y1="14" x2="17.5" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+
+    function positionPop(btn){
+      var r=btn.getBoundingClientRect();
+      var pw=pop.offsetWidth, ph=pop.offsetHeight;
+      var vw=document.documentElement.clientWidth, vh=window.innerHeight, gap=8;
+      var left=r.left;
+      if(left+pw>vw-gap) left=vw-gap-pw;
+      if(left<gap) left=gap;
+      var top=r.bottom+gap;
+      if(top+ph>vh-gap){
+        var up=r.top-gap-ph;
+        top = up>=gap ? up : Math.max(gap, vh-gap-ph);
+      }
+      pop.style.left=left+"px";
+      pop.style.top=top+"px";
+    }
+
+    function showFor(btn){
+      var code=btn.getAttribute("data-code");
+      var html=cards.get(code);
+      if(!html) return;
+      if(hideT){clearTimeout(hideT); hideT=null;}
+      pop.innerHTML='<div class="ccpop-inner">'+html+'</div>';
+      pop.setAttribute("data-show","1");
+      pop.setAttribute("aria-hidden","false");
+      current=btn;
+      positionPop(btn);
+    }
+
+    function hidePop(){
+      if(hideT){clearTimeout(hideT); hideT=null;}
+      pop.removeAttribute("data-show");
+      pop.setAttribute("aria-hidden","true");
+      pop.innerHTML="";
+      current=null;
+    }
+
+    function scheduleHide(){
+      if(hideT) clearTimeout(hideT);
+      hideT=setTimeout(hidePop,160);
+    }
+    function cancelHide(){
+      if(hideT){clearTimeout(hideT); hideT=null;}
+    }
+
+    pop.addEventListener("mouseenter",cancelHide);
+    pop.addEventListener("mouseleave",scheduleHide);
+
+    document.addEventListener("keydown",function(e){ if(e.key==="Escape") hidePop(); });
+    window.addEventListener("scroll",function(){ if(current) hidePop(); },true);
+
+    function addTrigger(cell,code){
+      var b=document.createElement("button");
+      b.type="button";
+      b.className="ccpop-btn";
+      b.setAttribute("data-code",code);
+      b.setAttribute("aria-label","Preview course card for "+code);
+      b.innerHTML=ICON;
+      b.addEventListener("mouseenter",function(){ showFor(b); });
+      b.addEventListener("mouseleave",scheduleHide);
+      b.addEventListener("focus",function(){ showFor(b); });
+      b.addEventListener("blur",scheduleHide);
+      b.addEventListener("click",function(e){
+        e.preventDefault();
+        if(pop.getAttribute("data-show")==="1" && current===b){ hidePop(); }
+        else { showFor(b); }
+      });
+      cell.appendChild(b);
+    }
+
+    function attach(){
+      document.querySelectorAll(".map-table tbody tr").forEach(function(row){
+        var cc=row.querySelector(".td-code"), nc=row.querySelector(".td-new");
+        if(!cc||!nc) return;
+        var code=cc.textContent.trim();
+        if(!cards.has(code)) return;
+        addTrigger(nc,code);
+      });
+    }
+
+    fetch("course-cards.html").then(function(res){
+      if(!res.ok) throw new Error("fetch failed: "+res.status);
+      return res.text();
+    }).then(function(html){
+      var doc=new DOMParser().parseFromString(html,"text/html");
+      var st=doc.querySelector("style");
+      if(st && !document.getElementById("cc-pop-styles")){
+        var s=document.createElement("style");
+        s.id="cc-pop-styles";
+        s.textContent=st.textContent;
+        document.head.appendChild(s);
+      }
+      doc.querySelectorAll("article.ccard[id^='card-']").forEach(function(art){
+        var code=art.id.replace(/^card-/,"");
+        cards.set(code,art.outerHTML);
+      });
+      attach();
+    }).catch(function(err){
+      /* course-cards.html unavailable: add no icons, leave page intact */
+      if(window.console&&console.warn) console.warn("Course cards unavailable:",err);
+    });
+  }
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",init);
+  } else { init(); }
 })();
 </script>
 </body>
