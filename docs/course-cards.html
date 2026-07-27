@@ -40,7 +40,9 @@
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:14px;
   margin-top:16px;
+  align-items:start;
 }
+.cccol{display:flex;flex-direction:column;gap:14px;min-width:0}
 @media(max-width:760px){.ccard-grid{grid-template-columns:1fr}}
 
 .ccpanel{
@@ -119,25 +121,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Cloud &amp; Platform Engineer</p>
         <p class="ccrole-resp">Designs and builds scalable cloud applications, choosing the right compute, storage, networking, and managed-service patterns for each workload and provisioning them as reproducible infrastructure. Owns the availability, latency, throughput, and cost trade-offs for production delivery.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Containers &amp; orchestration:</span> <b>Docker, Kubernetes, Helm, Istio, kubectl</b></li>
-        <li><span class="tcat">Infrastructure as code:</span> <b>Terraform</b></li>
-        <li><span class="tcat">Serverless &amp; managed AWS:</span> <b>Lambda, S3, RDS, DynamoDB, SQS, SNS, API Gateway, CloudFront</b></li>
-        <li><span class="tcat">Data &amp; cache:</span> <b>PostgreSQL, Redis</b></li>
-        <li><span class="tcat">Observability:</span> <b>Prometheus, Grafana</b></li>
-        <li><span class="tcat">Load testing:</span> <b>k6</b></li>
-        <li><span class="tcat">Security:</span> <b>Trivy</b></li>
-        <li><span class="tcat">Cloud platform:</span> <b>Amazon Web Services</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Compute placement: VMs, containers, Kubernetes, serverless, managed platforms</li>
@@ -151,7 +141,22 @@
         <li>Supply-chain provenance and reproducible-build / deployment safety</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Containers &amp; orchestration:</span> <b>Docker, Kubernetes, Helm, Istio, kubectl</b></li>
+        <li><span class="tcat">Infrastructure as code:</span> <b>Terraform</b></li>
+        <li><span class="tcat">Serverless &amp; managed AWS:</span> <b>Lambda, S3, RDS, DynamoDB, SQS, SNS, API Gateway, CloudFront</b></li>
+        <li><span class="tcat">Data &amp; cache:</span> <b>PostgreSQL, Redis</b></li>
+        <li><span class="tcat">Observability:</span> <b>Prometheus, Grafana</b></li>
+        <li><span class="tcat">Load testing:</span> <b>k6</b></li>
+        <li><span class="tcat">Security:</span> <b>Trivy</b></li>
+        <li><span class="tcat">Cloud platform:</span> <b>Amazon Web Services</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end scalable cloud application with:</p>
         <ul class="cclist">
@@ -164,6 +169,7 @@
         <li>A defense with architecture diagrams, load-test evidence, failure-mode analysis, and a cost report</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-SE2" style="--area:#31D0A5">
@@ -176,25 +182,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">QA Engineer</p>
         <p class="ccrole-resp">Engineers software to be correct, testable, and secure by design, building the QA strategy, test automation, and security remediation that run throughout the development lifecycle. Owns the CI quality gates, defect workflow, and reliability objectives that decide release readiness.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Unit &amp; integration:</span> <b>JUnit or pytest, Mockito or unittest.mock</b></li>
-        <li><span class="tcat">Coverage &amp; mutation:</span> <b>JaCoCo or coverage.py, Stryker or mutmut</b></li>
-        <li><span class="tcat">Quality &amp; reporting:</span> <b>SonarQube, Allure Report</b></li>
-        <li><span class="tcat">Browser &amp; E2E:</span> <b>Playwright, Cypress, Selenium, BrowserStack</b></li>
-        <li><span class="tcat">API testing:</span> <b>Postman/Newman, REST Assured, Schemathesis, Pact</b></li>
-        <li><span class="tcat">AppSec:</span> <b>Semgrep, OWASP ZAP, Snyk, Trivy, OWASP Threat Dragon</b></li>
-        <li><span class="tcat">Accessibility &amp; performance:</span> <b>axe DevTools, k6</b></li>
-        <li><span class="tcat">CI &amp; observability:</span> <b>GitHub Actions, OpenTelemetry, Prometheus, Grafana</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Saltzer and Schroeder protection principles and least privilege</li>
@@ -207,7 +201,22 @@
         <li>SLOs, error budgets, and the three pillars of observability</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Unit &amp; integration:</span> <b>JUnit or pytest, Mockito or unittest.mock</b></li>
+        <li><span class="tcat">Coverage &amp; mutation:</span> <b>JaCoCo or coverage.py, Stryker or mutmut</b></li>
+        <li><span class="tcat">Quality &amp; reporting:</span> <b>SonarQube, Allure Report</b></li>
+        <li><span class="tcat">Browser &amp; E2E:</span> <b>Playwright, Cypress, Selenium, BrowserStack</b></li>
+        <li><span class="tcat">API testing:</span> <b>Postman/Newman, REST Assured, Schemathesis, Pact</b></li>
+        <li><span class="tcat">AppSec:</span> <b>Semgrep, OWASP ZAP, Snyk, Trivy, OWASP Threat Dragon</b></li>
+        <li><span class="tcat">Accessibility &amp; performance:</span> <b>axe DevTools, k6</b></li>
+        <li><span class="tcat">CI &amp; observability:</span> <b>GitHub Actions, OpenTelemetry, Prometheus, Grafana</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end hardened, tested, and reliable web application with:</p>
         <ul class="cclist">
@@ -220,6 +229,7 @@
         <li>A final oral defense of security, QA strategy, test evidence, and reliability decisions</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-SE3" style="--area:#31D0A5">
@@ -232,25 +242,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Full-Stack Software Developer</p>
         <p class="ccrole-resp">Crafts fast, accessible, component-driven web interfaces, building responsive single-page applications with modern frameworks, predictable state management, and optimized builds. Owns the front-end architecture, accessibility compliance, and performance budgets, validated by automated tests.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Frameworks:</span> <b>React, Vue</b></li>
-        <li><span class="tcat">Language:</span> <b>TypeScript</b></li>
-        <li><span class="tcat">Build tooling:</span> <b>Vite</b></li>
-        <li><span class="tcat">State:</span> <b>Redux Toolkit or Pinia</b></li>
-        <li><span class="tcat">Routing:</span> <b>React Router or Vue Router</b></li>
-        <li><span class="tcat">Styling:</span> <b>Tailwind CSS</b></li>
-        <li><span class="tcat">Testing:</span> <b>Vitest, Playwright</b></li>
-        <li><span class="tcat">Accessibility &amp; performance:</span> <b>axe DevTools, Lighthouse</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>The DOM and the browser rendering pipeline</li>
@@ -263,7 +261,22 @@
         <li>Client-side routing and server-state synchronization</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Frameworks:</span> <b>React, Vue</b></li>
+        <li><span class="tcat">Language:</span> <b>TypeScript</b></li>
+        <li><span class="tcat">Build tooling:</span> <b>Vite</b></li>
+        <li><span class="tcat">State:</span> <b>Redux Toolkit or Pinia</b></li>
+        <li><span class="tcat">Routing:</span> <b>React Router or Vue Router</b></li>
+        <li><span class="tcat">Styling:</span> <b>Tailwind CSS</b></li>
+        <li><span class="tcat">Testing:</span> <b>Vitest, Playwright</b></li>
+        <li><span class="tcat">Accessibility &amp; performance:</span> <b>axe DevTools, Lighthouse</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end accessible single-page web application with:</p>
         <ul class="cclist">
@@ -276,6 +289,7 @@
         <li>An automated component and interaction test suite (Vitest, Playwright)</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-SE4" style="--area:#31D0A5">
@@ -288,25 +302,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Backend Engineer</p>
         <p class="ccrole-resp">Designs robust server-side services, well-structured APIs, and tuned data layers that power web and mobile clients. Owns data modeling, authentication and authorization, caching, and horizontal scaling under consistency, availability, and latency trade-offs.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Runtimes &amp; frameworks:</span> <b>Node.js or Python, Express or FastAPI</b></li>
-        <li><span class="tcat">Database &amp; ORM:</span> <b>PostgreSQL, Prisma or SQLAlchemy</b></li>
-        <li><span class="tcat">GraphQL:</span> <b>Apollo Server</b></li>
-        <li><span class="tcat">Cache:</span> <b>Redis</b></li>
-        <li><span class="tcat">Auth &amp; contracts:</span> <b>JSON Web Tokens, OpenAPI</b></li>
-        <li><span class="tcat">API tooling:</span> <b>Postman</b></li>
-        <li><span class="tcat">Infrastructure:</span> <b>Docker</b></li>
-        <li><span class="tcat">Load testing:</span> <b>k6</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>REST architectural constraints and resource-oriented design</li>
@@ -319,7 +321,22 @@
         <li>REST versus GraphQL trade-offs; API versioning, pagination, and contracts</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Runtimes &amp; frameworks:</span> <b>Node.js or Python, Express or FastAPI</b></li>
+        <li><span class="tcat">Database &amp; ORM:</span> <b>PostgreSQL, Prisma or SQLAlchemy</b></li>
+        <li><span class="tcat">GraphQL:</span> <b>Apollo Server</b></li>
+        <li><span class="tcat">Cache:</span> <b>Redis</b></li>
+        <li><span class="tcat">Auth &amp; contracts:</span> <b>JSON Web Tokens, OpenAPI</b></li>
+        <li><span class="tcat">API tooling:</span> <b>Postman</b></li>
+        <li><span class="tcat">Infrastructure:</span> <b>Docker</b></li>
+        <li><span class="tcat">Load testing:</span> <b>k6</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end back-end API platform with:</p>
         <ul class="cclist">
@@ -332,6 +349,7 @@
         <li>Scaling safeguards validated by load tests, plus automated and contract tests</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-SE5" style="--area:#31D0A5">
@@ -344,23 +362,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">DevOps Engineer</p>
         <p class="ccrole-resp">Applies operations discipline (DevOps, DataOps, MLOps, LLMOps, AgentOps) to carry AI and LLM systems into governed production, automating training, deployment, monitoring, and continuous delivery. Owns operating the system under load, reading telemetry, and defending design and cost decisions.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Containers &amp; CI/CD:</span> <b>Docker, Kubernetes, GitHub Actions, Terraform</b></li>
-        <li><span class="tcat">Observability:</span> <b>Prometheus, Grafana</b></li>
-        <li><span class="tcat">DataOps:</span> <b>Apache Airflow, DVC, Great Expectations, Apache Kafka</b></li>
-        <li><span class="tcat">MLOps:</span> <b>MLflow, EvidentlyAI</b></li>
-        <li><span class="tcat">LLMOps:</span> <b>LiteLLM, FAISS / Qdrant, Langfuse</b></li>
-        <li><span class="tcat">AgentOps:</span> <b>Model Context Protocol</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Service-level objectives, error budgets, and reliability theory</li>
@@ -374,7 +382,20 @@
         <li>The LLM token economy and cost / latency engineering</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Containers &amp; CI/CD:</span> <b>Docker, Kubernetes, GitHub Actions, Terraform</b></li>
+        <li><span class="tcat">Observability:</span> <b>Prometheus, Grafana</b></li>
+        <li><span class="tcat">DataOps:</span> <b>Apache Airflow, DVC, Great Expectations, Apache Kafka</b></li>
+        <li><span class="tcat">MLOps:</span> <b>MLflow, EvidentlyAI</b></li>
+        <li><span class="tcat">LLMOps:</span> <b>LiteLLM, FAISS / Qdrant, Langfuse</b></li>
+        <li><span class="tcat">AgentOps:</span> <b>Model Context Protocol</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end governed production AI service with:</p>
         <ul class="cclist">
@@ -387,6 +408,7 @@
         <li>A security and governance review against the OWASP LLM Top 10, with a tagged v1.0 release</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-SE6" style="--area:#31D0A5">
@@ -399,24 +421,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Mobile Developer</p>
         <p class="ccrole-resp">Builds software spanning mobile devices, IoT sensors, and the edge, where connectivity, power, and compute are constrained and data is processed close to where it is generated. Owns cross-platform apps, device messaging, offline-first storage, and reliable synchronization with conflict resolution.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Mobile frameworks:</span> <b>Flutter, Dart, React Native</b></li>
-        <li><span class="tcat">Local storage:</span> <b>SQLite</b></li>
-        <li><span class="tcat">MQTT:</span> <b>Eclipse Mosquitto, MQTT.js or paho-mqtt</b></li>
-        <li><span class="tcat">CoAP:</span> <b>libcoap or aiocoap</b></li>
-        <li><span class="tcat">Edge &amp; prototyping:</span> <b>Node-RED, Raspberry Pi</b></li>
-        <li><span class="tcat">Synchronization:</span> <b>PowerSync or CouchDB</b></li>
-        <li><span class="tcat">Backend:</span> <b>Firebase</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Ubiquitous and pervasive computing models</li>
@@ -429,7 +440,21 @@
         <li>Device security and privacy across boundaries</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Mobile frameworks:</span> <b>Flutter, Dart, React Native</b></li>
+        <li><span class="tcat">Local storage:</span> <b>SQLite</b></li>
+        <li><span class="tcat">MQTT:</span> <b>Eclipse Mosquitto, MQTT.js or paho-mqtt</b></li>
+        <li><span class="tcat">CoAP:</span> <b>libcoap or aiocoap</b></li>
+        <li><span class="tcat">Edge &amp; prototyping:</span> <b>Node-RED, Raspberry Pi</b></li>
+        <li><span class="tcat">Synchronization:</span> <b>PowerSync or CouchDB</b></li>
+        <li><span class="tcat">Backend:</span> <b>Firebase</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end device-to-cloud mobile / IoT / edge system with:</p>
         <ul class="cclist">
@@ -442,6 +467,7 @@
         <li>CRDT-based conflict resolution over secured communication channels</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-SE7" style="--area:#31D0A5">
@@ -454,24 +480,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Backend Engineer</p>
         <p class="ccrole-resp">Architects large data-intensive systems whose core is data and machine learning, balancing throughput, latency, and consistency while building ingestion, ETL/ELT, streaming, distributed storage, and model-serving components that scale and stay operationally healthy.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Streaming &amp; messaging:</span> <b>Apache Kafka, Apache Flink</b></li>
-        <li><span class="tcat">Batch &amp; processing:</span> <b>Apache Spark, PySpark, Databricks</b></li>
-        <li><span class="tcat">Storage:</span> <b>Apache Parquet, PostgreSQL, Apache Cassandra</b></li>
-        <li><span class="tcat">Orchestration &amp; transform:</span> <b>Apache Airflow, dbt</b></li>
-        <li><span class="tcat">Data quality:</span> <b>Great Expectations</b></li>
-        <li><span class="tcat">ML lifecycle:</span> <b>MLflow, Feast</b></li>
-        <li><span class="tcat">Ops:</span> <b>Docker, Evidently</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Reliability, scalability, and maintainability as system properties</li>
@@ -484,7 +499,21 @@
         <li>Hidden technical debt, data quality, lineage, and drift monitoring</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Streaming &amp; messaging:</span> <b>Apache Kafka, Apache Flink</b></li>
+        <li><span class="tcat">Batch &amp; processing:</span> <b>Apache Spark, PySpark, Databricks</b></li>
+        <li><span class="tcat">Storage:</span> <b>Apache Parquet, PostgreSQL, Apache Cassandra</b></li>
+        <li><span class="tcat">Orchestration &amp; transform:</span> <b>Apache Airflow, dbt</b></li>
+        <li><span class="tcat">Data quality:</span> <b>Great Expectations</b></li>
+        <li><span class="tcat">ML lifecycle:</span> <b>MLflow, Feast</b></li>
+        <li><span class="tcat">Ops:</span> <b>Docker, Evidently</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end data-intensive AI system with:</p>
         <ul class="cclist">
@@ -497,6 +526,7 @@
         <li>One running project defended at three presentations (weeks 5, 8, 13)</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-SE8" style="--area:#31D0A5">
@@ -509,23 +539,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Backend Engineer</p>
         <p class="ccrole-resp">Builds enterprise-grade backend systems with C# and modern .NET, aligning business use cases, domain rules, persistence, integrations, security, and quality attributes into architecture that can be reviewed, extended, and defended.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Platform:</span> <b>.NET SDK, C#, ASP.NET Core, Entity Framework Core</b></li>
-        <li><span class="tcat">API:</span> <b>Swagger / OpenAPI, FluentValidation, ProblemDetails</b></li>
-        <li><span class="tcat">Patterns &amp; resilience:</span> <b>MediatR, Polly</b></li>
-        <li><span class="tcat">Architecture docs:</span> <b>C4 model, UML, ADRs</b></li>
-        <li><span class="tcat">Azure:</span> <b>App Service, Key Vault, Service Bus, Functions, Application Insights</b></li>
-        <li><span class="tcat">AI:</span> <b>Microsoft.Extensions.AI, Semantic Kernel, OpenAI .NET SDK</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Quality attributes as architecture drivers (modifiability, scalability, reliability, security)</li>
@@ -538,7 +558,20 @@
         <li>Security theory: threat modelling, least privilege, trust boundaries, auditability</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Platform:</span> <b>.NET SDK, C#, ASP.NET Core, Entity Framework Core</b></li>
+        <li><span class="tcat">API:</span> <b>Swagger / OpenAPI, FluentValidation, ProblemDetails</b></li>
+        <li><span class="tcat">Patterns &amp; resilience:</span> <b>MediatR, Polly</b></li>
+        <li><span class="tcat">Architecture docs:</span> <b>C4 model, UML, ADRs</b></li>
+        <li><span class="tcat">Azure:</span> <b>App Service, Key Vault, Service Bus, Functions, Application Insights</b></li>
+        <li><span class="tcat">AI:</span> <b>Microsoft.Extensions.AI, Semantic Kernel, OpenAI .NET SDK</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end enterprise backend application with:</p>
         <ul class="cclist">
@@ -551,6 +584,7 @@
         <li>Three presentations (weeks 5, 8, 13) with the repo tagged v1.0</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-SE9" style="--area:#31D0A5">
@@ -563,22 +597,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Backend Engineer</p>
         <p class="ccrole-resp">Builds the algorithmic competence a software engineer relies on: recognizing problem structure, choosing the right technique, proving correctness, analyzing complexity, and implementing robust solutions under tight constraints, with technical-interview readiness.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Languages:</span> <b>C++17, Python</b></li>
-        <li><span class="tcat">Practice platforms:</span> <b>LeetCode, Codeforces, CSES, Kattis, HackerRank</b></li>
-        <li><span class="tcat">References:</span> <b>CP-Algorithms, USACO Guide, Tech Interview Handbook</b></li>
-        <li><span class="tcat">Visualization:</span> <b>VisuAlgo</b></li>
-        <li><span class="tcat">Version control:</span> <b>Git</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Correctness reasoning: loop invariants, induction, exchange arguments, optimal substructure</li>
@@ -591,7 +616,19 @@
         <li>Hardness awareness: NP-completeness, reductions, approximation and heuristics</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Languages:</span> <b>C++17, Python</b></li>
+        <li><span class="tcat">Practice platforms:</span> <b>LeetCode, Codeforces, CSES, Kattis, HackerRank</b></li>
+        <li><span class="tcat">References:</span> <b>CP-Algorithms, USACO Guide, Tech Interview Handbook</b></li>
+        <li><span class="tcat">Visualization:</span> <b>VisuAlgo</b></li>
+        <li><span class="tcat">Version control:</span> <b>Git</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end technique portfolio plus a final contest with:</p>
         <ul class="cclist">
@@ -603,6 +640,7 @@
         <li>A timed internal programming contest with a post-contest editorial and reflection</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-SE10" style="--area:#31D0A5">
@@ -615,24 +653,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Full-Stack Software Developer</p>
         <p class="ccrole-resp">Designs, prototypes, and evaluates human-machine interfaces grounded in cognitive science and AI: running user research, building interactive prototypes, conducting usability tests, ensuring accessibility, and integrating multimodal and AI-augmented interaction layers.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Design &amp; prototyping:</span> <b>Figma, Miro</b></li>
-        <li><span class="tcat">Accessibility:</span> <b>axe DevTools, WAVE</b></li>
-        <li><span class="tcat">Usability &amp; research:</span> <b>System Usability Scale, Lookback</b></li>
-        <li><span class="tcat">Multimodal:</span> <b>Web Speech API</b></li>
-        <li><span class="tcat">Analytics &amp; testing:</span> <b>PostHog</b></li>
-        <li><span class="tcat">Analysis:</span> <b>Python</b></li>
-        <li><span class="tcat">AI:</span> <b>OpenAI API</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Human information processing: perception, attention, working memory</li>
@@ -646,7 +673,21 @@
         <li>A/B testing theory: statistical power, Type I/II error, sequential testing</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Design &amp; prototyping:</span> <b>Figma, Miro</b></li>
+        <li><span class="tcat">Accessibility:</span> <b>axe DevTools, WAVE</b></li>
+        <li><span class="tcat">Usability &amp; research:</span> <b>System Usability Scale, Lookback</b></li>
+        <li><span class="tcat">Multimodal:</span> <b>Web Speech API</b></li>
+        <li><span class="tcat">Analytics &amp; testing:</span> <b>PostHog</b></li>
+        <li><span class="tcat">Analysis:</span> <b>Python</b></li>
+        <li><span class="tcat">AI:</span> <b>OpenAI API</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end interface design-and-evaluation project with:</p>
         <ul class="cclist">
@@ -659,6 +700,7 @@
         <li>A design system and final usability report with A/B test design and measurable improvement</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-SE11" style="--area:#31D0A5">
@@ -671,23 +713,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Backend Engineer</p>
         <p class="ccrole-resp">Designs, implements, and profiles parallel and distributed programs that saturate multi-core, GPU, and cluster hardware, selecting the right parallel model for a workload and driving optimization from profiling evidence.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Shared-memory:</span> <b>OpenMP</b></li>
-        <li><span class="tcat">Distributed:</span> <b>MPI (Open MPI)</b></li>
-        <li><span class="tcat">GPU:</span> <b>CUDA Toolkit, NCCL</b></li>
-        <li><span class="tcat">Profiling:</span> <b>perf, Intel VTune, NVIDIA Nsight Compute</b></li>
-        <li><span class="tcat">Scheduling:</span> <b>Slurm</b></li>
-        <li><span class="tcat">Correctness:</span> <b>ThreadSanitizer, CUDA-MEMCHECK</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Parallel / distributed paradigms: threads, data-parallel, actor-based, pipeline</li>
@@ -700,7 +732,20 @@
         <li>Distributed fault tolerance: CAP, checkpoint-restart, message logging</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Shared-memory:</span> <b>OpenMP</b></li>
+        <li><span class="tcat">Distributed:</span> <b>MPI (Open MPI)</b></li>
+        <li><span class="tcat">GPU:</span> <b>CUDA Toolkit, NCCL</b></li>
+        <li><span class="tcat">Profiling:</span> <b>perf, Intel VTune, NVIDIA Nsight Compute</b></li>
+        <li><span class="tcat">Scheduling:</span> <b>Slurm</b></li>
+        <li><span class="tcat">Correctness:</span> <b>ThreadSanitizer, CUDA-MEMCHECK</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end parallelized computation pipeline on a cluster with:</p>
         <ul class="cclist">
@@ -713,6 +758,7 @@
         <li>A fault-tolerance (checkpoint-restart) demonstration</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-SE12" style="--area:#31D0A5">
@@ -725,22 +771,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Backend Engineer</p>
         <p class="ccrole-resp">Builds the storage and retrieval backends behind search engines and compressed databases: constructing inverted indexes, implementing ranking and compression algorithms, building vector / ANN indexes, and fusing lexical and semantic retrieval into low-latency services.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Search &amp; index:</span> <b>Elasticsearch, Apache Lucene</b></li>
-        <li><span class="tcat">Vector search:</span> <b>FAISS, SentenceTransformers</b></li>
-        <li><span class="tcat">Compression:</span> <b>zlib / Brotli, LZ4 / Zstandard</b></li>
-        <li><span class="tcat">Implementation:</span> <b>Python, NumPy</b></li>
-        <li><span class="tcat">Serving:</span> <b>FastAPI</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Information theory: Shannon entropy, source coding theorem, compression limits</li>
@@ -754,7 +791,19 @@
         <li>Hybrid ranking: reciprocal rank fusion and linear interpolation</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Search &amp; index:</span> <b>Elasticsearch, Apache Lucene</b></li>
+        <li><span class="tcat">Vector search:</span> <b>FAISS, SentenceTransformers</b></li>
+        <li><span class="tcat">Compression:</span> <b>zlib / Brotli, LZ4 / Zstandard</b></li>
+        <li><span class="tcat">Implementation:</span> <b>Python, NumPy</b></li>
+        <li><span class="tcat">Serving:</span> <b>FastAPI</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end compressed full-text search engine with:</p>
         <ul class="cclist">
@@ -767,6 +816,7 @@
         <li>Reported NDCG, MRR, compression ratio, and latency for each retrieval mode</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-CY1" style="--area:#F5A33A">
@@ -779,24 +829,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Security Engineer</p>
         <p class="ccrole-resp">Designs and correctly implements the cryptographic primitives and protocols that underpin secure communication, authentication, and data protection, backing each construction with security arguments and test vectors rather than assumptions.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Language:</span> <b>Python</b></li>
-        <li><span class="tcat">Crypto libraries:</span> <b>PyCryptodome, cryptography (pyca), OpenSSL</b></li>
-        <li><span class="tcat">Number theory &amp; curves:</span> <b>SageMath</b></li>
-        <li><span class="tcat">Post-quantum:</span> <b>liboqs</b></li>
-        <li><span class="tcat">Big-integer arithmetic:</span> <b>GMP</b></li>
-        <li><span class="tcat">Attack &amp; strength tooling:</span> <b>Hashcat, dudect</b></li>
-        <li><span class="tcat">Testing:</span> <b>pytest</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Group theory, finite fields, and modular arithmetic as the language of cryptography</li>
@@ -810,7 +849,21 @@
         <li>Protocol pitfalls (nonce reuse, padding oracles, timing leaks) and post-quantum hardness</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Language:</span> <b>Python</b></li>
+        <li><span class="tcat">Crypto libraries:</span> <b>PyCryptodome, cryptography (pyca), OpenSSL</b></li>
+        <li><span class="tcat">Number theory &amp; curves:</span> <b>SageMath</b></li>
+        <li><span class="tcat">Post-quantum:</span> <b>liboqs</b></li>
+        <li><span class="tcat">Big-integer arithmetic:</span> <b>GMP</b></li>
+        <li><span class="tcat">Attack &amp; strength tooling:</span> <b>Hashcat, dudect</b></li>
+        <li><span class="tcat">Testing:</span> <b>pytest</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end applied-cryptography library, from arithmetic to authenticated protocols, with:</p>
         <ul class="cclist">
@@ -822,6 +875,7 @@
         <li>A defense across three team presentations (weeks 5, 8, 13)</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-CY2" style="--area:#F5A33A">
@@ -834,23 +888,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Security Engineer</p>
         <p class="ccrole-resp">Secures networks and communication channels across the protocol stack against interception, tampering, and intrusion, combining layered defenses (secure protocols, segmentation, VPNs) with detection engineering and monitoring.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Traffic analysis:</span> <b>Wireshark, Zeek</b></li>
-        <li><span class="tcat">IDS/IPS:</span> <b>Suricata, Snort</b></li>
-        <li><span class="tcat">Firewalls:</span> <b>nftables, pfSense</b></li>
-        <li><span class="tcat">VPNs:</span> <b>WireGuard, strongSwan (IPsec / IKE)</b></li>
-        <li><span class="tcat">TLS auditing:</span> <b>testssl.sh</b></li>
-        <li><span class="tcat">SIEM &amp; monitoring:</span> <b>Wazuh</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>The layered network stack and per-layer threat models (OSI / TCP-IP)</li>
@@ -864,7 +908,20 @@
         <li>Active attacks (spoofing, MITM, downgrade, DoS) and defense in depth</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Traffic analysis:</span> <b>Wireshark, Zeek</b></li>
+        <li><span class="tcat">IDS/IPS:</span> <b>Suricata, Snort</b></li>
+        <li><span class="tcat">Firewalls:</span> <b>nftables, pfSense</b></li>
+        <li><span class="tcat">VPNs:</span> <b>WireGuard, strongSwan (IPsec / IKE)</b></li>
+        <li><span class="tcat">TLS auditing:</span> <b>testssl.sh</b></li>
+        <li><span class="tcat">SIEM &amp; monitoring:</span> <b>Wazuh</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end progressively defended virtual network lab, validated in a live red-vs-blue exercise, with:</p>
         <ul class="cclist">
@@ -877,6 +934,7 @@
         <li>A final red-team-versus-blue-team demonstration with oral defense</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-CY3" style="--area:#F5A33A">
@@ -889,23 +947,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Penetration Tester</p>
         <p class="ccrole-resp">Attacks and defends hardware, firmware, and embedded devices where physical access, side channels, and constrained resources create distinct threats, performing full hardware security assessments and designing countermeasures.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Side-channel &amp; fault:</span> <b>ChipWhisperer</b></li>
-        <li><span class="tcat">Reverse engineering:</span> <b>Ghidra, radare2, binwalk</b></li>
-        <li><span class="tcat">Bus &amp; logic analysis:</span> <b>Saleae Logic, Bus Pirate</b></li>
-        <li><span class="tcat">Flash &amp; debug:</span> <b>flashrom, OpenOCD</b></li>
-        <li><span class="tcat">Emulation:</span> <b>QEMU</b></li>
-        <li><span class="tcat">Trusted computing:</span> <b>tpm2-tools</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>The physical attacker model and the expanded embedded attack surface</li>
@@ -919,7 +967,20 @@
         <li>Countermeasures: masking, hiding, constant-time code, tamper resistance</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Side-channel &amp; fault:</span> <b>ChipWhisperer</b></li>
+        <li><span class="tcat">Reverse engineering:</span> <b>Ghidra, radare2, binwalk</b></li>
+        <li><span class="tcat">Bus &amp; logic analysis:</span> <b>Saleae Logic, Bus Pirate</b></li>
+        <li><span class="tcat">Flash &amp; debug:</span> <b>flashrom, OpenOCD</b></li>
+        <li><span class="tcat">Emulation:</span> <b>QEMU</b></li>
+        <li><span class="tcat">Trusted computing:</span> <b>tpm2-tools</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end hardware security assessment of a real embedded device, from attack to hardening, with:</p>
         <ul class="cclist">
@@ -932,6 +993,7 @@
         <li>A final demonstration of attacks and mitigations with oral defense</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-CY4" style="--area:#F5A33A">
@@ -944,23 +1006,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Security Analyst</p>
         <p class="ccrole-resp">Manages cyber-security as an organizational discipline, running structured risk assessments, aligning to control frameworks, authoring auditable policy, and building incident-response capability that traces from risk to control to evidence.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">GRC &amp; risk platforms:</span> <b>Eramba, FAIR-U</b></li>
-        <li><span class="tcat">Compliance scanning:</span> <b>OpenSCAP</b></li>
-        <li><span class="tcat">Monitoring &amp; evidence:</span> <b>Wazuh</b></li>
-        <li><span class="tcat">Framework reference:</span> <b>NIST CPRT, MITRE ATT&amp;CK Navigator</b></li>
-        <li><span class="tcat">Documentation &amp; version control:</span> <b>draw.io, Git, GRC spreadsheet templates</b></li>
-        <li><span class="tcat">Incident response:</span> <b>TheHive</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Governance, accountability, and aligning security with business goals</li>
@@ -974,7 +1026,20 @@
         <li>The incident-handling lifecycle (SP 800-61) and continuous monitoring</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">GRC &amp; risk platforms:</span> <b>Eramba, FAIR-U</b></li>
+        <li><span class="tcat">Compliance scanning:</span> <b>OpenSCAP</b></li>
+        <li><span class="tcat">Monitoring &amp; evidence:</span> <b>Wazuh</b></li>
+        <li><span class="tcat">Framework reference:</span> <b>NIST CPRT, MITRE ATT&amp;CK Navigator</b></li>
+        <li><span class="tcat">Documentation &amp; version control:</span> <b>draw.io, Git, GRC spreadsheet templates</b></li>
+        <li><span class="tcat">Incident response:</span> <b>TheHive</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end security governance program for a case-study organization, defended before a simulated steering committee, with:</p>
         <ul class="cclist">
@@ -987,6 +1052,7 @@
         <li>A tabletop-validated incident response plan</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-CY5" style="--area:#F5A33A">
@@ -999,23 +1065,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Security Engineer</p>
         <p class="ccrole-resp">Builds and secures distributed ledgers, consensus mechanisms, and smart contracts, reasoning about the security properties and limits of decentralized systems and auditing them against economic and technical attack vectors.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Contract language:</span> <b>Solidity</b></li>
-        <li><span class="tcat">Development &amp; testing:</span> <b>Foundry, Hardhat, Remix, Ganache</b></li>
-        <li><span class="tcat">Audited libraries:</span> <b>OpenZeppelin Contracts</b></li>
-        <li><span class="tcat">Security analysis:</span> <b>Slither, Echidna, Tenderly</b></li>
-        <li><span class="tcat">Client libraries &amp; wallet:</span> <b>ethers.js, Web3.js, MetaMask</b></li>
-        <li><span class="tcat">Infrastructure:</span> <b>IPFS, Chainlink</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Replication, the CAP trade-off, and distributed failure models</li>
@@ -1029,7 +1085,20 @@
         <li>DeFi economic security and attack vectors (reentrancy, oracle, flash-loan)</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Contract language:</span> <b>Solidity</b></li>
+        <li><span class="tcat">Development &amp; testing:</span> <b>Foundry, Hardhat, Remix, Ganache</b></li>
+        <li><span class="tcat">Audited libraries:</span> <b>OpenZeppelin Contracts</b></li>
+        <li><span class="tcat">Security analysis:</span> <b>Slither, Echidna, Tenderly</b></li>
+        <li><span class="tcat">Client libraries &amp; wallet:</span> <b>ethers.js, Web3.js, MetaMask</b></li>
+        <li><span class="tcat">Infrastructure:</span> <b>IPFS, Chainlink</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end minimal but complete decentralized system, audited and hardened, with:</p>
         <ul class="cclist">
@@ -1042,6 +1111,7 @@
         <li>A structured security audit report defended orally</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-AI1" style="--area:#9B7AEA">
@@ -1054,23 +1124,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">NLP Engineer</p>
         <p class="ccrole-resp">Builds applications on large language models and autonomous agents, covering prompting, tool use, retrieval, and the orchestration of multi-step reasoning, delivering a grounded, tool-using LLM agent with safety guardrails and evaluation.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Core ML:</span> <b>PyTorch, Hugging Face Transformers, PEFT</b></li>
-        <li><span class="tcat">Agents &amp; orchestration:</span> <b>LangChain, LlamaIndex</b></li>
-        <li><span class="tcat">Vector search:</span> <b>FAISS, Chroma</b></li>
-        <li><span class="tcat">Serving:</span> <b>Ollama, OpenAI API</b></li>
-        <li><span class="tcat">Evaluation &amp; observability:</span> <b>Ragas, LangSmith</b></li>
-        <li><span class="tcat">Structured output:</span> <b>Pydantic</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>The transformer and self-attention (scaled dot-product, multi-head, positional encoding)</li>
@@ -1084,7 +1144,20 @@
         <li>Neural scaling laws relating loss to parameters, data, and compute</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Core ML:</span> <b>PyTorch, Hugging Face Transformers, PEFT</b></li>
+        <li><span class="tcat">Agents &amp; orchestration:</span> <b>LangChain, LlamaIndex</b></li>
+        <li><span class="tcat">Vector search:</span> <b>FAISS, Chroma</b></li>
+        <li><span class="tcat">Serving:</span> <b>Ollama, OpenAI API</b></li>
+        <li><span class="tcat">Evaluation &amp; observability:</span> <b>Ragas, LangSmith</b></li>
+        <li><span class="tcat">Structured output:</span> <b>Pydantic</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end grounded, tool-using, guarded LLM agent system with:</p>
         <ul class="cclist">
@@ -1097,6 +1170,7 @@
         <li>Deployment with tracing, cost logging, and latency optimization (caching, batching)</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-AI2" style="--area:#9B7AEA">
@@ -1109,23 +1183,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Data Scientist</p>
         <p class="ccrole-resp">Models data that unfolds over time and makes sequential decisions under uncertainty, building an end-to-end forecasting-and-control agent that couples a neural sequence forecaster to a deep reinforcement-learning controller in simulation.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Core ML:</span> <b>PyTorch</b></li>
-        <li><span class="tcat">Time series:</span> <b>statsmodels, sktime, Prophet</b></li>
-        <li><span class="tcat">Reinforcement learning:</span> <b>Gymnasium, Stable-Baselines3, Ray RLlib</b></li>
-        <li><span class="tcat">Numerics &amp; data:</span> <b>NumPy, pandas</b></li>
-        <li><span class="tcat">Visualization:</span> <b>Matplotlib</b></li>
-        <li><span class="tcat">Tuning &amp; tracking:</span> <b>Optuna, Weights and Biases</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Stochastic processes, stationarity, and autocorrelation</li>
@@ -1139,7 +1203,20 @@
         <li>Probabilistic forecasting, prediction intervals, and proper scoring rules</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Core ML:</span> <b>PyTorch</b></li>
+        <li><span class="tcat">Time series:</span> <b>statsmodels, sktime, Prophet</b></li>
+        <li><span class="tcat">Reinforcement learning:</span> <b>Gymnasium, Stable-Baselines3, Ray RLlib</b></li>
+        <li><span class="tcat">Numerics &amp; data:</span> <b>NumPy, pandas</b></li>
+        <li><span class="tcat">Visualization:</span> <b>Matplotlib</b></li>
+        <li><span class="tcat">Tuning &amp; tracking:</span> <b>Optuna, Weights and Biases</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end forecasting-and-control agent system with:</p>
         <ul class="cclist">
@@ -1152,6 +1229,7 @@
         <li>An integrated forecast-driven decision policy delivered with backtests and evaluation</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-AI3" style="--area:#9B7AEA">
@@ -1164,23 +1242,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Computer Vision Engineer</p>
         <p class="ccrole-resp">Applies deep learning to images and video for recognition, detection, and segmentation, building an end-to-end vision pipeline from a residual classifier to an object detector and a Mask R-CNN instance-segmentation system, evaluated with mAP and IoU.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Core ML:</span> <b>PyTorch, torchvision, timm</b></li>
-        <li><span class="tcat">Detection &amp; segmentation:</span> <b>Detectron2, Ultralytics YOLO</b></li>
-        <li><span class="tcat">Augmentation &amp; processing:</span> <b>Albumentations, OpenCV</b></li>
-        <li><span class="tcat">Transformers:</span> <b>Hugging Face Transformers</b></li>
-        <li><span class="tcat">Deployment:</span> <b>ONNX Runtime</b></li>
-        <li><span class="tcat">Explainability &amp; tracking:</span> <b>Grad-CAM, Roboflow, Weights and Biases</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Discrete convolution, receptive fields, and parameter sharing</li>
@@ -1194,7 +1262,20 @@
         <li>Evaluation with mean average precision and intersection over union</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Core ML:</span> <b>PyTorch, torchvision, timm</b></li>
+        <li><span class="tcat">Detection &amp; segmentation:</span> <b>Detectron2, Ultralytics YOLO</b></li>
+        <li><span class="tcat">Augmentation &amp; processing:</span> <b>Albumentations, OpenCV</b></li>
+        <li><span class="tcat">Transformers:</span> <b>Hugging Face Transformers</b></li>
+        <li><span class="tcat">Deployment:</span> <b>ONNX Runtime</b></li>
+        <li><span class="tcat">Explainability &amp; tracking:</span> <b>Grad-CAM, Roboflow, Weights and Biases</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end detection-and-segmentation vision pipeline with:</p>
         <ul class="cclist">
@@ -1207,6 +1288,7 @@
         <li>Interpretability visualizations plus quantization and export for deployable inference</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-AI4" style="--area:#9B7AEA">
@@ -1219,23 +1301,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">MLOps Engineer</p>
         <p class="ccrole-resp">Builds algorithms and systems for machine learning at scale, where datasets and models exceed a single machine, delivering a scalable training-and-serving pipeline with data and pipeline parallelism, ZeRO sharding, sketch-based aggregation, and streaming ingestion.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Training:</span> <b>PyTorch, PyTorch Distributed, DeepSpeed, Hugging Face Accelerate</b></li>
-        <li><span class="tcat">Distributed data:</span> <b>Apache Spark, Ray, Dask</b></li>
-        <li><span class="tcat">Streaming:</span> <b>Apache Kafka, Apache Flink</b></li>
-        <li><span class="tcat">Storage:</span> <b>Apache Parquet</b></li>
-        <li><span class="tcat">GPU comms:</span> <b>NVIDIA NCCL</b></li>
-        <li><span class="tcat">Tracking:</span> <b>Weights and Biases</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Amdahl&#x27;s law and the memory, compute, and communication walls</li>
@@ -1249,7 +1321,20 @@
         <li>Neural scaling laws and compute-optimal resource allocation</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Training:</span> <b>PyTorch, PyTorch Distributed, DeepSpeed, Hugging Face Accelerate</b></li>
+        <li><span class="tcat">Distributed data:</span> <b>Apache Spark, Ray, Dask</b></li>
+        <li><span class="tcat">Streaming:</span> <b>Apache Kafka, Apache Flink</b></li>
+        <li><span class="tcat">Storage:</span> <b>Apache Parquet</b></li>
+        <li><span class="tcat">GPU comms:</span> <b>NVIDIA NCCL</b></li>
+        <li><span class="tcat">Tracking:</span> <b>Weights and Biases</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end scalable training-and-serving pipeline with:</p>
         <ul class="cclist">
@@ -1262,6 +1347,7 @@
         <li>Scalable serving under load, delivered with throughput and cost benchmarks</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-AI5" style="--area:#9B7AEA">
@@ -1274,22 +1360,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">ML / AI Engineer</p>
         <p class="ccrole-resp">Studies and builds the models that generate images, text, and audio, from diffusion models to GANs and autoregressive generators, delivering a conditional generative pipeline that benchmarks VAE, GAN, autoregressive, and diffusion generators with FID evaluation.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Core ML:</span> <b>PyTorch, Hugging Face Diffusers, Transformers, torchvision</b></li>
-        <li><span class="tcat">Training:</span> <b>Accelerate, einops</b></li>
-        <li><span class="tcat">Evaluation:</span> <b>clean-fid, Weights and Biases</b></li>
-        <li><span class="tcat">Numerics &amp; visualization:</span> <b>NumPy, Matplotlib</b></li>
-        <li><span class="tcat">Demos &amp; serving:</span> <b>Gradio, ONNX Runtime</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Maximum-likelihood estimation of a data distribution</li>
@@ -1303,7 +1380,19 @@
         <li>Evaluation with FID, inception score, likelihood, and precision-recall</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Core ML:</span> <b>PyTorch, Hugging Face Diffusers, Transformers, torchvision</b></li>
+        <li><span class="tcat">Training:</span> <b>Accelerate, einops</b></li>
+        <li><span class="tcat">Evaluation:</span> <b>clean-fid, Weights and Biases</b></li>
+        <li><span class="tcat">Numerics &amp; visualization:</span> <b>NumPy, Matplotlib</b></li>
+        <li><span class="tcat">Demos &amp; serving:</span> <b>Gradio, ONNX Runtime</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end conditional generative pipeline with:</p>
         <ul class="cclist">
@@ -1316,6 +1405,7 @@
         <li>All generators benchmarked on shared metrics (FID, precision-recall), plus deployable sampling</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-AI6" style="--area:#9B7AEA">
@@ -1328,22 +1418,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Algorithm Engineer</p>
         <p class="ccrole-resp">Brings AI into the physical world through perception, planning, and control for robots and autonomous systems, delivering a full perceive-plan-act autonomy stack with sensor fusion, motion planning, and learned control under sim-to-real domain randomization.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Robotics middleware &amp; sim:</span> <b>ROS 2, Gazebo, PyBullet, NVIDIA Isaac Sim, MuJoCo</b></li>
-        <li><span class="tcat">Reinforcement learning:</span> <b>Gymnasium, Stable-Baselines3</b></li>
-        <li><span class="tcat">Perception:</span> <b>Open3D, OpenCV</b></li>
-        <li><span class="tcat">Numerics &amp; visualization:</span> <b>NumPy, Matplotlib</b></li>
-        <li><span class="tcat">Learned policies:</span> <b>PyTorch</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Rigid-body kinematics, transforms, and robot state representation</li>
@@ -1357,7 +1438,19 @@
         <li>The sim-to-real gap, domain randomization, and system identification</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Robotics middleware &amp; sim:</span> <b>ROS 2, Gazebo, PyBullet, NVIDIA Isaac Sim, MuJoCo</b></li>
+        <li><span class="tcat">Reinforcement learning:</span> <b>Gymnasium, Stable-Baselines3</b></li>
+        <li><span class="tcat">Perception:</span> <b>Open3D, OpenCV</b></li>
+        <li><span class="tcat">Numerics &amp; visualization:</span> <b>NumPy, Matplotlib</b></li>
+        <li><span class="tcat">Learned policies:</span> <b>PyTorch</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end perceive-plan-act autonomy stack with:</p>
         <ul class="cclist">
@@ -1370,6 +1463,7 @@
         <li>A sim-to-real robustness study with domain randomization, delivered with task metrics</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-AI8" style="--area:#9B7AEA">
@@ -1382,21 +1476,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">ML / AI Engineer</p>
         <p class="ccrole-resp">Turns an introductory machine-learning background into working neural-network skill in PyTorch: framing a task in tensor terms, then building, training, and debugging networks. Lab- and project-based, it provides the shared deep-learning foundation for later vision and LLM specialization.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Language:</span> <b>Python 3.11+</b></li>
-        <li><span class="tcat">Core ML:</span> <b>PyTorch, torchvision</b></li>
-        <li><span class="tcat">Numerics &amp; visualization:</span> <b>NumPy, Matplotlib</b></li>
-        <li><span class="tcat">Environment:</span> <b>Jupyter, Google Colab</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>A neural network as a parametric function; nonlinearity as the source of depth&#x27;s power</li>
@@ -1410,7 +1496,18 @@
         <li>Representation learning (bottlenecks, self-supervision, contrastive objectives) and transfer</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Language:</span> <b>Python 3.11+</b></li>
+        <li><span class="tcat">Core ML:</span> <b>PyTorch, torchvision</b></li>
+        <li><span class="tcat">Numerics &amp; visualization:</span> <b>NumPy, Matplotlib</b></li>
+        <li><span class="tcat">Environment:</span> <b>Jupyter, Google Colab</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end neural-network build-train-debug portfolio with:</p>
         <ul class="cclist">
@@ -1423,6 +1520,7 @@
         <li>A final project taking a task end to end with any course architecture family, with an oral defense</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-QCF1" style="--area:#4FC8E8">
@@ -1435,22 +1533,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Quantitative Developer</p>
         <p class="ccrole-resp">Explores quantum and quantum-inspired approaches to hard combinatorial optimization, building an end-to-end pipeline that maps a real problem to QUBO and Ising forms and benchmarks QAOA, quantum annealing, and quantum-inspired solvers head to head.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Quantum SDKs:</span> <b>Qiskit, Qiskit Optimization, PennyLane</b></li>
-        <li><span class="tcat">Annealing:</span> <b>D-Wave Ocean SDK, dimod, minorminer</b></li>
-        <li><span class="tcat">Scientific Python:</span> <b>NumPy, SciPy, NetworkX, Matplotlib</b></li>
-        <li><span class="tcat">Cloud &amp; hardware:</span> <b>IBM Quantum Platform</b></li>
-        <li><span class="tcat">Notebooks:</span> <b>Jupyter</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Quantum computing basics: qubits, state vectors, unitary operators, measurement</li>
@@ -1463,7 +1552,19 @@
         <li>Fair benchmarking: time to solution, approximation ratios, and scaling</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Quantum SDKs:</span> <b>Qiskit, Qiskit Optimization, PennyLane</b></li>
+        <li><span class="tcat">Annealing:</span> <b>D-Wave Ocean SDK, dimod, minorminer</b></li>
+        <li><span class="tcat">Scientific Python:</span> <b>NumPy, SciPy, NetworkX, Matplotlib</b></li>
+        <li><span class="tcat">Cloud &amp; hardware:</span> <b>IBM Quantum Platform</b></li>
+        <li><span class="tcat">Notebooks:</span> <b>Jupyter</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end quantum optimization pipeline with:</p>
         <ul class="cclist">
@@ -1476,6 +1577,7 @@
         <li>A defense of design and results across three presentations (weeks 5, 8, 13)</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-QCF2" style="--area:#4FC8E8">
@@ -1488,23 +1590,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Quantitative Developer</p>
         <p class="ccrole-resp">Applies machine learning and optimization to financial problems such as pricing, portfolio construction, and algorithmic trading, delivering a reproducible research pipeline that builds risk-aware optimized portfolios, adds ML signals, and rigorously backtests a cost-aware strategy.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Data:</span> <b>pandas, NumPy, yfinance</b></li>
-        <li><span class="tcat">Optimization:</span> <b>cvxpy, PyPortfolioOpt, SciPy</b></li>
-        <li><span class="tcat">ML &amp; stats:</span> <b>scikit-learn, statsmodels, arch (GARCH)</b></li>
-        <li><span class="tcat">Backtesting:</span> <b>vectorbt</b></li>
-        <li><span class="tcat">Visualization:</span> <b>Matplotlib</b></li>
-        <li><span class="tcat">Notebooks:</span> <b>Jupyter</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Mean-variance portfolio theory, the efficient frontier, the tangency portfolio</li>
@@ -1517,7 +1609,20 @@
         <li>Algorithmic strategy design with transaction costs, sizing, and turnover limits</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Data:</span> <b>pandas, NumPy, yfinance</b></li>
+        <li><span class="tcat">Optimization:</span> <b>cvxpy, PyPortfolioOpt, SciPy</b></li>
+        <li><span class="tcat">ML &amp; stats:</span> <b>scikit-learn, statsmodels, arch (GARCH)</b></li>
+        <li><span class="tcat">Backtesting:</span> <b>vectorbt</b></li>
+        <li><span class="tcat">Visualization:</span> <b>Matplotlib</b></li>
+        <li><span class="tcat">Notebooks:</span> <b>Jupyter</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end quantitative investment strategy with:</p>
         <ul class="cclist">
@@ -1530,6 +1635,7 @@
         <li>A defense of methodology and results across three presentations (weeks 5, 8, 13)</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-GM1" style="--area:#E8595A">
@@ -1542,23 +1648,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Graphics / Rendering Engineer</p>
         <p class="ccrole-resp">Masters the real-time rendering pipeline, rasterization and ray tracing, physically based shading, and GPU optimization, shipping a real-time 3D rendering application that meets a fixed frame-rate budget.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Engines:</span> <b>Unity, Unreal Engine 5</b></li>
-        <li><span class="tcat">Graphics APIs:</span> <b>OpenGL, Vulkan</b></li>
-        <li><span class="tcat">Shading languages:</span> <b>GLSL, HLSL</b></li>
-        <li><span class="tcat">Profiling &amp; debugging:</span> <b>RenderDoc, NVIDIA Nsight Graphics, Tracy</b></li>
-        <li><span class="tcat">Assets &amp; prototyping:</span> <b>Blender, Shadertoy</b></li>
-        <li><span class="tcat">Tooling UI:</span> <b>Dear ImGui</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>The rendering equation and how rasterization and ray tracing approximate it</li>
@@ -1571,7 +1667,20 @@
         <li>Deferred shading, the G-buffer, HDR tone mapping, and the GPU execution model</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Engines:</span> <b>Unity, Unreal Engine 5</b></li>
+        <li><span class="tcat">Graphics APIs:</span> <b>OpenGL, Vulkan</b></li>
+        <li><span class="tcat">Shading languages:</span> <b>GLSL, HLSL</b></li>
+        <li><span class="tcat">Profiling &amp; debugging:</span> <b>RenderDoc, NVIDIA Nsight Graphics, Tracy</b></li>
+        <li><span class="tcat">Assets &amp; prototyping:</span> <b>Blender, Shadertoy</b></li>
+        <li><span class="tcat">Tooling UI:</span> <b>Dear ImGui</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end interactive real-time graphics application with:</p>
         <ul class="cclist">
@@ -1584,6 +1693,7 @@
         <li>The same artifact presented at specification, interim, and final milestones (weeks 5, 8, 13)</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-GM2" style="--area:#E8595A">
@@ -1596,22 +1706,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">XR / AR Software Developer</p>
         <p class="ccrole-resp">Builds spatial and immersive applications covering 3D tracking, scene understanding, natural interaction, and spatial UX, delivering a cross-device VR or AR application on OpenXR that meets its comfort and motion-to-photon latency budget.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">XR runtime &amp; frameworks:</span> <b>OpenXR, Unity XR Interaction Toolkit, Unreal Engine</b></li>
-        <li><span class="tcat">Device SDKs:</span> <b>Meta Quest SDK, Microsoft MRTK3, Apple ARKit, Google ARCore</b></li>
-        <li><span class="tcat">Tracking &amp; vision:</span> <b>ORB-SLAM3, OpenCV</b></li>
-        <li><span class="tcat">Assets:</span> <b>Blender</b></li>
-        <li><span class="tcat">Profiling &amp; debugging:</span> <b>RenderDoc, OVR Metrics Tool</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>SE(3) rigid-body transforms and quaternion rotation representation</li>
@@ -1624,7 +1725,19 @@
         <li>Presence, immersive interaction (selection, manipulation, locomotion), and spatial UX</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">XR runtime &amp; frameworks:</span> <b>OpenXR, Unity XR Interaction Toolkit, Unreal Engine</b></li>
+        <li><span class="tcat">Device SDKs:</span> <b>Meta Quest SDK, Microsoft MRTK3, Apple ARKit, Google ARCore</b></li>
+        <li><span class="tcat">Tracking &amp; vision:</span> <b>ORB-SLAM3, OpenCV</b></li>
+        <li><span class="tcat">Assets:</span> <b>Blender</b></li>
+        <li><span class="tcat">Profiling &amp; debugging:</span> <b>RenderDoc, OVR Metrics Tool</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end immersive VR or AR application with:</p>
         <ul class="cclist">
@@ -1637,6 +1750,7 @@
         <li>The same artifact presented at specification, interim, and final milestones (weeks 5, 8, 13)</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-GM3" style="--area:#E8595A">
@@ -1649,21 +1763,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Simulation Software Engineer</p>
         <p class="ccrole-resp">Combines GIS practice with the computational-geometry primitives beneath it, carrying one running GIS project from a spatial question to a defended map, query pipeline, or analysis artifact evaluated for correctness, edge cases, and performance.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">GIS platforms:</span> <b>QGIS, PostGIS</b></li>
-        <li><span class="tcat">Python geospatial:</span> <b>GeoPandas, Shapely</b></li>
-        <li><span class="tcat">Geometry library:</span> <b>CGAL</b></li>
-        <li><span class="tcat">Language:</span> <b>Python</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Geometric primitives, orientation / sidedness tests, robust predicates, degeneracies</li>
@@ -1677,7 +1783,18 @@
         <li>Line and polygon simplification and scale-dependent geometric approximation</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">GIS platforms:</span> <b>QGIS, PostGIS</b></li>
+        <li><span class="tcat">Python geospatial:</span> <b>GeoPandas, Shapely</b></li>
+        <li><span class="tcat">Geometry library:</span> <b>CGAL</b></li>
+        <li><span class="tcat">Language:</span> <b>Python</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end GIS product or analysis with:</p>
         <ul class="cclist">
@@ -1690,6 +1807,7 @@
         <li>Every decision defended across three presentations (weeks 5, 8, 13)</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-DF1" style="--area:#7DC88A">
@@ -1702,24 +1820,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Signal-Processing Software Engineer</p>
         <p class="ccrole-resp">Processes and fuses data from radar, EO-IR, and RF sensors using signal processing and estimation to form a coherent picture of the environment, building a multi-sensor estimation and tracking pipeline that fuses heterogeneous measurements into validated multi-target tracks.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Language &amp; numerics:</span> <b>Python with NumPy, SciPy, scipy.signal</b></li>
-        <li><span class="tcat">Estimation &amp; filtering:</span> <b>FilterPy, MATLAB Sensor Fusion and Tracking Toolbox</b></li>
-        <li><span class="tcat">Tracking frameworks:</span> <b>Stone Soup, GTSAM</b></li>
-        <li><span class="tcat">Robotics &amp; transport:</span> <b>ROS 2, rosbag</b></li>
-        <li><span class="tcat">Vision:</span> <b>OpenCV</b></li>
-        <li><span class="tcat">Data handling:</span> <b>pandas, HDF5</b></li>
-        <li><span class="tcat">Notebooks &amp; visualization:</span> <b>Jupyter, Matplotlib</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Digital signal processing: sampling, the DFT, and digital filtering</li>
@@ -1733,7 +1840,21 @@
         <li>Estimator consistency, covariance, and the Cramer-Rao lower bound</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Language &amp; numerics:</span> <b>Python with NumPy, SciPy, scipy.signal</b></li>
+        <li><span class="tcat">Estimation &amp; filtering:</span> <b>FilterPy, MATLAB Sensor Fusion and Tracking Toolbox</b></li>
+        <li><span class="tcat">Tracking frameworks:</span> <b>Stone Soup, GTSAM</b></li>
+        <li><span class="tcat">Robotics &amp; transport:</span> <b>ROS 2, rosbag</b></li>
+        <li><span class="tcat">Vision:</span> <b>OpenCV</b></li>
+        <li><span class="tcat">Data handling:</span> <b>pandas, HDF5</b></li>
+        <li><span class="tcat">Notebooks &amp; visualization:</span> <b>Jupyter, Matplotlib</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end multi-sensor estimation and tracking system with:</p>
         <ul class="cclist">
@@ -1746,6 +1867,7 @@
         <li>One running project defended at three milestones (weeks 5, 8, 13)</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-DF2" style="--area:#7DC88A">
@@ -1758,24 +1880,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Embedded Software Engineer</p>
         <p class="ccrole-resp">Engineers software that must be correct and on time, covering real-time scheduling, safety-critical design, fault tolerance, and the reliability and certification practices defense systems demand, building a certifiable real-time control system on an RTOS and ARM target.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">RTOS:</span> <b>FreeRTOS, Zephyr RTOS</b></li>
-        <li><span class="tcat">High-integrity languages:</span> <b>Ada, SPARK, GNAT toolchain</b></li>
-        <li><span class="tcat">Scheduling analysis:</span> <b>Cheddar</b></li>
-        <li><span class="tcat">Target hardware:</span> <b>STM32 / ARM Cortex-M boards</b></li>
-        <li><span class="tcat">WCET analysis:</span> <b>AbsInt aiT</b></li>
-        <li><span class="tcat">Coverage &amp; unit testing:</span> <b>LDRA or VectorCAST, GoogleTest</b></li>
-        <li><span class="tcat">Config management &amp; instrumentation:</span> <b>Git, logic analyzer, Wireshark</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Periodic task model: periods, deadlines, and worst-case execution times</li>
@@ -1789,7 +1900,21 @@
         <li>Certification: DO-178C software levels, traceability, structural coverage</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">RTOS:</span> <b>FreeRTOS, Zephyr RTOS</b></li>
+        <li><span class="tcat">High-integrity languages:</span> <b>Ada, SPARK, GNAT toolchain</b></li>
+        <li><span class="tcat">Scheduling analysis:</span> <b>Cheddar</b></li>
+        <li><span class="tcat">Target hardware:</span> <b>STM32 / ARM Cortex-M boards</b></li>
+        <li><span class="tcat">WCET analysis:</span> <b>AbsInt aiT</b></li>
+        <li><span class="tcat">Coverage &amp; unit testing:</span> <b>LDRA or VectorCAST, GoogleTest</b></li>
+        <li><span class="tcat">Config management &amp; instrumentation:</span> <b>Git, logic analyzer, Wireshark</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end mission-critical real-time control or monitoring system with:</p>
         <ul class="cclist">
@@ -1802,6 +1927,7 @@
         <li>DO-178C-style requirements traceability, structural coverage, and a safety case</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-DF3" style="--area:#7DC88A">
@@ -1814,23 +1940,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Embedded Software Engineer</p>
         <p class="ccrole-resp">Understands and builds digital hardware, from Boolean logic and synchronous sequential circuits through finite state machines and timing closure to a complete digital subsystem on a real FPGA, specified in HDL, verified, and validated on hardware.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">FPGA vendor tools:</span> <b>Xilinx Vivado, Intel Quartus Prime</b></li>
-        <li><span class="tcat">Simulation &amp; waveform:</span> <b>ModelSim / Questa, Icarus Verilog, GTKWave</b></li>
-        <li><span class="tcat">Verification frameworks:</span> <b>VUnit, cocotb, SystemVerilog</b></li>
-        <li><span class="tcat">Hardware boards:</span> <b>Digilent Basys 3, Intel DE10-Lite</b></li>
-        <li><span class="tcat">HDLs:</span> <b>VHDL, Verilog</b></li>
-        <li><span class="tcat">Version control:</span> <b>Git</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Number systems, Boolean algebra, and two-level logic minimization (K-maps, Quine-McCluskey)</li>
@@ -1844,7 +1960,20 @@
         <li>Memory systems (SRAM/DRAM, block RAM, FIFO) and bus / SoC integration (AXI4)</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">FPGA vendor tools:</span> <b>Xilinx Vivado, Intel Quartus Prime</b></li>
+        <li><span class="tcat">Simulation &amp; waveform:</span> <b>ModelSim / Questa, Icarus Verilog, GTKWave</b></li>
+        <li><span class="tcat">Verification frameworks:</span> <b>VUnit, cocotb, SystemVerilog</b></li>
+        <li><span class="tcat">Hardware boards:</span> <b>Digilent Basys 3, Intel DE10-Lite</b></li>
+        <li><span class="tcat">HDLs:</span> <b>VHDL, Verilog</b></li>
+        <li><span class="tcat">Version control:</span> <b>Git</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end FPGA-implemented digital subsystem with:</p>
         <ul class="cclist">
@@ -1857,6 +1986,7 @@
         <li>A constrained-random testbench with SystemVerilog assertions and functional coverage</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   <article class="ccard" id="card-DF4" style="--area:#7DC88A">
@@ -1869,23 +1999,13 @@
       </span>
     </div>
     <div class="ccard-grid">
-      <section class="ccpanel role">
+      <div class="cccol">
+<section class="ccpanel role">
         <h3>Target Job Role &amp; Responsibilities</h3>
         <p class="ccrole-name">Signal-Processing Software Engineer</p>
         <p class="ccrole-resp">Moves from raw audio waveforms to intelligent speech and audio systems, spanning signal-processing foundations, feature extraction, speaker recognition, ASR, and audio classification, then real-time low-latency deployment for defense, robotics, and field-intelligence scenarios.</p>
       </section>
-      <section class="ccpanel tools">
-        <h3>Tools &amp; Platforms to Master</h3>
-        <ul class="cclist tools">
-        <li><span class="tcat">Audio analysis:</span> <b>librosa, SoundFile</b></li>
-        <li><span class="tcat">Neural audio:</span> <b>PyTorch Audio (torchaudio), Hugging Face Transformers</b></li>
-        <li><span class="tcat">ASR &amp; speech toolkits:</span> <b>Whisper, SpeechBrain</b></li>
-        <li><span class="tcat">Real-time I/O:</span> <b>PyAudio</b></li>
-        <li><span class="tcat">Classical ML &amp; metrics:</span> <b>scikit-learn</b></li>
-        <li><span class="tcat">Version control:</span> <b>Git</b></li>
-        </ul>
-      </section>
-      <section class="ccpanel concepts">
+<section class="ccpanel concepts">
         <h3>Engineering &amp; Science Concepts</h3>
         <ul class="cclist">
         <li>Sampling, quantization, and the Nyquist-Shannon theorem; aliasing</li>
@@ -1899,7 +2019,20 @@
         <li>Real-time pipelines: ring buffers, streaming inference, and latency analysis</li>
         </ul>
       </section>
-      <section class="ccpanel capstone">
+      </div>
+      <div class="cccol">
+<section class="ccpanel tools">
+        <h3>Tools &amp; Platforms to Master</h3>
+        <ul class="cclist tools">
+        <li><span class="tcat">Audio analysis:</span> <b>librosa, SoundFile</b></li>
+        <li><span class="tcat">Neural audio:</span> <b>PyTorch Audio (torchaudio), Hugging Face Transformers</b></li>
+        <li><span class="tcat">ASR &amp; speech toolkits:</span> <b>Whisper, SpeechBrain</b></li>
+        <li><span class="tcat">Real-time I/O:</span> <b>PyAudio</b></li>
+        <li><span class="tcat">Classical ML &amp; metrics:</span> <b>scikit-learn</b></li>
+        <li><span class="tcat">Version control:</span> <b>Git</b></li>
+        </ul>
+      </section>
+<section class="ccpanel capstone">
         <h3>Capstone Project</h3>
         <p class="cccap-sum">A non-trivial end-to-end audio and speech intelligent system with:</p>
         <ul class="cclist">
@@ -1912,6 +2045,7 @@
         <li>One running project defended at three milestones (weeks 5, 8, 13)</li>
         </ul>
       </section>
+      </div>
     </div>
   </article>
   </div>
