@@ -365,7 +365,6 @@ details>summary::-webkit-details-marker{display:none}
   <a class="nav-pill" href="course-cards.html">Course Cards</a>
 
   <a class="nav-pill" href="baseline-mapping.html">Core Electives</a>
-  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
 </nav>
 
 <!-- ── Hero ── -->
@@ -2635,13 +2634,6 @@ details>summary::-webkit-details-marker{display:none}
 
 <script>
 // Theme toggle
-function toggleTheme(){
-  const root = document.documentElement;
-  const cur = root.getAttribute('data-theme');
-  const next = cur === 'dark' ? 'light' : cur === 'light' ? 'dark' :
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark');
-  root.setAttribute('data-theme', next);
-}
 
 // Inject "Full syllabus →" link into every card header
 document.querySelectorAll('.card-code').forEach(el => {

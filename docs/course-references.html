@@ -2,61 +2,29 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HIT CS: Course References</title>
 <style>
-:root {
-  --bg:#0D1119; --surface:#141C2D; --sur2:#1A2438;
-  --border:#253050; --faint:#1E2D48; --text:#D9E4F5;
-  --sub:#8A9DC0; --muted:#5C6E8C;
-  --se:#31D0A5; --se-a:rgba(49,208,165,.10);
-  --ai:#9B7AEA; --ai-a:rgba(155,122,234,.10);
-  --cy:#F5A33A; --cy-a:rgba(245,163,58,.10);
-  --df:#7DC88A; --df-a:rgba(125,200,138,.10);
-  --course-accent:#4FC8E8;
-  --book-accent:#E8A33A;
+:root{
+  --surface:#FFF;--sur2:#F7F8FA;--faint:#F0F3F8;
+  --border:#D1D4D8;--text:#14385C;--sub:#5A626C;--muted:#5A626C;
+  --se:#1B9E7A;--se-a:rgba(27,158,122,.07);
+  --ai:#6744C8;--ai-a:rgba(103,68,200,.07);
+  --cy:#C47A0A;--cy-a:rgba(196,122,10,.07);
+  --df:#3A844A;--df-a:rgba(58,132,74,.07);
+  --course-accent:#1A8FB0;--book-accent:#9A6E0A;
   --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --mono:"SF Mono","Cascadia Code","Fira Code","Consolas",monospace;
 }
-@media(prefers-color-scheme:light){:root{
-  --bg:#EEF3FB; --surface:#FFF; --sur2:#F4F7FE;
-  --border:#CDD8EE; --faint:#E4ECFA; --text:#152035;
-  --sub:#4D6080; --muted:#8096B8;
-  --se:#1B9E7A; --ai:#6744C8; --cy:#C47A0A; --df:#3A844A;
-  --course-accent:#1A8FB0; --book-accent:#9A6E0A;
-}}
-:root[data-theme=dark]{
-  --bg:#0D1119; --surface:#141C2D; --sur2:#1A2438;
-  --border:#253050; --faint:#1E2D48; --text:#D9E4F5; --sub:#8A9DC0; --muted:#5C6E8C;
-  --se:#31D0A5; --ai:#9B7AEA; --cy:#F5A33A; --df:#7DC88A;
-  --course-accent:#4FC8E8; --book-accent:#E8A33A;
-}
-:root[data-theme=light]{
-  --bg:#EEF3FB; --surface:#FFF; --sur2:#F4F7FE;
-  --border:#CDD8EE; --faint:#E4ECFA; --text:#152035; --sub:#4D6080; --muted:#8096B8;
-  --se:#1B9E7A; --ai:#6744C8; --cy:#C47A0A; --df:#3A844A;
-  --course-accent:#1A8FB0; --book-accent:#9A6E0A;
-}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;color-scheme:dark light}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 
-/* Nav */
-.site-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:4px;padding:0 16px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap;scrollbar-width:none;min-height:50px}
-.site-nav::-webkit-scrollbar{display:none}
-.nav-brand{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--sub);text-transform:uppercase;padding:12px 8px 12px 0;border-right:1px solid var(--border);margin-right:4px;flex-shrink:0;text-decoration:none}
-.nav-brand:hover{color:var(--text)}
-.nav-pill{display:inline-flex;align-items:center;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--sub);border:1.5px solid transparent;flex-shrink:0;transition:background .15s,border-color .15s,color .15s}
-.nav-pill:hover{background:var(--sur2);border-color:var(--border);color:var(--text)}
-.nav-pill.active{color:var(--text);background:var(--sur2);border-color:var(--border)}
-.nav-spacer{flex:1}
-.theme-btn{background:none;border:1.5px solid var(--border);color:var(--sub);border-radius:6px;padding:4px 8px;font-size:12px;cursor:pointer;flex-shrink:0}
-.theme-btn:hover{border-color:var(--muted);color:var(--text)}
-
 /* Hero */
-.hero{padding:52px 24px 44px;max-width:900px;margin:0 auto;border-bottom:1px solid var(--border)}
-.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.hero .hero-eyebrow,.hero-eyebrow{color:rgba(255,255,255,.65)}
+.hero .hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:14px}
 .hero h1{font-size:clamp(24px,3.5vw,38px);font-weight:800;line-height:1.15;letter-spacing:-.02em}
 .hero-sub{margin-top:10px;font-size:15px;color:var(--sub);max-width:620px;line-height:1.55}
 
@@ -114,7 +82,6 @@ a{color:inherit;text-decoration:none}
 </style>
 <script>
 (function(){try{var t=localStorage.getItem('hitcs-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}}());
-function toggleTheme(){var r=document.documentElement,c=r.dataset.theme,n=c==='dark'?'light':c==='light'?'dark':window.matchMedia('(prefers-color-scheme:dark)').matches?'light':'dark';r.dataset.theme=n;try{localStorage.setItem('hitcs-theme',n);}catch(e){}}
 </script>
 </head>
 <body>
@@ -131,10 +98,9 @@ function toggleTheme(){var r=document.documentElement,c=r.dataset.theme,n=c==='d
   <a class="nav-pill" href="careers.html">Careers</a>
   <span class="nav-spacer"></span>
   <a class="nav-pill" href="baseline-mapping.html">Core Electives</a>
-  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">&#9680;</button>
 </nav>
 
-<header class="hero">
+<section class="hero"><div class="wrap">
   <p class="hero-eyebrow">Holon Institute of Technology · Advanced CS Electives</p>
   <h1>Course References</h1>
   <p class="hero-sub">For each of the 20 core elective courses: the single best online course and the single best textbook. Selected for academic grounding (science and engineering principles that transfer beyond any one tool) combined with practical, hands-on content — real code, tools, and platforms.</p>
@@ -142,7 +108,7 @@ function toggleTheme(){var r=document.documentElement,c=r.dataset.theme,n=c==='d
     <span class="legend-item"><svg class="legend-dot" style="background:var(--course-accent)"></svg>Online course</span>
     <span class="legend-item"><svg class="legend-dot" style="background:var(--book-accent)"></svg>Textbook</span>
   </div>
-</header>
+</div></section>
 
 <main class="page-body">
 

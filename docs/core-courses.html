@@ -176,7 +176,6 @@ a{color:inherit;text-decoration:none}
   <a class="nav-pill" href="course-cards.html">Course Cards</a>
 
   <a class="nav-pill" href="baseline-mapping.html">Core Electives</a>
-  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
 </nav>
 
 <header class="hero">
@@ -216,10 +215,6 @@ a{color:inherit;text-decoration:none}
 </footer>
 
 <script>
-function toggleTheme(){
-  const root=document.documentElement,cur=root.getAttribute('data-theme');
-  root.setAttribute('data-theme',cur==='dark'?'light':cur==='light'?'dark':(window.matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark'));
-}
 </script>
 </body>
 </html>
