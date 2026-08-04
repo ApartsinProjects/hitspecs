@@ -4,34 +4,16 @@
 <link rel="stylesheet" href="style.css">
 <style>
 :root{
-  --bg:#0D1119;--surface:#141C2D;--sur2:#1A2438;
-  --border:#253050;--text:#D9E4F5;--sub:#8A9DC0;--muted:#5C6E8C;
-  --teal:#31D0A5;--navy:#0D1526;
-  --se:#31D0A5;--ai:#9B7AEA;--cy:#F5A33A;--df:#7DC88A;
+  --surface:#FFF;--sur2:#F7F8FA;
+  --border:#D1D4D8;--text:#14385C;--sub:#5A626C;--muted:#5A626C;
+  --teal:#14385C;--navy:#14385C;
+  --se:#1B9E7A;--ai:#6744C8;--cy:#C47A0A;--df:#3A844A;
   --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mono:"SF Mono","Cascadia Code","Fira Code","Consolas",monospace;
-}
-@media(prefers-color-scheme:light){:root{
-  --bg:#EEF3FB;--surface:#FFF;--sur2:#F4F7FE;
-  --border:#CDD8EE;--text:#152035;--sub:#4D6080;--muted:#8096B8;
-  --teal:#1B9E7A;--navy:#14385C;
-  --se:#1B9E7A;--ai:#6744C8;--cy:#C47A0A;--df:#3A844A;
-}}
-:root[data-theme=dark]{
-  --bg:#0D1119;--surface:#141C2D;--sur2:#1A2438;
-  --border:#253050;--text:#D9E4F5;--sub:#8A9DC0;--muted:#5C6E8C;
-  --teal:#31D0A5;--navy:#0D1526;
-  --se:#31D0A5;--ai:#9B7AEA;--cy:#F5A33A;--df:#7DC88A;
-}
-:root[data-theme=light]{
-  --bg:#EEF3FB;--surface:#FFF;--sur2:#F4F7FE;
-  --border:#CDD8EE;--text:#152035;--sub:#4D6080;--muted:#8096B8;
-  --teal:#1B9E7A;--navy:#14385C;
-  --se:#1B9E7A;--ai:#6744C8;--cy:#C47A0A;--df:#3A844A;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;color-scheme:dark light}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 /* Layout */
 .layout{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 50px)}
@@ -55,7 +37,7 @@ a{color:inherit;text-decoration:none}
 .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.section-grid .full{grid-column:1/-1}
 .sec{border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .sec-head{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em}
-.sec-num{color:var(--teal);font-family:var(--mono);font-size:11px;font-weight:800}
+.sec-num{color:rgba(255,255,255,.55);font-family:var(--mono);font-size:11px;font-weight:800}
 .sec-req{font-size:11px;font-style:italic;color:var(--teal);padding:6px 12px;background:color-mix(in srgb,var(--teal) 6%,var(--surface));border-bottom:1px solid var(--border);line-height:1.45}
 .sec-instr{font-size:11px;font-style:italic;color:var(--sub);padding:5px 12px;background:var(--sur2);border-bottom:1px solid var(--border);line-height:1.45}
 table{width:100%;border-collapse:collapse;font-size:12px}
@@ -86,6 +68,13 @@ table tr:nth-child(even) td{background:var(--surface)}
   <a class="nav-pill" href="baseline-mapping.html">Core Electives</a>
   <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
 </nav>
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">ADVANCED CS ELECTIVES · 20 COURSES</p>
+    <h1>Course Cards</h1>
+    <p class="lead">Each card defines the scope, target job roles, transferable principles, hands-on tools, prerequisites, and student project for one of the twenty core elective courses across six concentrations.</p>
+  </div>
+</section>
 <div class="layout"><aside class="sidebar" id="sidebar"></aside><main class="cards" id="cards"></main></div>
 <script>
 const CONC={
@@ -984,10 +973,6 @@ function initScrollSpy(){
   document.querySelectorAll(".card").forEach(c=>new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle("active",l.getAttribute("href")==="#"+e.target.id));}});
   },{threshold:0.15,rootMargin:"-60px 0px -60% 0px"}).observe(c));
-}
-function toggleTheme(){
-  const r=document.documentElement,c=r.getAttribute("data-theme");
-  r.setAttribute("data-theme",c==="dark"?"light":c==="light"?"dark":(window.matchMedia("(prefers-color-scheme:dark)").matches?"light":"dark"));
 }
 renderSidebar();renderCards();initScrollSpy();
 </script>
