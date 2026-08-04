@@ -102,8 +102,8 @@ const COURSES=[
 title:"Cloud Computing and Cloud-Native Platforms",
 description:"Design and build scalable cloud applications by selecting the right compute, storage, networking, and managed-service patterns for each workload, then validate choices through load testing and observability evidence.",
 roles:[
-{role:"Cloud Infrastructure Engineer",does:"Designs and provisions scalable cloud architectures using Infrastructure-as-Code, configures autoscaling policies and load balancers, models availability and cost trade-offs across storage and compute options, monitors SLOs with metrics and alerts, and leads post-incident capacity analysis."},
-{role:"Platform Engineer / DevOps Engineer",does:"Containerizes application components and maintains Kubernetes clusters, builds CI/CD pipelines for cloud-native services, configures API gateways and worker queues for async workflows, and responds to production incidents using distributed tracing and structured logging."},
+{role:"Cloud & Platform Engineer",does:"Designs and provisions scalable cloud architectures using Infrastructure-as-Code, configures autoscaling policies and load balancers, models availability and cost trade-offs across storage and compute options, monitors SLOs with metrics and alerts, and leads post-incident capacity analysis."},
+{role:"DevOps Engineer",does:"Containerizes application components and maintains Kubernetes clusters, builds CI/CD pipelines for cloud-native services, configures API gateways and worker queues for async workflows, and responds to production incidents using distributed tracing and structured logging."},
 ],
 principles:[
 "Cloud service models and global infrastructure: IaaS, PaaS, SaaS, and FaaS spectrum; region and AZ fault domains; geographic latency trade-offs; and multi-AZ redundancy for blast-radius isolation.",
@@ -142,8 +142,8 @@ depth:"Students must make principled trade-offs between synchronous and asynchro
 title:"Secure and Reliable Software Development",
 description:"Engineer software that is correct, testable, and secure by design, integrating black-box test theory, mutation testing, threat modeling, OWASP remediation, and CI/CD quality gates throughout the development lifecycle.",
 roles:[
-{role:"Application Security Engineer",does:"Performs threat modeling using DFDs and trust boundaries on new features before implementation, integrates SAST and DAST tools into CI/CD pipelines, remediates OWASP Top 10 vulnerabilities with root-cause analysis, conducts dependency audits using SCA tooling, and writes security test plans and acceptance criteria."},
-{role:"Software Development Engineer in Test (SDET)",does:"Designs and implements automated test suites covering unit, integration, contract, browser E2E, and mutation tests; defines coverage targets and interprets mutation scores as test-suite quality signals; and configures CI/CD quality gates that block merges on coverage, mutation-kill-rate, or security-scan failures."},
+{role:"Security Engineer",does:"Performs threat modeling using DFDs and trust boundaries on new features before implementation, integrates SAST and DAST tools into CI/CD pipelines, remediates OWASP Top 10 vulnerabilities with root-cause analysis, conducts dependency audits using SCA tooling, and writes security test plans and acceptance criteria."},
+{role:"QA Engineer",does:"Designs and implements automated test suites covering unit, integration, contract, browser E2E, and mutation tests; defines coverage targets and interprets mutation scores as test-suite quality signals; and configures CI/CD quality gates that block merges on coverage, mutation-kill-rate, or security-scan failures."},
 ],
 principles:[
 "Test automation pyramid: unit, integration, and E2E layers; coverage targets and suite composition; feedback-loop speed at each tier; and the cost-of-defect model that justifies shifting quality left.",
@@ -182,8 +182,8 @@ depth:"Students must connect black-box test design theory to concrete test cases
 title:"Modern Front-End Web Development",
 description:"Build responsive, accessible, interactive user interfaces with React and Vue component frameworks, applying unidirectional data flow, WCAG accessibility, performance optimization, and automated testing throughout.",
 roles:[
-{role:"Front-End Engineer",does:"Builds component-based user interfaces in React or Vue, manages application state with Redux Toolkit or Pinia, integrates REST and GraphQL APIs, ensures WCAG AA accessibility compliance with axe DevTools audits, and writes component and interaction tests using Vitest and Playwright."},
-{role:"UI Performance Engineer",does:"Profiles and optimizes web application loading and rendering performance using Lighthouse and browser DevTools, implements code-splitting and lazy-loading strategies, configures Vite build output and asset caching headers, and evaluates rendering-strategy trade-offs (CSR, SSR, SSG) for SEO and time-to-interactive targets."},
+{role:"Full-Stack Software Developer",does:"Builds component-based user interfaces in React or Vue, manages application state with Redux Toolkit or Pinia, integrates REST and GraphQL APIs, ensures WCAG AA accessibility compliance with axe DevTools audits, and writes component and interaction tests using Vitest and Playwright."},
+{role:"Full-Stack Software Developer",does:"Profiles and optimizes web application loading and rendering performance using Lighthouse and browser DevTools, implements code-splitting and lazy-loading strategies, configures Vite build output and asset caching headers, and evaluates rendering-strategy trade-offs (CSR, SSR, SSG) for SEO and time-to-interactive targets."},
 ],
 principles:[
 "The browser document model and event system: DOM tree, event bubbling vs capturing, delegation, and shadow DOM",
@@ -222,8 +222,8 @@ depth:"Students must reconcile the declarative component model with practical sh
 title:"Back-End Web Development and APIs",
 description:"Design and build server-side services and APIs using modern back-end frameworks, selecting the right data store and data-access pattern for each workload and structuring business logic across a layered or service-oriented architecture.",
 roles:[
-{role:"Back-End Engineer",does:"Designs and implements REST APIs using Node.js (Fastify/Express) or ASP.NET Core, models relational schemas with migration management and ORM tooling, queries document and key-value stores for appropriate workloads, implements JWT-based authentication and RBAC authorization in the service layer, tunes slow queries with index and query-plan analysis, and delivers observable services with structured logging and distributed tracing."},
-{role:"Full-Stack Engineer (Server Side)",does:"Owns the full server-side of a product feature from API contract through business-logic service layer to data-access layer, selects and integrates the appropriate data store (PostgreSQL, MongoDB, Redis) for each feature's data shape and access patterns, writes background jobs for asynchronous workloads, and ensures every service boundary is observable, tested, and versioned."},
+{role:"Backend Engineer",does:"Designs and implements REST APIs using Node.js (Fastify/Express) or ASP.NET Core, models relational schemas with migration management and ORM tooling, queries document and key-value stores for appropriate workloads, implements JWT-based authentication and RBAC authorization in the service layer, tunes slow queries with index and query-plan analysis, and delivers observable services with structured logging and distributed tracing."},
+{role:"Backend Engineer",does:"Owns the full server-side of a product feature from API contract through business-logic service layer to data-access layer, selects and integrates the appropriate data store (PostgreSQL, MongoDB, Redis) for each feature's data shape and access patterns, writes background jobs for asynchronous workloads, and ensures every service boundary is observable, tested, and versioned."},
 ],
 principles:[
 "N-tier and layered architecture: presentation, application, and data layers; separation of concerns",
@@ -263,7 +263,7 @@ title:"Engineering of AI Systems (MLOps and LLMOps)",
 description:"Apply DevOps discipline to machine-learning and LLM systems, automating data pipelines, model training, deployment, monitoring, and continuous delivery from experiment to governed production.",
 roles:[
 {role:"MLOps Engineer",does:"Designs and operates CI/CD pipelines for ML model training and deployment, manages experiment tracking and model registries with version-controlled promotion workflows, implements statistical drift detection and retraining triggers, and runs medallion data pipelines with quality gates and schema contracts."},
-{role:"LLMOps / AI Platform Engineer",does:"Deploys and operates LLM inference services with token-economy cost control, manages RAG pipelines and vector databases, instruments LLM calls with trace-level cost and latency logging via Langfuse, implements evaluation suites and guardrails, and governs AI systems against OWASP LLM Top 10 risks."},
+{role:"MLOps Engineer",does:"Deploys and operates LLM inference services with token-economy cost control, manages RAG pipelines and vector databases, instruments LLM calls with trace-level cost and latency logging via Langfuse, implements evaluation suites and guardrails, and governs AI systems against OWASP LLM Top 10 risks."},
 ],
 principles:[
 "Version control and branching for AI projects: Git-based data versioning, experiment branches, and code-data co-evolution",
@@ -302,8 +302,8 @@ depth:"Students must reason about failure modes invisible to modeling metrics by
 title:"Mobile, IoT & Edge Software Development",
 description:"Build Android applications and IoT device pipelines, covering native Android architecture and lifecycle alongside sensor-to-cloud MQTT and CoAP communication, edge processing, and offline-first data synchronization.",
 roles:[
-{role:"Android Engineer",does:"Builds Android applications in Kotlin with Jetpack Compose, structures projects around ViewModel and Repository patterns, implements local persistence with Room and DataStore, handles background work within battery and doze-mode constraints using WorkManager, integrates REST APIs with Retrofit and Kotlin Coroutines, and tests with Espresso and unit tests on the JVM."},
-{role:"IoT Platform Engineer",does:"Designs and deploys device-to-cloud pipelines using MQTT brokers and CoAP endpoints, authors Node-RED flows for sensor-actuator orchestration, provisions Raspberry Pi edge nodes, defines QoS policies and broker topology for reliable delivery at scale, and implements secure device authentication with certificate provisioning."},
+{role:"Mobile Developer",does:"Builds Android applications in Kotlin with Jetpack Compose, structures projects around ViewModel and Repository patterns, implements local persistence with Room and DataStore, handles background work within battery and doze-mode constraints using WorkManager, integrates REST APIs with Retrofit and Kotlin Coroutines, and tests with Espresso and unit tests on the JVM."},
+{role:"Embedded Software Engineer",does:"Designs and deploys device-to-cloud pipelines using MQTT brokers and CoAP endpoints, authors Node-RED flows for sensor-actuator orchestration, provisions Raspberry Pi edge nodes, defines QoS policies and broker topology for reliable delivery at scale, and implements secure device authentication with certificate provisioning."},
 ],
 principles:[
 "MVVM architecture for mobile: presentation layer lifecycle management, reactive state streams, repository pattern for data abstraction, and back-stack navigation management",
@@ -342,8 +342,8 @@ depth:"The project integrates five core principles simultaneously: teams must ch
 title:"Design of AI-based and Data-Intensive Systems",
 description:"Architect large systems whose core is data and machine learning, balancing throughput, latency, consistency, and the demands of AI workloads.",
 roles:[
-{role:"Data Engineer",does:"Designs, builds, and maintains batch and streaming ETL/ELT pipelines using Spark and Kafka, manages lakehouse schemas with dbt and Parquet, enforces data quality contracts with Great Expectations, tracks data lineage, and ensures pipelines meet SLA and exactly-once delivery requirements in production."},
-{role:"ML Platform Engineer",does:"Integrates trained ML models into production serving infrastructure, manages feature stores and training-serving skew, instruments model monitoring and drift detection with Evidently, tracks experiments with MLflow, and designs the architecture for reliable, low-latency model inference behind data pipelines."},
+{role:"MLOps Engineer",does:"Designs, builds, and maintains batch and streaming ETL/ELT pipelines using Spark and Kafka, manages lakehouse schemas with dbt and Parquet, enforces data quality contracts with Great Expectations, tracks data lineage, and ensures pipelines meet SLA and exactly-once delivery requirements in production."},
+{role:"MLOps Engineer",does:"Integrates trained ML models into production serving infrastructure, manages feature stores and training-serving skew, instruments model monitoring and drift detection with Evidently, tracks experiments with MLflow, and designs the architecture for reliable, low-latency model inference behind data pipelines."},
 ],
 principles:[
 "Reliability, scalability, and maintainability as orthogonal design properties with distinct failure modes and levers",
@@ -382,8 +382,8 @@ depth:"The project is non-trivial because students must simultaneously satisfy e
 title:"Human-Machine Interaction",
 description:"Bridge cognitive science, design, and AI to produce interfaces that are effective, efficient, and inclusive, covering perception and cognition theory, UX design, multimodal input, accessibility, and AI-augmented interaction patterns.",
 roles:[
-{role:"UX Designer",does:"Conducts contextual inquiries and user interviews, synthesizes findings into personas and journey maps, produces low-fidelity wireframes and high-fidelity interactive Figma prototypes, runs moderated usability tests with recruited participants, audits interfaces against WCAG 2.2, and delivers annotated design system component libraries with usability evaluation reports to engineering teams."},
-{role:"Product Designer",does:"Instruments product analytics and A/B tests using tools like PostHog, interprets quantitative usage data to drive design iteration, integrates AI-augmented features into existing products, translates WCAG compliance requirements into component-level implementation specs, and collaborates with ML and engineering on the interaction design of AI-powered features."},
+{role:"Full-Stack Software Developer",does:"Conducts contextual inquiries and user interviews, synthesizes findings into personas and journey maps, produces low-fidelity wireframes and high-fidelity interactive Figma prototypes, runs moderated usability tests with recruited participants, audits interfaces against WCAG 2.2, and delivers annotated design system component libraries with usability evaluation reports to engineering teams."},
+{role:"Full-Stack Software Developer",does:"Instruments product analytics and A/B tests using tools like PostHog, interprets quantitative usage data to drive design iteration, integrates AI-augmented features into existing products, translates WCAG compliance requirements into component-level implementation specs, and collaborates with ML and engineering on the interaction design of AI-powered features."},
 ],
 principles:[
 "Human information-processing theory: sensory, working, and long-term memory; attention bottlenecks and chunking",
@@ -422,8 +422,8 @@ depth:"The design must simultaneously satisfy contradictory forces: the AI-augme
 title:"Language AI: LLMs and Agentic Systems",
 description:"Build production-grade applications on large language models and autonomous agents, covering transformer foundations, prompting, retrieval-augmented generation, tool use, evaluation, and responsible deployment.",
 roles:[
-{role:"LLM Application Engineer",does:"Designs and builds LLM-powered applications using OpenAI and Anthropic APIs, implements RAG pipelines with vector databases, engineers and evaluates prompts with chain-of-thought strategies, instruments token cost and latency with Langfuse, and governs deployments against OWASP LLM Top 10 risks."},
-{role:"AI Agent Developer",does:"Designs multi-step autonomous agents with tool use and function calling, orchestrates agent workflows using LangChain and LlamaIndex, implements ReAct reasoning patterns, and evaluates agent reliability with automated harnesses and guardrail validation."},
+{role:"ML / AI Engineer",does:"Designs and builds LLM-powered applications using OpenAI and Anthropic APIs, implements RAG pipelines with vector databases, engineers and evaluates prompts with chain-of-thought strategies, instruments token cost and latency with Langfuse, and governs deployments against OWASP LLM Top 10 risks."},
+{role:"ML / AI Engineer",does:"Designs multi-step autonomous agents with tool use and function calling, orchestrates agent workflows using LangChain and LlamaIndex, implements ReAct reasoning patterns, and evaluates agent reliability with automated harnesses and guardrail validation."},
 ],
 principles:[
 "Transformer architecture: multi-head self-attention, Q/K/V projections, positional encoding, and feed-forward sublayers",
@@ -462,8 +462,8 @@ depth:"Students must trace hallucination rates through retrieval quality to chun
 title:"Temporal AI: Time Series & Sequential Decision Making",
 description:"Model data that unfolds over time and learn to make sequential decisions under uncertainty, from classical statistical forecasting through deep sequence models to reinforcement learning.",
 roles:[
-{role:"Time Series Data Scientist",does:"Builds and validates forecasting models for temporal data using statistical and deep learning approaches, performs stationarity testing and autocorrelation analysis, engineers lag and rolling-window features, evaluates with walk-forward cross-validation, and deploys online forecasting services with drift detection."},
-{role:"Reinforcement Learning Engineer",does:"Formulates sequential decision problems as MDPs, implements and trains model-free RL agents (DQN, PPO, SAC) in simulation environments, designs reward functions and curricula, and evaluates policy generalization across environment seeds."},
+{role:"Data Scientist",does:"Builds and validates forecasting models for temporal data using statistical and deep learning approaches, performs stationarity testing and autocorrelation analysis, engineers lag and rolling-window features, evaluates with walk-forward cross-validation, and deploys online forecasting services with drift detection."},
+{role:"ML / AI Engineer",does:"Formulates sequential decision problems as MDPs, implements and trains model-free RL agents (DQN, PPO, SAC) in simulation environments, designs reward functions and curricula, and evaluates policy generalization across environment seeds."},
 ],
 principles:[
 "Stationarity and differencing in time series: ADF test, KPSS, unit roots, and seasonal differencing",
@@ -503,7 +503,7 @@ title:"Vision AI: Deep Learning for Computer Vision",
 description:"Apply deep learning to images and video for classification, detection, and segmentation tasks, from convolutional inductive bias through vision transformers and practical deployment.",
 roles:[
 {role:"Computer Vision Engineer",does:"Implements image classification, object detection, and segmentation pipelines using torchvision and Hugging Face timm, fine-tunes pre-trained CNN and ViT models, designs augmentation strategies, evaluates with mAP and mIoU, and deploys vision inference services with ONNX export."},
-{role:"ML Engineer with Vision Specialization",does:"Integrates vision models into production systems, optimizes inference throughput with TensorRT and ONNX, builds dataset annotation pipelines with Roboflow, monitors for distribution shift, and interprets model decisions with Captum saliency maps."},
+{role:"Computer Vision Engineer",does:"Integrates vision models into production systems, optimizes inference throughput with TensorRT and ONNX, builds dataset annotation pipelines with Roboflow, monitors for distribution shift, and interprets model decisions with Captum saliency maps."},
 ],
 principles:[
 "Classical image processing: spatial filtering (Gaussian, Sobel, Laplacian), histogram equalization, and morphological ops",
@@ -542,8 +542,8 @@ depth:"Teams must justify anchor vs anchor-free choice from data distribution an
 title:"Scalable AI: Big-Data Algorithms",
 description:"Design and implement machine learning algorithms and distributed training systems for data and model scales that exceed a single machine, covering distributed training frameworks, streaming ML, and approximate algorithms.",
 roles:[
-{role:"Distributed ML Engineer",does:"Implements data-parallel and model-parallel training pipelines using PyTorch DDP/FSDP and Horovod, profiles GPU utilization and communication overhead, applies gradient compression and mixed-precision training, scales training across multi-node clusters, and benchmarks throughput against MLPerf baselines."},
-{role:"Big-Data ML Engineer",does:"Builds ML pipelines over datasets too large for a single machine using Dask and Ray, implements streaming ML models with River for online learning, designs approximate nearest-neighbor indexes for billion-scale retrieval, and tunes LightGBM and XGBoost at dataset scale."},
+{role:"ML / AI Engineer",does:"Implements data-parallel and model-parallel training pipelines using PyTorch DDP/FSDP and Horovod, profiles GPU utilization and communication overhead, applies gradient compression and mixed-precision training, scales training across multi-node clusters, and benchmarks throughput against MLPerf baselines."},
+{role:"ML / AI Engineer",does:"Builds ML pipelines over datasets too large for a single machine using Dask and Ray, implements streaming ML models with River for online learning, designs approximate nearest-neighbor indexes for billion-scale retrieval, and tunes LightGBM and XGBoost at dataset scale."},
 ],
 principles:[
 "Data parallelism and gradient aggregation: all-reduce, ring-allreduce, gradient compression, and synchronous vs asynchronous SGD",
@@ -582,8 +582,8 @@ depth:"Students must profile the communication bottleneck in multi-GPU training,
 title:"Generative AI: Deep Generative Models",
 description:"Study the probabilistic theory behind models that generate images, text, and audio, spanning variational autoencoders, generative adversarial networks, diffusion models, and autoregressive generators.",
 roles:[
-{role:"Generative Model Engineer",does:"Implements and trains VAEs, GANs, and diffusion models from scratch in PyTorch, evaluates generation quality with FID and IS metrics, applies conditioning and guidance techniques, fine-tunes pre-trained diffusion models for domain-specific generation, and deploys generative inference pipelines with Gradio demos."},
-{role:"AI Content Generation Specialist",does:"Adapts pre-trained generative models for creative and enterprise use cases using ControlNet and LoRA fine-tuning, engineers conditioning prompts and negative prompts for diffusion models, evaluates output quality and diversity, and integrates generative pipelines into product workflows with appropriate guardrails."},
+{role:"ML / AI Engineer",does:"Implements and trains VAEs, GANs, and diffusion models from scratch in PyTorch, evaluates generation quality with FID and IS metrics, applies conditioning and guidance techniques, fine-tunes pre-trained diffusion models for domain-specific generation, and deploys generative inference pipelines with Gradio demos."},
+{role:"NLP Engineer",does:"Adapts pre-trained generative models for creative and enterprise use cases using ControlNet and LoRA fine-tuning, engineers conditioning prompts and negative prompts for diffusion models, evaluates output quality and diversity, and integrates generative pipelines into product workflows with appropriate guardrails."},
 ],
 principles:[
 "Latent variable models and the ELBO: Jensen's inequality, variational lower bound, and amortized posterior inference",
@@ -622,8 +622,8 @@ depth:"Students must derive the ELBO for the VAE and the gradient estimator for 
 title:"Embodied AI: Robotics & Autonomous Systems",
 description:"Bring AI into the physical world through perception, state estimation, planning, and control for robots and autonomous systems, covering ROS2, simulation, SLAM, motion planning, and sim-to-real transfer.",
 roles:[
-{role:"Robotics Software Engineer",does:"Develops ROS2 nodes for sensor processing, localization, and navigation, implements SLAM pipelines for mapping and localization, configures Nav2 for autonomous mobile robot navigation, integrates perception models for object detection and scene understanding, and validates systems in Gazebo simulation before hardware deployment."},
-{role:"Autonomous Systems Engineer",does:"Designs motion planning pipelines with MoveIt2 for manipulation tasks, implements behavior trees for task sequencing, applies RL policies for continuous control in Isaac Sim, evaluates sim-to-real transfer with domain randomization, and tunes perception-action loops on physical hardware."},
+{role:"Autonomous Systems Software Engineer",does:"Develops ROS2 nodes for sensor processing, localization, and navigation, implements SLAM pipelines for mapping and localization, configures Nav2 for autonomous mobile robot navigation, integrates perception models for object detection and scene understanding, and validates systems in Gazebo simulation before hardware deployment."},
+{role:"Autonomous Systems Software Engineer",does:"Designs motion planning pipelines with MoveIt2 for manipulation tasks, implements behavior trees for task sequencing, applies RL policies for continuous control in Isaac Sim, evaluates sim-to-real transfer with domain randomization, and tunes perception-action loops on physical hardware."},
 ],
 principles:[
 "Robot middleware architecture: decoupled pub/sub topics, synchronous service calls, long-running action servers, parameter management, and lifecycle node management",
@@ -662,8 +662,8 @@ depth:"The project is demanding because students must simultaneously satisfy geo
 title:"Applied Cryptography",
 description:"Understand and correctly apply the cryptographic primitives that underpin secure communication, authentication, and data protection, grounded in provable security and number-theoretic hardness.",
 roles:[
-{role:"Cryptography Engineer",does:"Implements cryptographic protocols correctly using audited libraries (never rolling custom crypto), configures TLS endpoints and validates certificate chains, designs key management and rotation schemes, audits code for cryptographic implementation errors, and integrates AEAD encryption and digital signatures into application data flows."},
-{role:"Security Engineer (Cryptography Focus)",does:"Evaluates cryptographic choices in system designs against known attack classes, reviews JWT and OAuth token configurations, designs PKI hierarchies for enterprise systems, implements certificate transparency monitoring, and advises on post-quantum migration planning."},
+{role:"Security Engineer",does:"Implements cryptographic protocols correctly using audited libraries (never rolling custom crypto), configures TLS endpoints and validates certificate chains, designs key management and rotation schemes, audits code for cryptographic implementation errors, and integrates AEAD encryption and digital signatures into application data flows."},
+{role:"Security Engineer",does:"Evaluates cryptographic choices in system designs against known attack classes, reviews JWT and OAuth token configurations, designs PKI hierarchies for enterprise systems, implements certificate transparency monitoring, and advises on post-quantum migration planning."},
 ],
 principles:[
 "Symmetric encryption and AES: block cipher structure, S-box substitution, ShiftRows, MixColumns, and key schedule",
@@ -702,8 +702,8 @@ depth:"Students must explain every cryptographic choice from first principles: w
 title:"Network Security",
 description:"Analyze, secure, and attack network infrastructure by mastering protocol internals, traffic analysis, firewall and IDS architecture, VPN engineering, and active network-layer attack techniques.",
 roles:[
-{role:"Network Security Engineer",does:"Designs and implements firewall rule sets and ACLs for perimeter and internal segmentation, deploys and tunes IDS/IPS signatures using Snort or Suricata, configures IPsec and WireGuard VPN tunnels, analyzes packet captures to investigate suspicious flows, performs network security assessments, and responds to network-layer incidents."},
-{role:"Security Operations Engineer",does:"Monitors network telemetry and NetFlow data in a SIEM, builds detection rules for protocol anomalies and lateral movement patterns, conducts traffic analysis investigations using Wireshark and Zeek, manages network security tooling in a SOC environment, and performs threat hunting across packet captures and log data."},
+{role:"Network Engineer",does:"Designs and implements firewall rule sets and ACLs for perimeter and internal segmentation, deploys and tunes IDS/IPS signatures using Snort or Suricata, configures IPsec and WireGuard VPN tunnels, analyzes packet captures to investigate suspicious flows, performs network security assessments, and responds to network-layer incidents."},
+{role:"SOC Analyst",does:"Monitors network telemetry and NetFlow data in a SIEM, builds detection rules for protocol anomalies and lateral movement patterns, conducts traffic analysis investigations using Wireshark and Zeek, manages network security tooling in a SOC environment, and performs threat hunting across packet captures and log data."},
 ],
 principles:[
 "The OSI and TCP/IP models as layered security surfaces: attack surfaces at L2 (ARP), L3 (IP), L4 (TCP/UDP), L7 (HTTP)",
@@ -742,8 +742,8 @@ depth:"Students must trace each attack through the protocol state machine (why d
 title:"Hardware & Embedded Systems Security",
 description:"Attack and defend hardware, firmware, and embedded devices by exploiting and countering side-channel leakage, hardware debug interfaces, and boot-chain weaknesses.",
 roles:[
-{role:"Hardware Security Researcher",does:"Performs side-channel attacks (power analysis, timing, EM) using ChipWhisperer, extracts and reverse-engineers firmware with binwalk and Ghidra, probes JTAG and UART interfaces with OpenOCD, analyzes boot-chain security and secure boot implementations, and produces structured vulnerability reports with proof-of-concept exploits."},
-{role:"Embedded Security Engineer",does:"Designs secure boot and firmware update pipelines with cryptographic signing, selects and configures TPM and TEE for key storage and attestation, reviews embedded code for timing vulnerabilities and unsafe memory operations, and validates hardware security controls against defined threat models."},
+{role:"Penetration Tester",does:"Performs side-channel attacks (power analysis, timing, EM) using ChipWhisperer, extracts and reverse-engineers firmware with binwalk and Ghidra, probes JTAG and UART interfaces with OpenOCD, analyzes boot-chain security and secure boot implementations, and produces structured vulnerability reports with proof-of-concept exploits."},
+{role:"Embedded Software Engineer",does:"Designs secure boot and firmware update pipelines with cryptographic signing, selects and configures TPM and TEE for key storage and attestation, reviews embedded code for timing vulnerabilities and unsafe memory operations, and validates hardware security controls against defined threat models."},
 ],
 principles:[
 "Side-channel attacks: simple power analysis (SPA), differential power analysis (DPA), timing attacks, and EM emanation",
@@ -782,8 +782,8 @@ depth:"Students must connect each attack to its physical root cause (why does po
 title:"Cyber-Security Governance, Risk & Compliance",
 description:"Manage cyber-security as an organizational discipline through structured risk assessment, NIST and ISO framework alignment, auditable policy, third-party risk management, and incident response governance.",
 roles:[
-{role:"GRC Analyst",does:"Conducts qualitative and quantitative risk assessments, maps organizational controls to NIST CSF and ISO 27001, maintains a risk register with residual risk scores and remediation tracking, collects and organizes audit evidence packages, produces board-level risk reports, and manages third-party security questionnaire programs."},
-{role:"Information Security Manager",does:"Owns the ISMS lifecycle from scope definition through Statement of Applicability to certification audit, coordinates cross-functional incident response exercises, defines security KPIs and dashboards for executive reporting, manages regulatory compliance mapping (GDPR, HIPAA, PCI-DSS), and leads vendor risk assessments for critical suppliers."},
+{role:"Risk Analyst",does:"Conducts qualitative and quantitative risk assessments, maps organizational controls to NIST CSF and ISO 27001, maintains a risk register with residual risk scores and remediation tracking, collects and organizes audit evidence packages, produces board-level risk reports, and manages third-party security questionnaire programs."},
+{role:"Security Analyst",does:"Owns the ISMS lifecycle from scope definition through Statement of Applicability to certification audit, coordinates cross-functional incident response exercises, defines security KPIs and dashboards for executive reporting, manages regulatory compliance mapping (GDPR, HIPAA, PCI-DSS), and leads vendor risk assessments for critical suppliers."},
 ],
 principles:[
 "Information asset classification and inventory: Crown Jewels analysis, sensitivity labels, and CMDB integration",
@@ -822,8 +822,8 @@ depth:"The project is demanding because students must defend every risk score wi
 title:"Blockchain and Decentralized Cryptographic Systems",
 description:"Study distributed ledgers, consensus mechanisms, and smart contracts, and the security properties and limits of decentralized systems including DeFi protocols.",
 roles:[
-{role:"Blockchain Developer",does:"Writes and deploys Solidity smart contracts on Ethereum testnets using Hardhat, tests contracts with property-based and invariant testing, audits contracts for reentrancy and access-control vulnerabilities using Slither, integrates on-chain data with off-chain applications via ethers.js, and designs gas-efficient contract architectures with OpenZeppelin."},
-{role:"Web3 Security Auditor",does:"Manually audits Solidity codebases for common vulnerability classes (reentrancy, integer overflow, front-running, oracle manipulation), produces structured audit reports with severity ratings and proof-of-concept exploits, verifies fixes in reaudit engagements, and assesses DeFi protocol economic security."},
+{role:"Security Engineer",does:"Writes and deploys Solidity smart contracts on Ethereum testnets using Hardhat, tests contracts with property-based and invariant testing, audits contracts for reentrancy and access-control vulnerabilities using Slither, integrates on-chain data with off-chain applications via ethers.js, and designs gas-efficient contract architectures with OpenZeppelin."},
+{role:"Penetration Tester",does:"Manually audits Solidity codebases for common vulnerability classes (reentrancy, integer overflow, front-running, oracle manipulation), produces structured audit reports with severity ratings and proof-of-concept exploits, verifies fixes in reaudit engagements, and assesses DeFi protocol economic security."},
 ],
 principles:[
 "Distributed ledger and Byzantine fault tolerance: two-generals problem, BFT assumptions, safety vs liveness trade-off",
@@ -862,8 +862,8 @@ depth:"Students must implement the AMM or lending invariant correctly (constant-
 title:"Mission-Critical Real-Time Systems",
 description:"Design, implement, and certify software for systems where timing failures have safety consequences, applying RTOS scheduling theory, deterministic communication protocols, formal verification, and safety-standard process.",
 roles:[
-{role:"Embedded Real-Time Software Engineer",does:"Develops and integrates tasks on RTOS platforms (FreeRTOS, Zephyr, VxWorks), performs schedulability analysis with Rate Monotonic and EDF algorithms, implements inter-task communication with bounded queues and semaphores, writes ISR-safe device drivers, profiles worst-case execution time with hardware timing instrumentation, and participates in IEC 61508 or DO-178C software verification activities."},
-{role:"Functional Safety Engineer",does:"Defines safety requirements and hazard analyses (FMEA, FTA) for safety-critical systems, maps software design decisions to ASIL or SIL integrity levels, authors qualification plans for safety-critical software tools, reviews code against MISRA C or AUTOSAR C++ guidelines, and coordinates DO-178C compliance evidence packages including requirements traceability matrices and structural coverage reports."},
+{role:"Embedded Software Engineer",does:"Develops and integrates tasks on RTOS platforms (FreeRTOS, Zephyr, VxWorks), performs schedulability analysis with Rate Monotonic and EDF algorithms, implements inter-task communication with bounded queues and semaphores, writes ISR-safe device drivers, profiles worst-case execution time with hardware timing instrumentation, and participates in IEC 61508 or DO-178C software verification activities."},
+{role:"Defense Software Engineer",does:"Defines safety requirements and hazard analyses (FMEA, FTA) for safety-critical systems, maps software design decisions to ASIL or SIL integrity levels, authors qualification plans for safety-critical software tools, reviews code against MISRA C or AUTOSAR C++ guidelines, and coordinates DO-178C compliance evidence packages including requirements traceability matrices and structural coverage reports."},
 ],
 principles:[
 "Hard versus soft real-time semantics: deadline miss consequences, determinism requirements, and jitter budget analysis",
@@ -926,42 +926,32 @@ function listTable(items,col){
     "</tbody></table>";
 }
 const ROLE_SLUG={
-  "AI Agent Developer":"ml-ai-engineer",
-  "Android Engineer":"mobile-developer",
-  "Application Security Engineer":"security-engineer",
-  "Autonomous Systems Engineer":"autonomous-systems-software-engineer",
-  "Back-End Engineer":"backend-engineer",
-  "Big-Data ML Engineer":"ml-ai-engineer",
-  "Cloud Infrastructure Engineer":"cloud-platform-engineer",
+  "ML / AI Engineer":"ml-ai-engineer",
+  "NLP Engineer":"nlp-engineer",
   "Computer Vision Engineer":"computer-vision-engineer",
-  "Cryptography Engineer":"security-engineer",
-  "Data Scientist":"data-scientist",
-  "Defense Software Engineer":"defense-software-engineer",
-  "Distributed ML Engineer":"ml-ai-engineer",
-  "Embedded Real-Time Software Engineer":"embedded-software-engineer",
-  "Embedded Security Engineer":"embedded-software-engineer",
-  "Front-End Engineer":"full-stack-software-developer",
-  "Full-Stack Engineer (Server Side)":"backend-engineer",
-  "Functional Safety Engineer":"defense-software-engineer",
-  "Generative Model Engineer":"ml-ai-engineer",
-  "GRC Analyst":"risk-analyst",
-  "Information Security Manager":"security-analyst",
-  "IoT Platform Engineer":"embedded-software-engineer",
-  "LLM Application Engineer":"ml-ai-engineer",
-  "LLMOps / AI Platform Engineer":"mlops-engineer",
-  "ML Engineer with Vision Specialization":"computer-vision-engineer",
-  "ML Platform Engineer":"mlops-engineer",
   "MLOps Engineer":"mlops-engineer",
-  "Network Security Engineer":"network-engineer",
-  "Platform Engineer / DevOps Engineer":"devops-engineer",
-  "Reinforcement Learning Engineer":"ml-ai-engineer",
-  "Robotics Software Engineer":"autonomous-systems-software-engineer",
-  "Security Engineer (Cryptography Focus)":"security-engineer",
-  "Security Operations Engineer":"soc-analyst",
-  "Signal-Processing Engineer":"signal-processing-software-engineer",
-  "Software Development Engineer in Test (SDET)":"qa-engineer",
-  "Time Series Data Scientist":"data-scientist",
-  "UI Performance Engineer":"full-stack-software-developer",
+  "Algorithm Engineer":"algorithm-engineer",
+  "Data Scientist":"data-scientist",
+  "Backend Engineer":"backend-engineer",
+  "Full-Stack Software Developer":"full-stack-software-developer",
+  "Mobile Developer":"mobile-developer",
+  "DevOps Engineer":"devops-engineer",
+  "QA Engineer":"qa-engineer",
+  "Cloud & Platform Engineer":"cloud-platform-engineer",
+  "Security Engineer":"security-engineer",
+  "Network Engineer":"network-engineer",
+  "SOC Analyst":"soc-analyst",
+  "Security Analyst":"security-analyst",
+  "Risk Analyst":"risk-analyst",
+  "Penetration Tester":"penetration-tester",
+  "DevSecOps Engineer":"devsecops-engineer",
+  "Embedded Software Engineer":"embedded-software-engineer",
+  "Defense Software Engineer":"defense-software-engineer",
+  "Autonomous Systems Software Engineer":"autonomous-systems-software-engineer",
+  "Signal-Processing Software Engineer":"signal-processing-software-engineer",
+  "Secure Communications Software Engineer":"secure-communications-software-engineer",
+  "Simulation Software Engineer":"simulation-software-engineer",
+  "Simulation & Modeling Engineer":"simulation-modeling-engineer",
 };
 function roleLink(name){
   const slug=ROLE_SLUG[name];
