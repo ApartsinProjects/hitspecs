@@ -36,6 +36,8 @@ a{color:inherit;text-decoration:none}
 .card-title{font-size:22px;font-weight:800;line-height:1.2;letter-spacing:-.02em;color:var(--text);margin-bottom:8px}
 .card-desc{font-size:13px;color:var(--sub);line-height:1.55;max-width:72ch;margin-bottom:16px}
 .instructor-note{font-size:11.5px;color:var(--muted);background:var(--sur2);border:1px solid var(--border);border-left:3px solid var(--muted);border-radius:6px;padding:8px 13px;margin-bottom:20px;font-style:italic}
+a.role-ref{color:var(--text);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;text-decoration-thickness:1px}
+a.role-ref:hover{text-decoration-style:solid;color:var(--navy)}
 .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.section-grid .full{grid-column:1/-1}
 .sec{border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .sec-head{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em}
@@ -914,9 +916,52 @@ function listTable(items,col){
     items.map((t,i)=>"<tr><td class='num-cell'>"+String(i+1).padStart(2,"0")+"</td><td>"+escHtml(t)+"</td></tr>").join("")+
     "</tbody></table>";
 }
+const ROLE_SLUG={
+  "AI Agent Developer":"ml-ai-engineer",
+  "Android Engineer":"mobile-developer",
+  "Application Security Engineer":"security-engineer",
+  "Autonomous Systems Engineer":"autonomous-systems-software-engineer",
+  "Back-End Engineer":"backend-engineer",
+  "Big-Data ML Engineer":"ml-ai-engineer",
+  "Cloud Infrastructure Engineer":"cloud-platform-engineer",
+  "Computer Vision Engineer":"computer-vision-engineer",
+  "Cryptography Engineer":"security-engineer",
+  "Data Scientist":"data-scientist",
+  "Defense Software Engineer":"defense-software-engineer",
+  "Distributed ML Engineer":"ml-ai-engineer",
+  "Embedded Real-Time Software Engineer":"embedded-software-engineer",
+  "Embedded Security Engineer":"embedded-software-engineer",
+  "Front-End Engineer":"full-stack-software-developer",
+  "Full-Stack Engineer (Server Side)":"backend-engineer",
+  "Functional Safety Engineer":"defense-software-engineer",
+  "Generative Model Engineer":"ml-ai-engineer",
+  "GRC Analyst":"risk-analyst",
+  "Information Security Manager":"security-analyst",
+  "IoT Platform Engineer":"embedded-software-engineer",
+  "LLM Application Engineer":"ml-ai-engineer",
+  "LLMOps / AI Platform Engineer":"mlops-engineer",
+  "ML Engineer with Vision Specialization":"computer-vision-engineer",
+  "ML Platform Engineer":"mlops-engineer",
+  "MLOps Engineer":"mlops-engineer",
+  "Network Security Engineer":"network-engineer",
+  "Platform Engineer / DevOps Engineer":"devops-engineer",
+  "Reinforcement Learning Engineer":"ml-ai-engineer",
+  "Robotics Software Engineer":"autonomous-systems-software-engineer",
+  "Security Engineer (Cryptography Focus)":"security-engineer",
+  "Security Operations Engineer":"soc-analyst",
+  "Signal-Processing Engineer":"signal-processing-software-engineer",
+  "Software Development Engineer in Test (SDET)":"qa-engineer",
+  "Time Series Data Scientist":"data-scientist",
+  "UI Performance Engineer":"full-stack-software-developer",
+};
+function roleLink(name){
+  const slug=ROLE_SLUG[name];
+  if(!slug)return escHtml(name);
+  return "<a href='careers.html#"+slug+"' class='role-ref'>"+escHtml(name)+"</a>";
+}
 function rolesTable(roles){
   return "<table><thead><tr><th>Job Role</th><th>What professionals in this role actually do</th></tr></thead><tbody>"+
-    roles.map(r=>"<tr><td style='width:32%;font-weight:600'>"+escHtml(r.role)+"</td><td>"+escHtml(r.does)+"</td></tr>").join("")+
+    roles.map(r=>"<tr><td style='width:32%;font-weight:600'>"+roleLink(r.role)+"</td><td>"+escHtml(r.does)+"</td></tr>").join("")+
     "</tbody></table>";
 }
 function projectTable(p){
