@@ -151,6 +151,9 @@ main.course-body,main.conc{padding-top:4.2rem}
 .chero .eyebrow{color:rgba(255,255,255,.75)}
 .chero .lead{color:rgba(255,255,255,.92)}
 .chero.course .lead{font-size:1.02rem}
+.back-link{margin:.25rem 0 .1rem;font-size:.78rem}
+.back-link a{color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:1px;transition:color .15s,border-color .15s}
+.back-link a:hover{color:#fff;border-color:rgba(255,255,255,.7)}
 
 /* concentration body */
 .conc-grid{display:grid;grid-template-columns:1fr 300px;gap:2.2rem;align-items:start}
