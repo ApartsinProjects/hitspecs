@@ -382,8 +382,8 @@ depth:"The project is non-trivial because students must simultaneously satisfy e
 title:"Human-Machine Interaction",
 description:"Bridge cognitive science, design, and AI to produce interfaces that are effective, efficient, and inclusive, covering perception and cognition theory, UX design, multimodal input, accessibility, and AI-augmented interaction patterns.",
 roles:[
-{role:"Full-Stack Software Developer",does:"Conducts contextual inquiries and user interviews, synthesizes findings into personas and journey maps, produces low-fidelity wireframes and high-fidelity interactive Figma prototypes, runs moderated usability tests with recruited participants, audits interfaces against WCAG 2.2, and delivers annotated design system component libraries with usability evaluation reports to engineering teams."},
-{role:"Full-Stack Software Developer",does:"Instruments product analytics and A/B tests using tools like PostHog, interprets quantitative usage data to drive design iteration, integrates AI-augmented features into existing products, translates WCAG compliance requirements into component-level implementation specs, and collaborates with ML and engineering on the interaction design of AI-powered features."},
+{role:"UX Designer",does:"Conducts contextual inquiries and user interviews, synthesizes findings into personas and journey maps, produces low-fidelity wireframes and high-fidelity interactive Figma prototypes, runs moderated usability tests with recruited participants, audits interfaces against WCAG 2.2, and delivers annotated design system component libraries with usability evaluation reports to engineering teams."},
+{role:"Product Designer",does:"Instruments product analytics and A/B tests using tools like PostHog, interprets quantitative usage data to drive design iteration, integrates AI-augmented features into existing products, translates WCAG compliance requirements into component-level implementation specs, and collaborates with ML and engineering on the interaction design of AI-powered features."},
 ],
 principles:[
 "Human information-processing theory: sensory, working, and long-term memory; attention bottlenecks and chunking",
@@ -662,7 +662,7 @@ depth:"The project is demanding because students must simultaneously satisfy geo
 title:"Applied Cryptography",
 description:"Understand and correctly apply the cryptographic primitives that underpin secure communication, authentication, and data protection, grounded in provable security and number-theoretic hardness.",
 roles:[
-{role:"Security Engineer",does:"Implements cryptographic protocols correctly using audited libraries (never rolling custom crypto), configures TLS endpoints and validates certificate chains, designs key management and rotation schemes, audits code for cryptographic implementation errors, and integrates AEAD encryption and digital signatures into application data flows."},
+{role:"Cryptography Engineer",does:"Implements cryptographic protocols correctly using audited libraries (never rolling custom crypto), configures TLS endpoints and validates certificate chains, designs key management and rotation schemes, audits code for cryptographic implementation errors, and integrates AEAD encryption and digital signatures into application data flows."},
 {role:"Security Engineer",does:"Evaluates cryptographic choices in system designs against known attack classes, reviews JWT and OAuth token configurations, designs PKI hierarchies for enterprise systems, implements certificate transparency monitoring, and advises on post-quantum migration planning."},
 ],
 principles:[
@@ -822,7 +822,7 @@ depth:"The project is demanding because students must defend every risk score wi
 title:"Blockchain and Decentralized Cryptographic Systems",
 description:"Study distributed ledgers, consensus mechanisms, and smart contracts, and the security properties and limits of decentralized systems including DeFi protocols.",
 roles:[
-{role:"Security Engineer",does:"Writes and deploys Solidity smart contracts on Ethereum testnets using Hardhat, tests contracts with property-based and invariant testing, audits contracts for reentrancy and access-control vulnerabilities using Slither, integrates on-chain data with off-chain applications via ethers.js, and designs gas-efficient contract architectures with OpenZeppelin."},
+{role:"Blockchain Developer",does:"Writes and deploys Solidity smart contracts on Ethereum testnets using Hardhat, tests contracts with property-based and invariant testing, audits contracts for reentrancy and access-control vulnerabilities using Slither, integrates on-chain data with off-chain applications via ethers.js, and designs gas-efficient contract architectures with OpenZeppelin."},
 {role:"Penetration Tester",does:"Manually audits Solidity codebases for common vulnerability classes (reentrancy, integer overflow, front-running, oracle manipulation), produces structured audit reports with severity ratings and proof-of-concept exploits, verifies fixes in reaudit engagements, and assesses DeFi protocol economic security."},
 ],
 principles:[
@@ -944,6 +944,10 @@ const ROLE_SLUG={
   "Security Analyst":"security-analyst",
   "Risk Analyst":"risk-analyst",
   "Penetration Tester":"penetration-tester",
+  "Blockchain Developer":"blockchain-developer",
+  "Cryptography Engineer":"cryptography-engineer",
+  "UX Designer":"ux-designer",
+  "Product Designer":"product-designer",
   "DevSecOps Engineer":"devsecops-engineer",
   "Embedded Software Engineer":"embedded-software-engineer",
   "Defense Software Engineer":"defense-software-engineer",
