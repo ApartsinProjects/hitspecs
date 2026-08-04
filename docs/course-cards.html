@@ -38,6 +38,9 @@ a{color:inherit;text-decoration:none}
 .instructor-note{font-size:11.5px;color:var(--muted);background:var(--sur2);border:1px solid var(--border);border-left:3px solid var(--muted);border-radius:6px;padding:8px 13px;margin-bottom:20px;font-style:italic}
 a.role-ref{color:var(--text);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;text-decoration-thickness:1px}
 a.role-ref:hover{text-decoration-style:solid;color:var(--navy)}
+.hero-actions{margin-top:1.4rem}
+.hero-dl{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:20px;border:1.5px solid rgba(255,255,255,.4);color:#fff;font-size:13px;font-weight:600;text-decoration:none;transition:background .15s,border-color .15s}
+.hero-dl:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.7)}
 .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.section-grid .full{grid-column:1/-1}
 .sec{border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .sec-head{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em}
@@ -76,6 +79,12 @@ table tr:nth-child(even) td{background:var(--surface)}
     <p class="eyebrow">ADVANCED CS ELECTIVES · 20 COURSES</p>
     <h1>Course Cards</h1>
     <p class="lead">Each card defines the scope, target job roles, transferable principles, hands-on tools, prerequisites, and student project for one of the twenty core elective courses across six concentrations.</p>
+    <div class="hero-actions">
+      <a class="hero-dl" href="core-elective-course-form.docx" download>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Course Card Template (.docx)
+      </a>
+    </div>
   </div>
 </section>
 <div class="layout"><aside class="sidebar" id="sidebar"></aside><main class="cards" id="cards"></main></div>
