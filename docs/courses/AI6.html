@@ -21,6 +21,8 @@
   <a class="nav-pill" href="../compendium.html">Compendium</a>
   <a class="nav-pill" href="../core-courses.html">Core Electives</a>
   <a class="nav-pill" href="../baseline-mapping.html">Mapping</a>
+  <a class="nav-pill" href="../course-references.html">References</a>
+
   <a class="nav-pill" href="../course-cards.html">Course Cards</a>
   <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">&#9680;</button>
 </nav>
@@ -29,7 +31,7 @@
     <p class="eyebrow">COURSE &middot; AI6</p>
     <h1>Embodied AI: Robotics &amp; Autonomous Systems</h1>
     <p class="hetx" dir="rtl">בינה מלאכותית פיזית: רובוטיקה ומערכות אוטונומיות</p>
-    <p class="csub">the estimation, planning, and control theory of embodied autonomous robots</p>
+    <p class="csub">the middleware, estimation, planning, and control engineering of autonomous mobile robots</p>
     <p class="lead">Perceive, plan, and act with embodied autonomous systems</p>
     <div class="cmeta"><span>Year 3</span><span>13 weeks</span><span>2h lecture + 2h practice</span><span>Project-based</span></div>
   </div>
@@ -40,23 +42,41 @@
     <div class="conc-main">
       <section class="block">
         <h2>About this course</h2>
-        <p>Bring AI into the physical world through perception, planning, and control for robots and autonomous systems.</p>
+        <p>Bring AI into the physical world through robot middleware, sensor fusion, SLAM, motion planning, behavior trees, model-based control, and sim-to-real transfer for mobile manipulation systems.</p>
       </section>
       <div class="formatbox" style="border-left:4px solid #7A3E9D">
         <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
-      </div><div class="buildbox" style="border-left:4px solid #7A3E9D"><span class="bk" style="color:#7A3E9D">What you will build</span><p>Built a full perceive-plan-act autonomy stack in Python with ROS 2, PyBullet, and PyTorch, fusing sensors with Kalman and particle filters, planning with A-star and RRT, and tracking trajectories with model-predictive and reinforcement-learning controllers under sim-to-real domain randomization.</p></div>
+      </div><div class="buildbox" style="border-left:4px solid #7A3E9D"><span class="bk" style="color:#7A3E9D">What you will build</span><p>An autonomous mobile robot system in Gazebo and ROS2: the robot localizes with ORB-SLAM3, navigates to goal positions while avoiding dynamic obstacles with Nav2, executes a manipulation task with MoveIt2, and demonstrates sim-to-real transfer to a higher-fidelity environment in NVIDIA Isaac Sim.</p></div>
       <section class="block">
         <h2>Expected outcomes</h2>
-        <ul class="objectives" style="--accent:#7A3E9D"><li>Derive rigid-body kinematics, transforms, and state representations for robots</li><li>Formalize probabilistic state estimation and the Bayes filter</li><li>Derive the Kalman filter and particle filter for sensor fusion</li><li>Implement motion planning with sampling-based and graph-search algorithms</li><li>Derive feedback control including PID and the linear-quadratic regulator</li><li>Apply reinforcement learning to continuous robot control</li><li>Build perception pipelines fusing camera, lidar, and inertial sensors</li><li>Analyze the sim-to-real gap and domain randomization strategies</li><li>Evaluate autonomy with task success, safety, and robustness metrics</li><li>Deploy an embodied agent in simulation with a real-transfer path</li></ul>
+        <ul class="objectives" style="--accent:#7A3E9D">
+          <li>Architect and configure a ROS2 middleware stack with pub/sub topics, service calls, action servers, and lifecycle node management for a complete robot system.</li>
+          <li>Fuse IMU, LiDAR, and camera data using EKF and UKF for robust state estimation, and build SLAM pipelines with ORB-SLAM3 and LIO-SAM across feature-based, direct, and graph-based approaches.</li>
+          <li>Represent environments as probabilistic occupancy grids and configure Nav2 costmap layers; plan global and local paths with RRT, PRM, A*, and TEB/MPC trajectory optimization.</li>
+          <li>Sequence autonomous missions with behavior trees in py_trees and design model-based controllers (PID, LQR, MPC) to track planned trajectories.</li>
+          <li>Evaluate and close the sim-to-real gap using domain randomization and system identification, and implement safety-critical watchdog and fail-safe behaviors for physical deployments.</li>
+          <li>Process 3D point clouds with PCL (voxelization, ICP, segmentation) and integrate perception with MoveIt2 manipulation planning in a full perceive-plan-act pipeline.</li>
+        </ul>
       </section>
       <section class="block">
         <h2>Key topics</h2>
-        <ul class="topics" style="--accent:#7A3E9D"><li>Perception &amp; sensor fusion</li><li>Motion planning</li><li>Control &amp; RL for robotics</li><li>Simulation-to-real transfer</li></ul>
+        <ul class="topics" style="--accent:#7A3E9D"><li>ROS2 middleware &amp; node architecture</li><li>Sensor fusion &amp; SLAM</li><li>Motion planning &amp; navigation</li><li>Behavior trees &amp; model-based control</li><li>Sim-to-real transfer</li><li>Point cloud processing &amp; manipulation</li></ul>
       </section>
       <section class="block">
         <h2>Theoretical foundations</h2>
         <p class="muted">The concepts and results this course rests on.</p>
-        <ul class="foundations" style="--accent:#7A3E9D"><li>rigid-body kinematics, transforms, and robot state representation</li><li>the Bayes filter and the recursive predict-update cycle</li><li>the Kalman filter and the particle filter for sensor fusion</li><li>configuration-space planning with A-star and rapidly-exploring random trees</li><li>PID control and the linear-quadratic regulator</li><li>the discrete-time Riccati equation and model-predictive control</li><li>policy-gradient reinforcement learning for continuous control</li></ul>
+        <ul class="foundations" style="--accent:#7A3E9D">
+          <li>Robot middleware architecture: publish/subscribe decoupling, synchronous service calls, long-running action servers, parameter management, and ROS2 lifecycle node state machine</li>
+          <li>Sensor fusion for state estimation: IMU, LiDAR, and camera integration; extended Kalman filter (EKF) and unscented Kalman filter (UKF) derivation and implementation</li>
+          <li>Simultaneous localization and mapping: feature-based (ORB-SLAM3), direct, and graph-based pose optimization with loop closure and bundle adjustment</li>
+          <li>Occupancy grids and probabilistic map representations: log-odds Bayesian update, ray casting, and Nav2 costmap inflation layers</li>
+          <li>Motion planning: sampling-based algorithms (RRT/PRM), graph-search algorithms (A*/Dijkstra), and trajectory optimization (TEB, receding-horizon MPC)</li>
+          <li>Behavior trees for hierarchical task sequencing: tick execution model, selector and sequence composites, condition nodes, and action nodes</li>
+          <li>Model-based control: PID tuning, LQR optimal control with cost matrices (Q, R), and model-predictive control with receding horizon optimization</li>
+          <li>Sim-to-real transfer: domain randomization, system identification, sim-to-real gap quantification, and hardware deployment validation</li>
+          <li>Safety and fault tolerance in physical autonomous systems: watchdog timers, fallback behaviors, and fail-safe modes for lifecycle management</li>
+          <li>Point cloud processing and 3D scene understanding: voxelization, ICP scan registration, surface normal estimation, and Euclidean cluster segmentation</li>
+        </ul>
       </section>
       <section class="block">
         <h2>Prerequisites</h2>
@@ -65,26 +85,167 @@
       </section>
       <section class="block">
         <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
-        <div class="weeks"><div class="wpart">Embodied foundations</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 1</div><div class="wk-body"><b>Robots, frames, and kinematics</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover rigid-body transforms, coordinate frames, forward kinematics, and robot state representation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Set up a robot simulator and command joint and base motion.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Choose the embodied task and simulator for the running project.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=l3-yZSdUDPY" target="_blank" rel="noopener">3D Coordinate Systems: Welcome (Cyrill Stachniss)</a> &middot; <a href="https://www.youtube.com/watch?v=YXGUGSAv09A" target="_blank" rel="noopener">3D Coordinates and Rotations (Cyrill Stachniss)</a> &middot; <a href="https://www.youtube.com/watch?v=MQdm0Z_gNcw" target="_blank" rel="noopener">Homogeneous Coordinates (Cyrill Stachniss)</a></div></div></div><div class="wpart">Estimation</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 2</div><div class="wk-body"><b>Probabilistic state estimation</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the Bayes filter, the Markov assumption, and the recursive predict-update cycle.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a discrete Bayes filter for robot localization.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a basic state estimator to the project robot.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=0lKHFJpaZvE" target="_blank" rel="noopener">Bayes Filter (Cyrill Stachniss)</a></div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 3</div><div class="wk-body"><b>Kalman filtering</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the Kalman filter and its extended form for nonlinear Gaussian estimation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a Kalman filter for fusing noisy position and velocity sensors.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Upgrade estimation with a Kalman filter for sensor fusion.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=E-6paM_Iwfc" target="_blank" rel="noopener">Kalman Filter and EKF (Cyrill Stachniss)</a></div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 4</div><div class="wk-body"><b>Particle filters and SLAM</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the particle filter, importance sampling, and the basics of simultaneous localization and mapping.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement a particle filter for global localization in a known map.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add robust localization to the project robot.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=uYIjB93oAUo" target="_blank" rel="noopener">Particle Filter (Cyrill Stachniss)</a> &middot; <a href="https://www.youtube.com/watch?v=MsYlueVDLI0" target="_blank" rel="noopener">Monte Carlo Localization (Cyrill Stachniss)</a> &middot; <a href="https://www.youtube.com/watch?v=X30sEgIws0g" target="_blank" rel="noopener">EKF-SLAM (Cyrill Stachniss)</a></div></div></div><div class="wpart">Perception</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 5</div><div class="wk-body"><b>Perception and sensor fusion<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover camera and lidar sensing, point clouds, calibration, and multi-sensor fusion.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: each team defends its task specification and metrics.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Lock the specification and build a perception stage fusing sensors.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=dhzLQfDBx2Q" target="_blank" rel="noopener">ICP and Point Cloud Registration (Cyrill Stachniss)</a></div></div></div><div class="wpart">Planning</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 6</div><div class="wk-body"><b>Graph-search motion planning</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive configuration space, A-star, Dijkstra, and the heuristics behind optimal graph search.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement A-star planning on an occupancy grid.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add grid-based path planning to the robot.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=HR1TNa8Lp7w" target="_blank" rel="noopener">Robot Motion Planning using A* (Cyrill Stachniss)</a></div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 7</div><div class="wk-body"><b>Sampling-based planning</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We cover RRT, RRT-star, probabilistic roadmaps, and planning in high-dimensional configuration spaces.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement RRT and compare path quality with graph search.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Extend planning to sampling-based methods for complex spaces.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=NECuabO8WEY" target="_blank" rel="noopener">Sampling-Based Motion Planning 1/2 (Intro to Robotics L33)</a> &middot; <a href="https://www.youtube.com/watch?v=Sq55X22fH94" target="_blank" rel="noopener">Sampling-Based Motion Planning 2/2 (Intro to Robotics L34)</a></div></div></div><div class="wpart">Control</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 8</div><div class="wk-body"><b>Feedback control<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive PID control, stability, and the linear-quadratic regulator as optimal feedback.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: interim demo of the robot navigating with estimation and planning.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a feedback controller to track planned trajectories.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=nyqJJdhReiA" target="_blank" rel="noopener">Linear Systems (Control Bootcamp)</a> &middot; <a href="https://www.youtube.com/watch?v=vxTJMGqjGdg" target="_blank" rel="noopener">PI Control Example (Control Bootcamp)</a> &middot; <a href="https://www.youtube.com/watch?v=1_UobILf3cc" target="_blank" rel="noopener">LQR Control (Control Bootcamp)</a></div></div></div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 9</div><div class="wk-body"><b>Optimal and model-predictive control</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We derive the LQR, the discrete-time Riccati equation, and receding-horizon model-predictive control.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Implement an MPC controller and compare with PID tracking.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Upgrade control with model-predictive trajectory tracking.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=1_UobILf3cc" target="_blank" rel="noopener">LQR Control (Control Bootcamp)</a> &middot; <a href="https://www.youtube.com/watch?v=YwodGM2eoy4" target="_blank" rel="noopener">Model Predictive Control</a></div></div></div><div class="wpart">Learning control</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 10</div><div class="wk-body"><b>Reinforcement learning for control</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We adapt policy-gradient and actor-critic methods to continuous action spaces for robot control.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Train an RL policy for a locomotion or manipulation task in simulation.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Add a learned control policy to the robot.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=GKoKNYaBvM0" target="_blank" rel="noopener">Berkeley CS285 Lecture 5, Part 1</a> &middot; <a href="https://www.youtube.com/watch?v=wr00ef_TY6Q" target="_blank" rel="noopener">Berkeley CS285 Lecture 6, Part 1</a></div></div></div><div class="wpart">Sim-to-real</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 11</div><div class="wk-body"><b>Bridging the reality gap</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We analyze the sim-to-real gap, domain randomization, system identification, and robustness.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Apply domain randomization and test policy robustness across perturbed dynamics.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Make the learned policy robust to a sim-to-real transfer.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=ac_W9IgKX2c" target="_blank" rel="noopener">Berkeley CS287 Lecture 22: Sim2Real and Domain Randomization</a></div></div></div><div class="wpart">Integration</div><div class="week"><div class="wk-num" style="color:#7A3E9D">Wk 12</div><div class="wk-body"><b>Full autonomy stack</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We integrate perception, estimation, planning, and control into one autonomy pipeline and discuss safety.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Connect all modules into an end-to-end autonomous behavior.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Integrate the full perceive-plan-act stack on the robot.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=kFlybTKbiq0" target="_blank" rel="noopener">MIT 6.843 Robotic Manipulation: Pick and Place</a> &middot; <a href="https://www.youtube.com/watch?v=Tyz1jRfyWgY" target="_blank" rel="noopener">Russ Tedrake (MIT): Learning Manipulation</a></div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#7A3E9D">Wk 13</div><div class="wk-body"><b>Final defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>We synthesize estimation, planning, and control theory and survey open problems in embodied AI.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation: final demo with task metrics and an oral defense of design choices.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the complete autonomous embodied agent with evaluation results.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=whpK0HDtOJ0" target="_blank" rel="noopener">Russ Tedrake: Dexterous Manipulation with Diffusion Policies</a></div></div></div></div>
+        <div class="weeks">
+          <div class="wpart">ROS2 Foundations</div>
+          <div class="week">
+            <div class="wk-num" style="color:#7A3E9D">Wk 1</div>
+            <div class="wk-body"><b>Robot middleware architecture</b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>Robot middleware architecture: decoupled pub/sub topics, synchronous service calls, long-running action servers, parameter management, and lifecycle node state machine in ROS2.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Launch a multi-node system in ROS2: implement publishers, subscribers, a service server, an action server, and lifecycle node transitions; inspect topic graphs with rqt.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Initialize the team ROS2 workspace; define the robot node graph, topic schema, and message interfaces for the project.</div>
+              <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=Gg25GfA456o" target="_blank" rel="noopener">ROS2 for Beginners: Nodes, Topics, Services (Edouard Renard)</a></div>
+            </div>
+          </div>
+          <div class="wpart">Estimation &amp; SLAM</div>
+          <div class="week">
+            <div class="wk-num" style="color:#7A3E9D">Wk 2</div>
+            <div class="wk-body"><b>Sensor fusion: EKF and UKF</b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>Sensor fusion for state estimation: IMU, LiDAR, and camera integration; derivation of the extended Kalman filter (EKF) and unscented Kalman filter (UKF) for nonlinear systems.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Spawn a differential-drive robot in Gazebo, attach IMU and LiDAR plugins, and implement an EKF node that fuses noisy odometry with IMU measurements.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Integrate sensor drivers for the project robot in Gazebo and collect calibration data to tune the EKF state estimator.</div>
+              <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=E-6paM_Iwfc" target="_blank" rel="noopener">Kalman Filter and EKF (Cyrill Stachniss)</a></div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="wk-num" style="color:#7A3E9D">Wk 3</div>
+            <div class="wk-body"><b>Simultaneous localization and mapping</b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>SLAM approaches: feature-based, direct, and graph-based pose optimization with loop closure; data association, pose graph construction, and bundle adjustment.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Configure ORB-SLAM3 in ROS2 monocular and RGB-D modes; run it on a recorded bag file and visualize the 3D map and trajectory in RViz2.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Integrate ORB-SLAM3 into the project robot stack and produce a map of the Gazebo simulation environment.</div>
+              <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=X30sEgIws0g" target="_blank" rel="noopener">EKF-SLAM (Cyrill Stachniss)</a> &middot; <a href="https://www.youtube.com/watch?v=MsYlueVDLI0" target="_blank" rel="noopener">Monte Carlo Localization (Cyrill Stachniss)</a></div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="wk-num" style="color:#7A3E9D">Wk 4</div>
+            <div class="wk-body"><b>Occupancy grids and navigation costmaps</b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>Probabilistic map representations: log-odds Bayesian update, LiDAR ray casting, and Nav2 costmap layers (static, obstacle, inflation); map server and AMCL localization.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Build a LiDAR-inertial map with LIO-SAM on a ROS2 bag, then load it into Nav2 and inspect costmap inflation layers and AMCL particle cloud in RViz2.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Generate the occupancy map for the project environment and tune Nav2 costmap parameters for the robot footprint and obstacle clearance.</div>
+              <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=dhzLQfDBx2Q" target="_blank" rel="noopener">ICP and Point Cloud Registration (Cyrill Stachniss)</a></div>
+            </div>
+          </div>
+          <div class="week pres">
+            <div class="wk-num" style="color:#7A3E9D">Wk 5</div>
+            <div class="wk-body"><b>Sensor stack and SLAM review<span class="presbadge">Presentation</span></b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>Review of sensor fusion, SLAM approaches, and probabilistic map representations; discussion of trade-offs between ORB-SLAM3 and LIO-SAM in different environments.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation 1: each team defends its robot specification, sensor stack, SLAM pipeline, and costmap configuration with live RViz2 demos.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Lock the perception and mapping specification; receive feedback and refine the SLAM and EKF integration before the motion planning phase.</div>
+            </div>
+          </div>
+          <div class="wpart">Planning &amp; Behaviors</div>
+          <div class="week">
+            <div class="wk-num" style="color:#7A3E9D">Wk 6</div>
+            <div class="wk-body"><b>Motion planning algorithms</b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>Motion planning: sampling-based planners (RRT, RRT*, PRM), graph-search planners (A*, Dijkstra), and trajectory optimization with TEB and receding-horizon MPC; configuration space and obstacle avoidance.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Implement and benchmark RRT and A* path planners on rigid-body robots in PyBullet; compare path length, computation time, and obstacle clearance across environments.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Implement and tune the global planner for the project robot and validate collision-free paths through the Gazebo environment.</div>
+              <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=HR1TNa8Lp7w" target="_blank" rel="noopener">Robot Motion Planning using A* (Cyrill Stachniss)</a> &middot; <a href="https://www.youtube.com/watch?v=NECuabO8WEY" target="_blank" rel="noopener">Sampling-Based Motion Planning 1/2 (Intro to Robotics L33)</a></div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="wk-num" style="color:#7A3E9D">Wk 7</div>
+            <div class="wk-body"><b>Behavior trees for task sequencing</b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>Behavior trees for hierarchical task sequencing: tick execution model, selector and sequence composites, condition and action nodes; comparison with finite state machines; integration with ROS2 action servers.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Author a multi-goal navigation mission in py_trees: design a tree with patrol, docking, and recovery subtrees, and wire it to the Nav2 NavigateToPose action server.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Define the robot mission logic as a behavior tree and integrate with the Nav2 navigation stack; implement at least one recovery behavior subtree.</div>
+              <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=Sq55X22fH94" target="_blank" rel="noopener">Sampling-Based Motion Planning 2/2 (Intro to Robotics L34)</a></div>
+            </div>
+          </div>
+          <div class="wpart">Control</div>
+          <div class="week pres">
+            <div class="wk-num" style="color:#7A3E9D">Wk 8</div>
+            <div class="wk-body"><b>Model-based control<span class="presbadge">Presentation</span></b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>Model-based control: PID tuning, LQR optimal control with cost matrices Q and R, and model-predictive control with receding horizon optimization; trajectory tracking for differential-drive and arm robots.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation 2: live demo of the robot localizing with ORB-SLAM3, navigating with Nav2, and executing a behavior tree mission; set up a MoveIt2 motion planning group for the arm after the presentation.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Tune the Nav2 local planner with a model-based controller; configure a MoveIt2 planning group for the manipulation task and verify basic arm motion.</div>
+              <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=1_UobILf3cc" target="_blank" rel="noopener">LQR Control (Control Bootcamp)</a> &middot; <a href="https://www.youtube.com/watch?v=YwodGM2eoy4" target="_blank" rel="noopener">Model Predictive Control</a></div>
+            </div>
+          </div>
+          <div class="wpart">Sim-to-Real</div>
+          <div class="week">
+            <div class="wk-num" style="color:#7A3E9D">Wk 9</div>
+            <div class="wk-body"><b>Sim-to-real transfer</b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>Sim-to-real transfer: domain randomization of sensor noise, friction, mass, and lighting; system identification methods; quantifying the sim-to-real gap; deployment testing on physical or higher-fidelity hardware.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Re-run the navigation and SLAM pipeline in NVIDIA Isaac Sim with randomized physics parameters; measure localization and navigation error compared to Gazebo baselines.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Apply domain randomization to sensor noise and dynamics in Isaac Sim; document the sim-to-real gap and identify which parameters most affect transfer quality.</div>
+              <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=ac_W9IgKX2c" target="_blank" rel="noopener">Berkeley CS287 Lecture 22: Sim2Real and Domain Randomization</a></div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="wk-num" style="color:#7A3E9D">Wk 10</div>
+            <div class="wk-body"><b>Safety and fault tolerance</b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>Safety and fault tolerance in physical autonomous systems: watchdog timers, ROS2 lifecycle node deactivation, fallback behavior subtrees, fail-safe modes, and hazard detection for mobile robots.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Implement ROS2 watchdog nodes that monitor heartbeat topics and trigger lifecycle node deactivation; inject faults into the sensor and navigation stack and verify fallback recovery.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Add a safety monitor node and recovery behavior tree to the project robot; stress-test with simulated sensor dropouts and navigation failures.</div>
+              <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=nyqJJdhReiA" target="_blank" rel="noopener">Linear Systems (Control Bootcamp)</a></div>
+            </div>
+          </div>
+          <div class="wpart">Perception &amp; Manipulation</div>
+          <div class="week">
+            <div class="wk-num" style="color:#7A3E9D">Wk 11</div>
+            <div class="wk-body"><b>Point cloud processing and 3D scene understanding</b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>Point cloud processing and 3D scene understanding: voxelization, ICP scan registration, surface normal estimation, Euclidean cluster segmentation, and integration with robot perception pipelines.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Process a LiDAR point cloud with PCL in ROS2: voxel-grid downsample, register two scans with ICP, estimate surface normals, and segment candidate grasp objects by cluster size and height.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Integrate a PCL-based object detection module into the robot stack; publish detected object poses as ROS2 geometry_msgs for the manipulation planner.</div>
+              <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=dhzLQfDBx2Q" target="_blank" rel="noopener">ICP and Point Cloud Registration (Cyrill Stachniss)</a></div>
+            </div>
+          </div>
+          <div class="week">
+            <div class="wk-num" style="color:#7A3E9D">Wk 12</div>
+            <div class="wk-body"><b>Manipulation and full-stack integration</b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>Integration of perception, SLAM, navigation, manipulation, and safety into a complete autonomous system; pipeline orchestration, message latency, and diagnostic tooling for end-to-end debugging.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Plan and execute a pick-and-place sequence with MoveIt2: receive an object pose from the PCL detector, plan a Cartesian approach path, and execute the grasp action while Nav2 holds the base position.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Complete end-to-end integration: the robot navigates to a goal with Nav2, detects an object with PCL, and executes the manipulation task with MoveIt2.</div>
+              <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=kFlybTKbiq0" target="_blank" rel="noopener">MIT 6.843 Robotic Manipulation: Pick and Place</a> &middot; <a href="https://www.youtube.com/watch?v=Tyz1jRfyWgY" target="_blank" rel="noopener">Russ Tedrake (MIT): Learning Manipulation</a></div>
+            </div>
+          </div>
+          <div class="wpart">Capstone</div>
+          <div class="week pres">
+            <div class="wk-num" style="color:#7A3E9D">Wk 13</div>
+            <div class="wk-body"><b>Final defense<span class="presbadge">Presentation</span></b>
+              <div class="wk-line"><span class="wk-tag lec">Lecture</span>Synthesis of robot middleware, sensor fusion, SLAM, motion planning, behavior trees, model-based control, and sim-to-real transfer; open problems in embodied AI and safe autonomous systems.</div>
+              <div class="wk-line"><span class="wk-tag pra">Practice</span>Team presentation 3: full end-to-end live demo (localize, navigate, avoid obstacles, manipulate) with task metrics; oral defense of architecture, parameter choices, and sim-to-real results.</div>
+              <div class="wk-proj"><span class="wk-tag prj">Project</span>Deliver the complete autonomous mobile robot system with documented sim-to-real transfer results and quantitative task success, safety, and robustness metrics.</div>
+              <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=whpK0HDtOJ0" target="_blank" rel="noopener">Russ Tedrake: Dexterous Manipulation with Diffusion Policies</a></div>
+            </div>
+          </div>
+        </div>
       </section>
       <div class="formatbox aiu-box" style="border-left:4px solid #7A3E9D">
-        <b>AI tools in this course.</b> <p>Students use AI assistants to generate and refactor ROS 2 nodes, PyBullet and MuJoCo environment code, and Kalman, particle-filter, A-star, RRT, and MPC implementations, vibe-coding the perceive-plan-act stack. They prompt AI to synthesize sensor-noise models and domain-randomization configs, wire message passing between modules, and generate tests for filter convergence and planner correctness. AI also helps analyze trajectory plots, estimation error, and sim-to-real failures to explain why a controller lost tracking.</p>
+        <b>AI tools in this course.</b> <p>Students use AI assistants to generate and refactor ROS2 node boilerplate, Nav2 parameter YAML files, MoveIt2 planning scene configurations, and ORB-SLAM3 integration launch files; they prompt AI to synthesize EKF noise covariance matrices, behavior tree XML structures, and PCL pipeline code for voxelization and ICP. AI helps wire message interfaces between Nav2 action clients and py_trees action nodes, debug TF2 transform trees, and explain why costmap inflation or a SLAM loop closure failed. Students also use AI to interpret RViz2 trajectory logs, analyze sim-to-real gap metrics from Isaac Sim runs, and draft safety watchdog recovery logic.</p>
       </div>
       <section class="block">
         <h2>Student project</h2>
-        <p>Teams build one autonomous embodied agent in simulation, layering perception, probabilistic estimation, motion planning, and control into a full perceive-plan-act stack. The project advances from classical estimation and planning into learned control and a sim-to-real robustness study, backed by the control and estimation theory taught each week.</p>
+        <p>Teams design and implement an autonomous mobile robot system in Gazebo and ROS2. The robot must localize with ORB-SLAM3, navigate autonomously with Nav2 to goal positions while avoiding dynamic obstacles, and complete a manipulation task with MoveIt2. The project concludes with a sim-to-real transfer demonstration to a higher-fidelity environment in NVIDIA Isaac Sim, validating that the system generalizes beyond the Gazebo training environment.</p>
         <h3 class="subhead">Requirements</h3>
-        <ul class="objectives" style="--accent:#7A3E9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
-        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Autonomous mobile robot navigation</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Robotic arm pick-and-place</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Quadruped locomotion controller</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Self-driving car in simulation</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Drone autonomous flight and landing</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Warehouse multi-robot coordination</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Underwater or aerial inspection robot</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Indoor delivery robot with SLAM</span></div>
+        <ul class="objectives" style="--accent:#7A3E9D">
+          <li>Build a working integrated system, not a set of disconnected exercises: SLAM, navigation, behavior trees, and manipulation must form one running pipeline.</li>
+          <li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li>
+          <li>Show real depth: quantitative task success metrics, safety validation under injected faults, and a documented sim-to-real transfer study.</li>
+          <li>Carry one running project from specification to a deployed, defensible result across the whole term.</li>
+          <li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li>
+        </ul>
+        <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Autonomous mobile robot: SLAM, Nav2, and MoveIt2 pick-and-place</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Warehouse logistics robot with dynamic obstacle avoidance</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Indoor delivery robot with autonomous navigation and manipulation</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Mobile manipulation: navigate, detect with PCL, and pick with MoveIt2</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Search-and-rescue robot with 3D LiDAR mapping and path planning</span><span class="chip" style="background:#EFE7F6;color:#7A3E9D">Autonomous inspection robot with LIO-SAM and behavior tree mission</span></div>
       </section>
       <section class="block">
         <h2>Assessment &amp; grading</h2>
         <p class="muted">Grading is project-based, with no written exam. Teams of three or four present one running project three times.</p>
-        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, and architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with oral defense</td><td class="wt">50%</td></tr></tbody></table>
+        <table class="assess"><thead><tr><th>Component</th><th>What it covers</th><th>Weight</th></tr></thead><tbody><tr><td><b>Project · Specification</b></td><td>Presentation 1 (week 5): problem, objectives, sensor stack, and SLAM architecture</td><td class="wt">20%</td></tr><tr><td><b>Project · Interim</b></td><td>Presentation 2 (week 8): the working localization, navigation, and behavior tree system demonstrated live</td><td class="wt">30%</td></tr><tr><td><b>Project · Final</b></td><td>Presentation 3 (week 13): end-to-end demo with manipulation, sim-to-real transfer results, and oral defense</td><td class="wt">50%</td></tr></tbody></table>
       </section>
       <section class="block">
         <h2>Tools &amp; platforms</h2>
-        <ul class="tools" style="--accent:#7A3E9D"><li><b><a href="https://docs.ros.org/en/rolling/" target="_blank" rel="noopener" class="toollink">ROS 2</a></b>: robotics middleware and tooling</li><li><b><a href="https://gazebosim.org/" target="_blank" rel="noopener" class="toollink">Gazebo</a></b>: physics-based robot simulation</li><li><b><a href="https://pybullet.org/" target="_blank" rel="noopener" class="toollink">PyBullet</a></b>: fast rigid-body simulation</li><li><b><a href="https://developer.nvidia.com/isaac/sim" target="_blank" rel="noopener" class="toollink">NVIDIA Isaac Sim</a></b>: high-fidelity robot simulation</li><li><b><a href="https://mujoco.org/" target="_blank" rel="noopener" class="toollink">MuJoCo</a></b>: contact-rich physics for control</li><li><b><a href="https://gymnasium.farama.org/" target="_blank" rel="noopener" class="toollink">Gymnasium</a></b>: reinforcement-learning environments</li><li><b><a href="https://stable-baselines3.readthedocs.io/" target="_blank" rel="noopener" class="toollink">Stable-Baselines3</a></b>: RL algorithm implementations</li><li><b><a href="https://www.open3d.org/" target="_blank" rel="noopener" class="toollink">Open3D</a></b>: point-cloud and 3D processing</li><li><b><a href="https://opencv.org/" target="_blank" rel="noopener" class="toollink">OpenCV</a></b>: camera perception</li><li><b><a href="https://numpy.org/" target="_blank" rel="noopener" class="toollink">NumPy</a></b>: numerical and linear-algebra computation</li><li><b><a href="https://matplotlib.org/" target="_blank" rel="noopener" class="toollink">Matplotlib</a></b>: trajectory and estimation visualization</li><li><b><a href="https://pytorch.org/" target="_blank" rel="noopener" class="toollink">PyTorch</a></b>: learned perception and control policies</li></ul>
+        <ul class="tools" style="--accent:#7A3E9D">
+          <li><b><a href="https://docs.ros.org/en/rolling/" target="_blank" rel="noopener" class="toollink">ROS2</a></b>: robot middleware for pub/sub topics, service calls, action servers, and lifecycle node management</li>
+          <li><b><a href="https://gazebosim.org/" target="_blank" rel="noopener" class="toollink">Gazebo</a></b>: physics-based robot simulation for sensor emulation and system integration testing</li>
+          <li><b><a href="https://developer.nvidia.com/isaac/sim" target="_blank" rel="noopener" class="toollink">NVIDIA Isaac Sim</a></b>: GPU-accelerated high-fidelity simulation for sim-to-real transfer validation</li>
+          <li><b><a href="https://navigation.ros.org/" target="_blank" rel="noopener" class="toollink">Nav2</a></b>: ROS2 navigation stack for autonomous mobile robot navigation with costmaps and local planners</li>
+          <li><b><a href="https://moveit.ros.org/" target="_blank" rel="noopener" class="toollink">MoveIt2</a></b>: motion planning framework for robot manipulation and arm trajectory execution</li>
+          <li><b><a href="https://github.com/UZ-SLAMLab/ORB_SLAM3" target="_blank" rel="noopener" class="toollink">ORB-SLAM3</a></b>: feature-based visual SLAM for localization and mapping with cameras</li>
+          <li><b><a href="https://pointclouds.org/" target="_blank" rel="noopener" class="toollink">PCL (Point Cloud Library)</a></b>: 3D point cloud processing: voxelization, ICP registration, normal estimation, and segmentation</li>
+          <li><b><a href="https://py-trees.readthedocs.io/" target="_blank" rel="noopener" class="toollink">py_trees</a></b>: Python behavior tree library for hierarchical robot task sequencing</li>
+          <li><b><a href="https://pybullet.org/" target="_blank" rel="noopener" class="toollink">PyBullet</a></b>: fast rigid-body physics simulation for motion planning algorithm development and benchmarking</li>
+          <li><b><a href="https://github.com/TixiaoShan/LIO-SAM" target="_blank" rel="noopener" class="toollink">LIO-SAM</a></b>: tightly-coupled LiDAR-inertial SLAM system for accurate outdoor and indoor mapping</li>
+        </ul>
       </section>
       <section class="block">
         <h2>Free online courses</h2>
@@ -124,9 +285,9 @@
         <dl>
           <dt>Duration</dt><dd>13 weeks</dd>
           <dt>Per week</dt><dd>2h + 2h</dd>
-          <dt>Outcomes</dt><dd>10</dd>
+          <dt>Outcomes</dt><dd>6</dd>
           <dt>Presentations</dt><dd>3</dd>
-          <dt>Tools</dt><dd>12</dd>
+          <dt>Tools</dt><dd>10</dd>
           <dt>References</dt><dd>7</dd>
         </dl>
       </div>

@@ -21,6 +21,8 @@
   <a class="nav-pill" href="../compendium.html">Compendium</a>
   <a class="nav-pill" href="../core-courses.html">Core Electives</a>
   <a class="nav-pill" href="../baseline-mapping.html">Mapping</a>
+  <a class="nav-pill" href="../course-references.html">References</a>
+
   <a class="nav-pill" href="../course-cards.html">Course Cards</a>
   <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">&#9680;</button>
 </nav>
@@ -44,10 +46,17 @@
       </section>
       <div class="formatbox" style="border-left:4px solid #3A4B9D">
         <b>Course format.</b> Thirteen weeks, four contact hours each: a two-hour lecture (concepts and theory) and a two-hour practice session. The course is project-based; teams carry one running project end to end and present it three times, in weeks 5, 8, and 13.
-      </div><div class="buildbox" style="border-left:4px solid #3A4B9D"><span class="bk" style="color:#3A4B9D">What you will build</span><p>Architected a data-intensive system that ingests events through Apache Kafka, runs ETL and ELT flows with PySpark on Apache Spark and Databricks, processes streams with Flink into a replicated, partitioned Cassandra store, serves predictions from an MLflow-tracked model, and guards quality with Evidently drift monitoring.</p></div>
+      </div><div class="buildbox" style="border-left:4px solid #3A4B9D"><span class="bk" style="color:#3A4B9D">What you will build</span><p>Teams build one end-to-end data-intensive system that ingests a real multi-source dataset through a Kafka topic, processes it via PySpark ETL and dbt ELT transformations into a partitioned Parquet lakehouse stored in Cassandra, integrates a trained ML model served through MLflow for inference on arriving records, and adds Great Expectations quality gates and Evidently drift monitoring across the full pipeline.</p></div>
       <section class="block">
         <h2>Expected outcomes</h2>
-        <ul class="objectives" style="--accent:#3A4B9D"><li>Explain the foundations of reliability, scalability, and maintainability</li><li>Analyze data models, storage engines, and indexing trade-offs</li><li>Design batch and streaming data pipelines</li><li>Implement ETL and ELT transformations with PySpark, Apache Spark, and lakehouse tables</li><li>Reason about distributed storage, replication, and partitioning</li><li>Apply the theory of consistency, consensus, and the CAP trade-off</li><li>Integrate machine learning models into production systems</li><li>Evaluate architectural trade-offs for AI-based and data-intensive workloads</li><li>Address technical debt and operational concerns in ML systems</li><li>Design for fault tolerance and exactly-once processing semantics</li><li>Assess data quality, lineage, and governance in pipelines</li></ul>
+        <ul class="objectives" style="--accent:#3A4B9D">
+          <li>Design reliable, scalable, and maintainable data-intensive systems by applying storage-engine internals (B-trees, LSM-trees, WAL) to justify read/write trade-offs and select appropriate storage formats including Parquet and Delta Lake.</li>
+          <li>Build batch ETL pipelines using PySpark on Databricks with the MapReduce model, processing records through map, shuffle-sort, and reduce phases into partitioned Parquet and Delta Lake lakehouse tables.</li>
+          <li>Implement event-time streaming pipelines with Apache Kafka and Apache Flink, correctly handling watermarks, tumbling/sliding/session windows, late arrivals, and exactly-once delivery semantics.</li>
+          <li>Analyze distributed replication and partitioning strategies, apply CAP theorem and PACELC to system configuration decisions, and implement Raft/2PC consensus for fault-tolerant exactly-once guarantees.</li>
+          <li>Model analytical data using Kimball star schema, SCD types, and data vault, automate ELT transformations with dbt and Airflow, enforce data quality contracts with Great Expectations, and track lineage with DataHub.</li>
+          <li>Integrate trained ML models into production via MLflow, instrument Evidently drift monitoring across the full pipeline, and identify and remediate hidden technical debt including feedback loops and training-serving skew.</li>
+        </ul>
       </section>
       <section class="block">
         <h2>Key topics</h2>
@@ -56,7 +65,18 @@
       <section class="block">
         <h2>Theoretical foundations</h2>
         <p class="muted">The concepts and results this course rests on.</p>
-        <ul class="foundations" style="--accent:#3A4B9D"><li>Reliability, scalability, and maintainability as system properties</li><li>Storage-engine internals and data-model trade-offs</li><li>ETL and ELT pipeline design from raw ingestion to curated analytical datasets</li><li>The MapReduce model of large-scale batch computation</li><li>Apache Spark execution, PySpark transformations, and lakehouse processing with Databricks</li><li>Event-time dataflow, watermarks, and windowing theory</li><li>Replication, partitioning, and the CAP and PACELC trade-offs</li><li>Distributed consensus and exactly-once processing semantics</li><li>Hidden technical debt and operational concerns in ML systems</li></ul>
+        <ul class="foundations" style="--accent:#3A4B9D">
+          <li>Reliability, scalability, and maintainability as orthogonal design properties with distinct failure modes and levers (P1)</li>
+          <li>Storage-engine internals: B-trees vs LSM-trees, write-ahead log (WAL), compaction strategies, and read/write amplification (P2)</li>
+          <li>MapReduce computational model: map phase, shuffle and sort, reduce phase, combiner optimization, and partitioner design (P3)</li>
+          <li>Event-time dataflow: watermarks, tumbling, sliding, and session windows, late arrivals, and trigger semantics (P4)</li>
+          <li>Replication strategies: single-leader, multi-leader, and leaderless; replication lag; and conflict resolution policies (P5)</li>
+          <li>Partitioning schemes: range vs hash partitioning; hotspot risk; secondary index design; and cross-partition query cost (P6)</li>
+          <li>CAP theorem and PACELC: consistency, availability, and partition tolerance; latency vs consistency under normal operation (P7)</li>
+          <li>Distributed consensus and exactly-once semantics: Paxos, Raft, two-phase commit, and idempotent message delivery (P8)</li>
+          <li>Hidden technical debt in ML systems: feedback loops, training-serving skew, undeclared consumers, and data dependency rot (P9)</li>
+          <li>Dimensional data modeling and ELT architecture: Kimball star schema (fact tables, dimension tables, conformed dimensions), snowflake schema, SCD types 1/2/3, data vault for audit-complete raw storage, and ELT push-down transforms with reverse ETL (P10)</li>
+        </ul>
       </section>
       <section class="block">
         <h2>Prerequisites</h2>
@@ -65,14 +85,150 @@
       </section>
       <section class="block">
         <h2>Weekly schedule <span class="lbl">13 weeks &middot; lecture + practice</span></h2>
-        <div class="weeks"><div class="wpart">Foundations</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 1</div><div class="wk-body"><b>Data-Intensive System Foundations</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Introduce reliability, scalability, and maintainability and the challenges of data at scale.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Set up the project environment and define the data domain and pipeline goals.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project repository and data-system design baseline are established.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=cQP8WApzIQQ" target="_blank" rel="noopener">MIT 6.824 Lecture 1: Introduction</a></div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 2</div><div class="wk-body"><b>Data Models and Storage Engines</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine relational, document, and graph models and the internals of storage engines.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Model the project data and select appropriate storage for its workload.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project data model and storage choice are implemented and justified.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=EpIgvowZr00" target="_blank" rel="noopener">MIT 6.824 Lecture 3: GFS</a></div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 3</div><div class="wk-body"><b>Encoding and Data Movement</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss serialization formats, schema evolution, and the dataflow between systems.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Define schemas and ingest raw data into the project storage layer.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project ingests and stores data with a versioned schema.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=yQqeNqbmygA" target="_blank" rel="noopener">Master Data Serialization: Building Data Models with Avro</a></div></div></div><div class="wpart">Pipelines</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 4</div><div class="wk-body"><b>Batch Processing with Spark and PySpark</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover the batch processing model, MapReduce, Apache Spark execution, PySpark DataFrames, partitions, shuffles, and the theory of large-scale computation.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Build a PySpark ETL pipeline that reads raw project data, cleans and joins records, writes curated Parquet or Delta tables, and measures job behavior.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project produces derived datasets through a tested Spark batch pipeline.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=mzIoSW-cInA" target="_blank" rel="noopener">MIT 6.824 Lecture 15: Big Data, Spark</a> &middot; <a href="https://www.youtube.com/watch?v=gA4YXUJX7t8" target="_blank" rel="noopener">MIT 6.824 Lecture 2: RPC and Threads</a></div></div></div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 5</div><div class="wk-body"><b>ETL Architecture and Specification Milestone<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Review ETL and ELT architecture, orchestration boundaries, data contracts, streaming concepts, and how architecture choices shape data systems.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present their project specification: data sources, raw-to-curated ETL flow, pipeline architecture, and scaling goals.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Approved specification with ETL architecture, data contracts, and pipeline design is delivered.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=9CrlA0Wasvk" target="_blank" rel="noopener">Apache Kafka: What It Is and Where It Is Going (Tim Berglund)</a></div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 6</div><div class="wk-body"><b>Stream Processing</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine streaming systems, event time versus processing time, and windowing theory.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add a streaming pipeline that processes project events in near real time.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project processes events through a streaming pipeline.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=WajYe9iA2Uk" target="_blank" rel="noopener">Intro to Stream Processing with Apache Flink, Flink 101</a> &middot; <a href="https://www.youtube.com/watch?v=06iRM1Ghr1k" target="_blank" rel="noopener">What is Apache Kafka? Confluent Lightboard (Tim Berglund)</a></div></div></div><div class="wpart">Distributed Storage</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 7</div><div class="wk-body"><b>Replication and Partitioning</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Analyze replication strategies, partitioning, and rebalancing in distributed stores.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Configure replication and partitioning for the project data store.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project data store is replicated and partitioned for scale.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=M_teob23ZzY" target="_blank" rel="noopener">MIT 6.824 Lecture 4: Primary-Backup Replication</a> &middot; <a href="https://www.youtube.com/watch?v=pbmyrNjzdDk" target="_blank" rel="noopener">MIT 6.824 Lecture 8: Zookeeper</a></div></div></div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 8</div><div class="wk-body"><b>Interim Demo Milestone<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover consistency models, consensus, and the CAP and PACELC trade-offs.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present an interim demo of the data pipeline and storage layer.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Working pipeline and distributed storage are demonstrated.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=64Zp3tzNbpE" target="_blank" rel="noopener">MIT 6.824 Lecture 6: Fault Tolerance, Raft Part 1</a></div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 9</div><div class="wk-body"><b>Consistency and Fault Tolerance</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss transactions across nodes, exactly-once semantics, and fault-tolerance design.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add fault tolerance and delivery guarantees to the project pipeline.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project pipeline tolerates faults with defined delivery guarantees.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=4r8Mz3MMivY" target="_blank" rel="noopener">MIT 6.824 Lecture 7: Fault Tolerance, Raft Part 2</a> &middot; <a href="https://www.youtube.com/watch?v=aDp99WDIM_4" target="_blank" rel="noopener">MIT 6.824 Lecture 12: Distributed Transactions</a> &middot; <a href="https://www.youtube.com/watch?v=-pKNCjUhPjQ" target="_blank" rel="noopener">MIT 6.824 Lecture 11: Cache Consistency, Frangipani</a></div></div></div><div class="wpart">ML Systems</div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 10</div><div class="wk-body"><b>ML System Integration</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine the anatomy of ML systems, feature pipelines, and serving architectures.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Integrate a trained model into the project as a serving component.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project serves predictions from an integrated ML model.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=c_AUuTuPA5k" target="_blank" rel="noopener">Stanford MLSys Seminar Episode 5: Chip Huyen</a></div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 11</div><div class="wk-body"><b>Feature Stores and Data Quality</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Discuss feature engineering pipelines, ETL lineage, lakehouse tables, data contracts, and the cost of poor data quality.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add feature processing and data-quality checks to the Spark or Databricks project pipeline.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project enforces data-quality checks and lineage for curated features feeding the model.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=p5F7v-w4EN0" target="_blank" rel="noopener">The Future of Feature Stores and Platforms (MLOps Community Podcast)</a></div></div></div><div class="week"><div class="wk-num" style="color:#3A4B9D">Wk 12</div><div class="wk-body"><b>Technical Debt and Operations</b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Analyze hidden technical debt in ML systems, monitoring, and drift over time.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Add monitoring and drift detection to the project ML pipeline.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Project monitors model and pipeline health in operation.</div><div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=V18AsBIHlWs" target="_blank" rel="noopener">Machine Learning, Technical Debt, and You, D. Sculley (Google)</a> &middot; <a href="https://www.youtube.com/watch?v=uVqfYkcodeE" target="_blank" rel="noopener">ML Monitoring, Stanford CS329S with Alessya Visnjic (WhyLabs)</a></div></div></div><div class="wpart">Capstone</div><div class="week pres"><div class="wk-num" style="color:#3A4B9D">Wk 13</div><div class="wk-body"><b>Final Demo and Defense<span class="presbadge">Presentation</span></b><div class="wk-line"><span class="wk-tag lec">Lecture</span>Synthesize data-intensive and AI system architecture and review the trade-offs made.</div><div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present the final demo with an oral defense of architecture, scaling, and ML integration decisions.</div><div class="wk-proj"><span class="wk-tag prj">Project</span>Final data-intensive AI system is delivered with documentation and defense.</div></div></div></div>
+        <div class="weeks">
+
+<div class="wpart">Foundations</div>
+
+<div class="week">
+  <div class="wk-num" style="color:#3A4B9D">Wk 1</div>
+  <div class="wk-body"><b>System Foundations: Reliability, Scalability, Maintainability</b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Introduce reliability, scalability, and maintainability as orthogonal system properties; map their distinct failure modes and design levers; survey the landscape of data-intensive system challenges.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Set up the project repository, agree on data domain and pipeline goals, and sketch the end-to-end system diagram with explicit reliability and scalability requirements.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Project repository and system-design baseline established with stated reliability and scalability goals.</div>
+    <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=cQP8WApzIQQ" target="_blank" rel="noopener">MIT 6.824 Lecture 1: Introduction</a></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="wk-num" style="color:#3A4B9D">Wk 2</div>
+  <div class="wk-body"><b>Storage-Engine Internals and Columnar Formats</b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine B-trees vs LSM-trees, write-ahead log (WAL) mechanics, compaction strategies, and read/write amplification; introduce Apache Parquet as a columnar storage format optimized for analytical workloads via column pruning and predicate pushdown.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Profile B-tree and LSM-tree storage behavior and write project raw data as Apache Parquet files, measuring the compression ratio and query scan cost versus row-oriented storage.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Project raw data is stored as Parquet and the storage format choice is benchmarked and justified.</div>
+    <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=EpIgvowZr00" target="_blank" rel="noopener">MIT 6.824 Lecture 3: GFS</a></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="wk-num" style="color:#3A4B9D">Wk 3</div>
+  <div class="wk-body"><b>Event-Time Dataflow: Kafka and Flink</b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Introduce event-time vs processing-time semantics, watermarks, tumbling/sliding/session windows, late arrivals, and trigger semantics; contrast Apache Kafka's durable distributed log with Apache Flink's stateful stream processor and its checkpointing model.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Stand up an Apache Kafka topic for project event ingestion; build an Apache Flink job that reads from Kafka, applies a tumbling-window aggregate with a watermark, and counts and routes late arrivals.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Project ingests events through a Kafka topic and a Flink streaming job processes them with correct watermark and windowing semantics.</div>
+    <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=9CrlA0Wasvk" target="_blank" rel="noopener">Apache Kafka: What It Is and Where It Is Going (Tim Berglund)</a> &middot; <a href="https://www.youtube.com/watch?v=WajYe9iA2Uk" target="_blank" rel="noopener">Intro to Stream Processing with Apache Flink, Flink 101</a></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="wk-num" style="color:#3A4B9D">Wk 4</div>
+  <div class="wk-body"><b>Batch Processing: MapReduce, Spark, and the Lakehouse</b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover the MapReduce computational model (map, shuffle-sort, reduce, combiners, partitioners) and the Apache Spark execution engine (DAG planning, stages, shuffles, catalyst optimizer); introduce Delta Lake for ACID lakehouse tables with time-travel and schema enforcement.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Build a PySpark ETL pipeline on Databricks that reads raw Kafka-staged data, applies multi-source joins and aggregations, writes curated Delta Lake tables in Parquet format, and measures shuffle and stage behavior via the Spark UI.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Project produces curated Delta Lake datasets through a tested PySpark batch pipeline on Databricks.</div>
+    <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=mzIoSW-cInA" target="_blank" rel="noopener">MIT 6.824 Lecture 15: Big Data, Spark</a></div>
+  </div>
+</div>
+
+<div class="week pres">
+  <div class="wk-num" style="color:#3A4B9D">Wk 5</div>
+  <div class="wk-body"><b>ETL Architecture and Specification Milestone<span class="presbadge">Presentation</span></b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Review ETL vs ELT architectural boundaries, orchestration responsibilities and data contracts; demonstrate Apache Airflow DAG anatomy — operators, sensors, XComs, and SLA monitoring — as the orchestration backbone for the pipeline.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present their project specification: data sources, Kafka ingestion topic design, Spark/PySpark ETL flow, Parquet/Delta lakehouse schema, Airflow orchestration plan, and scaling goals.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Approved specification with ETL/ELT architecture, data contracts, Airflow orchestration plan, and pipeline design delivered.</div>
+  </div>
+</div>
+
+<div class="wpart">Distributed Systems</div>
+
+<div class="week">
+  <div class="wk-num" style="color:#3A4B9D">Wk 6</div>
+  <div class="wk-body"><b>Replication Strategies</b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Analyze single-leader, multi-leader, and leaderless replication; model replication lag; examine read-your-writes and monotonic-read consistency guarantees; and compare conflict-resolution policies (last-write-wins, version vectors, CRDTs) under concurrent writes.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Configure replication topology for the project Cassandra store, simulate replication lag by throttling a replica, and observe staleness anomalies against different consistency levels.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Project data store is replicated and replication lag behavior is documented with measured consistency anomalies.</div>
+    <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=M_teob23ZzY" target="_blank" rel="noopener">MIT 6.824 Lecture 4: Primary-Backup Replication</a></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="wk-num" style="color:#3A4B9D">Wk 7</div>
+  <div class="wk-body"><b>Partitioning, CAP, and PACELC</b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Contrast range and hash partitioning; assess hotspot risk, secondary index design under partitioning, and cross-partition query cost; apply CAP theorem and PACELC to configuration choices, distinguishing latency vs consistency under normal operation from behavior under partition.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Add consistent hash partitioning to the project Cassandra store, run cross-partition queries, and validate latency vs consistency behavior under a simulated network partition.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Project store is partitioned and its CAP/PACELC operating point is measured and justified in the design document.</div>
+    <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=pbmyrNjzdDk" target="_blank" rel="noopener">MIT 6.824 Lecture 8: Zookeeper</a></div>
+  </div>
+</div>
+
+<div class="week pres">
+  <div class="wk-num" style="color:#3A4B9D">Wk 8</div>
+  <div class="wk-body"><b>Interim Demo Milestone<span class="presbadge">Presentation</span></b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Cover distributed consensus: Paxos and Raft leader election, log replication and safety, two-phase commit (2PC), and idempotent message delivery as the foundation of exactly-once semantics in distributed pipelines.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present an interim demo showing Kafka ingestion, Flink streaming, and the Spark ETL pipeline with the replicated, partitioned Cassandra store running live against real project data.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Working streaming and batch pipeline with replicated, partitioned store demonstrated end-to-end.</div>
+    <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=64Zp3tzNbpE" target="_blank" rel="noopener">MIT 6.824 Lecture 6: Fault Tolerance, Raft Part 1</a></div>
+  </div>
+</div>
+
+<div class="wpart">Analytical Engineering &amp; ML Systems</div>
+
+<div class="week">
+  <div class="wk-num" style="color:#3A4B9D">Wk 9</div>
+  <div class="wk-body"><b>Exactly-Once Semantics and Consensus in Practice</b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Apply Raft and 2PC to real system designs; examine Kafka transactional producers, Delta Lake ACID transaction log with optimistic concurrency, and Flink checkpointing as concrete exactly-once mechanisms; discuss idempotent consumer design and retry safety.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Enable Kafka exactly-once transactional producers and activate Delta Lake transaction log in the project; inject duplicate messages and failed writes, then verify idempotent delivery and rollback behavior.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Project pipeline delivers exactly-once guarantees verified by injected failure tests against the Delta Lake store.</div>
+    <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=aDp99WDIM_4" target="_blank" rel="noopener">MIT 6.824 Lecture 12: Distributed Transactions</a></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="wk-num" style="color:#3A4B9D">Wk 10</div>
+  <div class="wk-body"><b>Dimensional Modeling and ELT Architecture</b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Introduce Kimball star schema (fact tables, dimension tables, conformed dimensions), snowflake schema, slowly changing dimensions (SCD types 1/2/3), and data vault for audit-complete raw storage; explain ELT philosophy — push-down transforms, in-database ML, and reverse ETL for operational data sync.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Build dbt models that transform project Delta Lake tables into a Kimball star schema with SCD-2 dimensions; configure Apache Airflow DAGs to orchestrate the full Kafka-to-dbt ELT flow end-to-end.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Project exposes a dimensional star schema built by dbt, orchestrated end-to-end by Airflow with SLA-monitored DAGs.</div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="wk-num" style="color:#3A4B9D">Wk 11</div>
+  <div class="wk-body"><b>Data Quality, Lineage, and Governance</b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Examine the cost of poor data quality in production pipelines, the role of data contracts for producer-consumer decoupling, and approaches to data cataloging and lineage tracking; introduce Great Expectations validation suites and DataHub lineage graphs and metadata ingestion.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Add Great Expectations expectation suites to the project ETL pipeline at the raw, curated, and dimensional layers; register datasets, jobs, and column-level lineage in DataHub using its metadata ingestion API.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Project enforces Great Expectations quality gates at every layer and all datasets and transformations are catalogued with lineage in DataHub.</div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="wk-num" style="color:#3A4B9D">Wk 12</div>
+  <div class="wk-body"><b>ML Technical Debt and Production Monitoring</b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Analyze hidden technical debt in ML systems: feedback loops, training-serving skew, undeclared consumers, and data dependency rot; introduce MLflow for experiment tracking, model registry, and low-latency model serving behind a pipeline; and Evidently for data drift and model performance monitoring reports.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Register the project ML model in MLflow and configure it for inference on arriving Kafka records; add Evidently drift monitoring reports and data quality profiles across the full Kafka-to-prediction pipeline.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Project serves predictions from an MLflow-registered model and monitors data and model drift with Evidently across the full pipeline.</div>
+    <div class="wk-links"><span class="wk-tag vid">Watch</span><a href="https://www.youtube.com/watch?v=V18AsBIHlWs" target="_blank" rel="noopener">Machine Learning, Technical Debt, and You, D. Sculley (Google)</a> &middot; <a href="https://www.youtube.com/watch?v=uVqfYkcodeE" target="_blank" rel="noopener">ML Monitoring, Stanford CS329S with Alessya Visnjic (WhyLabs)</a></div>
+  </div>
+</div>
+
+<div class="wpart">Capstone</div>
+
+<div class="week pres">
+  <div class="wk-num" style="color:#3A4B9D">Wk 13</div>
+  <div class="wk-body"><b>Final Demo and Defense<span class="presbadge">Presentation</span></b>
+    <div class="wk-line"><span class="wk-tag lec">Lecture</span>Synthesize data-intensive and AI system architecture across the full course, revisiting reliability, scalability, consistency, dimensional modeling, and ML debt dimensions; discuss how each architectural decision propagates through the system.</div>
+    <div class="wk-line"><span class="wk-tag pra">Practice</span>Student teams present the final end-to-end demo with an oral defense covering Kafka ingestion, Flink and Spark processing, Delta Lake storage, dbt dimensional modeling, Great Expectations and DataHub governance, MLflow serving, and Evidently drift monitoring.</div>
+    <div class="wk-proj"><span class="wk-tag prj">Project</span>Final end-to-end data-intensive AI system delivered with documentation and oral defense of all architectural and operational decisions.</div>
+  </div>
+</div>
+
+</div>
       </section>
       <div class="formatbox aiu-box" style="border-left:4px solid #3A4B9D">
         <b>AI tools in this course.</b> <p>Students use AI assistants to generate PySpark DataFrame transformations, Spark SQL queries, Databricks notebooks and jobs, Flink transformations, and Kafka producers, consumers, and schema definitions. They prompt tools to build ETL data-quality checks, synthesize event streams, and write tests for exactly-once and fault-tolerance paths, while connecting agents to database, Databricks, MLflow, and pipeline MCP servers to inspect state and metrics. AI helps wire model serving, feature processing, and Evidently drift monitoring, and to analyze lineage and operational telemetry into remediation steps. Because generated distributed code can hide consistency, shuffle, partitioning, or replay bugs, students validate every pipeline change against partitioning, replication, and delivery-guarantee behavior.</p>
       </div>
       <section class="block">
         <h2>Student project</h2>
-        <p>Teams build one data-intensive system that ingests data, processes it through ETL and ELT flows with PySpark, Apache Spark, and optionally Databricks, and stores it in a replicated, partitioned distributed store. They integrate a machine learning model for serving, add data-quality and drift monitoring, and reason explicitly about consistency, fault tolerance, and architectural trade-offs throughout.</p>
+        <p>Teams build one end-to-end data-intensive system that ingests a real multi-source dataset through a Kafka topic, processes it via PySpark ETL and dbt ELT transformations into a partitioned Parquet lakehouse stored in Cassandra, integrates a trained ML model served through MLflow for inference on arriving records, and adds Great Expectations quality gates and Evidently drift monitoring across the full pipeline.</p>
         <h3 class="subhead">Requirements</h3>
         <ul class="objectives" style="--accent:#3A4B9D"><li>Build a working system, not a set of disconnected exercises.</li><li>Be original: a new system that solves a real problem, not a re-implementation of a tutorial or course demo.</li><li>Show real depth: real data, real users or realistic load, and engineering trade-offs that are measured rather than assumed.</li><li>Carry one running project from specification to a deployed, defensible result across the whole term.</li><li>Work in a team of three or four and defend the design at each of the three presentations (weeks 5, 8, and 13).</li></ul>
         <h3 class="subhead">Example projects</h3><div class="chips"><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Real-time analytics platform</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Recommendation system pipeline</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Fraud detection stream</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Log analytics and search</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Clickstream insights engine</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Predictive maintenance system</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Social media trend tracker</span><span class="chip" style="background:#E7EAF5;color:#3A4B9D">Sensor data lakehouse</span></div>
@@ -84,7 +240,7 @@
       </section>
       <section class="block">
         <h2>Tools &amp; platforms</h2>
-        <ul class="tools" style="--accent:#3A4B9D"><li><b><a href="https://kafka.apache.org/" target="_blank" rel="noopener" class="toollink">Apache Kafka</a></b>: stream and buffer event data</li><li><b><a href="https://spark.apache.org/" target="_blank" rel="noopener" class="toollink">Apache Spark</a></b>: run batch ETL and distributed processing</li><li><b><a href="https://spark.apache.org/docs/latest/api/python/" target="_blank" rel="noopener" class="toollink">PySpark</a></b>: implement Spark transformations and DataFrame pipelines in <a href="https://www.python.org/" target="_blank" rel="noopener" class="toollink">Python</a></li><li><b><a href="https://www.databricks.com/" target="_blank" rel="noopener" class="toollink">Databricks</a></b>: develop notebooks, jobs, and lakehouse workflows on managed Spark</li><li><b><a href="https://parquet.apache.org/" target="_blank" rel="noopener" class="toollink">Apache Parquet</a></b>: store columnar analytical datasets</li><li><b><a href="https://flink.apache.org/" target="_blank" rel="noopener" class="toollink">Apache Flink</a></b>: process streams with event-time semantics</li><li><b><a href="https://www.postgresql.org/" target="_blank" rel="noopener" class="toollink">PostgreSQL</a></b>: store relational and derived data</li><li><b><a href="https://cassandra.apache.org/" target="_blank" rel="noopener" class="toollink">Apache Cassandra</a></b>: provide distributed partitioned storage</li><li><b><a href="https://airflow.apache.org/" target="_blank" rel="noopener" class="toollink">Apache Airflow</a></b>: orchestrate data pipelines</li><li><b><a href="https://www.getdbt.com/" target="_blank" rel="noopener" class="toollink">dbt</a></b>: transform and model warehouse data</li><li><b><a href="https://greatexpectations.io/" target="_blank" rel="noopener" class="toollink">Great Expectations</a></b>: validate ETL outputs and data contracts</li><li><b><a href="https://mlflow.org/" target="_blank" rel="noopener" class="toollink">MLflow</a></b>: track and serve machine learning models</li><li><b><a href="https://feast.dev/" target="_blank" rel="noopener" class="toollink">Feast</a></b>: manage a feature store</li><li><b><a href="https://www.docker.com/" target="_blank" rel="noopener" class="toollink">Docker</a></b>: package pipeline and serving components</li><li><b><a href="https://www.evidentlyai.com/" target="_blank" rel="noopener" class="toollink">Evidently</a></b>: monitor data and model drift</li></ul>
+        <ul class="tools" style="--accent:#3A4B9D"><li><b><a href="https://kafka.apache.org/" target="_blank" rel="noopener" class="toollink">Apache Kafka</a></b>: stream and buffer event data</li><li><b><a href="https://spark.apache.org/" target="_blank" rel="noopener" class="toollink">Apache Spark</a></b>: run batch ETL and distributed processing</li><li><b><a href="https://spark.apache.org/docs/latest/api/python/" target="_blank" rel="noopener" class="toollink">PySpark</a></b>: implement Spark transformations and DataFrame pipelines in <a href="https://www.python.org/" target="_blank" rel="noopener" class="toollink">Python</a></li><li><b><a href="https://www.databricks.com/" target="_blank" rel="noopener" class="toollink">Databricks</a></b>: develop notebooks, jobs, and lakehouse workflows on managed Spark</li><li><b><a href="https://parquet.apache.org/" target="_blank" rel="noopener" class="toollink">Apache Parquet</a></b>: store columnar analytical datasets</li><li><b><a href="https://flink.apache.org/" target="_blank" rel="noopener" class="toollink">Apache Flink</a></b>: process streams with event-time semantics</li><li><b><a href="https://www.postgresql.org/" target="_blank" rel="noopener" class="toollink">PostgreSQL</a></b>: store relational and derived data</li><li><b><a href="https://cassandra.apache.org/" target="_blank" rel="noopener" class="toollink">Apache Cassandra</a></b>: provide distributed partitioned storage</li><li><b><a href="https://airflow.apache.org/" target="_blank" rel="noopener" class="toollink">Apache Airflow</a></b>: orchestrate data pipelines</li><li><b><a href="https://www.getdbt.com/" target="_blank" rel="noopener" class="toollink">dbt</a></b>: transform and model warehouse data</li><li><b><a href="https://greatexpectations.io/" target="_blank" rel="noopener" class="toollink">Great Expectations</a></b>: validate ETL outputs and data contracts</li><li><b><a href="https://mlflow.org/" target="_blank" rel="noopener" class="toollink">MLflow</a></b>: track and serve machine learning models</li><li><b><a href="https://feast.dev/" target="_blank" rel="noopener" class="toollink">Feast</a></b>: manage a feature store</li><li><b><a href="https://www.docker.com/" target="_blank" rel="noopener" class="toollink">Docker</a></b>: package pipeline and serving components</li><li><b><a href="https://www.evidentlyai.com/" target="_blank" rel="noopener" class="toollink">Evidently</a></b>: monitor data and model drift</li><li><b><a href="https://datahubproject.io/" target="_blank" rel="noopener" class="toollink">DataHub</a></b>: catalog datasets and track data lineage</li><li><b><a href="https://delta.io/" target="_blank" rel="noopener" class="toollink">Delta Lake</a></b>: provide ACID transactions and time-travel on lakehouse tables</li></ul>
       </section>
       <section class="block">
         <h2>Free online courses</h2>
@@ -125,9 +281,9 @@
         <dl>
           <dt>Duration</dt><dd>13 weeks</dd>
           <dt>Per week</dt><dd>2h + 2h</dd>
-          <dt>Outcomes</dt><dd>11</dd>
+          <dt>Outcomes</dt><dd>6</dd>
           <dt>Presentations</dt><dd>3</dd>
-          <dt>Tools</dt><dd>15</dd>
+          <dt>Tools</dt><dd>17</dd>
           <dt>References</dt><dd>9</dd>
         </dl>
       </div>
