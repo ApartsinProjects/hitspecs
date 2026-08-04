@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HIT CS: Course References</title>
+<style>
+:root {
+  --bg:#0D1119; --surface:#141C2D; --sur2:#1A2438;
+  --border:#253050; --faint:#1E2D48; --text:#D9E4F5;
+  --sub:#8A9DC0; --muted:#5C6E8C;
+  --se:#31D0A5; --se-a:rgba(49,208,165,.10);
+  --ai:#9B7AEA; --ai-a:rgba(155,122,234,.10);
+  --cy:#F5A33A; --cy-a:rgba(245,163,58,.10);
+  --df:#7DC88A; --df-a:rgba(125,200,138,.10);
+  --course-accent:#4FC8E8;
+  --book-accent:#E8A33A;
+  --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"SF Mono","Cascadia Code","Fira Code","Consolas",monospace;
+}
+@media(prefers-color-scheme:light){:root{
+  --bg:#EEF3FB; --surface:#FFF; --sur2:#F4F7FE;
+  --border:#CDD8EE; --faint:#E4ECFA; --text:#152035;
+  --sub:#4D6080; --muted:#8096B8;
+  --se:#1B9E7A; --ai:#6744C8; --cy:#C47A0A; --df:#3A844A;
+  --course-accent:#1A8FB0; --book-accent:#9A6E0A;
+}}
+:root[data-theme=dark]{
+  --bg:#0D1119; --surface:#141C2D; --sur2:#1A2438;
+  --border:#253050; --faint:#1E2D48; --text:#D9E4F5; --sub:#8A9DC0; --muted:#5C6E8C;
+  --se:#31D0A5; --ai:#9B7AEA; --cy:#F5A33A; --df:#7DC88A;
+  --course-accent:#4FC8E8; --book-accent:#E8A33A;
+}
+:root[data-theme=light]{
+  --bg:#EEF3FB; --surface:#FFF; --sur2:#F4F7FE;
+  --border:#CDD8EE; --faint:#E4ECFA; --text:#152035; --sub:#4D6080; --muted:#8096B8;
+  --se:#1B9E7A; --ai:#6744C8; --cy:#C47A0A; --df:#3A844A;
+  --course-accent:#1A8FB0; --book-accent:#9A6E0A;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;color-scheme:dark light}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* Nav */
+.site-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:4px;padding:0 16px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap;scrollbar-width:none;min-height:50px}
+.site-nav::-webkit-scrollbar{display:none}
+.nav-brand{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--sub);text-transform:uppercase;padding:12px 8px 12px 0;border-right:1px solid var(--border);margin-right:4px;flex-shrink:0;text-decoration:none}
+.nav-brand:hover{color:var(--text)}
+.nav-pill{display:inline-flex;align-items:center;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--sub);border:1.5px solid transparent;flex-shrink:0;transition:background .15s,border-color .15s,color .15s}
+.nav-pill:hover{background:var(--sur2);border-color:var(--border);color:var(--text)}
+.nav-pill.active{color:var(--text);background:var(--sur2);border-color:var(--border)}
+.nav-spacer{flex:1}
+.theme-btn{background:none;border:1.5px solid var(--border);color:var(--sub);border-radius:6px;padding:4px 8px;font-size:12px;cursor:pointer;flex-shrink:0}
+.theme-btn:hover{border-color:var(--muted);color:var(--text)}
+
+/* Hero */
+.hero{padding:52px 24px 44px;max-width:900px;margin:0 auto;border-bottom:1px solid var(--border)}
+.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.hero h1{font-size:clamp(24px,3.5vw,38px);font-weight:800;line-height:1.15;letter-spacing:-.02em}
+.hero-sub{margin-top:10px;font-size:15px;color:var(--sub);max-width:620px;line-height:1.55}
+
+/* Legend */
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.legend-item{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);font-family:var(--mono)}
+.legend-dot{width:8px;height:8px;border-radius:50%}
+
+/* Page */
+.page-body{max-width:1060px;margin:0 auto;padding:40px 24px 80px}
+
+/* Track section */
+.track-section{margin-bottom:56px}
+.track-hd{display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.track-badge{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;padding:4px 10px;border-radius:4px}
+.track-hd h2{font-size:19px;font-weight:700;letter-spacing:-.01em}
+
+/* Course card */
+.course-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:16px}
+.course-card-hd{display:flex;align-items:baseline;gap:12px;padding:16px 20px 14px;border-bottom:1px solid var(--border);background:var(--sur2)}
+.course-code{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em}
+.course-name{font-size:15px;font-weight:700;letter-spacing:-.01em}
+.course-card-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media(max-width:700px){.course-card-body{grid-template-columns:1fr}}
+
+/* Reference block */
+.ref-block{padding:16px 20px}
+.ref-block + .ref-block{border-left:1px solid var(--border)}
+@media(max-width:700px){.ref-block + .ref-block{border-left:none;border-top:1px solid var(--border)}}
+.ref-type{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.ref-type svg{flex-shrink:0}
+.ref-title{font-size:14px;font-weight:600;line-height:1.35;margin-bottom:3px}
+.ref-title a{text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;text-decoration-style:dotted}
+.ref-title a:hover{text-decoration-style:solid}
+.ref-author{font-size:12px;color:var(--muted);margin-bottom:8px}
+.ref-why{font-size:12.5px;color:var(--sub);line-height:1.5}
+
+/* Track colors */
+.t-se .course-code, .t-se .ref-type.course{color:var(--se)}
+.t-cy .course-code, .t-cy .ref-type.course{color:var(--cy)}
+.t-ai .course-code, .t-ai .ref-type.course{color:var(--ai)}
+.t-df .course-code, .t-df .ref-type.course{color:var(--df)}
+.ref-type.book{color:var(--book-accent)}
+
+.t-se .track-badge{background:var(--se-a);color:var(--se)}
+.t-cy .track-badge{background:var(--cy-a);color:var(--cy)}
+.t-ai .track-badge{background:var(--ai-a);color:var(--ai)}
+.t-df .track-badge{background:var(--df-a);color:var(--df)}
+.t-se .track-hd h2{color:var(--se)}
+.t-cy .track-hd h2{color:var(--cy)}
+.t-ai .track-hd h2{color:var(--ai)}
+.t-df .track-hd h2{color:var(--df)}
+
+.site-footer{padding:28px 24px;text-align:center;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('hitcs-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}}());
+function toggleTheme(){var r=document.documentElement,c=r.dataset.theme,n=c==='dark'?'light':c==='light'?'dark':window.matchMedia('(prefers-color-scheme:dark)').matches?'light':'dark';r.dataset.theme=n;try{localStorage.setItem('hitcs-theme',n);}catch(e){}}
+</script>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Site navigation">
+  <a class="nav-brand" href="index.html">HIT·CS</a>
+  <a class="nav-pill" href="index.html">Overview</a>
+  <a class="nav-pill" href="concentrations/SE.html">SE</a>
+  <a class="nav-pill" href="concentrations/CY.html">CY</a>
+  <a class="nav-pill" href="concentrations/AI.html">AI</a>
+  <a class="nav-pill" href="concentrations/QCF.html">QCF</a>
+  <a class="nav-pill" href="concentrations/GM.html">GM</a>
+  <a class="nav-pill" href="concentrations/DF.html">DF</a>
+  <a class="nav-pill" href="careers.html">Careers</a>
+  <span class="nav-spacer"></span>
+  <a class="nav-pill" href="baseline-mapping.html">Core Electives</a>
+  <a class="nav-pill active" href="course-references.html">References</a>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">&#9680;</button>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Holon Institute of Technology · Advanced CS Electives</p>
+  <h1>Course References</h1>
+  <p class="hero-sub">For each of the 20 core elective courses: the single best online course and the single best textbook. Selected for academic grounding (science and engineering principles that transfer beyond any one tool) combined with practical, hands-on content — real code, tools, and platforms.</p>
+  <div class="legend">
+    <span class="legend-item"><svg class="legend-dot" style="background:var(--course-accent)"></svg>Online course</span>
+    <span class="legend-item"><svg class="legend-dot" style="background:var(--book-accent)"></svg>Textbook</span>
+  </div>
+</header>
+
+<main class="page-body">
+
+<!-- ── SE ───────────────────────────────────────────────────────────────── -->
+<section class="track-section t-se">
+  <div class="track-hd">
+    <span class="track-badge">SE</span>
+    <h2>Software Engineering</h2>
+  </div>
+
+  <!-- SE1 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">SE1</span>
+      <span class="course-name">Cloud Computing &amp; Cloud-Native Platforms</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / IBM
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/learn/ibm-containers-docker-kubernetes-openshift" target="_blank" rel="noopener">Introduction to Containers w/ Docker, Kubernetes &amp; OpenShift</a></p>
+        <p class="ref-author">IBM Skills Network</p>
+        <p class="ref-why">Hands-on IBM labs cover building Docker images, deploying to Kubernetes, managing OpenShift clusters, and integrating Istio — grounding cloud-native principles in real tool use.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · O'Reilly
+        </div>
+        <p class="ref-title"><a href="https://www.oreilly.com/library/view/cloud-native-devops/9781098116811/" target="_blank" rel="noopener">Cloud Native DevOps with Kubernetes, 2nd ed.</a></p>
+        <p class="ref-author">John Arundel, Justin Domingus</p>
+        <p class="ref-why">Walks an application from local Docker container through a production Kubernetes cluster with CI/CD, observability, secrets management, and Terraform-style IaC throughout.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SE2 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">SE2</span>
+      <span class="course-name">Secure &amp; Reliable Software Development</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / IBM
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/learn/application-security-for-developers-devops" target="_blank" rel="noopener">Application Security for Developers and DevOps Professionals</a></p>
+        <p class="ref-author">IBM</p>
+        <p class="ref-why">Covers OWASP Top 10, SAST/DAST tooling, Semgrep-style static analysis, and GitHub Actions security pipelines with hands-on labs integrating security into CI/CD workflows.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · Wiley
+        </div>
+        <p class="ref-title"><a href="https://www.wiley.com/en-us/Alice+and+Bob+Learn+Application+Security-p-9781119687389" target="_blank" rel="noopener">Alice and Bob Learn Application Security</a></p>
+        <p class="ref-author">Tanya Janca</p>
+        <p class="ref-why">Practical, code-grounded guide to secure software development covering threat modeling, OWASP vulnerabilities, testing with DAST/SAST tools, and DevSecOps culture.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SE3 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">SE3</span>
+      <span class="course-name">Modern Front-End Web Development</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · University of Helsinki (free)
+        </div>
+        <p class="ref-title"><a href="https://fullstackopen.com/en/" target="_blank" rel="noopener">Full Stack Open</a></p>
+        <p class="ref-author">University of Helsinki</p>
+        <p class="ref-why">Free university-level deep dive into React, TypeScript, Playwright testing, and CI/CD; continuously updated with real projects and parts dedicated to Next.js and testing libraries.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · O'Reilly
+        </div>
+        <p class="ref-title"><a href="https://www.oreilly.com/library/view/programming-typescript/9781492037750/" target="_blank" rel="noopener">Programming TypeScript</a></p>
+        <p class="ref-author">Boris Cherny</p>
+        <p class="ref-why">Rigorous coverage of TypeScript's type system from first principles through generics, decorators, and advanced patterns — the essential companion for React and Next.js work.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SE4 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">SE4</span>
+      <span class="course-name">Back-End Web Development &amp; APIs</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / Packt
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/specializations/packt-ultimate-guide-to-fast-api-and-backend-development" target="_blank" rel="noopener">Ultimate Guide to FastAPI and Backend Development Specialization</a></p>
+        <p class="ref-author">Packt</p>
+        <p class="ref-why">Three-course specialization building production REST APIs with FastAPI, PostgreSQL via SQLModel, OAuth2/JWT auth, OpenAPI docs, and Docker Compose deployment with coding labs.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · O'Reilly
+        </div>
+        <p class="ref-title"><a href="https://www.oreilly.com/library/view/building-microservices-2nd/9781492047834/" target="_blank" rel="noopener">Building Microservices, 2nd ed.</a></p>
+        <p class="ref-author">Sam Newman</p>
+        <p class="ref-why">Canonical reference for designing, implementing, and deploying backend services and APIs at scale, covering decomposition, communication patterns, and container orchestration.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SE5 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">SE5</span>
+      <span class="course-name">Engineering of AI Systems</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / DeepLearning.AI
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops" target="_blank" rel="noopener">Machine Learning Engineering for Production (MLOps) Specialization</a></p>
+        <p class="ref-author">DeepLearning.AI (Andrew Ng)</p>
+        <p class="ref-why">Four-course specialization covering the full ML lifecycle — data validation, training pipelines, serving, and monitoring — with MLflow, Docker, and Kubernetes labs.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · O'Reilly
+        </div>
+        <p class="ref-title"><a href="https://www.oreilly.com/library/view/designing-machine-learning/9781098107963/" target="_blank" rel="noopener">Designing Machine Learning Systems</a></p>
+        <p class="ref-author">Chip Huyen</p>
+        <p class="ref-why">Industry-standard guide to building production ML systems covering feature stores, model deployment, monitoring, and MLOps infrastructure design at scale.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SE6 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">SE6</span>
+      <span class="course-name">Mobile, IoT &amp; Edge Software Development</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / UC Irvine
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/specializations/iot" target="_blank" rel="noopener">An Introduction to Programming the Internet of Things (IoT) Specialization</a></p>
+        <p class="ref-author">University of California, Irvine</p>
+        <p class="ref-why">Academic specialization covering embedded C, Raspberry Pi programming, microcontroller interfacing, and IoT connectivity protocols including MQTT with hardware project labs.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · Packt
+        </div>
+        <p class="ref-title"><a href="https://www.packtpub.com/product/iot-and-edge-computing-for-architects-second-edition/9781838829254" target="_blank" rel="noopener">IoT and Edge Computing for Architects, 2nd ed.</a></p>
+        <p class="ref-author">Perry Lea</p>
+        <p class="ref-why">Comprehensive engineering reference covering IoT system architecture, MQTT and edge messaging, AWS IoT Core integration, and embedded device design from sensor to cloud.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SE7 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">SE7</span>
+      <span class="course-name">Design of AI-based &amp; Data-Intensive Systems</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / IBM
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/professional-certificates/ibm-data-engineer" target="_blank" rel="noopener">IBM Data Engineering Professional Certificate</a></p>
+        <p class="ref-author">IBM</p>
+        <p class="ref-why">12-course program covering Apache Spark (PySpark), Kafka, Airflow orchestration, and dbt transformations in end-to-end pipeline projects on real cloud platforms.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · O'Reilly
+        </div>
+        <p class="ref-title"><a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/" target="_blank" rel="noopener">Designing Data-Intensive Applications</a></p>
+        <p class="ref-author">Martin Kleppmann</p>
+        <p class="ref-why">Definitive reference for distributed data systems, stream processing, and data reliability — the theoretical backbone behind every Kafka, Spark, and Airflow design decision.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SE10 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">SE10</span>
+      <span class="course-name">Human-Machine Interaction</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / University of Michigan
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/specializations/michiganux" target="_blank" rel="noopener">User Experience Research and Design Specialization</a></p>
+        <p class="ref-author">University of Michigan</p>
+        <p class="ref-why">Research-grounded six-course specialization covering user research methods, Figma prototyping, accessibility evaluation with axe/Lighthouse, and formative usability testing.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · Wiley
+        </div>
+        <p class="ref-title"><a href="https://www.wiley.com/en-us/Interaction+Design:+Beyond+Human-Computer+Interaction,+6th+Edition-p-9781119901099" target="_blank" rel="noopener">Interaction Design: Beyond Human-Computer Interaction, 6th ed.</a></p>
+        <p class="ref-author">Yvonne Rogers, Helen Sharp, Jennifer Preece</p>
+        <p class="ref-why">The leading HCI textbook covering user research, prototyping, accessibility, and evaluation with interdisciplinary foundations used in university courses worldwide.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── CY ───────────────────────────────────────────────────────────────── -->
+<section class="track-section t-cy">
+  <div class="track-hd">
+    <span class="track-badge">CY</span>
+    <h2>Cybersecurity</h2>
+  </div>
+
+  <!-- CY1 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">CY1</span>
+      <span class="course-name">Applied Cryptography</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / Stanford
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/learn/crypto" target="_blank" rel="noopener">Cryptography I</a></p>
+        <p class="ref-author">Dan Boneh, Stanford University</p>
+        <p class="ref-why">The gold-standard cryptography MOOC: rigorous proof-based treatment of stream/block ciphers, MACs, and public-key schemes with Python programming assignments on real primitives.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · Routledge
+        </div>
+        <p class="ref-title"><a href="https://www.routledge.com/Introduction-to-Modern-Cryptography-Revised-Third-Edition/Katz-Lindell/p/book/9781032496795" target="_blank" rel="noopener">Introduction to Modern Cryptography, 3rd ed.</a></p>
+        <p class="ref-author">Jonathan Katz, Yehuda Lindell</p>
+        <p class="ref-why">The most widely used university cryptography textbook: rigorous definition-proof-construction treatment of all major cryptographic primitives and protocols.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CY2 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">CY2</span>
+      <span class="course-name">Network Security</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / Johns Hopkins
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/learn/advanced-network-security-and-analysis" target="_blank" rel="noopener">Advanced Network Security and Analysis</a></p>
+        <p class="ref-author">Johns Hopkins University</p>
+        <p class="ref-why">Graduate-level course with hands-on packet analysis using Wireshark and TCPDump, DNS/HTTP/SMTP forensics, anonymization threat analysis, and mobile network security.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · No Starch Press
+        </div>
+        <p class="ref-title"><a href="https://nostarch.com/nsm" target="_blank" rel="noopener">The Practice of Network Security Monitoring</a></p>
+        <p class="ref-author">Richard Bejtlich</p>
+        <p class="ref-why">Practical, tool-focused guide to network security monitoring covering Wireshark, Zeek, Suricata, and Security Onion — directly matching all course tools.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CY3 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">CY3</span>
+      <span class="course-name">Hardware &amp; Embedded Systems Security</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / U Maryland
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/learn/hardware-security" target="_blank" rel="noopener">Hardware Security</a></p>
+        <p class="ref-author">University of Maryland, College Park</p>
+        <p class="ref-why">Academic course covering hardware Trojans, side-channel attacks, physical unclonable functions, and design-flow vulnerabilities — theoretical grounding for Ghidra, GDB, and ChipWhisperer practice.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · Elsevier
+        </div>
+        <p class="ref-title"><a href="https://www.elsevier.com/books/hardware-security/bhunia/978-0-12-812477-2" target="_blank" rel="noopener">Hardware Security: A Hands-on Learning Approach</a></p>
+        <p class="ref-author">Swarup Bhunia, Mark Tehranipoor</p>
+        <p class="ref-why">Upper-division textbook with lab exercises covering side-channel analysis, fault injection, PCB hardware attacks, and countermeasures with real embedded hardware.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CY4 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">CY4</span>
+      <span class="course-name">Cyber-Security Governance, Risk &amp; Compliance</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / IBM
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/learn/cybersecurity-compliance-framework-standards-regulations" target="_blank" rel="noopener">Cybersecurity Compliance Framework, Standards &amp; Regulations</a></p>
+        <p class="ref-author">IBM</p>
+        <p class="ref-why">Covers NIST CSF 2.0, ISO 27001 controls, risk management frameworks, and compliance automation with structured threat modeling and audit exercises.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · Kogan Page
+        </div>
+        <p class="ref-title"><a href="https://www.koganpage.com/it-governance/it-governance-9781398607309" target="_blank" rel="noopener">IT Governance: An International Guide to Data Security and ISO 27001/27002, 8th ed.</a></p>
+        <p class="ref-author">Alan Calder, Steve Watkins</p>
+        <p class="ref-why">Authoritative practitioner guide to building an ISMS aligned with ISO 27001 and NIST CSF, covering risk assessment, control selection, and governance at the organizational level.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CY5 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">CY5</span>
+      <span class="course-name">Blockchain and Decentralized Cryptographic Systems</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / U Buffalo
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/specializations/blockchain" target="_blank" rel="noopener">Blockchain Specialization</a></p>
+        <p class="ref-author">University at Buffalo (Bina Ramamurthy)</p>
+        <p class="ref-why">Academic four-course specialization covering Solidity smart contract development, decentralized application architecture, and Ethereum security with coding assignments on live testnets.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · O'Reilly (free on GitHub)
+        </div>
+        <p class="ref-title"><a href="https://github.com/ethereumbook/ethereumbook" target="_blank" rel="noopener">Mastering Ethereum: Building Smart Contracts and DApps</a></p>
+        <p class="ref-author">Andreas M. Antonopoulos, Gavin Wood</p>
+        <p class="ref-why">Open-source reference covering Ethereum internals, Solidity, security patterns, Foundry-compatible development, and DApp deployment — the standard community textbook.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── AI ───────────────────────────────────────────────────────────────── -->
+<section class="track-section t-ai">
+  <div class="track-hd">
+    <span class="track-badge">AI</span>
+    <h2>Artificial Intelligence</h2>
+  </div>
+
+  <!-- AI1 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">AI1</span>
+      <span class="course-name">Language AI: LLMs and Agentic Systems</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / DeepLearning.AI
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/learn/generative-ai-with-llms" target="_blank" rel="noopener">Generative AI with Large Language Models</a></p>
+        <p class="ref-author">DeepLearning.AI &amp; AWS</p>
+        <p class="ref-why">Covers transformer internals, PEFT/LoRA fine-tuning, RLHF, and LLM deployment with hands-on Hugging Face Transformers and SentenceTransformers labs.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · Stanford (free draft)
+        </div>
+        <p class="ref-title"><a href="https://web.stanford.edu/~jurafsky/slp3/" target="_blank" rel="noopener">Speech and Language Processing, 3rd ed. (draft)</a></p>
+        <p class="ref-author">Dan Jurafsky, James H. Martin</p>
+        <p class="ref-why">The canonical NLP textbook — freely available online — covering transformers, LLMs, fine-tuning, RAG, and agentic systems at graduate depth from Stanford and CU Boulder faculty.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI2 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">AI2</span>
+      <span class="course-name">Temporal AI: Time Series &amp; Sequential Decision Making</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / U Alberta
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/specializations/reinforcement-learning" target="_blank" rel="noopener">Reinforcement Learning Specialization</a></p>
+        <p class="ref-author">University of Alberta &amp; AMII</p>
+        <p class="ref-why">Rigorous four-course specialization grounded in Sutton-Barto theory with Python/Gymnasium coding assignments covering bandit algorithms, dynamic programming, TD learning, and function approximation.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · MIT Press (free PDF)
+        </div>
+        <p class="ref-title"><a href="http://incompleteideas.net/book/the-book-2nd.html" target="_blank" rel="noopener">Reinforcement Learning: An Introduction, 2nd ed.</a></p>
+        <p class="ref-author">Richard S. Sutton, Andrew G. Barto</p>
+        <p class="ref-why">The definitive RL textbook — freely available — covering the mathematical foundations of all major algorithms implemented in Gymnasium and Stable-Baselines3.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI3 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">AI3</span>
+      <span class="course-name">Vision AI: Deep Learning for Computer Vision</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Stanford (free)
+        </div>
+        <p class="ref-title"><a href="https://cs231n.stanford.edu/" target="_blank" rel="noopener">CS231n: Deep Learning for Computer Vision</a></p>
+        <p class="ref-author">Stanford University (Fei-Fei Li et al.)</p>
+        <p class="ref-why">Stanford's flagship CV course with free notes, slides, and PyTorch assignments covering CNNs, YOLO/R-CNN detection, vision transformers, and diffusion models — the academic reference in the field.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · Packt
+        </div>
+        <p class="ref-title"><a href="https://www.packtpub.com/en-us/product/modern-computer-vision-with-pytorch-9781800561274" target="_blank" rel="noopener">Modern Computer Vision with PyTorch, 2nd ed.</a></p>
+        <p class="ref-author">V Kishore Ayyadevara, Yeshwanth Reddy</p>
+        <p class="ref-why">Hands-on code-first book covering CNNs, object detection with YOLO/Faster-RCNN, image segmentation, and ONNX Runtime deployment using PyTorch and torchvision throughout.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI4 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">AI4</span>
+      <span class="course-name">Scalable AI: Big-Data Algorithms</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · fullstackdeeplearning.com (free)
+        </div>
+        <p class="ref-title"><a href="https://fullstackdeeplearning.com/" target="_blank" rel="noopener">Full Stack Deep Learning (FSDL)</a></p>
+        <p class="ref-author">Charles Frye, Sergey Karayev, Josh Tobin (UC Berkeley group)</p>
+        <p class="ref-why">Free, lab-intensive course covering distributed training with PyTorch, model serving at scale, Ray clusters, Kubernetes deployment, and LLM ops including vLLM-style serving.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · d2l.ai (free, interactive)
+        </div>
+        <p class="ref-title"><a href="https://d2l.ai/" target="_blank" rel="noopener">Dive into Deep Learning</a></p>
+        <p class="ref-author">Aston Zhang, Zachary C. Lipton, Mu Li, Alexander J. Smola</p>
+        <p class="ref-why">Free, interactive university textbook used at 500+ universities covering distributed and parallel training, attention mechanisms, and scalable deep learning with runnable PyTorch code.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI5 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">AI5</span>
+      <span class="course-name">Generative AI: Deep Generative Models</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Hugging Face (free)
+        </div>
+        <p class="ref-title"><a href="https://huggingface.co/learn/diffusion-course/en/unit0/1" target="_blank" rel="noopener">Hugging Face Diffusion Models Course</a></p>
+        <p class="ref-author">Hugging Face</p>
+        <p class="ref-why">Free, unit-based course built directly on HF Diffusers and Accelerate libraries covering DDPM theory, fine-tuning, guidance, and Stable Diffusion with Jupyter notebooks and real GPU training.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · O'Reilly
+        </div>
+        <p class="ref-title"><a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/" target="_blank" rel="noopener">Generative Deep Learning, 2nd ed.</a></p>
+        <p class="ref-author">David Foster</p>
+        <p class="ref-why">Comprehensive hands-on book covering VAEs, GANs, normalizing flows, denoising diffusion models, and multimodal architectures with full PyTorch/Keras code and MLflow integration.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI6 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">AI6</span>
+      <span class="course-name">Embodied AI: Robotics &amp; Autonomous Systems</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Coursera / Packt
+        </div>
+        <p class="ref-title"><a href="https://www.coursera.org/specializations/packt-mastering-ros-2-for-robotics-programming" target="_blank" rel="noopener">Mastering ROS 2 for Robotics Programming Specialization</a></p>
+        <p class="ref-author">Packt</p>
+        <p class="ref-why">Specialization covering ROS 2 node architecture, Gazebo simulation, Nav2 autonomous navigation, MoveIt 2 manipulation, and PyTorch integration for intelligent robotic systems.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · Cambridge (free PDF + videos)
+        </div>
+        <p class="ref-title"><a href="https://modernrobotics.northwestern.edu/" target="_blank" rel="noopener">Modern Robotics: Mechanics, Planning, and Control</a></p>
+        <p class="ref-author">Kevin M. Lynch, Frank C. Park</p>
+        <p class="ref-why">Freely available Northwestern textbook with companion videos and Python code covering robot kinematics, motion planning, and control — the mathematical foundation for ROS 2 robotics.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── DF ───────────────────────────────────────────────────────────────── -->
+<section class="track-section t-df">
+  <div class="track-hd">
+    <span class="track-badge">DF</span>
+    <h2>Defense &amp; Dependable Systems</h2>
+  </div>
+
+  <!-- DF2 -->
+  <div class="course-card">
+    <div class="course-card-hd">
+      <span class="course-code">DF2</span>
+      <span class="course-name">Mission-Critical Real-Time Systems</span>
+    </div>
+    <div class="course-card-body">
+      <div class="ref-block">
+        <div class="ref-type course">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Online Course · Udemy
+        </div>
+        <p class="ref-title"><a href="https://www.udemy.com/course/mastering-rtos-hands-on-with-freertos-arduino-and-stm32fx/" target="_blank" rel="noopener">Mastering RTOS: Hands on FreeRTOS and STM32Fx with Debugging</a></p>
+        <p class="ref-author">Kiran Nayak, FastBit Embedded Brain Academy</p>
+        <p class="ref-why">Hands-on course using STM32CubeIDE and FreeRTOS covering task scheduling, queues, semaphores, mutexes, and real-time debugging with SEGGER SystemView.</p>
+      </div>
+      <div class="ref-block">
+        <div class="ref-type book">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="1.5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M4 4.5h4M4 6.5h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Textbook · Pearson
+        </div>
+        <p class="ref-title"><a href="https://www.pearson.com/us/higher-education/program/Liu-Real-Time-Systems/PGM243459.html" target="_blank" rel="noopener">Real-Time Systems</a></p>
+        <p class="ref-author">Jane W. S. Liu</p>
+        <p class="ref-why">Canonical academic textbook on real-time scheduling theory, temporal correctness, task models, and resource sharing — the theoretical foundation underpinning FreeRTOS and Tracealyzer analysis.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<footer class="site-footer">
+  HIT CS Concentrations &nbsp;·&nbsp; hitspecs.apartsin.com &nbsp;·&nbsp; References curated for academic depth and hands-on practice
+</footer>
+
+</body>
+</html>
