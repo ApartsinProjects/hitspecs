@@ -183,7 +183,7 @@ title:"Modern Front-End Web Development",
 description:"Build responsive, accessible, interactive user interfaces with React and Vue component frameworks, applying unidirectional data flow, WCAG accessibility, performance optimization, and automated testing throughout.",
 roles:[
 {role:"Full-Stack Software Developer",does:"Builds component-based user interfaces in React or Vue, manages application state with Redux Toolkit or Pinia, integrates REST and GraphQL APIs, ensures WCAG AA accessibility compliance with axe DevTools audits, and writes component and interaction tests using Vitest and Playwright."},
-{role:"Full-Stack Software Developer",does:"Profiles and optimizes web application loading and rendering performance using Lighthouse and browser DevTools, implements code-splitting and lazy-loading strategies, configures Vite build output and asset caching headers, and evaluates rendering-strategy trade-offs (CSR, SSR, SSG) for SEO and time-to-interactive targets."},
+{role:"UX Designer",does:"Translates component libraries, accessibility standards, and interaction patterns learned in the course into user-centred interface designs; prototypes responsive layouts in Figma and collaborates with developers to validate HTML/CSS implementations against acceptance criteria."},
 ],
 principles:[
 "The browser document model and event system: DOM tree, event bubbling vs capturing, delegation, and shadow DOM",
@@ -223,7 +223,7 @@ title:"Back-End Web Development and APIs",
 description:"Design and build server-side services and APIs using modern back-end frameworks, selecting the right data store and data-access pattern for each workload and structuring business logic across a layered or service-oriented architecture.",
 roles:[
 {role:"Backend Engineer",does:"Designs and implements REST APIs using Node.js (Fastify/Express) or ASP.NET Core, models relational schemas with migration management and ORM tooling, queries document and key-value stores for appropriate workloads, implements JWT-based authentication and RBAC authorization in the service layer, tunes slow queries with index and query-plan analysis, and delivers observable services with structured logging and distributed tracing."},
-{role:"Backend Engineer",does:"Owns the full server-side of a product feature from API contract through business-logic service layer to data-access layer, selects and integrates the appropriate data store (PostgreSQL, MongoDB, Redis) for each feature's data shape and access patterns, writes background jobs for asynchronous workloads, and ensures every service boundary is observable, tested, and versioned."},
+{role:"Full-Stack Software Developer",does:"Builds end-to-end features spanning RESTful API design, data modelling, and client integration; applies the domain-driven design and clean-architecture patterns from the course to deliver maintainable, well-tested full-stack services."},
 ],
 principles:[
 "N-tier and layered architecture: presentation, application, and data layers; separation of concerns",
@@ -263,7 +263,7 @@ title:"Engineering of AI Systems (MLOps and LLMOps)",
 description:"Apply DevOps discipline to machine-learning and LLM systems, automating data pipelines, model training, deployment, monitoring, and continuous delivery from experiment to governed production.",
 roles:[
 {role:"MLOps Engineer",does:"Designs and operates CI/CD pipelines for ML model training and deployment, manages experiment tracking and model registries with version-controlled promotion workflows, implements statistical drift detection and retraining triggers, and runs medallion data pipelines with quality gates and schema contracts."},
-{role:"MLOps Engineer",does:"Deploys and operates LLM inference services with token-economy cost control, manages RAG pipelines and vector databases, instruments LLM calls with trace-level cost and latency logging via Langfuse, implements evaluation suites and guardrails, and governs AI systems against OWASP LLM Top 10 risks."},
+{role:"DevOps Engineer",does:"Deploys and operates LLM inference services with token-economy cost control, manages RAG pipelines and vector databases, instruments LLM calls with trace-level cost and latency logging via Langfuse, implements evaluation suites and guardrails, and governs AI systems against OWASP LLM Top 10 risks."},
 ],
 principles:[
 "Version control and branching for AI projects: Git-based data versioning, experiment branches, and code-data co-evolution",
@@ -303,7 +303,7 @@ title:"Mobile, IoT & Edge Software Development",
 description:"Build Android applications and IoT device pipelines, covering native Android architecture and lifecycle alongside sensor-to-cloud MQTT and CoAP communication, edge processing, and offline-first data synchronization.",
 roles:[
 {role:"Mobile Developer",does:"Builds Android applications in Kotlin with Jetpack Compose, structures projects around ViewModel and Repository patterns, implements local persistence with Room and DataStore, handles background work within battery and doze-mode constraints using WorkManager, integrates REST APIs with Retrofit and Kotlin Coroutines, and tests with Espresso and unit tests on the JVM."},
-{role:"Embedded Software Engineer",does:"Designs and deploys device-to-cloud pipelines using MQTT brokers and CoAP endpoints, authors Node-RED flows for sensor-actuator orchestration, provisions Raspberry Pi edge nodes, defines QoS policies and broker topology for reliable delivery at scale, and implements secure device authentication with certificate provisioning."},
+{role:"Backend Engineer",does:"Designs and deploys device-to-cloud pipelines using MQTT brokers and CoAP endpoints, authors Node-RED flows for sensor-actuator orchestration, provisions Raspberry Pi edge nodes, defines QoS policies and broker topology for reliable delivery at scale, and implements secure device authentication with certificate provisioning."},
 ],
 principles:[
 "MVVM architecture for mobile: presentation layer lifecycle management, reactive state streams, repository pattern for data abstraction, and back-stack navigation management",
@@ -342,8 +342,8 @@ depth:"The project integrates five core principles simultaneously: teams must ch
 title:"Design of AI-based and Data-Intensive Systems",
 description:"Architect large systems whose core is data and machine learning, balancing throughput, latency, consistency, and the demands of AI workloads.",
 roles:[
-{role:"MLOps Engineer",does:"Designs, builds, and maintains batch and streaming ETL/ELT pipelines using Spark and Kafka, manages lakehouse schemas with dbt and Parquet, enforces data quality contracts with Great Expectations, tracks data lineage, and ensures pipelines meet SLA and exactly-once delivery requirements in production."},
-{role:"MLOps Engineer",does:"Integrates trained ML models into production serving infrastructure, manages feature stores and training-serving skew, instruments model monitoring and drift detection with Evidently, tracks experiments with MLflow, and designs the architecture for reliable, low-latency model inference behind data pipelines."},
+{role:"Cloud Developer",does:"Designs and implements cloud-native microservices, serverless ETL pipelines, and data lakehouse ingestion layers on AWS or GCP, applying batch-and-streaming architecture principles to deliver scalable, cost-efficient data-intensive systems."},
+{role:"Cloud Architect",does:"Defines platform architecture for high-volume data workloads: selects managed services, enforces data-quality contracts, designs multi-region replication and disaster-recovery patterns, and produces architecture decision records for engineering leadership."}
 ],
 principles:[
 "Reliability, scalability, and maintainability as orthogonal design properties with distinct failure modes and levers",
@@ -422,8 +422,8 @@ depth:"The design must simultaneously satisfy contradictory forces: the AI-augme
 title:"Language AI: LLMs and Agentic Systems",
 description:"Build production-grade applications on large language models and autonomous agents, covering transformer foundations, prompting, retrieval-augmented generation, tool use, evaluation, and responsible deployment.",
 roles:[
-{role:"ML / AI Engineer",does:"Designs and builds LLM-powered applications using OpenAI and Anthropic APIs, implements RAG pipelines with vector databases, engineers and evaluates prompts with chain-of-thought strategies, instruments token cost and latency with Langfuse, and governs deployments against OWASP LLM Top 10 risks."},
-{role:"ML / AI Engineer",does:"Designs multi-step autonomous agents with tool use and function calling, orchestrates agent workflows using LangChain and LlamaIndex, implements ReAct reasoning patterns, and evaluates agent reliability with automated harnesses and guardrail validation."},
+{role:"LLM Developer",does:"Designs and builds LLM-powered applications using OpenAI and Anthropic APIs, implements RAG pipelines with vector databases, engineers and evaluates prompts with chain-of-thought strategies, instruments token cost and latency with Langfuse, and governs deployments against OWASP LLM Top 10 risks."},
+{role:"ML / AI Engineer",does:"Integrates fine-tuned language models into production serving infrastructure; manages token-budget optimization, latency SLOs, and hallucination-rate monitoring; builds evaluation harnesses to benchmark model versions before deployment."}
 ],
 principles:[
 "Transformer architecture: multi-head self-attention, Q/K/V projections, positional encoding, and feed-forward sublayers",
@@ -462,8 +462,8 @@ depth:"Students must trace hallucination rates through retrieval quality to chun
 title:"Temporal AI: Time Series & Sequential Decision Making",
 description:"Model data that unfolds over time and learn to make sequential decisions under uncertainty, from classical statistical forecasting through deep sequence models to reinforcement learning.",
 roles:[
-{role:"Data Scientist",does:"Builds and validates forecasting models for temporal data using statistical and deep learning approaches, performs stationarity testing and autocorrelation analysis, engineers lag and rolling-window features, evaluates with walk-forward cross-validation, and deploys online forecasting services with drift detection."},
-{role:"ML / AI Engineer",does:"Formulates sequential decision problems as MDPs, implements and trains model-free RL agents (DQN, PPO, SAC) in simulation environments, designs reward functions and curricula, and evaluates policy generalization across environment seeds."},
+{role:"Computer Vision Engineer",does:"Builds and validates forecasting models for temporal data using statistical and deep learning approaches, performs stationarity testing and autocorrelation analysis, engineers lag and rolling-window features, evaluates with walk-forward cross-validation, and deploys online forecasting services with drift detection."},
+{role:"ML / AI Engineer",does:"Formulates sequential decision problems as MDPs, implements and trains model-free RL agents (DQN, PPO, SAC) in simulation environments, designs reward functions and curricula, and evaluates policy generalization across environment seeds."}
 ],
 principles:[
 "Stationarity and differencing in time series: ADF test, KPSS, unit roots, and seasonal differencing",
@@ -502,8 +502,7 @@ depth:"Students must justify model selection from autocorrelation structure, imp
 title:"Vision AI: Deep Learning for Computer Vision",
 description:"Apply deep learning to images and video for classification, detection, and segmentation tasks, from convolutional inductive bias through vision transformers and practical deployment.",
 roles:[
-{role:"Computer Vision Engineer",does:"Implements image classification, object detection, and segmentation pipelines using torchvision and Hugging Face timm, fine-tunes pre-trained CNN and ViT models, designs augmentation strategies, evaluates with mAP and mIoU, and deploys vision inference services with ONNX export."},
-{role:"Computer Vision Engineer",does:"Integrates vision models into production systems, optimizes inference throughput with TensorRT and ONNX, builds dataset annotation pipelines with Roboflow, monitors for distribution shift, and interprets model decisions with Captum saliency maps."},
+{role:"Computer Vision Engineer",does:"Implements image classification, object detection, and segmentation pipelines using torchvision and Hugging Face timm, fine-tunes pre-trained CNN and ViT models, designs augmentation strategies, evaluates with mAP and mIoU, and deploys vision inference services with ONNX export."}
 ],
 principles:[
 "Classical image processing: spatial filtering (Gaussian, Sobel, Laplacian), histogram equalization, and morphological ops",
@@ -542,8 +541,8 @@ depth:"Teams must justify anchor vs anchor-free choice from data distribution an
 title:"Scalable AI: Big-Data Algorithms",
 description:"Design and implement machine learning algorithms and distributed training systems for data and model scales that exceed a single machine, covering distributed training frameworks, streaming ML, and approximate algorithms.",
 roles:[
-{role:"ML / AI Engineer",does:"Implements data-parallel and model-parallel training pipelines using PyTorch DDP/FSDP and Horovod, profiles GPU utilization and communication overhead, applies gradient compression and mixed-precision training, scales training across multi-node clusters, and benchmarks throughput against MLPerf baselines."},
-{role:"ML / AI Engineer",does:"Builds ML pipelines over datasets too large for a single machine using Dask and Ray, implements streaming ML models with River for online learning, designs approximate nearest-neighbor indexes for billion-scale retrieval, and tunes LightGBM and XGBoost at dataset scale."},
+{role:"Data Scientist",does:"Applies statistical analysis and machine learning to large-scale structured and unstructured datasets; designs feature engineering pipelines, trains and tunes scalable ML models in distributed environments, and communicates insights to stakeholders."},
+{role:"Data Engineer",does:"Builds and maintains high-throughput batch and streaming ETL/ELT pipelines; manages lakehouse schemas with dbt and Parquet; enforces data-quality contracts with Great Expectations; monitors SLA adherence and exactly-once delivery in production."}
 ],
 principles:[
 "Data parallelism and gradient aggregation: all-reduce, ring-allreduce, gradient compression, and synchronous vs asynchronous SGD",
@@ -583,7 +582,7 @@ title:"Generative AI: Deep Generative Models",
 description:"Study the probabilistic theory behind models that generate images, text, and audio, spanning variational autoencoders, generative adversarial networks, diffusion models, and autoregressive generators.",
 roles:[
 {role:"ML / AI Engineer",does:"Implements and trains VAEs, GANs, and diffusion models from scratch in PyTorch, evaluates generation quality with FID and IS metrics, applies conditioning and guidance techniques, fine-tunes pre-trained diffusion models for domain-specific generation, and deploys generative inference pipelines with Gradio demos."},
-{role:"NLP Engineer",does:"Adapts pre-trained generative models for creative and enterprise use cases using ControlNet and LoRA fine-tuning, engineers conditioning prompts and negative prompts for diffusion models, evaluates output quality and diversity, and integrates generative pipelines into product workflows with appropriate guardrails."},
+{role:"Computer Vision Engineer",does:"Adapts pre-trained generative models for creative and enterprise use cases using ControlNet and LoRA fine-tuning, engineers conditioning prompts and negative prompts for diffusion models, evaluates output quality and diversity, and integrates generative pipelines into product workflows with appropriate guardrails."}
 ],
 principles:[
 "Latent variable models and the ELBO: Jensen's inequality, variational lower bound, and amortized posterior inference",
@@ -622,8 +621,7 @@ depth:"Students must derive the ELBO for the VAE and the gradient estimator for 
 title:"Embodied AI: Robotics & Autonomous Systems",
 description:"Bring AI into the physical world through perception, state estimation, planning, and control for robots and autonomous systems, covering ROS2, simulation, SLAM, motion planning, and sim-to-real transfer.",
 roles:[
-{role:"Autonomous Systems Software Engineer",does:"Develops ROS2 nodes for sensor processing, localization, and navigation, implements SLAM pipelines for mapping and localization, configures Nav2 for autonomous mobile robot navigation, integrates perception models for object detection and scene understanding, and validates systems in Gazebo simulation before hardware deployment."},
-{role:"Autonomous Systems Software Engineer",does:"Designs motion planning pipelines with MoveIt2 for manipulation tasks, implements behavior trees for task sequencing, applies RL policies for continuous control in Isaac Sim, evaluates sim-to-real transfer with domain randomization, and tunes perception-action loops on physical hardware."},
+{role:"Robotics Engineer",does:"Designs perception, planning, and control algorithms for autonomous robotic systems; integrates sensors and actuators within ROS 2 software stacks; develops real-time feedback controllers; validates behaviour through Gazebo and Isaac Sim simulation."}
 ],
 principles:[
 "Robot middleware architecture: decoupled pub/sub topics, synchronous service calls, long-running action servers, parameter management, and lifecycle node management",
@@ -863,7 +861,7 @@ title:"Mission-Critical Real-Time Systems",
 description:"Design, implement, and certify software for systems where timing failures have safety consequences, applying RTOS scheduling theory, deterministic communication protocols, formal verification, and safety-standard process.",
 roles:[
 {role:"Embedded Software Engineer",does:"Develops and integrates tasks on RTOS platforms (FreeRTOS, Zephyr, VxWorks), performs schedulability analysis with Rate Monotonic and EDF algorithms, implements inter-task communication with bounded queues and semaphores, writes ISR-safe device drivers, profiles worst-case execution time with hardware timing instrumentation, and participates in IEC 61508 or DO-178C software verification activities."},
-{role:"Defense Software Engineer",does:"Defines safety requirements and hazard analyses (FMEA, FTA) for safety-critical systems, maps software design decisions to ASIL or SIL integrity levels, authors qualification plans for safety-critical software tools, reviews code against MISRA C or AUTOSAR C++ guidelines, and coordinates DO-178C compliance evidence packages including requirements traceability matrices and structural coverage reports."},
+{role:"Real-Time Software Engineer",does:"Designs and validates deterministic software for RTOS-based systems; performs worst-case execution time analysis; enforces hard real-time deadlines through task-priority assignment and CPU budget analysis on resource-constrained targets."}
 ],
 principles:[
 "Hard versus soft real-time semantics: deadline miss consequences, determinism requirements, and jitter budget analysis",
