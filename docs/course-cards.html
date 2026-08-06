@@ -197,7 +197,7 @@ principles:[
 "Build optimization: module bundling, code splitting, tree shaking, lazy loading, and chunk strategy",
 "Rendering strategy trade-offs: CSR, SSR, SSG, ISR, and their SEO, TTFB, and hydration implications",
 ],
-tools:["React","Vue","TypeScript","Vite","Redux Toolkit","Next.js","Tailwind CSS","Vitest","Storybook","axe DevTools"],
+tools:["React","Vue","TypeScript","Vercel / Netlify","Sentry","Next.js","Tailwind CSS","Vitest","Storybook","axe DevTools"],
 prerequisites:[
 "Programming fundamentals including functions, control flow, closures, and data structures",
 "HTML and the DOM including element hierarchy, semantic tags, and event handling",
@@ -317,7 +317,7 @@ principles:[
 "IoT flow-based programming and device management: visual pipeline composition for IoT data flows, digital twin state modeling, and dashboard-driven device monitoring",
 "IoT data serialization and constrained protocols: compact binary formats (Protocol Buffers, CBOR, MessagePack) for bandwidth-limited channels",
 ],
-tools:["Kotlin","Jetpack Compose","Room (SQLite)","WorkManager","Eclipse Mosquitto","paho-mqtt","aiocoap","Node-RED","AWS IoT Core SDK","Raspberry Pi / ESP32"],
+tools:["Kotlin","Jetpack Compose","Room (SQLite)","WorkManager","Eclipse Mosquitto","paho-mqtt","Grafana (IoT dashboards)","Node-RED","AWS IoT Core SDK","Raspberry Pi / ESP32"],
 prerequisites:[
 "Programming fundamentals in at least one language (functions, control flow, data structures, OOP basics)",
 "Operating systems concepts: processes, threads, scheduling, and memory management",
@@ -357,7 +357,7 @@ principles:[
 "Hidden technical debt in ML systems: feedback loops, training-serving skew, undeclared consumers, and data dependency rot",
 "Dimensional data modeling and ELT architecture: Kimball star schema (fact tables, dimension tables, conformed dimensions), snowflake schema, slowly changing dimensions (SCD types 1/2/3), and data vault for audit-complete raw storage; plus ELT philosophy — push-down transforms, in-database ML, and reverse ETL for operational data sync",
 ],
-tools:["Apache Kafka","Apache Spark/PySpark","Databricks","Apache Parquet","Apache Airflow","dbt","DataHub","Great Expectations","Delta Lake","Apache Flink"],
+tools:["Apache Kafka","Apache Spark/PySpark","Databricks","Apache Parquet","Apache Airflow","dbt","Grafana","Great Expectations","Delta Lake","Apache Flink"],
 prerequisites:[
 "Relational databases and SQL: joins, indexes, transactions, and normalization",
 "Algorithms and data structures: sorting, hashing, trees, and asymptotic complexity",
@@ -477,7 +477,7 @@ principles:[
 "Exploration-exploitation trade-off: epsilon-greedy, UCB, Thompson sampling, and curiosity-driven intrinsic rewards",
 "Online learning and concept drift adaptation: ADWIN, KSWIN, Page-Hinkley test, and incremental model updating",
 ],
-tools:["PyTorch","statsmodels","Prophet (Meta)","Gymnasium","Stable-Baselines3","tsfresh","Weights and Biases","MuJoCo / Brax","Optuna","Ray RLlib"],
+tools:["PyTorch","statsmodels","Prophet (Meta)","Gymnasium","Stable-Baselines3","BentoML","Weights and Biases","MuJoCo / Brax","Optuna","Ray RLlib"],
 prerequisites:[
 "Machine learning fundamentals: supervised learning, loss functions, cross-validation",
 "Probability and statistics: distributions, expectation, and basic Markov chains",
@@ -516,7 +516,7 @@ principles:[
 "Segmentation: semantic (FCN, DeepLab), instance (Mask R-CNN), and panoptic segmentation paradigms",
 "Data augmentation and evaluation: random crop, color jitter, MixUp, CutMix, AutoAugment; mAP and mIoU metrics",
 ],
-tools:["torchvision","OpenCV","Albumentations","YOLO (Ultralytics)","Detectron2","Roboflow","Hugging Face timm","ONNX","Captum","FastAPI"],
+tools:["torchvision","OpenCV","Albumentations","YOLO (Ultralytics)","Detectron2","Roboflow","Hugging Face timm","ONNX","EvidentlyAI","FastAPI"],
 prerequisites:[
 "Deep learning fundamentals: backpropagation, training loops, and PyTorch (from AI2 or equivalent)",
 "Linear algebra: matrix operations and convolution as cross-correlation",
@@ -556,7 +556,7 @@ principles:[
 "Stochastic algorithms and convergence guarantees: SGD noise, variance reduction (SVRG, SARAH), and regret bounds",
 "Federated learning and privacy-preserving distributed ML: aggregation protocols, differential privacy, and secure aggregation",
 ],
-tools:["Ray Train","DeepSpeed","Dask","River","NVIDIA RAPIDS","Horovod","LightGBM","XGBoost","Apache Spark MLlib","NVIDIA Triton Inference Server"],
+tools:["Ray Train","DeepSpeed","Dask","River","NVIDIA RAPIDS","MLflow","LightGBM","XGBoost","Apache Spark MLlib","NVIDIA Triton Inference Server"],
 prerequisites:[
 "Deep learning fundamentals including PyTorch training loops (from AI2/AI3 or equivalent)",
 "Distributed systems concepts: network communication, data partitioning, fault tolerance",
@@ -596,7 +596,7 @@ principles:[
 "Evaluation metrics for generative models: FID (Frechet Inception Distance), IS, precision, recall, and LPIPS",
 "Ethical considerations: deepfake detection, C2PA content provenance watermarking, synthetic data bias, and disclosure",
 ],
-tools:["Hugging Face Diffusers","ComfyUI","Stable Diffusion","torch-fidelity","LPIPS","Gradio","JAX / Flax","cleanfid","Hugging Face Hub","DALL-E / Imagen API"],
+tools:["Hugging Face Diffusers","ComfyUI","Stable Diffusion","torch-fidelity","LPIPS","Gradio","JAX / Flax","Weights and Biases","Hugging Face Hub","DALL-E / Imagen API"],
 prerequisites:[
 "Deep learning fundamentals: backpropagation, PyTorch training, and CNNs (from AI3 or equivalent)",
 "Probability theory: Gaussian distributions, KL divergence, and Bayes' theorem",
